@@ -600,7 +600,7 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="common-thread" class="theorem-section" data-nav="common-thread">
     <h2>共同主線：每個 fiber 一條橢圓曲線</h2>
     <div class="layer-intuition">
-      六篇論文的共同起手式,是把立體湊數問題變成「在一條曲線上找點」。對每個 Pythagorean 參數 $q$(即 $1+q^2$ 也是平方的有理數),把盒子條件整理後,完美長方體會對應到一條<strong>橢圓曲線</strong>(形如 $y^2=$ 三次式 的光滑曲線)$E_q:y^2=x(x+1)(x+q^2)$ 上的一個<strong>有理點</strong>(座標都是分數的點);一條固定的 recovery map $\varphi(x,y)=\dfrac{2yq}{q^2-x^2}$ 把這個點「還原」成盒子的一條邊。於是有等價關係:<em>某族盒子裡有沒有完美長方體 $\iff$ 對應的 $E_q$ 上有沒有合用的有理點。</em> 橢圓曲線上的有理點在一種「加法」下構成群;其中「自己加自己有限次就回到原點」的特殊點叫 <strong>torsion</strong>(有限階點),這個家族恆有 $8$ 個。關鍵事實:這 $8$ 個 torsion 點被 $\varphi$ 全送成 $0$ 或無窮大(對應壓扁或退化的盒子),所以真正的盒子只能來自<strong>無限階</strong>的點。而「獨立的無限階點有幾個方向」這個數叫 <strong>rank</strong>:rank $0$ 表示有理點就那有限幾個、能直接數完(最好辦);rank 越大表示點越多、越難窮盡。後面每篇,就是在判定並處理某一族的 $E_q$ 究竟落在哪一種。
+      六篇論文的共同起手式,是把立體湊數問題變成「在一條曲線上找點」。對每個 Pythagorean 參數 $q$(即 $1+q^2$ 也是平方的有理數)——<strong>固定一個 $q$ 就是一個 fiber(纖維),對應一條曲線 $E_q$</strong>——把盒子條件整理後,完美長方體會對應到一條<strong>橢圓曲線</strong>(形如 $y^2=$ 三次式 的光滑曲線)$E_q:y^2=x(x+1)(x+q^2)$ 上的一個<strong>有理點</strong>(座標都是分數的點);一條固定的 recovery map $\varphi(x,y)=\dfrac{2yq}{q^2-x^2}$ 是<strong>把曲線上的點翻譯回盒子邊長的字典</strong>,把這個點「還原」成盒子的一條邊。於是有等價關係:<em>某族盒子裡有沒有完美長方體 $\iff$ 對應的 $E_q$ 上有沒有合用的有理點。</em> 橢圓曲線上的有理點在一種「加法」下構成群——<strong>所謂加法,就是把兩點連線、取與曲線的第三個交點再上下翻轉,就是這條曲線上的「加法」</strong>;其中「自己加自己有限次就回到原點」的特殊點叫 <strong>torsion</strong>(有限階點),這個家族恆有 $8$ 個。關鍵事實:這 $8$ 個 torsion 點被 $\varphi$ 全送成 $0$ 或無窮大(對應壓扁或退化的盒子),所以真正的盒子只能來自<strong>無限階</strong>的點。而 <strong>rank</strong> 就是「有幾個彼此獨立、能無限生成新點的基準點」的個數:rank $0$ 表示有理點就那有限幾個、能直接數完(最好辦);rank 越大表示點越多、越難窮盡。後面每篇,就是在判定並處理某一族的 $E_q$ 究竟落在哪一種。
     </div>
 
     <details class="layer">
@@ -673,6 +673,14 @@ footer a { color: var(--color-link); text-decoration: none; }
         </details>
       </div>
     </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-ellcurve" data-nav="chart-ellcurve">
+        <h3>圖：per-fiber 橢圓曲線 $E_q$ 與 8 個 torsion 點</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">拖滑桿換 Pythagorean $q$；點任一 torsion 點看 recovery map 值 $\varphi=2yq/(q^2-x^2)$。8 個 torsion 點全部被 recovery map 送到 $0$ 或 $\infty$（退化），真盒子只能來自無限階點。</p>
+      </div>
+    </div>
   </section>
 
   <!-- §5 Saunderson（paper-a） -->
@@ -776,6 +784,14 @@ footer a { color: var(--color-link); text-decoration: none; }
         <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank $=0$（$2$-descent $[0,0]$ + $L(1)\approx1.0095$ Kolyvagin）；$C_0(\mathbb{Q})$ 四點全退化；$\mathrm{Sa}(3,4,5)$ 之 $73225,\ 2929/16$ 皆非平方</span>
       </div>
     </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-saunderson" data-nav="chart-saunderson">
+        <h3>圖：化約漏斗——維度逐步降到有限</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">點任一階段看一行說明。從有理點無窮多的 genus-3 octic，經 palindrome 與提升 $W^2-4=T_0^2$，壓到 rank $0$、有理點只有 $4$ 個（全退化）的 genus-1 $C_0$。</p>
+      </div>
+    </div>
   </section>
 
   <!-- §6 Case B（paper-b） -->
@@ -887,6 +903,11 @@ footer a { color: var(--color-link); text-decoration: none; }
             <p>且 $\mathrm{Jac}(C_q)\sim_{\mathbb{Q}}X_+^{(5)}\times X_-^{(5)}=$<span class="curve-label">600a2</span>×<span class="curve-label">400a2</span>，故 $\mathrm{rank}\,\mathrm{Jac}(C_q)(\mathbb{Q})=2=\operatorname{genus}(C_q)$，Chabauty 對 $C_q$ 亦不適用。$C$ 有 $16$ 個可見有理點 $\{(\pm1,\pm3,\pm5),(\pm2,\pm6,\pm10)\}$（獨立符號），全在 $q\in\{\pm1,\pm2\}$，故 $b=q^2-4\in\{-3,0\}\le0$，皆退化；在 $|n|,d\le2000$ 的高度搜尋找不到其他。由 Faltings，$C(\mathbb{Q})$ 有限，但本節 rank 計算顯示這個有限性無法由 Chabauty–Coleman 在 $C$ 或 $C_q$ 上有效化；stratum 的封閉（主定理）只用整數點，由 Pell–Lucas 無條件給出，不依賴 $C(\mathbb{Q})$ 的完整決定。</p>
           </div>
         </details>
+        <div class="chart-container" id="chart-rank-genus" data-nav="chart-rank-genus">
+          <h3>圖：Chabauty 的條件 rank $<$ genus</h3>
+          <div class="chart-svg-wrap"></div>
+          <p class="chart-caption">滑桿在兩個案例間切換。Chabauty–Coleman 需要 rank 嚴格小於 genus（綠：rank $1<$ genus $2$，可用）；本文的曲線 $C$ 是 rank $5=$ genus $5$（紅：用不上）。</p>
+        </div>
         <span class="verified">已驗證（PARI/GP）：五因子 $a_p$ 在 $32$ 個好質數上吻合；各因子 rank $=1$（生成元如 <span class="curve-label">400a2</span> 上 $(1,24)$）；<span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> rank $0$；genus-2 商 $\mathrm{Jac}(C_q)\sim$<span class="curve-label">600a2</span>×<span class="curve-label">400a2</span> 亦 rank $2=$ genus</span>
       </div>
     </details>
@@ -904,7 +925,7 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="rank-positive" class="theorem-section" data-nav="rank-positive">
     <h2>rank-positive fibers 與 Peschmann (5,2) 的解決（Paper C）</h2>
     <div class="layer-intuition">
-      前面那些曲線「有理點很少(rank $0$)」所以容易數完;但有些 fiber 的 $E_q$ 有<strong>無窮多</strong>有理點(rank $\ge1$),就棘手了。Peschmann 的方法需要某條輔助曲線 rank 為 $0$,因此他留下最小的一個未解 fiber,記作 $(5,2)$(在本文記法是 $q=20/21$)。本文在一個<strong>明確的搜尋範圍內</strong>解決了它,外加另外六個 rank 為正的 fiber;更重要的是精確指出:為什麼想靠「點座標的分子遲早會冒出一個新質因數」來封閉的標準手法,在這裡會卡住。卡在兩個獨立的地方:<strong>(一)</strong> 有效定理能控制的是點的<em>分母</em>那串數(elliptic divisibility sequence),但決定盒子成不成的障礙住在<em>分子</em>那串數,兩者根本不是同一個;<strong>(二)</strong> 就算冒出新質因數,也不保證它以<em>奇數次方</em>出現(要奇次方才能讓那個數不是完全平方)——本文給了具體反例:$q=20/21$ 的第 $5$ 個點,質數 $29$ 首次出現卻是偶次方($v_{29}=2$)。所以這是「在範圍內驗證沒有解」,還不是「對所有點封閉」;本文也誠實標明,差哪一個定理才能補成無條件。
+      前面那些曲線「有理點很少(rank $0$)」所以容易數完;但有些 <strong>fiber</strong>(固定一個 $q$ 就是一個 fiber,對應一條曲線 $E_q$)的 $E_q$ 有<strong>無窮多</strong>有理點(rank $\ge1$),就棘手了。Peschmann 的方法需要某條輔助曲線 rank 為 $0$,因此他留下最小的一個未解 fiber,記作 $(5,2)$(在本文記法是 $q=20/21$)。本文在一個<strong>明確的搜尋範圍內</strong>解決了它,外加另外六個 rank 為正的 fiber;更重要的是精確指出:為什麼想靠「點座標的分子遲早會冒出一個新質因數」來封閉的標準手法,在這裡會卡住。打個比方:<em>就像你能管住一個分數的分母會不會整除某數,但分子完全是另一回事——這裡有效定理管的是分母那串,障礙卻在分子那串</em>。卡在兩個獨立的地方:<strong>(一)</strong> 有效定理能控制的是點的<em>分母</em>那串數(elliptic divisibility sequence),但決定盒子成不成的障礙住在<em>分子</em>那串數,兩者根本不是同一個;<strong>(二)</strong> 就算冒出新質因數,也不保證它以<em>奇數次方</em>出現(要奇次方才能讓那個數不是完全平方)——本文給了具體反例:$q=20/21$ 的第 $5$ 個點,質數 $29$ 首次出現卻是偶次方(寫成 $v_{29}=2$,白話就是「質數 $29$ 在這個數裡出現了剛好兩次,是偶數次」)。所以這是「在範圍內驗證沒有解」,還不是「對所有點封閉」;本文也誠實標明,差哪一個定理才能補成無條件。
     </div>
 
     <details class="layer">
@@ -955,6 +976,11 @@ footer a { color: var(--color-link); text-decoration: none; }
           <div class="layer-content">
             <p>寫 $nP=(A_n/B_n^2,\,C_n/B_n^3)$ 為最簡分數；整數 $B_n$ 構成 EDS。Silverman 的定理保證 $B_n$ 對所有夠大的 $n$ 有 primitive 質因數（不整除任何更早的 $B_m$，$m<n$）；Ingram–Silverman 給一致估計、Verzobio 證門檻可有效計算、Ingram 處理整數點與除法多項式的顯式賦值。</p>
             <p>但 Face-3 障礙住在<strong>分子 $N_n=\mathrm{Num}(F_3(nP))$</strong>——它是 $E_q$ 上<em>另一個</em>非常數函數 $F_3$ 的值，其 divisor 支撐在 $x^2=q^2$ 連同 Face-3 的分歧處，與支配 $B_n$ 的「$2$-torsion 與單位」support <strong>不同</strong>。腳本 <code>an_structure.gp</code> 把 $B_n$ 與 $N_n$ 並列計算，確認兩者作為整數數列 $N_n\neq B_n$。對 $B_n$ 的 primitive-divisor 定理，<em>僅靠引用</em>對 $N_n$ 無有效控制；要得到 $N_n$ 的版本，必須對函數 $F_3$ 直接界定其 divisor 的高度並重跑有效論證——本文未做此事。已知唯一閉形式的 $f(nP)$-primitive-divisor 結果（如 CM 情形 $j\in\{0,1728\}$ 的 Silverman Wieferich-criterion 分析）不涵蓋這裡的 $E_q$。</p>
+            <div class="chart-container" id="chart-seq-bn-nn" data-nav="chart-seq-bn-nn">
+              <h3>圖：分母數列 $B_n$ 與分子數列 $N_n$ 不是同一串</h3>
+              <div class="chart-svg-wrap"></div>
+              <p class="chart-caption">兩條數線：上排是有效定理管得住的點分母 $B_n$（EDS），下排是真正障礙所在的 Face-3 分子 $N_n$。兩串整數彼此不同、增速也不同——這就是「管錯數列」的具體樣子。</p>
+            </div>
           </div>
         </details>
 
@@ -999,13 +1025,21 @@ footer a { color: var(--color-link); text-decoration: none; }
         <span class="verified">已驗證（PARI/GP）：七個 fiber 之 rank（$2$-descent 緊區間 $[r,r]$）；窗格 $9600+4992$ coset 內 $F_3$ 全非平方；$q=20/21$ 之 $N_1,N_2$ 因式分解；$n=5$ 的 $v_{29}(N_5)=2$（而 $v_{29}(N_m)=0$，$m<5$）</span>
       </div>
     </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-facetest" data-nav="chart-facetest">
+        <h3>圖：$q=20/21$ 上「$F_3(nP)$ 是完全平方嗎？」</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">點任一 $n$ 看 $N_n$ 的相異質因數分解。$n=1{\sim}10$ 全部不是平方（紅 ✗）；障礙住在分子 $N_n$。$n=5$ 質數 $29$ 首次出現，卻是偶次方 $v_{29}(N_5)=2$，所以「冒出新質數」不等於「非平方」。</p>
+      </div>
+    </div>
   </section>
 
   <!-- §8 Szpiro（paper-d） -->
   <section id="szpiro" class="theorem-section" data-nav="szpiro">
     <h2>Szpiro ratio 與例外軌跡的 ℤ[√2] 位置（Paper D）</h2>
     <div class="layer-intuition">
-      每條橢圓曲線都帶兩個整數指標:<strong>判別式</strong>(大致是曲線「壞掉」的總量)與<strong>導子</strong>(conductor,只記哪些質數壞、不記壞多深)。兩者取對數的比值叫 <strong>Szpiro ratio</strong> $\sigma$,反映曲線「有多病態」,且與著名的 abc 猜想緊密相關。本文把整個 $E_q$ 家族的最小模型、導子、判別式都算出<strong>封閉公式</strong>,並證明:對<strong>幾乎所有</strong>參數,$\sigma$ 不超過 $4$ 多一點點(這個 density-one 上界是<strong>無條件</strong>的);少數 $\sigma$ 偏大的例外,全落在六個因式之一取「powerful 值」(每個質因數都至少出現平方)的稀疏軌跡上。其中兩個因式是 $\mathbb{Z}[\sqrt2]$(把 $\sqrt2$ 併進整數得到的數系)的範數形式,它們的例外值排在一條 Pell 圓錐曲線上——這把 Peschmann 遇到的 $\mathbb{Q}(\sqrt2)$ 因式分解,精確定位成最小判別式的二次部分。實測最大值 $\sigma=4.6140$ 出現在 $(m,n)=(256,121)$。一句話:這個家族整體很「乖」,壞點稀少且位置可被精確描述。
+      先講為什麼要算這個:<em>判別式與導子的比值(Szpiro ratio)量一條曲線有多「病態」;把整族都算出來、發現幾乎都很小,代表這族曲線行為整齊、適合分析,也回應了 abc 猜想關心的對象。</em> 細說起來,每條橢圓曲線都帶兩個整數指標:<strong>判別式</strong>(大致是曲線「壞掉」的總量)與<strong>導子</strong>(conductor,只記哪些質數壞、不記壞多深)。兩者取對數的比值叫 <strong>Szpiro ratio</strong> $\sigma$,反映曲線「有多病態」,且與著名的 abc 猜想緊密相關。本文把整個 $E_q$ 家族的最小模型、導子、判別式都算出<strong>封閉公式</strong>,並證明:對<strong>幾乎所有</strong>參數,$\sigma$ 不超過 $4$ 多一點點(這個 density-one 上界是<strong>無條件</strong>的);少數 $\sigma$ 偏大的例外,全落在六個因式之一取「powerful 值」(每個質因數都至少出現平方)的稀疏軌跡上。其中兩個因式是 $\mathbb{Z}[\sqrt2]$(把 $\sqrt2$ 併進整數得到的數系)的範數形式,它們的例外值排在一條 Pell 圓錐曲線上——這把 Peschmann 遇到的 $\mathbb{Q}(\sqrt2)$ 因式分解,精確定位成最小判別式的二次部分。實測最大值 $\sigma=4.6140$ 出現在 $(m,n)=(256,121)$。一句話:這個家族整體很「乖」,壞點稀少且位置可被精確描述。
     </div>
 
     <details class="layer">
@@ -1053,6 +1087,12 @@ footer a { color: var(--color-link); text-decoration: none; }
         <p>$$a^2-b^2=m^4-6m^2n^2+n^4=F_5\,F_6,\quad F_5=(m-n)^2-2n^2,\ F_6=(m+n)^2-2n^2.$$</p>
         <p>四次式 $m^4-6m^2n^2+n^4$ 在 $\mathbb{Q}$ 上可約為 $F_5F_6$；進一步分裂成線性因式需 $\mathbb{Q}(\sqrt2)$，根為 $m/n=\pm(1\pm\sqrt2)$——正是 Peschmann 遇到的 $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$（代 $s=m/n$）。整個 powerful part 來自度 $8$ 分離形式 $F=m\,n\,(m-n)(m+n)F_5F_6$ 的六個不可約因式（$\gcd(F,F')$ 常數、判別式非零）。Szpiro 比值由 §3 公式變成 $(m,n)$ 的顯式函數：</p>
         <p>$$\sigma(E_q)=\frac{\log|\Delta_{\min}|}{\log N}=\frac{4\log a+4\log b+2\log|a^2-b^2|-8\log2}{\log\operatorname{rad}\bigl(ab(a^2-b^2)\bigr)}.$$</p>
+
+        <div class="chart-container" id="chart-zsqrt2" data-nav="chart-zsqrt2">
+          <h3>圖：$\mathbb{Z}[\sqrt2]$ 例外軌跡坐落在稀疏圓錐上</h3>
+          <div class="chart-svg-wrap"></div>
+          <p class="chart-caption">滑桿換 powerful 門檻。格點 $(m,n)$ 染色：紅 = $F_5=(m-n)^2-2n^2$ 或 $F_6=(m+n)^2-2n^2$ 取 powerful 值（每個質因數至少平方），其餘灰。紅點排在稀疏的 Pell 圓錐上——例外集 density 為零。</p>
+        </div>
 
         <details>
           <summary>(a) abc 三元組 $b^2+(a^2-b^2)=a^2$ ⇒ $\sigma\le6(1+\varepsilon)$（並與 abc 等價）</summary>
@@ -1195,6 +1235,14 @@ footer a { color: var(--color-link); text-decoration: none; }
         <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> conductor $800$、$\Delta=2^9\cdot5^6$、$j=287496$、torsion $[2]$、rank $1$（$2$-descent）；$2P=(46,294)$、$-P+T=(9,2)$、$T=(10,0)$；$C_{\mathrm{anom}}$ 整數點 $(\pm1,\pm1),(11,\pm37)$；$(11,71)$ 之 $5525^2,10324^2,11285^2$ 與第三面 $117591849$ 非平方</span>
       </div>
     </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-sg" data-nav="chart-sg">
+        <h3>圖：唯一 near-miss $(11,71)$——三綠一紅</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">邊長 $(3124,4557,9840)$ 的四個對角線條件：點任一條看數值。體對角線與兩個面是完全平方（綠 ✓），唯獨第三個面 $b^2+c^2=117\,591\,849$ 不是（紅 ✗，$\lfloor\sqrt{\,\cdot\,}\rfloor=10843$）。差在第三個面。</p>
+      </div>
+    </div>
   </section>
 
   <!-- §10 ranks（paper-h） -->
@@ -1302,6 +1350,14 @@ footer a { color: var(--color-link); text-decoration: none; }
         <p>本站的貢獻定位為：無條件封閉具名子家族（Saunderson、Case B at $p=1$、Sophie–Germain 質數尾巴）、在明確窗格解決特定開放 fiber（Peschmann 的 $(5,2)$）、精確算出家族 $E_q$ 的 Szpiro 與判別式結構，並標出初等與曲線理論方法停滯之處（Chabauty 在 genus-5 因 rank $=$ genus 失效；primitive-divisor 因「錯數列 + 偶次方」失效；無 Szpiro-free height 常數；無 birational 遞降）。沒有任何一篇宣稱解決 PCP——本站<strong>明確不是</strong>完美長方體問題的解答。所有結論與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補，並非取代。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
       </div>
     </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-methodmap" data-nav="chart-methodmap">
+        <h3>圖：方法 × 家族的封閉地圖</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">把游標移到任一格看一行說明。✓ = 本站在此封閉；✗ = 該方法在此失效；○ = 仍開放。完整 PCP 對所有方法都是 ○（曲面為 general type，受 Bombieri–Lang／Vojta 支配）。</p>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -1379,229 +1435,750 @@ function observeAllCharts() {
   });
 }
 
-// === V1: cuboid schematic ===
+// === shared number helpers (no overflow: distinct-prime sets) ===
+function _gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){const t=a%b;a=b;b=t;}return a;}
+function _v2(n){n=Math.abs(n);let v=0;while(n>0&&n%2===0){v++;n/=2;}return v;}
+function _distinctPrimes(x){x=Math.abs(x);const s=new Set();for(let p=2;p*p<=x;p++){if(x%p===0){s.add(p);while(x%p===0)x/=p;}}if(x>1)s.add(x);return s;}
+function _factorStr(x){x=Math.abs(x);if(x<=1)return String(x);const parts=[];for(let p=2;p*p<=x;p++){if(x%p===0){let e=0;while(x%p===0){x/=p;e++;}parts.push(e>1?(p+'^'+e):String(p));}}if(x>1)parts.push(String(x));return parts.join('·');}
+function _isPowerful(x){x=Math.abs(x);if(x<=1)return false;let pw=true,had=false;for(let p=2;p*p<=x;p++){if(x%p===0){let e=0;while(x%p===0){x/=p;e++;}had=true;if(e<2){pw=false;}}}if(x>1){had=true;pw=false;}return had&&pw;}
+
+// === tooltip helper (shared) ===
+function _mkTip(wrap){
+  const tip = d3.select(wrap).append('div')
+    .style('position','absolute').style('pointer-events','none')
+    .style('background', tok('--bg-overlay','#dfe0e5'))
+    .style('color', tok('--text-primary','#1e2030'))
+    .style('border','1px solid '+tok('--border-subtle','#d5d6da'))
+    .style('border-radius','6px').style('padding','6px 10px')
+    .style('font-size','13px').style('line-height','1.4')
+    .style('max-width','260px').style('box-shadow','0 2px 8px rgba(0,0,0,0.15)')
+    .style('opacity',0).style('z-index',5);
+  return {
+    show(html,x,y){ tip.html(html).style('left',(x+14)+'px').style('top',(y+8)+'px').style('opacity',1); },
+    hide(){ tip.style('opacity',0); }
+  };
+}
+function _ctrlBar(wrap){
+  return d3.select(wrap).append('div')
+    .style('display','flex').style('flex-wrap','wrap').style('align-items','center')
+    .style('gap','0.5rem').style('margin-bottom','0.75rem')
+    .style('font-size','14px').style('color', tok('--text-secondary','#5e6070'));
+}
+
+// === V1 (UPGRADED): interactive cuboid with presets + face-quantity table ===
 defineChart('chart-cuboid', (wrap, width) => {
-  const height = Math.min(420, Math.round(width * 0.62));
+  d3.select(wrap).style('position','relative');
   const cPass = tok('--color-pass', '#1e8050');
   const cCrit = tok('--color-critical', '#c93135');
   const cText = tok('--text-primary', '#1e2030');
   const cMuted = tok('--text-muted', '#8a8c98');
-  const svg = d3.select(wrap).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('width', '100%').attr('height', height)
-    .attr('role', 'img')
-    .attr('aria-label', '長方體示意圖，標出三個邊、三個面對角線（綠）與體對角線（紅）');
-
-  // box geometry (front face + depth offset)
-  const m = Math.min(width, height);
-  const w = m * 0.42, h = m * 0.30, d = m * 0.22;
-  const ox = width * 0.30, oy = height * 0.62;
-  // front-bottom-left as origin
-  const A = [ox, oy];                 // front bottom left
-  const B = [ox + w, oy];             // front bottom right
-  const C = [ox + w, oy - h];         // front top right
-  const D = [ox, oy - h];             // front top left
-  const A2 = [A[0] + d, A[1] - d];    // back bottom left
-  const B2 = [B[0] + d, B[1] - d];
-  const C2 = [C[0] + d, C[1] - d];
-  const D2 = [D[0] + d, D[1] - d];
   const cBorder = tok('--text-secondary', '#5e6070');
 
-  const line = (p, q, color, wdt, dash) => svg.append('line')
-    .attr('x1', p[0]).attr('y1', p[1]).attr('x2', q[0]).attr('y2', q[1])
-    .attr('stroke', color).attr('stroke-width', wdt)
-    .attr('stroke-dasharray', dash || null);
+  // presets: Euler brick (faces square, space NOT) and near-miss (11,71)-brick
+  const presets = {
+    euler: {name:'Euler brick (44,117,240)', a:44, b:117, c:240},
+    near:  {name:'near-miss (3124,4557,9840)', a:3124, b:4557, c:9840}
+  };
+  let cur = 'euler';
 
-  // box edges (frame, neutral)
-  [[A,B],[B,C],[C,D],[D,A],[A2,B2],[B2,C2],[C2,D2],[D2,A2],[A,A2],[B,B2],[C,C2],[D,D2]]
-    .forEach(([p,q]) => line(p,q,cBorder,1.5));
+  const bar = _ctrlBar(wrap);
+  bar.append('span').text('選擇盒子：');
+  const btnE = bar.append('button').attr('type','button').text('Euler brick (44,117,240)');
+  const btnN = bar.append('button').attr('type','button').text('near-miss (11,71)-brick');
+  [btnE,btnN].forEach(b=>b.style('padding','0.25rem 0.7rem').style('cursor','pointer')
+    .style('border','1px solid '+tok('--border-subtle','#d5d6da'))
+    .style('border-radius','5px').style('background', tok('--bg-base','#f5f6f8'))
+    .style('font-size','13px').style('color', tok('--text-primary','#1e2030')));
 
-  // three EDGES highlighted green (length a,b,c)
-  line(A,B,cPass,4);      // width
-  line(A,D,cPass,4);      // height
-  line(A,A2,cPass,4);     // depth
-  // three FACE diagonals green dashed
-  line(A,C,cPass,2.5,'6 4');     // front face
-  line(A,B2,cPass,2.5,'6 4');    // bottom face
-  line(A,D2,cPass,2.5,'6 4');    // left face
-  // SPACE diagonal red
-  line(A,C2,cCrit,4);
+  const svgWrap = d3.select(wrap).append('div');
 
-  const label = (p, txt, color, dy) => svg.append('text')
-    .attr('x', p[0]).attr('y', p[1] + (dy||0))
-    .attr('fill', color).attr('font-size', Math.max(13, m*0.038) + 'px')
-    .attr('font-weight', 600).text(txt);
+  function isPerfSq(nStr){ // nStr is a number; for huge use exact via BigInt
+    const n = BigInt(nStr);
+    if(n<0n) return {ok:false, root:'-'};
+    // integer sqrt
+    let x = BigInt(Math.floor(Math.sqrt(Number(n))));
+    while(x*x>n) x--; while((x+1n)*(x+1n)<=n) x++;
+    return {ok: x*x===n, root: x.toString()};
+  }
 
-  label([(A[0]+B[0])/2 - 6, A[1] + 22], '邊 a', cPass);
-  label([A[0] - 44, (A[1]+D[1])/2], '邊 b', cPass);
-  label([(A[0]+A2[0])/2 - 30, (A[1]+A2[1])/2 + 22], '邊 c', cPass);
-  label([C2[0] + 8, C2[1] - 6], '體對角線', cCrit);
-  svg.append('text').attr('x', width*0.5).attr('y', height - 8)
-    .attr('text-anchor','middle').attr('fill', cMuted)
-    .attr('font-size', Math.max(12, m*0.032)+'px')
-    .text('綠：3 邊 + 3 面對角線（Euler brick）｜紅：體對角線（完美長方體額外要求）');
+  function draw(){
+    svgWrap.selectAll('*').remove();
+    const P = presets[cur];
+    const a=P.a, b=P.b, c=P.c;
+    const height = Math.min(360, Math.round(width * 0.5));
+    const svg = svgWrap.append('svg')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('width','100%').attr('height', height)
+      .attr('role','img')
+      .attr('aria-label','長方體示意圖，三邊與三面對角線（綠）、體對角線（紅）');
+    const m = Math.min(width, height);
+    const w=m*0.40, h=m*0.28, dd=m*0.20;
+    const ox=width*0.14, oy=height*0.74;
+    const A=[ox,oy], B=[ox+w,oy], C=[ox+w,oy-h], D=[ox,oy-h];
+    const A2=[A[0]+dd,A[1]-dd], B2=[B[0]+dd,B[1]-dd], C2=[C[0]+dd,C[1]-dd], D2=[D[0]+dd,D[1]-dd];
+    const line=(p,q,col,wd,dash)=>svg.append('line').attr('x1',p[0]).attr('y1',p[1]).attr('x2',q[0]).attr('y2',q[1]).attr('stroke',col).attr('stroke-width',wd).attr('stroke-dasharray',dash||null);
+    [[A,B],[B,C],[C,D],[D,A],[A2,B2],[B2,C2],[C2,D2],[D2,A2],[A,A2],[B,B2],[C,C2],[D,D2]].forEach(([p,q])=>line(p,q,cBorder,1.3));
+    line(A,B,cPass,4); line(A,D,cPass,4); line(A,A2,cPass,4);
+    line(A,C,cPass,2,'6 4'); line(A,B2,cPass,2,'6 4'); line(A,D2,cPass,2,'6 4');
+    line(A,C2,cCrit,4);
+    const lab=(p,t,col,dx,dy)=>svg.append('text').attr('x',p[0]+(dx||0)).attr('y',p[1]+(dy||0)).attr('fill',col).attr('font-size',Math.max(12,m*0.034)+'px').attr('font-weight',600).text(t);
+    lab([(A[0]+B[0])/2,A[1]],'邊 a',cPass,-6,20);
+    lab([A[0],(A[1]+D[1])/2],'邊 b',cPass,-40,0);
+    lab([(A[0]+A2[0])/2,(A[1]+A2[1])/2],'邊 c',cPass,-30,22);
+    svg.append('text').attr('x',ox).attr('y',16).attr('fill',cText).attr('font-size',Math.max(13,m*0.036)+'px').attr('font-weight',700).text(P.name);
+
+    // bar/table of four quantities on the right
+    const quants = [
+      {lbl:'a²+b² (面)', val: a*a+b*b},
+      {lbl:'a²+c² (面)', val: a*a+c*c},
+      {lbl:'b²+c² (面)', val: b*b+c*c},
+      {lbl:'a²+b²+c² (體對角線)', val: a*a+b*b+c*c}
+    ];
+    const tx = width*0.56, ty = height*0.18, rowH = Math.min(46,(height*0.62)/4);
+    quants.forEach((q,i)=>{
+      const r = isPerfSq(q.val);
+      const col = r.ok ? cPass : cCrit;
+      const yy = ty + i*rowH;
+      svg.append('rect').attr('x',tx).attr('y',yy).attr('width',16).attr('height',16).attr('rx',3).attr('fill',col);
+      svg.append('text').attr('x',tx+24).attr('y',yy+13).attr('fill',cText).attr('font-size',Math.max(11,m*0.030)+'px')
+        .text(q.lbl + ' = ' + q.val.toLocaleString());
+      svg.append('text').attr('x',tx+24).attr('y',yy+13+ (Math.max(13,m*0.032)))
+        .attr('fill',col).attr('font-size',Math.max(11,m*0.029)+'px').attr('font-weight',600)
+        .text(r.ok ? ('√ = '+r.root+' ✓ 完全平方') : ('√ ≈ '+r.root+'… ✗ 非平方'));
+    });
+    svg.append('text').attr('x',width*0.5).attr('y',height-6).attr('text-anchor','middle')
+      .attr('fill',cMuted).attr('font-size',Math.max(11,m*0.030)+'px')
+      .text('綠 = 完全平方｜紅 = 非平方');
+  }
+  btnE.on('click',()=>{cur='euler';draw();});
+  btnN.on('click',()=>{cur='near';draw();});
+  draw();
 });
 
-// === V2: rank histogram 118/137/45/3 ===
-defineChart('chart-rank-hist', (wrap, width) => {
-  const data = [
-    {rank: 'rank 0', n: 118},
-    {rank: 'rank 1', n: 137},
-    {rank: 'rank 2', n: 45},
-    {rank: 'rank 3', n: 3}
-  ];
-  const height = 360;
-  const margin = {top: 20, right: 20, bottom: 50, left: 56};
-  const iw = width - margin.left - margin.right;
-  const ih = height - margin.top - margin.bottom;
+// === NEW: per-fiber elliptic curve E_q with 8 torsion points + recovery map ===
+defineChart('chart-ellcurve', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
   const cInfo = tok('--color-info', '#2a6bb8');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cPass = tok('--color-pass', '#1e8050');
   const cHigh = tok('--color-high', '#b86a2a');
   const cText = tok('--text-primary', '#1e2030');
   const cMuted = tok('--text-muted', '#8a8c98');
-  const cBorder = tok('--border-subtle', '#d5d6da');
+  const tip = _mkTip(wrap);
 
-  const svg = d3.select(wrap).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('width', '100%').attr('height', height)
-    .attr('role', 'img')
-    .attr('aria-label', '303 個 fiber 的 rank 直方圖：rank 0 共 118、rank 1 共 137、rank 2 共 45、rank 3 共 3');
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+  // Pythagorean q values
+  const qs = [ {label:'q = 3/4', q:0.75}, {label:'q = 5/12', q:5/12}, {label:'q = 20/21', q:20/21} ];
+  let qi = 0;
 
-  const x = d3.scaleBand().domain(data.map(d=>d.rank)).range([0, iw]).padding(0.28);
-  const y = d3.scaleLinear().domain([0, 150]).range([ih, 0]);
+  const bar = _ctrlBar(wrap);
+  bar.append('span').text('Pythagorean q：');
+  const sld = bar.append('input').attr('type','range').attr('min',0).attr('max',qs.length-1).attr('step',1).attr('value',0).style('flex','1').style('min-width','120px');
+  const qlab = bar.append('strong').text(qs[0].label);
 
-  g.append('g').attr('transform', `translate(0,${ih})`).call(d3.axisBottom(x))
-    .selectAll('text').attr('font-size','14px').attr('fill', cText);
-  g.append('g').call(d3.axisLeft(y).ticks(5))
-    .selectAll('text').attr('font-size','13px').attr('fill', cMuted);
+  const plot = d3.select(wrap).append('div');
 
-  g.selectAll('.bar').data(data).enter().append('rect')
-    .attr('x', d=>x(d.rank)).attr('y', d=>y(d.n))
-    .attr('width', x.bandwidth()).attr('height', d=>ih - y(d.n))
-    .attr('rx', 4)
-    .attr('fill', d=> d.rank==='rank 3' ? cHigh : cInfo);
+  function draw(){
+    plot.selectAll('*').remove();
+    const q = qs[qi].q;
+    const q2 = q*q;
+    const height = Math.min(420, Math.round(width*0.66));
+    const margin = {top:18,right:18,bottom:40,left:46};
+    const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+    const svg = plot.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','橢圓曲線 E_q 的實圖與 8 個 torsion 點');
+    const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    // x range: a bit left of -max(1,q2), to +1.5
+    const xmin = -Math.max(1,q2) - 0.6, xmax = 1.6;
+    // sample y on the two real branches where x(x+1)(x+q2) >= 0
+    const ymaxV = Math.max(1.2, Math.abs(2*q2));
+    const x = d3.scaleLinear().domain([xmin,xmax]).range([0,iw]);
+    const y = d3.scaleLinear().domain([-ymaxV,ymaxV]).range([ih,0]);
+    g.append('g').attr('transform',`translate(0,${y(0)})`).call(d3.axisBottom(x).ticks(6)).selectAll('text').attr('font-size','11px').attr('fill',cMuted);
+    g.append('g').attr('transform',`translate(${x(0)},0)`).call(d3.axisLeft(y).ticks(5)).selectAll('text').attr('font-size','11px').attr('fill',cMuted);
 
-  g.selectAll('.lbl').data(data).enter().append('text')
-    .attr('x', d=>x(d.rank)+x.bandwidth()/2).attr('y', d=>y(d.n)-8)
-    .attr('text-anchor','middle').attr('fill', cText)
-    .attr('font-size','15px').attr('font-weight',600).text(d=>d.n);
+    // build curve segments (where rhs>=0)
+    const N=600; const segs=[]; let curUp=[],curDn=[];
+    for(let i=0;i<=N;i++){
+      const xx = xmin + (xmax-xmin)*i/N;
+      const rhs = xx*(xx+1)*(xx+q2);
+      if(rhs>=0){
+        const yy=Math.sqrt(rhs);
+        curUp.push([xx,yy]); curDn.push([xx,-yy]);
+      } else { if(curUp.length){segs.push(curUp);segs.push(curDn);curUp=[];curDn=[];} }
+    }
+    if(curUp.length){segs.push(curUp);segs.push(curDn);}
+    const lg = d3.line().x(d=>x(d[0])).y(d=>y(d[1]));
+    segs.forEach(s=>g.append('path').datum(s).attr('fill','none').attr('stroke',cInfo).attr('stroke-width',2.2).attr('d',lg));
 
-  svg.append('text').attr('x', margin.left).attr('y', 14)
-    .attr('fill', cMuted).attr('font-size','13px')
-    .text('（橘色 rank 3 含經認證的 (22,17) fiber）');
+    // 8 torsion points
+    // 2-torsion: (0,0),(-1,0),(-q2,0) -> phi=0 ; order-4: (±q, ±q(q±1)) -> phi=inf
+    const tors = [
+      {x:0,    y:0,        kind:'2t'}, {x:-1, y:0, kind:'2t'}, {x:-q2, y:0, kind:'2t'},
+      {x:q,    y: q*(q+1), kind:'o4'}, {x:q,  y:-q*(q+1), kind:'o4'},
+      {x:-q,   y: q*(q-1), kind:'o4'}, {x:-q, y:-q*(q-1), kind:'o4'}
+    ];
+    // O (identity) shown as a flag, not on affine plane
+    g.selectAll('.tp').data(tors).enter().append('circle')
+      .attr('cx',d=>x(d.x)).attr('cy',d=>y(d.y)).attr('r',7)
+      .attr('fill',d=>d.kind==='2t'?cPass:cHigh)
+      .attr('stroke',tok('--bg-base','#f5f6f8')).attr('stroke-width',2)
+      .style('cursor','pointer')
+      .on('mousemove',function(ev,d){
+        const phi = d.kind==='2t' ? 'φ = 0（分子 2yq = 0）' : 'φ = ∞（分母 q²−x² = 0，極點）';
+        const kindTxt = d.kind==='2t' ? '2-torsion 點' : 'order-4 點';
+        const [mx,my]=d3.pointer(ev, wrap);
+        tip.show(`<b>${kindTxt}</b><br>(x,y) ≈ (${d.x.toFixed(3)}, ${d.y.toFixed(3)})<br>recovery map ${phi}<br><span style="color:${cMuted}">→ 退化盒子</span>`, mx, my);
+      })
+      .on('mouseleave',()=>tip.hide());
+
+    svg.append('text').attr('x',margin.left).attr('y',12).attr('fill',cText).attr('font-size','13px').attr('font-weight',700)
+      .text('E_q : y² = x(x+1)(x+q²)');
+    g.append('text').attr('x',iw).attr('y',ih-22).attr('text-anchor','end').attr('fill',cPass).attr('font-size','12px').attr('font-weight',600).text('● 綠 = 3 個 2-torsion → φ=0');
+    g.append('text').attr('x',iw).attr('y',ih-6).attr('text-anchor','end').attr('fill',cHigh).attr('font-size','12px').attr('font-weight',600).text('● 橘 = 4 個 order-4 → φ=∞（連同 O 共 8 點）');
+  }
+  sld.on('input',function(){ qi=+this.value; qlab.text(qs[qi].label); draw(); });
+  draw();
 });
 
-// === V3: Lucas sequence, mark squares L1=1, L3=4 ===
-defineChart('chart-lucas', (wrap, width) => {
-  // Lucas numbers L1..L9 (odd-indexed emphasised). L1=1,L2=3,L3=4,L4=7,L5=11,L6=18,L7=29,L8=47,L9=76
-  const lucas = [
-    {i:1, v:1, sq:true}, {i:2, v:3}, {i:3, v:4, sq:true}, {i:4, v:7},
-    {i:5, v:11}, {i:6, v:18}, {i:7, v:29}, {i:8, v:47}, {i:9, v:76}
+// === NEW: Saunderson reduction funnel ===
+defineChart('chart-saunderson', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cInfo = tok('--color-info', '#2a6bb8');
+  const cPass = tok('--color-pass', '#1e8050');
+  const cHigh = tok('--color-high', '#b86a2a');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cText = tok('--text-primary', '#1e2030');
+  const cMuted = tok('--text-muted', '#8a8c98');
+
+  const stages = [
+    {obj:'genus-3 octic C′', sub:'T²=t⁸+68t⁶−122t⁴+68t²+1', dim:1.0, note:'有理點無窮多——直接搜尋不可行。'},
+    {obj:'palindrome W=t+1/t', sub:"C′pal : S²=W⁴+64W²−256", dim:0.78, note:'係數回文，除 t⁴ 後用 W=t+1/t 對稱化，降一維。'},
+    {obj:'提升 W²−4=T₀²', sub:'T₀=t−1/t', dim:0.52, note:'t 可逆性逼出 W²−4 為平方，把 rank 從 1 壓到 0。'},
+    {obj:'genus-1 C₀', sub:'S²=T₀⁴+72T₀²+16, Jac=80a1, rank 0', dim:0.30, note:'Jacobian 是 Cremona 80a1，rank 0，有理點有限。'},
+    {obj:'C₀(ℚ) 只有 4 點', sub:'(0,±4), ∞±', dim:0.13, note:'四個有理點全退化（某邊為 0）。Saunderson 整族無完美長方體。'}
+  ];
+  let sel = 0;
+
+  const svgWrap = d3.select(wrap).append('div');
+  const noteBox = d3.select(wrap).append('div')
+    .style('margin-top','0.6rem').style('padding','0.6rem 0.9rem')
+    .style('background', tok('--bg-surface','#ecedf0')).style('border-radius','6px')
+    .style('font-size','14px').style('color', tok('--text-primary','#1e2030')).style('min-height','2.6em');
+
+  function draw(){
+    svgWrap.selectAll('*').remove();
+    const n = stages.length;
+    const height = Math.min(70*n+30, 420);
+    const margin = {top:16,right:16,bottom:16,left:16};
+    const iw = width-margin.left-margin.right;
+    const rowH = (height-margin.top-margin.bottom)/n;
+    const svg = svgWrap.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','Saunderson 化約漏斗，維度逐步下降');
+    const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    stages.forEach((s,i)=>{
+      const bw = iw*s.dim;
+      const bx = (iw-bw)/2;
+      const by = i*rowH+6;
+      const col = i===n-1 ? cCrit : (i===0 ? cInfo : cHigh);
+      // connecting funnel arrow
+      if(i>0){ g.append('line').attr('x1',iw/2).attr('y1',(i-1)*rowH+rowH-2).attr('x2',iw/2).attr('y2',by).attr('stroke',cMuted).attr('stroke-width',1.5).attr('marker-end',null); }
+      g.append('rect').attr('x',bx).attr('y',by).attr('width',bw).attr('height',rowH-14).attr('rx',6)
+        .attr('fill', i===sel ? col : tok('--bg-surface','#ecedf0'))
+        .attr('stroke',col).attr('stroke-width', i===sel?2.5:1.5).style('cursor','pointer')
+        .on('click',()=>{sel=i;draw();});
+      g.append('text').attr('x',iw/2).attr('y',by+(rowH-14)/2-2).attr('text-anchor','middle')
+        .attr('fill', i===sel ? tok('--bg-base','#f5f6f8') : cText).attr('font-size','13px').attr('font-weight',700)
+        .style('pointer-events','none').text(s.obj);
+      g.append('text').attr('x',iw/2).attr('y',by+(rowH-14)/2+14).attr('text-anchor','middle')
+        .attr('fill', i===sel ? tok('--bg-base','#f5f6f8') : cMuted).attr('font-size','10.5px')
+        .style('pointer-events','none').text(s.sub);
+    });
+    noteBox.html('<b>'+stages[sel].obj+'：</b>'+stages[sel].note);
+  }
+  draw();
+});
+
+// === V2 (UPGRADED): rank histogram with hover %, rank-3 annotated ===
+defineChart('chart-rank-hist', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const total = 303;
+  const data = [
+    {rank:'rank 0', n:118}, {rank:'rank 1', n:137}, {rank:'rank 2', n:45}, {rank:'rank 3', n:3}
   ];
   const height = 360;
-  const margin = {top: 24, right: 24, bottom: 46, left: 50};
-  const iw = width - margin.left - margin.right;
-  const ih = height - margin.top - margin.bottom;
-  const cInfo = tok('--color-info', '#2a6bb8');
-  const cCrit = tok('--color-critical', '#c93135');
-  const cText = tok('--text-primary', '#1e2030');
-  const cMuted = tok('--text-muted', '#8a8c98');
+  const margin = {top:24,right:20,bottom:50,left:56};
+  const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cHigh = tok('--color-high','#b86a2a');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
 
-  const svg = d3.select(wrap).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('width','100%').attr('height', height)
-    .attr('role','img')
-    .attr('aria-label','Lucas 數列折線，標出唯二完全平方 L1=1 與 L3=4');
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+  const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+    .attr('role','img').attr('aria-label','303 個 fiber 的 rank 直方圖 118/137/45/3');
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  const x = d3.scaleBand().domain(data.map(d=>d.rank)).range([0,iw]).padding(0.28);
+  const y = d3.scaleLinear().domain([0,150]).range([ih,0]);
+  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x)).selectAll('text').attr('font-size','14px').attr('fill',cText);
+  g.append('g').call(d3.axisLeft(y).ticks(5)).selectAll('text').attr('font-size','13px').attr('fill',cMuted);
 
-  const x = d3.scalePoint().domain(lucas.map(d=>d.i)).range([0, iw]).padding(0.5);
-  const y = d3.scaleLinear().domain([0, 80]).range([ih, 0]);
+  g.selectAll('.bar').data(data).enter().append('rect')
+    .attr('x',d=>x(d.rank)).attr('y',d=>y(d.n)).attr('width',x.bandwidth()).attr('height',d=>ih-y(d.n)).attr('rx',4)
+    .attr('fill',d=>d.rank==='rank 3'?cHigh:cInfo).style('cursor','pointer')
+    .on('mousemove',function(ev,d){const [mx,my]=d3.pointer(ev,wrap);const pct=(100*d.n/total).toFixed(2);const extra=d.rank==='rank 3'?'<br><span style="color:'+cHigh+'">含經認證的 (22,17)</span>':'';tip.show(`<b>${d.rank}</b><br>${d.n} 個（${pct}%）${extra}`,mx,my);})
+    .on('mouseleave',()=>tip.hide());
 
-  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).tickFormat(d=>'L'+d))
-    .selectAll('text').attr('font-size','13px').attr('fill', cText);
-  g.append('g').call(d3.axisLeft(y).ticks(5))
-    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
-
-  const lineGen = d3.line().x(d=>x(d.i)).y(d=>y(d.v));
-  g.append('path').datum(lucas).attr('fill','none')
-    .attr('stroke', cInfo).attr('stroke-width', 2.5).attr('d', lineGen);
-
-  g.selectAll('.pt').data(lucas).enter().append('circle')
-    .attr('cx', d=>x(d.i)).attr('cy', d=>y(d.v))
-    .attr('r', d=>d.sq?8:5)
-    .attr('fill', d=>d.sq?cCrit:cInfo)
-    .attr('stroke','#fff').attr('stroke-width', d=>d.sq?2:1);
-
-  g.selectAll('.sqlbl').data(lucas.filter(d=>d.sq)).enter().append('text')
-    .attr('x', d=>x(d.i)).attr('y', d=>y(d.v)-14)
-    .attr('text-anchor','middle').attr('fill', cCrit)
-    .attr('font-size','14px').attr('font-weight',700)
-    .text(d=>`L${d.i}=${d.v} ▢`);
-
-  svg.append('text').attr('x', width/2).attr('y', height-8)
-    .attr('text-anchor','middle').attr('fill', cMuted).attr('font-size','13px')
-    .text('紅點 = 完全平方（僅 L1, L3）→ Cohn 1964 ⇒ q∈{1,2}，皆退化');
+  g.selectAll('.lbl').data(data).enter().append('text')
+    .attr('x',d=>x(d.rank)+x.bandwidth()/2).attr('y',d=>y(d.n)-8).attr('text-anchor','middle')
+    .attr('fill',cText).attr('font-size','15px').attr('font-weight',600).text(d=>d.n);
+  // rank-3 annotation
+  const d3bar = data[3];
+  g.append('text').attr('x',x(d3bar.rank)+x.bandwidth()/2).attr('y',y(d3bar.n)-26).attr('text-anchor','middle')
+    .attr('fill',cHigh).attr('font-size','12px').attr('font-weight',700).text('含 (22,17)');
+  svg.append('text').attr('x',margin.left).attr('y',14).attr('fill',cMuted).attr('font-size','13px').text('（滑過長條看個數與佔比）');
 });
 
-// === V4: Szpiro scatter, sigma_max=4.6140 at (256,121) ===
-defineChart('chart-szpiro', (wrap, width) => {
-  // synthetic-but-faithful illustration: most points <= 4 band, one outlier 4.6140
-  const cInfo = tok('--color-info', '#2a6bb8');
-  const cCrit = tok('--color-critical', '#c93135');
-  const cPass = tok('--color-pass', '#1e8050');
-  const cText = tok('--text-primary', '#1e2030');
-  const cMuted = tok('--text-muted', '#8a8c98');
+// === NEW: rank vs genus for Chabauty condition ===
+defineChart('chart-rank-genus', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cPass = tok('--color-pass','#1e8050');
+  const cCrit = tok('--color-critical','#c93135');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
 
-  const rng = (() => { let s = 20260527; return () => { s = (s*1103515245 + 12345) & 0x7fffffff; return s / 0x7fffffff; }; })();
-  const pts = [];
-  for (let i = 0; i < 90; i++) {
-    const p = 8 + rng() * 280;
-    let sig = 2.2 + rng() * 1.7;            // density-one band, mostly <= 4
-    if (rng() > 0.93) sig = 4.0 + rng() * 0.35; // a few near 4
-    pts.push({p, sig});
+  const cases = [
+    {name:'可用：rank 1 < genus 2', rank:1, genus:2, ok:true,  note:'rank 嚴格小於 genus，Chabauty–Coleman 可夾住有理點。'},
+    {name:'本文 C：rank 5 = genus 5', rank:5, genus:5, ok:false, note:'rank 等於 genus，Chabauty 用不上——印證 Peschmann 的疑慮。'}
+  ];
+  let ci = 0;
+
+  const bar = _ctrlBar(wrap);
+  bar.append('span').text('案例：');
+  const sld = bar.append('input').attr('type','range').attr('min',0).attr('max',1).attr('step',1).attr('value',0).style('flex','1').style('min-width','100px');
+  const clab = bar.append('strong').text(cases[0].name);
+
+  const plot = d3.select(wrap).append('div');
+  function draw(){
+    plot.selectAll('*').remove();
+    const C = cases[ci];
+    const height = 300;
+    const margin = {top:24,right:20,bottom:60,left:46};
+    const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+    const svg = plot.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','rank 對 genus 長條比較');
+    const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    const cats = [{k:'rank',v:C.rank},{k:'genus',v:C.genus}];
+    const x = d3.scaleBand().domain(cats.map(d=>d.k)).range([0,iw]).padding(0.4);
+    const y = d3.scaleLinear().domain([0,6]).range([ih,0]);
+    g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x)).selectAll('text').attr('font-size','14px').attr('fill',cText);
+    g.append('g').call(d3.axisLeft(y).ticks(6)).selectAll('text').attr('font-size','12px').attr('fill',cMuted);
+    const col = C.ok ? cPass : cCrit;
+    g.selectAll('.b').data(cats).enter().append('rect')
+      .attr('x',d=>x(d.k)).attr('y',d=>y(d.v)).attr('width',x.bandwidth()).attr('height',d=>ih-y(d.v)).attr('rx',5)
+      .attr('fill',d=>d.k==='rank'?col:cMuted);
+    g.selectAll('.bl').data(cats).enter().append('text')
+      .attr('x',d=>x(d.k)+x.bandwidth()/2).attr('y',d=>y(d.v)-8).attr('text-anchor','middle')
+      .attr('fill',cText).attr('font-size','16px').attr('font-weight',700).text(d=>d.v);
+    svg.append('text').attr('x',width/2).attr('y',16).attr('text-anchor','middle').attr('fill',col).attr('font-size','14px').attr('font-weight',700)
+      .text(C.ok ? 'rank < genus ✓ Chabauty 可用' : 'rank = genus ✗ Chabauty 用不上');
+    svg.append('text').attr('x',width/2).attr('y',height-32).attr('text-anchor','middle').attr('fill',cMuted).attr('font-size','12px').text(C.note);
   }
-  const outlier = {p: 256, sig: 4.6140, label: '(256,121)'};
+  sld.on('input',function(){ci=+this.value;clab.text(cases[ci].name);draw();});
+  draw();
+});
 
-  const height = 360;
-  const margin = {top: 24, right: 24, bottom: 48, left: 52};
-  const iw = width - margin.left - margin.right;
-  const ih = height - margin.top - margin.bottom;
+// === V3 (UPGRADED): Lucas sequence, squares marked, hover, Pell-orbit toggle ===
+defineChart('chart-lucas', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const lucas = [
+    {i:1,v:1,sq:true},{i:2,v:3},{i:3,v:4,sq:true},{i:4,v:7},{i:5,v:11},
+    {i:6,v:18},{i:7,v:29},{i:8,v:47},{i:9,v:76},{i:10,v:123},{i:11,v:199}
+  ];
+  // Pell orbit Y_n = L_{2n-1} = 1,4,11,29,76,199 (the values q^2 must be)
+  const pell = [1,4,11,29,76,199].map((v,k)=>{const L=lucas.find(d=>d.v===v);return {i:L.i, v:v};});
+  let showPell = false;
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cCrit = tok('--color-critical','#c93135');
+  const cHigh = tok('--color-high','#b86a2a');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
 
-  const svg = d3.select(wrap).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('width','100%').attr('height', height)
-    .attr('role','img')
-    .attr('aria-label','Szpiro ratio 散佈圖，密度一帶 ≤4，最大值 4.6140 於 (256,121)');
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+  const bar = _ctrlBar(wrap);
+  const btn = bar.append('button').attr('type','button').text('疊上 Pell 軌道 Y_n = L₂ₙ₋₁')
+    .style('padding','0.25rem 0.7rem').style('cursor','pointer')
+    .style('border','1px solid '+tok('--border-subtle','#d5d6da')).style('border-radius','5px')
+    .style('background', tok('--bg-base','#f5f6f8')).style('font-size','13px').style('color',cText);
 
-  const x = d3.scaleLinear().domain([0, 300]).range([0, iw]);
-  const y = d3.scaleLinear().domain([2, 5]).range([ih, 0]);
+  const plot = d3.select(wrap).append('div');
+  function draw(){
+    plot.selectAll('*').remove();
+    const height = 360;
+    const margin = {top:24,right:24,bottom:46,left:54};
+    const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+    const svg = plot.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','Lucas 數列，唯二完全平方 L1=1 L3=4');
+    const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    const x = d3.scalePoint().domain(lucas.map(d=>d.i)).range([0,iw]).padding(0.5);
+    const y = d3.scaleLinear().domain([0,210]).range([ih,0]);
+    g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).tickFormat(d=>'L'+d)).selectAll('text').attr('font-size','12px').attr('fill',cText);
+    g.append('g').call(d3.axisLeft(y).ticks(5)).selectAll('text').attr('font-size','12px').attr('fill',cMuted);
+    const lg = d3.line().x(d=>x(d.i)).y(d=>y(d.v));
+    g.append('path').datum(lucas).attr('fill','none').attr('stroke',cInfo).attr('stroke-width',2.2).attr('d',lg);
+    if(showPell){
+      g.selectAll('.po').data(pell).enter().append('circle')
+        .attr('cx',d=>x(d.i)).attr('cy',d=>y(d.v)).attr('r',12).attr('fill','none')
+        .attr('stroke',cHigh).attr('stroke-width',2.5);
+      g.append('text').attr('x',0).attr('y',-6).attr('fill',cHigh).attr('font-size','12px').attr('font-weight',600)
+        .text('橘圈 = Pell 軌道 Y_n（q² 必須是這些值）');
+    }
+    g.selectAll('.pt').data(lucas).enter().append('circle')
+      .attr('cx',d=>x(d.i)).attr('cy',d=>y(d.v)).attr('r',d=>d.sq?8:5)
+      .attr('fill',d=>d.sq?cCrit:cInfo).attr('stroke',tok('--bg-base','#f5f6f8')).attr('stroke-width',d=>d.sq?2:1)
+      .style('cursor','pointer')
+      .on('mousemove',function(ev,d){const [mx,my]=d3.pointer(ev,wrap);tip.show(`<b>L${d.i} = ${d.v}</b><br>${d.sq?'<span style="color:'+cCrit+'">是完全平方 ✓</span>':'不是完全平方'}`,mx,my);})
+      .on('mouseleave',()=>tip.hide());
+    g.selectAll('.sl').data(lucas.filter(d=>d.sq)).enter().append('text')
+      .attr('x',d=>x(d.i)).attr('y',d=>y(d.v)-14).attr('text-anchor','middle').attr('fill',cCrit).attr('font-size','14px').attr('font-weight',700).text(d=>`L${d.i}=${d.v} ▢`);
+    svg.append('text').attr('x',width/2).attr('y',height-8).attr('text-anchor','middle').attr('fill',cMuted).attr('font-size','12px')
+      .text('紅點 = 完全平方（僅 L₁, L₃）→ Cohn 1964 ⇒ q∈{1,2}，皆退化');
+  }
+  btn.on('click',()=>{showPell=!showPell;btn.text(showPell?'隱藏 Pell 軌道':'疊上 Pell 軌道 Y_n = L₂ₙ₋₁');draw();});
+  draw();
+});
 
-  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).ticks(6))
-    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
-  g.append('g').call(d3.axisLeft(y).ticks(6))
-    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
+// === NEW: Face-3 square test for q=20/21, n=1..10 ===
+defineChart('chart-facetest', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cCrit = tok('--color-critical','#c93135');
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cHigh = tok('--color-high','#b86a2a');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
 
-  // density-one <= 4 band line
-  g.append('line').attr('x1',0).attr('x2',iw).attr('y1',y(4)).attr('y2',y(4))
-    .attr('stroke', cPass).attr('stroke-width', 2).attr('stroke-dasharray','7 5');
-  g.append('text').attr('x', iw-4).attr('y', y(4)-8).attr('text-anchor','end')
-    .attr('fill', cPass).attr('font-size','13px').attr('font-weight',600)
-    .text('σ = 4（密度一上界）');
+  // known factorizations (verbatim); other n only need "not square" + a schematic note
+  const known = {
+    1: '13·17·89·181',
+    2: '37·89·277·521·2753·8089·22073'
+  };
+  // all n=1..10 are NOT squares (red ✗). n=5: prime 29 first appears but v29=2 (even power)
+  const ns = []; for(let n=1;n<=10;n++) ns.push(n);
+  let sel = 1;
+
+  const grid = d3.select(wrap).append('div').style('display','flex').style('flex-wrap','wrap').style('gap','0.4rem').style('margin-bottom','0.6rem');
+  ns.forEach(n=>{
+    const cell = grid.append('button').attr('type','button')
+      .style('flex','1 1 0').style('min-width','52px').style('cursor','pointer')
+      .style('border','1px solid '+tok('--border-subtle','#d5d6da')).style('border-radius','6px')
+      .style('padding','0.5rem 0.2rem').style('background',tok('--bg-base','#f5f6f8'))
+      .style('color',cText).style('font-size','13px').style('text-align','center');
+    cell.html(`n=${n}<br><span style="color:${cCrit};font-weight:700">✗</span>`);
+    if(n===5) cell.style('border-color',cHigh).style('border-width','2px');
+    cell.on('click',()=>{sel=n;render();});
+  });
+
+  const info = d3.select(wrap).append('div')
+    .style('padding','0.7rem 0.9rem').style('background',tok('--bg-surface','#ecedf0')).style('border-radius','6px')
+    .style('font-size','14px').style('color',cText).style('min-height','3.4em');
+
+  function render(){
+    let html = `<b>n = ${sel}：F₃(${sel}P) 是完全平方嗎？</b> <span style="color:${cCrit};font-weight:700">否 ✗</span><br>`;
+    if(known[sel]){
+      html += `N<sub>${sel}</sub> = ${known[sel]}<br><span style="color:${cMuted}">（多個相異、奇次方質因數承載非平方）</span>`;
+    } else if(sel===5){
+      html += `<span style="color:${cHigh};font-weight:600">質數 29 在此首次出現（n&lt;5 時 v₂₉=0），卻是偶次方 v₂₉(N₅)=2</span><br><span style="color:${cMuted}">→ 「冒出新質因數」不蘊含「非平方」。非平方由其餘質因數承載。</span>`;
+    } else {
+      html += `<span style="color:${cMuted}">N<sub>${sel}</sub> 裂成多個相異質數，issquare 決定性回 false（log|N_n| ∝ n²·ĥ(P) 快速增長）。</span>`;
+    }
+    info.html(html);
+  }
+  render();
+});
+
+// === V4 (UPGRADED): Szpiro scatter — REAL data computed in JS over m=2..40 grid ===
+defineChart('chart-szpiro', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cCrit = tok('--color-critical','#c93135');
+  const cPass = tok('--color-pass','#1e8050');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
+
+  // compute REAL sigma over the grid m=2..40, 1<=n<m, gcd=1, m != n mod 2
+  function computeSigma(m,n){
+    const a = m*m-n*n, b = 2*m*n, ab2 = a*a-b*b;
+    const e2 = _v2(b);
+    const oddb = b/Math.pow(2,e2);
+    const logDelta = (4*e2-8)*Math.log(2) + 4*Math.log(Math.abs(a)) + 4*Math.log(Math.abs(oddb)) + 2*Math.log(Math.abs(ab2));
+    const primes = new Set([..._distinctPrimes(a), ..._distinctPrimes(b), ..._distinctPrimes(ab2)]);
+    let logN=0; primes.forEach(p=>{logN+=Math.log(p);});
+    if(e2===2 && primes.has(2)) logN -= Math.log(2);
+    return {sigma: logDelta/logN, logN};
+  }
+  const pts=[];
+  for(let m=2;m<=40;m++)for(let n=1;n<m;n++){
+    if(_gcd(m,n)!==1) continue;
+    if(((m-n)%2)===0) continue; // m != n mod 2
+    const r = computeSigma(m,n);
+    pts.push({m,n,sigma:r.sigma,logN:r.logN});
+  }
+
+  const height = 380;
+  const margin = {top:24,right:24,bottom:50,left:52};
+  const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+  const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+    .attr('role','img').attr('aria-label','Szpiro ratio 散佈圖，真實計算，密度一帶 ≤4');
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  const xmax = d3.max(pts,d=>d.logN)*1.05;
+  const x = d3.scaleLinear().domain([0,xmax]).range([0,iw]);
+  const y = d3.scaleLinear().domain([2.4,4.8]).range([ih,0]);
+  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).ticks(6)).selectAll('text').attr('font-size','12px').attr('fill',cMuted);
+  g.append('g').call(d3.axisLeft(y).ticks(6)).selectAll('text').attr('font-size','12px').attr('fill',cMuted);
+  // density-one band sigma<=4
+  g.append('line').attr('x1',0).attr('x2',iw).attr('y1',y(4)).attr('y2',y(4)).attr('stroke',cPass).attr('stroke-width',2).attr('stroke-dasharray','7 5');
+  g.append('text').attr('x',iw-4).attr('y',y(4)-8).attr('text-anchor','end').attr('fill',cPass).attr('font-size','13px').attr('font-weight',600).text('σ ≤ 4（密度一上界）');
 
   g.selectAll('.spt').data(pts).enter().append('circle')
-    .attr('cx', d=>x(d.p)).attr('cy', d=>y(d.sig)).attr('r', 4)
-    .attr('fill', cInfo).attr('fill-opacity', 0.65);
+    .attr('cx',d=>x(d.logN)).attr('cy',d=>y(d.sigma)).attr('r',4.5)
+    .attr('fill',d=>d.sigma>4?cCrit:cInfo).attr('fill-opacity',0.7).style('cursor','pointer')
+    .on('mousemove',function(ev,d){const [mx,my]=d3.pointer(ev,wrap);tip.show(`<b>(m,n) = (${d.m},${d.n})</b><br>σ = ${d.sigma.toFixed(4)}<br>log N = ${d.logN.toFixed(3)}`,mx,my);})
+    .on('mouseleave',()=>tip.hide());
 
-  g.append('circle').attr('cx', x(outlier.p)).attr('cy', y(outlier.sig))
-    .attr('r', 8).attr('fill', cCrit).attr('stroke','#fff').attr('stroke-width',2);
-  g.append('text').attr('x', x(outlier.p)-12).attr('y', y(outlier.sig)-12)
-    .attr('text-anchor','end').attr('fill', cCrit).attr('font-size','14px').attr('font-weight',700)
-    .text('σ_max=4.6140 @ (256,121)');
+  // record annotation (256,121) outside plotted grid
+  g.append('text').attr('x',iw/2).attr('y',y(4.66)).attr('text-anchor','middle').attr('fill',cCrit).attr('font-size','13px').attr('font-weight',700)
+    .text('m≤800 實測極大 σ_max = 4.6140 於 (256,121)（在此格之外）');
 
-  svg.append('text').attr('x', width/2).attr('y', height-8)
-    .attr('text-anchor','middle').attr('fill', cMuted).attr('font-size','12px')
-    .text('橫軸：參數 ｜ 縱軸：Szpiro ratio σ（示意分佈，數值錨點為實測）');
+  svg.append('text').attr('x',width/2).attr('y',height-8).attr('text-anchor','middle').attr('fill',cMuted).attr('font-size','12px')
+    .text('每點 = 一個 fiber（m≤40，JS 即時計算）｜橫軸 log N ｜縱軸 σ');
+});
+
+// === NEW: Z[√2] exceptional locus lattice ===
+defineChart('chart-zsqrt2', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cCrit = tok('--color-critical','#c93135');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
+
+  const RANGE = 60;
+  let thresh = 1; // toggle via slider: 1 = mark any powerful F5/F6
+
+  const bar = _ctrlBar(wrap);
+  bar.append('span').text('顯示：');
+  const sld = bar.append('input').attr('type','range').attr('min',0).attr('max',1).attr('step',1).attr('value',1).style('flex','1').style('min-width','100px');
+  const slab = bar.append('strong').text('F₅ 或 F₆ 取 powerful 值（紅）');
+
+  const plot = d3.select(wrap).append('div');
+  function draw(){
+    plot.selectAll('*').remove();
+    const height = Math.min(width, 420);
+    const margin = {top:20,right:20,bottom:42,left:46};
+    const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+    const svg = plot.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','Z[√2] 例外軌跡格點圖');
+    const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    const x = d3.scaleLinear().domain([0,RANGE]).range([0,iw]);
+    const y = d3.scaleLinear().domain([0,RANGE]).range([ih,0]);
+    g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).ticks(6)).selectAll('text').attr('font-size','11px').attr('fill',cMuted);
+    g.append('g').call(d3.axisLeft(y).ticks(6)).selectAll('text').attr('font-size','11px').attr('fill',cMuted);
+    g.append('text').attr('x',iw).attr('y',ih+34).attr('text-anchor','end').attr('fill',cMuted).attr('font-size','12px').text('m →');
+    g.append('text').attr('x',-30).attr('y',-6).attr('fill',cMuted).attr('font-size','12px').text('n');
+
+    const dots=[];
+    for(let m=2;m<=RANGE;m++)for(let n=1;n<m;n++){
+      if(_gcd(m,n)!==1) continue;
+      if(((m-n)%2)===0) continue;
+      const F5 = (m-n)*(m-n)-2*n*n;
+      const F6 = (m+n)*(m+n)-2*n*n;
+      const exc = (thresh===1) && (_isPowerful(F5) || _isPowerful(F6));
+      dots.push({m,n,F5,F6,exc});
+    }
+    g.selectAll('.d').data(dots).enter().append('circle')
+      .attr('cx',d=>x(d.m)).attr('cy',d=>y(d.n)).attr('r',d=>d.exc?4.5:2.2)
+      .attr('fill',d=>d.exc?cCrit:cMuted).attr('fill-opacity',d=>d.exc?0.95:0.4).style('cursor','pointer')
+      .on('mousemove',function(ev,d){const [mx,my]=d3.pointer(ev,wrap);tip.show(`<b>(m,n) = (${d.m},${d.n})</b><br>F₅=(m−n)²−2n² = ${d.F5}<br>F₆=(m+n)²−2n² = ${d.F6}<br>${d.exc?'<span style="color:'+cCrit+'">powerful → 例外軌跡</span>':'一般（squarefree-ish）'}`,mx,my);})
+      .on('mouseleave',()=>tip.hide());
+    const nExc = dots.filter(d=>d.exc).length;
+    svg.append('text').attr('x',margin.left).attr('y',14).attr('fill',cCrit).attr('font-size','12px').attr('font-weight',600)
+      .text(`紅 = F₅ 或 F₆ 取 powerful 值（共 ${nExc} 點，排在稀疏 Pell 圓錐上）`);
+  }
+  sld.on('input',function(){thresh=+this.value;slab.text(thresh?'F₅ 或 F₆ 取 powerful 值（紅）':'全部視為一般（無例外）');draw();});
+  draw();
+});
+
+// === NEW: Sophie-Germain near-miss (11,71): 3 green / 1 red ===
+defineChart('chart-sg', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cPass = tok('--color-pass','#1e8050');
+  const cCrit = tok('--color-critical','#c93135');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
+
+  // (a,b,c)=(3124,4557,9840); verbatim values
+  const conds = [
+    {lbl:'a²+b² (面)',          val:'30525625',  ok:true,  root:'5525',  note:'a²+b² = 30525625 = 5525² ✓'},
+    {lbl:'a²+c² (面)',          val:'106584976', ok:true,  root:'10324', note:'a²+c² = 106584976 = 10324² ✓'},
+    {lbl:'a²+b²+c² (體對角線)', val:'127351225', ok:true,  root:'11285', note:'a²+b²+c² = 127351225 = 11285² ✓'},
+    {lbl:'b²+c² (面)',          val:'117591849', ok:false, root:'10843', note:'b²+c² = 117591849 非平方（10843²=117570649，差 21200）✗'}
+  ];
+
+  const height = Math.min(70 + conds.length*54, 380);
+  const margin = {top:36,right:16,bottom:14,left:16};
+  const iw = width-margin.left-margin.right;
+  const rowH = (height-margin.top-margin.bottom)/conds.length;
+  const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+    .attr('role','img').attr('aria-label','near-miss (11,71) 的四個對角線條件，三綠一紅');
+  svg.append('text').attr('x',margin.left).attr('y',22).attr('fill',cText).attr('font-size','14px').attr('font-weight',700)
+    .text('near-miss (11,71)-brick：邊長 (3124, 4557, 9840) — 3 綠 / 1 紅');
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  conds.forEach((c,i)=>{
+    const col = c.ok?cPass:cCrit;
+    const by = i*rowH+4;
+    g.append('rect').attr('x',0).attr('y',by).attr('width',iw).attr('height',rowH-10).attr('rx',6)
+      .attr('fill',col).attr('fill-opacity',0.16).attr('stroke',col).attr('stroke-width',1.5).style('cursor','pointer')
+      .on('mousemove',function(ev){const [mx,my]=d3.pointer(ev,wrap);tip.show(`<b>${c.lbl}</b><br>${c.note}`,mx,my);})
+      .on('mouseleave',()=>tip.hide());
+    g.append('text').attr('x',14).attr('y',by+(rowH-10)/2+5).attr('fill',cText).attr('font-size','13px').attr('font-weight',600).style('pointer-events','none')
+      .text(c.lbl+' = '+(+c.val).toLocaleString());
+    g.append('text').attr('x',iw-14).attr('y',by+(rowH-10)/2+5).attr('text-anchor','end').attr('fill',col).attr('font-size','14px').attr('font-weight',700).style('pointer-events','none')
+      .text(c.ok ? ('√ = '+c.root+' ✓') : ('✗ ⌊√⌋ = '+c.root));
+  });
+});
+
+// === NEW: B_n vs N_n parallel sequences (different integer sequences) ===
+defineChart('chart-seq-bn-nn', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cInfo = tok('--color-info','#2a6bb8');
+  const cHigh = tok('--color-high','#b86a2a');
+  const cText = tok('--text-primary','#1e2030');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const tip = _mkTip(wrap);
+
+  // q=20/21, n=1..6. Schematic relative magnitudes on a log scale.
+  // B_n = point denominator (EDS) ; N_n = Face-3 numerator. They are DIFFERENT sequences.
+  // Use known anchors: N_1 = 13·17·89·181 (~3.5e6); N_2 has 7 prime factors (~1.7e16).
+  // log|N_n| ~ n^2 * h(P); B_n grows like n^2 too but with a different constant and different values.
+  const hat = 2.5530; // hat-h(P) for q=20/21
+  const seqs = [
+    {key:'Bₙ', desc:'點分母（EDS）— 有效定理管得住', col:cInfo,
+      vals:[1,2,3,4,5,6].map(n=>({n, log: 0.62*hat*n*n}))},
+    {key:'Nₙ', desc:'Face-3 分子 — 障礙真正所在', col:cHigh,
+      vals:[1,2,3,4,5,6].map(n=>({n, log: 1.00*hat*n*n}))}
+  ];
+  // anchor labels for N_1, N_2
+  const anchors = {1:'13·17·89·181', 2:'37·89·277·521·2753·8089·22073'};
+
+  const height = 300;
+  const margin = {top:30,right:24,bottom:40,left:64};
+  const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+  const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+    .attr('role','img').attr('aria-label','B_n 與 N_n 兩條不同整數數列');
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  const x = d3.scaleLinear().domain([0.5,6.5]).range([0,iw]);
+  const maxlog = d3.max(seqs,s=>d3.max(s.vals,d=>d.log));
+  const y = d3.scaleLinear().domain([0,maxlog*1.1]).range([ih,0]);
+  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).ticks(6).tickFormat(d=>Number.isInteger(d)?('n='+d):'')).selectAll('text').attr('font-size','12px').attr('fill',cText);
+  g.append('text').attr('x',-ih/2).attr('y',-48).attr('transform','rotate(-90)').attr('text-anchor','middle').attr('fill',cMuted).attr('font-size','12px').text('log |值|（示意相對大小）');
+
+  seqs.forEach((s,si)=>{
+    const lg = d3.line().x(d=>x(d.n)).y(d=>y(d.log));
+    g.append('path').datum(s.vals).attr('fill','none').attr('stroke',s.col).attr('stroke-width',2.4).attr('stroke-dasharray',si===0?'6 4':null).attr('d',lg);
+    g.selectAll('.p'+si).data(s.vals).enter().append('circle')
+      .attr('cx',d=>x(d.n)).attr('cy',d=>y(d.log)).attr('r',5).attr('fill',s.col).style('cursor','pointer')
+      .on('mousemove',function(ev,d){const [mx,my]=d3.pointer(ev,wrap);const extra=(s.key==='Nₙ'&&anchors[d.n])?('<br>N'+d.n+' = '+anchors[d.n]):'';tip.show(`<b>${s.key}（n=${d.n}）</b><br>${s.desc}${extra}`,mx,my);})
+      .on('mouseleave',()=>tip.hide());
+    g.append('text').attr('x',x(6)+6).attr('y',y(s.vals[5].log)+4).attr('fill',s.col).attr('font-size','13px').attr('font-weight',700).text(s.key);
+  });
+  svg.append('text').attr('x',margin.left).attr('y',16).attr('fill',cText).attr('font-size','13px').attr('font-weight',700).text('q = 20/21：Bₙ 與 Nₙ 是兩串不同的整數');
+  svg.append('text').attr('x',width/2).attr('y',height-6).attr('text-anchor','middle').attr('fill',cMuted).attr('font-size','11.5px')
+    .text('分子分母不是同一串數：有效定理管 Bₙ，障礙卻住在 Nₙ');
+});
+
+// === NEW: method × family closure map ===
+defineChart('chart-methodmap', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cPass = tok('--color-pass','#1e8050');
+  const cCrit = tok('--color-critical','#c93135');
+  const cMuted = tok('--text-muted','#8a8c98');
+  const cText = tok('--text-primary','#1e2030');
+  const tip = _mkTip(wrap);
+
+  const cols = ['rank-0 窮舉','Pell/Cohn','單曲線/Siegel','Chabauty–Coleman','初等遞降'];
+  const rows = ['Saunderson','Case B (p=1)','Sophie–Germain 質數','rank-positive fiber','完整 PCP'];
+  // cell: {s:'ok'|'fail'|'open', note}
+  const M = {
+    'Saunderson': [
+      {s:'ok',note:'Jacobian 80a1 rank 0，有理點有限可窮舉——本站封閉。'},
+      {s:'open',note:'Pell/Cohn 不是這族用的工具。'},
+      {s:'open',note:'不經單曲線/Siegel 路線。'},
+      {s:'fail',note:'提升步驟把 rank 降到 0，繞過 Chabauty，無需用它。'},
+      {s:'open',note:'未走遞降。'}
+    ],
+    'Case B (p=1)': [
+      {s:'open',note:'整數參數，不走 rank-0 窮舉。'},
+      {s:'ok',note:'Pell g²−5Y²=20 + Cohn 1964：唯二平方 Lucas L₁,L₃——本站封閉。'},
+      {s:'open',note:'不經單曲線。'},
+      {s:'fail',note:'genus-5 曲線 rank=genus=5，Chabauty 用不上。'},
+      {s:'open',note:'未走遞降。'}
+    ],
+    'Sophie–Germain 質數': [
+      {s:'open',note:'不靠 rank-0 窮舉。'},
+      {s:'open',note:'不走 Pell/Cohn。'},
+      {s:'ok',note:'單曲線 800a3 + Siegel：七個整數點列舉，一次封閉無限質數尾巴。'},
+      {s:'open',note:'rank 1 但用 Siegel 而非 Chabauty。'},
+      {s:'open',note:'未走遞降。'}
+    ],
+    'rank-positive fiber': [
+      {s:'fail',note:'rank≥1，有理點無窮多，無法直接窮舉。'},
+      {s:'open',note:'不走 Pell。'},
+      {s:'open',note:'非單曲線化約。'},
+      {s:'fail',note:'經典 Chabauty 失效（rank 不夠小）；本文僅窗格驗證。'},
+      {s:'open',note:'未走遞降；障礙在分子 N_n（錯數列+偶次方）。'}
+    ],
+    '完整 PCP': [
+      {s:'open',note:'general type 曲面，超出窮舉。'},
+      {s:'open',note:'非 Pell 結構。'},
+      {s:'open',note:'非單曲線。'},
+      {s:'open',note:'非單曲線，Chabauty 不適用。'},
+      {s:'open',note:'Aut(V)=384 有限，無 height-strict 遞降。'}
+    ]
+  };
+  const sym = {ok:'✓', fail:'✗', open:'○'};
+  const col = {ok:cPass, fail:cCrit, open:cMuted};
+
+  const height = Math.min(80 + rows.length*54, 420);
+  const margin = {top:88,right:14,bottom:14,left:width<560?96:128};
+  const iw = width-margin.left-margin.right, ih = height-margin.top-margin.bottom;
+  const svg = d3.select(wrap).append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+    .attr('role','img').attr('aria-label','方法乘家族封閉地圖');
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  const x = d3.scaleBand().domain(cols).range([0,iw]).padding(0.12);
+  const y = d3.scaleBand().domain(rows).range([0,ih]).padding(0.12);
+
+  // column headers (rotated)
+  cols.forEach(c=>{
+    svg.append('text').attr('transform',`translate(${margin.left+x(c)+x.bandwidth()/2},${margin.top-8}) rotate(-32)`)
+      .attr('text-anchor','start').attr('fill',cText).attr('font-size','11.5px').attr('font-weight',600).text(c);
+  });
+  // row labels
+  rows.forEach(r=>{
+    svg.append('text').attr('x',margin.left-8).attr('y',margin.top+y(r)+y.bandwidth()/2+4).attr('text-anchor','end')
+      .attr('fill',cText).attr('font-size','12px').attr('font-weight',600).text(r);
+  });
+  rows.forEach(r=>cols.forEach((c,ci)=>{
+    const cell = M[r][ci];
+    g.append('rect').attr('x',x(c)).attr('y',y(r)).attr('width',x.bandwidth()).attr('height',y.bandwidth()).attr('rx',5)
+      .attr('fill',cell.s==='ok'?cPass:(cell.s==='fail'?cCrit:tok('--bg-surface','#ecedf0')))
+      .attr('fill-opacity',cell.s==='open'?1:0.22)
+      .attr('stroke',col[cell.s]).attr('stroke-width',1.2).style('cursor','pointer')
+      .on('mousemove',function(ev){const [mx,my]=d3.pointer(ev,wrap);tip.show(`<b>${r} × ${c}</b><br>${sym[cell.s]} ${cell.note}`,mx,my);})
+      .on('mouseleave',()=>tip.hide());
+    g.append('text').attr('x',x(c)+x.bandwidth()/2).attr('y',y(r)+y.bandwidth()/2+6).attr('text-anchor','middle')
+      .attr('fill',col[cell.s]).attr('font-size','18px').attr('font-weight',700).style('pointer-events','none').text(sym[cell.s]);
+  }));
 });
 
 // === AEO Share Buttons ===
