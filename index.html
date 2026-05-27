@@ -604,6 +604,20 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
+      <summary>白話詳解：盒子怎麼一步步變成一條橢圓曲線?</summary>
+      <div class="layer-content">
+        <p><strong>0. 盒子是什麼。</strong>完美長方體要四個量同時是完全平方:$a^2+b^2$、$a^2+c^2$、$b^2+c^2$、$a^2+b^2+c^2$。每一個都是「平方和還是平方」——也就是<strong>畢氏(直角三角形)條件</strong>。</p>
+        <p><strong>1. 固定一個面的形狀 = 固定一個 $q$(這就是 fiber)。</strong>看其中一個面 $a^2+b^2=d^2$,把兩邊比例記成 $q=a/b$。這時 $1+q^2=\dfrac{a^2+b^2}{b^2}=\dfrac{d^2}{b^2}=\left(\dfrac{d}{b}\right)^2$ <strong>自動是完全平方</strong>——這正是「Pythagorean rational $q$」的意思。一個 $q$ 值 $=$ 那個面的一種形狀 $=$ 一片 fiber $V_q$。(例:$(3,4,5)$ 面 $q=\tfrac34$,$1+q^2=\tfrac{25}{16}=(\tfrac54)^2$。)</p>
+        <p><strong>2. 固定 $q$ 後,剩下的條件塌成一條曲線。</strong>面的形狀定了,但第三邊 $c$ 還能動、另外兩個面與體對角線還沒滿足。把這些(都是 degree-2 的畢氏條件)在 $q$ 固定下消去多餘變數,解集只剩兩個未知數的<strong>一條曲線</strong>——這一步叫 fibration(纖維化)。</p>
+        <p><strong>3. 為什麼那條曲線是「橢圓曲線」。</strong>單獨一個畢氏條件 $u^2+v^2=w^2$ 是 <strong>conic(二次曲線)</strong>,有理點滿地都是(就是畢氏數),不構成難題;但盒子要<strong>好幾個畢氏條件同時成立、又共用變數</strong>。把兩個二次條件疊起來消元,次數升到 $3$,得到 $Y^2=\text{三次式}$。一條「$Y^2=$ 三個相異根的三次式」就是<strong>橢圓曲線</strong>(genus $1$)。這正是難易分水嶺:conic(genus $0$)點太多、不值得研究;橢圓曲線的有理點受嚴格群結構約束,可能很少、很有規律,於是「到底有沒有盒子」變成<strong>可以分析</strong>的問題(rank、torsion 由此登場)。此家族消元後恰是 $E_q:Y^2=X(X+1)(X+q^2)$,三個根 $0,-1,-q^2$ 各對應一種退化盒子。</p>
+        <p><strong>4. recovery map $=$ 把點翻回邊長的字典。</strong>曲線上的點 $(X,Y)$ 只是抽象座標;$\varphi(X,Y)=\dfrac{2Yq}{q^2-X^2}$ 餵進一個點、吐出它對應的第三邊 $c$。真盒子需要 (i) $c$ 有限非零,且 (ii) 最後一面也過關:$c^2+1+q^2$ 是完全平方(Face-3 條件)。</p>
+        <p><strong>5. 結論(等價)。</strong>fiber $V_q$ 上有完美長方體 $\iff$ $E_q$ 上有一個「能解碼成真邊、又通過最後一面」的有理點。立體湊整數的難題,就此翻譯成「在一條具體橢圓曲線上找特定有理點」——而這正是數學家備有整套工具(rank、torsion)的領域。</p>
+        <p style="opacity:.78;font-size:.95em">(把係數恰好算成 $X(X+1)(X+q^2)$ 的完整消元較長:它其實是 genus-$5$ fiber 的 Jacobian 拆出的一個因子;上面講的是「為何一定塌成這種曲線」的機制,座標細節見 paper-c 與腳本。)</p>
+<div class="chart-container" id="chart-fiber-flow" data-nav="chart-fiber-flow"><h3>圖:一個面的形狀(一個 $q$)塌成一條橢圓曲線</h3><div class="chart-svg-wrap"></div><p class="chart-caption">拖滑桿換 $q$:左邊那個面的形狀變、右邊塌成的橢圓曲線 $E_q$ 也跟著變。每個 $q$ $=$ 一片 fiber $=$ 一條曲線;在 $E_q$ 上找有理點,就是在這片 fiber 找盒子。</p></div>
+      </div>
+    </details>
+
+    <details class="layer">
       <summary>形式化：per-fiber 橢圓曲線 $E_q$ 與 recovery map $\varphi$</summary>
       <div class="layer-content">
         <p>對每個 Pythagorean 有理數 $q$（即 $q=(m^2-n^2)/(2mn)$，$m>n$ 互質、奇偶相異，在對合 $q\leftrightarrow 1/q$ 下取一個代表），配一條橢圓曲線</p>
@@ -2221,6 +2235,151 @@ document.querySelectorAll('.theorem-section h2').forEach(h2 => {
     });
   });
   h2.appendChild(btn);
+});
+
+// === NEW: fiber → elliptic curve flow (two synced panels) ===
+defineChart('chart-fiber-flow', (wrap, width) => {
+  d3.select(wrap).style('position','relative');
+  const cInfo = tok('--color-info', '#2a6bb8');
+  const cPass = tok('--color-pass', '#1e8050');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cHigh = tok('--color-high', '#b86a2a');
+  const cMuted = tok('--text-muted', '#8a8c98');
+  const cText = tok('--text-primary', '#1e2030');
+  const cBorder = tok('--border-subtle', '#d5d6da');
+
+  // same Pythagorean q values as chart-ellcurve
+  const qs = [ {label:'q = 3/4', q:0.75}, {label:'q = 5/12', q:5/12}, {label:'q = 20/21', q:20/21} ];
+  let qi = 0;
+
+  const bar = _ctrlBar(wrap);
+  bar.append('span').text('Pythagorean q：');
+  const sld = bar.append('input').attr('type','range').attr('min',0).attr('max',qs.length-1).attr('step',1).attr('value',0)
+    .style('flex','1').style('min-width','120px');
+  const qlab = bar.append('strong').text(qs[0].label);
+
+  const plot = d3.select(wrap).append('div');
+
+  function draw(){
+    plot.selectAll('*').remove();
+    const q = qs[qi].q;
+    const q2 = q*q;
+    const narrow = width < 560;            // stack panels on small screens
+    const height = narrow ? Math.min(620, Math.round(width*1.25)) : Math.min(360, Math.round(width*0.52));
+    const svg = plot.append('svg').attr('viewBox',`0 0 ${width} ${height}`).attr('width','100%').attr('height',height)
+      .attr('role','img').attr('aria-label','一個面的形狀(固定 q)消元後塌成橢圓曲線 E_q 的示意圖');
+    const fs = Math.max(11, Math.min(14, width*0.024));
+
+    // panel layout: side-by-side (wide) or stacked (narrow)
+    let LP, RP, arrow;
+    if(narrow){
+      LP = {x:0,        y:0,            w:width, h:height*0.42};
+      RP = {x:0,        y:height*0.58,  w:width, h:height*0.42};
+      arrow = {cx:width*0.5, cy:height*0.50, horiz:false};
+    } else {
+      LP = {x:0,          y:0, w:width*0.38, h:height};
+      RP = {x:width*0.62, y:0, w:width*0.38, h:height};
+      arrow = {cx:width*0.5, cy:height*0.5, horiz:true};
+    }
+
+    // ---- LEFT panel: the face rectangle with ratio a:b = q:1 ----
+    (function(){
+      const g = svg.append('g').attr('transform',`translate(${LP.x},${LP.y})`);
+      g.append('text').attr('x',LP.w/2).attr('y',fs*1.2).attr('text-anchor','middle')
+        .attr('fill',cText).attr('font-size',fs+'px').attr('font-weight',700)
+        .text('左：一個面（形狀由 q 定）');
+      // available drawing box inside the panel
+      const padX = LP.w*0.14, padTop = fs*2.2, padBot = fs*3.4;
+      const boxW = LP.w - 2*padX, boxH = LP.h - padTop - padBot;
+      // rectangle: width ∝ 1, height ∝ q, fit inside boxW × boxH
+      const ratioW = 1, ratioH = q;
+      const scale = Math.min(boxW/ratioW, boxH/ratioH) * 0.9;
+      const rw = ratioW*scale, rh = ratioH*scale;
+      const rx = LP.x>=0 ? padX + (boxW-rw)/2 : padX;       // centre horizontally
+      const offX = padX + (boxW-rw)/2;
+      const offY = padTop + (boxH-rh)/2;
+      g.append('rect').attr('x',offX).attr('y',offY).attr('width',rw).attr('height',rh)
+        .attr('fill','none').attr('stroke',cInfo).attr('stroke-width',2.4).attr('rx',2);
+      // diagonal (the "對角線"), distinct colour
+      g.append('line').attr('x1',offX).attr('y1',offY+rh).attr('x2',offX+rw).attr('y2',offY)
+        .attr('stroke',cCrit).attr('stroke-width',2.6);
+      // side labels: bottom = b (∝1), left = a (∝q)
+      g.append('text').attr('x',offX+rw/2).attr('y',offY+rh+fs*1.3).attr('text-anchor','middle')
+        .attr('fill',cInfo).attr('font-size',(fs*0.92)+'px').attr('font-weight',600).text('邊 b');
+      g.append('text').attr('x',offX-fs*0.6).attr('y',offY+rh/2).attr('text-anchor','end')
+        .attr('fill',cInfo).attr('font-size',(fs*0.92)+'px').attr('font-weight',600).text('邊 a');
+      g.append('text').attr('x',offX+rw*0.52).attr('y',offY+rh*0.46).attr('text-anchor','start')
+        .attr('fill',cCrit).attr('font-size',(fs*0.88)+'px').attr('font-weight',600).text('對角線 d');
+      // caption: q value + Pythagorean fact (plain unicode, no KaTeX in svg)
+      g.append('text').attr('x',LP.w/2).attr('y',LP.h-fs*1.8).attr('text-anchor','middle')
+        .attr('fill',cText).attr('font-size',(fs*0.96)+'px').attr('font-weight',700)
+        .text('q = a/b = ' + qs[qi].label.replace('q = ',''));
+      g.append('text').attr('x',LP.w/2).attr('y',LP.h-fs*0.5).attr('text-anchor','middle')
+        .attr('fill',cPass).attr('font-size',(fs*0.86)+'px')
+        .text('面:對角線 = 整數 ⟹ 1+q² = 完全平方');
+    })();
+
+    // ---- MIDDLE: arrow + label ----
+    (function(){
+      const a = arrow;
+      if(a.horiz){
+        const len = width*0.10, x0 = a.cx-len/2, x1 = a.cx+len/2, yy=a.cy;
+        svg.append('line').attr('x1',x0).attr('y1',yy).attr('x2',x1).attr('y2',yy)
+          .attr('stroke',cMuted).attr('stroke-width',2.4);
+        svg.append('path').attr('d',`M ${x1} ${yy} l ${-8} ${-5} l 0 10 z`).attr('fill',cMuted);
+        svg.append('text').attr('x',a.cx).attr('y',yy-fs*0.9).attr('text-anchor','middle')
+          .attr('fill',cMuted).attr('font-size',(fs*0.82)+'px').text('固定 q,消去');
+        svg.append('text').attr('x',a.cx).attr('y',yy+fs*1.8).attr('text-anchor','middle')
+          .attr('fill',cMuted).attr('font-size',(fs*0.82)+'px').text('其餘畢氏條件');
+      } else {
+        const len = height*0.07, y0=a.cy-len/2, y1=a.cy+len/2, xx=a.cx;
+        svg.append('line').attr('x1',xx).attr('y1',y0).attr('x2',xx).attr('y2',y1)
+          .attr('stroke',cMuted).attr('stroke-width',2.4);
+        svg.append('path').attr('d',`M ${xx} ${y1} l ${-5} ${-8} l 10 0 z`).attr('fill',cMuted);
+        svg.append('text').attr('x',xx).attr('y',a.cy-fs*0.4).attr('text-anchor','middle')
+          .attr('fill',cMuted).attr('font-size',(fs*0.82)+'px').text('固定 q,消去其餘畢氏條件');
+      }
+    })();
+
+    // ---- RIGHT panel: the real curve E_q : y² = x(x+1)(x+q²) ----
+    (function(){
+      const g = svg.append('g').attr('transform',`translate(${RP.x},${RP.y})`);
+      g.append('text').attr('x',RP.w/2).attr('y',fs*1.2).attr('text-anchor','middle')
+        .attr('fill',cText).attr('font-size',fs+'px').attr('font-weight',700)
+        .text('右：橢圓曲線 E_q');
+      const margin = {top:fs*2.0, right:fs*0.8, bottom:fs*2.6, left:fs*2.4};
+      const iw = RP.w-margin.left-margin.right, ih = RP.h-margin.top-margin.bottom;
+      const gg = g.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+      const xmin = -Math.max(1,q2) - 0.6, xmax = 1.6;
+      const ymaxV = Math.max(1.2, Math.abs(2*q2));
+      const x = d3.scaleLinear().domain([xmin,xmax]).range([0,iw]);
+      const y = d3.scaleLinear().domain([-ymaxV,ymaxV]).range([ih,0]);
+      gg.append('g').attr('transform',`translate(0,${y(0)})`).call(d3.axisBottom(x).ticks(5))
+        .selectAll('text').attr('font-size',(fs*0.72)+'px').attr('fill',cMuted);
+      gg.append('g').attr('transform',`translate(${x(0)},0)`).call(d3.axisLeft(y).ticks(4))
+        .selectAll('text').attr('font-size',(fs*0.72)+'px').attr('fill',cMuted);
+      gg.selectAll('.domain,.tick line').attr('stroke',cBorder);
+      // curve (both ± branches where rhs>=0)
+      const Ns=600, segs=[]; let cu=[],cd=[];
+      for(let i=0;i<=Ns;i++){
+        const xx = xmin + (xmax-xmin)*i/Ns;
+        const rhs = xx*(xx+1)*(xx+q2);
+        if(rhs>=0){ const yy=Math.sqrt(rhs); cu.push([xx,yy]); cd.push([xx,-yy]); }
+        else { if(cu.length){segs.push(cu);segs.push(cd);cu=[];cd=[];} }
+      }
+      if(cu.length){segs.push(cu);segs.push(cd);}
+      const lg = d3.line().x(d=>x(d[0])).y(d=>y(d[1]));
+      segs.forEach(s=>gg.append('path').datum(s).attr('fill','none').attr('stroke',cInfo).attr('stroke-width',2.2).attr('d',lg));
+      // the three roots 0,-1,-q² as small markers
+      [0,-1,-q2].forEach(r=>gg.append('circle').attr('cx',x(r)).attr('cy',y(0)).attr('r',3.2)
+        .attr('fill',cHigh).attr('stroke',tok('--bg-base','#f5f6f8')).attr('stroke-width',1.2));
+      g.append('text').attr('x',RP.w/2).attr('y',RP.h-fs*0.5).attr('text-anchor','middle')
+        .attr('fill',cText).attr('font-size',(fs*0.86)+'px')
+        .text('橢圓曲線 E_q:在上面找有理點');
+    })();
+  }
+  sld.on('input',function(){ qi=+this.value; qlab.text(qs[qi].label); draw(); });
+  draw();
 });
 
 // === Boot ===
