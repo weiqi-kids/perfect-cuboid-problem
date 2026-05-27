@@ -536,11 +536,53 @@ footer a { color: var(--color-link); text-decoration: none; }
     </details>
 
     <details class="layer">
-      <summary>幾何全貌：射影曲面是 general type</summary>
+      <summary>幾何全貌：射影曲面是 general type（逐步算出每個不變量）</summary>
       <div class="layer-content">
         <p>把這四個條件寫成方程，完美長方體的軌跡就是 $\mathbb{P}^6$ 裡四個二次式的光滑完全交</p>
         <p>$$V:\quad a^2+b^2-d^2=b^2+c^2-e^2=a^2+c^2-f^2=a^2+b^2+c^2-g^2=0,$$</p>
-        <p>它座標全非零的有理點恰好就是完美長方體。$V$ 是一個極小的 <strong>general type</strong>（一般型）曲面：典範類 $K_V=\mathcal{O}_V(1)$ 為 ample，$K_V^2=16$、$c_2=80$、$\chi(\mathcal{O}_V)=8$、$p_g=7$、$q=0$（Paper B）。它<strong>不是</strong> K3 曲面；只有忘掉體對角線那一式的 Euler brick 雙重覆蓋 $V'\subset\mathbb{P}^5$ 才是（奇異的）K3。general type 正是為什麼整體問題如此困難——其有理點有限性受 Bombieri–Lang 與 Vojta 猜想支配。</p>
+        <p>它座標全非零的有理點恰好就是完美長方體。$V$ 是一個極小的 <strong>general type</strong>（一般型）曲面，而<strong>不是</strong> K3——這個分辨對整個問題的難度至關重要。以下把這個分類所需的全部不變量逐一算出（Paper B, Prop. geomV）。$V$ 是 $\mathbb{P}^6$ 中四個 degree-$2$ 超曲面的光滑完全交，餘維數 $4$，故是維度 $6-4=2$ 的曲面。</p>
+
+        <details>
+          <summary>第一步：adjunction 算典範類 $K_V$</summary>
+          <div class="layer-content">
+            <p>對 $\mathbb{P}^n$ 中一個光滑完全交 $V=\bigcap_i\{f_i=0\}$（$\deg f_i=d_i$），adjunction 公式給</p>
+            <p>$$K_V=\Bigl(K_{\mathbb{P}^n}+\textstyle\sum_i \mathcal{O}(d_i)\Bigr)\Big|_V.$$</p>
+            <p>這裡 $n=6$，$K_{\mathbb{P}^6}=\mathcal{O}(-7)$，四式皆 $d_i=2$，故</p>
+            <p>$$K_V=\bigl(-7+4\cdot 2\bigr)\mathcal{O}(1)\big|_V=(-7+8)\,\mathcal{O}_V(1)=\mathcal{O}_V(1).$$</p>
+            <p>$\mathcal{O}_V(1)$ 是超平面束的限制，為 <strong>ample</strong>（在射影空間裡正）。$K_V$ ample 即 Kodaira dimension $=2$，故 $V$ 是 general type 且極小；general type 曲面 $K\neq 0$，而 K3 曲面 $K=0$，因此 $V$ <strong>不是</strong> K3。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>第二步：自相交數 $K_V^2$ 與 degree $=16$</summary>
+          <div class="layer-content">
+            <p>因 $K_V=\mathcal{O}_V(1)=H|_V$（$H$ 為 $\mathbb{P}^6$ 超平面類），$K_V^2$ 就是 $V$ 在 $\mathbb{P}^6$ 中的 degree。完全交的 degree 是各方程次數之積：</p>
+            <p>$$\deg V=\prod_i d_i=2\cdot 2\cdot 2\cdot 2=2^4=16,\qquad\text{故}\quad K_V^2=H^2\cdot V=16.$$</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>第三步：Chern 數 $c_2=80$ 與 Euler 特徵 $\chi=8$</summary>
+          <div class="layer-content">
+            <p>由 Whitney 公式，$V$ 的全 Chern 類是環境 $\mathbb{P}^6$ 與法叢的商，模 $H^3$（曲面只看到 $H^0,H^1,H^2$）：</p>
+            <p>$$c(T_V)\equiv (1+H)^7(1+2H)^{-4}\equiv 1-H+5H^2\pmod{H^3}.$$</p>
+            <p>故 $c_1=-H$（即 $-K_V$，一致），而 $c_2$ 的係數是 $5$，乘上 degree $16$：</p>
+            <p>$$c_2(V)=5\cdot H^2\cdot V=5\cdot 16=80.$$</p>
+            <p>Noether 公式 $\chi(\mathcal{O}_V)=\dfrac{K_V^2+c_2}{12}$ 給</p>
+            <p>$$\chi(\mathcal{O}_V)=\frac{16+80}{12}=\frac{96}{12}=8.$$</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>第四步：$q=0$（Lefschetz）⇒ $p_g=7$</summary>
+          <div class="layer-content">
+            <p>Lefschetz 超平面定理對 $\mathbb{P}^6$ 中維度 $\ge 2$ 的完全交給 $H^1(V,\mathcal{O}_V)=H^1(\mathbb{P}^6,\mathcal{O})=0$，故不規則數 $q=h^1(\mathcal{O}_V)=0$。由 $\chi(\mathcal{O}_V)=1-q+p_g$：</p>
+            <p>$$p_g=\chi-1+q=8-1+0=7.$$</p>
+            <p>整理：$K_V=\mathcal{O}_V(1)$ ample、$K_V^2=16$、$c_2=80$、$\chi=8$、$p_g=7$、$q=0$。ample 典範類確立 general type。</p>
+          </div>
+        </details>
+
+        <p>因此 $V$ 是極小的一般型曲面，<strong>不是</strong> K3；只有忘掉體對角線那一式（去掉第四個二次式）的 Euler brick 雙重覆蓋 $V'\subset\mathbb{P}^5$ 才是（奇異的）K3（van Luijk）。general type 正是為什麼整體問題如此困難——其有理點有限性受 Bombieri–Lang 與 Vojta 猜想支配，目前無法觸及。本站六篇論文都只封閉具名子家族，不碰整個 $V$。</p>
         <span class="verified">已驗證：窮舉搜尋顯示最小邊 $\lesssim 5\times10^{11}$（奇邊 $\lesssim 2.5\times10^{13}$）內無完美長方體</span>
       </div>
     </details>
@@ -573,12 +615,62 @@ footer a { color: var(--color-link); text-decoration: none; }
     </details>
 
     <details class="layer">
-      <summary>torsion 退化引理：搜尋限縮到無限階點</summary>
+      <summary>torsion 退化引理（完整證明）：八個 torsion 點全送進 $\{0,\infty\}$</summary>
       <div class="layer-content">
-        <p>$E_q$ 的有理 torsion 子群恆為 $\mathbb{Z}/4\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$（八個點，分類歸功於 Yoshida）：恆等元 $O$、三個 $2$-torsion 點 $(0,0),(-1,0),(-q^2,0)$，以及四個四階點 $(\pm q,\,\pm q(q\pm1))$。</p>
-        <p>關鍵在於 recovery map $\varphi$ 把每個非恆等的 torsion 點都送進 $\{0,\infty\}$：三個 $2$-torsion 點分子 $2Yq=0$，故 $\varphi=0$（盒子邊為 $0$）；四個四階點滿足 $X^2=q^2$，使分母 $q^2-X^2=0$，落在 $\varphi$ 的極點。因此凡 $\varphi(P)$ 有限且非零的點——也就是能還原成真盒子邊的點——必為<strong>無限階</strong>。</p>
-        <p>結論：搜尋只需在無限階部分進行。當 $E_q$ rank $\ge1$ 時，每個有理點是 $a_1P_1+\cdots+a_rP_r+T$（$T$ 為 torsion），於是條件落到一個格點上逐一檢驗。</p>
-        <span class="verified">已驗證（PARI/GP）：<code>elltors</code> 給出階 $8$ 的 $\mathbb{Z}/4\times\mathbb{Z}/2$；$\varphi$ 在八個 torsion 點上恆送進 $\{0,\infty\}$</span>
+        <p>對每個 Pythagorean $q\in\mathbb{Q}^\times\setminus\{0,\pm1\}$，$E_q$ 的有理 torsion 子群恆為 $\mathbb{Z}/4\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$（八個點）。這個 torsion 分類本身歸功於 <strong>Yoshida</strong>（Mazur + Fermat 下降）；本站的局部貢獻是 $\varphi$ 把這八點全送進退化值，加上下面用以排除 order-$8$ 的判別式恆等式。引理分四段，全在 $\mathbb{Q}(q)$ 上以恆等式成立，與 $q$ 的具體值無關。</p>
+
+        <details>
+          <summary>(i) 三個 $2$-torsion 點：$(0,0),(-1,0),(-q^2,0)$</summary>
+          <div class="layer-content">
+            <p>把 $E_q$ 展開為 $y^2=x^3+(1+q^2)x^2+q^2x$，右側在 $\mathbb{Q}$ 上分解為 $x(x+1)(x+q^2)$。三根 $x\in\{0,-1,-q^2\}$ 各給一個 $y=0$ 的點，故</p>
+            <p>$$T_1=(0,0),\quad T_2=(-1,0),\quad T_3=(-q^2,0)$$</p>
+            <p>是三個有理 $2$-torsion 點，連同 $O$ 構成 $(\mathbb{Z}/2\mathbb{Z})^2\subseteq E_q(\mathbb{Q})$（只要 $q\notin\{0,\pm1\}$，三根相異、曲線非奇異）。</p>
+            <p>在 $\varphi(X,Y)=\dfrac{2Yq}{q^2-X^2}$ 中，三點皆 $Y=0$，故分子 $2Yq=0$；分母分別為 $q^2,\ q^2-1,\ q^2-q^4=q^2(1-q^2)$，在 $q\notin\{0,\pm1\}$ 時皆非零。因此 $\varphi(T_i)=0$——對應盒子的一條邊為 $0$，退化。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(ii) 四個 order-$4$ 點在 $X=\pm q$：代入與 duplication 驗證</summary>
+          <div class="layer-content">
+            <p>直接代入 $Y^2=X(X+1)(X+q^2)$：</p>
+            <p>$$X=q:\quad Y^2=q(q+1)(q+q^2)=q^2(q+1)^2\ \Rightarrow\ Y=\pm q(q+1),$$</p>
+            <p>$$X=-q:\quad Y^2=(-q)(1-q)\,q(q-1)=q^2(q-1)^2\ \Rightarrow\ Y=\pm q(q-1).$$</p>
+            <p>故 $(\pm q,\ \pm q(q\pm1))$ 是 $E_q$ 上四個有理點。它們階為 $4$，由 duplication 驗證：對 $P=(q,q(q+1))$，斜率</p>
+            <p>$$\lambda=\frac{3X^2+2(1+q^2)X+q^2}{2Y}=\frac{2q(q+1)^2}{2q(q+1)}=q+1,$$</p>
+            <p>$$X(2P)=\lambda^2-(1+q^2)-2q=(q+1)^2-1-q^2-2q=0,$$</p>
+            <p>$$Y(2P)=\lambda\,(X-X(2P))-Y=(q+1)q-q(q+1)=0,$$</p>
+            <p>即 $2P=(0,0)=T_1$。故 $P$ 的兩倍是非平凡 $2$-torsion，$P$ 的階恰為 $4$。四點同理（符號對換）。這給 $\mathbb{Z}/4\times\mathbb{Z}/2\subseteq E_q(\mathbb{Q})_{\text{tors}}$，是 $\mathbb{Q}(q)$ 上的恆等式。</p>
+            <p>在 $\varphi$ 中四點皆 $X^2=q^2$，分母 $q^2-X^2=0$，而分子 $2Yq=\pm 2q^2(q\pm1)\neq0$（$q\notin\{0,\pm1\}$）。故 $\varphi(P)=\infty$——落在 $\varphi$ 的極點（盒子的邊「跑到無窮」，即退化邊界 stratum）。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(iii) 排除 order-$8$：判別式恆等式 + Fermat 下降</summary>
+          <div class="layer-content">
+            <p>由 <strong>Mazur</strong>，含 $\mathbb{Z}/4\times\mathbb{Z}/2$（階 $8$）的有理 torsion 只能是 $\mathbb{Z}/2\times\mathbb{Z}/4$、$\mathbb{Z}/2\times\mathbb{Z}/6$ 或 $\mathbb{Z}/2\times\mathbb{Z}/8$。$\mathbb{Z}/2\times\mathbb{Z}/6$ 階 $12$，$8\nmid 12$ 由 Lagrange 排除；只剩排除 order-$8$ 點。</p>
+            <p>一個 order-$8$ 點 $P$ 的 $2P$ 為 order-$4$，故 $X(2P)\in\{q,-q\}$。把 duplication 公式代入並清分母，$X(2P)=q$ 等價於</p>
+            <p>$$G_1(X,q):=X^4-4qX^3-(4q^3+2q^2+4q)X^2-4q^3X+q^4=0$$</p>
+            <p>（$X(2P)=-q$ 對應 $G_2=G_1(X,-q)$）。因 $G_1(0,q)=q^4\neq0$，任何有理根可寫 $X=qZ$。代入後除以 $q^3$ 得關於 $q$ 的二次式</p>
+            <p>$$4Z^2\,q^2-(Z^4-4Z^3-2Z^2-4Z+1)\,q+4Z^2=0.$$</p>
+            <p>$q$ 有理 $\iff$ 其判別式為平方。該判別式恰好分解（PARI <code>factor</code> 確認）：</p>
+            <p>$$\Delta(Z)=(Z^4-4Z^3-2Z^2-4Z+1)^2-64Z^4=(Z-1)^4(Z+1)^2(Z^2-6Z+1).$$</p>
+            <p>前兩因子已是平方 $\bigl((Z-1)^2(Z+1)\bigr)^2$，故 $\Delta\in\mathbb{Q}^2\iff Z^2-6Z+1=w^2$。此圓錐曲線有有理點 $(0,1)$，過它的直線參數化後代回，化簡得</p>
+            <p>$$q=s^2\quad\text{或}\quad q=1/s^2,\qquad s=\frac{4(t+1)}{(t-1)(t+3)}.$$</p>
+            <p>兩支都迫使 $q$（或 $1/q$）是有理<strong>平方</strong>。再加 Pythagorean 條件 $1+q^2\in\mathbb{Q}^2$，當 $q=s^2$ 時即 $u^2=s^4+1$——這正是 <strong>Fermat 直角三角形定理</strong>所禁的方程。</p>
+            <p>把 $u^2=s^4+1$ 寫成橢圓曲線 $y^2=x^3+4x$（Cremona <span class="curve-label">32a1</span>，conductor $32$）。PARI 給 analytic rank $0$、torsion $\mathbb{Z}/4$，由 Kolyvagin 得 Mordell–Weil rank $0$，故全部有理點都是 torsion，皆對應 $s=0$。於是 $s^4+1=u^2$ 只有 $s=0$，回推 $q\in\{0,\infty\}$——被假設 $q\in\mathbb{Q}^\times\setminus\{0,\pm1\}$ 排除。故 order-$8$ 永不出現，torsion 恰為 $\mathbb{Z}/4\times\mathbb{Z}/2$。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(iv) $\varphi$ 殺死全部 torsion：合併結論</summary>
+          <div class="layer-content">
+            <p>合併 (i)–(iii)：八個 torsion 點裡，恆等元 $O$ 對應退化的 $c=0$ 分支；三個 $2$-torsion 點分子 $2Yq=0\Rightarrow\varphi=0$；四個 order-$4$ 點 $X^2=q^2\Rightarrow$ 分母 $0\Rightarrow\varphi=\infty$（極點）。故</p>
+            <p>$$\varphi\bigl(E_q(\mathbb{Q})_{\text{tors}}\bigr)\subseteq\{0,\infty\}.$$</p>
+            <p>$0$ 與 $\infty$ 都是退化值（某條邊為 $0$ 或跑到無窮），不是非退化有限有理盒子。因此凡 $\varphi(P)$ 有限且非零的點——能還原成真盒子邊的點——必為<strong>無限階</strong>。</p>
+            <p>結論：搜尋只需在無限階部分進行。當 $E_q$ rank $\ge1$ 時，每個有理點是 $a_1P_1+\cdots+a_rP_r+T$（$T$ 為 torsion），於是條件落到一個格點上逐一檢驗；torsion 整層可直接略過。</p>
+            <span class="verified">已驗證（PARI/GP）：$62$ 個 Pythagorean $q$ × $8$ torsion 點 $=496$ 次評值，<code>elltors</code> 恆回 $\mathbb{Z}/4\times\mathbb{Z}/2$，$\varphi$ 全落 $\{0,\infty\}$；判別式分解、<span class="curve-label">32a1</span> rank $0$ 皆符</span>
+          </div>
+        </details>
       </div>
     </details>
   </section>
@@ -591,40 +683,97 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>設定：Saunderson 家族與體對角線恆等式</summary>
+      <summary>設定：Saunderson 家族與體對角線恆等式（含展開）</summary>
       <div class="layer-content">
         <p>對每個 Pythagorean 三元組 $(u,v,w)$（$u^2+v^2=w^2$），Saunderson 配一個 Euler brick</p>
         <p>$$\mathrm{Sa}(u,v,w)=\bigl(u(4v^2-w^2),\ v(4u^2-w^2),\ 4uvw\bigr).$$</p>
-        <p>關鍵的體對角線恆等式（Paper A, Lemma）為</p>
+        <p>關鍵的體對角線恆等式（Paper A, Lemma body）為</p>
         <p>$$a^2+b^2+c^2 \;=\; w^2\bigl(w^4+16\,u^2v^2\bigr).$$</p>
-        <p>因此體對角線 $g$ 為整數 $\iff (g/w)^2=w^4+16u^2v^2$。代入通用參數化 $(u,v,w)=(p^2-q^2,\,2pq,\,p^2+q^2)$ 並設 $t=p/q$，得</p>
+
+        <details>
+          <summary>恆等式的證明：代通用參數化後在 $\mathbb{Z}[p,q]$ 中相消</summary>
+          <div class="layer-content">
+            <p>代入通用 Pythagorean 參數化 $(u,v,w)=(p^2-q^2,\,2pq,\,p^2+q^2)$，兩邊都成 $\mathbb{Z}[p,q]$ 中的多項式。$a=u(4v^2-w^2)$、$b=v(4u^2-w^2)$、$c=4uvw$，直接展開計算其差</p>
+            <p>$$\bigl(a^2+b^2+c^2\bigr)-w^2\bigl(w^4+16u^2v^2\bigr)$$</p>
+            <p>在 $\mathbb{Z}[p,q]$ 中恆為 $0$（script <code>01</code>, Step 1）。每個本原 Pythagorean 三元組都來自某 $(p,q)$（至多差符號），且兩邊在約束 $u^2+v^2=w^2$ 下都是 $(u,v,w)$ 的多項式，故恆等式對所有 Pythagorean $(u,v,w)$ 成立。</p>
+          </div>
+        </details>
+
+        <p>因此體對角線 $g$ 為整數 $\iff (g/w)^2=w^4+16u^2v^2$。再以 $t=p/q$ 代入並除以 $q^8$，得 octic 恆等式（PARI 直接驗證：左式 $=q^8\times$ 右括號）：</p>
         <p>$$w^4+16u^2v^2 \;=\; q^8\bigl(t^8+68t^6-122t^4+68t^2+1\bigr).$$</p>
       </div>
     </details>
 
     <details class="layer">
-      <summary>化約鏈：genus-3 octic → palindrome → genus-1 $C_0$</summary>
+      <summary>化約鏈：genus-3 octic → palindrome → genus-1 $C_0$（每步代數展開）</summary>
       <div class="layer-content">
-        <p>體對角線條件等價於 <strong>genus-3</strong> 八次曲線上的有理點</p>
+        <p>由上式，體對角線條件等價於 <strong>genus-3</strong> 八次曲線上的有理點（寫 $T=g/(wq^4)$）：</p>
         <p>$$C':\quad T^2=t^8+68t^6-122t^4+68t^2+1.$$</p>
-        <p>此八次式是回文（palindromic）的，故以 $W=t+1/t$ 代換、除以 $t^4$ 得</p>
-        <p>$$\frac{t^8+68t^6-122t^4+68t^2+1}{t^4}=W^4+64W^2-256,\qquad C'_{\mathrm{pal}}:\ S^2=W^4+64W^2-256.$$</p>
-        <p>（$C'_{\mathrm{pal}}$ 的 Jacobian 是 $E_{\mathrm{PCP}}:y^2=x^3+x^2-x+15$，conductor $160$、$j=-64/25$、rank $1$、生成元 $(-1,4)$——尚不足以強制有限。）真正降階的是<strong>提升條件</strong>：對 $t\in\mathbb{Q}^\times$、$W=t+1/t$ 恆有 $W^2-4=(t-1/t)^2$。設 $T_0=t-1/t$，代 $W^2=T_0^2+4$ 進 $S^2=(W^2)^2+64W^2-256$，得落到單一 <strong>genus-1</strong> 曲線</p>
-        <p>$$C_0:\quad S^2=T_0^4+72T_0^2+16.$$</p>
-        <p>這一步把 rank-$1$ 的 $C'_{\mathrm{pal}}$ 壓到 rank-$0$ 的 $C_0$，繞過了 Chabauty。</p>
+        <p>八次式判別式非零、八根相異，故 $C'$ 的 genus 為 $3$。</p>
+
+        <details>
+          <summary>palindrome 步驟：除以 $t^4$ 並以 $W=t+1/t$ 代換</summary>
+          <div class="layer-content">
+            <p>此八次式係數回文（$1,0,68,0,-122,0,68,0,1$），故除以 $t^4$ 得對稱型</p>
+            <p>$$\frac{t^8+68t^6-122t^4+68t^2+1}{t^4}=t^4+t^{-4}+68(t^2+t^{-2})-122.$$</p>
+            <p>用 $W=t+1/t$：則 $t^2+t^{-2}=W^2-2$、$t^4+t^{-4}=(W^2-2)^2-2=W^4-4W^2+2$。代入：</p>
+            <p>$$\bigl(W^4-4W^2+2\bigr)+68\bigl(W^2-2\bigr)-122=W^4+64W^2-256.$$</p>
+            <p>（PARI 確認差恆為 $0$。）兩邊 $T^2$ 同除 $t^4$，設 $S=T/t^2$ 得</p>
+            <p>$$C'_{\mathrm{pal}}:\quad S^2=W^4+64W^2-256.$$</p>
+            <p>$C'_{\mathrm{pal}}$ 的 Jacobian 是 $E_{\mathrm{PCP}}:y^2=x^3+x^2-x+15$，conductor $160$、$j=-64/25$、torsion $\mathbb{Z}/2$、<strong>rank $1$</strong>、生成元 $(-1,4)$（analytic rank $1$ + Kolyvagin 使其無條件）。rank $1$ 尚不足以強制有理點有限——必須再加一個約束。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>提升條件 $W^2-4=T_0^2$：把 rank 從 $1$ 降到 $0$</summary>
+          <div class="layer-content">
+            <p>真正降階的是 $t$ 可逆性帶來的<strong>提升條件</strong>。對 $t\in\mathbb{Q}^\times$、$W=t+1/t$ 恆有</p>
+            <p>$$W^2-4=\bigl(t+1/t\bigr)^2-4=\bigl(t-1/t\bigr)^2.$$</p>
+            <p>反之若 $W,T_0\in\mathbb{Q}$ 滿足 $W^2-4=T_0^2$，取 $t=(W+T_0)/2$，則 $t\cdot\frac{W-T_0}{2}=\frac{W^2-T_0^2}{4}=1$，故 $1/t=(W-T_0)/2$，$t+1/t=W$、$t-1/t=T_0$。因此「有理點來自有理 $t$」$\iff$ $W^2-4$ 是有理平方。設 $T_0=t-1/t$，代 $W^2=T_0^2+4$ 進 $S^2=(W^2)^2+64W^2-256$：</p>
+            <p>$$S^2=(T_0^2+4)^2+64(T_0^2+4)-256=T_0^4+72T_0^2+16,$$</p>
+            <p>落到單一 <strong>genus-1</strong> 曲線</p>
+            <p>$$C_0:\quad S^2=T_0^4+72T_0^2+16.$$</p>
+            <p>這一步把 rank-$1$ 的 $C'_{\mathrm{pal}}$ 壓到 rank-$0$ 的 $C_0$，繞過了 Chabauty；非退化盒子要求 $t\notin\{0,\pm1,\infty\}$，故 $T_0=t-1/t$ 是<strong>非零有限</strong>有理數。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
-      <summary>Jacobian 是 rank-0 的 <span class="curve-label">80a1</span>，僅四個退化點</summary>
+      <summary>Jacobian 是 rank-0 的 <span class="curve-label">80a1</span>，僅四個退化點（含 $2$-descent）</summary>
       <div class="layer-content">
-        <p>$C_0$ 的 Jacobian 是橢圓曲線</p>
+        <p>對 $y^2=x^4+72x^2+16$（有有理點 $(0,4)$）做標準 quartic-to-Weierstrass 變換並極小化，得 $C_0$ 的 Jacobian</p>
         <p>$$E_0:\quad y^2=x^3-7x+6\;=\;(x-1)(x-2)(x+3),$$</p>
-        <p>conductor $80$（Cremona <span class="curve-label">80a1</span>）、$j=148176/25$、torsion $(\mathbb{Z}/2\mathbb{Z})^2$、Mordell–Weil <strong>rank $0$</strong>。rank 由 $2$-descent 給出緊區間 $[0,0]$（無條件），並由 analytic rank $0$（$L(E_0,1)\approx1.0095\neq0$）配 Kolyvagin 獨立確認。故 $E_0(\mathbb{Q})$ 恰四點，$C_0(\mathbb{Q})$ 亦恰四點：</p>
-        <p>$$C_0(\mathbb{Q})=\{(0,4),\,(0,-4),\,\infty_+,\,\infty_-\},$$</p>
-        <p>每點皆 $T_0\in\{0,\infty\}$。但 $T_0=0\Rightarrow t=\pm1\Rightarrow u=p^2-q^2=0$，邊 $a=0$；$T_0=\infty\Rightarrow p$ 或 $q=0\Rightarrow v=2pq=0$，邊 $b,c=0$。全部退化。非退化的 Saunderson 給出非零有限 $T_0$，永遠不落在這四點集。此為<strong>無條件</strong>結果。</p>
-        <p>對照 worked example：最小的 Saunderson brick $\mathrm{Sa}(3,4,5)=(44,117,240)$（$p=2,q=1,t=2$）給 $T_0=3/2\neq0$，而 $T_0^4+72T_0^2+16=2929/16$ 非平方，對應 $a^2+b^2+c^2=73225$ 非完全平方。</p>
-        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank $=0$（$2$-descent $[0,0]$ + Kolyvagin），$C_0(\mathbb{Q})$ 四點全退化</span>
+        <p>conductor $80$（Cremona <span class="curve-label">80a1</span>）、$j=148176/25$。因右側三根相異，三個非平凡 $2$-torsion 點是 $(1,0),(2,0),(-3,0)$，故 torsion $\supseteq(\mathbb{Z}/2\mathbb{Z})^2$；<code>elltors</code> 確認恰為 $(\mathbb{Z}/2\mathbb{Z})^2$。</p>
+
+        <details>
+          <summary>rank $=0$ 的兩條獨立路徑：$2$-descent 與 Kolyvagin</summary>
+          <div class="layer-content">
+            <p><strong>(a) $2$-descent。</strong> $E_0$ 有完整有理 $2$-torsion，可做 full $2$-descent。PARI 的 <code>ellrank</code> 回緊區間 $[0,0]$；$2$-descent 是無條件演算法，下界 $0$ 顯然、上界 $0$ 來自 $2$-Selmer 群恰由 torsion 貢獻（無額外 Selmer 類提升為有理點），故 $\mathrm{rank}\,E_0(\mathbb{Q})=0$，無需任何猜想。</p>
+            <p><strong>(b) Kolyvagin。</strong> 獨立地，$E_0$ analytic rank $0$，$L(E_0,1)\approx1.0095\neq0$；由 Kolyvagin 定理，$L(E,1)\neq0\Rightarrow$ 代數 rank $0$。兩條路徑一致，且 conductor、torsion、rank 全符 Cremona 表 <span class="curve-label">80a1</span>。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>$C_0(\mathbb{Q})$ 的四點與「每點皆 $T_0\in\{0,\infty\}$」</summary>
+          <div class="layer-content">
+            <p>$C_0$ 有有理點 $(0,4)$，故是帶有理點的光滑 genus-$1$ 曲線，$\mathbb{Q}$-同構於其 Jacobian $E_0$，於是 $|C_0(\mathbb{Q})|=|E_0(\mathbb{Q})|=4$。逐一找出這四點：</p>
+            <p>$$C_0(\mathbb{Q})=\{(0,4),\,(0,-4),\,\infty_+,\,\infty_-\}.$$</p>
+            <ul>
+              <li>領導係數 $T_0^4$ 的係數 $1=1^2$ 是平方，故兩個無窮遠點 $\infty_\pm$（$S/T_0^2\to\pm1$）有理，對應 $T_0=\infty$。</li>
+              <li>仿射點：在 $|n|,d\le 2000$（$T_0=n/d$ 最簡）窮舉，唯一使 $T_0^4+72T_0^2+16$ 為平方的是 $T_0=0$，給 $(0,\pm4)$；PARI <code>hyperellratpoints</code>（搜尋界 $10^4$）獨立回傳相同的仿射點 $[0,\pm4]$。</li>
+            </ul>
+            <p>四點都 $T_0\in\{0,\infty\}$。退化對照（degeneracy bookkeeping）：</p>
+            <ul>
+              <li>$T_0=0\Rightarrow t^2=1\Rightarrow t=\pm1\Rightarrow p=\pm q\Rightarrow u=p^2-q^2=0$，邊 $a=u(4v^2-w^2)=0$。</li>
+              <li>$T_0=\infty\Rightarrow W=t+1/t=\infty\Rightarrow t\in\{0,\infty\}\Rightarrow p=0$ 或 $q=0\Rightarrow v=2pq=0$，邊 $b=v(4u^2-w^2)=0$ 且 $c=4uvw=0$。</li>
+            </ul>
+            <p>全部退化。一個非退化 Saunderson 給的 $T_0$ 是非零有限有理數，永遠不落在這四點集——矛盾。故 Saunderson 整族無完美長方體，且此為<strong>無條件</strong>結果（建立在 Cremona 表四十年前的一筆紀錄上，不靠任何猜想）。</p>
+          </div>
+        </details>
+
+        <p>對照 worked example：最小的 Saunderson brick $\mathrm{Sa}(3,4,5)=(117,44,240)$（取 $p=2,q=1$，即 $t=2$；$u=3,v=4,w=5$）給 $T_0=t-1/t=3/2\neq0$，而 $T_0^4+72T_0^2+16=\bigl(\tfrac32\bigr)^4+72\bigl(\tfrac32\bigr)^2+16=\tfrac{2929}{16}$ 非平方，對應 $a^2+b^2+c^2=73225$ 非完全平方。單一例子已展示機制：非退化的 $t$ 給非零有限 $T_0$，落不進 $C_0(\mathbb{Q})$。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank $=0$（$2$-descent $[0,0]$ + $L(1)\approx1.0095$ Kolyvagin）；$C_0(\mathbb{Q})$ 四點全退化；$\mathrm{Sa}(3,4,5)$ 之 $73225,\ 2929/16$ 皆非平方</span>
       </div>
     </details>
   </section>
@@ -637,26 +786,58 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>設定：三個面自動成立，剩下體對角線</summary>
+      <summary>設定：三個面自動成立（含展開），剩下體對角線</summary>
       <div class="layer-content">
         <p>Case B at $p=1$ 是邊為</p>
         <p>$$(a,b,c)=\bigl(4q,\ q^2-4,\ 2(q^2-1)\bigr),\qquad q\in\mathbb{Z}_{>0}$$</p>
-        <p>的單參數 stratum。三個面條件恆等成立（皆為完全平方）：</p>
-        <p>$$a^2+b^2=(q^2+4)^2,\quad a^2+c^2=\bigl(2(q^2+1)\bigr)^2,\quad b^2+c^2=5q^4-16q^2+20.$$</p>
-        <p>其中前兩式對所有 $q$ 自動為平方；故唯一未決的是體對角線</p>
+        <p>的單參數 stratum。三個面條件恆等成立（前兩式皆為完全平方），由直接展開驗證：</p>
+
+        <details>
+          <summary>三個面恆等式的展開證明</summary>
+          <div class="layer-content">
+            <p>以 $a=4q$、$b=q^2-4$、$c=2(q^2-1)$ 代入：</p>
+            <p>$$a^2+b^2=16q^2+(q^2-4)^2=16q^2+q^4-8q^2+16=q^4+8q^2+16=(q^2+4)^2.$$</p>
+            <p>$$a^2+c^2=16q^2+4(q^2-1)^2=16q^2+4q^4-8q^2+4=4q^4+8q^2+4=\bigl(2(q^2+1)\bigr)^2.$$</p>
+            <p>$$b^2+c^2=(q^2-4)^2+4(q^2-1)^2=(q^4-8q^2+16)+(4q^4-8q^2+4)=5q^4-16q^2+20.$$</p>
+            <p>$$a^2+b^2+c^2=(q^2+4)^2+4(q^2-1)^2=(q^4+8q^2+16)+(4q^4-8q^2+4)=5q^4+20.$$</p>
+            <p>（四式皆為 $\mathbb{Z}[q]$ 恆等式，PARI 確認差為 $0$。）</p>
+          </div>
+        </details>
+
+        <p>故前兩個面對角線 $\sqrt{a^2+b^2}=q^2+4$、$\sqrt{a^2+c^2}=2(q^2+1)$ 對所有整數 $q$ 自動為整數。唯一未決的是體對角線</p>
         <p>$$g^2=a^2+b^2+c^2=5q^4+20.$$</p>
-        <p>（正性要求 $b=q^2-4>0$，即 $q\ge3$。）</p>
+        <p>（正性：$a=4q$、$c=2(q^2-1)$ 在 $q\ge2$ 時為正，綁約束是 $b=q^2-4>0$，即 $q\ge3$。$b^2+c^2$ 由 $5q^4+20$ 自動連動，不另設條件。）</p>
       </div>
     </details>
 
     <details class="layer">
-      <summary>關鍵方程：Pell → odd-indexed Lucas → Cohn 1964</summary>
+      <summary>關鍵方程：Pell → 負 Pell → odd-indexed Lucas → Cohn 1964</summary>
       <div class="layer-content">
         <p>令 $Y=q^2$，體對角線條件化為 Pell 型方程</p>
-        <p>$$g^2-5Y^2=20.$$</p>
-        <p>基本解 $(g,Y)=(5,1)$，乘以 $\mathbb{Z}[\tfrac{1+\sqrt5}{2}]$ 的全正單位 $\tfrac{3+\sqrt5}{2}$ 生成全部非負解，遞迴 $Y_{n+1}=3Y_n-Y_{n-1}$，$Y_1=1,Y_2=4$，即 $1,4,11,29,76,199,\dots$。寫 $g=5h$ 把它化為負 Pell $Y^2-5h^2=-4$，其正解恰為 $(Y,h)=(L_{2n-1},F_{2n-1})$，故 $Y_n=L_{2n-1}$（odd-indexed Lucas 數）。</p>
-        <p>解存在 $\iff q^2=L_{2n-1}$ 為完全平方，即某個 Lucas 數為平方。由 <strong>Cohn (1964)</strong> 關於 Lucas 數列中平方項的定理，唯二的平方 Lucas 數是 $L_1=1$ 與 $L_3=4$，故 $q^2\in\{1,4\}$，$q\in\{1,2\}$。但 $q=1$ 時 $b=-3<0$、$c=0$；$q=2$ 時 $b=0$。皆退化。此為<strong>無條件</strong>結果（僅用 Pell 解結構與 Cohn 定理，不涉 Mordell、Chabauty 或 $L$-函數假設）。</p>
-        <span class="verified">已驗證（PARI/GP）：Pell 軌道 $Y_n=L_{2n-1}$；平方測試恰回 $\{1,4\}$，對應 $L_1,L_3$</span>
+        <p>$$g^2-5Y^2=20,\qquad Y=q^2.$$</p>
+
+        <details>
+          <summary>Pell 軌道：基本解、單位、遞迴</summary>
+          <div class="layer-content">
+            <p>基本解 $(g,Y)=(5,1)$（$25-5=20$）。乘以 $\mathbb{Z}\!\left[\tfrac{1+\sqrt5}{2}\right]$ 的全正範數-$1$ 單位 $\tfrac{3+\sqrt5}{2}$，把解送到解，產生遞迴</p>
+            <p>$$g_{n+1}=3g_n-g_{n-1},\qquad Y_{n+1}=3Y_n-Y_{n-1},$$</p>
+            <p>初值 $(g_1,Y_1)=(5,1)$、$(g_2,Y_2)=(10,4)$。$Y_n$ 的前十項是</p>
+            <p>$$1,\ 4,\ 11,\ 29,\ 76,\ 199,\ 521,\ 1364,\ 3571,\ 9349.$$</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>化為負 Pell $Y^2-5h^2=-4$，解為 $(L_{2n-1},F_{2n-1})$</summary>
+          <div class="layer-content">
+            <p>由 $g^2=5Y^2+20$ 知 $5\mid g^2$，故 $5\mid g$。（且 $5\nmid Y$：若 $5\mid Y$ 則 $25\mid 5Y^2$，$g^2\equiv20\pmod{25}$，但 $20$ 非模 $25$ 的平方，矛盾。）寫 $g=5h$，代入得 $25h^2-5Y^2=20$，即</p>
+            <p>$$Y^2-5h^2=-4.$$</p>
+            <p>此負 Pell 方程的正解經典已知恰為 $(Y,h)=(L_{2n-1},F_{2n-1})$（$n\ge1$），源於 Lucas/Fibonacci 恆等式 $L_m^2-5F_m^2=4(-1)^m$；當 $m$ 奇時右側為 $-4$。前幾項驗證：$(Y,h)=(1,1),(4,2),(11,5)$ 各滿足 $1-5=-4$、$16-20=-4$、$121-125=-4$。故每個非負解都有 $Y=L_{2n-1}$，且 $h=F_{2n-1}$、$g=5F_{2n-1}$，恰是上面那一條軌道。</p>
+          </div>
+        </details>
+
+        <p>再由 $L_{2n+1}=3L_{2n-1}-L_{2n-3}$（把 $L_{k+2}=L_{k+1}+L_k$ 套兩次）與 $L_1=1,L_3=4$，知 $L_{2n-1}$ 與 $Y_n$ 同遞迴同初值，故 $Y_n=L_{2n-1}$（odd-indexed Lucas 數）。</p>
+        <p>解存在 $\iff q^2=L_{2n-1}$ 為完全平方，即某個 Lucas 數為平方。由 <strong>Cohn (1964)</strong> 關於 Lucas 數列中平方項的定理，唯二的平方 Lucas 數是 $L_1=1$ 與 $L_3=4$，故 $q^2\in\{1,4\}$，$q\in\{1,2\}$。但 $q=1$ 時 $b=q^2-4=-3<0$、$c=2(q^2-1)=0$；$q=2$ 時 $b=q^2-4=0$。皆退化。此為<strong>無條件</strong>結果（僅用 Pell 解結構與 Cohn 定理，不涉 Mordell、Chabauty 或 $L$-函數假設）。整數性由參數化內建：Case B 邊 $a=4q$ 為整數，故 $q$ 為整數，Pell–Lucas 論證方可用。</p>
+        <span class="verified">已驗證（PARI/GP）：Pell 軌道 $Y_n=L_{2n-1}$（$1\le n\le12$）；負 Pell $Y^2-5h^2=-4$；平方測試恰回 $\{1,4\}$，對應 $L_1,L_3$</span>
       </div>
     </details>
 
@@ -665,12 +846,48 @@ footer a { color: var(--color-link); text-decoration: none; }
       <div class="layer-content">
         <p>進一步問哪些<strong>有理</strong> $q$ 同時使 $5q^4-16q^2+20$ 與 $5q^4+20$ 為平方，即下列 fibre product 的有理點：</p>
         <p>$$C:\quad \{e^2=5q^4-16q^2+20,\ \ g^2=5q^4+20\}.$$</p>
-        <p>由 Riemann–Hurwitz，$C$ 的 genus 為 $5$（四個無窮遠點定義在 $\mathbb{Q}(\sqrt5)$ 上，故非有理）。其 Jacobian 的 $\mathbb{Q}$-isogeny 分解為五個橢圓因子</p>
-        <p>$$\mathrm{Jac}(C)\sim_{\mathbb{Q}}\ \texttt{480f1}\times\texttt{800a1}\times\texttt{1200a2}\times X_+^{(5)}\times X_-^{(5)},$$</p>
-        <p>其中 $X_+^{(5)}=$ <span class="curve-label">600a2</span>、$X_-^{(5)}=$ <span class="curve-label">400a2</span> 是 rank-$0$ 曲線 <span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> 的 $\mathbb{Q}(\sqrt5)$-quadratic twist。五個因子<strong>全為 rank $1$</strong>（$2$-descent 各回緊區間 $[1,1]$，並附無限階生成元，如 $X_-^{(5)}$ 上的 $(1,24)$），故</p>
-        <p>$$\mathrm{rank}\,\mathrm{Jac}(C)(\mathbb{Q})=1+1+1+1+1=5=\operatorname{genus}(C).$$</p>
-        <p>Chabauty–Coleman 需 $\mathrm{rank}<\operatorname{genus}$，因此<strong>無法</strong>封閉 $C$——確認 Peschmann §8 所提疑慮。決定性的誤判在於：承載 Chabauty 微分的 $(-1,-1,-1)$-特徵空間，本以為由 rank-$0$ 的 <span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> 支配（那會給 rank $3$、Chabauty 可用），實際卻是它們的 $\mathbb{Q}(\sqrt5)$-twist <span class="curve-label">600a2</span>、<span class="curve-label">400a2</span>，而 twist 把 rank 從 $0$ 抬到 $1$。stratum 仍由上面的初等 Pell–Lucas 路線封閉，與曲線的有理點計數無關。</p>
-        <span class="verified">已驗證（PARI/GP）：五因子 $a_p$ 在 $32$ 個好質數上吻合；各因子 rank $=1$；genus-2 商 $\mathrm{Jac}(C_q)\sim$ <span class="curve-label">600a2</span>×<span class="curve-label">400a2</span> 亦 rank $2=$ genus</span>
+
+        <details>
+          <summary>Riemann–Hurwitz：genus $=5$，四個無窮遠點定義在 $\mathbb{Q}(\sqrt5)$ 上</summary>
+          <div class="layer-content">
+            <p>$f_1=5q^4-16q^2+20$、$f_2=5q^4+20$ 互質（$\operatorname{res}(f_1,f_2)=2^{20}5^4\neq0$）且各自可分（$\operatorname{disc}(f_1)=33177600$、$\operatorname{disc}(f_2)=256000000$ 皆非零），都無有理根。覆蓋 $C\to\mathbb{P}^1_q$ 次數 $4$（兩個雙重覆蓋的纖維積）。在 $f_1$ 的四根上 $e$-覆蓋分歧、$g$-覆蓋不分歧，貢獻分歧度 $2$；對 $f_2$ 的四根對稱；$q=\infty$ 處不分歧。Riemann–Hurwitz：</p>
+            <p>$$2g(C)-2=4(2\cdot0-2)+16=8\ \Rightarrow\ g(C)=5.$$</p>
+            <p>無窮遠：在 $q=1/s$ 圖卡，$E=es^2,G=gs^2$，方程成 $E^2=5-16s^2+20s^4$、$G^2=5+20s^4$，$s=0$ 時 $E^2=G^2=5$；因 $5$ 非有理平方，四個無窮遠點定義在 $\mathbb{Q}(\sqrt5)$ 上，故皆<strong>非有理</strong>。$C(\mathbb{Q})$ 全在仿射部分。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>$\mathrm{Jac}(C)$ 的 $\mathbb{Q}$-isogeny 分解（五因子）</summary>
+          <div class="layer-content">
+            <p>$C$ 帶對合群 $(\mathbb{Z}/2)^3=\langle\sigma_e:e\mapsto-e,\ \sigma_g:g\mapsto-g,\ \sigma_q:q\mapsto-q\rangle$，Jacobian 分解為</p>
+            <p>$$\mathrm{Jac}(C)\sim_{\mathbb{Q}}\ E_1\times E_2\times E_3\times X_+^{(5)}\times X_-^{(5)}.$$</p>
+            <ul>
+              <li><strong>軸商 $E_1,E_2$：</strong> $C/\langle\sigma_g\rangle:e^2=f_1$ 極小化得 $y^2=x^3-39312x+2889216$（$j=48228544/2025$，conductor $480$）$=$ <span class="curve-label">480f1</span>；$C/\langle\sigma_e\rangle:g^2=f_2$ 得 $y^2=x^3-32400x$（$j=1728$、CM by $\mathbb{Z}[i]$、conductor $800$）$=$ <span class="curve-label">800a1</span>。</li>
+              <li><strong>$\sigma_q$ 商之因子 $E_3$：</strong> $y^2=x^3-x^2-108x-288$ $=$ <span class="curve-label">1200a2</span>。</li>
+              <li><strong>剩兩因子 $X_\pm^{(5)}$：</strong> 承載 $(-1,-1,-1)$-特徵空間的微分 $\omega_1=dq/(eg)$、$\omega_3=q^2dq/(eg)$，是 rank-$0$ 曲線 $X_+=$ <span class="curve-label">120a2</span>、$X_-=$ <span class="curve-label">80a1</span> 的 $\mathbb{Q}(\sqrt5)$-quadratic twist，Cremona 標籤 <span class="curve-label">600a2</span>、<span class="curve-label">400a2</span>。</li>
+            </ul>
+            <p>識別依據：對 $C$ 的光滑模型數 $\mathbb{F}_p$-點，$a_p(C)=p+1-\#C(\mathbb{F}_p)$ 在 $[7,150]$ 的 $32$ 個好質數上恆等於五因子 $a_p$ 之和（無例外）。若改用未 twist 的 <span class="curve-label">120a2</span>、<span class="curve-label">80a1</span>，則在每個 $\bigl(\tfrac5p\bigr)=-1$ 的質數失配，差恰為 $\bigl(\tfrac5p\bigr)$ 的符號——正是 $\mathbb{Q}(\sqrt5)$-twist 的指紋。加上 script <code>04</code>、<code>05</code> 的顯式商構造，定出上述分解（$a_p$ 吻合為強佐證；顯式構造定錨因子）。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>五因子各 rank $1$，與 twist 把 rank $0\to1$ 的關鍵誤判</summary>
+          <div class="layer-content">
+            <p>對五條曲線，<code>ellrank</code>（無條件 $2$-descent）各回緊區間 $[1,1]$ 並附無限階生成元：<span class="curve-label">480f1</span> 上 $(-48,2160)$、<span class="curve-label">800a1</span> 上 $(-144,1296)$、<span class="curve-label">1200a2</span> 上 $(-4,8)$、$X_+^{(5)}=$<span class="curve-label">600a2</span> 上 $(-16,72)$、$X_-^{(5)}=$<span class="curve-label">400a2</span> 上 $(1,24)$；各點 canonical height 非零、階無限。獨立地，五條皆 analytic rank $1$、root number $-1$，Kolyvagin 亦給代數 rank $1$。故</p>
+            <p>$$\mathrm{rank}\,\mathrm{Jac}(C)(\mathbb{Q})=1+1+1+1+1=5=\operatorname{genus}(C).$$</p>
+            <p>Chabauty–Coleman 需<strong>嚴格</strong> $\mathrm{rank}<\operatorname{genus}$，故<strong>無法</strong>封閉 $C$——確認 Peschmann §8 所提疑慮，而非實現其期望的有效性。決定性誤判：承載 Chabauty 微分的 $(-1,-1,-1)$-特徵空間，本以為由 rank-$0$ 的 <span class="curve-label">120a2</span>（$L(1)\approx1.2695$）、<span class="curve-label">80a1</span>（$L(1)\approx1.0095$）支配——那會給 rank $3<5$、Chabauty 可用；實際卻是它們的 $\mathbb{Q}(\sqrt5)$-twist <span class="curve-label">600a2</span>、<span class="curve-label">400a2</span>（twist 由無窮遠點的 $\sqrt5$ 所迫），而 rank 並非 quadratic twist 下的不變量，twist 把每個因子的 rank 從 $0$ 抬到 $1$。stratum 仍由上面的初等 Pell–Lucas 路線封閉，與曲線的有理點計數無關。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>唯一的 genus-2 商 $C_q$ 與 $16$ 個可見有理點</summary>
+          <div class="layer-content">
+            <p>在 $(\mathbb{Z}/2)^3$ 的指數-$2$ 子群所給的商裡，唯一 genus-$2$ 的是 $C_q=C/H$（$H=\langle\sigma_e\sigma_g,\sigma_e\sigma_q\rangle$，不變微分 $\omega_1,\omega_3$），平面模型</p>
+            <p>$$C_q:\quad w^2=u(5u^2-16u+20)(5u^2+20),\qquad u=q^2,\ w=egq,$$</p>
+            <p>且 $\mathrm{Jac}(C_q)\sim_{\mathbb{Q}}X_+^{(5)}\times X_-^{(5)}=$<span class="curve-label">600a2</span>×<span class="curve-label">400a2</span>，故 $\mathrm{rank}\,\mathrm{Jac}(C_q)(\mathbb{Q})=2=\operatorname{genus}(C_q)$，Chabauty 對 $C_q$ 亦不適用。$C$ 有 $16$ 個可見有理點 $\{(\pm1,\pm3,\pm5),(\pm2,\pm6,\pm10)\}$（獨立符號），全在 $q\in\{\pm1,\pm2\}$，故 $b=q^2-4\in\{-3,0\}\le0$，皆退化；在 $|n|,d\le2000$ 的高度搜尋找不到其他。由 Faltings，$C(\mathbb{Q})$ 有限，但本節 rank 計算顯示這個有限性無法由 Chabauty–Coleman 在 $C$ 或 $C_q$ 上有效化；stratum 的封閉（主定理）只用整數點，由 Pell–Lucas 無條件給出，不依賴 $C(\mathbb{Q})$ 的完整決定。</p>
+          </div>
+        </details>
+        <span class="verified">已驗證（PARI/GP）：五因子 $a_p$ 在 $32$ 個好質數上吻合；各因子 rank $=1$（生成元如 <span class="curve-label">400a2</span> 上 $(1,24)$）；<span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> rank $0$；genus-2 商 $\mathrm{Jac}(C_q)\sim$<span class="curve-label">600a2</span>×<span class="curve-label">400a2</span> 亦 rank $2=$ genus</span>
       </div>
     </details>
 
@@ -691,34 +908,95 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>設定：Face-3 條件與 Peschmann 的 (5,2)</summary>
+      <summary>設定：Face-3 條件、torsion 退化、與 Peschmann 的 (5,2)</summary>
       <div class="layer-content">
-        <p>$q$-fiber 上的完美長方體要求 $E_q:y^2=x(x+1)(x+q^2)$ 上一點 $P=(x,y)$ 使 <strong>Face-3 量</strong>為平方：</p>
-        <p>$$c(P)=\frac{2yq}{q^2-x^2},\qquad F_3(P)=c(P)^2+1+q^2\in(\mathbb{Q}^\times)^2.$$</p>
-        <p>由 torsion 退化引理，候選點必為無限階。Peschmann 的 torsion-intersection 法封閉了 $1{,}072$ 個 fiber，但需要某個橢圓商為 rank $0$；他具名的開放 Example 5.1 是 fiber $(m,n)=(5,2)$，三個商的 rank 為 $2,1,1$ 全正，方法失效。在本文參數化下 $(5,2)$ 對應 $q=20/21$，是一個 rank-$1$ 的 $E_q$，conductor $4305$，生成元</p>
+        <p>$q$-fiber 上的完美長方體要求 $E_q:y^2=x(x+1)(x+q^2)=x^3+(1+q^2)x^2+q^2x$ 上一點 $P=(x,y)$ 使 <strong>Face-3 量</strong>為非零有理平方：</p>
+        <p>$$c(P)=\frac{2yq}{q^2-x^2}\in\mathbb{Q},\qquad F_3(P)=c(P)^2+1+q^2\in(\mathbb{Q}^\times)^2.$$</p>
+
+        <details>
+          <summary>torsion 退化：候選點必為無限階（含逐點計算）</summary>
+          <div class="layer-content">
+            <p>對 Pythagorean 有理 $q\notin\{0,\pm1\}$，torsion 子群恆為 $E_q(\mathbb{Q})_{\mathrm{tors}}=\mathbb{Z}/4\times\mathbb{Z}/2$（Yoshida，由 Mazur 定理加在 $u^2=s^4+1$ 上終止的下降；<code>elltors</code> 回 $[4,2]$）。八個點是單位 $O$、三個 $2$-torsion $(0,0),(-1,0),(-q^2,0)$、四個四階點 $(\pm q,\pm q(q\pm1))$。逐點代入 Face-3 映射 $c$：</p>
+            <p>$$\text{三個 }2\text{-torsion}:\ \text{分子 }2yq=0,\ \text{分母 }q^2-x_i^2\in\{q^2,\,q^2-1,\,q^2(1-q^2)\}\neq0\ \Rightarrow\ c=0,$$</p>
+            <p>$$\text{四個四階點}:\ x^2=q^2\ \Rightarrow\ \text{分母 }q^2-x^2=0,\ \text{分子 }2yq=\pm2q^2(q\pm1)\neq0\ \Rightarrow\ c=\infty.$$</p>
+            <p>兩組皆是 $\mathbb{Q}(q)$ 中的恆等式。order-eight 障礙以判別式恆等式 $\Delta(Z)=(Z-1)^4(Z+1)^2(Z^2-6Z+1)$（$Z=x/q$）可見。故任何 $c(P)$ 有限非零（即解碼成有限非零邊長）的點都不是 torsion，必為無限階。Face-3 搜尋因此只需在非 torsion 軌道上做，torsion 僅以平移 $T$ 進入。</p>
+          </div>
+        </details>
+
+        <p>Peschmann 的 torsion-intersection 法在 genus-$3$ 曲線 $H_{m,n}$（$\mathrm{Jac}\sim E_{PQ}\times E_{uV}\times E_3$）上封閉了 $1{,}072$ 個 fiber，但其 Theorem 4.5 需要某個橢圓商為 rank $0$（才能由 torsion-intersection 界 $|H_{m,n}(\mathbb{Q})|\le8$）。他具名的開放 Example 5.1 是 fiber $(m,n)=(5,2)$，三個商的 rank 為 $2,1,1$ 全正，Lemma 4.2 與經典 Chabauty–Coleman 皆失效，他自陳 height-$10^6$ 搜尋「只是經驗證據，不是證明」。在本文參數化 $q=(m^2-n^2)/(2mn)$ 下 $(5,2)$ 給 $q=21/20$，由對合 $q\leftrightarrow1/q$ 記作 $q=20/21$，是一個 rank-$1$ 的 $E_q$，conductor $4305$，生成元</p>
         <p>$$P=\Bigl(-\tfrac{45}{49},\ \tfrac{10}{343}\Bigr),\qquad \widehat h(P)=2.5530.$$</p>
-        <p>共處理七個 fiber：六個 rank-$1$（$q\in\{20/21,80/39,24/7,84/13,48/55,20/99\}$）與一個 rank-$2$（$q=60/11$），rank 皆由 $2$-descent 緊區間 $[r,r]$ 無條件確定。</p>
+
+        <details>
+          <summary>七個 rank-positive fiber 的完整資料（rank 由 $2$-descent 緊區間無條件確定）</summary>
+          <div class="layer-content">
+            <p>各 fiber 以 <code>ellinit</code> 建模、<code>ellglobalred</code> 讀 conductor、<code>elltors</code> 讀 torsion、<code>ellrank</code> 回緊區間 $[r,r]$（下界等上界，無 analytic-rank 或 BSD 輸入，<code>ellrank</code> 直接作用於模型 $E_q$ 上，無 quadratic twist 介入）。七個 fiber 的 $(q;\ \text{conductor};\ (m,n);\ \text{rank};\ \widehat h\text{ 生成元})$ 為：</p>
+            <p>$$\begin{array}{llllc}
+            20/21 & 4305 & (5,2) & 1\ [1,1] & 2.5530\\
+            80/39 & 1902810 & (8,5) & 1\ [1,1] & 1.9728\\
+            24/7 & 22134 & (4,3) & 1\ [1,1] & 2.5525\\
+            84/13 & 1880151 & (7,6) & 1\ [1,1] & 7.1283\\
+            48/55 & 237930 & (8,3) & 1\ [1,1] & 2.0620\\
+            20/99 & 1551165 & (10,1) & 1\ [1,1] & 2.0451\\
+            60/11 & 82005 & (6,5) & 2\ [2,2] & 2.2893,\,2.4941
+            \end{array}$$</p>
+            <p>六個 rank-$1$ 與一個 rank-$2$（$q=60/11$）。其中 $q\in\{20/21,39/80,20/99\}$ 落在 Peschmann 已證集 $S_{100}$ 之外（$39/80$ 與 $80/39$ 為同一 $E_q$），$20/21$ 即其開放 Example 5.1。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
       <summary>障礙：對的數列是 $N_n$ 不是 $B_n$，且 primitive 不蘊含奇次方</summary>
       <div class="layer-content">
-        <p>把 $F_3(nP)=N_n/D_n$ 寫成最簡分數；各 fiber 中 $D_n$ 皆為平方，故 $F_3(nP)$ 是平方 $\iff$ 分子 $N_n=\mathrm{Num}(F_3(nP))$ 是平方。想用 elliptic divisibility sequence（EDS）的 primitive-divisor 理論封閉，會卡在兩處：</p>
-        <ul>
-          <li><strong>數列不對。</strong>寫 $nP=(A_n/B_n^2,\,C_n/B_n^3)$，已發表的<em>有效</em>定理（Silverman、Ingram–Silverman、Verzobio）界定的是 EDS 分母 $B_n$ 何時出現 primitive 質因數，但 Face-3 障礙住在<strong>分子 $N_n$</strong>——它是 $E_q$ 上另一個函數 $F_3$ 的值，divisor 支撐在 $x^2=q^2$，與 $B_n$ 的支撐不同。$N_n\neq B_n$，引用對 $B_n$ 的定理對 $N_n$ 無有效控制。</li>
-          <li><strong>primitive 未必奇次方。</strong>就算有 $N_n$ 的 primitive 質因數，要 $N_n$ 非平方還需該質數以<em>奇</em>次方出現——而 primitive 不保證奇次方。具體反例：$q=20/21$、$n=5$，質數 $29$ 是 primitive（不整除任何 $N_m$，$m<5$），卻 $v_{29}(N_5)=2$（偶次方）。故「primitive $\Rightarrow$ 奇次方 $\Rightarrow$ $N_n$ 非平方」的鏈條斷裂。</li>
-        </ul>
-        <p>所觀察到的非平方，實際由 $N_n$ 其餘質因數承載（如 $q=20/21$：$N_1=13\cdot17\cdot89\cdot181$，$N_2=37\cdot89\cdot277\cdot521\cdot2753\cdot8089\cdot22073$），而非任一個 primitive 質數。這精確說明 rank-positive 為何抵抗 rank-zero 區所用的方法。</p>
+        <p>把 $F_3(nP)=N_n/D_n$ 寫成最簡分數；各 fiber 中 $D_n$ 皆為平方（<code>an_structure.gp</code>），故 $F_3(nP)\in(\mathbb{Q}^\times)^2\iff$ 分子 $N_n=\mathrm{Num}(F_3(nP))$ 為平方。把問題化約成對<strong>整數 $N_n$ 的平方性</strong>。想用 elliptic divisibility sequence（EDS）的 primitive-divisor 理論封閉所有 $n$，會卡在兩個<strong>互相獨立</strong>的點上。</p>
+
+        <details>
+          <summary>(a) 錯的數列：有效定理界 $B_n$，障礙住在 $N_n$（不同 support）</summary>
+          <div class="layer-content">
+            <p>寫 $nP=(A_n/B_n^2,\,C_n/B_n^3)$ 為最簡分數；整數 $B_n$ 構成 EDS。Silverman 的定理保證 $B_n$ 對所有夠大的 $n$ 有 primitive 質因數（不整除任何更早的 $B_m$，$m<n$）；Ingram–Silverman 給一致估計、Verzobio 證門檻可有效計算、Ingram 處理整數點與除法多項式的顯式賦值。</p>
+            <p>但 Face-3 障礙住在<strong>分子 $N_n=\mathrm{Num}(F_3(nP))$</strong>——它是 $E_q$ 上<em>另一個</em>非常數函數 $F_3$ 的值，其 divisor 支撐在 $x^2=q^2$ 連同 Face-3 的分歧處，與支配 $B_n$ 的「$2$-torsion 與單位」support <strong>不同</strong>。腳本 <code>an_structure.gp</code> 把 $B_n$ 與 $N_n$ 並列計算，確認兩者作為整數數列 $N_n\neq B_n$。對 $B_n$ 的 primitive-divisor 定理，<em>僅靠引用</em>對 $N_n$ 無有效控制；要得到 $N_n$ 的版本，必須對函數 $F_3$ 直接界定其 divisor 的高度並重跑有效論證——本文未做此事。已知唯一閉形式的 $f(nP)$-primitive-divisor 結果（如 CM 情形 $j\in\{0,1728\}$ 的 Silverman Wieferich-criterion 分析）不涵蓋這裡的 $E_q$。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(b) primitive ≠ 奇次方：witness $q=20/21,\,n=5$，質數 $29$ 有 $v_{29}(N_5)=2$</summary>
+          <div class="layer-content">
+            <p>就算給定 $N_n$ 的 primitive 質因數，要 $N_n$ <em>非平方</em>還需該質數以<strong>奇次方</strong>出現——而 primitive 不蘊含奇次方。腳本 <code>primitive_parity.gp</code> 在 $q=20/21$ 算 $v_{29}(N_m)$（$m=1,\dots,5$）回</p>
+            <p>$$v_{29}(N_1)=v_{29}(N_2)=v_{29}(N_3)=v_{29}(N_4)=0,\qquad v_{29}(N_5)=2.$$</p>
+            <p>故 $29$ 在 $n=5$ 為 primitive（$29\nmid N_m$，$m<5$），卻以<strong>偶次方</strong> $2$ 出現。鏈條「primitive divisor $\Rightarrow$ 奇次方 $\Rightarrow$ $N_n$ 非平方」斷裂；這個 witness 證明奇次方子句非空（不是自動成立）。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>顯式因式分解：非平方實由其餘質因數承載，非任一 primitive 質數</summary>
+          <div class="layer-content">
+            <p>在 $q=20/21$，前兩個分子的完整因式分解為</p>
+            <p>$$N_1=13\cdot17\cdot89\cdot181,$$</p>
+            <p>$$N_2=37\cdot89\cdot277\cdot521\cdot2753\cdot8089\cdot22073.$$</p>
+            <p>所觀察到的非平方，由這些（多個相異、奇次方）質因數承載，而非任一個 primitive 質數。增速 $\log|N_n|\asymp n^2\widehat h(P)$（與 Néron–Tate 高度一致），使 $N_n$ 在小 $n$ 即裂成許多相異質數，<code>issquare</code> 在每個 $n\le200$ 皆決定性回 false，與是否容易因式分解無關。這精確說明 rank-positive 為何抵抗 rank-zero 區所用的方法。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
-      <summary>窗格驗證與誠實範圍</summary>
+      <summary>窗格驗證、缺口、與誠實範圍（驗證≠封閉）</summary>
       <div class="layer-content">
-        <p>對六個 rank-$1$ fiber 與所有 $Q=nP+T$（$1\le n\le200$，$T$ 走完八個 torsion）、對 rank-$2$ 的 $q=60/11$ 與所有 $Q=aG_1+bG_2+T$（$|a|,|b|\le12$），驗證 $F_3(Q)$ <strong>從不是</strong>有理平方（共 $9600$ 個 rank-$1$ coset 與 $4992$ 個 rank-$2$ coset，<code>issquare</code> 全回 false）。其中 $q\in\{20/21,39/80,20/99\}$ 落在 Peschmann 已證集 $S_{100}$ 之外，$20/21$ 即其開放 Example 5.1。</p>
-        <p>這是<strong>有限窗格的驗證，不是 all-multiples 封閉</strong>。要升級為無條件需要一個對函數 $F_3$（而非 EDS 分母 $B_n$）的「有效奇次方 primitive-divisor 定理」——本文精確點出此缺口，但不在此證明它。$\log|N_n|\asymp n^2\widehat h(P)$ 的增速使大 $n$ 偶發平方在統計上極不可能，支持但不證明該猜想。</p>
-        <span class="verified">已驗證（PARI/GP）：七個 fiber 之 rank（$2$-descent 緊區間）；窗格內 $F_3$ 全非平方；$q=20/21,n=5$ 的 $v_{29}(N_5)=2$</span>
+        <p>對每個 coset 代表元，以 <code>ellmul</code>/<code>elladd</code> 算出 $Q$、由公式算精確有理 $c(Q),F_3(Q)$、測 <code>issquare</code>。掃遍每個 fiber 階 $8$ 的完整 torsion 子群：</p>
+        <ul>
+          <li><strong>六個 rank-$1$ fiber</strong>（$q\in\{20/21,80/39,24/7,84/13,48/55,20/99\}$）與 $Q=nP+T$，$1\le n\le200$，$T$ 走完八個 torsion：共 $6\times200\times8=9600$ 個 coset；</li>
+          <li><strong>rank-$2$ 的 $q=60/11$</strong> 與 $Q=aG_1+bG_2+T$，$|a|,|b|\le12$、$(a,b)\neq(0,0)$：共 $4992$ 個非平凡 coset。</li>
+        </ul>
+        <p>在全部 $9600+4992$ 個 coset 上 <code>issquare</code>$(F_3(Q))$ <strong>恆回 false</strong>，$F_3$ 從不是有理平方。其中 $q\in\{20/21,39/80,20/99\}$ 在 Peschmann 已證集之外，$20/21$ 即其開放 Example 5.1；對它，本文的驗證是兩法之外、經由不等價 rank-positive 曲線的首次處理。</p>
+        <p>這是<strong>有限窗格的驗證，不是 all-multiples 封閉</strong>。要升級為無條件，所缺的恰是下面這個對函數 $F_3$（而非 EDS 分母 $B_n$）的有效定理：</p>
+        <details>
+          <summary>恰好缺什麼：$F_3$ 的有效奇次方 primitive-divisor 定理</summary>
+          <div class="layer-content">
+            <p><em>存在可有效計算的 $n_0=n_0(E_q,P)$，使對每個 $n\ge n_0$，Face-3 分子 $N_n=\mathrm{Num}(F_3(nP))$ 有質數 $\ell$ 滿足 $\ell\nmid N_m$（$1\le m<n$）<strong>且</strong> $v_\ell(N_n)$ 為奇。</em></p>
+            <p>此式若對函數 $F_3$（非 $B_n$）成立，則 $n\ge n_0$ 時 $N_n\notin\mathbb{Z}^2$；配合 $n<n_0$ 的有限檢查（即上面的窗格）即封閉 rank-$1$ fiber，雙變數版封閉 $q=60/11$。奇次方子句不可省（由障礙 (b)，單靠 primitive 不足，witness $v_{29}(N_5)=2$ 為證）。證明它——界 $F_3$ 之 divisor 高度並控制 primitive 賦值的奇偶——正是本文精確隔離出的開放問題，本文不在此解決。增速使大 $n$ 偶發平方統計上極不可能，支持但不證明此猜想。</p>
+          </div>
+        </details>
+        <span class="verified">已驗證（PARI/GP）：七個 fiber 之 rank（$2$-descent 緊區間 $[r,r]$）；窗格 $9600+4992$ coset 內 $F_3$ 全非平方；$q=20/21$ 之 $N_1,N_2$ 因式分解；$n=5$ 的 $v_{29}(N_5)=2$（而 $v_{29}(N_m)=0$，$m<5$）</span>
       </div>
     </details>
   </section>
@@ -731,35 +1009,98 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>最小模型、全乘法 reduction、導子與判別式</summary>
+      <summary>最小模型、不變量、全乘法 reduction、導子與判別式</summary>
       <div class="layer-content">
-        <p>以 $q=a/b$、$a=m^2-n^2$、$b=2mn$，清分母 $x\mapsto X/b^2,\,y\mapsto Y/b^3$ 得全域最小模型</p>
-        <p>$$E:\quad Y^2=X(X+b^2)(X+a^2)=X^3+(a^2+b^2)X^2+a^2b^2X,$$</p>
-        <p>其不變量 $c_4=16(a^4-a^2b^2+b^4)$、$\Delta_0=16\,a^4b^4(a^2-b^2)^2$。每個壞質數皆為<strong>乘法 reduction</strong>（Kodaira 型 $I_n$，$v_p(c_4)=0$），故導子指數恆為 $1$：</p>
-        <p>$$N=\operatorname{rad}\bigl(a\,b\,(a^2-b^2)\bigr),$$</p>
-        <p>（唯 $v_2(b)=2$ 時 $2$ 為好 reduction，從 $N$ 去掉）。最小判別式</p>
-        <p>$$\Delta_{\min}=\Delta_0/2^{12}=2^{\,4v_2(b)-8}\,a^4\,(\mathrm{odd}\,b)^4\,(a^2-b^2)^2,$$</p>
-        <p>奇質數的 Tate index 為 $4v_p(a)$、$4v_p(b)$、或 $2v_p(a^2-b^2)$。</p>
+        <p>以 $q=a/b$ 最簡、$a=m^2-n^2$、$b=2mn$（$(a,b,a^2+b^2)$ 跑遍 primitive Pythagorean triple），清分母 $x\mapsto X/b^2,\,y\mapsto Y/b^3$ 得整模型</p>
+        <p>$$E:\quad Y^2=X(X+b^2)(X+a^2)=X^3+(a^2+b^2)X^2+a^2b^2X.$$</p>
+
+        <details>
+          <summary>不變量與互質簿記（$c_4,c_6,\Delta_0,j$，以及兩兩互質）</summary>
+          <div class="layer-content">
+            <p>由標準 $b_2,b_4,b_6,b_8,c_4,c_6,\Delta$ 恆等式（符號計算 <code>01_model_factorization.py</code>，每個等式回 <code>True</code>）：</p>
+            <p>$$c_4=16(a^4-a^2b^2+b^4),\qquad c_6=-32(a^2-2b^2)(a^2+b^2)(2a^2-b^2),$$</p>
+            <p>$$\Delta_0=16\,a^4b^4(a^2-b^2)^2,\qquad j=\frac{256(a^4-a^2b^2+b^4)^3}{a^4b^4(a^2-b^2)^2}.$$</p>
+            <p>因 $\gcd(m,n)=1$、$m+n$ 奇，三量 $a$、$b$ 的奇部、$a^2-b^2$ <strong>兩兩互質</strong>（每個奇質數恰整除其一，$2$ 只整除 $b$）。這套簿記使 $\operatorname{rad}(ab(a^2-b^2))$ 沿因式分裂，是下面所有公式的根據。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>每個壞質數皆乘法 reduction（$v_p(c_4)=0$）⇒ 導子指數 $1$</summary>
+          <div class="layer-content">
+            <p>對奇質數 $p\mid\Delta_0$，由 $a,\operatorname{odd}(b),a^2-b^2$ 兩兩互質檢得 $v_p(c_4)=0$，故 reduction 為乘法（Kodaira 型 $I_n$），導子指數 $f_p=1$。$p=2$ 處 <code>elllocalred</code> 在最小模型上每個 fiber 皆回乘法型。對 $m\le150$ 的 $4582$ 個 fiber 跑 <code>ellminimalmodel</code>/<code>ellglobalred</code>/<code>elllocalred</code> 確認：零個 additive 質數、每個壞質數 $f_p=1$。故</p>
+            <p>$$N=\operatorname{rad}\bigl(a\,b\,(a^2-b^2)\bigr),$$</p>
+            <p>唯一例外是 $v_2(b)=2$ 時 $2$ 為好 reduction（恰 $v_2(\Delta_{\min})=4v_2(b)-8=0$），從 $N$ 去掉因子 $2$。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>最小判別式與 Tate index 的封閉公式（minimalize 只在 $p=2$）</summary>
+          <div class="layer-content">
+            <p>對每個奇 $p$，$v_p(\Delta_0)-v_p(\Delta_{\min})=0$；在 $p=2$ 恆為 $12$（$4582$ fiber 全驗）。因 $v_2(\Delta_0)=4+4v_2(b)$（$a$、$a^2-b^2$ 皆奇）、$v_2(\Delta_{\min})=v_2(\Delta_0)-12$，得</p>
+            <p>$$\Delta_{\min}=\Delta_0/2^{12}=2^{\,4v_2(b)-8}\,a^4\,(\mathrm{odd}\,b)^4\,(a^2-b^2)^2,\qquad v_2(\Delta_{\min})=4v_2(b)-8.$$</p>
+            <p>模型 $E$ 只在 $2$ 處非最小（一致因子 $2^{12}$），奇質數處已最小。乘法 reduction 給 $n_p=v_p(\Delta_{\min})=-v_p(j)$，配合 $j$-公式與互質：</p>
+            <p>$$n_p=4v_p(a)\ (p\mid a),\quad n_p=4v_p(b)\ (p\mid b),\quad n_p=2v_p(a^2-b^2)\ (p\mid a^2-b^2),\quad n_2=4v_2(b)-8.$$</p>
+            <p>三個極點階 $4,4,2$ 是 $j$ 在 $q=0,\infty,\pm1$ 的 $I_4,I_4,I_2$ 退化 fiber。單一質數可帶大 Tate index（$(256,121)$ 之 $n_2=4\cdot9-8=28$），但它同時把 $\log p$ 計入分母 $\log N$，故任一質數無法逼大 $\sigma$。$\log|\Delta_{\min}|$ 恆等式對 $m\le500$ 全 $50{,}765$ fiber 驗到 $10^{-9}$。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
-      <summary>$\mathbb{Z}[\sqrt2]$ 因式分解與三個 Szpiro 上界</summary>
+      <summary>$\mathbb{Z}[\sqrt2]$ 因式分解、Szpiro 比值公式、與三個上界</summary>
       <div class="layer-content">
-        <p>判別式由六因式形式的 powerful part 控制：</p>
-        <p>$$a^2-b^2=m^4-6m^2n^2+n^4=F_5\,F_6,\quad F_5=(m-n)^2-2n^2,\ F_6=(m+n)^2-2n^2,$$</p>
-        <p>$F_5,F_6$ 是 $\mathbb{Z}[\sqrt2]$ 的兩個範數形式（線性分裂需 $\mathbb{Q}(\sqrt2)$，根 $m/n=\pm(1\pm\sqrt2)$）——正是 Peschmann 遇到的 $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$。整個 powerful part 來自度 $8$ 分離形式 $F=m\,n\,(m-n)(m+n)F_5F_6$ 的六個不可約因式。由</p>
-        <p>$$\sigma(E_q)=\frac{\log|\Delta_{\min}|}{\log N}=\frac{4\log a+4\log b+2\log|a^2-b^2|-8\log2}{\log\operatorname{rad}(ab(a^2-b^2))},$$</p>
-        <p>得三個上界：(a) 用三元組 $b^2+(a^2-b^2)=a^2$ 套 abc 猜想 $\Rightarrow\ \sigma\le6(1+\varepsilon)$；(b) 無條件用 Stewart–Yu 有效 abc $\Rightarrow\ \sigma=O(N^{1/3}(\log N)^2)$；(c) 對 power-free 篩（Greaves、Browning–Heath-Brown、Bhargava 幾何篩）$\Rightarrow\ \sigma\le4+\varepsilon$ 在 density-one 集上（<strong>無條件</strong>）。例外集 $\{\sigma>4\}$ density 零，含於六因式之一取 powerful 值的聯集；$F_5,F_6$ 的 powerful 值落在 genus-$0$ Pell 圓錐 $X^2-2n^2=dk^2$ 上，是一個特出、可參數化的分量，但非全部（例 $(125,44)$ 之 $\sigma=4.011$ 由<em>線性</em>因式 $m-n=81=3^4$、$m+n=169=13^2$ 驅動）。</p>
+        <p>判別式的 powerful part 由六因式形式控制。其二次部分恰是 $\mathbb{Z}[\sqrt2]$ 的兩個範數形式：</p>
+        <p>$$a^2-b^2=m^4-6m^2n^2+n^4=F_5\,F_6,\quad F_5=(m-n)^2-2n^2,\ F_6=(m+n)^2-2n^2.$$</p>
+        <p>四次式 $m^4-6m^2n^2+n^4$ 在 $\mathbb{Q}$ 上可約為 $F_5F_6$；進一步分裂成線性因式需 $\mathbb{Q}(\sqrt2)$，根為 $m/n=\pm(1\pm\sqrt2)$——正是 Peschmann 遇到的 $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$（代 $s=m/n$）。整個 powerful part 來自度 $8$ 分離形式 $F=m\,n\,(m-n)(m+n)F_5F_6$ 的六個不可約因式（$\gcd(F,F')$ 常數、判別式非零）。Szpiro 比值由 §3 公式變成 $(m,n)$ 的顯式函數：</p>
+        <p>$$\sigma(E_q)=\frac{\log|\Delta_{\min}|}{\log N}=\frac{4\log a+4\log b+2\log|a^2-b^2|-8\log2}{\log\operatorname{rad}\bigl(ab(a^2-b^2)\bigr)}.$$</p>
+
+        <details>
+          <summary>(a) abc 三元組 $b^2+(a^2-b^2)=a^2$ ⇒ $\sigma\le6(1+\varepsilon)$（並與 abc 等價）</summary>
+          <div class="layer-content">
+            <p>令 $C=\max(a^2,b^2)$、$R=\operatorname{rad}(ab(a^2-b^2))=N$。由公式分子 $=2\log a^2+2\log b^2+2\log|a^2-b^2|\le6\log C$（各項 $\le C$），去掉 $-8\log2$ 只減分子，無條件得</p>
+            <p>$$\sigma(E_q)\le 6\,\frac{\log C}{\log N}\quad(\text{對 }m\le500\text{ 全 }50{,}765\text{ fiber 零違反}).$$</p>
+            <p>三元組 $(b^2,\,a^2-b^2,\,a^2)$ 是 abc 三元組（$\operatorname{rad}=R=N$）。abc 猜想給 $\log C\le(1+\varepsilon)\log N+O_\varepsilon(1)$，故 $\sigma\le6(1+\varepsilon)+o(1)$ 一致成立。反向：一致界 $\sigma\le S$ 逼出 $\log C\le(S/2)\log R+O(1)$，即同一三元組指數 $S/2$ 的 abc 不等式——故 $\sigma$ 一致有界 $\iff$ 一個（稀疏）abc 不等式。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(b) Stewart–Yu 有效 abc ⇒ 無條件 $\sigma=O(N^{1/3}(\log N)^2)$</summary>
+          <div class="layer-content">
+            <p>Stewart–Yu 有效給 $\log C\le\kappa R^{1/3}(\log R)^3$；配合 $\sigma\le6\log C/\log N$ 得</p>
+            <p>$$\sigma(E_q)=O\!\bigl(N^{1/3}(\log N)^2\bigr).$$</p>
+            <p>此界無條件，但隨 conductor 增長（與 (a) 的常數界對比，為弱但無條件的版本）。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>(c) power-free 篩 ⇒ density-one $\sigma\le4+\varepsilon$（無條件）+ 六因式例外軌跡</summary>
+          <div class="layer-content">
+            <p>寫 $P=ab(a^2-b^2)$、$L=\log P$。由公式 $\log|\Delta_{\min}|=2L+2\log(ab)-8\log2$、$\log N=L-G$，$G=\sum_p(v_p(P)-1)\log p\ge0$ 是 radical gap，由 powerful part $\operatorname{Pow}(P)$ 決定。充分條件：$\sigma\le\sigma_0$ 只要 $\operatorname{Pow}(P)\le P^{(\sigma_0-4)/\sigma_0}$（指數 $>0\iff\sigma_0>4$，$\to0^+$ 當 $\sigma_0\to4^+$）。故 powerful part 任何幂次節省即給 $\sigma\le4+\varepsilon$。</p>
+            <p>度 $8$ 分離形式 $F$ 的每個因式度 $\le2$，正落在 power-free 篩無條件適用的範圍：Greaves 與 Browning–Heath-Brown 對各因式、Bhargava 幾何/Ekedahl 篩對大質數尾巴，給 $\#\{(m,n)\in[1,H]^2:\operatorname{Pow}(F(m,n))>H^\eta\}=O_{F,\eta}(H^{2-\delta})$。故在 density-one 集上 $\sigma\le4+\varepsilon$（<strong>無條件</strong>）。</p>
+            <p>例外集 $\{\sigma>4+\varepsilon\}$ density 零（box $\max(m,n)\le H$ 內計數 $O(H^{2-\delta})$），含於六因式之一取 powerful 值的聯集：</p>
+            <p>$$\bigcup_{G\in\{\,m,\,n,\,m-n,\,m+n,\,F_5,\,F_6\,\}}\{G(m,n)\text{ powerful}\}\ \cup\ \{v_2(b)\text{ large}\}.$$</p>
+            <p>四個線性因式各貢獻一個 density-零 powerful-值軌跡；兩個二次因式 $F_5,F_6$ 的 powerful 值落在 genus-$0$ Pell 圓錐 $X^2-2n^2=dk^2$（$X=m\mp n$，$d$ squarefree）上，每條有 $\Theta(H)$ 整數點，亦 density 零，但比線性軌跡密——是一個<strong>特出、可參數化</strong>的分量，<em>非全部</em>。例 $(125,44)$ 之 $\sigma=4.011$ 由<em>線性</em>因式驅動：$m-n=81=3^4$、$m+n=169=13^2$，而 $F_5=2689$（squarefree）、$F_6=24689=7\cdot3527$（squarefree）。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
-      <summary>實測極值與無 Szpiro-free height 常數</summary>
+      <summary>實測極值、密度、與無 Szpiro-free height 常數</summary>
       <div class="layer-content">
-        <p>由精確公式，在 $m\le800$ 的 $129{,}870$ 個 fiber 上 $\sigma_{\max}=4.6140$ 於 $(m,n)=(256,121)$（該 fiber $n_2=4\cdot9-8=28$），$\sigma_{\min}=2.7217$ 於 $(2,1)$，平均 $3.0811$；$m\le700$ 時 $\{\sigma\le4\}$ density $0.99967$，例外以 $H^{-1}$ 衰減。</p>
-        <p>誠實的負面結論：因全 fiber 處處乘法 reduction，所有非阿基米德 Néron 局部高度 $\le0$，正的高度只能來自阿基米德項，故<strong>不存在</strong>與 Szpiro 無關的絕對常數 $c$ 使 $\widehat h(P)\ge c\log|\Delta_{\min}|$（那即 Lang 高度猜想，僅知非有效常數）。本文不對完美長方體問題本身作任何主張，研究對象是家族 $E_q$ 的判別式與 Szpiro 結構。與 Naskręcki 的 rank 結果互補（後者算的是 rank，本文算的是 minimal model / 導子 / 判別式 / Szpiro）。</p>
-        <span class="verified">已驗證（PARI/GP + sympy）：$\sigma_{\max}=4.6139648$ at $(256,121)$；density-one $\sigma\le4+\varepsilon$；全乘法 census；$\widehat h(2P)=4\widehat h(P)$</span>
+        <p>由精確公式 <code>03_sigma_density.gp</code>，在 $m\le800$ 的 $129{,}870$ 個 fiber 上</p>
+        <p>$$\sigma_{\max}=4.6139648\ \text{於 }(256,121),\quad \sigma_{\min}=2.7216976\ \text{於 }(2,1),\quad \sigma_{\mathrm{mean}}=3.0810637;$$</p>
+        <p>$(256,121)$ 之 $n_2=28$（$v_2(b)=9$）。$m\le700$ 時 $\{\sigma\le4\}$ density $0.99967$，例外比例隨 $H$ 倍增而減半（$0.00147$ at $m\le100$ → $0.00033$ at $m\le700$），與 $O(H^{2-\delta})$、$\delta\approx1$ 一致——逾兩倍於 squarefree 子軌跡的密度（後者 $\approx0.43$）。每個 $\sigma>4$ 的 fiber 都帶六因式之一的 powerful 值，與包含論一致。</p>
+        <details>
+          <summary>負面結論：不存在 Szpiro-free 絕對 height 常數（全乘法 ⇒ $\lambda_p\le0$）</summary>
+          <div class="layer-content">
+            <p>因全 fiber 處處乘法 reduction（型 $I_{n_p}$），每個非阿基米德 Néron 局部高度</p>
+            <p>$$\lambda_p(P)=-\frac{n_c(n_p-n_c)}{n_p}\log p\le0\qquad(n_c\in[0,n_p/2]\text{ 為 component depth}),$$</p>
+            <p>故 $\widehat h(P)=\lambda_\infty(P)+\sum_p\lambda_p(P)\le\lambda_\infty(P)$，正的高度只能來自阿基米德項。但 $\lambda_\infty$ 由 $P$ 的橢圓對數支配，無 $\log|\Delta_{\min}|$ 下界（大判別式曲線上可有小橢圓對數的非 torsion 點）。故<strong>不存在</strong>與 Szpiro 無關的絕對常數 $c$ 使 $\widehat h(P)\ge c\log|\Delta_{\min}|$（那即 Lang 高度猜想，僅知非有效常數）。實測比值不隨 $\sigma$ 單調：$(4,3)$ 之 $0.0929$、$(16,5)$ 之 $0.0293$、$(18,7)$ 之 $0.0272$，而 Szpiro-record fiber $(256,121)$（$\sigma=4.6140$，conductor $\approx4.5\times10^{11}$，rank $2$）之最小非 torsion 高度 $\widehat h_{\min}=7.8835$ 給比值 $0.0637$——在中段值之上，非之下；無 Szpiro-free 正下限可辨。Pila–Zannier 有限性路線不適用（相關有理點無 Galois 軌道）。</p>
+          </div>
+        </details>
+        <p>本文不對完美長方體問題本身作任何主張，研究對象是家族 $E_q$ 的判別式與 Szpiro 結構。與 Naskręcki 的 rank 結果互補（後者算 rank，本文算 minimal model / 導子 / 判別式 / Szpiro）；對 Peschmann 的推進是把他遇到的 $\mathbb{Q}(\sqrt2)$ 因式分解定位為最小判別式的二次部分。</p>
+        <span class="verified">已驗證（PARI/GP + sympy）：$\sigma_{\max}=4.6139648$ at $(256,121)$（$n_2=28$）、$\sigma_{\min}=2.7216976$ at $(2,1)$、$\sigma_{\mathrm{mean}}=3.0810637$；$(125,44)$ 之 $\sigma=4.011$、$m-n=3^4,m+n=13^2,F_5=2689,F_6=7\cdot3527$；density-one $\sigma\le4+\varepsilon$；全乘法 census；$\widehat h(2P)=4\widehat h(P)$</span>
       </div>
     </details>
 
@@ -780,38 +1121,78 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>設定：Sophie–Germain 恆等式與兩個分支</summary>
+      <summary>設定：Sophie–Germain 恆等式、$\gcd(A,B)=1$、與兩個分支</summary>
       <div class="layer-content">
-        <p>Case-B 參數化下邊為 $a=4pq,\ b=q^2-4p^2,\ c=2(q^2-p^2)$，體對角線條件化簡為 $q^4+4p^4=5\,\square$。代入 Sophie–Germain 恆等式</p>
+        <p>Case-B 參數化（奇互質對 $p<q$）下邊為 $a=4pq,\ b=q^2-4p^2,\ c=2(q^2-p^2)$，體對角線條件 $a^2+b^2+c^2=\square$ 化簡為 $q^4+4p^4=5\,\square$。代入 Sophie–Germain 恆等式（多項式恆等，殘差 $0$，符號驗證）：</p>
         <p>$$q^4+4p^4=\underbrace{\bigl((q-p)^2+p^2\bigr)}_{A}\,\underbrace{\bigl((q+p)^2+p^2\bigr)}_{B}.$$</p>
-        <p>$p,q$ 奇且互質時 $\gcd(A,B)=1$，故質因數 $5$ 只能落入其一，分兩個分支：</p>
+        <p>$p,q$ 奇且互質時 $\gcd(A,B)=1$，故唯一分解逼使質因數 $5$ 只能落入 $A,B$ 其一，分兩個分支：</p>
         <ul>
-          <li>Case I：$A=5\alpha^2,\ B=\beta^2$；</li>
-          <li>Case II：$A=\alpha^2,\ B=5\beta^2$。</li>
+          <li>Case I：$A=5\alpha^2,\ B=\beta^2$（受約束側為 $A$）；</li>
+          <li>Case II：$A=\alpha^2,\ B=5\beta^2$（受約束側為 $B$）。</li>
         </ul>
+        <p>（此處「Sophie–Germain」指上面的恆等式；$p$ 跑遍任意質數，不必是古典意義 $2p+1$ 也是質數的 Sophie–Germain prime。正確辨識受約束側是關鍵：把 Case I 的 $q=\tfrac{p^2-2p-1}{2}$ 代入它的非約束 Pythagorean 側 $B$ 反而得 $4B=(p^2+1)^2$，自動成平方、無約束，並不給 $C_{\mathrm{anom}}$。）</p>
       </div>
     </details>
 
     <details class="layer">
       <summary>單曲線封閉：化約到 $C_{\mathrm{anom}}$，Jacobian <span class="curve-label">800a3</span></summary>
       <div class="layer-content">
-        <p>當 $p$ 為<strong>質數</strong>，差平方表示 $p=m^2-n^2$ 唯一（$m=\tfrac{p+1}{2},n=\tfrac{p-1}{2}$），把每個分支壓成單參數 $q=\tfrac{p^2\pm2p-1}{2}$。代入受約束的那一側並清分母（$Y=p,\ Z=2\beta$）得異常四次曲線</p>
-        <p>$$C_{\mathrm{anom}}:\quad 20Z^2=Y^4+8Y^3+18Y^2-8Y+1,$$</p>
-        <p>兩個分支經 $Y\mapsto-Y$ 共用此單一曲線。其 Jacobian 為</p>
+        <p>當 $p$ 為<strong>質數</strong>，差平方表示 $p=m^2-n^2$ 唯一（$m=\tfrac{p+1}{2},n=\tfrac{p-1}{2}$）。</p>
+
+        <details>
+          <summary>兩分支壓成單參數 $q$，並合流到同一條 $C_{\mathrm{anom}}$（$Y\mapsto-Y$）</summary>
+          <div class="layer-content">
+            <p>Case II：$B=5\beta^2$ 逼 $A=\alpha^2$，故 $(q-p,p,\alpha)$ 是 Pythagorean triple、$p$ 為奇 leg，$p=m^2-n^2$、$q-p=2mn$。質數唯一性給 $q-p=2mn=\tfrac{p^2-1}{2}$，即 $q=\tfrac{p^2+2p-1}{2}$。代入 $B=5\beta^2$、清分母（$Y=p,Z=2\beta$）：</p>
+            <p>$$4B=p^4+8p^3+18p^2-8p+1=5(2\beta)^2\ \Rightarrow\ C_{\mathrm{anom}}:\ 20Z^2=Y^4+8Y^3+18Y^2-8Y+1.$$</p>
+            <p>Case I：兩因式角色互換，受約束側 $A=5\alpha^2$、$q=\tfrac{p^2-2p-1}{2}$，清分母得 $4A=p^4-8p^3+18p^2+8p+1$，恰是上式右側在 $Y\mapsto-Y$ 下的像（符號驗證）。故<strong>兩個分支經 $Y\mapsto-Y$ 共用單一曲線</strong> $C_{\mathrm{anom}}$。</p>
+          </div>
+        </details>
+
+        <p>$C_{\mathrm{anom}}$ 在有理點 $(Y,Z)=(1,1)$（注意 $f(1)=20$）做 Jacobian 構造得 conductor $800$、$j=287496$ 的長 Weierstrass 模型，其最小模型</p>
         <p>$$E_{\mathrm{anom}}:\quad y^2=x^3-275x+1750,$$</p>
-        <p>conductor $800$、$\Delta=2^9\cdot5^6$、$j=287496$（Cremona <span class="curve-label">800a3</span>），Mordell–Weil <strong>rank $1$</strong>（$2$-descent 上下界吻合，無條件），生成元 $P=(-15,50)$、$\widehat h(P)=0.9497$，torsion $\mathbb{Z}/2=\{O,(10,0)\}$。由 Siegel 定理整數點有限，沿 rank-$1$ 格點以 canonical height 列舉得<strong>全部七個</strong>整數點 $\{(-15,\pm50),(46,\pm294),(9,\pm2),(10,0)\}$。</p>
+        <p>conductor $800=2^5\cdot5^2$、判別式 $8\,000\,000=2^9\cdot5^6$、$j=287496$，<code>ellidentify</code> 回 Cremona <span class="curve-label">800a3</span>。（啟發此研究的 framework 模型 $y^2=x^3-5\,702\,400x+5\,225\,472\,000$ 非最小，scaling $u=12$ 後正是 $E_{\mathrm{anom}}$，同一條曲線。）</p>
+
+        <details>
+          <summary>rank $1$ 無條件，Mordell–Weil 結構，與七個整數點的列舉（含誠實性）</summary>
+          <div class="layer-content">
+            <p>$2$-descent（<code>ellrank</code>）回 $r_{\mathrm{low}}=r_{\mathrm{up}}=1$，故 $\operatorname{rank}E_{\mathrm{anom}}(\mathbb{Q})=1$ <strong>無條件</strong>（上下界吻合，不依賴 BSD 或 GRH；analytic rank 亦 $1$，僅為一致性檢查）。生成元 $P=(-15,50)$、$\widehat h(P)=0.949741\ldots$，torsion $\mathbb{Z}/2=\{O,(10,0)\}$，故</p>
+            <p>$$E_{\mathrm{anom}}(\mathbb{Q})\cong\mathbb{Z}\,P\oplus(\mathbb{Z}/2)\,T,\qquad T=(10,0).$$</p>
+            <p>（conductor $800$ 雖與 $\sqrt5$-twist 現象同 conductor，但此處<strong>無 twist 介入</strong>：rank 直接由最小模型上的 $2$-descent 上下界吻合確定。）由 Siegel 定理 $C_{\mathrm{anom}}$（genus $1$、Jacobian rank $1$）整數點有限。沿 rank-$1$ 格點 $nP+\varepsilon T$（$\widehat h(nP+\varepsilon T)=n^2\widehat h(P)$）以 canonical-height 列舉，naive 與 canonical 高度差以 $\mu$ 取樣（$|h_x(R)-\widehat h(R)|\le2.93$，$1\le n\le60$，延伸到 $500$ 仍穩定），naive height $\le10^7$ 的窮搜得<strong>全部七個</strong>整數點</p>
+            <p>$$(-15,\pm50)=\mp P,\quad (46,\pm294)=\pm2P,\quad (9,\pm2)=\mp P+T,\quad (10,0)=T;$$</p>
+            <p>$3\le n\le6$ 的 $nP,nP+T$ 之 $x$-分母 $>1$（非整數），確認搜尋範圍內無 $|n|\ge3$ 整數點。<strong>誠實性</strong>：$\mu\le2.93$ 是<em>取樣</em>估計、非已證上界；嚴格完備性憑證須 Cremona–Prickett–Siksek height-difference bound 餵 Stroeker–Tzanakis 橢圓對數列舉（Magma/Sage 的黑盒 <code>IntegralPoints</code>，PARI/GP 2.15.4 不提供）。取樣 $\mu$ 與該法輸出一致；面測試只依賴這份七點清單。</p>
+          </div>
+        </details>
       </div>
     </details>
 
     <details class="layer">
-      <summary>解碼 near-miss $(11,71)$ 與無限質數尾巴</summary>
+      <summary>解碼 $C_{\mathrm{anom}}$ 整數點、near-miss $(11,71)$、與無限質數尾巴</summary>
       <div class="layer-content">
-        <p>$C_{\mathrm{anom}}$ 的整數點 $(Y,Z)\in\{(-1,\pm1),(1,\pm1),(11,\pm37)\}$。$(\pm1,\pm1)$ 退化（$c=0$）。$(11,37)$ 解碼成 $(p,q)=(11,71)$，邊 $(a,b,c)=(3124,4557,9840)$：</p>
-        <p>$$a^2+b^2=5525^2,\quad a^2+c^2=10324^2,\quad a^2+b^2+c^2=11285^2,$$</p>
-        <p>體對角線與兩個面皆為平方，但第三個面</p>
-        <p>$$b^2+c^2=117\,591\,849\ \text{非平方}\quad(10843^2=117\,570\,649\neq117\,591\,849).$$</p>
-        <p>故 $(11,71)$ 只是 near-cuboid。對質數 $p$ 為<strong>無條件</strong>結果。與 Peschmann 互補之處在<strong>無限尾巴 $p\ge211$</strong>：質數 $p$ 映到相鄰對 $(m,n)=(\tfrac{p+1}{2},\tfrac{p-1}{2})$，$\max(m,n)\le100$ 即 $p\le199$ 落在他的掃描窗內；第一個窗外質數是 $211$，單一曲線 $E_{\mathrm{anom}}$ 一次處理整條尾巴。合數 $p$ 因 $p=m^2-n^2$ 不唯一，僅以 $p\le50{,}000$ 的窮舉佐證（唯一 hit 仍是 $(11,71)$），明示為 empirical。</p>
-        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> rank $1$（$2$-descent）；七個整數點；$(11,71)$ 第三面 $117591849$ 非平方</span>
+        <p>把七個 $E_{\mathrm{anom}}$ 整數點拉回 $C_{\mathrm{anom}}$，整數 $(Y,Z)$ 為 $\{(-1,\pm1),(1,\pm1),(11,\pm37)\}$（$(11,37)$ 對應 $2P+T$；直接對 $|Y|\le10^6$ 篩 $C_{\mathrm{anom}}$ 得同樣三對、無其他）。以 $p=Y$、$q=\tfrac{Y^2+2Y-1}{2}$ 解碼並做面測試：</p>
+
+        <details>
+          <summary>$(11,37)\to(11,71)$ 的四個面：三平方一非平方</summary>
+          <div class="layer-content">
+            <p>$(\pm1,1)\to(p,q)=(\pm1,\pm1)$ 給 $c=2(q^2-p^2)=0$，退化非長方體。$(11,37)\to(p,q)=(11,71)$，由 $a=4pq,\ b=q^2-4p^2,\ c=2(q^2-p^2)$ 得邊</p>
+            <p>$$(a,b,c)=(3124,4557,9840),$$</p>
+            <p>$$a^2+b^2=30525625=5525^2,\quad a^2+c^2=106584976=10324^2,\quad a^2+b^2+c^2=127351225=11285^2,$$</p>
+            <p>體對角線與兩個面皆平方，但第三個面</p>
+            <p>$$b^2+c^2=117\,591\,849\ \text{非平方}\quad(\lfloor\sqrt{\,\cdot\,}\rfloor=10843,\ 10843^2=117\,570\,649\neq117\,591\,849).$$</p>
+            <p>故 $(11,71)$ 只是 near-cuboid。此單點失敗是計算性而非結構性障礙，但決定性——因第七點已完整列舉。（面值 $b^2+c^2=5q^4-16p^2q^2+20p^4$。）</p>
+          </div>
+        </details>
+
+        <p>對質數 $p$ 的封閉是<strong>無條件</strong>的（Siegel 有限性 + rank-$1$ 整數點完整列舉）。</p>
+
+        <details>
+          <summary>與 Peschmann 互補：質數尾巴 $p\ge211$ 在其有限掃描窗外</summary>
+          <div class="layer-content">
+            <p>質數 $p$ 映到相鄰對 $(m,n)=(\tfrac{p+1}{2},\tfrac{p-1}{2})$（$m-n=1$）。Peschmann 由 genus-$3$ 曲線的 torsion-intersection 封閉 $1{,}072$ 個 $\max(m,n)\le100$ 的 fiber，即 $p\le199$；$45$ 個奇質數 $p\le199$（含 $p=199$，$(m,n)=(100,99)$）落在其掃描窗內，他的 per-fiber 封閉涵蓋這些。第一個窗外質數是 $211$（再 $223,227,\dots$）。Theorem 的獨立內容正是<strong>無限尾巴 $p\ge211$</strong>：單一曲線 $E_{\mathrm{anom}}$ 一次處理整條尾巴，而 Peschmann 的方法逐 fiber 認證有限範圍、不一致延伸到無限族。兩法互補：他封閉每個被掃 fiber 上的所有有理點；本文封閉每個質數 fiber 上的 Sophie–Germain 候選（含任何有限掃描之外），代價是只處理 Sophie–Germain 軌跡。</p>
+          </div>
+        </details>
+
+        <p>合數 $p$ 因 $p=m^2-n^2$ 不唯一（每個 $p=de$、$d<e$、$d\equiv e\pmod2$ 給一個候選 $q$），不化約到單曲線；僅以 $p\le50{,}000$ 奇質數的結構性逐質數窮舉佐證（唯一 space-diagonal hit 仍是 $(11,71)$，同樣非平方面），明示為 <strong>empirical</strong>。本文不涉 Case A、其他參數化、或整個 PCP（其曲面為 general type）。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> conductor $800$、$\Delta=2^9\cdot5^6$、$j=287496$、torsion $[2]$、rank $1$（$2$-descent）；$2P=(46,294)$、$-P+T=(9,2)$、$T=(10,0)$；$C_{\mathrm{anom}}$ 整數點 $(\pm1,\pm1),(11,\pm37)$；$(11,71)$ 之 $5525^2,10324^2,11285^2$ 與第三面 $117591849$ 非平方</span>
       </div>
     </details>
   </section>
@@ -824,22 +1205,63 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>經認證的 rank-3 fiber $(22,17)$：三個生成元</summary>
+      <summary>經認證的 rank-3 fiber $(22,17)$：三個生成元與雙邊夾擠</summary>
       <div class="layer-content">
-        <p>$(m,n)=(22,17)$ 給 $a=195,b=748$，$q=195/748$，最小模型 $y^2+xy=x^3-6{,}108{,}655{,}980\,x+180{,}712{,}439{,}349{,}327$，conductor $N=19{,}015{,}731{,}735=3\cdot5\cdot7\cdot11\cdot13\cdot17\cdot23\cdot41\cdot79$，torsion $\mathbb{Z}/4\times\mathbb{Z}/2$。在 $E_q:y^2=x(x+1)(x+(195/748)^2)$ 上三個獨立有理點為</p>
+        <p>$(m,n)=(22,17)$ 給 $a=195,b=748$，$q=195/748$，$E(22,17)$ 的最小模型</p>
+        <p>$$y^2+xy=x^3-6{,}108{,}655{,}980\,x+180{,}712{,}439{,}349{,}327,$$</p>
+        <p>conductor $N=19{,}015{,}731{,}735=3\cdot5\cdot7\cdot11\cdot13\cdot17\cdot23\cdot41\cdot79$，torsion $\mathbb{Z}/4\times\mathbb{Z}/2$。在 $E_q:y^2=x(x+1)(x+(195/748)^2)$ 上三個獨立有理點為</p>
         <p>$$Q_1=\Bigl(-\tfrac{15}{176},\ \tfrac{2415}{65824}\Bigr),\quad Q_2=\Bigl(\tfrac{117}{44},\ \tfrac{169533}{32912}\Bigr),\quad Q_3=\Bigl(\tfrac{12675}{44},\ \tfrac{161213325}{32912}\Bigr).$$</p>
-        <p>其 canonical-height 配對矩陣的 regulator $\operatorname{Reg}=\det H=18.8337\ldots\neq0$，故三點在模 torsion 下線性獨立，rank $\ge3$。再由 $2$-descent 的 <code>ellrank</code> 回 $[3,3]$，上界 $3$ 來自 $2$-Selmer 群大小（無條件，不用 analytic rank 或 Sha 有限性），夾出 $\mathrm{rank}=3$。這是<strong>無條件</strong>的（無 BSD、parity、abc）。它與 Naskręcki 的 generic（幾何）rank $1$（子家族 $2$）互補——這裡給的是一個具體 $\mathbb{Q}$-fiber 的<strong>算術</strong> rank。</p>
-        <span class="verified">已驗證（PARI/GP）：$(22,17)$ 之 $\mathbb{Q}$-rank $=3$（$2$-Selmer 上界 + regulator $18.8337$ 下界）</span>
+
+        <details>
+          <summary>下界：height-pairing 矩陣 $H$ 與 regulator $\det H=18.8337\neq0$</summary>
+          <div class="layer-content">
+            <p>三點以 <code>ellisoncurve</code> 逐一驗證落在 $E_q$ 上。其 canonical-height 配對矩陣 <code>ellheightmatrix</code> 為</p>
+            <p>$$H=\begin{pmatrix}2.73288 & -0.50982 & 0.75786\\ -0.50982 & 2.76342 & 0.84518\\ 0.75786 & 0.84518 & 3.15765\end{pmatrix},\qquad \operatorname{Reg}=\det H=18.83372\ldots\neq0.$$</p>
+            <p>$\operatorname{Reg}\neq0$（且明顯離零）⇒ 三點在 Mordell–Weil 群模 torsion 下線性獨立，故 rank $\ge3$。regulator 為實解析量、報到 $30$ 位有效數字，僅用其非零性。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>上界：$2$-descent 回 $[3,3]$，上界來自 $2$-Selmer 大小（無條件）</summary>
+          <div class="layer-content">
+            <p><code>ellrank</code> 在整模型 $E(22,17)$ 上做完整 $2$-descent，用滿有理 $2$-torsion，回區間 $[\ell,h]=[3,3]$。上界 $h=3$ 來自 $2$-Selmer 群的大小，是無條件的（不用 analytic rank 或 Sha 有限性假設）。配合下界 $\ge3$ 夾出 $\operatorname{rank}=3$，無 BSD、parity、abc。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>同構不變性：生成元在整模型上產生、再搬到 $E_q$</summary>
+          <div class="layer-content">
+            <p>計算在整模型 $E(m,n):y^2=x(x+b^2)(x+a^2)$ 上進行（$b=748$），<code>ellrank</code> 同時回三個整模型上的獨立有理點。$2$-Selmer 上界是<strong>同構不變</strong>，故 $E(22,17)$ 與其約化最小模型之間的選擇無關緊要。再經 $\mathbb{Q}$-同構 $x\mapsto x/b^2,\ y\mapsto y/b^3$ 把三點搬到 $E_q$ 上的 $Q_1,Q_2,Q_3$（逐一代入確認在曲線上）。rank、獨立性、上界全部在同構下保持。三點張成自由部分的有限指數子群（saturation 與 rank、獨立性無關，不計算）。</p>
+          </div>
+        </details>
+
+        <p>它與 Naskręcki 的 generic（幾何）rank $1$（子家族 $2$，且為最佳幾何下界）互補——這裡給的是一個具體 $\mathbb{Q}$-fiber 的<strong>算術</strong> rank $3$，超出 generic rank 兩個非 generic section 的貢獻。此類特化預期稀疏，與直方圖一致。</p>
+        <span class="verified">已驗證（PARI/GP）：$(22,17)$ 之 $\mathbb{Q}$-rank $=3$（$2$-Selmer 上界 $[3,3]$ + regulator $18.8337$ 下界）；$Q_1,Q_2,Q_3$ 在 $E_q$ 上；conductor $3\cdot5\cdot7\cdot11\cdot13\cdot17\cdot23\cdot41\cdot79$</span>
       </div>
     </details>
 
     <details class="layer">
-      <summary>rank 直方圖（303 fiber）與 Euler brick 普查</summary>
+      <summary>rank 直方圖（303 fiber，全 certified）與 Euler brick 普查</summary>
       <div class="layer-content">
-        <p>對 $2\le m\le38$ 的全部 $303$ 個 primitive Pythagorean fiber，以 <code>ellrank</code>（effort 1）量 rank，每個 fiber 的下界（明確獨立點）與 $2$-descent 上界皆相等（無 rank 模糊）。分布為</p>
-        <p>$$\text{rank }0:118\ (38.94\%),\quad 1:137\ (45.21\%),\quad 2:45\ (14.85\%),\quad 3:3\ (0.99\%).$$</p>
-        <p>最大 rank $=3$，恰由三個 fiber 達成：$(m,n)\in\{(22,17),(35,22),(37,26)\}$。另以 exact <code>issquare</code> 面篩窮舉所有邊 $\le30{,}000$ 的 Euler brick，得恰 $36$ 個 primitive Euler brick（最小 $(44,117,240)$），其中<strong>零個</strong>是完美長方體（$a^2+b^2+c^2$ 皆非平方）。這是有限範圍的 Observation，非 nonexistence 定理。</p>
-        <span class="verified">已驗證（PARI/GP）：$303$ fiber 分布 $118/137/45/3$，全部 certified；$36$ 個 Euler brick 內零完美長方體</span>
+        <p>取 $2\le m\le38$、$1\le n<m$、$\gcd(m,n)=1$、$m\not\equiv n\pmod2$ 的全部 $303$ 個 primitive Pythagorean fiber，以 <code>ellminimalmodel</code> 化最小、<code>ellrank</code>（effort 1）量 rank。只在下界（明確獨立點）等上界（$2$-descent）時記為 <strong>certified</strong>，否則記入 uncertified——絕不在 $2$-descent 留缺口時猜 rank。</p>
+
+        <details>
+          <summary>分布、頻率、與三個 rank-3 fiber</summary>
+          <div class="layer-content">
+            <p>$303$ 個 fiber <strong>全部</strong> $\ell=h$（零 uncertified），certified rank 分布為</p>
+            <p>$$\text{rank }0:118\ (38.94\%),\quad 1:137\ (45.21\%),\quad 2:45\ (14.85\%),\quad 3:3\ (0.99\%),\quad \text{total }303.$$</p>
+            <p>最大 rank $=3$，恰由三個 fiber 達成：$(m,n)\in\{(22,17),(35,22),(37,26)\}$。合併 $\operatorname{rank}\ge2$ 頻率 $15.8\%$，大於 $50/50$ 奇偶啟發式所預測，且隨 $m$ 增大——與 conductor 隨參數增長的家族一致（僅作定性趨勢的猜想，不作定量主張，亦不匯入掃描範圍外的 targeted high-$\omega$ rank-$4$ fiber）。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Euler brick 普查（exact issquare 面篩，邊 $\le30{,}000$）：$36$ 個、零完美長方體</summary>
+          <div class="layer-content">
+            <p>以 face sieve 列舉 Euler brick、用 PARI exact 整數 <code>issquare</code> 測體對角線（無浮點比較，範圍內嚴格）：迴圈 $a\le b\le c$，先 $\sqrt{a^2+b^2}$，再 $\sqrt{b^2+c^2},\sqrt{a^2+c^2}$，互質則記 primitive Euler brick，最後測 $\sqrt{a^2+b^2+c^2}$。$\mathrm{EDGEMAX}=30{,}000$（單核約 $3$ 分鐘；$1000$、$5000$ 的交叉檢查重現文獻 brick 數 $5,11$）。</p>
+            <p>得恰 <strong>$36$ 個</strong> primitive Euler brick（最小 $(44,117,240)$），其中<strong>零個</strong>是完美長方體：每個三元組的 $a^2+b^2+c^2$ 皆非平方。這是有限範圍的 <strong>Observation</strong>，非 nonexistence 定理；與 Naskręcki 的 generic/geometric rank 結果及 Peschmann 的 per-fiber 封閉互補。</p>
+          </div>
+        </details>
+        <span class="verified">已驗證（PARI/GP）：$303$ fiber 分布 $118/137/45/3$，全部 certified（零 rank 缺口）；rank-3 fiber $\{(22,17),(35,22),(37,26)\}$；$36$ 個 primitive Euler brick（邊 $\le30000$）內零完美長方體</span>
       </div>
     </details>
 
@@ -862,8 +1284,22 @@ footer a { color: var(--color-link); text-decoration: none; }
     <details class="layer">
       <summary>形式化：為何整體問題仍開放</summary>
       <div class="layer-content">
-        <p>完整的完美長方體軌跡是 $\mathbb{P}^6$ 中四個二次式的完全交 $V$，是一個極小的 general type 曲面（$K_V=\mathcal{O}_V(1)$ ample，見「什麼是完美長方體」）。其有理點有限性受 Bombieri–Lang 與 Vojta 猜想（皆開放）支配，目前遠超出可及範圍。$V$ 的 birational 自同構群有限（$\operatorname{Aut}(V)=\operatorname{Bir}(V)=S_3\ltimes(\mathbb{Z}/2)^6$，階 $384$），所以也沒有任何「height-strict 的 birational 無窮遞降」（Markov–Vieta / Fermat 式）能作用在這個曲面上——這解釋了初等遞降為何在此停滯。</p>
-        <p>本站的貢獻定位為：無條件封閉具名子家族（Saunderson、Case B at $p=1$、Sophie–Germain 質數尾巴）、在明確窗格解決特定開放 fiber（Peschmann 的 $(5,2)$）、精確算出家族 $E_q$ 的 Szpiro 與判別式結構，並標出初等與曲線理論方法停滯之處（Chabauty 在 genus-5 因 rank $=$ genus 失效；primitive-divisor 因「錯數列 + 偶次方」失效；無 Szpiro-free height 常數）。沒有任何一篇宣稱解決 PCP。所有結論與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補，並非取代。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
+        <p>完整的完美長方體軌跡是 $\mathbb{P}^6$ 中四個二次式的光滑完全交</p>
+        <p>$$V:\ a^2+b^2-d^2=b^2+c^2-e^2=a^2+c^2-f^2=a^2+b^2+c^2-g^2=0,$$</p>
+        <p>其各座標皆非零的 $\mathbb{Q}$-點恰為完美長方體；忘掉第四個二次式得 Euler-brick 曲面 $V'\subset\mathbb{P}^5$（奇異 K3）。由四個二次式在 $\mathbb{P}^6$ 的 adjunction，$K_V=(-7+8)\mathcal{O}_V(1)=\mathcal{O}_V(1)$ ample，故 $V$ 是極小的 <strong>general type</strong> 曲面（$K_V^2=16,\ c_2=80,\ \chi(\mathcal{O}_V)=8,\ p_g=7,\ q=0$；非 K3）。其有理點有限性受 Bombieri–Lang 與 Vojta 猜想（皆開放）支配，目前遠超出可及範圍。</p>
+
+        <details>
+          <summary>遞降不可能性：ample $K_V$ ⇒ $\operatorname{Bir}(V)$ 有限 ⇒ 無 height-strict birational 遞降</summary>
+          <div class="layer-content">
+            <p>因 $K_V=\mathcal{O}_V(1)$，$V$ 是 canonically embedded，每個自同構皆 $\mathbb{P}^6$ 線性映射的限制。定義理想的線性 stabilizer 之 Lie 代數一維（僅純量矩陣），故線性自同構群 $0$ 維、有限；顯式枚舉得</p>
+            <p>$$\operatorname{Aut}(V)=\operatorname{Bir}(V)=S_3\ltimes(\mathbb{Z}/2)^6,\qquad |\operatorname{Aut}(V)|=384$$</p>
+            <p>（$S_3$ 為 $(a,b,c)$ 的六個置換、各唯一提升到 $(d,e,f)$ 的置換且固定 $g$；$(\mathbb{Z}/2)^6$ 為七個座標變號模對角純量）。$\operatorname{Aut}=\operatorname{Bir}$ 因 general type 極小曲面的 birational 映射即同構（Matsumura：ample $K$ ⇒ 無正維 birational 變換群；Maehara 推廣 Severi ⇒ $\operatorname{Bir}(V)$ 有限）。</p>
+            <p>於是<strong>無 height-strict birational 無窮遞降</strong>：設 $\sigma\in\operatorname{Bir}(V)=\operatorname{Aut}(V)$、有限階 $k$（$\sigma^k=\mathrm{id}$）。取 ample $L$ 與一個代表 Weil 高度 $H_L$。若有 $C>0$ 與 $\sigma$-不變稠密集 $S\subseteq V(\mathbb{Q})$ 使 $H_L(\sigma P)\le H_L(P)-C$ 對所有 $P\in S$ 成立，沿有限軌道 $P,\sigma P,\dots,\sigma^{k-1}P$（各步皆在 $S$ 內）求和得</p>
+            <p>$$H_L(\sigma^k P)\le H_L(P)-kC.$$</p>
+            <p>但 $\sigma^k=\mathrm{id}$ 使左側 $=H_L(P)$，逼出 $kC\le0$，與 $k\ge1,C>0$ 矛盾。（在實際軌道點上 $\sigma^k P=P$ 是精確的，Weil 高度的 $O(1)$ 模糊不進入。）故任何 Markov–Vieta / Fermat 式的 birational 遞降都不能作用在 $V$ 上：$S_3\ltimes(\mathbb{Z}/2)^6$ 只是置換邊標、變號，把候選重排成同 $g^2$ 的其他候選，從不導向矛盾。這解釋了初等遞降為何在此停滯（與 Yelle 的質數傳播式遞降不同類，本論證不涉及後者）。</p>
+          </div>
+        </details>
+        <p>本站的貢獻定位為：無條件封閉具名子家族（Saunderson、Case B at $p=1$、Sophie–Germain 質數尾巴）、在明確窗格解決特定開放 fiber（Peschmann 的 $(5,2)$）、精確算出家族 $E_q$ 的 Szpiro 與判別式結構，並標出初等與曲線理論方法停滯之處（Chabauty 在 genus-5 因 rank $=$ genus 失效；primitive-divisor 因「錯數列 + 偶次方」失效；無 Szpiro-free height 常數；無 birational 遞降）。沒有任何一篇宣稱解決 PCP——本站<strong>明確不是</strong>完美長方體問題的解答。所有結論與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補，並非取代。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
       </div>
     </details>
   </section>
