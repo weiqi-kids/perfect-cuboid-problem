@@ -1,0 +1,8 @@
+B2(t) = t^2 - t + 1/6
+Identity  -n(N-n)/N == N*B2(n/N) - N/6 :  difference = 0
+lambda_p coefficient r = -n(N-n)/N
+  at n=0 (identity component): 0
+  at n=N/2 (deepest component): -N/4  (= -N/4)
+B2 minimized at t=1/2, B2(1/2) = -1/12  (= -1/12)
+So r in [-N/4, 0]  => lambda_p = r*log p in [-(N/4)log p, 0]  (NON-POSITIVE)
+Sum over bad primes: sum_p lambda_p in [-(1/4) sum_p N_p log p, 0] = [-(1/4) log|Delta_min|, 0]

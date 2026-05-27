@@ -1,0 +1,7 @@
+gcd(f, f') = 1  -> squarefree iff constant
+squarefree: True
+deg f = 8 -> genus = 3
+disc(f) = 2951479051793528258560000
+factor disc: {2: 72, 5: 4}
+leading coeff = 1
+palindromic check t^8 f(1/t) - f = 0

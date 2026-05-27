@@ -1,0 +1,109 @@
+=== Algebraic identity test (symbolic) ===
+=== Numeric verification ===
+Identity s^2 - 2ab == (m^2-2mn-n^2)^2 : HOLDS for all (m,n) in 2..30
+Identity s^2 + 2ab == (m^2+2mn-n^2)^2 : HOLDS for all (m,n) in 2..30
+
+=== c4^3 vs disc structure ===
+(m,n)=(2,1) u=-1 v=7  uv=-7  s^4-4a^2b^2=49  uv^2 test=1
+(m,n)=(3,2) u=-7 v=17  uv=-119  s^4-4a^2b^2=14161  uv^2 test=1
+(m,n)=(4,1) u=7 v=23  uv=161  s^4-4a^2b^2=25921  uv^2 test=1
+(m,n)=(4,3) u=-17 v=31  uv=-527  s^4-4a^2b^2=277729  uv^2 test=1
+(m,n)=(5,2) u=1 v=41  uv=41  s^4-4a^2b^2=1681  uv^2 test=1
+(m,n)=(5,4) u=-31 v=49  uv=-1519  s^4-4a^2b^2=2307361  uv^2 test=1
+(m,n)=(6,1) u=23 v=47  uv=1081  s^4-4a^2b^2=1168561  uv^2 test=1
+(m,n)=(6,5) u=-49 v=71  uv=-3479  s^4-4a^2b^2=12103441  uv^2 test=1
+(m,n)=(7,2) u=17 v=73  uv=1241  s^4-4a^2b^2=1540081  uv^2 test=1
+(m,n)=(7,4) u=-23 v=89  uv=-2047  s^4-4a^2b^2=4190209  uv^2 test=1
+(m,n)=(7,6) u=-71 v=97  uv=-6887  s^4-4a^2b^2=47430769  uv^2 test=1
+(m,n)=(8,1) u=47 v=79  uv=3713  s^4-4a^2b^2=13786369  uv^2 test=1
+(m,n)=(8,3) u=7 v=103  uv=721  s^4-4a^2b^2=519841  uv^2 test=1
+(m,n)=(8,5) u=-41 v=119  uv=-4879  s^4-4a^2b^2=23804641  uv^2 test=1
+(m,n)=(8,7) u=-97 v=127  uv=-12319  s^4-4a^2b^2=151757761  uv^2 test=1
+
+=== u*v = a^2 - b^2 test ===
+(m,n)=(2,1) u*v=-7 a^2-b^2=-7 equal=1
+(m,n)=(3,1) u*v=28 a^2-b^2=28 equal=1
+(m,n)=(3,2) u*v=-119 a^2-b^2=-119 equal=1
+(m,n)=(4,1) u*v=161 a^2-b^2=161 equal=1
+(m,n)=(4,3) u*v=-527 a^2-b^2=-527 equal=1
+(m,n)=(5,1) u*v=476 a^2-b^2=476 equal=1
+(m,n)=(5,2) u*v=41 a^2-b^2=41 equal=1
+(m,n)=(5,3) u*v=-644 a^2-b^2=-644 equal=1
+(m,n)=(5,4) u*v=-1519 a^2-b^2=-1519 equal=1
+(m,n)=(6,1) u*v=1081 a^2-b^2=1081 equal=1
+(m,n)=(6,5) u*v=-3479 a^2-b^2=-3479 equal=1
+(m,n)=(7,1) u*v=2108 a^2-b^2=2108 equal=1
+(m,n)=(7,2) u*v=1241 a^2-b^2=1241 equal=1
+(m,n)=(7,3) u*v=-164 a^2-b^2=-164 equal=1
+(m,n)=(7,4) u*v=-2047 a^2-b^2=-2047 equal=1
+(m,n)=(7,5) u*v=-4324 a^2-b^2=-4324 equal=1
+(m,n)=(7,6) u*v=-6887 a^2-b^2=-6887 equal=1
+(m,n)=(8,1) u*v=3713 a^2-b^2=3713 equal=1
+(m,n)=(8,3) u*v=721 a^2-b^2=721 equal=1
+(m,n)=(8,5) u*v=-4879 a^2-b^2=-4879 equal=1
+(m,n)=(8,7) u*v=-12319 a^2-b^2=-12319 equal=1
+(m,n)=(9,1) u*v=6076 a^2-b^2=6076 equal=1
+(m,n)=(9,2) u*v=4633 a^2-b^2=4633 equal=1
+(m,n)=(9,4) u*v=-959 a^2-b^2=-959 equal=1
+(m,n)=(9,5) u*v=-4964 a^2-b^2=-4964 equal=1
+(m,n)=(9,7) u*v=-14852 a^2-b^2=-14852 equal=1
+(m,n)=(9,8) u*v=-20447 a^2-b^2=-20447 equal=1
+(m,n)=(10,1) u*v=9401 a^2-b^2=9401 equal=1
+(m,n)=(10,3) u*v=4681 a^2-b^2=4681 equal=1
+(m,n)=(10,7) u*v=-16999 a^2-b^2=-16999 equal=1
+(m,n)=(10,9) u*v=-32039 a^2-b^2=-32039 equal=1
+
+=== Therefore disc(E) is 16 * (a^2 b^2 (a^2-b^2))^2  -- ALWAYS A SQUARE / 16 ===
+
+=== Isogeny graph structure (sample) ===
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(idx=1,4[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+... skipping file 'pick4_squares_pattern.gp'
+[0;31m[0;31m  ***   at top-level: ...[0;35m[2,1],[3,2],[4,1],[4,3]][[0;35midx])
+[0;31m[0;31m  ***                                             ^-----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmy(m=mn[0;35m[1],n=mn[2])
+[0;31m[0;31m  ***                        ^------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmy(Emin=[0;35mellminimalmodel(E))
+[0;31m[0;31m  ***                         ^-------------------
+  *** ellminimalmodel: incorrect type in checkell (t_POL).[0m
+--- (m,n)=(m,n) ---
+[0;31m[0;31m  ***   at top-level: [0;35mprint("Emin a-invs: ",[0;35mEmin[1..5])
+[0;31m[0;31m  ***                                       ^-----------
+  *** _[_.._]: incorrect type in _[_.._] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmy(cls=[0;35mellisomat(Emin))
+[0;31m[0;31m  ***                        ^----------------
+  *** ellisomat: incorrect type in checkell (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35msogeny class size: ",#cls[0;35m[1])
+[0;31m[0;31m  ***                                             ^----
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+Isogeny degree matrix:
+[0;31m[0;31m  ***   at top-level: [0;35mfor(i=1,#cls[0;35m[2],print("  ",cls[2][i]))
+[0;31m[0;31m  ***                             ^--------------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+Conductors of isogenous curves:
+[0;31m[0;31m  ***   at top-level: [0;35mfor(i=1,#cls[0;35m[1],my(Ei=cls[1][i]);my(Ni=ellglob
+[0;31m[0;31m  ***                             ^----------------------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+
+=== Conductor factorisation pattern (rank-1 candidates from survey) ===
+(m,n)  conductor   conductor_factor   uv_factor
+(2,1)  N=1653 = [3, 1; 19, 1; 29, 1]  u=-1(matrix(0,2))  v=7(Mat([7, 1]))
+(3,2)  N=213465 = [3, 1; 5, 1; 7, 1; 19, 1; 107, 1]  u=-7(Mat([7, 1]))  v=17(Mat([17, 1]))
+(4,1)  N=1719330 = [2, 1; 3, 1; 5, 1; 223, 1; 257, 1]  u=7(Mat([7, 1]))  v=23(Mat([23, 1]))
+(4,3)  N=248178 = [2, 1; 3, 1; 7, 1; 19, 1; 311, 1]  u=-17(Mat([17, 1]))  v=31(Mat([31, 1]))
+(5,2)  N=73999695 = [3, 1; 5, 1; 7, 1; 11, 1; 79, 1; 811, 1]  u=1(matrix(0,2))  v=41(Mat([41, 1]))
+(5,4)  N=15501570 = [2, 1; 3, 1; 5, 1; 7, 1; 97, 1; 761, 1]  u=-31(Mat([31, 1]))  v=49(Mat([7, 2]))
+(6,1)  N=73944255 = [3, 1; 5, 1; 7, 1; 11, 1; 73, 1; 877, 1]  u=23(Mat([23, 1]))  v=47(Mat([47, 1]))
+(6,5)  N=286882035 = [3, 1; 5, 1; 11, 1; 1259, 1; 1381, 1]  u=-49(Mat([7, 2]))  v=71(Mat([71, 1]))
+(7,2)  N=666497055 = [3, 1; 5, 1; 7, 1; 31, 1; 83, 1; 2467, 1]  u=17(Mat([17, 1]))  v=73(Mat([73, 1]))
+(7,4)  N=6309160242 = [2, 1; 3, 1; 7, 1; 11, 1; 3631, 1; 3761, 1]  u=-23(Mat([23, 1]))  v=89(Mat([89, 1]))
+(7,6)  N=1300198263 = [3, 1; 7, 1; 13, 1; 2099, 1; 2269, 1]  u=-71(Mat([71, 1]))  v=97(Mat([97, 1]))
+(8,1)  N=170521302 = [2, 1; 3, 1; 7, 1; 1951, 1; 2081, 1]  u=47(Mat([47, 1]))  v=79(Mat([79, 1]))
+(8,3)  N=9198113430 = [2, 1; 3, 1; 5, 1; 11, 1; 41, 1; 53, 1; 101, 1; 127, 1]  u=7(Mat([7, 1]))  v=103(Mat([103, 1]))
+(8,5)  N=15182574810 = [2, 1; 3, 1; 5, 1; 13, 1; 6151, 1; 6329, 1]  u=-41(Mat([41, 1]))  v=119([7, 1; 17, 1])
+(8,7)  N=2368134510 = [2, 1; 3, 1; 5, 1; 7, 1; 17, 1; 23, 1; 151, 1; 191, 1]  u=-97(Mat([97, 1]))  v=127(Mat([127, 1]))

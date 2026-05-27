@@ -1,0 +1,5 @@
+=== Numerical test: do KNOWN Euler bricks arise from Saunderson (u,v,w)? ===
+Smallest primitive Euler brick: edges (44,117,240), face diags (125,244,267).
+Saunderson: a=u(4v^2-w^2), b=v(4u^2-w^2), c=4uvw, u^2+v^2=w^2.
+
+MATCH: (u,v,w)=(3,4,5) -> edges [44, 117, 240] ~ [44, 117, 240]

@@ -1,0 +1,83 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1500000256 (1430.512 Mbytes).[0m
+=================================================================
+Track T5 - Iwasawa-Family - 02_padicL_capped
+Budget: parisize=500MB parisizemax=1.5GB
+=================================================================
+
+
+--- Fiber 1: (m,n)=(2,1)  q=3/4  N=21  exp.rank=0 ---
+  p=5 a_p=-2 red=good ordinary=1
+    L_p(E,1)=4 + 3*5 + 4*5^2 + O(5^3)  val_p=0  [0.012000000000000000000000000000000000000s]
+  p=7 a_p=-1 red=nonsplit_mult ordinary=0
+    skip non-ordinary
+  p=11 a_p=4 red=good ordinary=1
+    L_p(E,1)=1 + 2*11 + 4*11^2 + O(11^3)  val_p=0  [0.041000000000000000000000000000000000000s]
+  p=13 a_p=-2 red=good ordinary=1
+    L_p(E,1)=3 + 6*13 + 4*13^2 + O(13^3)  val_p=0  [0.033000000000000000000000000000000000000s]
+
+--- Fiber 2: (m,n)=(3,2)  q=5/12  N=1785  exp.rank=0 ---
+  p=5 a_p=1 red=split_mult ordinary=1
+    L_p(E,1)=O(5^3)  val_p=3  [0.56500000000000000000000000000000000000s]
+  p=7 a_p=-1 red=nonsplit_mult ordinary=0
+    skip non-ordinary
+  p=11 a_p=4 red=good ordinary=1
+[0;31m  *** ellpadicL: Warning: increasing stack size to 1000000000.[0m
+[0;31m  *** ellpadicL: Warning: increasing stack size to 1500000256.[0m
+    ellpadicL FAILED [5.1850000000000000000000000000000000000s] -- exceeded 1.5GB budget
+  p=13 a_p=6 red=good ordinary=1
+    ellpadicL FAILED [3.5380000000000000000000000000000000000s] -- exceeded 1.5GB budget
+
+--- Fiber 3: (m,n)=(5,2)  q=21/20  N=4305  exp.rank=1 ---
+  p=5 a_p=1 red=split_mult ordinary=1
+    ellpadicbsd: ord=2  lead=4*5^3 + O(5^4)  [2.3180000000000000000000000000000000000s]
+  p=7 a_p=1 red=split_mult ordinary=1
+    ellpadicbsd: ord=2  lead=7 + 4*7^2 + 3*7^3 + O(7^4)  [2.8120000000000000000000000000000000000s]
+  p=11 a_p=4 red=good ordinary=1
+    ellpadicbsd FAILED [12.110000000000000000000000000000000000s]
+  p=13 a_p=-2 red=good ordinary=1
+    ellpadicbsd FAILED [16.679000000000000000000000000000000000s]
+
+--- Fiber 4: (m,n)=(5,4)  q=9/40  N=6510  exp.rank=0 ---
+  p=5 a_p=1 red=split_mult ordinary=1
+    L_p(E,1)=O(5^3)  val_p=3  [30.965000000000000000000000000000000000s]
+  p=7 a_p=-1 red=nonsplit_mult ordinary=0
+    skip non-ordinary
+  p=11 a_p=4 red=good ordinary=1
+    ellpadicL FAILED [84.511000000000000000000000000000000000s] -- exceeded 1.5GB budget
+  p=13 a_p=-2 red=good ordinary=1
+    ellpadicL FAILED [103.24600000000000000000000000000000000s] -- exceeded 1.5GB budget
+
+--- Fiber 5: (m,n)=(4,3)  q=7/24  N=22134  exp.rank=1 ---
+  p=5 a_p=-2 red=good ordinary=1
+    ellpadicbsd FAILED [3.7950000000000000000000000000000000000s]
+  p=7 a_p=1 red=split_mult ordinary=1
+    ellpadicbsd FAILED [3.6450000000000000000000000000000000000s]
+  p=11 a_p=4 red=good ordinary=1
+    ellpadicbsd FAILED [4.1300000000000000000000000000000000000s]
+  p=13 a_p=-2 red=good ordinary=1
+    ellpadicbsd FAILED [3.6810000000000000000000000000000000000s]
+
+--- Fiber 6: (m,n)=(6,1)  q=35/12  N=113505  exp.rank=0 ---
+  N=113505 > cutoff. SKIPPED (budget).
+
+--- Fiber 7: (m,n)=(7,2)  q=45/28  N=130305  exp.rank=0 ---
+  N=130305 > cutoff. SKIPPED (budget).
+
+--- Fiber 8: (m,n)=(8,1)  q=63/16  N=155946  exp.rank=0 ---
+  N=155946 > cutoff. SKIPPED (budget).
+
+--- Fiber 9: (m,n)=(8,3)  q=55/48  N=237930  exp.rank=1 ---
+  N=237930 > cutoff. SKIPPED (budget).
+
+--- Fiber 10: (m,n)=(5,1)  q=12/5  N=1785  exp.rank=0 ---
+  p=5 a_p=1 red=split_mult ordinary=1
+    L_p(E,1)=O(5^3)  val_p=3  [0.35800000000000000000000000000000000000s]
+  p=7 a_p=-1 red=nonsplit_mult ordinary=0
+    skip non-ordinary
+  p=11 a_p=4 red=good ordinary=1
+    ellpadicL FAILED [3.3860000000000000000000000000000000000s] -- exceeded 1.5GB budget
+  p=13 a_p=6 red=good ordinary=1
+    ellpadicL FAILED [3.5130000000000000000000000000000000000s] -- exceeded 1.5GB budget
+
+Done. Output written to: /root/proof/perfect-cuboid-problem/scripts/iwasawa_family/02_padicL_capped.out

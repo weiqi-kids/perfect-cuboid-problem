@@ -1,0 +1,32 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Ingram-Mahe / Silverman primitive divisor on Face-3 seq (rank-1 R-fibers) ===
+(5,1) q=189/340 gen onE=1
+   n=1 issq=0 small odd-power primes(<1e6)=[13, 17, 41, 51061]  primitive=13
+   n=2 issq=0 small odd-power primes(<1e6)=[215909, 280009]  primitive=215909
+   n=3 issq=0 small odd-power primes(<1e6)=[13, 61, 20873, 89237]  primitive=61
+   n=4 issq=0 small odd-power primes(<1e6)=[89, 449, 2713, 3989]  primitive=89
+   n=5 issq=0 small odd-power primes(<1e6)=[13, 53, 1889, 2689, 41213]  primitive=53
+   --> n=1..5: all-non-square=1  (Silverman/Ingram-Mahe: odd-power primitive divisor => F3_n not a square)
+(13,1) q=20349/7540 gen onE=1
+   n=1 issq=0 small odd-power primes(<1e6)=[61, 109, 317, 337, 733, 4261]  primitive=61
+   n=2 issq=0 small odd-power primes(<1e6)=[61, 149, 1709, 11981, 148933]  primitive=149
+   n=3 issq=0 small odd-power primes(<1e6)=[41, 53, 1373, 1721, 2081, 11177, 67273, 455881, 494029]  primitive=41
+   n=4 issq=0 small odd-power primes(<1e6)=[61, 509, 2477]  primitive=509
+   n=5 issq=0 small odd-power primes(<1e6)=[53, 61, 2237, 2633, 4813, 14549, 515929]  primitive=2237
+   --> n=1..5: all-non-square=1  (Silverman/Ingram-Mahe: odd-power primitive divisor => F3_n not a square)
+(19,1) q=104181/24700 gen onE=1
+   n=1 issq=0 small odd-power primes(<1e6)=[17, 53, 349, 557, 1117, 2237, 149021, 194713]  primitive=17
+   n=2 issq=0 small odd-power primes(<1e6)=[173, 397, 8269, 23017, 44533, 146389]  primitive=173
+   n=3 issq=0 small odd-power primes(<1e6)=[89, 97, 269, 7333, 25457, 31513]  primitive=89
+   n=4 issq=0 small odd-power primes(<1e6)=[97, 149, 461]  primitive=149
+   n=5 issq=0 small odd-power primes(<1e6)=[17, 149, 173, 197, 241, 5701, 93497, 108217, 179969]  primitive=197
+   --> n=1..5: all-non-square=1  (Silverman/Ingram-Mahe: odd-power primitive divisor => F3_n not a square)
+(21,1) no generator; skip
+(25,1) q=330429/57700 gen onE=1
+   n=1 issq=0 small odd-power primes(<1e6)=[41, 61, 109, 193, 449, 677, 1433, 8929, 47777]  primitive=41
+   n=2 issq=0 small odd-power primes(<1e6)=[197, 313, 2269, 2341, 29333]  primitive=197
+   n=3 issq=0 small odd-power primes(<1e6)=[109, 1129, 1289, 8537, 123341]  primitive=1129
+   n=4 issq=0 small odd-power primes(<1e6)=[433, 877, 3181]  primitive=433
+   n=5 issq=0 small odd-power primes(<1e6)=[109, 409, 33937]  primitive=409
+   --> n=1..5: all-non-square=1  (Silverman/Ingram-Mahe: odd-power primitive divisor => F3_n not a square)

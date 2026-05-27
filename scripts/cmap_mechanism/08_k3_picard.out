@@ -1,0 +1,106 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== Test: does c-map output (1, q, c) form an Euler brick? ===
+For each c-image, check:
+  1+q^2 = square (face_d)
+  1+c^2 = square (face_f, by identity)
+  q^2+c^2 = square (face_e)
+  1+q^2+c^2 = square (long diagonal — PCP condition)
+
+Pair 1: q=20/21 c=48/55
+  1+q^2 = 841/441  square? 1
+  q^2+c^2 = 2226064/1334025  square? 1
+  1+c^2 = 5329/3025  square? 1
+  1+q^2+c^2 = 3560089/1334025  square? 0
+
+Pair 2: q=7/24 c=20/99
+  1+q^2 = 625/576  square? 1
+  q^2+c^2 = 78961/627264  square? 1
+  1+c^2 = 10201/9801  square? 1
+  1+q^2+c^2 = 706225/627264  square? 0
+
+Pair 3: q=11/60 c=39/80
+  1+q^2 = 3721/3600  square? 1
+  q^2+c^2 = 625/2304  square? 1
+  1+c^2 = 7921/6400  square? 1
+  1+q^2+c^2 = 2929/2304  square? 0
+
+Pair 4: q=11/60 c=17/144
+  1+q^2 = 3721/3600  square? 1
+  q^2+c^2 = 24649/518400  square? 1
+  1+c^2 = 21025/20736  square? 1
+  1+q^2+c^2 = 543049/518400  square? 0
+
+Pair 5: q=104/153 c=195/748
+  1+q^2 = 34225/23409  square? 1
+  q^2+c^2 = 24019801/45319824  square? 1
+  1+c^2 = 597529/559504  square? 1
+  1+q^2+c^2 = 69339625/45319824  square? 0
+
+Pair 6: q=17/144 c=65/2112
+  1+q^2 = 21025/20736  square? 1
+  q^2+c^2 = 597529/40144896  square? 1
+  1+c^2 = 4464769/4460544  square? 1
+  1+q^2+c^2 = 40742425/40144896  square? 0
+
+Pair 7: q=195/748 c=225/272
+  1+q^2 = 597529/559504  square? 1
+  q^2+c^2 = 6734025/8952064  square? 1
+  1+c^2 = 124609/73984  square? 1
+  1+q^2+c^2 = 15686089/8952064  square? 0
+
+Pair 8: q=96/247 c=315/572
+  1+q^2 = 70225/61009  square? 1
+  q^2+c^2 = 317529/698896  square? 0
+  1+c^2 = 426409/327184  square? 1
+  1+q^2+c^2 = 1016425/698896  square? 0
+
+Pair 9: q=44/117 c=11/60
+  1+q^2 = 15625/13689  square? 1
+  q^2+c^2 = 958441/5475600  square? 1
+  1+c^2 = 3721/3600  square? 1
+  1+q^2+c^2 = 6434041/5475600  square? 0
+
+Pair 10: q=27/364 c=120/209
+  1+q^2 = 133225/132496  square? 1
+  q^2+c^2 = 1939785849/5787557776  square? 1
+  1+c^2 = 58081/43681  square? 1
+  1+q^2+c^2 = 7727343625/5787557776  square? 0
+
+Pair 11: q=104/153 c=55/1512
+  1+q^2 = 34225/23409  square? 1
+  q^2+c^2 = 306145009/660695616  square? 1
+  1+c^2 = 2289169/2286144  square? 1
+  1+q^2+c^2 = 966840625/660695616  square? 0
+
+
+=== K3 elliptic fibration interpretation ===
+V' is K3 with rho >= 10 (per V-FALTINGS-ATTACK.md).
+V' admits 3 obvious elliptic fibrations (one per face).
+Pick fibration pi_b: V' -> P^1_b with general fiber elliptic in (c, d, e, f).
+Generator (1, q, c) of an Euler brick at fixed b=q lies on a fiber.
+Section of V' -> P^1_b: t -> (a(t), q=t, c(t), d(t), e(t), f(t)) with rational c, d, e, f.
+
+The c-map is the inversion: given fiber t = q with a rational point,
+we recover c = c-value of that point, giving a point on a different fiber.
+Generically these are unrelated; but on the RANK-JUMP locus they relate.
+
+=== Specific Euler brick check: q=20/21, c=48/55 ===
+(a, b, c) = (1155, 1100, 1008)
+gcd = 1
+a^2 + b^2 = 2544025  sqrt = 1595
+b^2 + c^2 = 2226064  sqrt = 1492
+a^2 + c^2 = 2350089  sqrt = 1533
+a^2 + b^2 + c^2 = 3560089  is square? 0
+
+=== Implication: c-map = edge-shift on Euler bricks ===
+Each c-map output is a primitive Euler brick (a, b, c) with a:b = 1:q,
+c being recovered from a MW generator of E_PCP(q).
+
+The Euler-brick K3 V' has rho(V') >= 10. Its Picard lattice acts on rational
+points of V'. The c-map orbit graph is a SECTION of one such Picard action.
+
+Specifically: V' has 3 elliptic fibrations pi_a, pi_b, pi_c (one per edge).
+Each fibration has sections forming a Mordell-Weil lattice.
+The c-map is the composition: take a section s of pi_a, evaluate its
+c-coordinate, which gives a point on a DIFFERENT fiber of pi_a OR a section
+of pi_c. This is exactly the action of a specific Picard element.

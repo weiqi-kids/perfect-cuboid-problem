@@ -1,0 +1,5 @@
+[0;31m  ***   Warning: new stack size = 400000000 (381.470 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 800002048 (762.941 Mbytes).[0m
+Leg G: smart p_min start, q up to 50, p up to p_min * 30
+
+[2/32] triple = [1, 219, 219]

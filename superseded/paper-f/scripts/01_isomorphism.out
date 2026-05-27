@@ -1,0 +1,24 @@
+=== Relationship of E_PCP(q) to Yoshida E_{1,s} (honest) ===
+
+(1) Pythagorean q: is there rational s with j(E_{1,s}) = j(E_PCP(q))?
+   q=4/3  cond=21  rational s (h<=80) with matching j: 0
+   q=3/4  cond=21  rational s (h<=80) with matching j: 0
+   q=5/12  cond=1785  rational s (h<=80) with matching j: 0
+   q=12/5  cond=1785  rational s (h<=80) with matching j: 0
+   q=15/8  cond=4830  rational s (h<=80) with matching j: 0
+   q=8/15  cond=4830  rational s (h<=80) with matching j: 0
+   => 0 matches: E_PCP(q) (Pythagorean) is NOT Q-isomorphic to any E_{1,s}.
+
+(2) Non-Pythagorean q=(s^2+1)/(2s): j-invariants agree (the genuine Q-isom locus)
+   j(E_PCP((s^2+1)/2s)) == j(E_{1,s}) on 27/27 samples
+
+(3) E_PCP(q) and its (-1)-twist y^2=x(x-1)(x-q^2): both torsion Z/4 x Z/2
+   q=4/3  tors(E_PCP)=[4, 2]  tors((-1)-twist)=[2, 2]
+   q=3/4  tors(E_PCP)=[4, 2]  tors((-1)-twist)=[2, 2]
+   q=5/12  tors(E_PCP)=[4, 2]  tors((-1)-twist)=[2, 2]
+   q=12/5  tors(E_PCP)=[4, 2]  tors((-1)-twist)=[2, 2]
+
+RESULT: E_PCP(q) is NOT Q-isom to Yoshida E_{1,s} on the Pythagorean locus;
+        they are (-1)-twist-related and both have torsion Z/4 x Z/2 by the same
+        Mazur + Fermat-descent argument (Yoshida Lemma 2.1 / Yagi).  Attribution
+        of the torsion CLASSIFICATION to Yoshida stands; 'isomorphism' was wrong.

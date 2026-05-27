@@ -1,0 +1,39 @@
+C_q : w^2 = h(u), h(u) = 25*u^5 - 80*u^4 + 200*u^3 - 320*u^2 + 400*u
+h as poly in x = 25*x^5 - 80*x^4 + 200*x^3 - 320*x^2 + 400*x
+deg h = 5  -> genus 2 (deg 5 or 6 hyperelliptic)
+disc(h) = [2, 36; 3, 2; 5, 10]
+squarefree? 1
+
+Identity check: f1*f2*q^2 - h(q^2) = 0  (should be 0)
+
+=== Jac(C_q): a_p(C_q) =?= a_p(X+) + a_p(X-) over good primes ===
+disc(h) factored: [2, 36; 3, 2; 5, 10]
+p=7  a_p(C_q)=-4   a_p(X+)+a_p(X-)=4   match=0
+p=11  a_p(C_q)=-8   a_p(X+)+a_p(X-)=-8   match=1
+p=13  a_p(C_q)=-4   a_p(X+)+a_p(X-)=4   match=0
+p=17  a_p(C_q)=4   a_p(X+)+a_p(X-)=-4   match=0
+p=19  a_p(C_q)=-8   a_p(X+)+a_p(X-)=-8   match=1
+p=23  a_p(C_q)=4   a_p(X+)+a_p(X-)=-4   match=0
+p=29  a_p(C_q)=-4   a_p(X+)+a_p(X-)=-4   match=1
+p=31  a_p(C_q)=0   a_p(X+)+a_p(X-)=0   match=1
+p=37  a_p(C_q)=-4   a_p(X+)+a_p(X-)=4   match=0
+p=41  a_p(C_q)=-12   a_p(X+)+a_p(X-)=-12   match=1
+p=43  a_p(C_q)=-20   a_p(X+)+a_p(X-)=20   match=0
+p=47  a_p(C_q)=-4   a_p(X+)+a_p(X-)=4   match=0
+p=53  a_p(C_q)=-12   a_p(X+)+a_p(X-)=12   match=0
+p=59  a_p(C_q)=16   a_p(X+)+a_p(X-)=16   match=1
+p=61  a_p(C_q)=12   a_p(X+)+a_p(X-)=12   match=1
+p=67  a_p(C_q)=4   a_p(X+)+a_p(X-)=-4   match=0
+p=71  a_p(C_q)=8   a_p(X+)+a_p(X-)=8   match=1
+p=73  a_p(C_q)=12   a_p(X+)+a_p(X-)=-12   match=0
+p=79  a_p(C_q)=-8   a_p(X+)+a_p(X-)=-8   match=1
+p=83  a_p(C_q)=-4   a_p(X+)+a_p(X-)=4   match=0
+p=89  a_p(C_q)=4   a_p(X+)+a_p(X-)=4   match=1
+p=97  a_p(C_q)=12   a_p(X+)+a_p(X-)=-12   match=0
+p=101  a_p(C_q)=12   a_p(X+)+a_p(X-)=12   match=1
+p=103  a_p(C_q)=4   a_p(X+)+a_p(X-)=-4   match=0
+p=107  a_p(C_q)=4   a_p(X+)+a_p(X-)=-4   match=0
+p=109  a_p(C_q)=-4   a_p(X+)+a_p(X-)=-4   match=1
+p=113  a_p(C_q)=-12   a_p(X+)+a_p(X-)=12   match=0
+
+MATCHED 12 / 27 good primes in [7,120]

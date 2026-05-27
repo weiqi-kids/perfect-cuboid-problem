@@ -1,0 +1,26 @@
+
+=== fiber (m,n)=(11,2)  q=117/44  Nbad=6 ===
+  p=3  v_p(Dmin)=8  kodaira=12  v_p(c4)=0  I_n?=1  lambda_p in [-2.1972,0]
+  p=7  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-0.9730,0]
+  p=11  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-2.3979,0]
+  p=13  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-2.5649,0]
+  p=23  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-1.5677,0]
+  p=73  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-2.1452,0]
+  --> all bad primes multiplicative (I_n)? 1 ; sum_p lambda_p in [-(1/4)log|Dmin|,0]=[-11.8460,0]
+
+=== fiber (m,n)=(8,3)  q=55/48  Nbad=6 ===
+  p=2  v_p(Dmin)=8  kodaira=12  v_p(c4)=0  I_n?=1  lambda_p in [-1.3863,0]
+  p=3  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-1.0986,0]
+  p=5  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-1.6094,0]
+  p=7  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-0.9730,0]
+  p=11  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-2.3979,0]
+  p=103  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-2.3174,0]
+  --> all bad primes multiplicative (I_n)? 1 ; sum_p lambda_p in [-(1/4)log|Dmin|,0]=[-9.7826,0]
+
+=== fiber (m,n)=(4,3)  q=7/24  Nbad=5 ===
+  p=2  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-0.6931,0]
+  p=3  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-1.0986,0]
+  p=7  v_p(Dmin)=4  kodaira=8  v_p(c4)=0  I_n?=1  lambda_p in [-1.9459,0]
+  p=17  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-1.4166,0]
+  p=31  v_p(Dmin)=2  kodaira=6  v_p(c4)=0  I_n?=1  lambda_p in [-1.7170,0]
+  --> all bad primes multiplicative (I_n)? 1 ; sum_p lambda_p in [-(1/4)log|Dmin|,0]=[-6.8713,0]

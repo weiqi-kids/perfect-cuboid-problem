@@ -1,0 +1,88 @@
+=== F3 square-defect analysis ===
+
+F3 = 1+q^2+c^2 is a rational SQUARE iff core(num*den) = 1.
+
+q -> c | F3=N/D | core(N*D) [=1 iff PCP] | log2|core| | factor(core)
+
+20/21 -> 48/55  F3=3560089/1334025  core=3560089  log2(core)=21.76
+7/24 -> 20/99  F3=706225/627264  core=28249  log2(core)=14.79
+11/60 -> 39/80  F3=2929/2304  core=2929  log2(core)=11.52
+11/60 -> 17/144  F3=543049/518400  core=543049  log2(core)=19.05
+48/55 -> 20/21  F3=3560089/1334025  core=3560089  log2(core)=21.76
+20/99 -> 7/24  F3=706225/627264  core=28249  log2(core)=14.79
+96/247 -> 315/572  F3=26929244281/6053618025  core=26929244281  log2(core)=34.65
+13/84 -> 498212/2144115  F3=3885154101909721/3604227640448400  core=3885154101909721  log2(core)=51.79
+39/80 -> 11/60  F3=2929/2304  core=2929  log2(core)=11.52
+17/144 -> 11/60  F3=543049/518400  core=543049  log2(core)=19.05
+17/144 -> 65/2112  F3=40742425/40144896  core=1629697  log2(core)=20.64
+104/153 -> 195/748  F3=69339625/45319824  core=2773585  log2(core)=21.40
+104/153 -> 55/1512  F3=966840625/660695616  core=1546945  log2(core)=20.56
+44/117 -> 11/60  F3=6434041/5475600  core=6434041  log2(core)=22.62
+189/340 -> 15725/89628  F3=462663721/13690000  core=462663721  log2(core)=28.79
+60/91 -> 1881/4720  F3=226524321241/29299511241  core=226524321241  log2(core)=37.72
+225/272 -> 52/165  F3=146947321/12503296  core=146947321  log2(core)=27.13
+132/475 -> 5425/14832  F3=3634427329/424978225  core=3634427329  log2(core)=31.76
+252/275 -> 48/55  F3=196729/75625  core=196729  log2(core)=17.59
+252/275 -> 48/575  F3=2955121/1600225  core=2955121  log2(core)=21.49
+140/171 -> 1107743/1309176  F3=4089877338625/1713941798976  core=968018305  log2(core)=29.85
+85/132 -> 17/144  F3=3584425/2509056  core=143377  log2(core)=17.13
+108/725 -> 711/3080  F3=214506113809/199451560000  core=214506113809  log2(core)=37.64
+108/725 -> 1881/4720  F3=553187405329/468403360000  core=553187405329  log2(core)=39.01
+57/176 -> 832/855  F3=180998425/83759104  core=7239937  log2(core)=22.79
+135/352 -> 104/153  F3=69339625/20939776  core=2773585  log2(core)=21.40
+27/364 -> 120/209  F3=7727343625/5787557776  core=309093745  log2(core)=28.20
+27/364 -> 1232/3015  F3=1794171625/256512256  core=71766865  log2(core)=26.10
+25/312 -> 58425/300608  F3=143519799449569/137445423058944  core=143519799449569  log2(core)=47.03
+28/195 -> 214368/237575  F3=5514989089/3005780625  core=5514989089  log2(core)=32.36
+52/165 -> 832/855  F3=7239937/3538161  core=7239937  log2(core)=22.79
+52/165 -> 225/272  F3=15686089/6125625  core=15686089  log2(core)=23.90
+160/231 -> 20/99  F3=730249/480249  core=4321  log2(core)=12.08
+95/168 -> 47975/107712  F3=863053152481/568491872256  core=863053152481  log2(core)=39.65
+105/208 -> 7579/8820  F3=38367088321/14704957696  core=38367088321  log2(core)=35.16
+52/675 -> 741/1540  F3=53485923481/43222410000  core=53485923481  log2(core)=35.64
+36/323 -> 5537740/14185941  F3=67131357374284009/8862637084896400  core=67131357374284009  log2(core)=55.90
+195/748 -> 52/165  F3=146947321/125888400  core=146947321  log2(core)=27.13
+195/748 -> 135/352  F3=43508881/35808256  core=257449  log2(core)=17.97
+195/748 -> 65/2112  F3=1377927841/1289097216  core=1377927841  log2(core)=30.36
+
+=== Minimum core ===
+Min core value: 2929
+At edge: 11/60 -> 39/80
+F3 = 2929/2304
+(Reminder: core=1 means F3 is a perfect rational square = PCP candidate.)
+
+Factorization of min core: [29, 1; 101, 1]
+
+=== Core values mod small primes (search for obstructions) ===
+
+  prime 2: 0/40 cores divisible
+  prime 3: 0/40 cores divisible
+  prime 5: 6/40 cores divisible
+  prime 7: 0/40 cores divisible
+  prime 11: 0/40 cores divisible
+  prime 13: 14/40 cores divisible
+  prime 17: 8/40 cores divisible
+  prime 19: 0/40 cores divisible
+  prime 23: 0/40 cores divisible
+  prime 29: 9/40 cores divisible
+  prime 31: 0/40 cores divisible
+
+=== Quadratic residue / non-residue obstruction analysis ===
+
+  kronecker(core, 3): +1=40 -1=0 0=0 / 40
+  kronecker(core, 5): +1=30 -1=4 0=6 / 40
+  kronecker(core, 7): +1=23 -1=17 0=0 / 40
+  kronecker(core, 11): +1=40 -1=0 0=0 / 40
+  kronecker(core, 13): +1=24 -1=2 0=14 / 40
+  kronecker(core, 17): +1=18 -1=14 0=8 / 40
+  kronecker(core, 19): +1=12 -1=28 0=0 / 40
+  kronecker(core, 23): +1=9 -1=31 0=0 / 40
+
+=== Core distribution by edge ===
+  core=2929 : appears 2 times
+  core=28249 : appears 2 times
+  core=543049 : appears 2 times
+  core=2773585 : appears 2 times
+  core=3560089 : appears 2 times
+  core=7239937 : appears 2 times
+  core=146947321 : appears 2 times

@@ -1,0 +1,30 @@
+[0;31m  ***   Warning: new stack size = 3000000000 (2861.023 Mbytes).[0m
+Master tuples: 2040
+  100/2040 r0=46 r1=44 r2=9 r3+=1 ambig=0 err=0
+  200/2040 r0=83 r1=90 r2=26 r3+=1 ambig=0 err=0
+  300/2040 r0=116 r1=136 r2=45 r3+=3 ambig=0 err=0
+  400/2040 r0=147 r1=189 r2=57 r3+=7 ambig=0 err=0
+  500/2040 r0=188 r1=234 r2=71 r3+=7 ambig=0 err=0
+  600/2040 r0=214 r1=294 r2=84 r3+=8 ambig=0 err=0
+  700/2040 r0=248 r1=345 r2=98 r3+=8 ambig=1 err=0
+  800/2040 r0=277 r1=398 r2=112 r3+=11 ambig=2 err=0
+  900/2040 r0=314 r1=442 r2=128 r3+=14 ambig=2 err=0
+  1000/2040 r0=350 r1=487 r2=143 r3+=15 ambig=5 err=0
+  1100/2040 r0=386 r1=538 r2=153 r3+=17 ambig=6 err=0
+  1200/2040 r0=422 r1=586 r2=167 r3+=19 ambig=6 err=0
+  1300/2040 r0=457 r1=639 r2=177 r3+=20 ambig=7 err=0
+  1400/2040 r0=496 r1=686 r2=191 r3+=20 ambig=7 err=0
+  1500/2040 r0=516 r1=739 r2=214 r3+=22 ambig=9 err=0
+  1600/2040 r0=544 r1=789 r2=230 r3+=27 ambig=10 err=0
+  1700/2040 r0=580 r1=836 r2=243 r3+=30 ambig=11 err=0
+  1800/2040 r0=607 r1=888 r2=262 r3+=31 ambig=12 err=0
+  1900/2040 r0=647 r1=928 r2=277 r3+=34 ambig=14 err=0
+  2000/2040 r0=682 r1=970 r2=295 r3+=38 ambig=15 err=0
+
+=== Fast enumeration done ===
+Rank 0     : 698
+Rank 1     : 987
+Rank 2     : 300
+Rank >= 3  : 38
+Ambiguous (lo<up, possible Sha): 17
+Errored    : 0

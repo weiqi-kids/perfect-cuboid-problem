@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 6000000000 (5722.046 Mbytes).[0m
+
+=== Rank distribution, primitive Pythagorean (m,n), 2<=m<=38 ===
+total primitive fibers examined: 303
+certified ranks (lo==hi):
+   rank 0:  118   (38.94389438943894390 %)
+   rank 1:  137   (45.21452145214521452 %)
+   rank 2:  45   (14.851485148514851485 %)
+   rank 3:  3   (0.9900990099009900990 %)
+   uncertified (lo<hi): 0
+maximum certified rank observed: 3
+
+=== rank >= 3 fibers ===
+   (m,n)=(22,17)  q=195/748  rank=3
+      generators (integral model): [[151491/4, 15203079/8], [421737, 269261835], [40343619, 256228408278]]
+   (m,n)=(35,22)  q=741/1540  rank=3
+      generators (integral model): [[604751, 414359372], [273315/4, 420340515/8], [1721685, 2223233985]]
+   (m,n)=(37,26)  q=693/1924  rank=3
+      generators (integral model): [[142253650/361, 585698225497/6859], [-203621, 298524292], [1359421, 1487239222]]

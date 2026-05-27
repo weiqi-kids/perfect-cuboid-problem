@@ -1,0 +1,21 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== dim Sel_2 distribution for m <= 30 =====
+(m, n)  rank_lo  rank_up  dim_Sel2  |H|  |H|-dimSel2
+[22, 17]  3  3  5  11  6
+
+Total fibers: 186
+dim Sel_2 distribution:
+  dim 2: 77
+  dim 3: 84
+  dim 4: 24
+  dim 5: 1
+
+|H| - dim Sel_2 distribution:
+  diff 2: 1
+  diff 3: 3
+  diff 4: 10
+  diff 5: 34
+  diff 6: 60
+  diff 7: 55
+  diff 8: 17
+  diff 9: 6

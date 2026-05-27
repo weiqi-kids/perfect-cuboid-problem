@@ -1,0 +1,42 @@
+p=7: rows of T as multisets
+  a=0 row_sum=25
+  a=1 row_sum=5
+  a=2 row_sum=5
+  a=3 row_sum=5
+[0;31m[0;31m  ***   at top-level:[0;35m investigate(7)
+[0;31m[0;31m  ***                 ^--------------
+[0;31m  ***   in function investigate: ...[0;35m));rows=vector((p+1)/2,k,
+[0;31m  ***   [0;35mvecextract(T,"..",con
+[0;31m[0;31m  ***   ^---------------------
+  *** vecextract: incorrect type in vecextract [incorrect range] (t_STR).[0m
+... skipping file '15_rank_analysis.gp'
+p=11: rows of T as multisets
+  a=0 row_sum=61
+  a=1 row_sum=9
+  a=2 row_sum=9
+  a=3 row_sum=9
+  a=4 row_sum=9
+  a=5 row_sum=9
+[0;31m[0;31m  ***   at top-level:[0;35m investigate(11)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function investigate: ...[0;35m));rows=vector((p+1)/2,k,
+[0;31m  ***   [0;35mvecextract(T,"..",con
+[0;31m[0;31m  ***   ^---------------------
+  *** vecextract: incorrect type in vecextract [incorrect range] (t_STR).[0m
+p=19: rows of T as multisets
+  a=0 row_sum=181
+  a=1 row_sum=17
+  a=2 row_sum=17
+  a=3 row_sum=17
+  a=4 row_sum=17
+  a=5 row_sum=17
+  a=6 row_sum=17
+  a=7 row_sum=17
+  a=8 row_sum=17
+  a=9 row_sum=17
+[0;31m[0;31m  ***   at top-level:[0;35m investigate(19)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function investigate: ...[0;35m));rows=vector((p+1)/2,k,
+[0;31m  ***   [0;35mvecextract(T,"..",con
+[0;31m[0;31m  ***   ^---------------------
+  *** vecextract: incorrect type in vecextract [incorrect range] (t_STR).[0m

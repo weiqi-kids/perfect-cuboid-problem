@@ -1,0 +1,49 @@
+[0;31m  ***   Warning: new stack size = 8000000000 (7629.395 Mbytes).[0m
+=== E_PCP(q) rank + generators for 5 BEYOND-QC fibers ===
+
+--- (m,n) = (61,38) ---
+  q = 2277/4636
+  Integer model y^2 = x(x+21492496)(x+5184729)
+  Minimal model [a1,a2,a3,a4,a6] = [1, 0, 0, -7862000662914, 6491052356720476419]
+  Conductor: 14345632782327
+  Torsion: 8
+  rank in [3, 3]
+  #generators found: 0
+
+--- (m,n) = (63,38) ---
+  q = 2525/4788
+  Integer model y^2 = x(x+22924944)(x+6375625)
+  Minimal model [a1,a2,a3,a4,a6] = [1, 0, 0, -8750850113620, 6809652822933627887]
+  Conductor: 3334605031905
+  Torsion: 8
+  rank in [3, 3]
+  #generators found: 0
+
+--- (m,n) = (73,24) ---
+  q = 4753/3504
+  Integer model y^2 = x(x+12278016)(x+22591009)
+  Minimal model [a1,a2,a3,a4,a6] = [1, 0, 0, -7994387387004, -1304705966479643376]
+  Conductor: 3067104744186
+  Torsion: 8
+  rank in [3, 3]
+  #generators found: 0
+
+--- (m,n) = (88,35) ---
+  q = 6519/6160
+  Integer model y^2 = x(x+37945600)(x+42497361)
+  Minimal model [a1,a2,a3,a4,a6] = [1, 0, 0, -34027216453390, -73141219817402779900]
+  Conductor: 22848156068430
+  Torsion: 8
+  rank in [3, 3]
+  #generators found: 0
+
+--- (m,n) = (99,28) ---
+  q = 9017/5544
+  Integer model y^2 = x(x+30735936)(x+81306289)
+  Minimal model [a1,a2,a3,a4,a6] = [1, 0, 0, -105341364534294, 169599779702636982804]
+  Conductor: 210668707326462
+  Torsion: 8
+  rank in [4, 4]
+  #generators found: 0
+
+=== DONE ===

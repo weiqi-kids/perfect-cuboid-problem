@@ -1,0 +1,76 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== Orbit BFS from 195/748 (rank 3, large conductor) ===
+Seed: 195/748
+
+--- Depth 0: frontier size = 1 ---
+  q=195/748
+    N=19015731735  rank=3
+    -> 52/165 (PCP?=0)
+    -> 135/352 (PCP?=0)
+    -> 65/2112 (PCP?=0)
+
+--- Depth 1: frontier size = 3 ---
+  q=52/165
+    N=52597545  rank=2
+    -> 832/855 (PCP?=0)
+    -> 225/272 (PCP?=0)
+  q=65/2112
+    N=19117608510  rank=1
+    -> 17/144 (PCP?=0)
+  q=135/352
+    N=34874070  rank=1
+    -> 104/153 (PCP?=0)
+
+--- Depth 2: frontier size = 4 ---
+  q=17/144
+    N=2085594  rank=2
+    -> 11/60 (PCP?=0)
+    -> 65/2112 (PCP?=0)
+  q=104/153
+    N=2385474  rank=2
+    -> 195/748 (PCP?=0)
+    -> 55/1512 (PCP?=0)
+  q=225/272
+    N=11913090  rank=1
+    -> 52/165 (PCP?=0)
+  q=832/855
+    N=287515410  rank=1
+    -> 52/165 (PCP?=0)
+
+--- Depth 3: frontier size = 2 ---
+  q=11/60
+    N=82005  rank=2
+    -> 39/80 (PCP?=0)
+    -> 17/144 (PCP?=0)
+  q=55/1512
+    N=5274004890  rank=2
+    -> 935/17472 (PCP?=0)
+      [conductor 155397487335090 > maxN, skip from frontier]
+    -> 626780/1618461 (PCP?=0)
+      [conductor 6578669094653771115 > maxN, skip from frontier]
+
+--- Depth 4: frontier size = 1 ---
+  q=39/80
+    N=1902810  rank=1
+    -> 11/60 (PCP?=0)
+
+--- Depth 5: frontier size = 0 ---
+Closed at depth 5
+
+=== Final orbit closure from 195/748 ===
+Total unique q (depth <= 5): 13
+
+Q values seen:
+  q=11/60  rank=2
+  q=17/144  rank=2
+  q=39/80  rank=1
+  q=52/165  rank=2
+  q=55/1512  rank=2
+  q=65/2112  rank=1
+  q=104/153  rank=2
+  q=135/352  rank=1
+  q=195/748  rank=3
+  q=225/272  rank=1
+  q=832/855  rank=1
+  q=935/17472  rank=-99
+  q=626780/1618461  rank=-99

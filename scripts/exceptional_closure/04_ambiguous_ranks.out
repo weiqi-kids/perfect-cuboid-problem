@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Resolving ambiguous [0,2] fibers s=17,33,43 (t=1) ===
+(17,1) q=64893/17476
+   root number w=1 => EVEN rank (0 or 2)
+   ellrank(eff=4) -> [0,2], gens found: 0
+   ellratpoints(H=200): 0 affine pts (incl torsion)
+(33,1) q=1046269/135300
+   root number w=1 => EVEN rank (0 or 2)
+   ellrank(eff=4) -> [0,2], gens found: 0
+   ellratpoints(H=200): 0 affine pts (incl torsion)
+(43,1) q=3107829/303580
+   root number w=1 => EVEN rank (0 or 2)
+   ellrank(eff=4) -> [2,2], gens found: 1
+   ellratpoints(H=200): 0 affine pts (incl torsion)

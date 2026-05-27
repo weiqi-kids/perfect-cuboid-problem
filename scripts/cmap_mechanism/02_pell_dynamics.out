@@ -1,0 +1,116 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== Pell-composition test: c = (q*s - 1)/(q + s) ===
+  pair 1: q=20/21 c=48/55  s=2115/92
+  pair 2: q=7/24 c=20/99  s=2516/213
+  pair 3: q=11/60 c=39/80  s=-5229/1460
+  pair 4: q=11/60 c=17/144  s=8827/564
+  pair 5: q=44/117 c=11/60  s=7504/1353
+  pair 6: q=48/55 c=20/21  s=-2115/92
+  pair 7: q=20/99 c=7/24  s=-2516/213
+  pair 8: q=39/80 c=11/60  s=5229/1460
+  pair 9: q=17/144 c=11/60  s=-8827/564
+  pair 10: q=104/153 c=195/748  s=134724/47957
+  pair 11: q=104/153 c=55/1512  s=237056/148833
+  pair 12: q=27/364 c=120/209  s=-79316/38037
+
+=== Tangent-addition test: c = (q+s)/(1 - q*s) ===
+  pair 1: q=20/21 c=48/55  s=-92/2115
+  pair 2: q=7/24 c=20/99  s=-213/2516
+  pair 3: q=11/60 c=39/80  s=1460/5229
+  pair 4: q=11/60 c=17/144  s=-564/8827
+  pair 5: q=44/117 c=11/60  s=-1353/7504
+  pair 6: q=48/55 c=20/21  s=92/2115
+  pair 7: q=20/99 c=7/24  s=213/2516
+  pair 8: q=39/80 c=11/60  s=-1460/5229
+  pair 9: q=17/144 c=11/60  s=564/8827
+  pair 10: q=104/153 c=195/748  s=-47957/134724
+  pair 11: q=104/153 c=55/1512  s=-148833/237056
+  pair 12: q=27/364 c=120/209  s=38037/79316
+
+=== Half-angle / Vieta jumping test ===
+
+=== Inspect (s, r) parametrization for each q ===
+Pair 1
+  q1=:
+  q=20/21  n/d=20/21  1+q^2=841/441
+    Pythagorean! hypotenuse = 29/21 in canonical (s/r form): s=20 r=21 p=29
+  c =:
+  q=48/55  n/d=48/55  1+q^2=5329/3025
+    Pythagorean! hypotenuse = 73/55 in canonical (s/r form): s=48 r=55 p=73
+Pair 2
+  q1=:
+  q=7/24  n/d=7/24  1+q^2=625/576
+    Pythagorean! hypotenuse = 25/24 in canonical (s/r form): s=7 r=24 p=25
+  c =:
+  q=20/99  n/d=20/99  1+q^2=10201/9801
+    Pythagorean! hypotenuse = 101/99 in canonical (s/r form): s=20 r=99 p=101
+Pair 3
+  q1=:
+  q=11/60  n/d=11/60  1+q^2=3721/3600
+    Pythagorean! hypotenuse = 61/60 in canonical (s/r form): s=11 r=60 p=61
+  c =:
+  q=39/80  n/d=39/80  1+q^2=7921/6400
+    Pythagorean! hypotenuse = 89/80 in canonical (s/r form): s=39 r=80 p=89
+Pair 4
+  q1=:
+  q=11/60  n/d=11/60  1+q^2=3721/3600
+    Pythagorean! hypotenuse = 61/60 in canonical (s/r form): s=11 r=60 p=61
+  c =:
+  q=17/144  n/d=17/144  1+q^2=21025/20736
+    Pythagorean! hypotenuse = 145/144 in canonical (s/r form): s=17 r=144 p=145
+Pair 5
+  q1=:
+  q=44/117  n/d=44/117  1+q^2=15625/13689
+    Pythagorean! hypotenuse = 125/117 in canonical (s/r form): s=44 r=117 p=125
+  c =:
+  q=11/60  n/d=11/60  1+q^2=3721/3600
+    Pythagorean! hypotenuse = 61/60 in canonical (s/r form): s=11 r=60 p=61
+Pair 6
+  q1=:
+  q=48/55  n/d=48/55  1+q^2=5329/3025
+    Pythagorean! hypotenuse = 73/55 in canonical (s/r form): s=48 r=55 p=73
+  c =:
+  q=20/21  n/d=20/21  1+q^2=841/441
+    Pythagorean! hypotenuse = 29/21 in canonical (s/r form): s=20 r=21 p=29
+Pair 7
+  q1=:
+  q=20/99  n/d=20/99  1+q^2=10201/9801
+    Pythagorean! hypotenuse = 101/99 in canonical (s/r form): s=20 r=99 p=101
+  c =:
+  q=7/24  n/d=7/24  1+q^2=625/576
+    Pythagorean! hypotenuse = 25/24 in canonical (s/r form): s=7 r=24 p=25
+Pair 8
+  q1=:
+  q=39/80  n/d=39/80  1+q^2=7921/6400
+    Pythagorean! hypotenuse = 89/80 in canonical (s/r form): s=39 r=80 p=89
+  c =:
+  q=11/60  n/d=11/60  1+q^2=3721/3600
+    Pythagorean! hypotenuse = 61/60 in canonical (s/r form): s=11 r=60 p=61
+Pair 9
+  q1=:
+  q=17/144  n/d=17/144  1+q^2=21025/20736
+    Pythagorean! hypotenuse = 145/144 in canonical (s/r form): s=17 r=144 p=145
+  c =:
+  q=11/60  n/d=11/60  1+q^2=3721/3600
+    Pythagorean! hypotenuse = 61/60 in canonical (s/r form): s=11 r=60 p=61
+Pair 10
+  q1=:
+  q=104/153  n/d=104/153  1+q^2=34225/23409
+    Pythagorean! hypotenuse = 185/153 in canonical (s/r form): s=104 r=153 p=185
+  c =:
+  q=195/748  n/d=195/748  1+q^2=597529/559504
+    Pythagorean! hypotenuse = 773/748 in canonical (s/r form): s=195 r=748 p=773
+Pair 11
+  q1=:
+  q=104/153  n/d=104/153  1+q^2=34225/23409
+    Pythagorean! hypotenuse = 185/153 in canonical (s/r form): s=104 r=153 p=185
+  c =:
+  q=55/1512  n/d=55/1512  1+q^2=2289169/2286144
+    Pythagorean! hypotenuse = 1513/1512 in canonical (s/r form): s=55 r=1512 p=1513
+Pair 12
+  q1=:
+  q=27/364  n/d=27/364  1+q^2=133225/132496
+    Pythagorean! hypotenuse = 365/364 in canonical (s/r form): s=27 r=364 p=365
+  c =:
+  q=120/209  n/d=120/209  1+q^2=58081/43681
+    Pythagorean! hypotenuse = 241/209 in canonical (s/r form): s=120 r=209 p=241

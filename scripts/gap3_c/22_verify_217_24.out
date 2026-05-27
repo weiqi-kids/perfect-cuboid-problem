@@ -1,0 +1,37 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== CRITICAL: verify (217, 24): possible rank-5 fiber ===
+gcd: 1 (m+n)%2: 1
+q = 46513/10416
+Conductor = 124448595735787638
+
+ellrank effort 5...
+  time = 2.6570000000000000000000000000000000000s
+  effort 5: rank=[3,5] unprov=0 #gens=3
+
+ellrank effort 10...
+  time = 19.695000000000000000000000000000000000s
+  effort 10: rank=[3,5] unprov=0 #gens=3
+
+ellrank effort 20...
+  time = 198.71100000000000000000000000000000000s
+  effort 20: rank=[3,5] unprov=0 #gens=3
+
+Generators on Em (from effort=20):
+  gen[1]=[-4663440, 3350936824332] on Em? 1
+  gen[2]=[801574469196/3481, 261488851601485908/205379] on Em? 1
+  gen[3]=[-3161016554/9, 7941957572774/27] on Em? 1
+
+Gap: lo=3 up=5 — Sha[2] not resolved
+
+Generators on E:
+  [-37249/5208, 1286841203/54246528]
+  [80793081/53523856, 98833143631265/10964254853888]
+  [-11209633/562464, 36577032479/17575875072]
+
+Face-3 chain:
+  [gen1] c=-1606884611/236742660
+       F3 sq? 0
+  [gen2] c=10419105/2285888
+       F3 sq? 0
+  [gen3] c=-2359149/47883220
+       F3 sq? 0

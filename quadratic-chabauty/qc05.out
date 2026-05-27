@@ -1,0 +1,32 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== j-invariants ===
+[0;31m[0;31m  ***   at top-level: ...[0;35m,print(names[i],": j = ",[0;35mellj(factors[i])))
+[0;31m[0;31m  ***                                             ^------------------
+  *** ellj: incorrect type in ellj (t_VEC).[0m
+
+=== Test for isogeny / CM by comparing ellap signatures ===
+p	ap(E_ef)	ap(E_eg)	ap(E_fg)	ap(E_H+)	ap(E_H-)
+11	4	4	-4	-4	-4
+13	-2	-2	-2	-2	-2
+17	-6	2	2	-6	2
+19	-4	-4	4	4	4
+23	0	-8	8	0	8
+31	8	-8	8	-8	0
+37	-10	6	6	-10	6
+43	-4	-12	12	4	-4
+47	0	8	-8	0	0
+53	-10	6	6	-10	6
+59	-4	12	-12	4	-4
+61	-2	-2	-2	-2	-2
+67	-12	4	-4	12	-12
+71	-16	-8	8	16	-8
+73	-6	-6	-6	-6	10
+79	8	8	-8	-8	-16
+83	4	-12	12	-4	-12
+89	-6	-6	-6	-6	-6
+97	2	-14	-14	2	2
+
+=== CM check via L-function functional equation ===
+[0;31m[0;31m  ***   at top-level: [0;35mfor(i=1,5,j=[0;35mellj(factors[i]);cm_list=[0,1728,-
+[0;31m[0;31m  ***                             ^----------------------------------
+  *** ellj: incorrect type in ellj (t_VEC).[0m

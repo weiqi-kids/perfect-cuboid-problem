@@ -1,0 +1,34 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Root-difference squarefree parts (mod squares) =====
+(m, n)   q        sf(e_2-e_1)  sf(e_3-e_1)  sf(e_3-e_2)
+[3, 2]  5/12  119  1  1
+[5, 2]  21/20  41  1  1
+[4, 1]  15/8  161  1  1
+[22, 17]  195/748  521479  1  1
+[37, 26]  693/1924  3221527  1  1
+[40, 33]  511/2640  6708479  1  1
+[99, 28]  9017/5544  50570353  1  1
+[118, 25]  13299/5900  2899049  1  1
+[578, 319]  232323/368764  82012911367  1  1
+
+===== Critical structural fact: sf(e_3-e_1), sf(e_3-e_2) are NOT always 1 =====
+Indeed: e_3 - e_1 = 0 - (-q^2) = q^2 in Q, sf = 1 (trivially squarefree as a square).
+        e_3 - e_2 = 0 - (-1) = 1, sf = 1.
+So sf(e_3-e_1) = sf(e_3-e_2) = 1 always.
+The ONLY non-trivial root difference is sf(e_2 - e_1) = sf(q^2 - 1) = sf(P*Q)/(2mn squared) = sf(P)*sf(Q).
+
+===== Predicted Selmer dimension: 2 + ω(sf(P)) + ω(sf(Q)) (modulo correlations) =====
+Heuristic: each prime p | sf(P*Q) gives at most 1 F_2 generator
+(plus 2 torsion dimensions for E[2](Q) = (Z/2)^2)
+
+(m,n)  sf(P)  sf(Q)  ω(sf(P))  ω(sf(Q))  predicted_dim_Sel2  observed
+[3, 2]  17  -7  1  2  5  2
+[5, 2]  41  1  1  0  3  3
+[4, 1]  23  7  1  1  4  2
+[5, 4]  1  -31  0  2  4  2
+[7, 2]  73  17  1  1  4  2
+[8, 3]  103  7  1  1  4  3
+[9, 4]  137  -7  1  2  5  2
+[11, 2]  161  73  2  1  5  3
+[22, 17]  943  -553  2  3  7  5
+[35, 22]  2281  -799  1  3  6  5

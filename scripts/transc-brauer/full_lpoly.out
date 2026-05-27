@@ -1,0 +1,10 @@
+=== Newton sums at p=3 ===
+
+k=1 q=3: #V'_min(F_q)=48 t_k=tr(Frob^k|H^2)=38 (bound 66)
+k=2 q=9: #V'_min(F_q)=248 t_k=tr(Frob^k|H^2)=166 (bound 198)
+k=3 q=27: #V'_min(F_q)=1008 t_k=tr(Frob^k|H^2)=278 (bound 594)
+
+=== Newton sums at p=5 ===
+
+k=1 q=5: #V'_min(F_q)=96 t_k=tr(Frob^k|H^2)=70 (bound 110)
+k=2 q=25: #V'_min(F_q)=1176 t_k=tr(Frob^k|H^2)=550 (bound 550)

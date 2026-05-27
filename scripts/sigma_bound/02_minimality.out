@@ -1,0 +1,9 @@
+[0;31m  ***   Warning: new stack size = 600000000 (572.205 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+FIBERS (m<=150) = 4582
+ALL MULTIPLICATIVE (0 additive primes) = 1
+v_2(Delta_0)-v_2(Delta_min): max gap = 12  (#nonzero = 4582)
+v_3(Delta_0)-v_3(Delta_min): max gap = 0  (#nonzero = 0)
+Distribution of v_2 gap values:
+  gap=12 : 4582 fibers
+Odd-prime (p>3) mismatches v_p(Delta_min) != -v_p(j): 0 (expect 0)

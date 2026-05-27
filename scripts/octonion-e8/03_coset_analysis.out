@@ -1,0 +1,16 @@
+Searching primitive Euler bricks with all sides ≤ 1000...
+Found 5 primitive Euler bricks.
+
+Parity / mod-4 / mod-8 patterns of (a,b,c,d,e,f,g^2):
+  (0, 1, 0, 1, 1, 0, 1, 1): 2 bricks
+  (0, 0, 1, 0, 1, 1, 1, 1): 2 bricks
+  (1, 0, 0, 1, 0, 1, 1, 1): 1 bricks
+
+g^2 mod 8 distribution among primitive Euler bricks:
+  g^2 ≡ 1 (mod 8): 5
+
+--- Mod-2 cosets of PCP for found Euler bricks ---
+Number of distinct mod-2 cosets seen: 3
+  (0, 0, 1, 0, 1, 1, 0, 1) (weight 4, N/2 mod 2 = 0): 2
+  (0, 0, 0, 1, 0, 1, 1, 1) (weight 4, N/2 mod 2 = 0): 2
+  (0, 1, 0, 0, 1, 0, 1, 1) (weight 4, N/2 mod 2 = 0): 1

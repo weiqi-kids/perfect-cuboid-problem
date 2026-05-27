@@ -1,0 +1,10 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Hilbert-symbol enumeration of Selmer triples =====
+(m, n)  S=BAD union {-1,2}  |S|  dim Sel_2  dim 2|S|+2  redundancy
+[3, 2]  S+={-1}: [-1, 2, 3, 5, 7, 17]  |S|=6  dim_Sel2=2  ambdim=12  red=10
+[5, 2]  S+={-1}: [-1, 2, 3, 5, 7, 41]  |S|=6  dim_Sel2=3  ambdim=12  red=9
+[4, 1]  S+={-1}: [-1, 2, 3, 5, 7, 23]  |S|=6  dim_Sel2=2  ambdim=12  red=10
+[11, 2]  S+={-1}: [-1, 2, 3, 7, 11, 13, 23, 73]  |S|=8  dim_Sel2=3  ambdim=16  red=13
+[22, 17]  S+={-1}: [-1, 2, 3, 5, 7, 11, 13, 17, 23, 41, 79]  |S|=11  dim_Sel2=5  ambdim=22  red=17
+[99, 28]  S+={-1}: [-1, 2, 3, 7, 11, 23, 71, 127, 151, 14561]  |S|=10  dim_Sel2=6  ambdim=20  red=14
+[13, 4]  S+={-1}: [-1, 2, 3, 7, 13, 17, 257]  |S|=7  dim_Sel2=4  ambdim=14  red=10

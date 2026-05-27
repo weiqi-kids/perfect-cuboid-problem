@@ -1,0 +1,27 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+Loaded 99 HARD pairs for pass-2 attack.
+  pass2 attacked 5/99 closed=2 hits=0 persist=3
+  pass2 attacked 10/99 closed=4 hits=0 persist=6
+  pass2 attacked 15/99 closed=5 hits=0 persist=10
+  pass2 attacked 20/99 closed=8 hits=0 persist=12
+  pass2 attacked 25/99 closed=9 hits=0 persist=16
+  pass2 attacked 30/99 closed=12 hits=0 persist=18
+  pass2 attacked 35/99 closed=13 hits=0 persist=22
+  pass2 attacked 40/99 closed=14 hits=0 persist=26
+  pass2 attacked 45/99 closed=14 hits=0 persist=31
+  pass2 attacked 50/99 closed=16 hits=0 persist=34
+  pass2 attacked 55/99 closed=17 hits=0 persist=38
+  pass2 attacked 60/99 closed=18 hits=0 persist=42
+  pass2 attacked 65/99 closed=21 hits=0 persist=44
+  pass2 attacked 70/99 closed=23 hits=0 persist=47
+  pass2 attacked 75/99 closed=24 hits=0 persist=51
+  pass2 attacked 80/99 closed=27 hits=0 persist=53
+  pass2 attacked 85/99 closed=28 hits=0 persist=57
+  pass2 attacked 90/99 closed=31 hits=0 persist=59
+  pass2 attacked 95/99 closed=32 hits=0 persist=63
+
+=== Rank-1 pass-2 summary ===
+Total HARD pairs       : 99
+CLOSED_RANK1_PASS2     : 33
+HIT_RANK1_PASS2        : 0
+HARD_PERSIST           : 66

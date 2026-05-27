@@ -1,0 +1,61 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 800002048 (762.941 Mbytes).[0m
+=== Leg I v2 ===
+M_PRIMARY = 46189
+
+--- PHASE 1: z_3 patch ---
+  q=1  p in [0, 200000000]
+    iter=200000001  sieve-surv=87399  hits=0  wall=82.7030000000000000000000000000s  (last p=200000000)
+  q=2  p in [0, 400000000]
+    iter=400000001  sieve-surv=174789  hits=0  wall=167.209000000000000000000000000s  (last p=400000000)
+  q=3  p in [0, 600000000]
+    iter=600000001  sieve-surv=262184  hits=0  wall=269.229000000000000000000000000s  (last p=600000000)
+  q=4  p in [0, 800000000]
+    (time budget hit at p=49999999)
+    iter=50000000  sieve-surv=21853  hits=0  wall=21.6800000000000000000000000000s  (last p=49999999)
+  (z_3 phase budget hit)
+Phase 1 cumulative wall = 540.821000000000000000000000000s
+
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mbal_start<TOTAL_BUDGET_MS[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+... skipping file 'legI_v2.gp'
+--- PHASE 2: z_2 patch ---
+  q=1  p in [829672, 200000000]
+    iter=199170329  sieve-surv=110393  hits=0  wall=91.9280000000000000000000000000s  (last p=200000000)
+  q=2  p in [1659343, 400000000]
+    iter=398340658  sieve-surv=220765  hits=0  wall=182.266000000000000000000000000s  (last p=400000000)
+  q=3  p in [2489015, 600000000]
+    (time budget hit at p=432489014)
+    iter=430000000  sieve-surv=238596  hits=0  wall=205.840000000000000000000000000s  (last p=432489014)
+  (z_2 phase budget hit)
+Phase 2 cumulative wall = 1020.85700000000000000000000000s
+
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mbal_start<TOTAL_BUDGET_MS[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+--- PHASE 3: z_1 patch q ∈ [5, 8] ---
+  q=5  p in [112955046, 5000000000]
+    (time budget hit at p=672955045)
+    iter=560000000  sieve-surv=310702  hits=0  wall=243.128000000000000000000000000s  (last p=672955045)
+  (z_1 q5-8 phase budget hit)
+Phase 3 cumulative wall = 1263.98700000000000000000000000s
+
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mbal_start<TOTAL_BUDGET_MS[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+--- PHASE 4: z_1 patch q=1 extension p ∈ [2e9, 5e9] ---
+  q=1  p in [2000000000, 5000000000]
+    (time budget hit at p=2639999999)
+    iter=640000000  sieve-surv=355112  hits=0  wall=270.185000000000000000000000000s  (last p=2639999999)
+Phase 4 cumulative wall = 1534.17400000000000000000000000s
+
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+=== Leg I v2 complete ===
+Total wall = 1534.17400000000000000000000000s
+Hits found = 0

@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Using ell2cover to determine dim Sel_2 directly =====
+[22, 17]  |ell2cover|=5  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=5
+[13, 4]  |ell2cover|=4  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=4
+[44, 9]  |ell2cover|=5  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=5
+[3, 2]  |ell2cover|=2  dim_Sel2_via_ell2cover=1  dim_Sel2_via_ellrank=2
+[4, 1]  |ell2cover|=2  dim_Sel2_via_ell2cover=1  dim_Sel2_via_ellrank=2
+[5, 2]  |ell2cover|=3  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=3
+[11, 2]  |ell2cover|=3  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=3
+[8, 3]  |ell2cover|=3  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=3
+[99, 28]  |ell2cover|=6  dim_Sel2_via_ell2cover=3  dim_Sel2_via_ellrank=6
+[40, 29]  |ell2cover|=5  dim_Sel2_via_ell2cover=2  dim_Sel2_via_ellrank=5
+
+===== Hilbert reciprocity test for a Selmer triple =====
+Given a Selmer candidate (alpha, beta) supported in BAD union {-1, 2}
+we have global solvability iff product (alpha, beta)_v over all v = 1
+but EACH local condition (alpha, beta)_p = 1 is required individually.
+Hilbert reciprocity gives ONE F_2 dependence among local conditions.
+

@@ -1,0 +1,48 @@
+[0;31m  ***   Warning: new stack size = 3000000000 (2861.023 Mbytes).[0m
+Loaded 987 rank-1 candidate pairs from epcp_rank1.txt
+  rank1 attacked 25/987 closed=25 hits=0 hard=0 err=0
+  rank1 attacked 50/987 closed=50 hits=0 hard=0 err=0
+  rank1 attacked 75/987 closed=75 hits=0 hard=0 err=0
+  rank1 attacked 100/987 closed=100 hits=0 hard=0 err=0
+  rank1 attacked 125/987 closed=125 hits=0 hard=0 err=0
+  rank1 attacked 150/987 closed=149 hits=0 hard=1 err=0
+  rank1 attacked 175/987 closed=174 hits=0 hard=1 err=0
+  rank1 attacked 200/987 closed=199 hits=0 hard=1 err=0
+  rank1 attacked 225/987 closed=224 hits=0 hard=1 err=0
+  rank1 attacked 250/987 closed=249 hits=0 hard=1 err=0
+  rank1 attacked 275/987 closed=273 hits=0 hard=2 err=0
+  rank1 attacked 300/987 closed=295 hits=0 hard=5 err=0
+  rank1 attacked 325/987 closed=320 hits=0 hard=5 err=0
+  rank1 attacked 350/987 closed=344 hits=0 hard=6 err=0
+  rank1 attacked 375/987 closed=367 hits=0 hard=8 err=0
+  rank1 attacked 400/987 closed=390 hits=0 hard=10 err=0
+  rank1 attacked 425/987 closed=415 hits=0 hard=10 err=0
+  rank1 attacked 450/987 closed=436 hits=0 hard=14 err=0
+  rank1 attacked 475/987 closed=459 hits=0 hard=16 err=0
+  rank1 attacked 500/987 closed=479 hits=0 hard=21 err=0
+  rank1 attacked 525/987 closed=504 hits=0 hard=21 err=0
+  rank1 attacked 550/987 closed=527 hits=0 hard=23 err=0
+  rank1 attacked 575/987 closed=546 hits=0 hard=29 err=0
+  rank1 attacked 600/987 closed=568 hits=0 hard=32 err=0
+  rank1 attacked 625/987 closed=587 hits=0 hard=38 err=0
+  rank1 attacked 650/987 closed=609 hits=0 hard=41 err=0
+  rank1 attacked 675/987 closed=627 hits=0 hard=48 err=0
+  rank1 attacked 700/987 closed=649 hits=0 hard=51 err=0
+  rank1 attacked 725/987 closed=672 hits=0 hard=53 err=0
+  rank1 attacked 750/987 closed=694 hits=0 hard=56 err=0
+  rank1 attacked 775/987 closed=715 hits=0 hard=60 err=0
+  rank1 attacked 800/987 closed=736 hits=0 hard=64 err=0
+  rank1 attacked 825/987 closed=758 hits=0 hard=67 err=0
+  rank1 attacked 850/987 closed=777 hits=0 hard=73 err=0
+  rank1 attacked 875/987 closed=796 hits=0 hard=79 err=0
+  rank1 attacked 900/987 closed=814 hits=0 hard=86 err=0
+  rank1 attacked 925/987 closed=835 hits=0 hard=90 err=0
+  rank1 attacked 950/987 closed=858 hits=0 hard=92 err=0
+  rank1 attacked 975/987 closed=881 hits=0 hard=94 err=0
+
+=== Rank-1 attack summary ===
+Total rank-1 pairs : 987
+CLOSED_RANK1       : 888
+HIT_RANK1          : 0
+HARD (no gen, etc) : 99
+ERROR              : 0

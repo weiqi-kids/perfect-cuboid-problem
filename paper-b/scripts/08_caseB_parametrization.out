@@ -1,0 +1,28 @@
+=== identity checks (polynomial identities in Z[q]) ===
+a^2 + b^2 - d^2 = 0   (face I: a^2+b^2=d^2)
+a^2 + c^2 - f^2 = 0   (face III: a^2+c^2=f^2)
+b^2 + c^2 = 5*q^4 - 16*q^2 + 20   (face II: e^2 = b^2+c^2)
+  equals 5q^4 - 16q^2 + 20? 1
+a^2 + b^2 + c^2 = 5*q^4 + 20   (space: g^2 = a^2+b^2+c^2)
+  equals 5q^4 + 20? 1
+
+=== so the joint curve is exactly ===
+  e^2 = b^2 + c^2 = 5q^4 - 16q^2 + 20  (face II)
+  g^2 = a^2+b^2+c^2 = 5q^4 + 20         (space diagonal)
+Face II integrality + space-diag integrality <=> integer point on C.
+
+=== non-degeneracy: all edges positive ===
+a=4q>0 iff q>0; b=q^2-4>0 iff |q|>=3; c=2(q^2-1)>0 iff |q|>=2.
+So a NON-DEGENERATE Case-B cuboid forces b=q^2-4>0, i.e. q an integer >=3.
+  q=1: (a,b,c)=(4,-3,0)  b=-3  (b<=0 DEGENERATE)
+  q=2: (a,b,c)=(8,0,6)  b=0  (b<=0 DEGENERATE)
+  q=3: (a,b,c)=(12,5,16)  b=5  (non-deg edge)
+  q=4: (a,b,c)=(16,12,30)  b=12  (non-deg edge)
+  q=5: (a,b,c)=(20,21,48)  b=21  (non-deg edge)
+  q=6: (a,b,c)=(24,32,70)  b=32  (non-deg edge)
+
+=== integer solutions of g^2 = 5q^4+20 (face II not yet imposed) ===
+Set Y=q^2: g^2 - 5 Y^2 = 20. Pell. The Y-orbit is L_{2n-1} (odd Lucas).
+Squares among {L_{2n-1}} are L_1=1, L_3=4 ONLY (Cohn 1964) => q in {1,2}.
+q=1: b=-3 (and c=0) degenerate;  q=2: b=0 degenerate.
+Hence NO non-degenerate Case-B cuboid at p=1.  [UNCONDITIONAL]

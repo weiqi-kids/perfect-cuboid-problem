@@ -1,0 +1,28 @@
+
+=== Van Luijk discriminant test ===
+
+At p = 3:
+  Frobenius data (t_1, t_2, t_3) = (38, 166, 278)
+  Algebraic eigenvalues: 16 of +3, 4 of -3 (rho = 20)
+  Transcendental pair: α = 1 + 2i√2, |α|² = 9
+  Trans char poly: f_3(T) = 1 - 2T + 9T²
+  disc(f_3) = -32  (= -2^5)
+  Square class: -2
+
+At p = 11:
+  Frobenius data (t_1, t_2) = (118, 2374)
+  Algebraic eigenvalues: 15 of +11, 5 of -11 (rho = 20)
+  Transcendental pair: α = 4 + i√105, |α|² = 121
+  Trans char poly: f_11(T) = 1 - 8T + 121T²
+  disc(f_11) = -420  (= -2²·3·5·7)
+  Square class: -105
+
+Square class ratio: -2 / -105 = 2/105  (square? 1)
+
+DIFFERENT square classes!
+If rho_{Qbar} = 20, then disc(NS_{Qbar}) would have to lie in both
+square classes (image in both NS_{F_p}), which is impossible.
+Therefore rho_{Qbar} <= 18.
+
+Combined with rho_{Qbar} >= 16 from explicit classes:
+  rho_{Qbar}(V'_min) ∈ {16, 18}.

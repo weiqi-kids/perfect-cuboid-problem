@@ -1,0 +1,11 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+Best universal D candidates (|D| <= 5000):
+D  count_of_fibers_satisfying_Heegner
+-59 5  <-- new best
+-971 7  <-- new best
+-1784 8  <-- new best
+-2351 10  <-- new best
+-3671 11  <-- new best
+
+Total rank-1 fibers: 85
+Best D: -3671 covers 11 / 85

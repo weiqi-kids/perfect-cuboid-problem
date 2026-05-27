@@ -1,0 +1,48 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+[0;31m[0;31m  ***   too many arguments: ...[0;35mound,res=ellrank(Emin,2),[0;35mres=[-1,-1,0,[]]);rk=
+[0;31m[0;31m  ***                                                   ^---------------------[0m
+... skipping file '07_orbit_extended.gp'
+=== Orbit closure starting from 195/748 (rank 3) ===
+
+Depth 0: 195/748
+  Generators (from DB): 3 points
+  c-images:
+    G1: c=52/165 canon=52/165 PCP?=0
+    G2: c=135/352 canon=135/352 PCP?=0
+    G3: c=-65/2112 canon=65/2112 PCP?=0
+
+Depth 1 targets and their c-images:
+
+--- q=52/165
+    [not in DB, attempting ellrank...]
+[0;31m[0;31m  ***   at top-level: ...[0;35mpting ellrank...]");my(r=[0;35mcmap_images_compute(t
+[0;31m[0;31m  ***                                             ^---------------------
+  ***   not a function in function call[0m
+
+
+=== Orbit closure starting from 11/60 (rank 2), depth 4 ===
+Depth 0 -> 1:
+  39/80 (PCP?=0)
+  17/144 (PCP?=0)
+
+--- Depth 1 ---
+Frontier size: 2
+Frontier: [17/144, 39/80]
+  q=17/144:
+    -> 11/60 (PCP?=0)
+    -> 65/2112 (PCP?=0)
+  q=39/80:
+    -> 11/60 (PCP?=0)
+
+--- Depth 2 ---
+Frontier size: 1
+Frontier: [65/2112]
+  q=65/2112:
+    [computing rank for q=65/2112...]
+[0;31m[0;31m  ***   at top-level: ...[0;35mr q=",t,"...]");my(rcomp=[0;35mcmap_images_compute(t
+[0;31m[0;31m  ***                                             ^---------------------
+  ***   not a function in function call[0m
+
+=== Final orbit closure of 11/60 ===
+Total unique q: 2
+Seen: seen

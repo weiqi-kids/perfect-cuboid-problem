@@ -1,0 +1,19 @@
+=== Sub-family n=1: a=m^2-1, b=2m ===
+  max sigma (n=1, m<=3000): 3.8779195488600964013966713470608421506 at m=624
+=== Sub-family m=n+1: a=2n+1, b=2n(n+1) ===
+  max sigma (m=n+1, n<=3000): 3.8947371204401910696964546913619246902 at n=121
+=== Sub-family: a,b/2-power,(a^2-b^2) squarefree ===
+  max sigma (a,c sqfree, odd-part b sqfree; m<=400): 3.5581582141173596749470424597256232296 at [309, 128] (13911 fibers)
+  THEORY: if a,b,c=a^2-b^2 all squarefree (odd part), each n_p in {2,4} bounded.
+  Then log|Dmin| <= 4 log a+4 log b+2 log c, log N=log(abc/...)~log a+log b+log c roughly.
+  But ratio still ~ up to 4: NOT obviously <= small const without rad lower bound.
+
+=== sigma vs v_2(b): does large 2-power drive sigma up? ===
+  v_2(b)=2: max sigma=4.0718069794942043613851829877835311448 at [37, 10]
+  v_2(b)=3: max sigma=4.2474458098723441653987576327256161308 at [92, 81]
+  v_2(b)=4: max sigma=4.2594422344463695492205816283457657125 at [56, 25]
+  v_2(b)=5: max sigma=4.5525742310896575460240881939386287186 at [304, 135]
+  v_2(b)=6: max sigma=3.9575077890485788650110935979231938490 at [416, 265]
+  v_2(b)=7: max sigma=4.2502480611404280105038199646666627589 at [320, 121]
+  v_2(b)=8: max sigma=3.9635047504602678464736093615351929791 at [297, 128]
+  v_2(b)=9: max sigma=4.6139648036050048712184775864456188394 at [256, 121]

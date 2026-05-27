@@ -1,0 +1,65 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== Symbolic quartic factorization for cross-curve image ===
+
+Setup: (x, y) on E_PCP(q) with y^2 = x(x+1)(x+q^2).
+c = 2qy/(q^2 - x^2).
+The image curve E_PCP(c) has parameter c.
+A point (X, Y) on E_PCP(c) maps back via 2cY/(c^2-X^2) = q.
+This gives Y = q(c^2 - X^2)/(2c) and X satisfies the quartic:
+  q^2(c^2-X^2)^2 = 4c^2 X(X+1)(X+c^2).
+
+Test point: q=20/21 x=-45/49 y=10/343 c=48/55
+Roots:
+[25*X + 24, 1; 121*X - 600, 1; 121*X + 96, 1; 625*X - 96, 1]
+  X=-24/25  =>  Y = q(c^2 - X^2)/(2c) = -24/275
+  X=600/121  =>  Y = q(c^2 - X^2)/(2c) = -17304/1331
+  X=-96/121  =>  Y = q(c^2 - X^2)/(2c) = 96/1331
+  X=96/625  =>  Y = q(c^2 - X^2)/(2c) = 69216/171875
+
+=== Compare roots with 2-torsion translates ===
+Original point P=(x, y)=[-45/49, 10/343]
+c(P) = 48/55
+P + T_1 = [-80/81, -160/5103]  c = 
+    48/55
+P + T_2 = [5/36, -205/504]  c = 
+    -48/55
+P + T_3 = [320/49, 6560/343]  c = 
+    -48/55
+
+=== Which X-root is the 'primary' c-map image? ===
+On E_PCP(48/55), the known generator pulls back to X = -24/25.
+This matches the root X = -24/25 from the quartic.
+
+The 4 X-roots correspond to the 4 lifts of the Euler brick (1, q, c)
+from the 'edge data' (q, c) to the 'curve point data' on E_PCP(c).
+Each lift differs by composition with a 2-torsion translation on E_PCP(c).
+Pc = [-24/25, -24/275]
+  Y^2 = 576/75625
+  X(X+1)(X+c^2) = 576/75625
+  match? 1
+Pc + T_1=[0, 0] = [-96/121, 96/1331]
+Pc + T_2=[-1, 0] = [600/121, 17304/1331]
+Pc + T_3=[-2304/3025, 0] = [96/625, -69216/171875]
+
+=== Conclusion: c-map mechanism ===
+
+THE C-MAP IS THE COMPOSITION:
+  Step 1: (x, y) on E_PCP(q)  -->  Euler brick (1, q, c)
+          where c = 2qy/(q^2 - x^2).
+          This is RATIONAL (no field extension).
+          Algebraically guaranteed by 2 identities:
+            (I1)  1 + c^2 = ((x^2+2q^2x+q^2)/(q^2-x^2))^2
+            (I2)  q^2 + c^2 = (q(x^2+2x+q^2)/(q^2-x^2))^2
+          (Face F1 = 1+q^2 is square by hypothesis on q.)
+
+  Step 2: Euler brick (1, q, c)  -->  point on E_PCP(c)
+          The point is one of 4 (related by 2-torsion of E_PCP(c)).
+          The 'natural' choice matches the rank-jump MW generator of E_PCP(c)
+          (when c is a rank-jump fiber, which is empirically common).
+
+So the c-map is NOT an isogeny — it's a BIRATIONAL CORRESPONDENCE
+between E_PCP(q) and E_PCP(c) MEDIATED BY THE EULER-BRICK K3 V'.
+
+The conductor differences (4305 vs 237930) are explained: the two
+elliptic curves have different j-invariants, but they share rational
+points via the Euler-brick K3 surface (a (Z/2)^3 cover of a P^2 quadric).

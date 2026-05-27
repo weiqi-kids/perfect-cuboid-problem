@@ -1,0 +1,91 @@
+====================================================
+ Step 4: Verify uniruling of W via explicit examples
+====================================================
+q = 20/21
+q^2 = 400/441
+E_PCP(20/21) initialized
+Conductor: 4305
+[0;31m[0;31m  ***   too many arguments: [0;35mpts=ellsearch(E,[0;35m10^4);
+[0;31m[0;31m  ***                                       ^------[0m
+... skipping file 'step4_verify_uniruled.gp'
+Integer points (small height): pts
+Rank analysis: [1, 1, 0, [[-45/49, 10/343]]]
+
+=== Sanity check with (X_0, Y_0) = (0, 0) (2-torsion) ===
+
+Clean factorization of pi_2 fiber:
+  F|_{X=X_0,Y=Y_0} = 4*alpha*m^2*n^2 - beta*(m^2-n^2)^2
+  where alpha = Y_0^2 - X_0^2(X_0+1), beta = X_0(X_0+1).
+
+Note: alpha/beta = (Y_0^2 - X_0^2(X_0+1)) / (X_0(X_0+1))
+    = Y_0^2/(X_0(X_0+1)) - X_0
+    = Y_0^2/(X_0(X_0+1)) - X_0
+
+On E_PCP: Y^2 = X(X+1)(X+q^2), so Y_0^2 = X_0(X_0+1)(X_0+q^2).
+=> Y_0^2 / (X_0(X_0+1)) = X_0 + q^2.
+=> alpha/beta = (X_0 + q^2) - X_0 = q^2.
+
+**KEY: alpha/beta = q^2 for any point (X_0,Y_0) on E_PCP(q)!**
+
+Verify with X_0 = 1, q^2 = 400/441
+  alpha/beta = 400/441
+  q^2 = 400/441
+  Match: 1
+
+=== KEY GEOMETRIC INSIGHT ===
+
+For (X_0, Y_0) on E_PCP(q), the pi_2 fiber is:
+  (m^2-n^2)^2 = 4 q^2 m^2 n^2
+  <=> m^2 - n^2 = ±2 q m n
+  <=> q = ±(m^2-n^2)/(2mn).
+
+This is just the Pythagorean conic { (m,n) : q(m,n) = ±q }.
+
+Geometric structure of W:
+  W = { (X, Y, m, n) : (X,Y) in E_PCP(q(m,n)) }
+  pi_2 fiber over (X_0,Y_0) = preimage of q^2 = q(X_0,Y_0)^2 under q-map.
+
+Equivalently, W is a fiber product:
+  W = E_total ×_{q-line} Pyth_total
+where:
+  E_total -> A^1_q is the elliptic fibration with fiber E_PCP(q)
+  Pyth_total -> A^1_q is the Pythagorean conic fibration (m,n) -> q(m,n)
+
+Both are 2-folds. W is a 3-fold (fiber product of 2 fibrations of dim 2 over dim 1).
+
+=== Birational type: W is uniruled ===
+
+The pi_2 fibers are conics — rational curves.
+Through every point of W there passes a rational curve.
+=> W is uniruled, Kodaira dimension κ(W) = -∞.
+
+Equivalently: W is birational to E_q × P^1 — a P^1-bundle over the elliptic surface E_q.
+More precisely:
+  W is birational to the elliptic surface S := { (X,Y,q) : E_PCP(q) }
+  product with P^1 (the Pythagorean conic parametrized by t=m/n).
+
+=== Mordell-Weil / Lang implications ===
+
+Faltings 1991: needs subvariety of abelian variety.
+  W is UNIRULED => Albanese(W) = 0 => Faltings 1991 INAPPLICABLE.
+
+Lang conjecture (general type): not applicable since κ(W) = -∞.
+
+Bombieri-Lang for uniruled: rational points are Zariski-dense in general.
+  Specifically: rational points cover the entire surface S_pyth × E
+  for any rank-positive q.
+
+=> The 3-fold lift W does NOT give PCP closure.
+=> No new global finiteness from this direction.
+
+=== Why this is NOT a setback ===
+
+The pi_2 fibration reveals a deep structural fact:
+the (m,n) parameters and the (X,Y) coordinates are INDEPENDENT directions.
+Fixing (X_0,Y_0) gives only the Pythagorean conic constraint on (m,n).
+
+This was already implicit in the existing framework:
+the closure relies on PER-FIBER analysis (Silverman+Ingram-Mahe)
+plus rank-jump locus density 0, NOT on global 3-fold finiteness.
+
+The 3-fold W does NOT add new control; it just packages the existing structure.

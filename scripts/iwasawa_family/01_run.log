@@ -1,0 +1,39 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 6500003840 (6198.887 Mbytes).[0m
+=================================================================
+Track T5 - Iwasawa-Family - 01_padicL_individual
+=================================================================
+
+Roster size: 10
+
+
+--- (m,n)=(2,1), q=3/4, N=21, expected rank=0 ---
+  p=3  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=3)
+  p=5  a_p=-2  reduction=good  ordinary?=1
+    L_p(E,1) = 4 + 3*5 + 4*5^2 + O(5^3), val_p = 0, [0.01s]
+  p=7  a_p=-1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=7)
+  p=11  a_p=4  reduction=good  ordinary?=1
+    L_p(E,1) = 1 + 2*11 + 4*11^2 + O(11^3), val_p = 0, [0.03s]
+
+--- (m,n)=(3,2), q=5/12, N=1785, expected rank=0 ---
+  p=3  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=3)
+  p=5  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=5)
+  p=7  a_p=-1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=7)
+  p=11  a_p=4  reduction=good  ordinary?=1
+[0;31m  *** ellpadicL: Warning: increasing stack size to 4000000000.[0m
+    L_p(E,1) = 8 + 5*11 + O(11^3), val_p = 0, [16.35s]
+
+--- (m,n)=(5,2), q=21/20, N=4305, expected rank=1 ---
+  p=3  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=3)
+  p=5  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=5)
+  p=7  a_p=1  reduction=additive  ordinary?=0
+    skipping (non-ordinary at p=7)
+  p=11  a_p=4  reduction=good  ordinary?=1
+[0;31m  *** ellpadicL: Warning: increasing stack size to 6500003840.[0m

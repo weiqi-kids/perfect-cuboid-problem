@@ -1,0 +1,127 @@
+[0;31m  ***   Warning: new stack size = 1200000000 (1144.409 Mbytes).[0m
+=== ULTRA-VERIFY (1099,358) ===
+Checking primitivity: gcd=1 (m+n)%2=1
+q = 1079637/786884
+a = m²-n² = 1079637 = [3, 1; 13, 1; 19, 1; 31, 1; 47, 1]
+b = 2mn = 786884 = [2, 2; 7, 1; 157, 1; 179, 1]
+d = m²+n² = 1335965 = [5, 1; 267193, 1]
+Pythagorean: a²+b²=d²? 1
+E_min coefficients: [1, 0, 0, -21256645278178645624534, -128657586976304624282484638021341]
+conductor N = 116054695881550160890701
+log10(N) = 23.064662717856862566088833231273014165
+ω(N) = 10
+Torsion: [8, [4, 2], [[-63653730175, 31088537094566378], [-6063067262, 3031533631]]]
+Root number: -1
+
+=== Effort 4 ===
+ellrank=[3,5] gens=3 t=1.6490000000000000000000000000000000000s
+
+=== Effort 6 ===
+ellrank=[3,5] gens=3 t=5.0520000000000000000000000000000000000s
+
+=== Effort 8 ===
+ellrank=[3,5] gens=3 t=9.3470000000000000000000000000000000000s
+
+=== Effort 10 ===
+ellrank=[3,5] gens=3 t=23.582000000000000000000000000000000000s
+
+Using 3 gens from best ellrank result
+
+=== Generator verification ===
+G1 (Emin): [1577702335574351/6724, 48700564197882492614201/551368]
+  ellisoncurve(Emin) = 1
+  height = 9.1250196682913579210635894998947084988
+G2 (Emin): [-655856307462209/10609, 33665554878419539801663/1092727]
+  ellisoncurve(Emin) = 1
+  height = 11.687273091387624758865775407422980696
+G3 (Emin): [7884756965457267805302407/23626851676516, 19872894211470641802945390717542657149/114844124779218440936]
+  ellisoncurve(Emin) = 1
+  height = 27.497431448086380258365540993524186167
+
+=== Height pairing matrix ===
+H = [9.1250196682913579210635894998947084987, -1.9238953801231812152011733416455303643, 1.1950161568847276376669090258421854668; -1.9238953801231812152011733416455303643, 11.687273091387624758865775407422980696, 4.4008556209193804878676338274928986527; 1.1950161568847276376669090258421854668, 4.4008556209193804878676338274928986527, 27.497431448086380258365540993524186166]
+det H = 2617.0740681034871642228985658621845255
+Rank from H rank: 3
+
+=== Face-3 verification ===
+G1:
+  x_E = 104481/188272
+  c = 2196288/868945
+  F3 = 88457151527374643067961/9541352185646319715600
+  issquare(F3) = 0
+G2:
+  x_E = -63435853/46637164
+  c = 305148518631/7112112560
+  F3 = 2988189198580455086929842601/1620702510063222615097600
+  issquare(F3) = 0
+G3:
+  x_E = 790574476792425/661551846942448
+  c = 55281770817177317093120/3221895693995084897889
+  F3 = 38996061313799178462689384255596098028891340927649921625/131174163163463315056940928864773895689547262246999824
+  issquare(F3) = 0
+Total F3 squares: 0 / 3
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(num_g>=2[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+... skipping file '12_ULTRA_1099_358.gp'
+
+=== Simple linear combinations ===
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,num_g[0;35m,
+[0;31m[0;31m  ***                ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(j=i+1,num_g[0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35m(sum_pt=elladd(Emin,gens[[0;35mi],gens[j]))
+[0;31m[0;31m  ***                                             ^------------
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mdiff_pt=elladd(Emin,gens[[0;35mi],ellneg(Emin,gens[j
+[0;31m[0;31m  ***                                             ^---------------------
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(which=1,2[0;35m,
+[0;31m[0;31m  ***                ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mt;label=Str("G",i,"+G",j)[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: 
+[0;31m  ***   ...[0;35mt;label=Str("G",i,"-G",j)[0;35m);
+[0;31m[0;31m  ***                               ^--[0m
+label: F3 sq=0
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+Total F3 squares (with combos): 0
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(rk10[1]<rk10[2][0;35m,
+[0;31m[0;31m  ***                     ^-[0m
+
+=== Isogeny class walk (still ambiguous) ===
+# isogenous curves: 6
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(j=2,length(iso[1])[0;35m,
+[0;31m[0;31m  ***                         ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmy(Ej=ellinit(iso[1][[0;35mj]))
+[0;31m[0;31m  ***                                      ^----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmy(rj=[0;35mellrank(Ej,8))
+[0;31m[0;31m  ***                       ^--------------
+  *** ellrank: incorrect type in checkell over Q (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mrint(" iso[",j,"]: [",rj[0;35m[1],",",rj[2],"] gens
+[0;31m[0;31m  ***                                            ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(rj[1]>=5[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+  *** ISO RANK >= 5 ***
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m

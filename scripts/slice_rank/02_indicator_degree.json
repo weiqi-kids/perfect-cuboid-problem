@@ -1,0 +1,50 @@
+[
+  {
+    "p": 3,
+    "I_PCP_num_monomials": 125,
+    "I_PCP_total_degree": 14,
+    "I_PCP_per_var_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "trivial_per_var_max": 2,
+    "trivial_total_max": 14
+  },
+  {
+    "p": 5,
+    "I_PCP_num_monomials": 425,
+    "I_PCP_total_degree": 28,
+    "I_PCP_per_var_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "trivial_per_var_max": 4,
+    "trivial_total_max": 28
+  },
+  {
+    "p": 7,
+    "I_PCP_num_monomials": 1728,
+    "I_PCP_total_degree": 36,
+    "I_PCP_per_var_degrees": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "trivial_per_var_max": 6,
+    "trivial_total_max": 42
+  }
+]

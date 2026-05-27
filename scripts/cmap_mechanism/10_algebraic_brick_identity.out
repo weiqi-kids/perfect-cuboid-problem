@@ -1,0 +1,43 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+Numerator coefficient analysis:
+  q^2 * (q^2 - x^2)^2 + 4 q^2 y^2
+  = q^2 * [x^4 + 4x^3 + (4 + 2q^2) x^2 + 4 q^2 x + q^4]   (using y^2 = x(x+1)(x+q^2))
+
+Is x^4 + 4x^3 + (4 + 2q^2)x^2 + 4q^2 x + q^4 a perfect square in x (over Q[q])?
+(x^2+2x+q^2)^2 - prediction = 0
+Both equal? 1
+
+=== PROVEN IDENTITY ===
+q^2 + c^2 = q^2 (x^2 + 2x + q^2)^2 / (q^2 - x^2)^2
+         = ( q (x^2 + 2x + q^2) / (q^2 - x^2) )^2
+
+So sqrt(q^2 + c^2) = q (x^2 + 2x + q^2) / (q^2 - x^2)  (up to sign).
+
+Symbolic difference (R - S) = 0  (should be 0)
+Identity 1+c^2: R1 - S1 = 0
+
+=== Long diagonal squareness condition ===
+LD * (q^2-x^2)^2 = (q^2-x^2)^2 + (x^2+2q^2x+q^2)^2
+                 = 2*x^4 + 4*q^2*x^3 + 4*q^4*x^2 + 4*q^4*x + 2*q^4
+
+This is a degree-4 polynomial in x.  Need it to be square in x:
+2*x^4 + 4*q^2*x^3 + 4*q^4*x^2 + 4*q^4*x + 2*q^4
+
+For specific x = MW generator, the LD value is just a rational.
+Empirically: LD is NEVER a square (over 40 MW-generators tested).
+
+=== Factoring LD numerator over Q[q, x] ===
+LD_num as polynomial in x:
+Mat([(2*X^2 + 2*X + 1)*q^4 + 2*X^3*q^2 + X^4, 1])
+
+=== Algebraic mechanism is now proven ===
+
+Theorem (c-map produces Euler bricks):
+Let (x, y) be a rational point of E_PCP(q): y^2 = x(x+1)(x+q^2), x != +/- q.
+Define c = 2qy/(q^2 - x^2).
+Then:
+  1 + q^2 = (square)  [hypothesis: q Pythagorean]
+  1 + c^2 = ((x^2 + 2q^2 x + q^2)/(q^2 - x^2))^2  [known identity]
+  q^2 + c^2 = (q(x^2 + 2x + q^2)/(q^2 - x^2))^2   [NEW identity]
+So (1, q, c) is an Euler brick (3 face diagonals rational).
+The PCP condition 1+q^2+c^2 = square is independent and fails generically.

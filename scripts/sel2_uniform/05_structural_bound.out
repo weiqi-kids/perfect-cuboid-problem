@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== CHECKING THE SHARPER BOUND: dim Sel_2 vs 2 + ω(sf(P*Q)) =====
+(m,n)  P  Q  sf(P*Q)  ω(sf(P*Q))  predicted_bound  observed_dimSel2  diff
+[13, 4]  P=257  Q=49  sf(PQ)=257  ω=1  bound=3  observed=4  diff=+1
+[44, 9]  P=2647  Q=1063  sf(PQ)=2813761  ω=2  bound=4  observed=5  diff=+1
+
+Tested 737 primitive Pythagorean fibers with m <= 60
+Violations (observed > bound): 2
+Max excess: 1
+
+===== If violations exist: the naive bound 2 + ω(sf(PQ)) is too tight =====
+===== Compute also 2 + ω(sf(P)) + ω(sf(Q)) (no cancellation) =====
+[13, 4]  bound=3  observed=4  P=257  Q=49
+[44, 9]  bound=4  observed=5  P=2647  Q=1063
+Violations of 2 + ω(sf(P)) + ω(sf(Q)) bound: 2

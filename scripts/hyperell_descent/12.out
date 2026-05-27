@@ -1,0 +1,41 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Rank table: E_PCP(q) vs E_PCP(q)^(-1) ===
+(over primitive Pythagorean triples with parameters s, t)
+
+| s | t | n | m | h^2 | rk E_PCP | rk E_PCP^(-1) | sum |
+|---|---|---|---|-----|----------|----------------|-----|
+| 2 | 1 | 4 | 3 | 25 | [0,0] | [1,1] | 1 |
+| 3 | 2 | 12 | 5 | 169 | [0,0] | [1,1] | 1 |
+| 4 | 1 | 8 | 15 | 289 | [0,0] | [1,1] | 1 |
+| 4 | 3 | 24 | 7 | 625 | [1,1] | [2,2] | 3 |
+| 5 | 2 | 20 | 21 | 841 | [1,1] | [2,2] | 3 |
+| 5 | 4 | 40 | 9 | 1681 | [0,0] | [1,1] | 1 |
+| 6 | 1 | 12 | 35 | 1369 | [0,0] | [1,1] | 1 |
+| 6 | 5 | 60 | 11 | 3721 | [2,2] | [1,1] | 3 |
+| 7 | 2 | 28 | 45 | 2809 | [0,0] | [1,1] | 1 |
+| 7 | 4 | 56 | 33 | 4225 | [0,0] | [2,2] | 2 |
+| 7 | 6 | 84 | 13 | 7225 | [1,1] | [1,1] | 2 |
+| 8 | 1 | 16 | 63 | 4225 | [0,0] | [2,2] | 2 |
+| 8 | 3 | 48 | 55 | 5329 | [1,1] | [1,1] | 2 |
+| 8 | 5 | 80 | 39 | 7921 | [1,1] | [1,1] | 2 |
+| 8 | 7 | 112 | 15 | 12769 | [0,0] | [1,1] | 1 |
+
+rank-sum distribution (sum_dist[i+1] = count of rank-sum = i):
+[0, 7, 5, 3, 0, 0, 0, 0, 0, 0]
+
+Total fibers tested: 15
+
+=== Parity check: root number of E_PCP(q) vs E_PCP(q)^(-1) ===
+For quadratic twist by -1, the root number flips if and only if the
+number of primes p where E_PCP has split or non-split mult red is...
+(complicated; let's just compute)
+
+| s | t | n | m | w(E_PCP) | w(E_twist) | (parity match?) |
+| 2 | 1 | 4 | 3 | 1 | -1 | flip |
+| 3 | 2 | 12 | 5 | 1 | -1 | flip |
+| 4 | 1 | 8 | 15 | 1 | -1 | flip |
+| 4 | 3 | 24 | 7 | -1 | 1 | flip |
+| 5 | 2 | 20 | 21 | -1 | 1 | flip |
+| 5 | 4 | 40 | 9 | 1 | -1 | flip |
+| 6 | 1 | 12 | 35 | 1 | -1 | flip |
+| 6 | 5 | 60 | 11 | 1 | -1 | flip |

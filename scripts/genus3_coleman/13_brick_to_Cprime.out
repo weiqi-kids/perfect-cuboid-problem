@@ -1,0 +1,15 @@
+=== Map the smallest Euler brick (44,117,240) to C' and check space diagonal ===
+(p,q)=(2,1) -> (u,v,w)=(3,4,5), t=p/q=2
+brick edges (a,b,c)=(117,44,240)
+a^2+b^2+c^2 = 73225, is perfect square (=> PCP)? False
+sqrt = 5*sqrt(2929)
+
+f(t=2) = 2929
+(a^2+b^2+c^2)/(w^2 q^8) = 2929  ; equals f(t)? True
+Is f(t) a rational square (=> brick is a PCP)? False
+sqrt(f(2)) = sqrt(2929) -- NOT rational => (44,117,240) is NOT a perfect cuboid (as known).
+
+CONCLUSION: the brick (44,117,240) sits on C' at t=2 with T^2=f(2)=2825761 NOT a
+square, i.e. (2, sqrt(2825761)) is NOT a rational point of C'.  This is exactly the
+statement that this brick is not a PCP -- and ANY PCP would be a rational point of C'
+with t!=0,+-1,inf.  Coleman bounds those to <=12 total (8 known, all degenerate).

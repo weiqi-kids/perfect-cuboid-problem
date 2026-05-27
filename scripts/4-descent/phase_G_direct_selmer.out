@@ -1,0 +1,132 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===========================================
+Cover 1: lift x=0, y=8625278 to E
+===========================================
+  Lift: X = -135859222266384, Y = 3640594450499568444960
+  On curve? 1
+  Order = 8
+  X - e1 = 163131895672480 sqf = 28243056730 factored = [2, 1; 5, 1; 7, 1; 19, 1; 61, 1; 337, 1; 1033, 1]
+  X - e2 = -271914073834095 sqf = -3082611455 factored = [5, 1; 7, 1; 11, 1; 23, 1; 337, 1; 1033, 1]
+  X - e3 = -298795488637536 sqf = -586454 factored = [2, 1; 11, 1; 19, 1; 23, 1; 61, 1]
+  Product d1*d2*d3 = 51058075253336976730236100  squarefree? 1
+  Selmer triple S1 = [28243056730, -3082611455, -586454]
+
+===========================================
+Cover 2: lift x=0, y=57740923038752 to E
+===========================================
+  Lift: X = 136054851567711, Y = 0  is e_2? 1
+  d1 = (e2-e1)(e2-e3) sqf = -16307767  factored = [7, 1; 31, 1; 223, 1; 337, 1]
+  d2 = (e2-e1)         sqf = 16307767  factored = [7, 1; 31, 1; 223, 1; 337, 1]
+  d3 = (e2-e3)         sqf = -1  factored = matrix(0,2)
+  Product = 265943264526289  squarefree? 1
+  Selmer triple S2 = [-16307767, 16307767, -1]
+
+===========================================
+Cover 3: search local points
+===========================================
+q3(x) = 57671190729*x^4 + 7637223231630*x^3 + 369980514571393*x^2 - 2622679029765680*x + 6801085520209984
+  Searching Q_p points for bad primes p:
+    p=2 x≡0 mod p, q3(x)≡Mod(0, 2) (square)
+    p=3 x≡0 mod p, q3(x)≡Mod(1, 3) (square)
+    p=5 x≡0 mod p, q3(x)≡Mod(4, 5) (square)
+    p=7 x≡1 mod p, q3(x)≡Mod(1, 7) (square)
+    p=11 x≡0 mod p, q3(x)≡Mod(3, 11) (square)
+    p=19 x≡0 mod p, q3(x)≡Mod(0, 19) (square)
+    p=23 x≡0 mod p, q3(x)≡Mod(8, 23) (square)
+    p=31 x≡0 mod p, q3(x)≡Mod(20, 31) (square)
+    p=61 x≡0 mod p, q3(x)≡Mod(0, 61) (square)
+    p=223 x≡0 mod p, q3(x)≡Mod(25, 223) (square)
+    p=337 x≡0 mod p, q3(x)≡Mod(82, 337) (square)
+    p=1033 x≡0 mod p, q3(x)≡Mod(2, 1033) (square)
+
+===========================================
+Cover 4: search local points
+===========================================
+    p=2 x≡0 mod p, q4(x)≡Mod(1, 2)
+    p=3 x≡0 mod p, q4(x)≡Mod(0, 3)
+    p=5 x≡0 mod p, q4(x)≡Mod(1, 5)
+    p=7 x≡0 mod p, q4(x)≡Mod(2, 7)
+    p=11 x≡0 mod p, q4(x)≡Mod(0, 11)
+    p=19 x≡0 mod p, q4(x)≡Mod(17, 19)
+    p=23 x≡0 mod p, q4(x)≡Mod(2, 23)
+    p=31 x≡0 mod p, q4(x)≡Mod(9, 31)
+    p=61 x≡0 mod p, q4(x)≡Mod(46, 61)
+    p=223 x≡0 mod p, q4(x)≡Mod(38, 223)
+    p=337 x≡1 mod p, q4(x)≡Mod(321, 337)
+    p=1033 x≡0 mod p, q4(x)≡Mod(121, 1033)
+
+===========================================
+Partial CT: use known triples S1, S2 + q-evaluations for S3, S4
+===========================================
+
+Bad-prime projections of (q(e_i)/cofactor) per cover:
+Cover 1: [16307767, -16307767, 1]
+           d1 = [7, 1; 31, 1; 223, 1; 337, 1] sign 1
+           d2 = [7, 1; 31, 1; 223, 1; 337, 1] sign -1
+           d3 = matrix(0,2) sign 1
+Cover 2: [16307767, -16307767, 1]
+           d1 = [7, 1; 31, 1; 223, 1; 337, 1] sign 1
+           d2 = [7, 1; 31, 1; 223, 1; 337, 1] sign -1
+           d3 = matrix(0,2) sign 1
+Cover 3: [16307767, -16307767, 1]
+           d1 = [7, 1; 31, 1; 223, 1; 337, 1] sign 1
+           d2 = [7, 1; 31, 1; 223, 1; 337, 1] sign -1
+           d3 = matrix(0,2) sign 1
+Cover 4: [2329681, -2329681, 1]
+           d1 = [31, 1; 223, 1; 337, 1] sign 1
+           d2 = [31, 1; 223, 1; 337, 1] sign -1
+           d3 = matrix(0,2) sign 1
+
+===========================================
+CT matrix (Schaefer-style) using T_bad triples:
+===========================================
+M = 
+[0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]
+rank(M) over F_2 = 0
+
+===========================================
+CT matrix (off-diagonal) using T_bad triples:
+===========================================
+M_off = 
+[0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]
+rank(M_off) over F_2 = 0
+
+===========================================
+Per-place Hilbert (Schaefer) contributions for each pair (i<j):
+===========================================
+
+Pair (1, 1):
+  TOTAL h = 0
+
+Pair (1, 2):
+  TOTAL h = 0
+
+Pair (1, 3):
+  TOTAL h = 0
+
+Pair (1, 4):
+  v=2: h=1
+  v=7: h=1
+  TOTAL h = 0
+
+Pair (2, 2):
+  TOTAL h = 0
+
+Pair (2, 3):
+  TOTAL h = 0
+
+Pair (2, 4):
+  v=2: h=1
+  v=7: h=1
+  TOTAL h = 0
+
+Pair (3, 3):
+  TOTAL h = 0
+
+Pair (3, 4):
+  v=2: h=1
+  v=7: h=1
+  TOTAL h = 0
+
+Pair (4, 4):
+  TOTAL h = 0

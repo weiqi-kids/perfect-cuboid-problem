@@ -1,0 +1,28 @@
+=== Verifying trans pair coefficients ===
+
+p=3:  c = t_1 - p(a-b) = 38 - 3*12 = 2  (|c| <= 2p = 6)
+       4p^2 - c^2 = 32  square class: 2
+p=11: c = 118 - 11*10 = 8  (|c| <= 2p = 22)
+       4p^2 - c^2 = 420  square class: 105
+
+p=17: structure has 18 *(+17), pair (17 omega, 17 omega_bar) [omega = e^{i pi/3}],
+      and 1 trans pair (17 e^{i theta}, 17 e^{-i theta}), cos(theta) = 19/34.
+      Trans pair c = 2*17*(19/34) = 19.
+       4p^2 - c^2 = 795  square class: 795
+
+  HOWEVER: at p=17 there are MORE algebraic classes (the omega pair),
+  so disc(NS_{F_17}) gets an extra factor from this pair.
+  The omega pair (17 omega, 17 omega_bar), omega = primitive 6th root, contributes
+    factor (T^2 - 17 T + 17^2) to cyclotomic part, disc = 17^2 - 4*17^2 = -3*17^2.
+  square class of this factor's contribution: square_class(-3*17^2) = -3
+  Combined trans+alg(non-real) disc square class: -265
+
+=== Final square classes of disc(NS_{F_p}) ===
+  p=3:  2
+  p=11: 105
+  p=17: -265
+
+Ratio (p=3)/(p=11) square class: 210
+  -> = 1 means same square class, != 1 means different (rho_Qbar < 20).
+
+Ratio (p=3)/(p=17) square class: -530

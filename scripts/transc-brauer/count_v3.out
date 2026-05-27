@@ -1,0 +1,7 @@
+=== Recomputing #V'(F_{p^2}) with FIXED enumeration ===
+F_9: nonzero squares = 4 (expected 4)
+p=3 (q=9): aff=1121 proj_sing=140 V'_min=248 t_2=166 (bound: |t_2| <= 198)
+F_25: nonzero squares = 12 (expected 12)
+p=5 (q=25): aff=21025 proj_sing=876 V'_min=1176 t_2=550 (bound: |t_2| <= 550)
+F_49: nonzero squares = 24 (expected 24)
+p=7 (q=49): aff=138817 proj_sing=2892 V'_min=3480 t_2=1078 (bound: |t_2| <= 1078)

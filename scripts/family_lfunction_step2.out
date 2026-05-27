@@ -1,0 +1,59 @@
+  ***   Warning: new stack size = 800000000 (762.939 Mbytes).
+=================================================================
+Step 2: Search for family identities (CM, isogenies, congruences)
+=================================================================
+
+--- j-invariants and CM check ---
+
+(m,n)      j(E)            j factored                     CM?
+---------------------------------------------------------------------------
+  ***   at top-level: ...in=ellminimalmodel(E);jE=ellj(Emin);disc=Emin.
+  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).
+... skipping file 'family_lfunction_step2.gp'
+
+--- 2-isogeny structure ---
+E_{m,n}: Y^2 = X(X+u^2)(X+v^2) has full rational 2-torsion (3 roots).
+Hence E_{m,n}[2] = (Z/2)^2 rational. There are 3 non-trivial 2-isogenies.
+
+--- 2-isogeny graph ---
+  ***   at top-level: ...i=1,min(#data2,8),d=data2[i];m=d[1];n=d[2];E=d
+  ***                                             ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).
+
+--- Same-conductor pairs / isogenous (m,n) ? ---
+Check if different (m,n) give isogenous curves (= same L-function).
+
+  ***   syntax error, unexpected .., expecting ',': 
+  ***   ...(m,n,q,N,[a_2,a_3,a_5,...],u=2mn,v=m^2-n^2)
+  ***                               ^------------------
+Pairs (i, j) with identical first 20 a_p (Q-isogenous, same L):
+  None.
+
+--- Common a_p patterns ---
+
+For each prime p, the multiset of {a_p(E_{m,n})} across the family:
+p = 2: values = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    distinct values: [-1, 1]
+p = 3: values = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    distinct values: [1]
+p = 5: values = [-2, -2, -2, -2, -2, -2, -2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    distinct values: [-2, 1]
+p = 7: values = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    distinct values: [-1, 1]
+p = 11: values = [1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    distinct values: [1, 4]
+p = 13: values = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 1, 1, 1, 1, 6, 6, 6]
+    distinct values: [-2, 1, 6]
+p = 17: values = [-6, -6, -6, -6, -6, -6, -6, -6, -6, -6, -6, -6, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2]
+    distinct values: [-6, 1, 2]
+p = 19: values = [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    distinct values: [-4, 1, 4]
+p = 23: values = [-1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    distinct values: [-1, 0]
+p = 29: values = [-10, -10, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 6, 6, 6, 6, 6, 6, 6]
+    distinct values: [-10, -2, 6]
+
+=== Save updated data ===
+
+Done step 2.

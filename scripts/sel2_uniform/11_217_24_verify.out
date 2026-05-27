@@ -1,0 +1,30 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+q = 46513/10416
+Emin discriminant: 908804889978369918941719990444621685260617778639104
+Conductor: 124448595735787638
+
+Trying ellrank(Em, 10)...
+ellrank result: [3, 5, 0, [[-4663440, 3350936824332], [19579938354/121, 98473276429842/1331], [87672078624/289, 15950829668085516/4913]]]
+Lower bound on rank: 3
+Upper bound on rank: 5
+dim Sel_2 upper bound: 7
+
+Number of 2-covers (ell2cover): 7
+
+Isogeny class:
+Number of isogenous curves: 6
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,#iso[1][0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+... skipping file '11_217_24_verify.gp'
+[0;31m[0;31m  ***   at top-level: [0;35mEi=ellinit(iso[1][[0;35mi])
+[0;31m[0;31m  ***                                   ^---
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mrki=[0;35mellrank(Ei,3)
+[0;31m[0;31m  ***                     ^-------------
+  *** ellrank: incorrect type in checkell over Q (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mprint(" E_",i," rk = ",[0;35mrki[1..2]," dim Sel_2 
+[0;31m[0;31m  ***                                        ^----------------------
+  *** _[_.._]: incorrect type in _[_.._] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m

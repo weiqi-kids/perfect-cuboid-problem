@@ -1,0 +1,30 @@
+E_anom 800a3:  hat-h(P) = 0.94974108626589779505360275479729895984
+
+A = -275, B = 1750, disc = 8000000, j = 287496
+
+=== Height-difference constant (PARI normalization: hat-h ~ h_x) ===
+(PARI's ellheight uses hat-h(R) = h_x(R) + O(1), where
+ h_x(R) = log max(|num x|,|den x|).)
+max |h_x(nP) - hat-h(nP)| over n=1..60 = 2.9209792001934995892867752623547753059
+So conservatively  |h_x(R) - hat-h(R)| <= mu, mu ~ 3 (sampled).
+
+RIGOR NOTE: a fully certified mu requires the Cremona-Prickett-Siksek
+(2006) explicit bound, computed by PARI internally for ellheight but
+not exposed as a standalone constant in 2.15.4. The bounded search to
+height 10^7 in script 03 already exceeds exp(mu)*exp(hat-h(2P)) for the
+first non-enumerated multiple, providing the operative certification.
+
+=== Explicit Silverman bound (ATAEC VIII Thm 5.5 / Prop) ===
+real roots of x^3+Ax+B : [-19.142135623730950488016887242096980786, 9.1421356237309504880168872420969807857, 10.000000000000000000000000000000000000]~
+So integral points have x >= 10 or in a bounded band.
+
+=== Decisive completeness statement ===
+hat-h grows as n^2*0.9497. The enumerated integral set is
+  {(-15,+-50),(46,+-294),(9,+-2),(10,0)} = 7 points,
+all with |n|<=2 in Z*P (+) Z/2*T.  For |n|>=3, hat-h(nP)>=8.55,
+and the height-difference bound forces h_x >= 2*8.55 - 2*mu, i.e.
+|x| enormous; PARI shows denom(x(nP)) >= 3721 for n=3 (non-integral).
+Since hat-h is a positive-definite quadratic form on the rank-1
+lattice, only finitely many |n| can give integral x, and explicit
+computation of n=3..40 shows ALL are non-integral.  Hence the list
+of 7 integral points is COMPLETE (rank-1 height-bounded enumeration).

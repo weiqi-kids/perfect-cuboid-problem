@@ -1,0 +1,41 @@
+==== Jacobian of C0 : S^2 = T^4 + 72 T^2 + 16 ====
+  minimal model [a1,a2,a3,a4,a6] = [0, 0, 0, -7, 6]
+  conductor = 80
+  j-invariant = 148176/25
+  torsion = 4  structure [2, 2]
+
+==== Rank of 80b1 via 2-descent (ellrank) ====
+  ellrank = [0, 0, 0, []]   (format [rank_low, rank_high, ..., generators])
+  rank_low = 0,  rank_high = 0
+  ==> RANK 0 proved unconditionally by 2-descent
+
+==== Independent cross-check: analytic rank + L(E,1) (Kolyvagin) ====
+  ellanalyticrank = [0, 1.0094529099892116077920072199994662325]
+  analytic rank = 0,  L(E,1) ~ 1.0094529099892116077920072199994662325
+  (analytic rank 0, L(80b1,1) != 0  ==>  Kolyvagin gives algebraic rank 0)
+
+==== Minimal Weierstrass curve y^2 = x^3 - 7x + 6 directly ====
+  conductor = 80
+  j-invariant = 148176/25   equals 148176/25 :  1
+  torsion structure = [2, 2]  (expect [2,2])
+  factor of x^3-7x+6 equals (x-1)*(x-2)*(x+3) :  1
+  E(Q) = { O, (1,0), (2,0), (-3,0) }  (4 points, all 2-torsion)
+
+==== a_p match: 80b1 vs predicted X_{sigma tau} ====
+  primes  = [3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+  a_p     = [0, 4, -4, -2, 2, -4, -4, -2, 8, 6, -6, 8, -4]
+  archive = [0, 4, -4, -2, 2, -4, -4, -2, 8, 6, -6, 8, -4]
+  match   = 1
+
+==== Exhaustive rational-point search on C0 ====
+  affine rational T=n/d with |n|<=2000, d<=2000 giving S in Q:
+  [[0, 1]]
+  (the only finite solution is T=0, i.e. n=0,d=1, giving S=+-4)
+
+==== Points at infinity of C0 over Q ====
+  leading coeff = 1 = 1^2 (square) ==> 2 rational points at infinity
+  |C0(Q)| = |Jac C0 (Q)| = |80b1(Q)| = 4
+  C0(Q) = { (0,+4), (0,-4), inf_+, inf_- }
+  all four have T in {0, infinity}  ==>  W^2 = 4 or W = infinity (DEGENERATE)
+
+==== DONE ====

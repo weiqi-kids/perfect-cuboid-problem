@@ -1,0 +1,27 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+=== GAP3-C task 5: bounding r_gen via generic specialization ===
+Computing analytic rank for 20 generic q values:
+  q=2 analrank=0
+  q=3 analrank=0
+  q=4 analrank=0
+  q=5 analrank=0
+  q=7 analrank=1
+  q=11 analrank=1
+  q=1/2 analrank=0
+  q=2/3 analrank=0
+  q=3/4 analrank=0
+  q=3/5 analrank=0
+  q=5/7 analrank=1
+  q=7/11 analrank=1
+  q=11/13 analrank=0
+  q=13/17 analrank=0
+  q=9/4 analrank=0
+  q=25/4 analrank=1
+  q=49/4 analrank=0
+  q=5/3 analrank=0
+  q=7/5 analrank=1
+  q=11/7 analrank=1
+
+Min analytic rank across these = 0
+=> r_gen(E_PCP/Q(q)) <= 0
+Combined with Mordell-Weil generic torsion (Z/2)^2 only (no horizontal MW visible), r_gen likely = 0

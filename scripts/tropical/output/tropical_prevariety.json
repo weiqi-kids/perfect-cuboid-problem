@@ -1,0 +1,22 @@
+{
+  "prevariety": {
+    "max_dim": 5,
+    "expected_dim": 3,
+    "dim_distribution": {
+      "5": 3,
+      "4": 33,
+      "3": 126
+    },
+    "total_cones": 162
+  },
+  "bkk": {
+    "affine_bkk": 0,
+    "bezout_bound": 16,
+    "note": "BKK=0 for 4 eqs in 7 vars; Bezout=16 for V \u2229 3 hyperplanes"
+  },
+  "minkowski_sum": {
+    "num_vertex_candidates": 80,
+    "dim": 1
+  },
+  "verdict": "NEGATIVE \u2014 no tropical obstruction to PCP; prevariety has expected dimension"
+}

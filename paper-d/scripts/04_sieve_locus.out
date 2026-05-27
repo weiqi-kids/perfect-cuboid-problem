@@ -1,0 +1,25 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== (a) form structure: F = m*n*(m-n)*(m+n)*(m^4-6m^2n^2+n^4) ===
+  factor of m^4-6m^2n^2+n^4 over Q (n=1): [t^2 - 2*t - 1, 1; t^2 + 2*t - 1, 1]
+  gcd(quartic, quartic') = 1  (const => squarefree)
+  m^4-6m^2n^2+n^4 over Q(sqrt2): [t + Mod(-w - 1, w^2 - 2), 1; t + Mod(-w + 1, w^2 - 2), 1; t + Mod(w - 1, w^2 - 2), 1; t + Mod(w + 1, w^2 - 2), 1]
+  => quartic is REDUCIBLE over Q as (t^2-2t-1)(t^2+2t-1) = F5*F6;
+     its further splitting into LINEAR factors needs Q(sqrt2).
+  Six distinct factors m, n, m-n, m+n, F5, F6 => F separable of degree 8.
+
+=== (b) sigma-large locus is contained in the SIX-factor powerful union ===
+  fibers with sigma>4 (m<=700) = 33
+  ... in six-factor powerful union (incl. v2) = 33 / 33
+  ... with a quadratic (F5/F6) powerful value  = 28
+  ... with a linear (m,n,m-n,m+n) powerful value = 33
+  ... with high v2(b)>=4                        = 16
+  witness (125,44): sigma=4.0112444294028766484953936299722167793  m-n=81=3^4  m+n=169=13^2
+    F5=2689 squarefree? 1   F6=24689 squarefree? 1
+
+=== (c) powerful-part exponent theta and {sigma>4} decay ===
+  MMAX=100  frac{sigma>4}=0.0014705882352941176470588235294117647059   density{theta<=0.10}=0.67843137254901960784313725490196078431
+  MMAX=200  frac{sigma>4}=0.00098087297694948504168710152035311427170   density{theta<=0.10}=0.73712604217753800882785679254536537518
+  MMAX=400  frac{sigma>4}=0.00064625326973380520080012309586090167718   density{theta<=0.10}=0.78685951684874596091706416371749499923
+  MMAX=700  frac{sigma>4}=0.00033196857364169525284939692375788425362   density{theta<=0.10}=0.82908648284326053497238625046525898579
+EXIT=ok

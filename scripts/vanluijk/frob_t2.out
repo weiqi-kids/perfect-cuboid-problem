@@ -1,0 +1,6 @@
+[0;35m(p,k)->my(q=p^k,N=0);if(k==1,for(a=0,p-1,for(b=0,p-1,for(c=0,p-1,my(s1=(a*a+b*b)%p);my(s2=(b*b+c*c)%p);my(s3=(a*a+c*c)%p);my(nd,ne,nf);if(s1==0,nd=1,nd=if(issquare(Mod(s1,p)),2,0));if(s2==0,ne=1,ne=if(issquare(Mod(s2,p)),2,0));if(s3==0,nf=1,nf=if(issquare(Mod(s3,p)),2,0));N+=nd*ne*nf;)));return(N););my(T=ffinit(p,k),xx=ffgen(T,'xx));my(elems=vector(q));for(i=0,p-1,for(j=0,p-1,elems[i*p+j+1]=i+j*xx;));for(ia=1,q,my(A=elems[ia],A2=A^2);for(ib=1,q,my(B=elems[ib],B2=B^2);my(s1=A2+B2);my(nd=if(s1==0,1,if(s1^((q-1)/2)==1,2,0)));if(nd==0,next);for(ic=1,q,my(C=elems[ic],C2=C^2);my(s2=B2+C2);my(s3=A2+C2);my(ne=if(s2==0,1,if(s2^((q-1)/2)==1,2,0)));my(nf=if(s3==0,1,if(s3^((q-1)/2)==1,2,0)));N+=nd*ne*nf;)));N[0m
+=== t_2 for p=11 (and re-verify p=3,5,7) ===
+p=3 computing...  aff=1121 proj=140 min=248 t_2=166 (bound 198)
+p=5 computing...  aff=21025 proj=876 min=1176 t_2=550 (bound 550)
+p=7 computing...  aff=138817 proj=2892 min=3480 t_2=1078 (bound 1078)
+p=11 computing...  aff=1867681 proj=15564 min=17016 t_2=2374 (bound 2662)

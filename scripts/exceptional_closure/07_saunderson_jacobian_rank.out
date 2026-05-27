@@ -1,0 +1,34 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Saunderson genus-3 C' : J(C') decomposition & rank ===
+E_PCP cond = 160
+E_PCP torsion = 2
+E_PCP root number = -1
+E_PCP ellrank low/high = 1 / 1
+E_PCP analytic rank = 1
+
+Verify a_p(J,C') - 2 a_p(E_PCP) = a_p(X_st):
+p | a_p(J) | a_p(E) | a_p(X_st)
+3 | -4 | -2 | 0
+7 | 0 | -2 | 4
+11 | -12 | -4 | -4
+13 | -14 | -6 | -2
+17 | 6 | 2 | 2
+19 | 12 | 8 | -4
+23 | -16 | -6 | -4
+29 | -6 | -2 | -2
+31 | 16 | 4 | 8
+37 | 10 | 2 | 6
+41 | -26 | -10 | -6
+43 | 4 | -2 | 8
+47 | -8 | -2 | -4
+
+=== Identify X_sigma_tau (cond | 2^a 5^b; disc(f) bad primes {2,5}) ===
+MATCH cond 80  label 80a1  ainvs [0, 0, 0, -7, 6]
+   X_st rank low/high = 0 / 0   root no = 1   analytic rank = 0
+MATCH cond 80  label 80a2  ainvs [0, 0, 0, -2, -1]
+   X_st rank low/high = 0 / 0   root no = 1   analytic rank = 0
+MATCH cond 80  label 80a3  ainvs [0, 0, 0, -107, 426]
+   X_st rank low/high = 0 / 0   root no = 1   analytic rank = 0
+MATCH cond 80  label 80a4  ainvs [0, 0, 0, 13, 34]
+   X_st rank low/high = 0 / 0   root no = 1   analytic rank = 0

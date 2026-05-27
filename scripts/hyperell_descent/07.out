@@ -1,0 +1,113 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Jacobian elliptic curves J(S_q) for various Pythagorean q ===
+
+--- q = 3/4 ---
+  F(x, q): degree 4, leading coef 25/16
+  Minimal model: [0, -1, 0, -64, 64]
+  Conductor: 336
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -4, -1]
+  E_PCP conductor: 21
+  j(J(S_q)) = 7189057/3969
+  j(E_PCP)  = 7189057/3969
+  Equal?    1
+
+--- q = 4/3 ---
+  F(x, q): degree 4, leading coef 25/9
+  Minimal model: [0, -1, 0, -64, 64]
+  Conductor: 336
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -4, -1]
+  E_PCP conductor: 21
+  j(J(S_q)) = 7189057/3969
+  j(E_PCP)  = 7189057/3969
+  Equal?    1
+
+--- q = 5/12 ---
+  F(x, q): degree 4, leading coef 169/144
+  Minimal model: [0, -1, 0, -5920, -152768]
+  Conductor: 28560
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -370, 2387]
+  E_PCP conductor: 1785
+  j(J(S_q)) = 5602762882081/716900625
+  j(E_PCP)  = 5602762882081/716900625
+  Equal?    1
+
+--- q = 20/21 ---
+  F(x, q): degree 4, leading coef 841/441
+  Minimal model: [0, -1, 0, -59360, 5409600]
+  Conductor: 68880
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -3710, -84525]
+  E_PCP conductor: 4305
+  j(J(S_q)) = 5647454716105441/204326600625
+  j(E_PCP)  = 5647454716105441/204326600625
+  Equal?    1
+
+--- q = 11/60 ---
+  F(x, q): degree 4, leading coef 3721/3600
+  Minimal model: [0, -1, 0, -4179680, -3274641600]
+  Conductor: 1312080
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -261230, 51166275]
+  E_PCP conductor: 82005
+  j(J(S_q)) = 1971482685744317245921/8971078033850625
+  j(E_PCP)  = 1971482685744317245921/8971078033850625
+  Equal?    1
+
+--- q = 48/55 ---
+  F(x, q): degree 4, leading coef 5329/3025
+  Minimal model: [0, -1, 0, -2496480, 1171222272]
+  Conductor: 1903440
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -156030, -18300348]
+  E_PCP conductor: 237930
+  j(J(S_q)) = 420095676153573393121/98638457369760000
+  j(E_PCP)  = 420095676153573393121/98638457369760000
+  Equal?    1
+
+--- q = 39/80 ---
+  F(x, q): degree 4, leading coef 7921/6400
+  Minimal model: [0, -1, 0, -11179680, -11107641600]
+  Conductor: 15222480
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -698730, 173556900]
+  E_PCP conductor: 1902810
+  j(J(S_q)) = 37726969528324220245921/8811301196748960000
+  j(E_PCP)  = 37726969528324220245921/8811301196748960000
+  Equal?    1
+
+--- q = 17/144 ---
+  F(x, q): degree 4, leading coef 21025/20736
+  Minimal model: [0, -1, 0, -141357504, -646406931456]
+  Conductor: 16684752
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -8834844, 10100108304]
+  E_PCP conductor: 2085594
+  j(J(S_q)) = 76264138979993218123509697/58649576779790164224
+  j(E_PCP)  = 76264138979993218123509697/58649576779790164224
+  Equal?    1
+
+--- q = 7/24 ---
+  F(x, q): degree 4, leading coef 625/576
+  Minimal model: [0, -1, 0, -101984, -12170496]
+  Conductor: 177072
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -6374, 190164]
+  E_PCP conductor: 22134
+  j(J(S_q)) = 28639415351758177/864208218384
+  j(E_PCP)  = 28639415351758177/864208218384
+  Equal?    1
+
+--- q = 195/748 ---
+  F(x, q): degree 4, leading coef 597529/559504
+  Minimal model: [0, -1, 0, -97738495680, -11565596118356928]
+  Conductor: 304251707760
+  Torsion: 4 of structure [2, 2]
+  E_PCP minimal: [1, 0, 0, -6108655980, 180712439349327]
+  E_PCP conductor: 19015731735
+  j(J(S_q)) = 25209295867024888950432590488009921/480815566596579629756116400625
+  j(E_PCP)  = 25209295867024888950432590488009921/480815566596579629756116400625
+  Equal?    1
+

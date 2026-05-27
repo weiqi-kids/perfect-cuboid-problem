@@ -1,0 +1,13 @@
+=== Fermat obstruction: s^4+1 = u^2 has only s=0 ===
+
+E^Fermat: y^2 = x^3 + 4x   conductor = 32
+  analytic rank = 0
+  torsion       = [4]
+
+Yoshida curve y^2 = x^3 - x   conductor = 32
+  analytic rank = 0
+  torsion       = [2, 2]
+
+Rational s with |num|,den <= 60, s!=0, s^4+1 a square: 0
+
+RESULT: rank 0, torsion Z/4 => s^4+1=u^2 forces s=0 => q in {0,inf}. Excluded. PASS

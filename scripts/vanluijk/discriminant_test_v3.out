@@ -1,0 +1,15 @@
+=== Corrected van Luijk discriminant test ===
+
+p=3:   alpha+alpha_bar = 2, trans factor T^2 - 2 T + 9
+       (a,b) = (16, 4) algebraic eigenvalues (+3)^16, (-3)^4
+       4p^2 - c^2 = 32  square class of disc(NS): 2
+
+p=11:  alpha+alpha_bar = -14, trans factor T^2 + 14 T + 121
+       (a,b) = (16, 4) algebraic eigenvalues (+11)^16, (-11)^4  [SAME as p=3!]
+       4p^2 - c^2 = 288  square class of disc(NS): 2
+
+Ratio sq class disc(NS_{F_3}) / disc(NS_{F_11}) = 
+  2 / 2 = 1
+
+SAME square class => van Luijk test does NOT rule out rho_Qbar = 20.
+(Need more primes or higher-order Newton sums.)

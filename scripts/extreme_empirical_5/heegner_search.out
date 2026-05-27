@@ -1,0 +1,61 @@
+[0;31m  ***   Warning: new stack size = 12000000000 (11444.092 Mbytes).[0m
+=== Heegner / ellrank search on the 5 BEYOND-QC fibers ===
+
+=========================================
+Heegner search for (m,n)=(61,38)
+  conductor = 14345632782327
+  u = 4636, v = 2277
+  Calling ellheegner ...
+    ellheegner failed: error("domain error in ellheegner: analytic rank > 1")
+
+=========================================
+Heegner search for (m,n)=(63,38)
+  conductor = 3334605031905
+  u = 4788, v = 2525
+  Calling ellheegner ...
+    ellheegner failed: error("domain error in ellheegner: analytic rank > 1")
+
+=========================================
+Heegner search for (m,n)=(73,24)
+  conductor = 3067104744186
+  u = 3504, v = 4753
+  Calling ellheegner ...
+    ellheegner failed: error("domain error in ellheegner: analytic rank > 1")
+
+=========================================
+Heegner search for (m,n)=(88,35)
+  conductor = 22848156068430
+  u = 6160, v = 6519
+  Calling ellheegner ...
+    ellheegner failed: error("domain error in ellheegner: analytic rank > 1")
+
+=========================================
+Heegner search for (m,n)=(99,28)
+  conductor = 210668707326462
+  u = 5544, v = 9017
+  Calling ellheegner ...
+    ellheegner failed: error("domain error in ellheegner: (analytic rank)%2 = 0")
+
+=== ellrank effort 5 (fallback) ===
+
+--- ellrank effort 5 for (61,38) ---
+  rank bounds: [3, 3]
+  #gens found = 0
+
+--- ellrank effort 5 for (63,38) ---
+  rank bounds: [3, 3]
+  #gens found = 0
+
+--- ellrank effort 5 for (73,24) ---
+  rank bounds: [3, 3]
+  #gens found = 0
+
+--- ellrank effort 5 for (88,35) ---
+  rank bounds: [3, 3]
+  #gens found = 0
+
+--- ellrank effort 5 for (99,28) ---
+  rank bounds: [4, 4]
+  #gens found = 0
+
+=== DONE ===

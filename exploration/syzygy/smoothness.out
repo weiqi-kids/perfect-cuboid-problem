@@ -1,0 +1,30 @@
+Singular locus of V over algebraically closed field:
+Family 1: a=b=d=0 with (c,e,f,g) = (c, ±c, ±c, ±c), c!=0
+  -> 8 sign-pattern points (4 in P^6 up to scale).
+  At these points, Q1 = 0 is identically satisfied (becomes 0=0), so J
+  drops rank.
+By symmetry (a,b,c) <-> (a,b,c) permutations:
+Family 2: a=c=f=0 with (b,d,e,g) = (b, ±b, ±b, ±b)
+Family 3: b=c=e=0 with (a,d,f,g) = (a, ±a, ±a, ±a)
+
+Geometric type of V (post-resolution):
+- General type surface (K_V ample)
+- p_g = 7, q = 0, K^2 = 16
+- Singular locus = 12 ordinary nodes
+- Bombieri-Lang predicts: Q-points concentrate on finitely many curves
+
+Known 'trivial curves' on V:
+C_a = V ∩ {a=0}: family of (0,b,c,±b,e,±c,g) with b^2+c^2=e^2=g^2
+  Actually b^2+c^2 must equal BOTH e^2 and g^2, so e=±g.
+  This gives a (b,c,e) Pythagorean conic in P^2, mapped to P^6.
+  A genus-0 curve (Pythagorean parameterization).
+
+So V contains at least 24 = 3 * 8 rational curves from C_x for x in {a,b,c}.
+Plus higher-degree curves from other intersections.
+
+=== Verdict for PCP ===
+Syzygy/CI analysis gives clean PROJECTIVE GEOMETRY but no NEW arithmetic.
+The general-type surface conclusion is consistent with Bombieri-Lang heuristics:
+  Q-points on V are CONJECTURED to be finite OFF the trivial curves.
+But this is unconditional only via deeper tools (e.g. Faltings/Vojta), not
+from the resolution itself.

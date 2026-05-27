@@ -1,0 +1,13 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== ratios log(ab)/L, log(c)/L over Pythagorean fibers (m<=200) ===
+  log(ab)/L : min=0.43354227413260645210114574077876012171  max=0.65171582537934263385049809979069521389  mean=0.48957374323838908685051996130598177618
+  log(c)/L  : min=0.34828417462065736614950190020930478611  max=0.56645772586739354789885425922123987829
+  (generic ~ 1/2 each; max log(ab)/L approaches what bound?)
+
+=== exact-condition check: G<=RHS(sigma0) <=> sigma<=sigma0 ? ===
+  sigma0=3.5000000000000000000000000000000000000  mismatches=20 / 2930 fibers  (0 = exact identity holds)
+  sigma0=4.0000000000000000000000000000000000000  mismatches=1 / 2930 fibers  (0 = exact identity holds)
+  sigma0=4.5000000000000000000000000000000000000  mismatches=0 / 2930 fibers  (0 = exact identity holds)
+  sigma0=5.0000000000000000000000000000000000000  mismatches=0 / 2930 fibers  (0 = exact identity holds)
+

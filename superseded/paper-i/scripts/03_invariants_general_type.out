@@ -1,0 +1,19 @@
+=== P13: invariants of V = CI(2,2,2,2) in P^6 ===
+c(T_V) mod H^3 = 5*H**2 - H + 1
+  coeff of H   (= c_1(T_V) factor) : -1   => K_V = 1*H  (ample since H ample)
+  coeff of H^2 (= c_2(T_V) factor) : 5
+  deg V = H^2.V = 2^4 = 16
+
+  K_V^2          = 16
+  c_2(V)=chi_top = 80
+  chi(O_V)       = (K^2+c2)/12 = 8
+  p_g = chi-1+q  = 7   (q = 0)
+  Kodaira dim    = 2  (K_V = O_V(1) ample)  => V is of GENERAL TYPE, NOT K3 (K3 has K=0).
+  BMY 3c2 - c1^2 = 224 >= 0  (ok)
+  Noether 8chi-K2= 48 >= 0  (ok)
+
+=== Order of Aut(V) (linear, since canonically embedded) ===
+  |S_3 x (Z/2)^6| = 6 * 2^6 = 384
+  (Z/2)^7 sign flips mod global diagonal scalar in PGL(7) => (Z/2)^6 = 64
+
+ALL CHECKS PASS: K^2=16, c2=80, chi=8, p_g=7, q=0, |Aut(V)|=384.

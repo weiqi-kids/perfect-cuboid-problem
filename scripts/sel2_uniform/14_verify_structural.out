@@ -1,0 +1,11 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Verify structural Selmer conditions =====
+(m,n)  |S|+1  ambdim  |Sel_structural|  dim_via_C1_C2  dim_via_ellrank
+[3, 2]  6  12  82  6  2
+[5, 2]  6  12  104  7  3
+[4, 1]  6  12  86  6  2
+[5, 4]  6  12  100  7  2
+[7, 2]  7  14  184  8  2
+[8, 3]  7  14  142  7  3
+[9, 4]  7  14  292  8  2
+[11, 2]  8  16  202  8  3

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>完美長方體問題（Perfect Cuboid Problem）：六篇可驗證的部分結果</title>
+<meta name="description" content="完美長方體（perfect cuboid）是否存在？六篇 PARI/GP 驗證論文各封閉一塊拼圖：Saunderson 家族、Case B、rank-positive fiber、Szpiro ratio、Sophie–Germain、rank 調查。沒有一篇宣稱解決問題。">
+<meta name="keywords" content="完美長方體, perfect cuboid, Euler brick, 橢圓曲線, elliptic curve, Mordell-Weil rank, Szpiro ratio, Sophie-Germain, Chabauty, PARI/GP">
+<meta name="author" content="Lightman Chang">
+<link rel="canonical" href="https://perfect-cuboid-problem.proof.weiqi.kids/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="完美長方體問題：六篇可驗證的部分結果">
+<meta property="og:description" content="完美長方體（perfect cuboid）是否存在？六篇 PARI/GP 驗證論文各封閉一塊拼圖；沒有一篇宣稱解決這個 257 年的開放問題。">
+<meta property="og:url" content="https://perfect-cuboid-problem.proof.weiqi.kids/">
+<meta property="og:site_name" content="weiqi.kids">
+<meta property="og:locale" content="zh_TW">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="完美長方體問題：六篇可驗證的部分結果">
+<meta name="twitter:description" content="六篇 PARI/GP 驗證論文，各封閉完美長方體問題的一塊拼圖；沒有一篇宣稱解決問題。">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "完美長方體問題（Perfect Cuboid Problem）：六篇可驗證的部分結果",
+  "description": "完美長方體（perfect cuboid）是否存在？六篇 PARI/GP 驗證論文各封閉一塊拼圖；沒有一篇宣稱解決問題。",
+  "author": {"@type": "Person", "name": "Lightman Chang", "url": "https://github.com/weiqi-kids"},
+  "datePublished": "2026-05-27",
+  "url": "https://perfect-cuboid-problem.proof.weiqi.kids/",
+  "inLanguage": "zh-Hant",
+  "isAccessibleForFree": true,
+  "keywords": ["完美長方體", "perfect cuboid", "Euler brick", "橢圓曲線", "Mordell-Weil rank", "Szpiro ratio", "Sophie-Germain", "PARI/GP"],
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "name": "Paper A：No perfect cuboid in the Saunderson family of Euler bricks",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-a/paper.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Paper B：No perfect cuboid in Case B at p=1, and the rank obstruction on the associated genus-five curve",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-b/paper.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Paper C：Rational-point obstructions on rank-positive fibers, with the resolution of Peschmann's open case (5,2)",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-c/paper.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Paper D：The Szpiro ratio of the perfect-cuboid elliptic family and the Z[√2] location of its exceptional locus",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-d/paper.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Paper E：The Sophie–Germain sub-family of perfect cuboids contains no solution",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-e/paper.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Paper H：Mordell–Weil ranks and an experimental survey of the perfect-cuboid elliptic family",
+      "contentUrl": "https://perfect-cuboid-problem.proof.weiqi.kids/paper-h/paper.pdf",
+      "encodingFormat": "application/pdf"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什麼是完美長方體（perfect cuboid）？",
+      "acceptedAnswer": {"@type": "Answer", "text": "完美長方體是一個長方形盒子，它的三個邊、三個面的對角線，以及最長的那條體對角線，全部都是整數（等價地，全部都是有理數）。只要求三個面對角線是整數的盒子叫 Euler brick，那種有很多；再要求體對角線也是整數，至今沒人找得到，也沒人證明不可能。"}
+    },
+    {
+      "@type": "Question",
+      "name": "完美長方體問題被解決了嗎？",
+      "acceptedAnswer": {"@type": "Answer", "text": "沒有。這是 Euler 在 1769 年提出的問題，超過 250 年仍未解決。本站收錄的六篇論文都沒有宣稱解決問題；每篇只封閉一個明確界定的子家族，或標出一個結構性障礙，全部由 PARI/GP 電腦代數驗證。"}
+    },
+    {
+      "@type": "Question",
+      "name": "這六篇論文用的共同工具是什麼？",
+      "acceptedAnswer": {"@type": "Answer", "text": "每篇都研究同一個對象：對每個 Pythagorean 有理數 q 配一條橢圓曲線 E_q: y^2 = x(x+1)(x+q^2)。q-fiber 上的完美長方體會逼出 E_q 上一個有理點，其 recovery-map 值是真正非退化的邊。封閉一個子家族就是證明那裡沒有這種點。"}
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼 Chabauty–Coleman 方法在 Case B 用不上？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Chabauty–Coleman 這個夾擠工具需要曲線的 Mordell–Weil rank 嚴格小於它的 genus。Paper B 的 genus-5 曲線剛好 rank 等於 genus（皆為 5），所以工具用不上——這確認了 Peschmann 提出的疑慮。Paper B 改用 Pell 方程 g^2 − 5q^4 = 20 與 1964 年 Cohn 的定理把解逼到退化情形。"}
+    },
+    {
+      "@type": "Question",
+      "name": "一條曲線怎麼能處理無限多個質數？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Paper E 把 Sophie–Germain 子家族對所有質數 p 的條件，化約到單一一條橢圓曲線 Cremona 800a3 上的有理點問題。這條曲線的有理點是有限且可窮盡的，因此一次處理掉整條無限的質數尾巴，超出任何有限掃描。最接近的 near-miss 是 (11,71)，它滿足體對角線與兩個面，但第三個面不行。"}
+    },
+    {
+      "@type": "Question",
+      "name": "已知最高的 Mordell–Weil rank 是多少？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Paper H 給出一個經認證的 fiber，pair (22,17)，其 E_q 在 ℚ 上的 rank 為 3。它同時提供 303 個 fiber 的 rank 直方圖（118 個 rank 0、137 個 rank 1、45 個 rank 2、3 個 rank 3），以及一個驗證紀錄：所有邊 ≤ 30000 的 36 個 primitive Euler brick 中，沒有任何一個是完美長方體。"}
+    },
+    {
+      "@type": "Question",
+      "name": "這些結果離真正解決問題還有多遠？",
+      "acceptedAnswer": {"@type": "Answer", "text": "完整的完美長方體軌跡是一個 general type 的曲面，其有理點有限性受 Bombieri–Lang 與 Vojta 這兩個尚未解決的猜想支配，目前遠超出可及範圍。本站的貢獻是無條件封閉已命名的子家族、解決特定的開放 fiber，並精確標出初等與曲線理論方法停滯的位置；這些工作與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 的近期成果互補。"}
+    }
+  ]
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+<style>
+/* === Design Tokens === */
+:root {
+  --bg-base:    oklch(0.97 0.005 250);
+  --bg-surface: oklch(0.94 0.005 250);
+  --bg-overlay: oklch(0.90 0.008 250);
+  --bg-hover:   oklch(0.92 0.005 250);
+  --text-primary:   oklch(0.20 0.01 250);
+  --text-secondary: oklch(0.45 0.01 250);
+  --text-muted:     oklch(0.60 0.008 250);
+  --border-subtle: oklch(0.85 0.005 250);
+  --color-pass:     oklch(0.48 0.16 150);
+  --color-critical: oklch(0.55 0.22 25);
+  --color-info:     oklch(0.52 0.13 240);
+  --color-link:     oklch(0.48 0.15 250);
+  --color-high:   oklch(0.55 0.16 55);
+  --color-medium: oklch(0.52 0.14 80);
+  --text-xs:  1.125rem;
+  --text-sm:  1.25rem;
+  --text-base: 1.5rem;
+  --text-lg:  1.75rem;
+  --text-xl:  2rem;
+  --text-2xl: 3rem;
+  --text-3xl: 3.5rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@supports not (color: oklch(0 0 0)) {
+  :root {
+    --bg-base: #f5f6f8; --bg-surface: #ecedf0; --bg-overlay: #dfe0e5;
+    --bg-hover: #e5e6ea; --text-primary: #1e2030; --text-secondary: #5e6070;
+    --text-muted: #8a8c98; --border-subtle: #d5d6da;
+    --color-pass: #1e8050; --color-critical: #c93135;
+    --color-info: #2a6bb8; --color-link: #1e5ab8;
+    --color-high: #b86a2a; --color-medium: #8a7020;
+  }
+}
+
+/* === Base === */
+html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 4rem; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-base);
+}
+[data-nav] { scroll-margin-top: 60px; }
+a { color: var(--color-link); }
+code {
+  background: var(--bg-overlay);
+  padding: 0.1em 0.4em;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+.curve-label {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-weight: 700;
+  color: var(--color-info);
+}
+
+/* === GitHub Corner（選項 A） === */
+.github-corner { position: fixed; top: 0; right: 0; z-index: 101; border: 0; text-decoration: none; }
+.github-corner svg { fill: var(--color-info); color: var(--bg-base); width: 80px; height: 80px; }
+.github-corner:focus-visible { outline: 3px solid var(--color-link); }
+.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+@keyframes octocat-wave {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(-25deg); }
+  40%, 80% { transform: rotate(10deg); }
+}
+
+/* === Sticky Nav === */
+#logic-map {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex; align-items: center; gap: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  overflow-x: auto; white-space: nowrap;
+}
+#logic-map a {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+#logic-map a:hover { background: var(--bg-hover); color: var(--text-primary); }
+#logic-map a.active { background: var(--color-link); color: #fff; }
+#logic-map .nav-sep { color: var(--text-muted); font-size: var(--text-xs); user-select: none; }
+
+/* === Main === */
+main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* === Hero === */
+#hero { text-align: center; padding: 3rem 0; }
+#hero h1 { font-size: var(--text-3xl); font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
+#hero .subtitle { font-size: var(--text-lg); color: var(--text-secondary); margin-bottom: 2rem; }
+#hero .answer-box {
+  background: var(--bg-surface);
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  display: inline-block;
+  max-width: 100%;
+}
+#hero .answer-box ol { padding-left: 1.5rem; }
+#hero .answer-box li { margin-bottom: 0.5rem; }
+
+/* === 論文下載區 === */
+.download-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+.download-intro {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.download-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.875rem 1.25rem;
+  background: var(--bg-base);
+  border: 2px solid var(--color-link);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+  min-width: 16rem;
+  max-width: 22rem;
+  text-align: left;
+}
+.download-btn:hover {
+  background: var(--color-link);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px oklch(0.48 0.15 250 / 0.25);
+}
+.download-btn:focus-visible {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+.download-btn .download-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  display: block;
+}
+.download-btn .download-meta {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+.download-btn:hover .download-meta {
+  color: oklch(0.95 0.005 250);
+}
+.download-btn .download-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: var(--text-base);
+}
+
+/* === Theorem Sections === */
+.theorem-section {
+  background: var(--bg-surface);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.theorem-section h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.layer-intuition {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.layer details { margin-bottom: 0.5rem; }
+.layer summary {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: var(--text-primary);
+  list-style: none;
+}
+.layer summary::before {
+  content: "▶︎ ";
+  font-size: var(--text-xs);
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+}
+.layer details[open] summary::before { transform: rotate(90deg); }
+.layer-content { padding: 0.5rem 0 1rem; }
+.layer-content p { margin-bottom: 0.75rem; }
+.layer-content ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+.verified {
+  display: inline-block;
+  font-size: var(--text-xs);
+  color: var(--color-pass);
+  border: 1px solid var(--color-pass);
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* === Charts === */
+.chart-container {
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+.chart-container h3 { font-size: var(--text-lg); margin-bottom: 1rem; }
+.chart-svg-wrap { width: 100%; overflow: hidden; }
+.chart-caption { font-size: var(--text-xs); color: var(--text-muted); margin-top: 0.75rem; }
+
+/* === AEO 按鈕 === */
+.share-ai-btn {
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.25rem;
+  background: var(--bg-base);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  cursor: pointer;
+  vertical-align: middle;
+}
+.share-ai-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.share-ai-btn:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; }
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+footer a { color: var(--color-link); text-decoration: none; }
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  :root {
+    --text-3xl: 2.5rem;
+    --text-2xl: 2rem;
+    --text-xl:  1.5rem;
+    --text-lg:  1.25rem;
+    --text-base: 1.125rem;
+    --text-sm:  1rem;
+    --text-xs:  0.875rem;
+  }
+  main { padding: 1rem; }
+  .theorem-section { padding: 1rem; }
+  .github-corner svg { width: 60px; height: 60px; }
+  .github-corner:hover .octo-arm { animation: none; }
+  .github-corner .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+  .download-btn { min-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- GitHub link — 選項 A：右上角 octocat（P0） -->
+<a href="https://github.com/weiqi-kids/perfect-cuboid-problem" class="github-corner"
+   aria-label="View source on GitHub" target="_blank" rel="noopener">
+  <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path>
+    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"></path>
+  </svg>
+</a>
+
+<!-- Sticky 導覽 -->
+<nav id="logic-map" aria-label="Section navigation">
+  <a href="#hero">首頁</a>
+  <span class="nav-sep">·</span>
+  <a href="#downloads">論文下載</a>
+  <span class="nav-sep">·</span>
+  <a href="#what-is">什麼是完美長方體</a>
+  <span class="nav-sep">·</span>
+  <a href="#common-thread">共同主線</a>
+  <span class="nav-sep">·</span>
+  <a href="#saunderson">Saunderson</a>
+  <span class="nav-sep">·</span>
+  <a href="#caseB">Case B</a>
+  <span class="nav-sep">·</span>
+  <a href="#rank-positive">rank-positive</a>
+  <span class="nav-sep">·</span>
+  <a href="#szpiro">Szpiro</a>
+  <span class="nav-sep">·</span>
+  <a href="#sophie-germain">Sophie–Germain</a>
+  <span class="nav-sep">·</span>
+  <a href="#ranks">rank 調查</a>
+  <span class="nav-sep">·</span>
+  <a href="#scope">誠實範圍</a>
+  <span style="flex:1"></span>
+  <a href="https://github.com/weiqi-kids/perfect-cuboid-problem" target="_blank" rel="noopener"
+     aria-label="View source on GitHub">GitHub</a>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <section id="hero">
+    <h1>完美長方體問題<br>Perfect Cuboid Problem</h1>
+    <p class="subtitle">六篇可由電腦代數（PARI/GP）完整驗證的部分結果</p>
+    <div class="answer-box">
+      <p><strong>一句話答案：</strong>六篇論文，各自封閉這道拼圖的一塊；<strong>沒有一篇宣稱解決問題</strong>。這是 Euler 在 1769 年提出、至今超過 250 年仍開放的問題。</p>
+      <ol>
+        <li>每篇都研究同一條 per-fiber 橢圓曲線 <span style="white-space:nowrap">$E_q: y^2 = x(x+1)(x+q^2)$</span>。</li>
+        <li>封閉一個子家族 = 證明那裡沒有合用的有理點。</li>
+        <li>三篇無條件封閉具名子家族，一篇解決特定開放 fiber，一篇給出 Szpiro ratio 的密度一上界，一篇做 rank 實驗調查。</li>
+        <li>所有結論與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補，並非取代。</li>
+      </ol>
+    </div>
+
+    <!-- 論文下載區 -->
+    <div class="download-section" id="downloads" data-nav="downloads">
+      <p class="download-intro">完整論文下載（PDF，於新分頁開啟）：</p>
+      <div class="download-buttons">
+
+        <a href="paper-a/paper.pdf" class="download-btn"
+           data-paper="paper-a" target="_blank" rel="noopener"
+           aria-label="下載 Paper A：Saunderson 家族 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper A：No perfect cuboid in the Saunderson family of Euler bricks</span>
+          <span class="download-meta">PDF · 6 頁 · 296 KB</span>
+        </a>
+
+        <a href="paper-b/paper.pdf" class="download-btn"
+           data-paper="paper-b" target="_blank" rel="noopener"
+           aria-label="下載 Paper B：Case B at p=1 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper B：No perfect cuboid in Case B at p=1, and the rank obstruction on the genus-five curve</span>
+          <span class="download-meta">PDF · 10 頁 · 352 KB</span>
+        </a>
+
+        <a href="paper-c/paper.pdf" class="download-btn"
+           data-paper="paper-c" target="_blank" rel="noopener"
+           aria-label="下載 Paper C：rank-positive fibers 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper C：Rational-point obstructions on rank-positive fibers, with the resolution of Peschmann's open case (5,2)</span>
+          <span class="download-meta">PDF · 8 頁 · 332 KB</span>
+        </a>
+
+        <a href="paper-d/paper.pdf" class="download-btn"
+           data-paper="paper-d" target="_blank" rel="noopener"
+           aria-label="下載 Paper D：Szpiro ratio 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper D：The Szpiro ratio of the perfect-cuboid elliptic family and the Z[√2] location of its exceptional locus</span>
+          <span class="download-meta">PDF · 7 頁 · 340 KB</span>
+        </a>
+
+        <a href="paper-e/paper.pdf" class="download-btn"
+           data-paper="paper-e" target="_blank" rel="noopener"
+           aria-label="下載 Paper E：Sophie–Germain sub-family 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper E：The Sophie–Germain sub-family of perfect cuboids contains no solution</span>
+          <span class="download-meta">PDF · 6 頁 · 296 KB</span>
+        </a>
+
+        <a href="paper-h/paper.pdf" class="download-btn"
+           data-paper="paper-h" target="_blank" rel="noopener"
+           aria-label="下載 Paper H：Mordell–Weil ranks 與實驗調查 之 PDF 完整版">
+          <span class="download-title">
+            <span class="download-icon">📄</span>Paper H：Mordell–Weil ranks and an experimental survey of the perfect-cuboid elliptic family</span>
+          <span class="download-meta">PDF · 6 頁 · 260 KB</span>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- §3 什麼是完美長方體 -->
+  <section id="what-is" class="theorem-section" data-nav="what-is">
+    <h2>什麼是完美長方體</h2>
+    <div class="layer-intuition">
+      想像一個長方形的盒子。它有三個邊（長、寬、高）、三個面各有一條對角線，還有一條從一角穿到對角的最長對角線（體對角線）。如果只要求三個面的對角線都是整數，這種盒子叫 Euler brick，多到數不完。但「完美長方體」要求連那條最長的體對角線也剛好是整數——這個額外條件，從來沒有人找得到一個例子，也從來沒有人證明它不可能。電腦窮舉到最小邊大約 3 兆都還沒找到。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義</summary>
+      <div class="layer-content">
+        <p>完美長方體是一個邊為 $a,b,c$ 的長方體，滿足三個面對角線與體對角線同時為整數：</p>
+        <p>$$\sqrt{a^2+b^2},\ \sqrt{b^2+c^2},\ \sqrt{a^2+c^2},\ \sqrt{a^2+b^2+c^2}\ \in\ \mathbb{Z}.$$</p>
+        <p>只滿足前三個條件的稱為 <strong>Euler brick</strong>。再加上體對角線為整數，就是尚未有人滿足、也尚未有人證否的條件。Euler 於 1769 年提出此問題。</p>
+        <span class="verified">已驗證：窮舉搜尋顯示最小邊 $\lesssim 3\times10^{12}$ 內無完美長方體</span>
+      </div>
+    </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-cuboid" data-nav="chart-cuboid">
+        <h3>圖一：長方體的七條長度</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">綠色 = 三個邊與三個面對角線（Euler brick 已能整數化）；紅色 = 體對角線（完美長方體要求的那條額外條件）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §4 共同主線 -->
+  <section id="common-thread" class="theorem-section" data-nav="common-thread">
+    <h2>共同主線：每個 fiber 一條橢圓曲線</h2>
+    <div class="layer-intuition">
+      六篇論文研究的是同一個東西。對每個合用的「斜率」參數 $q$，都對應到一條特定的曲線；曲線上「座標全是分數」的點（有理點）若存在，就有機會給出一個完美長方體。反過來說，要證明某一族盒子裡沒有完美長方體，只要證明對應曲線上找不到合用的分數點就好。把幾何問題翻譯成「曲線上有沒有好點」，是整套工作的共同起手式。
+    </div>
+
+    <details class="layer">
+      <summary>形式化：per-fiber 橢圓曲線與 recovery map</summary>
+      <div class="layer-content">
+        <p>對每個 Pythagorean 有理數 $q$，配一條橢圓曲線</p>
+        <p>$$E_q:\quad y^2 = x(x+1)(x+q^2).$$</p>
+        <p>$q$-fiber 上的一個完美長方體會逼出 $E_q$ 上一個有理點，其 recovery-map 值是一個真正的、<strong>非退化</strong>的邊。封閉一個子家族，就是證明在那裡沒有這種非退化的有理點。退化點（對應邊長為 0 或重合）不算數。</p>
+        <span class="verified">已驗證：每篇論文附 PARI/GP 腳本檢查曲線方程與點的退化性</span>
+      </div>
+    </details>
+  </section>
+
+  <!-- §5 Saunderson（paper-a） -->
+  <section id="saunderson" class="theorem-section" data-nav="saunderson">
+    <h2>Saunderson 家族（Paper A）</h2>
+    <div class="layer-intuition">
+      十八世紀有一個叫 Saunderson 的經典公式，可以批量產生 Euler brick。一個自然的問題是：這個公式產出的盒子裡，會不會剛好有一個是完美長方體？答案是不會。把「體對角線也要是整數」的要求代進去之後，問題塌縮成一條很簡單的曲線，這條曲線上能用的好點只有四個，而且每一個都對應到退化的盒子（壓扁了、不是真的盒子）。所以 Saunderson 公式整族出局。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義與結論</summary>
+      <div class="layer-content">
+        <p>由經典 Saunderson 參數化產生的 Euler brick 中，沒有任何一個是完美長方體。體對角線條件塌縮成一條 genus-1 曲線，其 Jacobian 是 rank-0 的橢圓曲線 Cremona <span class="curve-label">80a1</span>。</p>
+        <p>$E_{\text{80a1}}$ 只有 4 個有理點，逐一檢查皆退化。此為<strong>無條件</strong>結果。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank = 0，4 個有理點全部退化</span>
+      </div>
+    </details>
+  </section>
+
+  <!-- §6 Case B（paper-b） -->
+  <section id="caseB" class="theorem-section" data-nav="caseB">
+    <h2>Case B at p=1，與 genus-5 曲線上的 rank 障礙（Paper B）</h2>
+    <div class="layer-intuition">
+      這裡看一條單參數的盒子帶（邊長隨一個參數變動）。把完美長方體的條件翻譯出來，會得到一個經典的整數方程（Pell 方程），它的解剛好是 Lucas 數列中「位置為奇數」的那些項。而 1964 年 Cohn 的一個定理告訴我們：這串數裡能當完全平方的，只有最前面兩個。把這兩個代回去，盒子都是退化的。所以這條帶裡也沒有完美長方體。值得一提的是：有一個常用的「夾擠」工具（Chabauty）在這裡剛好用不上，因為它需要某個數比另一個小，但這裡兩者相等——這恰好印證了 Peschmann 提過的疑慮。
+    </div>
+
+    <details class="layer">
+      <summary>形式化：Pell → Lucas → Cohn</summary>
+      <div class="layer-content">
+        <p>邊為 $(4q,\ q^2-4,\ 2(q^2-1))$ 的單參數 stratum 中無完美長方體。體對角線條件化為 Pell 方程</p>
+        <p>$$g^2 - 5q^4 = 20,$$</p>
+        <p>其解為 odd-indexed Lucas numbers；Cohn (1964) 的定理迫使 $q\in\{1,2\}$（皆退化）。此為<strong>無條件</strong>結果。</p>
+        <span class="verified">已驗證（PARI/GP）：Pell 解對應 $L_1=1,\ L_3=4$，唯二平方項</span>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>為什麼 Chabauty–Coleman 用不上</summary>
+      <div class="layer-content">
+        <p>相應的 genus-5 曲線其 Mordell–Weil rank 等於它的 genus（皆為 5）。Chabauty–Coleman 方法需要 $\text{rank} < \text{genus}$，因此<strong>無法</strong>封閉這條曲線——確認 Peschmann 所提的疑慮。本文改以 Pell/Lucas/Cohn 的初等路線達成封閉。</p>
+        <p>其 Jacobian 的 ℚ-isogeny 分解中，genus-2 商的 $\text{Jac}(C_q)$ 同 isogeny 於 <span class="curve-label">600a2</span> × <span class="curve-label">400a2</span>——這兩條是 rank-0 曲線 120a2、<span class="curve-label">80a1</span> 的 $\mathbb{Q}(\sqrt5)$-rank-1 quadratic twist。正是這個「twist 把 rank 從 0 抬到 1」使五個 elliptic factor 全為 rank 1，導致 rank $\text{Jac}(C)(\mathbb{Q})=5=\text{genus}$。</p>
+        <span class="verified">已驗證（PARI/GP）：genus-5 曲線 Jacobian rank = 5 = genus；<span class="curve-label">600a2</span>/<span class="curve-label">400a2</span> 為 rank-1 twist</span>
+      </div>
+    </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-lucas" data-nav="chart-lucas">
+        <h3>圖二：Lucas 數列中唯二的完全平方</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">Pell 方程的解對應 odd-indexed Lucas 數；只有 $L_1=1$ 與 $L_3=4$ 是完全平方（紅色標記），其餘皆非——Cohn 1964 定理的結論。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §7 rank-positive（paper-c） -->
+  <section id="rank-positive" class="theorem-section" data-nav="rank-positive">
+    <h2>rank-positive fibers 與 Peschmann (5,2) 的解決（Paper C）</h2>
+    <div class="layer-intuition">
+      前面的曲線「好點很少」所以容易窮盡。但有些 fiber 的曲線「好點有無窮多個」（rank 為正），這種就難搞。Peschmann 留下最小的一個未解 fiber，記作 (5,2)。本文在一個明確的搜尋範圍內解決了它，外加另外六個正 rank 的 fiber，並且精確指出：為什麼那種想靠「新質因數一定會出現」的封閉手法在一般情況會卡住——關鍵在於它要追蹤的數列，跟有效定理能控制的數列其實不是同一個。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義與結論</summary>
+      <div class="layer-content">
+        <p>在明確的搜尋窗格上，解決 Peschmann 最小的開放 fiber $(5,2)$，連同另外六個 rank-positive fiber。</p>
+        <p>並指出 natural「primitive-divisor」封閉在一般情形失效的確切原因：障礙住在與有效定理所界定者<strong>不同</strong>的數列中，且 primitive divisor 未必以奇 multiplicity 出現。</p>
+        <span class="verified">已驗證（PARI/GP）：fiber $(5,2)$ 及六個 rank-positive fiber 於搜尋窗格內無非退化有理點</span>
+      </div>
+    </details>
+  </section>
+
+  <!-- §8 Szpiro（paper-d） -->
+  <section id="szpiro" class="theorem-section" data-nav="szpiro">
+    <h2>Szpiro ratio 與例外軌跡的 ℤ[√2] 位置（Paper D）</h2>
+    <div class="layer-intuition">
+      每條橢圓曲線都有兩個數值指標，它們的比值（Szpiro ratio）大致反映曲線「有多病態」。本文把整個 $E_q$ 家族的這些量算得乾乾淨淨，並證明：對幾乎所有參數，這個比值不超過 4 多一點點；少數比值很大的例外，全都落在一條特定的 Pell 圓錐曲線上（座標在 ℤ[√2] 裡）。換句話說，這個家族整體是「乖」的，壞點稀少且位置可被精確描述。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義與結論</summary>
+      <div class="layer-content">
+        <p>精確計算 $E_q$ 家族的算術：minimal model、conductor、discriminant，並界定其 Szpiro ratio：對幾乎所有參數至多 $4+\varepsilon$，large-ratio 例外落在 $\mathbb{Z}[\sqrt2]$ 的 Pell 圓錐上。density-one 上界為<strong>無條件</strong>。</p>
+        <p>實測最大比值 $\sigma_{\max}=4.6140$，出現於 $(256,121)$。</p>
+        <span class="verified">已驗證（PARI/GP）：$\sigma_{\max}=4.6140$ at $(256,121)$；density-one $\sigma\le 4+\varepsilon$</span>
+      </div>
+    </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-szpiro" data-nav="chart-szpiro">
+        <h3>圖三：Szpiro ratio 的散佈與密度一上界</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">大多數 fiber 的 $\sigma$ 落在 $\le 4$ 的密度一帶（綠色虛線）內；最大者 $\sigma_{\max}=4.6140$ 出現於參數 $(256,121)$（紅色標記）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §9 Sophie–Germain（paper-e） -->
+  <section id="sophie-germain" class="theorem-section" data-nav="sophie-germain">
+    <h2>Sophie–Germain 子家族：單曲線封閉所有質數（Paper E）</h2>
+    <div class="layer-intuition">
+      這一族盒子由質數 $p$ 來索引，有無限多個。要逐一檢查無限多個質數是不可能的。本文的漂亮之處在於：把對所有質數的條件，全部化約到單獨一條曲線上的好點問題；而這條曲線的好點是有限且能列完的，於是一口氣處理掉整條無限的質數尾巴，遠超任何有限掃描能做到的。最接近成功的差一點點是 (11,71)——它滿足體對角線和兩個面，可惜第三個面不行。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義與結論</summary>
+      <div class="layer-content">
+        <p>對每個質數 $p$，Sophie–Germain 兩個分支皆不產生完美長方體。單一一條橢圓曲線 Cremona <span class="curve-label">800a3</span> 處理掉整條無限的質數尾巴，超出任何有限掃描。對質數 $p$ 為<strong>無條件</strong>結果。</p>
+        <p>唯一的 near-miss $(11,71)$ 滿足體對角線與兩個面，但第三個面不成立。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> 之有理點有限且可窮盡；near-miss $(11,71)$ 第三面失敗</span>
+      </div>
+    </details>
+  </section>
+
+  <!-- §10 ranks（paper-h） -->
+  <section id="ranks" class="theorem-section" data-nav="ranks">
+    <h2>Mordell–Weil rank 與實驗調查（Paper H）</h2>
+    <div class="layer-intuition">
+      最後一篇是實驗性的普查。它對 303 個 fiber 的曲線量了「好點有幾個獨立方向」（rank），畫成直方圖：大多數是 0 或 1，少數到 2，只有三個到 3。其中一個被嚴格認證為 rank 3 的，是 pair (22,17)。它還留下一筆可重複驗證的紀錄：所有邊長 ≤ 30000 的 36 個 primitive Euler brick 裡，沒有任何一個是完美長方體。這些數字本身不解決問題，但替後續研究畫出了地形圖。
+    </div>
+
+    <details class="layer">
+      <summary>形式化定義與結論</summary>
+      <div class="layer-content">
+        <p>給出一個經認證的 fiber，pair $(22,17)$，其 $E_q$ 在 $\mathbb{Q}$ 上 Mordell–Weil rank = 3；303 個 fiber 的 rank 直方圖為 rank 0：118、rank 1：137、rank 2：45、rank 3：3。</p>
+        <p>並驗證紀錄：所有邊 $\le 30000$ 的 36 個 primitive Euler brick 中，零個完美長方體。</p>
+        <span class="verified">已驗證（PARI/GP）：$(22,17)$ 之 $\mathbb{Q}$-rank = 3；303 fiber 分布 118/137/45/3</span>
+      </div>
+    </details>
+
+    <div class="charts">
+      <div class="chart-container" id="chart-rank-hist" data-nav="chart-rank-hist">
+        <h3>圖四：303 個 fiber 的 Mordell–Weil rank 分布</h3>
+        <div class="chart-svg-wrap"></div>
+        <p class="chart-caption">rank 0：118 個、rank 1：137 個、rank 2：45 個、rank 3：3 個。其中 $(22,17)$ 為經認證的 $\mathbb{Q}$-rank 3 fiber。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §11 誠實範圍 -->
+  <section id="scope" class="theorem-section" data-nav="scope">
+    <h2>誠實的範圍說明</h2>
+    <div class="layer-intuition">
+      把話講清楚：這六篇是六個乾淨的部分結果與結構地圖，不是問題的解答。完整的完美長方體軌跡是一個非常複雜的曲面（general type），它「分數點到底有沒有有限多個」是由兩個目前同樣沒人會證的大猜想（Bombieri–Lang 與 Vojta）支配的，遠超現有方法可及。本站的貢獻是：無條件封閉幾個有名字的子家族、解決幾個特定的開放案例，並精確標出初等與曲線方法在哪裡停下來。它與近期 Peschmann、Yoshida、Naskręcki 的工作互補。
+    </div>
+
+    <details class="layer">
+      <summary>形式化：為何整體問題仍開放</summary>
+      <div class="layer-content">
+        <p>完整的完美長方體軌跡是一個 general type 曲面，其有理點有限性受 Bombieri–Lang 與 Vojta 猜想（皆開放）支配，目前遠超出可及範圍。</p>
+        <p>本站的貢獻定位為：無條件封閉具名子家族、解決特定開放 fiber、並精確標出初等與曲線理論方法停滯之處。與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<!-- Footer（雙重 GitHub 連結保險） -->
+<footer>
+  <p>作者：Lightman Chang（Independent Researcher）· 本頁面源碼與內容開源</p>
+  <p style="margin-top:1rem;">
+    <a href="https://github.com/weiqi-kids/perfect-cuboid-problem" target="_blank" rel="noopener">GitHub Repository ↗</a>
+  </p>
+</footer>
+
+<script>
+// === KaTeX render（先於 chart mount） ===
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$',  right: '$',  display: false}
+      ],
+      throwOnError: false
+    });
+  }
+});
+
+// === 取 CSS token 顏色（fallback 給定值） ===
+function tok(name, fallback) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return v || fallback;
+}
+
+// === Chart Registry（IntersectionObserver lazy mount + resize redraw） ===
+const chartRegistry = {};
+
+function defineChart(id, drawFn) {
+  chartRegistry[id] = { draw: drawFn, mounted: false };
+}
+
+function mountChart(id, container) {
+  const wrap = container.querySelector('.chart-svg-wrap') || container;
+  const reg = chartRegistry[id];
+  if (!reg) return;
+  const render = () => {
+    wrap.innerHTML = '';
+    const width = Math.max(280, wrap.clientWidth || container.clientWidth || 600);
+    reg.draw(wrap, width);
+  };
+  render();
+  reg.mounted = true;
+  if (!reg._resizeBound) {
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => { if (reg.mounted) render(); }, 200);
+    });
+    reg._resizeBound = true;
+  }
+}
+
+function observeAllCharts() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const reg = chartRegistry[id];
+        if (reg && !reg.mounted) {
+          mountChart(id, entry.target);
+        }
+      }
+    });
+  }, { rootMargin: '200px' });
+  document.querySelectorAll('.chart-container').forEach(el => {
+    if (el.id && chartRegistry[el.id]) observer.observe(el);
+  });
+}
+
+// === V1: cuboid schematic ===
+defineChart('chart-cuboid', (wrap, width) => {
+  const height = Math.min(420, Math.round(width * 0.62));
+  const cPass = tok('--color-pass', '#1e8050');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cText = tok('--text-primary', '#1e2030');
+  const cMuted = tok('--text-muted', '#8a8c98');
+  const svg = d3.select(wrap).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('width', '100%').attr('height', height)
+    .attr('role', 'img')
+    .attr('aria-label', '長方體示意圖，標出三個邊、三個面對角線（綠）與體對角線（紅）');
+
+  // box geometry (front face + depth offset)
+  const m = Math.min(width, height);
+  const w = m * 0.42, h = m * 0.30, d = m * 0.22;
+  const ox = width * 0.30, oy = height * 0.62;
+  // front-bottom-left as origin
+  const A = [ox, oy];                 // front bottom left
+  const B = [ox + w, oy];             // front bottom right
+  const C = [ox + w, oy - h];         // front top right
+  const D = [ox, oy - h];             // front top left
+  const A2 = [A[0] + d, A[1] - d];    // back bottom left
+  const B2 = [B[0] + d, B[1] - d];
+  const C2 = [C[0] + d, C[1] - d];
+  const D2 = [D[0] + d, D[1] - d];
+  const cBorder = tok('--text-secondary', '#5e6070');
+
+  const line = (p, q, color, wdt, dash) => svg.append('line')
+    .attr('x1', p[0]).attr('y1', p[1]).attr('x2', q[0]).attr('y2', q[1])
+    .attr('stroke', color).attr('stroke-width', wdt)
+    .attr('stroke-dasharray', dash || null);
+
+  // box edges (frame, neutral)
+  [[A,B],[B,C],[C,D],[D,A],[A2,B2],[B2,C2],[C2,D2],[D2,A2],[A,A2],[B,B2],[C,C2],[D,D2]]
+    .forEach(([p,q]) => line(p,q,cBorder,1.5));
+
+  // three EDGES highlighted green (length a,b,c)
+  line(A,B,cPass,4);      // width
+  line(A,D,cPass,4);      // height
+  line(A,A2,cPass,4);     // depth
+  // three FACE diagonals green dashed
+  line(A,C,cPass,2.5,'6 4');     // front face
+  line(A,B2,cPass,2.5,'6 4');    // bottom face
+  line(A,D2,cPass,2.5,'6 4');    // left face
+  // SPACE diagonal red
+  line(A,C2,cCrit,4);
+
+  const label = (p, txt, color, dy) => svg.append('text')
+    .attr('x', p[0]).attr('y', p[1] + (dy||0))
+    .attr('fill', color).attr('font-size', Math.max(13, m*0.038) + 'px')
+    .attr('font-weight', 600).text(txt);
+
+  label([(A[0]+B[0])/2 - 6, A[1] + 22], '邊 a', cPass);
+  label([A[0] - 44, (A[1]+D[1])/2], '邊 b', cPass);
+  label([(A[0]+A2[0])/2 - 30, (A[1]+A2[1])/2 + 22], '邊 c', cPass);
+  label([C2[0] + 8, C2[1] - 6], '體對角線', cCrit);
+  svg.append('text').attr('x', width*0.5).attr('y', height - 8)
+    .attr('text-anchor','middle').attr('fill', cMuted)
+    .attr('font-size', Math.max(12, m*0.032)+'px')
+    .text('綠：3 邊 + 3 面對角線（Euler brick）｜紅：體對角線（完美長方體額外要求）');
+});
+
+// === V2: rank histogram 118/137/45/3 ===
+defineChart('chart-rank-hist', (wrap, width) => {
+  const data = [
+    {rank: 'rank 0', n: 118},
+    {rank: 'rank 1', n: 137},
+    {rank: 'rank 2', n: 45},
+    {rank: 'rank 3', n: 3}
+  ];
+  const height = 360;
+  const margin = {top: 20, right: 20, bottom: 50, left: 56};
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+  const cInfo = tok('--color-info', '#2a6bb8');
+  const cHigh = tok('--color-high', '#b86a2a');
+  const cText = tok('--text-primary', '#1e2030');
+  const cMuted = tok('--text-muted', '#8a8c98');
+  const cBorder = tok('--border-subtle', '#d5d6da');
+
+  const svg = d3.select(wrap).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('width', '100%').attr('height', height)
+    .attr('role', 'img')
+    .attr('aria-label', '303 個 fiber 的 rank 直方圖：rank 0 共 118、rank 1 共 137、rank 2 共 45、rank 3 共 3');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleBand().domain(data.map(d=>d.rank)).range([0, iw]).padding(0.28);
+  const y = d3.scaleLinear().domain([0, 150]).range([ih, 0]);
+
+  g.append('g').attr('transform', `translate(0,${ih})`).call(d3.axisBottom(x))
+    .selectAll('text').attr('font-size','14px').attr('fill', cText);
+  g.append('g').call(d3.axisLeft(y).ticks(5))
+    .selectAll('text').attr('font-size','13px').attr('fill', cMuted);
+
+  g.selectAll('.bar').data(data).enter().append('rect')
+    .attr('x', d=>x(d.rank)).attr('y', d=>y(d.n))
+    .attr('width', x.bandwidth()).attr('height', d=>ih - y(d.n))
+    .attr('rx', 4)
+    .attr('fill', d=> d.rank==='rank 3' ? cHigh : cInfo);
+
+  g.selectAll('.lbl').data(data).enter().append('text')
+    .attr('x', d=>x(d.rank)+x.bandwidth()/2).attr('y', d=>y(d.n)-8)
+    .attr('text-anchor','middle').attr('fill', cText)
+    .attr('font-size','15px').attr('font-weight',600).text(d=>d.n);
+
+  svg.append('text').attr('x', margin.left).attr('y', 14)
+    .attr('fill', cMuted).attr('font-size','13px')
+    .text('（橘色 rank 3 含經認證的 (22,17) fiber）');
+});
+
+// === V3: Lucas sequence, mark squares L1=1, L3=4 ===
+defineChart('chart-lucas', (wrap, width) => {
+  // Lucas numbers L1..L9 (odd-indexed emphasised). L1=1,L2=3,L3=4,L4=7,L5=11,L6=18,L7=29,L8=47,L9=76
+  const lucas = [
+    {i:1, v:1, sq:true}, {i:2, v:3}, {i:3, v:4, sq:true}, {i:4, v:7},
+    {i:5, v:11}, {i:6, v:18}, {i:7, v:29}, {i:8, v:47}, {i:9, v:76}
+  ];
+  const height = 360;
+  const margin = {top: 24, right: 24, bottom: 46, left: 50};
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+  const cInfo = tok('--color-info', '#2a6bb8');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cText = tok('--text-primary', '#1e2030');
+  const cMuted = tok('--text-muted', '#8a8c98');
+
+  const svg = d3.select(wrap).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('width','100%').attr('height', height)
+    .attr('role','img')
+    .attr('aria-label','Lucas 數列折線，標出唯二完全平方 L1=1 與 L3=4');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scalePoint().domain(lucas.map(d=>d.i)).range([0, iw]).padding(0.5);
+  const y = d3.scaleLinear().domain([0, 80]).range([ih, 0]);
+
+  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).tickFormat(d=>'L'+d))
+    .selectAll('text').attr('font-size','13px').attr('fill', cText);
+  g.append('g').call(d3.axisLeft(y).ticks(5))
+    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
+
+  const lineGen = d3.line().x(d=>x(d.i)).y(d=>y(d.v));
+  g.append('path').datum(lucas).attr('fill','none')
+    .attr('stroke', cInfo).attr('stroke-width', 2.5).attr('d', lineGen);
+
+  g.selectAll('.pt').data(lucas).enter().append('circle')
+    .attr('cx', d=>x(d.i)).attr('cy', d=>y(d.v))
+    .attr('r', d=>d.sq?8:5)
+    .attr('fill', d=>d.sq?cCrit:cInfo)
+    .attr('stroke','#fff').attr('stroke-width', d=>d.sq?2:1);
+
+  g.selectAll('.sqlbl').data(lucas.filter(d=>d.sq)).enter().append('text')
+    .attr('x', d=>x(d.i)).attr('y', d=>y(d.v)-14)
+    .attr('text-anchor','middle').attr('fill', cCrit)
+    .attr('font-size','14px').attr('font-weight',700)
+    .text(d=>`L${d.i}=${d.v} ▢`);
+
+  svg.append('text').attr('x', width/2).attr('y', height-8)
+    .attr('text-anchor','middle').attr('fill', cMuted).attr('font-size','13px')
+    .text('紅點 = 完全平方（僅 L1, L3）→ Cohn 1964 ⇒ q∈{1,2}，皆退化');
+});
+
+// === V4: Szpiro scatter, sigma_max=4.6140 at (256,121) ===
+defineChart('chart-szpiro', (wrap, width) => {
+  // synthetic-but-faithful illustration: most points <= 4 band, one outlier 4.6140
+  const cInfo = tok('--color-info', '#2a6bb8');
+  const cCrit = tok('--color-critical', '#c93135');
+  const cPass = tok('--color-pass', '#1e8050');
+  const cText = tok('--text-primary', '#1e2030');
+  const cMuted = tok('--text-muted', '#8a8c98');
+
+  const rng = (() => { let s = 20260527; return () => { s = (s*1103515245 + 12345) & 0x7fffffff; return s / 0x7fffffff; }; })();
+  const pts = [];
+  for (let i = 0; i < 90; i++) {
+    const p = 8 + rng() * 280;
+    let sig = 2.2 + rng() * 1.7;            // density-one band, mostly <= 4
+    if (rng() > 0.93) sig = 4.0 + rng() * 0.35; // a few near 4
+    pts.push({p, sig});
+  }
+  const outlier = {p: 256, sig: 4.6140, label: '(256,121)'};
+
+  const height = 360;
+  const margin = {top: 24, right: 24, bottom: 48, left: 52};
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const svg = d3.select(wrap).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('width','100%').attr('height', height)
+    .attr('role','img')
+    .attr('aria-label','Szpiro ratio 散佈圖，密度一帶 ≤4，最大值 4.6140 於 (256,121)');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleLinear().domain([0, 300]).range([0, iw]);
+  const y = d3.scaleLinear().domain([2, 5]).range([ih, 0]);
+
+  g.append('g').attr('transform',`translate(0,${ih})`).call(d3.axisBottom(x).ticks(6))
+    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
+  g.append('g').call(d3.axisLeft(y).ticks(6))
+    .selectAll('text').attr('font-size','12px').attr('fill', cMuted);
+
+  // density-one <= 4 band line
+  g.append('line').attr('x1',0).attr('x2',iw).attr('y1',y(4)).attr('y2',y(4))
+    .attr('stroke', cPass).attr('stroke-width', 2).attr('stroke-dasharray','7 5');
+  g.append('text').attr('x', iw-4).attr('y', y(4)-8).attr('text-anchor','end')
+    .attr('fill', cPass).attr('font-size','13px').attr('font-weight',600)
+    .text('σ = 4（密度一上界）');
+
+  g.selectAll('.spt').data(pts).enter().append('circle')
+    .attr('cx', d=>x(d.p)).attr('cy', d=>y(d.sig)).attr('r', 4)
+    .attr('fill', cInfo).attr('fill-opacity', 0.65);
+
+  g.append('circle').attr('cx', x(outlier.p)).attr('cy', y(outlier.sig))
+    .attr('r', 8).attr('fill', cCrit).attr('stroke','#fff').attr('stroke-width',2);
+  g.append('text').attr('x', x(outlier.p)-12).attr('y', y(outlier.sig)-12)
+    .attr('text-anchor','end').attr('fill', cCrit).attr('font-size','14px').attr('font-weight',700)
+    .text('σ_max=4.6140 @ (256,121)');
+
+  svg.append('text').attr('x', width/2).attr('y', height-8)
+    .attr('text-anchor','middle').attr('fill', cMuted).attr('font-size','12px')
+    .text('橫軸：參數 ｜ 縱軸：Szpiro ratio σ（示意分佈，數值錨點為實測）');
+});
+
+// === AEO Share Buttons ===
+document.querySelectorAll('.theorem-section h2').forEach(h2 => {
+  if (h2.querySelector('.share-ai-btn')) return;
+  const section = h2.closest('.theorem-section');
+  const id = section.id;
+  if (!id) return;
+  if (!h2.dataset.heading) h2.dataset.heading = h2.textContent.trim();
+
+  const clone = section.cloneNode(true);
+  clone.querySelectorAll('.chart-container, .share-ai-btn, script, style').forEach(el => el.remove());
+  const fullText = clone.textContent.replace(/\s+/g, ' ').trim().slice(0, 1500);
+
+  const btn = document.createElement('button');
+  btn.className = 'share-ai-btn';
+  btn.type = 'button';
+  btn.textContent = '複製到 AI';
+  btn.title = '複製此段完整內容與連結，可貼到 ChatGPT 或 Claude 接續討論';
+  btn.setAttribute('aria-label', '複製此段摘要與連結到剪貼簿');
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const url = `${location.origin}${location.pathname}#${id}`;
+    const heading = h2.dataset.heading;
+    const payload =
+      `我正在閱讀以下這段：\n\n` +
+      `## ${heading}\n\n` +
+      `${fullText}\n\n` +
+      `---\n` +
+      `完整內容：${url}\n\n` +
+      `請扮演這篇論文的共同作者，依高中生能懂的語言（最多一個符號且立刻白話化）` +
+      `和我討論這段，必要時可延伸到相關概念。`;
+    navigator.clipboard.writeText(payload).then(() => {
+      btn.textContent = '已複製';
+      setTimeout(() => { btn.textContent = '複製到 AI'; }, 2000);
+    }).catch(() => {
+      btn.textContent = '複製失敗';
+      setTimeout(() => { btn.textContent = '複製到 AI'; }, 2000);
+    });
+  });
+  h2.appendChild(btn);
+});
+
+// === Boot ===
+observeAllCharts();
+</script>
+</body>
+</html>

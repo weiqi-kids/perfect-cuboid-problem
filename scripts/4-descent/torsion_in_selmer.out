@@ -1,0 +1,20 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+Torsion structure: 16 [8, 2]
+Torsion generators: [[121378538430456, 506349123295506127560], [136054851567711, 0]]
+
+=== Test: ell2cover on a torsion-only curve ===
+E_test: y^2 = x^3 - 25x
+Torsion: [4, [2, 2], [[-5, 0], [0, 0]]]
+ellrank: [1, 1, 0, [[-4, 6]]]
+ell2cover count = 3
+If torsion is Z/2 x Z/2 and rank = ?, then ell2cover returns rk + dim Sha[2] basis.
+
+=== E_z6 = ellinit([1,0,1,-29,-115]) ===
+Torsion: [1, [], []]
+ellrank: [1, 1, 0, [[207, 2875]]]
+ell2cover count = 1
+
+=== ellinit([1,1,1,-10,-10]) — possibly Z/8 tors ===
+Torsion: [8, [4, 2], [[-2, 3], [-1, 0]]]
+ellrank: [0, 0, 0, []]
+ell2cover count = 2

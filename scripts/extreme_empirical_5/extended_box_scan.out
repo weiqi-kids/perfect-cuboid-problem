@@ -1,0 +1,11 @@
+[0;31m  ***   Warning: new stack size = 12000000000 (11444.092 Mbytes).[0m
+=== Extended 1D box scan along the known E_PCP generators ===
+
+--- 1D scan E_PCP for (m,n)=(61,38) ---
+  G = [47196, 2306232540]  h_can(G) = 5.26107294513308381292117619102425679957939593240287164416513
+  Nmax = 1500  range of n^2*h_can = up to 11837414.1265494385790726464298045777990536408479064611993715
+    progress: n1=50  elapsed=43 ms, hits=0
+    progress: n1=100  elapsed=641 ms, hits=0
+    progress: n1=150  elapsed=2633 ms, hits=0
+    progress: n1=200  elapsed=6622 ms, hits=0
+    progress: n1=250  elapsed=13053 ms, hits=0

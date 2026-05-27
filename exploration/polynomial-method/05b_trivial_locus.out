@@ -1,0 +1,15 @@
+trivial locus counts (points on V with a*b*c = 0):
+p=3 Na=33 Nb=33 Nc=33 trivial_total=49
+p=5 Na=97 Nb=97 Nc=97 trivial_total=193
+p=7 Na=289 Nb=289 Nc=289 trivial_total=721
+p=11 Na=801 Nb=801 Nc=801 trivial_total=2161
+p=13 Na=1057 Nb=1057 Nc=1057 trivial_total=2881
+p=17 Na=1921 Nb=1921 Nc=1921 trivial_total=5377
+p=19 Na=2593 Nb=2593 Nc=2593 trivial_total=7345
+p=23 Na=3873 Nb=3873 Nc=3873 trivial_total=11089
+p=29 Na=6049 Nb=6049 Nc=6049 trivial_total=17473
+p=31 Na=7201 Nb=7201 Nc=7201 trivial_total=20881
+p=37 Na=10081 Nb=10081 Nc=10081 trivial_total=29377
+p=41 Na=12481 Nb=12481 Nc=12481 trivial_total=36481
+p=43 Na=14113 Nb=14113 Nc=14113 trivial_total=41329
+p=47 Na=16929 Nb=16929 Nc=16929 trivial_total=49681

@@ -1,0 +1,473 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+=============================================================
+Track C: Genus-2 quotient H_q analysis for 5 BEYOND-QC fibers
+PARI/GP [2, 15, 4]
+=============================================================
+
+
+============================================================
+Fiber (61,38)   (m,n)=(61,38)
+============================================================
+
+  q = 2mn/(m^2-n^2) = 4636/2277
+  p = 2mn = 4636
+  d = m^2-n^2 = 2277
+  w = m^2+n^2 = 5165
+
+  Integer hyperelliptic model H_q:
+    Y^2 = (X^2+5184729)(X^2+21492496)(X^2+26677225)
+    f(X) = X^6 + 53354450*X^4 + 823107100994209*X^2 + 2972717005463581424400
+
+  disc(f) = -2074737686933425973361058311017370498551142412216020077685656871070397267296048563685865812876640816568729600
+  |disc(f)| factored = [2, 26; 3, 20; 5, 2; 7, 4; 11, 10; 19, 10; 23, 10; 31, 4; 61, 10; 223, 4; 337, 4; 1033, 2]
+
+  E_Hp minimal Weierstrass model coefs:
+    [0, -1, 0, -125792010606624, -415427350830110490816]
+  N(E_Hp) = 229530124517232
+  E_Hm minimal Weierstrass model coefs:
+    [a1,a2,a3] = [1,0,0]
+    a4 = -4201713691887954766021162410
+    a6 = 103564307677747011646913552825626935447972
+  N(E_Hm) = 148190386641437910
+
+  N(J(H_q)) = N(E_Hp)*N(E_Hm) = 34014157898065997083925053065120
+
+  --- L-factor isogeny verification ---
+  L-factor check (J(H_q) ?~ E_Hp x E_Hm):
+    prime   #H_q(F_p)   a_p(H_q)   a_p(E_Hp)+a_p(E_Hm)   match
+    p=13   18         -4         -4         OK
+    p=17   22         -4         -4         OK
+    p=19  skipped (bad reduction)
+    p=23  skipped (bad reduction)
+    p=29   34         -4         -4         OK
+    p=31  skipped (bad reduction)
+    p=37   34         4         4         OK
+    p=41   38         4         4         OK
+    p=43   52         -8         -8         OK
+    p=47   56         -8         -8         OK
+  ISOGENY VERIFIED at 7 good primes
+
+  --- Rank analysis (PARI ellrank effort=2) ---
+  ellrank(E_Hp, 2) running...
+    rk(E_Hp) in [3,3]  (0.019000000000000000000000000000000000000s)
+  ellrank(E_Hm, 2) running...
+    rk(E_Hm) in [0,2]  (0.23900000000000000000000000000000000000s)
+
+  Stoll genus-2 Chabauty (rk(J(H_q)) <= g + rho_NS - 1 = 3):
+    rk(J(H_q)) in [3,5]
+    VERDICT: BORDERLINE  (lo=3 <= 3, hi=5 > 3)
+
+  Mod-p point counts on H_q (projective, includes 2 pts at infty):
+    p     #H_q(F_p)    p+1    a_p(H_q)
+     3    7        4    -3
+     5    7        6    -1
+     7    8        8    0
+    11    23        12    -11
+    13    18        14    -4
+    17    22        18    -4
+    19    39        20    -19
+    23    47        24    -23
+    29    34        30    -4
+    31    32        32    0
+    37    34        38    4
+    41    38        42    4
+    43    52        44    -8
+    47    56        48    -8
+    53    58        54    -4
+    59    76        60    -16
+    61    121        62    -59
+    67    68        68    0
+    71    64        72    8
+    73    78        74    -4
+    79    64        80    16
+    83    100        84    -16
+    89    94        90    -4
+    97    110        98    -12
+
+  Direct integer-x search on H_q(Q), |X| <= 50000:
+    X=0  Y=+/-54522628380
+    integer X-points found: 1
+
+  *** Fiber (61,38) SUMMARY ***
+    rk(E_Hp) in [3,3]   (t=0.019000000000000000000000000000000000000s)
+    rk(E_Hm) in [0,2]   (t=0.23900000000000000000000000000000000000s)
+    rk(J(H_q)) in [3,5]
+    Stoll g=2 Chabauty verdict: borderline
+    rational X-points (search): 1
+
+
+============================================================
+Fiber (63,38)   (m,n)=(63,38)
+============================================================
+
+  q = 2mn/(m^2-n^2) = 4788/2525
+  p = 2mn = 4788
+  d = m^2-n^2 = 2525
+  w = m^2+n^2 = 5413
+
+  Integer hyperelliptic model H_q:
+    Y^2 = (X^2+6375625)(X^2+22924944)(X^2+29300569)
+    f(X) = X^6 + 58601138*X^4 + 1004684189813761*X^2 + 4282595955958425210000
+
+  disc(f) = -9382785317351508811178285872953304394837600333599632290766473294749197205249779374570246400000000000000000000
+  |disc(f)| factored = [2, 26; 3, 20; 5, 20; 7, 10; 19, 10; 31, 4; 71, 4; 73, 4; 101, 10; 103, 4; 5413, 2]
+
+  E_Hp minimal Weierstrass model coefs:
+    [0, -1, 0, -140013601817920, -435817780667752184768]
+  N(E_Hp) = 53353680510480
+  E_Hm minimal Weierstrass model coefs:
+    [a1,a2,a3] = [1,0,0]
+    a4 = -5343652737951011423545792190
+    a6 = 147088469266310969311366478538247305164100
+  N(E_Hm) = 36100434075403530
+
+  N(J(H_q)) = N(E_Hp)*N(E_Hm) = 1926091025948725397302393994400
+
+  --- L-factor isogeny verification ---
+  L-factor check (J(H_q) ?~ E_Hp x E_Hm):
+    prime   #H_q(F_p)   a_p(H_q)   a_p(E_Hp)+a_p(E_Hm)   match
+    p=13   18         -4         -4         OK
+    p=17   22         -4         -4         OK
+    p=19  skipped (bad reduction)
+    p=23   16         8         8         OK
+    p=29   34         -4         -4         OK
+    p=31  skipped (bad reduction)
+    p=37   42         -4         -4         OK
+    p=41   46         -4         -4         OK
+    p=43   36         8         8         OK
+    p=47   40         8         8         OK
+  ISOGENY VERIFIED at 8 good primes
+
+  --- Rank analysis (PARI ellrank effort=2) ---
+  ellrank(E_Hp, 2) running...
+    rk(E_Hp) in [4,4]  (0.021000000000000000000000000000000000000s)
+  ellrank(E_Hm, 2) running...
+    rk(E_Hm) in [1,1]  (0.24700000000000000000000000000000000000s)
+
+  Stoll genus-2 Chabauty (rk(J(H_q)) <= g + rho_NS - 1 = 3):
+    rk(J(H_q)) in [5,5]
+    VERDICT: FAILS  (lo=5 > 3)
+
+  Mod-p point counts on H_q (projective, includes 2 pts at infty):
+    p     #H_q(F_p)    p+1    a_p(H_q)
+     3    7        4    -3
+     5    9        6    -3
+     7    15        8    -7
+    11    20        12    -8
+    13    18        14    -4
+    17    22        18    -4
+    19    39        20    -19
+    23    16        24    8
+    29    34        30    -4
+    31    32        32    0
+    37    42        38    -4
+    41    46        42    -4
+    43    36        44    8
+    47    40        48    8
+    53    74        54    -20
+    59    60        60    0
+    61    66        62    -4
+    67    60        68    8
+    71    72        72    0
+    73    72        74    2
+    79    104        80    -24
+    83    108        84    -24
+    89    102        90    -12
+    97    110        98    -12
+
+  Direct integer-x search on H_q(Q), |X| <= 50000:
+    X=0  Y=+/-65441546100
+    integer X-points found: 1
+
+  *** Fiber (63,38) SUMMARY ***
+    rk(E_Hp) in [4,4]   (t=0.021000000000000000000000000000000000000s)
+    rk(E_Hm) in [1,1]   (t=0.24700000000000000000000000000000000000s)
+    rk(J(H_q)) in [5,5]
+    Stoll g=2 Chabauty verdict: fails
+    rational X-points (search): 1
+
+
+============================================================
+Fiber (73,24)   (m,n)=(73,24)
+============================================================
+
+  q = 2mn/(m^2-n^2) = 3504/4753
+  p = 2mn = 3504
+  d = m^2-n^2 = 4753
+  w = m^2+n^2 = 5905
+
+  Integer hyperelliptic model H_q:
+    Y^2 = (X^2+22591009)(X^2+12278016)(X^2+34869025)
+    f(X) = X^6 + 69738050*X^4 + 1493221674408769*X^2 + 9671718049989772089600
+
+  disc(f) = -41445538585299351947713112645873576199404455377918398407244950381066594005376404763895460968319082847168102400
+  |disc(f)| factored = [2, 46; 3, 10; 5, 2; 7, 20; 23, 4; 73, 10; 97, 10; 359, 4; 1181, 2; 1249, 4]
+
+  E_Hp minimal Weierstrass model coefs:
+    [0, -1, 0, -127910198192064, 83501181854697176064]
+  N(E_Hp) = 24536837953488
+  E_Hm minimal Weierstrass model coefs:
+    [a1,a2,a3] = [1,0,0]
+    a4 = -4296889542830417930548255320
+    a6 = 69513195990628448299367172717433334517312
+  N(E_Hm) = 18111253514418330
+
+  N(J(H_q)) = N(E_Hp)*N(E_Hm) = 444392892617822603977914635040
+
+  --- L-factor isogeny verification ---
+  L-factor check (J(H_q) ?~ E_Hp x E_Hm):
+    prime   #H_q(F_p)   a_p(H_q)   a_p(E_Hp)+a_p(E_Hm)   match
+    p=13   18         -4         -4         OK
+    p=17   22         -4         -4         OK
+    p=19   12         8         8         OK
+    p=23  skipped (bad reduction)
+    p=29   34         -4         -4         OK
+    p=31   24         8         8         OK
+    p=37   34         4         4         OK
+    p=41   38         4         4         OK
+    p=43   44         0         0         OK
+    p=47   48         0         0         OK
+  ISOGENY VERIFIED at 9 good primes
+
+  --- Rank analysis (PARI ellrank effort=2) ---
+  ellrank(E_Hp, 2) running...
+    rk(E_Hp) in [3,3]  (0.14300000000000000000000000000000000000s)
+  ellrank(E_Hm, 2) running...
+    rk(E_Hm) in [1,3]  (0.24200000000000000000000000000000000000s)
+
+  Stoll genus-2 Chabauty (rk(J(H_q)) <= g + rho_NS - 1 = 3):
+    rk(J(H_q)) in [4,6]
+    VERDICT: FAILS  (lo=4 > 3)
+
+  Mod-p point counts on H_q (projective, includes 2 pts at infty):
+    p     #H_q(F_p)    p+1    a_p(H_q)
+     3    7        4    -3
+     5    7        6    -1
+     7    15        8    -7
+    11    20        12    -8
+    13    18        14    -4
+    17    22        18    -4
+    19    12        20    8
+    23    24        24    0
+    29    34        30    -4
+    31    24        32    8
+    37    34        38    4
+    41    38        42    4
+    43    44        44    0
+    47    48        48    0
+    53    58        54    -4
+    59    60        60    0
+    61    50        62    12
+    67    60        68    8
+    71    56        72    16
+    73    145        74    -71
+    79    80        80    0
+    83    76        84    8
+    89    94        90    -4
+    97    193        98    -95
+
+  Direct integer-x search on H_q(Q), |X| <= 50000:
+    X=0  Y=+/-98344893360
+    integer X-points found: 1
+
+  *** Fiber (73,24) SUMMARY ***
+    rk(E_Hp) in [3,3]   (t=0.14300000000000000000000000000000000000s)
+    rk(E_Hm) in [1,3]   (t=0.24200000000000000000000000000000000000s)
+    rk(J(H_q)) in [4,6]
+    Stoll g=2 Chabauty verdict: fails
+    rational X-points (search): 1
+
+
+============================================================
+Fiber (88,35)   (m,n)=(88,35)
+============================================================
+
+  q = 2mn/(m^2-n^2) = 6160/6519
+  p = 2mn = 6160
+  d = m^2-n^2 = 6519
+  w = m^2+n^2 = 8969
+
+  Integer hyperelliptic model H_q:
+    Y^2 = (X^2+42497361)(X^2+37945600)(X^2+80442961)
+    f(X) = X^6 + 160885922*X^4 + 8083657836009121*X^2 + 129721342456673187897600
+
+  disc(f) = -24099207203677716053026482756371616621239769790088288308546837178195330716326072778212130007213030768640000000000
+  |disc(f)| factored = [2, 46; 3, 10; 5, 10; 7, 10; 11, 10; 31, 4; 41, 10; 53, 10; 359, 4; 409, 4; 8969, 2]
+
+  E_Hp minimal Weierstrass model coefs:
+    [0, -1, 0, -544435463254240, 4681038068313777913600]
+  N(E_Hp) = 182785248547440
+  E_Hm minimal Weierstrass model coefs:
+    [a1,a2,a3] = [1,0,0]
+    a4 = -56968972021100673322719633980
+    a6 = -4381013374830911732760444269999712553455600
+  N(E_Hm) = 204925111777748670
+
+  N(J(H_q)) = N(E_Hp)*N(E_Hm) = 37457287489907714719230891904800
+
+  --- L-factor isogeny verification ---
+  L-factor check (J(H_q) ?~ E_Hp x E_Hm):
+    prime   #H_q(F_p)   a_p(H_q)   a_p(E_Hp)+a_p(E_Hm)   match
+    p=13   18         -4         -4         OK
+    p=17   22         -4         -4         OK
+    p=19   12         8         8         OK
+    p=23   32         -8         -8         OK
+    p=29   26         4         4         OK
+    p=31  skipped (bad reduction)
+    p=37   42         -4         -4         OK
+    p=41  skipped (bad reduction)
+    p=43   36         8         8         OK
+    p=47   48         0         0         OK
+  ISOGENY VERIFIED at 8 good primes
+
+  --- Rank analysis (PARI ellrank effort=2) ---
+  ellrank(E_Hp, 2) running...
+    rk(E_Hp) in [4,4]  (0.014000000000000000000000000000000000000s)
+  ellrank(E_Hm, 2) running...
+    rk(E_Hm) in [0,0]  (0.098000000000000000000000000000000000000s)
+
+  Stoll genus-2 Chabauty (rk(J(H_q)) <= g + rho_NS - 1 = 3):
+    rk(J(H_q)) in [4,4]
+    VERDICT: FAILS  (lo=4 > 3)
+
+  Mod-p point counts on H_q (projective, includes 2 pts at infty):
+    p     #H_q(F_p)    p+1    a_p(H_q)
+     3    7        4    -3
+     5    9        6    -3
+     7    15        8    -7
+    11    23        12    -11
+    13    18        14    -4
+    17    22        18    -4
+    19    12        20    8
+    23    32        24    -8
+    29    26        30    4
+    31    32        32    0
+    37    42        38    -4
+    41    81        42    -39
+    43    36        44    8
+    47    48        48    0
+    53    105        54    -51
+    59    60        60    0
+    61    58        62    4
+    67    60        68    8
+    71    80        72    -8
+    73    70        74    4
+    79    48        80    32
+    83    92        84    -8
+    89    102        90    -12
+    97    110        98    -12
+
+  Direct integer-x search on H_q(Q), |X| <= 50000:
+    X=0  Y=+/-360168491760
+    integer X-points found: 1
+
+  *** Fiber (88,35) SUMMARY ***
+    rk(E_Hp) in [4,4]   (t=0.014000000000000000000000000000000000000s)
+    rk(E_Hm) in [0,0]   (t=0.098000000000000000000000000000000000000s)
+    rk(J(H_q)) in [4,4]
+    Stoll g=2 Chabauty verdict: fails
+    rational X-points (search): 1
+
+
+============================================================
+Fiber (99,28)   (m,n)=(99,28)
+============================================================
+
+  q = 2mn/(m^2-n^2) = 5544/9017
+  p = 2mn = 5544
+  d = m^2-n^2 = 9017
+  w = m^2+n^2 = 10585
+
+  Integer hyperelliptic model H_q:
+    Y^2 = (X^2+81306289)(X^2+30735936)(X^2+112042225)
+    f(X) = X^6 + 224084450*X^4 + 15052485078052129*X^2 + 279996309577564109006400
+
+  disc(f) = -4570866658383143262558933796629521086331572587606385716869261002787006782760022896056024927944059643863122969205145600
+  |disc(f)| factored = [2, 36; 3, 20; 5, 2; 7, 10; 11, 10; 23, 4; 29, 2; 71, 10; 73, 2; 127, 10; 151, 4; 14561, 4]
+
+  E_Hp minimal Weierstrass model coefs:
+    [0, -1, 0, -1685461832548704, -10854385900968766899456]
+  N(E_Hp) = 1685349658611696
+  E_Hm minimal Weierstrass model coefs:
+    [a1,a2,a3] = [1,0,0]
+    a4 = -798934373413071894873901458180
+    a6 = 253431216364774468941612284489290788382516752
+  N(E_Hm) = 2229928267050600270
+
+  N(J(H_q)) = N(E_Hp)*N(E_Hm) = 3758208843602300034980991642757920
+
+  --- L-factor isogeny verification ---
+  L-factor check (J(H_q) ?~ E_Hp x E_Hm):
+    prime   #H_q(F_p)   a_p(H_q)   a_p(E_Hp)+a_p(E_Hm)   match
+    p=13   18         -4         -4         OK
+    p=17   22         -4         -4         OK
+    p=19   12         8         8         OK
+    p=23  skipped (bad reduction)
+    p=29  skipped (bad reduction)
+    p=31   32         0         0         OK
+    p=37   42         -4         -4         OK
+    p=41   38         4         4         OK
+    p=43   44         0         0         OK
+    p=47   48         0         0         OK
+  ISOGENY VERIFIED at 8 good primes
+
+  --- Rank analysis (PARI ellrank effort=2) ---
+  ellrank(E_Hp, 2) running...
+    rk(E_Hp) in [1,1]  (0.043000000000000000000000000000000000000s)
+  ellrank(E_Hm, 2) running...
+    rk(E_Hm) in [1,1]  (0.19600000000000000000000000000000000000s)
+
+  Stoll genus-2 Chabauty (rk(J(H_q)) <= g + rho_NS - 1 = 3):
+    rk(J(H_q)) in [2,2]
+    VERDICT: APPLIES  (rigorous: hi=2 <= 3)
+
+  Mod-p point counts on H_q (projective, includes 2 pts at infty):
+    p     #H_q(F_p)    p+1    a_p(H_q)
+     3    7        4    -3
+     5    7        6    -1
+     7    15        8    -7
+    11    23        12    -11
+    13    18        14    -4
+    17    22        18    -4
+    19    12        20    8
+    23    24        24    0
+    29    39        30    -9
+    31    32        32    0
+    37    42        38    -4
+    41    38        42    4
+    43    44        44    0
+    47    48        48    0
+    53    66        54    -12
+    59    36        60    24
+    61    50        62    12
+    67    84        68    -16
+    71    143        72    -71
+    73    79        74    -5
+    79    64        80    16
+    83    76        84    8
+    89    86        90    4
+    97    118        98    -20
+
+  Direct integer-x search on H_q(Q), |X| <= 50000:
+    X=0  Y=+/-529146775080
+    integer X-points found: 1
+
+  *** Fiber (99,28) SUMMARY ***
+    rk(E_Hp) in [1,1]   (t=0.043000000000000000000000000000000000000s)
+    rk(E_Hm) in [1,1]   (t=0.19600000000000000000000000000000000000s)
+    rk(J(H_q)) in [2,2]
+    Stoll g=2 Chabauty verdict: applies
+    rational X-points (search): 1
+
+
+=========================================
+FINAL SUMMARY across all 5 BEYOND-QC fibers
+(total wall time: 1.8410000000000000000000000000000000000s)
+=========================================
+  (61,38): verdict=borderline  rk(E_Hp)=[3,3]  rk(E_Hm)=[0,2]  rk(J)=[3,5]
+  (63,38): verdict=fails  rk(E_Hp)=[4,4]  rk(E_Hm)=[1,1]  rk(J)=[5,5]
+  (73,24): verdict=fails  rk(E_Hp)=[3,3]  rk(E_Hm)=[1,3]  rk(J)=[4,6]
+  (88,35): verdict=fails  rk(E_Hp)=[4,4]  rk(E_Hm)=[0,0]  rk(J)=[4,4]
+  (99,28): verdict=applies  rk(E_Hp)=[1,1]  rk(E_Hm)=[1,1]  rk(J)=[2,2]
+
+=== DONE GENUS-2 ANALYSIS ===

@@ -1,0 +1,9 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 5000003584 (4768.375 Mbytes).[0m
+E_Hm of (73,24):
+  conductor = 18111253514418330
+
+=== ellheegner with dynamic stack growth ===
+[0;31m  *** ellheegner: Warning: increasing stack size to 1600000000.[0m
+[0;31m  *** ellheegner: Warning: increasing stack size to 3200000000.[0m
+[0;31m  *** ellheegner: Warning: increasing stack size to 5000003584.[0m

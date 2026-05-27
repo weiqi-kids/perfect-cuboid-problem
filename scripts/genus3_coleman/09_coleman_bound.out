@@ -1,0 +1,22 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Coleman-Chabauty bound on |C'(Q)|, genus g=3, rank r=2 ===
+Bad primes of C': {2,5}. Good primes p>=3, p!=5.
+Coleman 1985 (p>2g=6): |C(Q)| <= #C(F_p)+2g-2 = #C(F_p)+4.
+
+p | #C'(F_p) | Coleman #C+2g-2 | p>2g? | (#C+2r form)
+3 | 8 | 12 | 0 | 12
+7 | 8 | 12 | 1 | 12
+11 | 24 | 28 | 1 | 28
+13 | 28 | 32 | 1 | 32
+17 | 12 | 16 | 1 | 16
+19 | 8 | 12 | 1 | 12
+23 | 40 | 44 | 1 | 44
+29 | 36 | 40 | 1 | 40
+31 | 16 | 20 | 1 | 20
+37 | 28 | 32 | 1 | 32
+41 | 68 | 72 | 1 | 72
+43 | 40 | 44 | 1 | 44
+
+Sharpest rigorous Coleman bound (p>6, #C+2g-2): |C'(Q)| <= 12 at p=7
+Known C'(Q) points = 8 (6 affine + 2 infinity).

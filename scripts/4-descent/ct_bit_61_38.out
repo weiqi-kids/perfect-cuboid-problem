@@ -1,0 +1,68 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Verifying beta_4 product is a global square:
+  beta_4 = [8012167, 6913, 1159]
+  prod = 64194820035889
+  issquare = 1
+  sqrt = 8012167
+
+Real witness X_oo = -162936266371153/2
+  sign(X - e_1) = 1  sign(X - e_2) = -1  sign(X - e_3) = -1
+
+=== Local witnesses for beta_3 ===
+  p = 2:  X = 136054851567712
+  p = 3:  X = -298991117938857
+  p = 5:  X = -298991117938848
+  p = 7:  X = -298991117938860
+  p = 11:  X = -298991117938855
+  p = 19:  X = -298991117938863
+  p = 23:  X = -298991117938846
+  p = 31:  X = -298991117938863
+  p = 61:  X = -298991117938860
+  p = 223:  X = -298991117938862
+  p = 337:  X = -298991117938863
+  p = 1033:  X = -298991117938862
+
+=== Per-place witness-formula c_v = Σ_i hilbert(X_v - e_i, d_i(beta_4), v) (F_2) ===
+ v       | X_v          | h_1  h_2  h_3 | c_v
+---------------------------------------------------
+  oo     | -162936266371153/2 | 0    0    0   | 0
+  2   | 136054851567712 | 0    0    0   | 0
+  3   | -298991117938857 | 0    0    0   | 0
+  5   | -298991117938848 | 0    0    0   | 0
+  7   | -298991117938860 | 0    0    0   | 0
+  11   | -298991117938855 | 0    0    0   | 0
+  19   | -298991117938863 | 0    0    0   | 0
+  23   | -298991117938846 | 0    0    0   | 0
+  31   | -298991117938863 | 0    0    0   | 0
+  61   | -298991117938860 | 0    0    0   | 0
+  223   | -298991117938862 | 0    0    0   | 0
+  337   | -298991117938863 | 0    0    0   | 0
+  1033   | -298991117938862 | 0    0    0   | 0
+
+======================================================
+Witness-formula <beta_3, beta_4> = 0
+======================================================
+
+By the analysis in the header comment, this is identically 0
+(Hilbert reciprocity).  The true CT pairing bit requires a different
+formula that PARI 2.15.4 lacks built-in support for.
+
+=== Pull-back of beta_4 to C_{beta_3} ===
+Pull-back triple = [8012167, -5246967, -879681]
+Match: pull-back = S²[4] = [8012167, -5246967, -879681]
+
+=== Cross-check: <beta_4, beta_3> ===
+Real witness X_oo for beta_4 = 162936266371153
+Witness-formula <beta_4, beta_3> = 0
+
+============================================
+FINAL DELIVERABLES:
+  Witness-formula <beta_3, beta_4> = 0 (identically 0 by Hilbert reciprocity)
+  Witness-formula <beta_4, beta_3> = 0
+  Cross-check pass = 1
+============================================
+
+Conclusion: The witness-formula gives 0, but this is uninformative
+about the actual CT pairing.  The decisive bit cannot be computed
+in PARI 2.15.4 with the prompt's formula.
+See CT-BIT-61-38.md for full analysis and 4-cover obstruction data.

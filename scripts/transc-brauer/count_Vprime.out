@@ -1,0 +1,17 @@
+Euler-brick K3 V': Frobenius trace computation
+V' = {a^2+b^2=d^2, b^2+c^2=e^2, a^2+c^2=f^2} ⊂ P^5
+
+p    | #V'(F_p)  | 1+p^2  | t = tr(Frob|H^2)
+-----+-----------+--------+------------------
+3    | 12       | 10    | 2/3
+5    | 36       | 26    | 2
+7    | 92       | 50    | 6
+11    | 108       | 122    | -14/11
+13    | 196       | 170    | 2
+17    | 428       | 290    | 138/17
+19    | 396       | 362    | 34/19
+23    | 668       | 530    | 6
+
+Note: K3 has b_2 = 22, so |t| <= 22.
+Algebraic eigenvalues = p * (root of unity); contribute p, -p, or ±p·ζ_k.
+Transcendental eigenvalues have |λ| = p but irrational.

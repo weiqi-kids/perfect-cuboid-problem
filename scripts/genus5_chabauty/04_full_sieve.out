@@ -1,0 +1,32 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+Per-prime surviving c-residues (c in V_q(F_pr) AND c^2 reachable on E_H+ global image):
+pr | #allowed_c | #surviving_c | surviving residues (nonzero shown)
+---|-----------|--------------|------------------------------------
+11 | 1 | 1 | nonzero: []
+13 | 3 | 3 | nonzero: [4, 9]
+19 | 1 | 1 | nonzero: []
+23 | 3 | 1 | nonzero: []
+29 | 7 | 7 | nonzero: [9, 12, 13, 16, 17, 20]
+31 | 3 | 1 | nonzero: []
+37 | 7 | 3 | nonzero: [10, 27]
+41 | 3 | 3 | nonzero: [15, 26]
+43 | 5 | 5 | nonzero: [4, 20, 23, 39]
+47 | 5 | 1 | nonzero: []
+53 | 11 | 11 | nonzero: [3, 4, 13, 23, 24, 29, 30, 40, 49, 50]
+59 | 5 | 1 | nonzero: []
+61 | 7 | 7 | nonzero: [2, 18, 30, 31, 43, 59]
+67 | 9 | 9 | nonzero: [4, 5, 8, 22, 45, 59, 62, 63]
+71 | 9 | 3 | nonzero: [10, 61]
+73 | 7 | 5 | nonzero: [23, 28, 45, 50]
+79 | 7 | 5 | nonzero: [5, 29, 50, 74]
+83 | 11 | 11 | nonzero: [4, 5, 19, 21, 28, 55, 62, 64, 78, 79]
+89 | 15 | 15 | nonzero: [1, 3, 4, 22, 27, 39, 44, 45, 50, 62, 67, 85, 86, 88]
+97 | 7 | 5 | nonzero: [26, 28, 69, 71]
+
+=== CRT test: which small rational c survive ALL primes' sieve? ===
+Small rational c (|m|,|n|<=50) surviving ALL 20 primes: 1
+First survivors: [0]
+
+(c=0 is the degenerate locus. Any OTHER survivor that is a genuine V_q(Q) point would
+ be a real PCP-relevant point; survivors that are NOT in V_q(Q) are sieve residue ghosts.)

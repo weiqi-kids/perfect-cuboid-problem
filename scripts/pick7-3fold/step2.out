@@ -1,0 +1,36 @@
+====================================================
+ Step 2: Singular locus of W
+====================================================
+F = (-X^2 - X)*m^4 + (4*Y^2 + (-4*X^3 - 2*X^2 + 2*X))*n^2*m^2 + (-X^2 - X)*n^4
+
+dF/dX = (-2*X - 1)*m^4 + (-12*X^2 - 4*X + 2)*n^2*m^2 + (-2*X - 1)*n^4
+
+dF/dY = 8*Y*n^2*m^2
+
+dF/dm = (-4*X^2 - 4*X)*m^3 + (8*Y^2 + (-8*X^3 - 4*X^2 + 4*X))*n^2*m
+
+dF/dn = (8*Y^2 + (-8*X^3 - 4*X^2 + 4*X))*n*m^2 + (-4*X^2 - 4*X)*n^3
+
+=== Y=0 slice ===
+F|_{Y=0} = (-X^2 - X)*m^4 + (-4*X^3 - 2*X^2 + 2*X)*n^2*m^2 + (-X^2 - X)*n^4
+  = -X(X+1) * [4 m^2 n^2 X + (m^2-n^2)^2]
+Check factorization: 0
+
+dF/dX|_{Y=0} = (-2*X - 1)*m^4 + (-12*X^2 - 4*X + 2)*n^2*m^2 + (-2*X - 1)*n^4
+dF/dm|_{Y=0} = (-4*X^2 - 4*X)*m^3 + (-8*X^3 - 4*X^2 + 4*X)*n^2*m
+dF/dn|_{Y=0} = (-8*X^3 - 4*X^2 + 4*X)*n*m^2 + (-4*X^2 - 4*X)*n^3
+
+Singular points on Y=0:
+  (a) X=0 line: requires m = ±n => q=0 (degenerate)
+  (b) X=-1 line: requires (m^2-n^2)^2 vanishing in dF/dX = 0 along this line
+       => m = ±n
+  (c) X=-q^2 locus: 2-torsion of E, becomes singular when?
+
+=== Summary of singular locus ===
+(S1) X=0, Y=0, m=±n (lines, q=0 degeneration)
+(S2) X=-1, Y=0, m^2 ∓ 2mn - n^2 = 0 (curves, irrational slopes)
+(S3) m=0 axis and n=0 axis (q=∞ degenerations)
+
+All singularities are at degenerate locus q ∈ {0, ∞}.
+Generic fiber E_PCP(q) for q ∉ {0,∞} is smooth.
+Singular locus has dimension ≤ 1 inside the 3-fold W.

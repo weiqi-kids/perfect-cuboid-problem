@@ -1,0 +1,26 @@
+=== Completing the square ===
+F6 = m^2+2mn-n^2 ; (m+n)^2 - 2n^2 = m**2 + 2*m*n - n**2  ; equal to F6: True
+F5 = m^2-2mn-n^2 ; (m-n)^2 - 2n^2 = m**2 - 2*m*n - n**2  ; equal to F5: True
+
+So with X=m+n: F6 = X^2 - 2 n^2  (norm form of Z[sqrt2])
+   with X=m-n: F5 = X^2 - 2 n^2
+
+=== Rational parametrization of the conic X^2 - 2 n^2 = k^2 ===
+Param A: X = s^2+2t^2, k = s^2-2t^2, n = 2 s t
+  Check X^2 - 2 n^2 - k^2 = 0  (should be 0)
+
+Param B: X = 2s^2+t^2, k = 2s^2-t^2, n = 2 s t
+  Check X^2 - 2 n^2 - k^2 = 0
+
+=== F6 = k^2 parametrization in (m,n) ===
+m = s^2 - 2 s t + 2 t^2,  n = 2 s t
+F6(m,n) = (s**2 - 2*t**2)**2
+  Is it a perfect square in s,t? sqrt: Abs(s**2 - 2*t**2)
+
+=== F5 = k^2 parametrization in (m,n) ===
+m = s^2 + 2 s t + 2 t^2,  n = 2 s t
+F5(m,n) = (s**2 - 2*t**2)**2
+  sqrt: Abs(s**2 - 2*t**2)
+
+NOTE: the param above yields n=2st (even). Solutions with n odd come from the
+other factorization of 2n^2; enumerated numerically in 05_pell_enumerate.gp.

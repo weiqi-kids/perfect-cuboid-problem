@@ -1,0 +1,25 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== A refined empirical bound (saturating prime-by-prime contributions) =====
+For each fiber, compute:
+  N_min = ω(conductor)
+  L_loc = sum over bad primes p of dim image (E(Q_p)/2E(Q_p)) in (Q_p*/Q_p*^2)^2
+Theory: dim Sel_2 = 2 + ω(Heron) - (codim of global in ambient)
+
+(m,n)   ω(N)  predict_2+2omN  dim_Sel2  diff
+Tested 186 fibers
+max ω(N) seen: 9
+
+===== Test: dim Sel_2 vs 2 + ω(sf(P*Q)) over LARGER range =====
+
+Tested 737 fibers (m <= 60)
+Max dim Sel_2: 5
+Max ω(sf(P*Q)): 5
+
+dim Sel_2 - (2 + ω(sf(PQ)))   count
+-5    1
+-4    35
+-3    183
+-2    301
+-1    168
+0    44
+1    5

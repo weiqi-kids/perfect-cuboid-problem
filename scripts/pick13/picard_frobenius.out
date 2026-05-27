@@ -1,0 +1,36 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== Picard rank estimation via Frobenius traces ===
+Format: p  #V'(F_p)  1+p^2  trace  trace/p
+p=3  #V'(F_p)=12  1+p^2=10  tr=2  tr/p=0.66666666666666666666666666666666666667
+p=5  #V'(F_p)=36  1+p^2=26  tr=10  tr/p=2.0000000000000000000000000000000000000
+p=7  #V'(F_p)=92  1+p^2=50  tr=42  tr/p=6.0000000000000000000000000000000000000
+p=11  #V'(F_p)=108  1+p^2=122  tr=-14  tr/p=-1.2727272727272727272727272727272727273
+p=13  #V'(F_p)=196  1+p^2=170  tr=26  tr/p=2.0000000000000000000000000000000000000
+
+=== Interpretation ===
+For K3 with b_2 = 22, Frobenius on H^2 has 22 eigenvalues
+alpha_i with |alpha_i| = p.
+Algebraic eigenvalues (Picard part): alpha = p * (root of unity).
+
+=== Bounds on rho_geom ===
+  p=3  trace=2  trace/p =0.66666666666666666666666666666666666667
+  p=5  trace=10  trace/p =2.0000000000000000000000000000000000000
+  p=7  trace=42  trace/p =6.0000000000000000000000000000000000000
+  p=11  trace=-14  trace/p =-1.2727272727272727272727272727272727273
+  p=13  trace=26  trace/p =2.0000000000000000000000000000000000000
+
+=== Notes on bounds ===
+The geometric Picard rank of V' can be lower-bounded by
+the Shioda-Tate computation for any elliptic fibration:
+  rho >= 2 + sum(m_v - 1) + MW_rank
+V' has 3 face fibrations pi_d, pi_e, pi_f.
+Generic rank of pi_d over Q(q) is 0 (from PARI/GP verification
+in PICK-1-K3-TATE-ATTACK.md).
+Bad fibers of pi_d: q in {0, infinity, +/- 1, +/- i}.
+
+Computational lower bound from sample data (PICK-1):
+  rho_geom(V') >= 6 (from p=7 trace data).
+
+Tate conjecture (unconditional, Madapusi Pera 2015):
+  rho_geom(V') = -ord_{s=1} L_2(s, V').
+This is computable in principle but requires the full L-function.

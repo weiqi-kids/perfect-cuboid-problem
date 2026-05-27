@@ -1,0 +1,16 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== #C'(F_7) explicit residue breakdown (sharpest Coleman prime) ===
+  t=0  f(t) mod 7=1  kronecker=1
+  t=1  f(t) mod 7=2  kronecker=1
+  t=2  f(t) mod 7=3  kronecker=-1
+  t=3  f(t) mod 7=6  kronecker=-1
+  t=4  f(t) mod 7=6  kronecker=-1
+  t=5  f(t) mod 7=3  kronecker=-1
+  t=6  f(t) mod 7=2  kronecker=1
+affine points = 6
+infinity points = 2 (deg 8, leading coeff 1 = square in F_7)
+TOTAL #C'(F_7) = 8
+Coleman bound = #C'(F_7) + 2g-2 = 8 + 4 = 12
+
+good reduction at 7: disc(f)=2^72*5^4, 7 does not divide => GOOD. 7>2g=6 => Coleman valid.

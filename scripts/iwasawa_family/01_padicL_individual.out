@@ -1,0 +1,7 @@
+# Track T5 - p-adic L-values L_p(E_PCP(q), 1)
+# Format: (m,n) q N rank p reduction a_p L_p_at_1 valuation walltime_s
+# Track T5 - p-adic L-values L_p(E_PCP(q), 1)
+# Format: (m,n) q N rank p reduction a_p L_p_at_1 valuation walltime_s
+(2,1) q=3/4 N=21 rank=0 p=5 red=good a_p=-2 L_p(1)=4 + 3*5 + 4*5^2 + O(5^3) val=0 t=0.01s
+(2,1) q=3/4 N=21 rank=0 p=11 red=good a_p=4 L_p(1)=1 + 2*11 + 4*11^2 + O(11^3) val=0 t=0.03s
+(3,2) q=5/12 N=1785 rank=0 p=11 red=good a_p=4 L_p(1)=8 + 5*11 + O(11^3) val=0 t=16.35s

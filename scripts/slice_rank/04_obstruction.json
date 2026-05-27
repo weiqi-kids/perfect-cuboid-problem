@@ -1,0 +1,142 @@
+[
+  {
+    "p": 3,
+    "V_size": 49,
+    "W_size": 75,
+    "by_degree": [
+      {
+        "deg": 1,
+        "num_monomials": 8,
+        "rank_V": 8,
+        "null_V": 0,
+        "rank_W": 8,
+        "null_W": 0,
+        "PCP_specific_obstruction_dim": 0
+      },
+      {
+        "deg": 2,
+        "num_monomials": 36,
+        "rank_V": 26,
+        "null_V": 10,
+        "rank_W": 27,
+        "null_W": 9,
+        "PCP_specific_obstruction_dim": 1
+      },
+      {
+        "deg": 3,
+        "num_monomials": 113,
+        "rank_V": 43,
+        "null_V": 70,
+        "rank_W": 51,
+        "null_W": 62,
+        "PCP_specific_obstruction_dim": 8
+      },
+      {
+        "deg": 4,
+        "num_monomials": 274,
+        "rank_V": 49,
+        "null_V": 225,
+        "rank_W": 69,
+        "null_W": 205,
+        "PCP_specific_obstruction_dim": 20
+      },
+      {
+        "deg": 5,
+        "num_monomials": 540,
+        "rank_V": 49,
+        "null_V": 491,
+        "rank_W": 75,
+        "null_W": 465,
+        "PCP_specific_obstruction_dim": 26
+      },
+      {
+        "deg": 6,
+        "num_monomials": 897,
+        "rank_V": 49,
+        "null_V": 848,
+        "rank_W": 75,
+        "null_W": 822,
+        "PCP_specific_obstruction_dim": 26
+      },
+      {
+        "deg": 7,
+        "num_monomials": 1290,
+        "rank_V": 49,
+        "null_V": 1241,
+        "rank_W": 75,
+        "null_W": 1215,
+        "PCP_specific_obstruction_dim": 26
+      },
+      {
+        "deg": 8,
+        "num_monomials": 1647,
+        "rank_V": 49,
+        "null_V": 1598,
+        "rank_W": 75,
+        "null_W": 1572,
+        "PCP_specific_obstruction_dim": 26
+      }
+    ]
+  },
+  {
+    "p": 5,
+    "V_size": 193,
+    "W_size": 725,
+    "by_degree": [
+      {
+        "deg": 1,
+        "num_monomials": 8,
+        "rank_V": 8,
+        "null_V": 0,
+        "rank_W": 8,
+        "null_W": 0,
+        "PCP_specific_obstruction_dim": 0
+      },
+      {
+        "deg": 2,
+        "num_monomials": 36,
+        "rank_V": 32,
+        "null_V": 4,
+        "rank_W": 33,
+        "null_W": 3,
+        "PCP_specific_obstruction_dim": 1
+      },
+      {
+        "deg": 3,
+        "num_monomials": 120,
+        "rank_V": 77,
+        "null_V": 43,
+        "rank_W": 91,
+        "null_W": 29,
+        "PCP_specific_obstruction_dim": 14
+      },
+      {
+        "deg": 4,
+        "num_monomials": 330,
+        "rank_V": 125,
+        "null_V": 205,
+        "rank_W": 185,
+        "null_W": 145,
+        "PCP_specific_obstruction_dim": 60
+      },
+      {
+        "deg": 5,
+        "num_monomials": 785,
+        "rank_V": 166,
+        "null_V": 619,
+        "rank_W": 308,
+        "null_W": 477,
+        "PCP_specific_obstruction_dim": 142
+      },
+      {
+        "deg": 6,
+        "num_monomials": 1660,
+        "rank_V": 190,
+        "null_V": 1470,
+        "rank_W": 443,
+        "null_W": 1217,
+        "PCP_specific_obstruction_dim": 253
+      }
+    ]
+  }
+]

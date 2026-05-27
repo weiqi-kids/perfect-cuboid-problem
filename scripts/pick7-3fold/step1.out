@@ -1,0 +1,26 @@
+====================================================
+ Step 1: Define 3-fold W: F(X,Y,m,n) = 0
+====================================================
+
+F_min(X,Y,m,n) [minimal clearing by (2mn)^2]:
+(-X^2 - X)*m^4 + (4*Y^2 + (-4*X^3 - 2*X^2 + 2*X))*n^2*m^2 + (-X^2 - X)*n^4
+
+Degrees:
+  in X: 3
+  in Y: 2
+  in m: 4
+  in n: 4
+  total: 4
+
+Expanded form (collected by X):
+(-X^2 - X)*m^4 + (4*Y^2 + (-4*X^3 - 2*X^2 + 2*X))*n^2*m^2 + (-X^2 - X)*n^4
+
+F_6 (cleared by (2mn)^6, will have extra (2mn)^4 factor):
+Coefficient of Y^2: 64 m^6 n^6
+Note: F_6 = 16 m^4 n^4 * Fmin (up to expansion)
+F_6 - 16 m^4 n^4 * F_min = 0
+
+So we use F = Fmin = 4 m^2 n^2 Y^2 - 4 m^2 n^2 X^2 (X+1) - (m^2-n^2)^2 X (X+1)
+
+F has total degree 7 (from 4 m^2 n^2 X^3 term).
+In affine A^4, V(F) is a 3-dimensional hypersurface.

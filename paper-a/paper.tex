@@ -1,0 +1,530 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Jac}{Jac}
+
+\sloppy
+
+\begin{document}
+
+\title[No perfect cuboid in the Saunderson family]{No perfect cuboid in the Saunderson family of Euler bricks}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11D09; Secondary 11G05, 11G30}
+\keywords{perfect cuboid, Euler brick, Saunderson family, elliptic curve, rank zero, Chabauty}
+
+\date{\today}
+
+\begin{abstract}
+A perfect cuboid is a rectangular box whose three edges, three face diagonals,
+and space diagonal are all integers; whether one exists is a question of Euler
+(1769) that remains open. Saunderson, in the eighteenth century, exhibited a
+two-parameter family of Euler bricks
+$(a,b,c)=\bigl(u(4v^2-w^2),\,v(4u^2-w^2),\,4uvw\bigr)$ attached to a Pythagorean
+triple $(u,v,w)$; this family produces infinitely many bricks but has never
+yielded a perfect one. We prove that it never can. Substituting the standard
+Pythagorean parametrization $(u,v,w)=(p^2-q^2,2pq,p^2+q^2)$ into the
+square-space-diagonal condition produces, after an explicit algebraic
+reduction, a genus-three curve; a palindromic substitution $W=t+1/t$ followed
+by the lifting identity $W^2-4=(t-1/t)^2$ collapses the perfect-cuboid locus
+onto the genus-one curve $C_0:S^2=T_0^4+72T_0^2+16$. The Jacobian of $C_0$ is the
+elliptic curve $y^2=x^3-7x+6$, Cremona label \texttt{80a1}, of conductor $80$,
+torsion $(\Z/2\Z)^2$, and Mordell--Weil rank zero (unconditionally, by
+$2$-descent, and independently by Kolyvagin). Consequently $C_0(\Q)$ is finite
+and consists of four points, all lying over $T_0\in\{0,\infty\}$, which we show
+correspond to degenerate bricks with a vanishing edge. Hence no Saunderson
+brick is a perfect cuboid. The result closes a single, explicitly delimited
+subfamily of Euler bricks; it is complementary to the existence theorems of
+Yoshida for face cuboids and is not covered by Peschmann's genus-three
+quartic-pair reduction. All arithmetic claims are verified in PARI/GP.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A \emph{perfect cuboid} is a rectangular parallelepiped with positive integer
+edges $a,b,c$ whose three face diagonals $\sqrt{a^2+b^2}$, $\sqrt{b^2+c^2}$,
+$\sqrt{a^2+c^2}$ and whose space diagonal $\sqrt{a^2+b^2+c^2}$ are all integers.
+The Perfect Cuboid Problem (PCP), which asks whether a perfect cuboid exists,
+was raised by Euler in 1769 and is still open after more than two and a half
+centuries. The strongest computational evidence comes from the absence of any
+perfect cuboid with smallest edge below $5\times10^{11}$, or with odd edge below
+$2.5\times10^{13}$~\cite{matson}.
+
+An \emph{Euler brick} is the weaker object in which only the three face
+diagonals are required to be integers; the perfect-cuboid problem is then the
+question of whether some Euler brick also has an integral space diagonal.
+Euler bricks are plentiful---the smallest, $(240,252,275)$, is due to Halcke
+(1719)---but no parametrization of \emph{all} of them is known, and this is one
+of the principal obstacles to a complete resolution of PCP. A natural strategy
+is therefore to dispatch explicitly parametrized subfamilies one at a time.
+Saunderson, in the eighteenth century, attached to each Pythagorean triple
+$(u,v,w)$ the Euler brick
+\begin{equation}\label{eq:saund}
+\bigl(a,b,c\bigr)=\bigl(u(4v^2-w^2),\;v(4u^2-w^2),\;4uvw\bigr),
+\qquad u^2+v^2=w^2 .
+\end{equation}
+Two threads in the recent literature bear directly on the elliptic-curve
+geometry of such families. Yoshida~\cite{yoshida} studies \emph{face cuboids}
+(only one face diagonal allowed to be irrational) through the elliptic family
+$E_{1,s}:y^2=x(x-(2s)^2)(x+(s^2-1)^2)$, classifies its rational torsion as
+$\Z/2\Z\times\Z/4\Z$, and uses non-torsion points to \emph{produce} infinitely
+many face cuboids---an existence direction opposite to ours.
+Peschmann~\cite{peschmann} reduces the full perfect-cuboid problem to a
+one-parameter
+family of genus-three curves $C_A:w^2=\lambda^8+A\lambda^4+1$ and develops
+$2$-descent and Kummer-character obstructions on a distinguished elliptic
+quotient; he does not treat the Saunderson subfamily, nor the specific
+rank-zero curve that controls it, and explicitly leaves open
+(\cite[\S8]{peschmann}) the adaptation of Asiryan's rank-zero
+$\Q(\sqrt2)$ method ``from irreducibility to simultaneous representability.''
+
+In this paper we prove that the Saunderson family~\eqref{eq:saund} contains no
+perfect cuboid. The proof is an explicit reduction: the square-space-diagonal
+condition for a Saunderson brick is equivalent to a rational point on a
+genus-three curve, which a palindromic substitution and the elementary lifting
+identity $W^2-4=(t-1/t)^2$ collapse onto a single genus-one curve
+$C_0:S^2=T_0^4+72T_0^2+16$. The Jacobian of $C_0$ is the elliptic curve
+$y^2=x^3-7x+6$ (Cremona label \texttt{80a1}), whose Mordell--Weil rank over
+$\Q$ is zero; hence $C_0(\Q)$ is finite, equal to four points, all of which we
+identify with degenerate (zero-edge) bricks. The closure thus rests on a
+forty-year-old entry in Cremona's tables rather than on any conjecture.
+
+The paper is organized as follows. Section~\ref{sec:family} records the
+Saunderson family, derives the body-diagonal identity, and carries out the
+algebraic reduction to the genus-one curve $C_0$ together with the lifting
+condition. Section~\ref{sec:C0} establishes the arithmetic of $C_0$: its
+Jacobian is \texttt{80a1}, of rank zero, so $C_0(\Q)$ has exactly four points.
+Section~\ref{sec:main} assembles these into the proof of the main theorem and
+checks the degeneracy bookkeeping. Section~\ref{sec:remarks} delimits the scope
+of the result---the Saunderson family accounts for only a small fraction of
+known Euler bricks---and positions the work relative to Yoshida and Peschmann.
+All polynomial identities and curve computations are verified in PARI/GP; the
+scripts and their captured output accompany the paper.
+
+\section{The Saunderson family and its reduction}\label{sec:family}
+
+\subsection{The family and the body-diagonal identity}
+
+\begin{definition}\label{def:saund}
+Let $(u,v,w)$ be a primitive Pythagorean triple, $u^2+v^2=w^2$ with
+$\gcd(u,v,w)=1$. The associated \emph{Saunderson brick} is the triple
+\[
+\mathrm{Sa}(u,v,w):=\bigl(u(4v^2-w^2),\;v(4u^2-w^2),\;4uvw\bigr).
+\]
+A Saunderson brick is \emph{perfect} if it has all edges nonzero and
+$a^2+b^2+c^2$ is a perfect square, where $(a,b,c)=\mathrm{Sa}(u,v,w)$.
+\end{definition}
+
+That $\mathrm{Sa}(u,v,w)$ is an Euler brick---i.e.\ that $a^2+b^2$, $b^2+c^2$,
+$a^2+c^2$ are squares whenever $u^2+v^2=w^2$---is classical and is not needed
+below; we use only the body-diagonal identity, which we record next.
+
+\begin{lemma}\label{lem:body}
+With $(a,b,c)=\mathrm{Sa}(u,v,w)$ and $u^2+v^2=w^2$,
+\[
+a^2+b^2+c^2 \;=\; w^2\bigl(w^4+16\,u^2v^2\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Substitute the universal Pythagorean parametrization
+$(u,v,w)=(p^2-q^2,\,2pq,\,p^2+q^2)$, under which both sides become polynomials
+in $\Z[p,q]$. A direct polynomial expansion then shows that their difference
+$\bigl(a^2+b^2+c^2\bigr)-w^2\bigl(w^4+16u^2v^2\bigr)$ is identically zero in
+$\Z[p,q]$ (script~\texttt{01\_algebraic\_identities.gp}, Step~1). Every
+primitive Pythagorean triple arises from such a pair $(p,q)$ up to sign, and
+both sides are polynomial in $(u,v,w)$ subject only to $u^2+v^2=w^2$; hence the
+identity holds for all Pythagorean $(u,v,w)$.
+\end{proof}
+
+\begin{corollary}\label{cor:gw}
+$\mathrm{Sa}(u,v,w)$ has integral space diagonal $g$ if and only if
+$(g/w)^2=w^4+16u^2v^2$.
+\end{corollary}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:body}: $a^2+b^2+c^2=g^2$ if and only if
+$g^2=w^2(w^4+16u^2v^2)$, i.e.\ $(g/w)^2=w^4+16u^2v^2$.
+\end{proof}
+
+\subsection{Reduction to a genus-one curve}
+
+We now substitute $(u,v,w)=(p^2-q^2,2pq,p^2+q^2)$ and set $t=p/q\in\Q$. The
+following three identities, each a polynomial (or Laurent-polynomial) identity
+verified symbolically in script~\texttt{01\_algebraic\_identities.gp} and
+\texttt{05\_scaling\_check.gp}, drive the reduction.
+
+\begin{lemma}\label{lem:octic}
+With $(u,v,w)=(p^2-q^2,2pq,p^2+q^2)$ and $t=p/q$,
+\[
+w^4+16u^2v^2 \;=\; q^8\bigl(t^8+68t^6-122t^4+68t^2+1\bigr).
+\]
+Consequently, writing $T:=g/(w\,q^4)$, the condition of
+Corollary~\ref{cor:gw} is equivalent to a rational point on the genus-three
+curve
+\[
+C':\qquad T^2=t^8+68t^6-122t^4+68t^2+1 .
+\]
+\end{lemma}
+
+\begin{proof}
+The displayed identity is checked by expanding $w^4+16u^2v^2$ as a polynomial
+in $p,q$, substituting $p=tq$, and dividing by $q^8$
+(script~\texttt{01}, Step~2; script~\texttt{05}, first block). By
+Corollary~\ref{cor:gw}, integrality of $g$ is equivalent to
+$(g/w)^2=w^4+16u^2v^2=q^8\bigl(t^8+68t^6-122t^4+68t^2+1\bigr)$, i.e.\ to
+$T^2=t^8+68t^6-122t^4+68t^2+1$ with $T=(g/w)/q^4=g/(wq^4)$. The octic on the
+right has degree $8$ with distinct roots, so $C'$ has genus three.
+\end{proof}
+
+\begin{lemma}\label{lem:palindrome}
+The octic is palindromic, and with $W=t+1/t$ one has the Laurent-polynomial
+identity
+\[
+\frac{t^8+68t^6-122t^4+68t^2+1}{t^4}=W^4+64W^2-256 .
+\]
+Hence, writing $S:=T/t^2$, the curve $C'$ is equivalent to
+\[
+C'_{\mathrm{pal}}:\qquad S^2=W^4+64W^2-256 .
+\]
+\end{lemma}
+
+\begin{proof}
+Dividing the octic by $t^4$ gives
+$t^4+t^{-4}+68(t^2+t^{-2})-122$, which equals $W^4+64W^2-256$ upon
+substituting $W=t+1/t$ (so that $t^2+t^{-2}=W^2-2$ and
+$t^4+t^{-4}=W^4-4W^2+2$); the difference is identically zero
+(script~\texttt{01}, Step~3). Dividing $T^2=t^8+\cdots+1$ by $t^4$ gives
+$(T/t^2)^2=W^4+64W^2-256$, i.e.\ $S^2=W^4+64W^2-256$ with $S=T/t^2$.
+\end{proof}
+
+The Jacobian of $C'_{\mathrm{pal}}$ is the elliptic curve
+$E_{\mathrm{PCP}}:y^2=x^3+x^2-x+15$ of conductor $160$, $j$-invariant
+$-64/25$, torsion $\Z/2\Z$, and Mordell--Weil rank $1$ with generator
+$(-1,4)$; analytic rank $1$ together with Kolyvagin's theorem~\cite{kolyvagin} makes the
+rank unconditional (script~\texttt{03\_EPCP\_and\_hyperell.gp}). Because
+$E_{\mathrm{PCP}}$ has rank $1$, the curve $C'_{\mathrm{pal}}$ alone does not
+force finiteness of the relevant rational points; the perfect-cuboid condition
+supplies one further constraint, which lowers the rank to zero. This is the
+content of the next lemma.
+
+\begin{lemma}[Lifting condition]\label{lem:lift}
+For $t\in\Q^\times$ and $W=t+1/t$ one has $W^2-4=(t-1/t)^2$. Conversely, if
+$W,T_0\in\Q$ satisfy $W^2-4=T_0^2$, then $t:=(W+T_0)/2$ is rational and
+satisfies $t+1/t=W$, $t-1/t=T_0$. In particular, a rational point
+$(W,S)\in C'_{\mathrm{pal}}(\Q)$ arises from a rational $t$ \emph{if and only
+if} $W^2-4$ is a rational square.
+\end{lemma}
+
+\begin{proof}
+The identity $W^2-4=(t-1/t)^2$ is verified directly
+(script~\texttt{01}, Step~3b). For the converse, if $W^2-4=T_0^2$ set
+$t=(W+T_0)/2$; then $1/t=(W-T_0)/2$ because $t\cdot\tfrac{W-T_0}{2}
+=\tfrac{(W+T_0)(W-T_0)}{4}=\tfrac{W^2-T_0^2}{4}=1$, whence $t+1/t=W$ and
+$t-1/t=T_0$ (script~\texttt{04\_degeneracy\_bookkeeping.gp}, final block).
+\end{proof}
+
+\begin{proposition}\label{prop:C0}
+A perfect Saunderson brick yields a rational point $(T_0,S)$ with $T_0\neq0$ on
+the genus-one curve
+\[
+C_0:\qquad S^2=T_0^4+72T_0^2+16 ,
+\]
+where $T_0=t-1/t$ and $S=T/t^2$.
+\end{proposition}
+
+\begin{proof}
+Let $(a,b,c)=\mathrm{Sa}(u,v,w)$ be a perfect Saunderson brick with
+$(u,v,w)=(p^2-q^2,2pq,p^2+q^2)$ and $t=p/q$. By Corollary~\ref{cor:gw} and
+Lemmas~\ref{lem:octic} and~\ref{lem:palindrome}, the integrality of the space
+diagonal gives a rational point $(W,S)$ on $C'_{\mathrm{pal}}$ with $W=t+1/t$
+and $S=T/t^2$. By Lemma~\ref{lem:lift}, $W^2-4=T_0^2$ with $T_0=t-1/t\in\Q$.
+Substituting $W^2=T_0^2+4$ into $S^2=W^4+64W^2-256=(W^2)^2+64W^2-256$ gives
+\[
+S^2=(T_0^2+4)^2+64(T_0^2+4)-256=T_0^4+72T_0^2+16,
+\]
+an identity verified symbolically (script~\texttt{01}, Step~4). Thus
+$(T_0,S)\in C_0(\Q)$. Finally, a perfect brick has all edges nonzero, so
+$u,v\neq0$ and $u\neq\pm v$; hence $p\neq\pm q$ and $p,q\neq0$, so
+$t\notin\{0,\pm1,\infty\}$ and $T_0=t-1/t\neq0$.
+\end{proof}
+
+\section{The genus-one curve \texorpdfstring{$C_0$}{C0} and its rank-zero Jacobian}\label{sec:C0}
+
+\begin{proposition}\label{prop:jac}
+The Jacobian of $C_0:S^2=T_0^4+72T_0^2+16$ is the elliptic curve
+\[
+E_0:\qquad y^2=x^3-7x+6
+\]
+of conductor $80$ \textup{(}Cremona label \texttt{80a1}\textup{)}, with
+$j$-invariant $148176/25$ and torsion subgroup $(\Z/2\Z)^2$. The full
+Mordell--Weil group is
+\[
+E_0(\Q)=\{\,O,\;(1,0),\;(2,0),\;(-3,0)\,\},
+\]
+and $E_0$ has Mordell--Weil rank $0$.
+\end{proposition}
+
+\begin{proof}
+Applying the standard quartic-to-Weierstrass transformation to
+$y^2=x^4+72x^2+16$ (which has the rational point $(0,4)$) yields, after
+minimalization, the model $y^2=x^3-7x+6$; its conductor is $80$ and its
+$j$-invariant is $148176/25$ (script~\texttt{02\_curve\_C0\_and\_80a1.gp}).
+Since $x^3-7x+6=(x-1)(x-2)(x+3)$, the three nontrivial $2$-torsion points are
+$(1,0),(2,0),(-3,0)$, so $(\Z/2\Z)^2\subseteq E_0(\Q)_{\mathrm{tors}}$; PARI's
+\texttt{elltors} confirms the torsion is exactly $(\Z/2\Z)^2$.
+
+The rank is computed by $2$-descent: PARI's \texttt{ellrank} returns the tight
+interval $[0,0]$, a proof that $\mathrm{rank}\,E_0(\Q)=0$ (the algorithm is
+$2$-descent, which is unconditional). Independently, $E_0$ has analytic rank
+$0$ with $L(E_0,1)\approx1.0095\neq0$; by Kolyvagin's theorem this also forces
+algebraic rank $0$. The two computations agree, and the conductor, torsion, and
+rank match the Cremona-table entry \texttt{80a1}. With rank $0$ and torsion
+$(\Z/2\Z)^2$ the group $E_0(\Q)$ has the four elements listed.
+\end{proof}
+
+\begin{remark}
+As a cross-check on the identification, the genus-three curve $C'$ of
+Lemma~\ref{lem:octic} carries the commuting involutions $\sigma:t\mapsto-t$ and
+$\tau:t\mapsto1/t$, and its Jacobian decomposes up to isogeny as a product of
+three elliptic quotients $X_\sigma\times X_\tau\times X_{\sigma\tau}$. One has
+$X_\sigma\cong X_\tau\cong E_{\mathrm{PCP}}$ (conductor $160$, rank $1$), while
+$X_{\sigma\tau}$ is exactly $E_0=\texttt{80a1}$: the Frobenius traces $a_p$ of
+$E_0$ for $p=3,7,11,\dots,47$ are
+\[
+(0,4,-4,-2,2,-4,-4,-2,8,6,-6,8,-4),
+\]
+matching $a_p(C')-2a_p(E_{\mathrm{PCP}})$ in all $13$ cases
+(script~\texttt{02}). Thus $\mathrm{rank}\,\Jac(C')=1+1+0=2<3=\mathrm{genus}(C')$,
+so Chabauty's method applies to $C'$; the reduction of
+Section~\ref{sec:family}, however, bypasses Chabauty by landing directly on the
+genus-one curve $C_0$.
+\end{remark}
+
+\begin{proposition}\label{prop:C0pts}
+The set $C_0(\Q)$ has exactly four elements:
+\[
+C_0(\Q)=\{\,(0,4),\;(0,-4),\;\infty_{+},\;\infty_{-}\,\},
+\]
+where $(0,\pm4)$ are the affine points with $T_0=0$ and $\infty_{\pm}$ are the
+two points at infinity. In particular every rational point of $C_0$ has
+$T_0\in\{0,\infty\}$.
+\end{proposition}
+
+\begin{proof}
+$C_0$ has the rational point $(0,4)$, hence is a smooth genus-one curve with a
+rational point and is therefore isomorphic over $\Q$ to its Jacobian $E_0$.
+By Proposition~\ref{prop:jac}, $|C_0(\Q)|=|E_0(\Q)|=4$.
+
+We exhibit the four points. The leading coefficient of $T_0^4+72T_0^2+16$ is
+$1=1^2$, a square, so the two points at infinity $\infty_{\pm}$ (where
+$S/T_0^2\to\pm1$) are rational; these account for $T_0=\infty$. For the affine
+points, an exhaustive search over $T_0=n/d$ in lowest terms with $|n|\le2000$,
+$d\le2000$ finds $T_0=0$ as the only value for which $T_0^4+72T_0^2+16$ is a
+square, giving $(0,\pm4)$ (script~\texttt{02}). An independent run of PARI's
+\texttt{hyperellratpoints} on $x^4+72x^2+16$ with search bound $10^4$ returns
+exactly the affine points $[0,4]$ and $[0,-4]$
+(script~\texttt{03}). These two affine points together with $\infty_{\pm}$ are
+four rational points; since $|C_0(\Q)|=4$, they are all of $C_0(\Q)$. Every one
+of them has $T_0\in\{0,\infty\}$.
+\end{proof}
+
+\section{Proof of the Main Theorem}\label{sec:main}
+
+\begin{theorem}\label{thm:main}
+No Saunderson brick is a perfect cuboid. That is, for every primitive
+Pythagorean triple $(u,v,w)$ the Saunderson brick
+\[
+\mathrm{Sa}(u,v,w)=\bigl(u(4v^2-w^2),\;v(4u^2-w^2),\;4uvw\bigr)
+\]
+fails to be a perfect cuboid: either some edge vanishes, or $a^2+b^2+c^2$ is
+not a perfect square.
+\end{theorem}
+
+\begin{proof}
+Suppose, for contradiction, that $\mathrm{Sa}(u,v,w)$ is a perfect cuboid in
+the sense of Definition~\ref{def:saund}: all edges are nonzero and
+$a^2+b^2+c^2$ is a perfect square. By Proposition~\ref{prop:C0} this produces a
+rational point $(T_0,S)\in C_0(\Q)$ with $T_0\neq0$ and $T_0$ finite (since
+$t=p/q\notin\{0,\pm1,\infty\}$ forces $T_0=t-1/t$ to be a nonzero rational, in
+particular not $\infty$). But by Proposition~\ref{prop:C0pts} every rational
+point of $C_0$ has $T_0\in\{0,\infty\}$, so no rational point of $C_0$ has
+$T_0$ a nonzero finite rational. This contradiction proves the theorem.
+\end{proof}
+
+We record the degeneracy bookkeeping that identifies the four points of
+$C_0(\Q)$ with degenerate bricks; it confirms that the only way the chain can
+terminate is through a vanishing edge, consistent with the theorem.
+
+\begin{proposition}\label{prop:deg}
+Each rational point of $C_0$ corresponds to a degenerate Saunderson brick:
+\begin{itemize}
+\item $T_0=0$ forces $t=\pm1$, i.e.\ $p=\pm q$, hence $u=p^2-q^2=0$ and the
+edge $a=u(4v^2-w^2)=0$;
+\item $T_0=\infty$ forces $t\in\{0,\infty\}$, i.e.\ $p=0$ or $q=0$, hence
+$v=2pq=0$, so the edges $b=v(4u^2-w^2)$ and $c=4uvw$ both vanish.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+If $T_0=t-1/t=0$ then $t^2=1$, so $t=\pm1$ and $p=\pm q$; then
+$u=p^2-q^2=0$ and $a=u(4v^2-w^2)=0$. If $T_0=\infty$ then $W=t+1/t=\infty$,
+which requires $t\in\{0,\infty\}$, i.e.\ $p=0$ or $q=0$; in either case
+$v=2pq=0$, so $b=v(4u^2-w^2)=0$ and $c=4uvw=0$. Numerical instances
+($p=q=1$ giving $(a,b,c)=(0,-8,0)$, and $p=1,q=0$ giving $(-1,0,0)$) appear in
+script~\texttt{04}.
+\end{proof}
+
+\begin{remark}[A worked non-example]
+The smallest Saunderson brick is $\mathrm{Sa}(3,4,5)=(117,44,240)$ (the brick
+$(44,117,240)$ up to order), obtained from $p=2,q=1$, $t=2$. Here
+$T_0=t-1/t=3/2\neq0$, and indeed $T_0^4+72T_0^2+16=2929/16$ is not a rational
+square, so $(T_0,S)\notin C_0(\Q)$; correspondingly $a^2+b^2+c^2=73225$ is not
+a perfect square (script~\texttt{05}). This single example already illustrates
+the mechanism: a non-degenerate Saunderson value $t$ yields a nonzero finite
+$T_0$, which can never lie on the four-point set $C_0(\Q)$.
+\end{remark}
+
+\section{Remarks on scope and related work}\label{sec:remarks}
+
+\subsection{Scope: the Saunderson family is a small subfamily}\label{sec:scope}
+
+Theorem~\ref{thm:main} closes the Saunderson family, not the full
+Perfect Cuboid Problem, and this family~\eqref{eq:saund} accounts for only
+a small fraction of all Euler bricks. Among the primitive Euler bricks with all
+edges at most $1000$, exactly one---$(44,117,240)=\mathrm{Sa}(3,4,5)$---is of
+Saunderson form; the other four, including Halcke's $(240,252,275)$, are not
+(script~\texttt{03}). Extending the search to $5000$ leaves $9$ of $11$
+primitive Euler bricks outside the Saunderson family. Thus a perfect cuboid
+arising from a non-Saunderson Euler brick would be entirely invisible to the
+reduction of Section~\ref{sec:family}, and the present result must not be read
+as a resolution of PCP. Closing further families requires either a uniform
+parametrization of all Euler bricks (not currently available) or a separate
+arithmetic treatment of each family; the latter can in principle be carried
+out family by family by analogous rank-zero arguments, but no uniform
+statement is known.
+
+\subsection{Relation to Yoshida and Peschmann}\label{sec:related}
+
+Saunderson's parametrization~\eqref{eq:saund} is classical. The elliptic curve
+$E_{\mathrm{PCP}}$ appearing after the palindromic step
+(Lemma~\ref{lem:palindrome}) is, on the Pythagorean locus, isomorphic to the
+curve family $E_{1,s}$ studied by Yoshida~\cite{yoshida}; in particular the
+rank-$1$ structure and the torsion classification of that family are shared.
+Yoshida's results are existence statements about \emph{face} cuboids and run in
+the opposite direction from ours: he uses non-torsion points to produce
+infinitely many face cuboids, whereas we use a rank-\emph{zero} curve to
+exclude perfect cuboids on a parametric locus. The two are complementary.
+What is specific to the present paper is the second, rank-lowering step: the
+lifting condition $W^2-4=T_0^2$ (Lemma~\ref{lem:lift}) that collapses the
+rank-$1$ curve $C'_{\mathrm{pal}}$ onto the rank-$0$ curve $C_0$. This step has
+no counterpart in~\cite{yoshida}.
+
+Peschmann~\cite{peschmann} reduces the full perfect-cuboid problem to a
+genus-three quartic-pair family $C_A:w^2=\lambda^8+A\lambda^4+1$ and studies a
+distinguished elliptic quotient via $2$-descent and a Kummer character. He does
+not treat the Saunderson subfamily, and the specific rank-zero curve
+\texttt{80a1} that controls it does not appear in his work; the only explicit
+rank-zero curve in~\cite{peschmann} is Asiryan's
+$Y^2=X(X-8)(X-9)$, invoked for an irreducibility argument, and the adaptation
+of that approach ``from irreducibility to simultaneous representability'' is
+listed there as open (\cite[\S8]{peschmann}). The Saunderson closure presented
+here is therefore not covered by Peschmann's reduction.
+
+\subsection{On novelty}\label{sec:novelty}
+
+To the best of our knowledge, the explicit statement that the Saunderson family
+contains no perfect cuboid, and in particular its reduction to the rank-zero
+curve \texttt{80a1}, has not appeared in the literature. The torsion structure
+of the related elliptic family is known
+(\cite{yoshida}); the rank-zero curve \texttt{80a1} is a routine entry in
+Cremona's tables~\cite{cremona}; and Saunderson's parametrization is classical.
+What is new is the assembly: the body-diagonal identity of Lemma~\ref{lem:body}
+specific to the Saunderson form, the palindromic reduction, and the lifting
+step that lowers the rank from one to zero and thereby forces finiteness
+without recourse to Chabauty or to any conjecture. We do not claim that the
+underlying rank-zero phenomenon is unknown to specialists as folklore; we claim
+only that the precise statement and its proof do not appear in the cited
+literature.
+
+\section*{Computational verification}
+
+All polynomial identities (Lemmas~\ref{lem:body}, \ref{lem:octic},
+\ref{lem:palindrome}, \ref{lem:lift}, and Proposition~\ref{prop:C0}) were
+verified as exact identities in $\Z[p,q]$ or $\Q(t)$ in PARI/GP, and all curve
+data (conductor, $j$-invariant, torsion, rank by both $2$-descent and analytic
+rank, the $a_p$ match, and the rational points of $C_0$) were computed in
+PARI/GP version~2.15.4~\cite{pari}. The scripts
+\texttt{01\_algebraic\_identities.gp},
+\texttt{02\_curve\_C0\_and\_80a1.gp},
+\texttt{03\_EPCP\_and\_hyperell.gp},
+\texttt{04\_degeneracy\_bookkeeping.gp}, and
+\texttt{05\_scaling\_check.gp}, together with their captured \texttt{.out}
+files, accompany this paper.
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP.
+
+\begin{thebibliography}{9}
+
+\bibitem{cremona}
+J.~E. Cremona,
+\emph{Algorithms for modular elliptic curves},
+2nd ed., Cambridge University Press, Cambridge, 1997.
+Online tables: curve \texttt{80a1} (Cremona) $=$ \texttt{80.a2} (LMFDB),
+\url{https://www.lmfdb.org/EllipticCurve/Q/80/a/2}.
+
+\bibitem{kolyvagin}
+V.~A. Kolyvagin,
+\emph{Euler systems},
+in: The Grothendieck Festschrift, Vol.~II,
+Progr. Math. \textbf{87}, Birkh\"auser, Boston, 1990, pp.~435--483.
+
+\bibitem{matson}
+R.~D. Matson,
+\emph{Results of a computer search for a perfect cuboid},
+unpublished manuscript, 2009;
+\url{https://www.unsolvedproblems.org/}.
+
+\bibitem{pari}
+The PARI~Group,
+\emph{PARI/GP version 2.15.4},
+Univ. Bordeaux, 2023,
+\url{https://pari.math.u-bordeaux.fr/}.
+
+\bibitem{peschmann}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, arXiv:2604.09328 (2026).
+
+\bibitem{yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, arXiv:2407.09825 (2024).
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,78 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+=== |V_q(F_p)| for rank-3 fibers ===
+
+--- (m,n) = (22,17)  q = 195/748 ---
+  p = 5    bad reduction (skip)
+  p = 7    bad reduction (skip)
+  p = 11    bad reduction (skip)
+  p = 13    bad reduction (skip)
+  p = 17    bad reduction (skip)
+  p = 19    |V_q(F_p)|_aff = 8
+  p = 23    bad reduction (skip)
+  p = 29    |V_q(F_p)|_aff = 32
+  p = 31    |V_q(F_p)|_aff = 24
+  p = 37    |V_q(F_p)|_aff = 32
+  p = 41    bad reduction (skip)
+  p = 43    |V_q(F_p)|_aff = 40
+  p = 47    |V_q(F_p)|_aff = 40
+
+--- (m,n) = (35,22)  q = 741/1540 ---
+  p = 5    bad reduction (skip)
+  p = 7    bad reduction (skip)
+  p = 11    bad reduction (skip)
+  p = 13    bad reduction (skip)
+  p = 17    bad reduction (skip)
+  p = 19    bad reduction (skip)
+  p = 23    |V_q(F_p)|_aff = 24
+  p = 29    |V_q(F_p)|_aff = 16
+  p = 31    |V_q(F_p)|_aff = 24
+  p = 37    |V_q(F_p)|_aff = 32
+  p = 41    |V_q(F_p)|_aff = 48
+  p = 43    |V_q(F_p)|_aff = 24
+  p = 47    bad reduction (skip)
+
+--- (m,n) = (37,26)  q = 693/1924 ---
+  p = 5    bad reduction (skip)
+  p = 7    bad reduction (skip)
+  p = 11    bad reduction (skip)
+  p = 13    bad reduction (skip)
+  p = 17    |V_q(F_p)|_aff = 16
+  p = 19    |V_q(F_p)|_aff = 8
+  p = 23    |V_q(F_p)|_aff = 24
+  p = 29    |V_q(F_p)|_aff = 32
+  p = 31    |V_q(F_p)|_aff = 24
+  p = 37    bad reduction (skip)
+  p = 41    |V_q(F_p)|_aff = 16
+  p = 43    |V_q(F_p)|_aff = 40
+  p = 47    |V_q(F_p)|_aff = 40
+
+--- (m,n) = (40,29)  q = 759/2320 ---
+  p = 5    bad reduction (skip)
+  p = 7    bad reduction (skip)
+  p = 11    bad reduction (skip)
+  p = 13    |V_q(F_p)|_aff = 16
+  p = 17    |V_q(F_p)|_aff = 16
+  p = 19    |V_q(F_p)|_aff = 8
+  p = 23    bad reduction (skip)
+  p = 29    bad reduction (skip)
+  p = 31    |V_q(F_p)|_aff = 24
+  p = 37    |V_q(F_p)|_aff = 16
+  p = 41    |V_q(F_p)|_aff = 48
+  p = 43    |V_q(F_p)|_aff = 40
+  p = 47    |V_q(F_p)|_aff = 40
+
+--- (m,n) = (40,33)  q = 511/2640 ---
+  p = 5    bad reduction (skip)
+  p = 7    bad reduction (skip)
+  p = 11    bad reduction (skip)
+  p = 13    |V_q(F_p)|_aff = 16
+  p = 17    |V_q(F_p)|_aff = 16
+  p = 19    |V_q(F_p)|_aff = 8
+  p = 23    bad reduction (skip)
+  p = 29    |V_q(F_p)|_aff = 32
+  p = 31    |V_q(F_p)|_aff = 24
+  p = 37    |V_q(F_p)|_aff = 32
+  p = 41    |V_q(F_p)|_aff = 48
+  p = 43    |V_q(F_p)|_aff = 24
+  p = 47    |V_q(F_p)|_aff = 40
+

@@ -1,0 +1,23 @@
+=== Are the 8 rational points on C' all degenerate? ===
+Recovery: (t,T) with t=p/q -> (u,v,w)=(p^2-q^2,2pq,p^2+q^2) -> a,b,c,g.
+Degenerate iff some edge is 0 or the brick collapses.
+
+t=0  (p=0,q=1): (u,v,w)=(-1,0,1) (a,b,c)=(1,0,0) -> degenerate edge/face: True
+t=1  (p=1,q=1): (u,v,w)=(0,2,2) (a,b,c)=(0,-8,0) -> degenerate edge/face: True
+t=-1 (p=-1,q=1): (u,v,w)=(0,-2,2) (a,b,c)=(0,8,0) -> degenerate edge/face: True
+t=inf (p=1,q=0): (u,v,w)=(1,0,1) (a,b,c)=(-1,0,0) -> degenerate edge/face: True
+
+All 8 known C'(Q) points have t in {0,+-1,infinity} -> p=0, q=0, or p=+-q,
+each forcing u=0 or v=0 or w=0 (a Pythagorean leg vanishes) => DEGENERATE brick.
+A genuine PCP needs t != 0,+-1,inf (Saunderson doc). So 0 non-degenerate PCPs
+among the known points.
+
+=== Saunderson completeness (the load-bearing claim) ===
+Saunderson's parametrization a=u(4v^2-w^2), b=v(4u^2-w^2), c=4uvw is the
+complete rational parametrization of the SURFACE 'all three face diagonals
+rational' (an Euler brick is a rational point on the intersection of 3 conics;
+its function field is rational over the Pythagorean (u,v,w) -- this is the
+standard result, e.g. in the cuboid literature).  Caveat to flag honestly:
+the FULL bijection primitive-PCP <-> C'(Q)\{deg} requires Saunderson's
+completeness to hold up to the usual primitivity/scaling equivalence; this is
+ALGEBRAIC (not Magma-dependent) but rests on the cited classical theorem.

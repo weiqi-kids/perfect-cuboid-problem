@@ -1,0 +1,21 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 16000000000 (15258.789 Mbytes).[0m
+=== p-adic logarithm ===
+ellpadicfrobenius for E_ef:
+[11 + 7*11^2 + 5*11^3 + 10*11^4 + 5*11^5 + 8*11^6 + 8*11^8 + 5*11^9 + 7*11^10 + 10*11^11 + 10*11^12 + 7*11^13 + 5*11^14 + 11^15 + 7*11^16 + 6*11^18 + 9*11^19 + O(11^20), 9 + 3*11 + 2*11^2 + 6*11^3 + 4*11^4 + 11^5 + 8*11^6 + 6*11^7 + 10*11^8 + 7*11^9 + 3*11^10 + 4*11^11 + 6*11^12 + 5*11^13 + 7*11^14 + 6*11^15 + 11^16 + 2*11^17 + 8*11^18 + 10*11^19 + O(11^20); 4*11 + 5*11^2 + 10*11^3 + 8*11^4 + 5*11^5 + 7*11^6 + 5*11^7 + 2*11^8 + 11^9 + 5*11^10 + 7*11^11 + 5*11^12 + 10*11^13 + 10*11^14 + 11^16 + 2*11^17 + 2*11^18 + 4*11^19 + O(11^20), 4 + 10*11 + 3*11^2 + 5*11^3 + 5*11^5 + 2*11^6 + 10*11^7 + 2*11^8 + 5*11^9 + 3*11^10 + 3*11^13 + 5*11^14 + 9*11^15 + 3*11^16 + 10*11^17 + 4*11^18 + 11^19 + O(11^20)]
+
+ellpadiclog (formal log) for E_ef at gen (616, 13552):
+P mod 11 = [Mod(0, 11), Mod(0, 11)]
+
+Need P in kernel of reduction. If E(F_p) has order N, then [N]P is in the kernel.
+#E_ef(F_11) = 8
+[N]P = [7783094829288653396469346764525077319556841020299464197538574571497108605810915697240870733557178637055716909689561003526651421915749103661441/3674456286439264826386938964171049370920498379780888050291014275912044064783061845064704653653638447754017821555480191524462640530598118400, 674503245753033018602557034214055819813834683666041824460158927753941712192164940139810250122954880747783657039723782134126531777894536333287735443159827362409152981361928129206653901154071157284675273933137182801/7043517981784568522414854430100416780730775523166887051263857149364498857201832847183248147440148708671194332820846262104256504054489607706729254060923077364403485821357962378885738661425477886217673781248000]
+
+=== Coleman integral via height (decomposition) ===
+
+=== Summary of PARI capability ===
+PARI HAS: ellpadicfrobenius, ellpadicL, ellpadicheight, ellpadicheightmatrix, ellpadicregulator
+PARI HAS: order-1 Coleman integrals via p-adic logarithm on each elliptic factor
+PARI LACKS: iterated Coleman integrals on V_q (a non-hyperelliptic genus-5 curve)
+Therefore: PARI can compute alpha_i = log_p(P_i) for P_i in E_i(Q) at each factor.
+These give the LINEAR Chabauty equations on each E_i, but the linear functional on H^0(V_q, Omega) is 5-dim image, so linear Chabauty's image equals 5 = g and the dimension of the kernel is 0 (Stoll fails).

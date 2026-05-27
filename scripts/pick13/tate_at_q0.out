@@ -1,0 +1,57 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+=== Verify Delta of E(q): y^2 = x(x+1)(x+q^2) ===
+Specialize at q=1 -> [0,2,0,1,0]:
+[0;31m[0;31m  ***   at top-level: ...[0;35mnt(" discriminant: ",E1.[0;35mdisc)
+[0;31m[0;31m  ***                                            ^-----
+  *** _.disc: incorrect type in disc (t_VEC).[0m
+... skipping file 'tate_at_q0.gp'
+[0;31m[0;31m  ***   at top-level: ...[0;35mint(" j-invariant: ",E1.[0;35mj)
+[0;31m[0;31m  ***                                            ^--
+  *** _.j: incorrect type in j (t_VEC).[0m
+  expected Delta = 16 * 1 * (1-1)^2 = 0 (bad)
+Specialize at q=2 -> [0,5,0,4,0]:
+  discriminant: 2304
+  expected Delta = 16 * 16 * (4-1)^2 = 16*16*9 = 2304
+Match? 1
+Specialize at q=3 -> [0,10,0,9,0]:
+  discriminant: 82944
+  expected Delta = 16 * 81 * (9-1)^2 = 16*81*64 = 82944
+
+=== Tate types via local analysis ===
+
+At q = 0: Delta = 16 q^4 (q^2-1)^2, so v_0(Delta) = 4.
+  c4 of Weierstrass form: c4 = 16*(a2^2 - 3*a4) = 16*((q^2+1)^2 - 3 q^2)
+                              = 16*(q^4 - q^2 + 1).
+  v_0(c4) = 0.
+  Since v(c4) = 0 < v(Delta), reduction is MULTIPLICATIVE.
+  Kodaira type I_n where n = v_0(Delta) = 4.
+  Number of components: 4.
+
+At q = 1: write q = 1 + s near s=0.
+  q^2 - 1 = (q-1)(q+1) = s * (2+s).
+  Delta = 16 (1+s)^4 * s^2 * (2+s)^2.
+  v_s(Delta) = 2.
+  c4 at q=1: 16*(1 - 1 + 1) = 16. v_s(c4) = 0.
+  Type I_2, components: 2.
+
+At q = -1: similar to q = 1, type I_2, components: 2.
+
+At q = infinity: substitute Q = 1/q.
+  Need to find minimal Weierstrass model at Q = 0.
+  Curve: y^2 = x(x+1)(x + 1/Q^2).
+  Rescale: x = X/Q^2, y = Y/Q^3.
+  (Y/Q^3)^2 = (X/Q^2) * (X/Q^2 + 1) * (X/Q^2 + 1/Q^2)
+    = (X/Q^2) * ((X+Q^2)/Q^2) * ((X+1)/Q^2)
+    = X (X+Q^2) (X+1) / Q^6
+  So Y^2 = X (X+1) (X+Q^2).
+  By symmetry with q=0 case: type I_4, components: 4.
+
+Sum (m_v - 1) over bad fibers:
+  (4-1) + (4-1) + (2-1) + (2-1) = 3 + 3 + 1 + 1 = 8.
+
+=== Verification via ellap / elllocalred at specialized values ===
+Curve at q=3/2: y^2 = x*(x+1)*(x+9/4)
+  Equivalent Weierstrass with cleared denominators: 
+  disc(E) = 2025/16
+  expected = 16 * (3/2)^4 * ((3/2)^2 - 1)^2 = 16 * 81/16 * (5/4)^2 = 81 * 25/16 = 2025/16
+  match? 1

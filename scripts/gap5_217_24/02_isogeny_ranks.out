@@ -1,0 +1,51 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Number of isogenous curves: 6
+Degrees: [1, 2, 2, 2, 4, 4]
+
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,#iso[1][0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+... skipping file '02_isogeny_ranks.gp'
+[0;31m[0;31m  ***   at top-level: [0;35mEi=ellinit(iso[1][[0;35mi])
+[0;31m[0;31m  ***                                   ^---
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mT=[0;35melltors(Ei)
+[0;31m[0;31m  ***                   ^-----------
+  *** elltors: incorrect type in checkell (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mgr=[0;35mellglobalred(Ei)
+[0;31m[0;31m  ***                    ^----------------
+  *** ellglobalred: incorrect type in checkell (t_POL).[0m
+--- Curve E_i ---
+[0;31m[0;31m  ***   at top-level: ...[0;35m coefficients: ",iso[1][[0;35mi])
+[0;31m[0;31m  ***                                            ^---
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mint(" torsion: order=",T[0;35m[1]," struct=",T[2])
+[0;31m[0;31m  ***                                            ^--------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mprint(" conductor: ",gr[0;35m[1])
+[0;31m[0;31m  ***                                        ^----
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mg10 |disc|: ",log(abs(Ei.[0;35mdisc))/log(10.0))
+[0;31m[0;31m  ***                                             ^-----------------
+  *** _.disc: incorrect type in disc (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35madic val: ",valuation(Ei.[0;35mdisc,2))
+[0;31m[0;31m  ***                                             ^--------
+  *** _.disc: incorrect type in disc (t_POL).[0m
+
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+=== Quick ellrank survey on each isogenous curve (effort=3) ===
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,#iso[1][0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mEi=ellinit(iso[1][[0;35mi])
+[0;31m[0;31m  ***                                   ^---
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mrk=[0;35mellrank(Ei,3)
+[0;31m[0;31m  ***                    ^-------------
+  *** ellrank: incorrect type in checkell over Q (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mrint("E_",i,": rank=[",rk[0;35m[1],",",rk[2],"] unpr
+[0;31m[0;31m  ***                                             ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m

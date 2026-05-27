@@ -1,0 +1,155 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+==========================================
+Task 2: Face 3 check on rank-jump fibers
+==========================================
+=== q = 20/21 ===
+P0 = [4/21, 220/441]
+h(P0) = 2.5529727342181460743367754032165473242
+
+n=1: is_sq(a_n)=0, digits(num)=6, digits(den)=5
+  factor(num) = [13, 1; 37, 1; 409, 1]
+n=2: is_sq(a_n)=0, digits(num)=21, digits(den)=19
+  factor(num) = [37, 1; 89, 1; 277, 1; 521, 1; 2753, 1; 8089, 1; 22073, 1]
+n=3: is_sq(a_n)=0, digits(num)=41, digits(den)=41
+  factor(num) = [13, 1; 41, 1; 197, 1; 1321, 1; 3797, 1; 4957, 1; 5801, 1; 6529, 1; 107357, 1; 110321, 1; 58429957, 1]
+n=4: is_sq(a_n)=0, digits(num)=74, digits(den)=74
+  factor(num) = [37, 1; 89, 1; 6053, 1; 90841, 1; 103529, 1; 553681, 1; 602851477, 1; 719714381, 1; 104960290583237, 1; 15810583210529550629, 1]
+n=5: is_sq(a_n)=0, digits(num)=112, digits(den)=111
+  factor(num) = [13, 1; 37, 1; 53, 1; 173, 1; 197, 1; 241, 1; 281, 1; 733, 1; 1637, 1; 4733, 1; 11677, 1; 18413, 1; 289169, 1; 606037, 1; 722881, 1; 16956601, 1; 42129209, 1; 236510117, 1; 188808959557, 1; 352859592277, 1; 45147255858211321, 1]
+n=6: is_sq(a_n)=0, digits(num)=163, digits(den)=162
+n=7: is_sq(a_n)=0, digits(num)=219, digits(den)=218
+n=8: is_sq(a_n)=0, digits(num)=287, digits(den)=287
+n=9: is_sq(a_n)=0, digits(num)=360, digits(den)=359
+n=10: is_sq(a_n)=0, digits(num)=447, digits(den)=446
+n=11: is_sq(a_n)=0, digits(num)=538, digits(den)=538
+n=12: is_sq(a_n)=0, digits(num)=642, digits(den)=642
+n=13: is_sq(a_n)=0, digits(num)=751, digits(den)=748
+n=14: is_sq(a_n)=0, digits(num)=873, digits(den)=872
+n=15: is_sq(a_n)=0, digits(num)=999, digits(den)=999
+n=16: is_sq(a_n)=0, digits(num)=1139, digits(den)=1138
+n=17: is_sq(a_n)=0, digits(num)=1283, digits(den)=1281
+n=18: is_sq(a_n)=0, digits(num)=1440, digits(den)=1440
+n=19: is_sq(a_n)=0, digits(num)=1603, digits(den)=1602
+n=20: is_sq(a_n)=0, digits(num)=1777, digits(den)=1776
+
+=== q = 80/39 ===
+P0 = [32/9, 1312/117]
+h(P0) = 1.9728436106756197984921624404414752252
+
+n=1: is_sq(a_n)=0, digits(num)=7, digits(den)=6
+  factor(num) = [17, 1; 37, 1; 53, 1; 193, 1]
+n=2: is_sq(a_n)=0, digits(num)=17, digits(den)=16
+  factor(num) = [97, 1; 293, 1; 541, 1; 5281, 1; 258809, 1]
+n=3: is_sq(a_n)=0, digits(num)=35, digits(den)=34
+  factor(num) = [41, 1; 1721, 1; 3121, 1; 4937, 1; 58693, 1; 625756237, 1; 665546033, 1]
+n=4: is_sq(a_n)=0, digits(num)=59, digits(den)=58
+  factor(num) = [281, 1; 1409, 1; 262049, 1; 7628917, 1; 39429773, 1; 45595369, 1; 165944893, 1; 330856649, 1; 364385117, 1]
+n=5: is_sq(a_n)=0, digits(num)=90, digits(den)=89
+  factor(num) = [307817, 1; 892973, 1; 6907969, 1; 9793757, 1; 152289613573, 1; 2712256137852809, 1; 3777072645170393, 1; 8832973339241555130197, 1]
+n=6: is_sq(a_n)=0, digits(num)=126, digits(den)=122
+n=7: is_sq(a_n)=0, digits(num)=172, digits(den)=171
+n=8: is_sq(a_n)=0, digits(num)=223, digits(den)=222
+n=9: is_sq(a_n)=0, digits(num)=282, digits(den)=281
+n=10: is_sq(a_n)=0, digits(num)=346, digits(den)=345
+n=11: is_sq(a_n)=0, digits(num)=419, digits(den)=417
+n=12: is_sq(a_n)=0, digits(num)=498, digits(den)=497
+n=13: is_sq(a_n)=0, digits(num)=583, digits(den)=582
+n=14: is_sq(a_n)=0, digits(num)=675, digits(den)=674
+n=15: is_sq(a_n)=0, digits(num)=775, digits(den)=774
+n=16: is_sq(a_n)=0, digits(num)=881, digits(den)=880
+n=17: is_sq(a_n)=0, digits(num)=995, digits(den)=994
+n=18: is_sq(a_n)=0, digits(num)=1113, digits(den)=1110
+n=19: is_sq(a_n)=0, digits(num)=1241, digits(den)=1241
+n=20: is_sq(a_n)=0, digits(num)=1375, digits(den)=1374
+
+=== q = 24/7 ===
+P0 = [3/28, 465/392]
+h(P0) = 2.5524981956456679759950229432062799730
+
+n=1: is_sq(a_n)=0, digits(num)=6, digits(den)=5
+  factor(num) = [5, 2; 13, 1; 41, 1; 53, 1]
+n=2: is_sq(a_n)=0, digits(num)=21, digits(den)=20
+  factor(num) = [5, 2; 37, 1; 109, 2; 1213, 1; 72341, 1; 211469, 1]
+n=3: is_sq(a_n)=0, digits(num)=41, digits(den)=40
+  factor(num) = [5, 2; 13, 1; 557, 1; 797, 1; 1249, 1; 23297, 1; 31481, 1; 32801, 1; 64217, 1; 267721, 1; 1177453, 1]
+n=4: is_sq(a_n)=0, digits(num)=74, digits(den)=70
+  factor(num) = [5, 2; 37, 1; 337, 1; 3049, 1; 40577, 1; 132469, 1; 812185181, 1; 1093397953, 1; 1176902497, 1; 24110236357, 1; 115872663069214921, 1]
+n=5: is_sq(a_n)=0, digits(num)=112, digits(den)=111
+  factor(num) = [5, 4; 13, 1; 41, 1; 257, 1; 457, 1; 541, 1; 1361, 1; 1637, 1; 2609, 1; 7561, 1; 73009, 1; 1262717, 1; 5279873, 1; 58597837, 1; 64041149, 1; 756969133, 1; 912859889, 1; 34530537101, 1; 108750424813, 1; 1568342645509, 1]
+n=6: is_sq(a_n)=0, digits(num)=163, digits(den)=161
+n=7: is_sq(a_n)=0, digits(num)=219, digits(den)=218
+n=8: is_sq(a_n)=0, digits(num)=287, digits(den)=286
+n=9: is_sq(a_n)=0, digits(num)=361, digits(den)=360
+n=10: is_sq(a_n)=0, digits(num)=447, digits(den)=445
+n=11: is_sq(a_n)=0, digits(num)=538, digits(den)=537
+n=12: is_sq(a_n)=0, digits(num)=641, digits(den)=639
+n=13: is_sq(a_n)=0, digits(num)=751, digits(den)=749
+n=14: is_sq(a_n)=0, digits(num)=872, digits(den)=871
+n=15: is_sq(a_n)=0, digits(num)=1000, digits(den)=998
+n=16: is_sq(a_n)=0, digits(num)=1138, digits(den)=1137
+n=17: is_sq(a_n)=0, digits(num)=1283, digits(den)=1282
+n=18: is_sq(a_n)=0, digits(num)=1440, digits(den)=1439
+n=19: is_sq(a_n)=0, digits(num)=1602, digits(den)=1601
+n=20: is_sq(a_n)=0, digits(num)=1776, digits(den)=1775
+
+=== q = 84/13 ===
+P0 = [56700/36517, 329627340/25160213]
+h(P0) = 7.1282526922442920604733719002925742795
+
+n=1: is_sq(a_n)=0, digits(num)=14, digits(den)=12
+  factor(num) = [5, 2; 73, 1; 701, 1; 1997, 1; 5953, 1]
+n=2: is_sq(a_n)=0, digits(num)=53, digits(den)=51
+  factor(num) = [5, 3; 17, 3; 37, 1; 257, 1; 967693, 1; 88844597, 1; 1182473881, 1; 1764249601, 1; 56861331073, 1]
+n=3: is_sq(a_n)=0, digits(num)=113, digits(den)=112
+  factor(num) = [5, 4; 2374115309, 1; 9713778629, 1; 25502053393, 1; 2327279485897, 1; 7828914512717693, 1; 18927385039945181, 1; 69697343251365101, 1; 6136471574844732557, 1]
+n=4: is_sq(a_n)=0, digits(num)=202, digits(den)=200
+  trial_div(num, 1000) = [[5, 2], [17, 2], [181, 1], [857, 1], [3606468306285819422391841872164772180064571615068898512181376058195534672962429887577546491075159283160308579593776818078053562515439773540252198801085861302111340143702786194440220087794824741, 1]]
+n=5: is_sq(a_n)=0, digits(num)=311, digits(den)=308
+  trial_div(num, 1000) = [[5, 2], [570434999441581371817595942094994274219243272615471744528193136817059863296623455948032180489026011500146631720487742683663652662986352758233043624224758116375373796427426597869081138203612366984968428249306970866300487491250483015501747616276494676025356239604720813734335037812434109704660986704206648667649, 1]]
+n=6: is_sq(a_n)=0, digits(num)=450, digits(den)=448
+n=7: is_sq(a_n)=0, digits(num)=608, digits(den)=607
+n=8: is_sq(a_n)=0, digits(num)=796, digits(den)=793
+n=9: is_sq(a_n)=0, digits(num)=1005, digits(den)=1003
+n=10: is_sq(a_n)=0, digits(num)=1242, digits(den)=1241
+n=11: is_sq(a_n)=0, digits(num)=1499, digits(den)=1494
+n=12: is_sq(a_n)=0, digits(num)=1787, digits(den)=1786
+n=13: is_sq(a_n)=0, digits(num)=2094, digits(den)=2093
+n=14: is_sq(a_n)=0, digits(num)=2431, digits(den)=2428
+n=15: is_sq(a_n)=0, digits(num)=2788, digits(den)=2786
+n=16: is_sq(a_n)=0, digits(num)=3174, digits(den)=3173
+n=17: is_sq(a_n)=0, digits(num)=3580, digits(den)=3578
+n=18: is_sq(a_n)=0, digits(num)=4016, digits(den)=4014
+n=19: is_sq(a_n)=0, digits(num)=4472, digits(den)=4470
+n=20: is_sq(a_n)=0, digits(num)=4957, digits(den)=4955
+
+=== q = 48/55 ===
+P0 = [288/55, 42336/3025]
+h(P0) = 2.0619991381677259023206343953941110991
+
+n=1: is_sq(a_n)=0, digits(num)=6, digits(den)=5
+  factor(num) = [13, 1; 37, 1; 409, 1]
+n=2: is_sq(a_n)=0, digits(num)=17, digits(den)=14
+  factor(num) = [41, 1; 61, 1; 173, 1; 197, 1; 9241, 1; 44621, 1]
+n=3: is_sq(a_n)=0, digits(num)=34, digits(den)=34
+  factor(num) = [13, 1; 1789, 1; 1933, 1; 414061, 1; 454357, 1; 9444541, 1; 108779977, 1]
+n=4: is_sq(a_n)=0, digits(num)=62, digits(den)=61
+  factor(num) = [37, 1; 293, 1; 337, 1; 457, 1; 60761, 1; 67993, 1; 10396301, 1; 756307481, 1; 478658299897, 1; 421659085028821, 1]
+n=5: is_sq(a_n)=0, digits(num)=92, digits(den)=91
+  factor(num) = [13, 2; 61, 1; 97, 1; 2017, 1; 5209, 1; 250741, 1; 388777, 1; 576240277, 1; 4967022301, 1; 22877069995057, 1; 8664319552997089, 1; 32370612398545138033, 1]
+n=6: is_sq(a_n)=0, digits(num)=132, digits(den)=129
+n=7: is_sq(a_n)=0, digits(num)=178, digits(den)=177
+n=8: is_sq(a_n)=0, digits(num)=233, digits(den)=233
+n=9: is_sq(a_n)=0, digits(num)=292, digits(den)=292
+n=10: is_sq(a_n)=0, digits(num)=361, digits(den)=359
+n=11: is_sq(a_n)=0, digits(num)=436, digits(den)=435
+n=12: is_sq(a_n)=0, digits(num)=520, digits(den)=520
+n=13: is_sq(a_n)=0, digits(num)=608, digits(den)=607
+n=14: is_sq(a_n)=0, digits(num)=705, digits(den)=703
+n=15: is_sq(a_n)=0, digits(num)=808, digits(den)=808
+n=16: is_sq(a_n)=0, digits(num)=921, digits(den)=921
+n=17: is_sq(a_n)=0, digits(num)=1037, digits(den)=1037
+n=18: is_sq(a_n)=0, digits(num)=1163, digits(den)=1162
+n=19: is_sq(a_n)=0, digits(num)=1295, digits(den)=1295
+n=20: is_sq(a_n)=0, digits(num)=1437, digits(den)=1437
+
+===== End rank-1 fibers =====

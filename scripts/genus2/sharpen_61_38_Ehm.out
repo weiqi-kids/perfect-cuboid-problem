@@ -1,0 +1,24 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+E_Hm = [1, 0, 0, -4201713691887954766021162410, 103564307677747011646913552825626935447972]
+disc factored = [2, 8; 3, 16; 5, 4; 7, 2; 11, 8; 19, 8; 23, 8; 31, 2; 61, 8; 223, 2; 337, 2; 1033, 4]
+
+Global root number w(E_Hm) = 1
+  → analytic rank is EVEN (0, 2, 4, …)
+
+Local root numbers at bad primes:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mforprime(p=2,1000[0;35m,
+[0;31m[0;31m  ***                    ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(N%p==0[0;35m,
+[0;31m[0;31m  ***            ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mlocal_w=[0;35mellrootno(E_Hm,p)
+[0;31m[0;31m  ***                         ^-----------------
+  *** ellrootno: incorrect type in ellrootno (t_POL).[0m
+  p=p  w_p = local_w
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+
+Attempting ellanalyticrank with effort=1 ...

@@ -1,0 +1,38 @@
+=== Jacobian of the quartic via ellfromeqn ===
+ellfromeqn -> [0, 360, 0, -27200, 448000]
+conductor(E_raw) = 800
+j-invariant      = 287496
+
+=== Minimal model ===
+E_min ainvs = [0, 0, 0, -275, 1750]
+conductor   = 800
+disc        = 8000000  factored: [2, 9; 5, 6]
+j-invariant = 287496
+
+=== Framework's claimed big model y^2 = x^3 - 5702400 x + 5225472000 ===
+Ebig conductor = 800
+Ebig j         = 287496
+Ebig minimal model ainvs = [0, 0, 0, -275, 1750]
+Same minimal model as E_min? 1
+
+=== Torsion ===
+torsion structure = [2]  generators = [[10, 0]]
+
+=== Rank (ellrank, Cremona-Stoll 2-descent) ===
+ellrank(E_min) = [1, 1, 0, [[-15, 50]]]
+  r_low = 1   r_up = 1
+  => rank determined UNCONDITIONALLY = 1
+  generator candidates = [[-15, 50]]
+
+=== Generator check + saturation ===
+P = [-15, 50]  on curve? 1
+canonical height h(P) = 0.94974108626589779505360275479729895984
+order(P) = 0 (0 = infinite)
+saturation of [P] to bound 100: [[-15, 50]]
+
+=== ellidentify (Cremona/LMFDB label) ===
+ellidentify -> [["800a3", [0, 0, 0, -275, 1750], [[9, 2]]], [1, 0, 0, 0]]
+Cremona label = 800a3
+
+=== analytic rank cross-check (ellanalyticrank) ===
+ellanalyticrank = [1, 2.2273703795441392069372962870577073971]  (analytic rank 1)

@@ -1,0 +1,94 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== Twist-isogeny test (find d so that E1^d has ap matching E2) ===
+Pair 1: 20/21 -> 48/55   best d=-1 score=10/19
+Pair 2: 7/24 -> 20/99   best d=-1 score=9/17
+Pair 3: 11/60 -> 39/80   best d=1 score=9/16
+Pair 4: 11/60 -> 17/144   best d=1 score=8/17
+Pair 5: 44/117 -> 11/60   best d=-42 score=7/16
+Pair 6: 104/153 -> 195/748   best d=1 score=8/15
+Pair 7: 104/153 -> 55/1512   best d=-30 score=6/16
+Pair 8: 195/748 -> 225/272   best d=1 score=6/13
+Pair 9: 96/247 -> 315/572   best d=-1 score=8/18
+Pair 10: 27/364 -> 120/209   best d=-6 score=8/14
+
+=== Special d values from (q1, q2) ===
+Pair 1: 20/21 -> 48/55
+  d=12121   matches: 6/16
+  d=1001   matches: 9/18
+  d=10857   matches: 6/18
+  d=77   matches: 7/19
+  d=41   matches: 7/19
+  d=721   matches: 8/19
+  d=1   matches: 7/19
+Pair 2: 7/24 -> 20/99
+  d=27761   matches: 3/15
+  d=36894   matches: 5/15
+  d=41514   matches: 6/16
+  d=2310   matches: 6/17
+  d=527   matches: 8/17
+  d=9401   matches: 6/17
+  d=1   matches: 8/17
+Pair 3: 11/60 -> 39/80
+  d=-11753   matches: 4/14
+  d=1457   matches: 5/14
+  d=1743   matches: 7/15
+  d=143   matches: 8/16
+  d=71   matches: 8/16
+  d=4879   matches: 7/16
+  d=1   matches: 9/16
+Pair 4: 11/60 -> 17/144
+  d=10199   matches: 3/15
+  d=126795   matches: 6/16
+  d=132405   matches: 6/15
+  d=2805   matches: 8/17
+  d=71   matches: 4/17
+  d=20447   matches: 6/17
+  d=1   matches: 8/17
+Pair 5: 44/117 -> 11/60
+  d=4879   matches: 3/14
+  d=318630   matches: 2/14
+  d=91455   matches: 2/15
+  d=195   matches: 6/16
+  d=11753   matches: 5/16
+  d=71   matches: 3/16
+  d=1   matches: 7/16
+Pair 6: 104/153 -> 195/748
+  d=105679   matches: 4/14
+  d=258951   matches: 2/13
+  d=370491   matches: 4/15
+  d=330   matches: 5/15
+  d=257   matches: 6/15
+  d=521479   matches: 3/15
+  d=1   matches: 8/15
+Pair 7: 104/153 -> 55/1512
+  d=304396559   matches: 1/14
+  d=10068114   matches: 3/15
+  d=165291   matches: 4/16
+  d=255255   matches: 2/16
+  d=257   matches: 5/16
+  d=2283119   matches: 4/16
+  d=1   matches: 5/16
+Pair 8: 195/748 -> 225/272
+  d=-24521   matches: 1/12
+  d=1755391   matches: 2/11
+  d=2720641   matches: 3/12
+  d=2145   matches: 4/13
+  d=521479   matches: 3/13
+  d=23359   matches: 4/13
+  d=1   matches: 6/13
+Pair 9: 96/247 -> 315/572
+  d=-1997561   matches: 4/16
+  d=5802049   matches: 4/15
+  d=8962129   matches: 9/18
+  d=43890   matches: 6/18
+  d=1057   matches: 6/18
+  d=227959   matches: 5/18
+  d=35281   matches: 5/18
+Pair 10: 27/364 -> 120/209
+  d=-208455439   matches: 4/12
+  d=346316971   matches: 2/14
+  d=377127751   matches: 6/13
+  d=190190   matches: 6/14
+  d=131767   matches: 4/14
+  d=29281   matches: 6/14
+  d=1   matches: 8/14

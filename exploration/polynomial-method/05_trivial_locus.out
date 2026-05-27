@@ -1,0 +1,8 @@
+p=3 Na=25 Nb=33 Nc=33 trivial_total=41
+p=5 Na=113 Nb=97 Nc=97 trivial_total=209
+p=7 Na=265 Nb=289 Nc=289 trivial_total=697
+p=11 Na=761 Nb=801 Nc=801 trivial_total=2121
+p=13 Na=1105 Nb=1057 Nc=1057 trivial_total=2929
+p=17 Na=1985 Nb=1921 Nc=1921 trivial_total=5441
+p=19 Na=2521 Nb=2593 Nc=2593 trivial_total=7273
+p=23 Na=3785 Nb=3873 Nc=3873 trivial_total=11001

@@ -1,0 +1,56 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+Loaded 921 closed rank-1 fibers
+  progress 25/921 OK=25 max_N0=9 over12=0 nogen=0 err=0
+  progress 50/921 OK=50 max_N0=9 over12=0 nogen=0 err=0
+  progress 75/921 OK=75 max_N0=9 over12=0 nogen=0 err=0
+  progress 100/921 OK=100 max_N0=9 over12=0 nogen=0 err=0
+  progress 125/921 OK=125 max_N0=9 over12=0 nogen=0 err=0
+  progress 150/921 OK=150 max_N0=9 over12=0 nogen=0 err=0
+  progress 175/921 OK=175 max_N0=9 over12=0 nogen=0 err=0
+  progress 200/921 OK=200 max_N0=9 over12=0 nogen=0 err=0
+  progress 225/921 OK=225 max_N0=9 over12=0 nogen=0 err=0
+  progress 250/921 OK=250 max_N0=9 over12=0 nogen=0 err=0
+  progress 275/921 OK=275 max_N0=9 over12=0 nogen=0 err=0
+  progress 300/921 OK=300 max_N0=9 over12=0 nogen=0 err=0
+  progress 325/921 OK=325 max_N0=9 over12=0 nogen=0 err=0
+  progress 350/921 OK=350 max_N0=9 over12=0 nogen=0 err=0
+  progress 375/921 OK=375 max_N0=9 over12=0 nogen=0 err=0
+  progress 400/921 OK=400 max_N0=9 over12=0 nogen=0 err=0
+  progress 425/921 OK=425 max_N0=9 over12=0 nogen=0 err=0
+  progress 450/921 OK=450 max_N0=9 over12=0 nogen=0 err=0
+  progress 475/921 OK=475 max_N0=9 over12=0 nogen=0 err=0
+  progress 500/921 OK=500 max_N0=9 over12=0 nogen=0 err=0
+  progress 525/921 OK=525 max_N0=9 over12=0 nogen=0 err=0
+  progress 550/921 OK=550 max_N0=9 over12=0 nogen=0 err=0
+  progress 575/921 OK=575 max_N0=9 over12=0 nogen=0 err=0
+  progress 600/921 OK=600 max_N0=9 over12=0 nogen=0 err=0
+  progress 625/921 OK=625 max_N0=9 over12=0 nogen=0 err=0
+  progress 650/921 OK=650 max_N0=9 over12=0 nogen=0 err=0
+  progress 675/921 OK=675 max_N0=9 over12=0 nogen=0 err=0
+  progress 700/921 OK=700 max_N0=9 over12=0 nogen=0 err=0
+  progress 725/921 OK=725 max_N0=9 over12=0 nogen=0 err=0
+  progress 750/921 OK=750 max_N0=9 over12=0 nogen=0 err=0
+  progress 775/921 OK=775 max_N0=9 over12=0 nogen=0 err=0
+  progress 800/921 OK=800 max_N0=9 over12=0 nogen=0 err=0
+  progress 825/921 OK=825 max_N0=9 over12=0 nogen=0 err=0
+  progress 850/921 OK=850 max_N0=9 over12=0 nogen=0 err=0
+  progress 875/921 OK=875 max_N0=9 over12=0 nogen=0 err=0
+  progress 900/921 OK=899 max_N0=9 over12=0 nogen=1 err=0
+
+=== Rigorous N_0 summary (rank-1 closed fibers) ===
+Total fibers     : 921
+OK (computed N0) : 918
+No generator     : 3
+Other errors     : 0
+Max N0 observed  : 9
+Fibers with N0>12: 0
+
+N_0 histogram (rigorous, capped at 40):
+  N0=2 : 39
+  N0=3 : 234
+  N0=4 : 235
+  N0=5 : 200
+  N0=6 : 142
+  N0=7 : 49
+  N0=8 : 12
+  N0=9 : 7

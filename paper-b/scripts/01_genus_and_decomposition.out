@@ -1,0 +1,60 @@
+=== f1, f2 basic facts ===
+disc(f1) = 33177600
+disc(f2) = 256000000
+resultant(f1,f2) = 655360000
+factor resultant = [2, 20; 5, 4]
+f1 rational roots? []~
+f2 has rational root? 0
+
+=== Genus of C (Riemann-Hurwitz) ===
+ramification degree R = 16
+2g-2 = 4*(-2) + R = 8
+g(C) = 5
+
+=== Conductors of the five factors ===
+N(E1) = 480
+N(E2) = 800
+N(E3) = 1200
+N(X+) = 120
+N(X-) = 80
+
+=== ellidentify (Cremona labels) ===
+X+ identify: 120a2
+X- identify: 80a1
+
+=== Identify the genus-1 covers e^2=f1, g^2=f2 ===
+C1 = ellfromeqn(ee^2 - f1) raw = [0, -16, 0, -400, 6400]
+minimal model of cover e^2=f1: 480  (conductor)
+  j(cover)=48228544/2025   j(E1)=48228544/2025   match=1
+C2 = ellfromeqn(gg^2 - f2) raw = [0, 0, 0, -400, 0]
+minimal model of cover g^2=f2: 800  (conductor)
+  j(cover)=1728   j(E2)=1728   match=1
+
+=== a_p matching over good primes ===
+a_p(C) computed from the smooth projective model point count;
+compare to a_p(E1)+a_p(E2)+a_p(E3)+a_p(X+)+a_p(X-).
+p :  apC(direct)   sum_ap_factors   match?
+7 :   -8          0          0
+11 :   -12          -12          1
+13 :   -10          -2          0
+17 :   -6          -14          0
+19 :   -4          -4          1
+23 :   -8          -16          0
+29 :   -10          -10          1
+31 :   -16          -16          1
+37 :   -2          6          0
+41 :   -14          -14          1
+43 :   -4          36          0
+47 :   -16          -8          0
+53 :   -34          -10          0
+59 :   20          20          1
+61 :   -10          -10          1
+67 :   -12          -20          0
+71 :   8          8          1
+73 :   18          -6          0
+79 :   16          16          1
+83 :   4          12          0
+89 :   2          2          1
+97 :   10          -14          0
+
+MATCHED 10 / 22 good primes in [7,100]

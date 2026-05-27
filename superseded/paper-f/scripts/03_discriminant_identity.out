@@ -1,0 +1,36 @@
+=== Discriminant identity & recovery-map degeneracy (sympy) ===
+
+(A) Order-4 doubling on E_PCP(q):
+    (q, q(q+1)) on curve? residual = 0
+    lambda = q + 1
+    X(2P) = 0    Y(2P) = 0
+    => 2*(q,q(q+1)) = (0,0): True 
+
+(B) Order-8 reduction X(2P)=q:
+    num2 - q*den2 = X**4 - 4*X**3*q - 4*X**2*q**3 - 2*X**2*q**2 - 4*X**2*q - 4*X*q**3 + q**4
+    claimed G1    = X**4 - 4*X**3*q - 4*X**2*q**3 - 2*X**2*q**2 - 4*X**2*q - 4*X*q**3 + q**4
+    => condition equals G1: True
+    factor_list(G1) = (1, [(X**4 - 4*X**3*q - 4*X**2*q**3 - 2*X**2*q**2 - 4*X**2*q - 4*X*q**3 + q**4, 1)])
+    => G1 absolutely irreducible (single factor, mult 1): True 
+
+(C) Substitution X=qZ (then divide by q^3):
+    G1(qZ,q) + q^3*[4Z^2 q^2 - R q + 4Z^2] = 0
+    quadratic in q: (4*Z**2) q^2 + (-Z**4 + 4*Z**3 + 2*Z**2 + 4*Z - 1) q + (4*Z**2)
+    Delta(Z) = B^2 - 4AC = Z**8 - 8*Z**7 + 12*Z**6 + 8*Z**5 - 26*Z**4 + 8*Z**3 + 12*Z**2 - 8*Z + 1
+    claimed factorization = Z**8 - 8*Z**7 + 12*Z**6 + 8*Z**5 - 26*Z**4 + 8*Z**3 + 12*Z**2 - 8*Z + 1
+    factor(Delta) = (Z - 1)**4*(Z + 1)**2*(Z**2 - 6*Z + 1)
+    => discriminant identity Delta=(Z-1)^4(Z+1)^2(Z^2-6Z+1): True 
+
+(D) Conic parametrization w = tZ+1 through (0,1):
+    residual w(t)^2 - (Z^2-6Z+1) at Z(t) = 0
+    q_+(t) = 16*(t**2 + 2*t + 1)/(t**4 + 4*t**3 - 2*t**2 - 12*t + 9)
+    s^2   = 16*(t + 1)**2/((t - 1)**2*(t + 3)**2)
+    => q_+(t) = s(t)^2 with s = 4(t+1)/((t-1)(t+3)): True 
+
+=== SUMMARY ===
+(A) doubling identity 2*(q,q(q+1))=(0,0): True
+(B) order-8 -> quartic G1, irreducible:   True
+(C) Delta=(Z-1)^4(Z+1)^2(Z^2-6Z+1):       True
+(D) recovered q = s^2 (-> Fermat u^2=s^4+1): True
+
+RESULT: PASS

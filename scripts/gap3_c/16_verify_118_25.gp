@@ -1,0 +1,25 @@
+\\ Verify (m,n) = (118, 25) rank-4 and push generators through Face-3.
+default(parisize, 1500000000);
+print("=== Verifying (118,25) rank-4 ===");
+m = 118; n = 25;
+print("gcd: ", gcd(m,n), " (m+n)%2: ", (m+n)%2);
+q = (m^2-n^2)/(2*m*n);
+print("q = ", q);
+E = ellinit([0, 1+q^2, 0, q^2, 0]);
+Em = ellminimalmodel(E, &change);
+print("Conductor = ", ellglobalred(Em)[1]);
+print("\nellrank(_, 10)...");
+t0 = getwalltime();
+r10 = ellrank(Em, 10);
+print("  time=", (getwalltime()-t0)/1000.0, "s");
+print("  result: [", r10[1], ",", r10[2], "] unprov=", r10[3], " #gens=", length(r10[4]));
+gens = r10[4];
+for(i=1, length(gens), my(P=gens[i]); print("  gen[",i,"]=",P," on Em? ", ellisoncurve(Em, P)));
+print("\nGenerators on E:");
+gens_E = [];
+for(i=1, length(gens), my(PE=ellchangepointinv(gens[i], change)); if(!ellisoncurve(E, PE), error("inverse failed!")); gens_E = concat(gens_E, [PE]); print("  ", PE));
+print("\nFace-3:");
+flag = 0;
+for(i=1, length(gens_E), my(P=gens_E[i], xp, yp, dnp, cv, F3v, sqv); xp = P[1]; yp = P[2]; dnp = q^2 - xp^2; if(dnp == 0, print("  gen[", i, "] x = ±q, skip"), cv = 2*q*yp/dnp; F3v = cv^2 + 1 + q^2; sqv = issquare(F3v); print("  gen[", i, "] c=", cv); print("     F3=", F3v); print("     sq?=", sqv); if(sqv, flag++; print("     *** FLAG POTENTIAL PCP ***"))));
+print("\nFlag count: ", flag);
+quit;

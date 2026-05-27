@@ -1,0 +1,27 @@
+========================================================
+PICK-18 SHARED-HYPOTENUSE ENUMERATION  BOUND = 50000
+========================================================
+Primes ≡ 1 mod 4 up to 50000: 2549
+3-prime squarefree candidates: 262
+4-prime squarefree candidates: 3
+5-prime squarefree candidates: 0
+
+-- 3-prime g enumeration --
+  3p progress 200/262 g=39565 found=0
+
+-- 4-prime g enumeration --
+
+-- 5-prime g enumeration --
+
+========================================================
+SUMMARY  (BOUND = 50000)
+========================================================
+max g tested        : 49985
+# 3-prime candidates: 262
+# 4-prime candidates: 3
+# 5-prime candidates: 0
+total test cases    : 5019456
+partial a^2+b^2=d^2 : 0
+partial b^2+c^2=e^2 : 0
+partial a^2+c^2=f^2 : 0
+full PCP found      : 0

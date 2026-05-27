@@ -1,0 +1,7 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== Check E_PCP rank for 5 BEYOND-QC fibers ===
+(61,38) q=2277/4636 rk=[3,3] unprov=0 #gens=3
+(63,38) q=2525/4788 rk=[3,3] unprov=0 #gens=3
+(73,24) q=4753/3504 rk=[3,3] unprov=0 #gens=3
+(88,35) q=6519/6160 rk=[3,3] unprov=0 #gens=3
+(99,28) q=9017/5544 rk=[4,4] unprov=0 #gens=4

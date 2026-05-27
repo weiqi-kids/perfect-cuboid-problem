@@ -1,0 +1,8 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Direct Hilbert-symbol Selmer enumeration =====
+(m,n)   |S|+1   ambdim   |Sel_2|   log2|Sel|   dim_via_ellrank
+[3, 2]   6   12    82       6        2
+[5, 2]   6   12    104       7        3
+[4, 1]   6   12    86       6        2
+[11, 2]   8   16    202       8        3
+[8, 3]   7   14    142       7        3

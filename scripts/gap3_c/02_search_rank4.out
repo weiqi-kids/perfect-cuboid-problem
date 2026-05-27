@@ -1,0 +1,5 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== GAP3-C task 2: search for rank-4 fibers up to m<=80 ===
+  ... progress m=10 elapsed=0.53800000000000000000000000000000000000s count=22
+  ... progress m=20 elapsed=35.382000000000000000000000000000000000s count=86
+(m=22,n=17) q=195/748 analrank=3 L^(3)(E,1)=854.29605124665186298490536633308564585

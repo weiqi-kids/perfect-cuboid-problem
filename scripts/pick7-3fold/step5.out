@@ -1,0 +1,68 @@
+====================================================
+ Step 5: Plurigenera & Kodaira dimension
+====================================================
+
+W is birational to S × P^1 where S: Y^2 = X(X+1)(X+q^2), parameter q.
+
+Kodaira dimension is birational invariant; product formula:
+  κ(S × P^1) = κ(S) + κ(P^1) = κ(S) + (-∞) = -∞
+
+Plurigenera P_n(S × P^1) = h^0(n K_{S×P^1})
+  = h^0(S, n K_S) * h^0(P^1, n K_{P^1})
+  = h^0(S, n K_S) * h^0(P^1, O(-2n))
+For n >= 1, h^0(P^1, O(-2n)) = 0.
+
+=> P_n(W) = 0 for all n >= 1.
+=> h^0(K_W) = 0 — W is NOT of general type.
+
+=== Kodaira dimension of S (the elliptic surface) ===
+
+S = E_total -> A^1_q is the universal E_PCP(q).
+Singular fibers occur at q = 0, q = ±∞, q = ±1, q = ±i (places where E_PCP degenerates).
+
+Equation: Y^2 = X^3 + (1+q^2) X^2 + q^2 X.
+Discriminant: Δ(q) = 16 q^4 (1 - q^2)^2 (up to constant).
+
+Disc of X(X+1)(X+q^2) in X: q^8 - 2*q^6 + q^4
+
+Singular fibers of S -> P^1_q:
+  q=0: cubic X^2(X+1), nodal, type I_2 or similar
+  q=±1: cubic X(X+1)^2, nodal
+  q=∞: similar by change of variable
+
+All fibers have multiplicative reduction (nodal).
+Sum of Euler numbers of singular fibers = 12 χ(O_S) for elliptic K3, etc.
+
+Detailed Kodaira-Neron analysis requires care at q=±i and q=∞.
+For our purposes: S is a RATIONAL elliptic surface or a K3 (κ ∈ {-∞, 0}).
+
+j-invariant (Legendre with λ = q^2):
+  j(E_PCP(q)) = 256 (q^4 - q^2 + 1)^3 / [q^4 (1 - q^2)^2]
+
+Non-constant in q => S is non-isotrivial.
+
+Degree of j as map P^1_q -> P^1_j: numerator deg 12, denominator deg 8.
+Degree = max(12, 8) = 12 (numerator has higher degree).
+
+For elliptic surface with section: deg(j) = 12 χ(O_S).
+So χ(O_S) = 1 => S is a RATIONAL elliptic surface OR a K3 (if simply connected).
+
+With χ(O_S) = 1 and section present, S is a rational elliptic surface (κ = -∞)
+UNLESS h^1(O_S) = 0 and we have additional structure pushing to K3.
+
+Since the j-map has degree 12 and the base is P^1_q,
+S is a RATIONAL elliptic surface (κ(S) = -∞).
+
+=> W birational to S × P^1 with S rational => W is birational to a rational variety!
+
+=== W IS RATIONAL ===
+
+This strengthens the conclusion: W has the maximal possible W(Q) — Zariski-dense rational points.
+PCP closure CANNOT come from global geometry of W.
+
+Summary:
+  - W is uniruled (in fact rational).
+  - κ(W) = -∞.
+  - P_n(W) = 0 for all n >= 1.
+  - W(Q) is Zariski-dense (every Pythagorean conic in (m,n) for fixed (X_0,Y_0)).
+  - No new global control on rational points.

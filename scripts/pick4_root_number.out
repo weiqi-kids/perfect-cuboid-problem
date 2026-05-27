@@ -1,0 +1,150 @@
+=== Local root numbers ===
+(2,1) w=1 primes=[3, 7] local_w=[-1, 1]
+(3,2) w=1 primes=[3, 5, 7, 17] local_w=[-1, -1, 1, -1]
+(4,1) w=1 primes=[2, 3, 5, 7, 23] local_w=[-1, -1, -1, 1, 1]
+(4,3) w=-1 primes=[2, 3, 7, 17, 31] local_w=[-1, -1, -1, -1, 1]
+(5,2) w=-1 primes=[3, 5, 7, 41] local_w=[-1, -1, -1, -1]
+(5,4) w=1 primes=[2, 3, 5, 7, 31] local_w=[-1, -1, -1, 1, 1]
+(6,1) w=1 primes=[3, 5, 7, 23, 47] local_w=[-1, -1, -1, 1, 1]
+(6,5) w=1 primes=[3, 5, 7, 11, 71] local_w=[-1, -1, 1, -1, 1]
+(7,2) w=1 primes=[3, 5, 7, 17, 73] local_w=[-1, -1, -1, -1, -1]
+(7,4) w=1 primes=[2, 3, 7, 11, 23, 89] local_w=[-1, -1, -1, -1, 1, -1]
+(7,6) w=-1 primes=[3, 7, 13, 71, 97] local_w=[-1, -1, -1, 1, -1]
+(8,1) w=1 primes=[2, 3, 7, 47, 79] local_w=[-1, -1, -1, 1, 1]
+(8,3) w=-1 primes=[2, 3, 5, 7, 11, 103] local_w=[-1, -1, -1, 1, -1, 1]
+(8,5) w=-1 primes=[2, 3, 5, 7, 13, 17, 41] local_w=[-1, -1, -1, 1, -1, -1, -1]
+(8,7) w=1 primes=[2, 3, 5, 7, 97, 127] local_w=[-1, -1, -1, -1, -1, 1]
+(9,2) w=1 primes=[3, 7, 11, 41, 113] local_w=[-1, -1, -1, -1, -1]
+(9,4) w=1 primes=[2, 3, 5, 7, 13, 137] local_w=[-1, -1, -1, 1, -1, -1]
+(9,8) w=1 primes=[2, 3, 7, 17, 23, 127] local_w=[-1, -1, 1, -1, 1, 1]
+(10,1) w=-1 primes=[3, 5, 7, 11, 17, 79] local_w=[-1, -1, 1, -1, -1, 1]
+(10,3) w=-1 primes=[3, 5, 7, 13, 31, 151] local_w=[-1, -1, -1, -1, 1, 1]
+(10,7) w=1 primes=[3, 5, 7, 17, 89, 191] local_w=[-1, -1, -1, -1, -1, 1]
+(10,9) w=1 primes=[3, 5, 7, 19, 23, 199] local_w=[-1, -1, 1, -1, 1, 1]
+(11,2) w=-1 primes=[3, 7, 11, 13, 23, 73] local_w=[-1, 1, -1, -1, 1, -1]
+(11,4) w=1 primes=[2, 3, 5, 7, 11, 17, 193] local_w=[-1, -1, -1, -1, -1, -1, -1]
+(11,6) w=-1 primes=[3, 5, 7, 11, 17, 31, 47] local_w=[-1, -1, 1, -1, -1, 1, 1]
+(11,8) w=-1 primes=[2, 3, 7, 11, 17, 19, 233] local_w=[-1, -1, 1, -1, -1, -1, -1]
+(11,10) w=1 primes=[3, 5, 7, 11, 199, 241] local_w=[-1, -1, -1, -1, 1, -1]
+(12,1) w=1 primes=[2, 3, 7, 11, 13, 17, 167] local_w=[-1, -1, 1, -1, -1, -1, 1]
+(12,5) w=1 primes=[2, 3, 5, 7, 17, 239] local_w=[-1, -1, -1, -1, -1, 1]
+(12,7) w=-1 primes=[2, 3, 5, 7, 19, 73, 263] local_w=[-1, -1, -1, -1, -1, -1, 1]
+(12,11) w=-1 primes=[2, 3, 7, 11, 23, 41, 241] local_w=[-1, -1, 1, -1, -1, -1, -1]
+
+=== a-b mod 8 vs root number ===
+(m,n)=(2,1) a-b=-1 mod 8=7 w=1
+(m,n)=(3,2) a-b=-7 mod 8=1 w=1
+(m,n)=(4,1) a-b=7 mod 8=7 w=1
+(m,n)=(4,3) a-b=-17 mod 8=7 w=-1
+(m,n)=(5,2) a-b=1 mod 8=1 w=-1
+(m,n)=(5,4) a-b=-31 mod 8=1 w=1
+(m,n)=(6,1) a-b=23 mod 8=7 w=1
+(m,n)=(6,5) a-b=-49 mod 8=7 w=1
+(m,n)=(7,2) a-b=17 mod 8=1 w=1
+(m,n)=(7,4) a-b=-23 mod 8=1 w=1
+(m,n)=(7,6) a-b=-71 mod 8=1 w=-1
+(m,n)=(8,1) a-b=47 mod 8=7 w=1
+(m,n)=(8,3) a-b=7 mod 8=7 w=-1
+(m,n)=(8,5) a-b=-41 mod 8=7 w=-1
+(m,n)=(8,7) a-b=-97 mod 8=7 w=1
+(m,n)=(9,2) a-b=41 mod 8=1 w=1
+(m,n)=(9,4) a-b=-7 mod 8=1 w=1
+(m,n)=(9,8) a-b=-127 mod 8=1 w=1
+(m,n)=(10,1) a-b=79 mod 8=7 w=-1
+(m,n)=(10,3) a-b=31 mod 8=7 w=-1
+(m,n)=(10,7) a-b=-89 mod 8=7 w=1
+(m,n)=(10,9) a-b=-161 mod 8=7 w=1
+(m,n)=(11,2) a-b=73 mod 8=1 w=-1
+(m,n)=(11,4) a-b=17 mod 8=1 w=1
+(m,n)=(11,6) a-b=-47 mod 8=1 w=-1
+(m,n)=(11,8) a-b=-119 mod 8=1 w=-1
+(m,n)=(11,10) a-b=-199 mod 8=1 w=1
+(m,n)=(12,1) a-b=119 mod 8=7 w=1
+(m,n)=(12,5) a-b=-1 mod 8=7 w=1
+(m,n)=(12,7) a-b=-73 mod 8=7 w=-1
+(m,n)=(12,11) a-b=-241 mod 8=7 w=-1
+(m,n)=(13,2) a-b=113 mod 8=1 w=1
+(m,n)=(13,4) a-b=49 mod 8=1 w=1
+(m,n)=(13,6) a-b=-23 mod 8=1 w=1
+(m,n)=(13,8) a-b=-103 mod 8=1 w=-1
+(m,n)=(13,10) a-b=-191 mod 8=1 w=-1
+(m,n)=(13,12) a-b=-287 mod 8=1 w=-1
+(m,n)=(14,1) a-b=167 mod 8=7 w=-1
+(m,n)=(14,3) a-b=103 mod 8=7 w=-1
+(m,n)=(14,5) a-b=31 mod 8=7 w=-1
+(m,n)=(14,9) a-b=-137 mod 8=7 w=1
+(m,n)=(14,11) a-b=-233 mod 8=7 w=1
+(m,n)=(14,13) a-b=-337 mod 8=7 w=1
+(m,n)=(15,2) a-b=161 mod 8=1 w=1
+(m,n)=(15,4) a-b=89 mod 8=1 w=-1
+(m,n)=(15,8) a-b=-79 mod 8=1 w=-1
+(m,n)=(15,14) a-b=-391 mod 8=1 w=-1
+(m,n)=(16,1) a-b=223 mod 8=7 w=1
+(m,n)=(16,3) a-b=151 mod 8=7 w=-1
+(m,n)=(16,5) a-b=71 mod 8=7 w=-1
+(m,n)=(16,7) a-b=-17 mod 8=7 w=1
+(m,n)=(16,9) a-b=-113 mod 8=7 w=1
+(m,n)=(16,11) a-b=-217 mod 8=7 w=-1
+(m,n)=(16,13) a-b=-329 mod 8=7 w=-1
+(m,n)=(16,15) a-b=-449 mod 8=7 w=-1
+
+=== u mod patterns vs root number ===
+(m,n)=(2,1) u=-1 v=7 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(3,2) u=-7 v=17 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(4,1) u=7 v=23 u mod 8=7 v mod 8=7 sign(u*v)=1 w=1
+(m,n)=(4,3) u=-17 v=31 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(5,2) u=1 v=41 u mod 8=1 v mod 8=1 sign(u*v)=1 w=-1
+(m,n)=(5,4) u=-31 v=49 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(6,1) u=23 v=47 u mod 8=7 v mod 8=7 sign(u*v)=1 w=1
+(m,n)=(6,5) u=-49 v=71 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(7,2) u=17 v=73 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(7,4) u=-23 v=89 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(7,6) u=-71 v=97 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(8,1) u=47 v=79 u mod 8=7 v mod 8=7 sign(u*v)=1 w=1
+(m,n)=(8,3) u=7 v=103 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(8,5) u=-41 v=119 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(8,7) u=-97 v=127 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(9,2) u=41 v=113 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(9,4) u=-7 v=137 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(9,8) u=-127 v=161 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(10,1) u=79 v=119 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(10,3) u=31 v=151 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(10,7) u=-89 v=191 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(10,9) u=-161 v=199 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(11,2) u=73 v=161 u mod 8=1 v mod 8=1 sign(u*v)=1 w=-1
+(m,n)=(11,4) u=17 v=193 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(11,6) u=-47 v=217 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(11,8) u=-119 v=233 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(11,10) u=-199 v=241 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(12,1) u=119 v=167 u mod 8=7 v mod 8=7 sign(u*v)=1 w=1
+(m,n)=(12,5) u=-1 v=239 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(12,7) u=-73 v=263 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(12,11) u=-241 v=287 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(13,2) u=113 v=217 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(13,4) u=49 v=257 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(13,6) u=-23 v=289 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=1
+(m,n)=(13,8) u=-103 v=313 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(13,10) u=-191 v=329 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(13,12) u=-287 v=337 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(14,1) u=167 v=223 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(14,3) u=103 v=271 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(14,5) u=31 v=311 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(14,9) u=-137 v=367 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(14,11) u=-233 v=383 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(14,13) u=-337 v=391 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(15,2) u=161 v=281 u mod 8=1 v mod 8=1 sign(u*v)=1 w=1
+(m,n)=(15,4) u=89 v=329 u mod 8=1 v mod 8=1 sign(u*v)=1 w=-1
+(m,n)=(15,8) u=-79 v=401 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(15,14) u=-391 v=449 u mod 8=1 v mod 8=1 sign(u*v)=-1 w=-1
+(m,n)=(16,1) u=223 v=287 u mod 8=7 v mod 8=7 sign(u*v)=1 w=1
+(m,n)=(16,3) u=151 v=343 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(16,5) u=71 v=391 u mod 8=7 v mod 8=7 sign(u*v)=1 w=-1
+(m,n)=(16,7) u=-17 v=431 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(16,9) u=-113 v=463 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=1
+(m,n)=(16,11) u=-217 v=487 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(16,13) u=-329 v=503 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+(m,n)=(16,15) u=-449 v=511 u mod 8=7 v mod 8=7 sign(u*v)=-1 w=-1
+
+=== Tally of root number by sign(u*v) ===
+sign(uv)>0, w=+1: 11   w=-1: 11
+sign(uv)<0, w=+1: 18   w=-1: 15

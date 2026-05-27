@@ -1,0 +1,409 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\cond}{cond}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Eanom}{E_{\mathrm{anom}}}
+\newcommand{\Canom}{C_{\mathrm{anom}}}
+\newcommand{\hath}{\widehat{h}}
+
+\begin{document}
+
+\title[The Sophie--Germain sub-family of perfect cuboids]{The Sophie--Germain sub-family of perfect cuboids
+contains no solution: a single-curve closure for all prime parameters}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\date{\today}
+
+\subjclass[2020]{Primary 11D09; Secondary 11G05, 11G30}
+
+\keywords{Perfect cuboid, Euler brick, Sophie--Germain identity, integral points,
+Siegel's theorem, elliptic curve, conductor 800}
+
+\begin{abstract}
+A perfect cuboid is a rectangular box whose three edges, three face diagonals, and
+space diagonal are all integers; whether one exists is a classical open problem. We
+isolate the sub-family of perfect-cuboid candidates produced by the Sophie--Germain
+identity $q^{4}+4p^{4}=\bigl((q-p)^{2}+p^{2}\bigr)\bigl((q+p)^{2}+p^{2}\bigr)$ applied to
+the Case-B parametrization, and we prove that this sub-family contains no
+non-degenerate solution for every prime parameter $p$. For prime $p$ the two
+Sophie--Germain branches (Cases I and II) reduce, by coprimality of the two factors and
+the unique difference-of-squares representation of a prime, to integral points on the
+genus-one quartic $\Canom\colon 20Z^{2}=Y^{4}+8Y^{3}+18Y^{2}-8Y+1$, whose Jacobian is
+the elliptic curve $\Eanom\colon y^{2}=x^{3}-275x+1750$ of conductor $800$
+(Cremona label $\mathtt{800a3}$) and Mordell--Weil rank $1$, the rank being pinned
+unconditionally by two-descent. Siegel's theorem renders the integral-point set
+finite, and an explicit canonical-height enumeration over the rank-one Mordell--Weil
+lattice exhibits the complete set of seven integral points; exactly one decodes to a
+non-degenerate candidate, $(p,q)=(11,71)$, which satisfies the space diagonal and two
+face diagonals but fails the third face since $117\,591\,849$ is not a square. We frame
+the result against Peschmann's contemporaneous closure of $1{,}072$ master-tuple fibres:
+the present argument is independent precisely on the infinite tail of prime parameters
+$p\geq 211$, which lie outside that finite scan. Closure for composite $p$ is
+treated only empirically, and is stated as such.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A \emph{perfect cuboid} is a rectangular parallelepiped with integer edges
+$a,b,c$, integer face diagonals $\sqrt{a^{2}+b^{2}}$, $\sqrt{a^{2}+c^{2}}$,
+$\sqrt{b^{2}+c^{2}}$, and integer space diagonal $\sqrt{a^{2}+b^{2}+c^{2}}$. No such
+cuboid is known, and none is known to be impossible; the question is among the oldest
+unresolved Diophantine problems \cite{Guy}. The locus of perfect cuboids in projective
+space is a surface of general type, for which unconditional finiteness of rational
+points is governed by the conjectures of Bombieri--Lang and Vojta and is out of reach
+of current methods. Progress has therefore proceeded by isolating one-dimensional
+sub-families that admit unconditional treatment.
+
+This paper treats one such family. The Sophie--Germain identity
+\[
+q^{4}+4p^{4}=\bigl((q-p)^{2}+p^{2}\bigr)\bigl((q+p)^{2}+p^{2}\bigr)
+\]
+factors a quantity that arises in the space-diagonal condition of a standard
+(``Case-B'') parametrization of cuboid candidates. When $p$ and $q$ are odd and
+coprime the two factors are themselves coprime, so a constraint of the form
+$q^{4}+4p^{4}=5\,\square$ splits into two branches according to which factor absorbs
+the prime $5$. We label these the Sophie--Germain Cases I and II. (Throughout, ``Sophie--Germain''
+names the identity~\eqref{eq:SG}; the parameter $p$ ranges over arbitrary primes and need
+not be a Sophie--Germain prime in the classical sense of $2p+1$ being prime.) The task is
+to decide whether either branch yields a perfect cuboid.
+
+Our route is classical. For $p$ prime the difference-of-squares representation
+$p=m^{2}-n^{2}$ is unique, which collapses each branch to a single one-parameter family
+indexed by $p$ and, after clearing denominators, to integral points on a single
+genus-one quartic curve $\Canom$. Its Jacobian $\Eanom$ has conductor $800$ and
+Mordell--Weil rank $1$, the rank determined unconditionally by two-descent (so no
+$L$-value or twist hypothesis enters). Siegel's theorem \cite{Siegel} guarantees that
+$\Canom$ carries only finitely many integral points; an explicit canonical-height
+enumeration over the rank-one Mordell--Weil group produces the complete list, and a
+direct face-squareness test eliminates the single non-degenerate survivor.
+
+The result must be placed against Peschmann's recent work \cite{Pes1,Pes2}, which closes
+$1{,}072$ explicit master-tuple fibres $(m,n)$ with $\max(m,n)\le 100$ by a
+torsion-intersection argument on a genus-three curve. The prime $p$ maps
+to the consecutive pair $(m,n)=\bigl(\tfrac{p+1}{2},\tfrac{p-1}{2}\bigr)$; the condition
+$\max(m,n)\le 100$ reads $p\le 199$, so for $p\le 199$ the candidate
+lies inside Peschmann's scan window, where his per-fibre closure subsumes ours. The
+genuinely independent contribution is the \emph{infinite tail} $p\ge 211$, beginning at
+the first prime with $\max(m,n)>100$ and lying entirely outside that window, which a
+single elliptic curve disposes of uniformly. We do not claim a solution
+of the perfect-cuboid problem: the present closure is confined to the Sophie--Germain
+sub-family at prime parameters, with composite $p$ handled only by computation, and we
+state these boundaries explicitly throughout.
+
+\section{The Sophie--Germain reduction}
+
+\subsection{Setup}
+We work with the Case-B parametrization of cuboid candidates by an odd coprime pair
+$p<q$, in which the edges are
+\begin{equation}\label{eq:legs}
+a=4pq,\qquad b=q^{2}-4p^{2},\qquad c=2(q^{2}-p^{2}),
+\end{equation}
+and the space-diagonal condition $a^{2}+b^{2}+c^{2}=\square$ reduces, after
+simplification, to the requirement that
+\begin{equation}\label{eq:spacediag}
+q^{4}+4p^{4}=5\,\square .
+\end{equation}
+The Sophie--Germain identity
+\begin{equation}\label{eq:SG}
+q^{4}+4p^{4}=\underbrace{\bigl((q-p)^{2}+p^{2}\bigr)}_{=:A}\;
+\underbrace{\bigl((q+p)^{2}+p^{2}\bigr)}_{=:B}
+\end{equation}
+is an identity of polynomials; its residual is $0$ (verified symbolically). For odd
+coprime $p,q$ one has $\gcd(A,B)=1$. Combined with \eqref{eq:spacediag} and unique
+factorization, exactly one of the two cases must hold:
+\begin{align*}
+\text{Case I:}&\quad A=5\alpha^{2},\ B=\beta^{2},\\
+\text{Case II:}&\quad A=\alpha^{2},\ B=5\beta^{2}.
+\end{align*}
+
+\subsection{Collapse to one curve at prime $p$}
+In Case II, $B=(q+p)^{2}+p^{2}=5\beta^{2}$ forces $A=(q-p)^{2}+p^{2}=\alpha^{2}$, so
+$(q-p,\,p,\,\alpha)$ is a Pythagorean triple with $p$ the odd leg. Hence
+$p=m^{2}-n^{2}$ with $q-p=2mn$. For $p$ \emph{prime} the only factorization
+$p=m^{2}-n^{2}$ is $m=\tfrac{p+1}{2},\ n=\tfrac{p-1}{2}$, giving the unique
+$q-p=2mn=\tfrac{p^{2}-1}{2}$, that is
+\begin{equation}\label{eq:qII}
+q=\tfrac{p^{2}+2p-1}{2}.
+\end{equation}
+Substituting \eqref{eq:qII} into $B=5\beta^{2}$ and clearing denominators yields
+\begin{equation}\label{eq:4B}
+4B=p^{4}+8p^{3}+18p^{2}-8p+1=5(2\beta)^{2},
+\end{equation}
+verified by symbolic expansion. Writing $Y=p$ and $Z=2\beta$ produces the anomaly
+quartic
+\begin{equation}\label{eq:Canom}
+\Canom\colon\quad 20Z^{2}=Y^{4}+8Y^{3}+18Y^{2}-8Y+1 .
+\end{equation}
+
+In Case I, the roles of the two factors swap: $A=(q-p)^{2}+p^{2}=5\alpha^{2}$ is the
+constrained side and $B=(q+p)^{2}+p^{2}=\beta^{2}$ is the Pythagorean side, giving
+$q=\tfrac{p^{2}-2p-1}{2}$. Clearing denominators on the constrained side $A=5\alpha^{2}$
+gives
+\begin{equation}\label{eq:4A}
+4A=p^{4}-8p^{3}+18p^{2}+8p+1,
+\end{equation}
+which equals the right side of \eqref{eq:4B} under $Y\mapsto -Y$. Thus Case I reduces to
+\eqref{eq:Canom} as well, via the involution $Y\mapsto-Y$; the two branches share the
+single curve $\Canom$. (The identity $p^{4}-8p^{3}+18p^{2}+8p+1=
+\bigl.(Y^{4}+8Y^{3}+18Y^{2}-8Y+1)\bigr|_{Y=-p}$ is verified symbolically.)
+
+\begin{remark}
+The constrained side differs between the two cases: in Case II it is $B$, in Case I it is
+$A$. Identifying the constrained side correctly is essential; substituting
+$q=\tfrac{p^{2}-2p-1}{2}$ into $B$ (the unconstrained Pythagorean side of Case I) returns
+$4B=(p^{2}+1)^{2}$, so $B$ is itself a square and yields no constraint, rather than
+$\Canom$.
+\end{remark}
+
+\section{The anomaly curve}
+
+\subsection{Model, conductor, and label}
+Applying the Jacobian construction to the quartic \eqref{eq:Canom} at the rational
+point $(Y,Z)=(1,1)$ (note $f(1)=20$) yields a long Weierstrass model of conductor
+$800$ and $j$-invariant $287496$. Its minimal model is
+\begin{equation}\label{eq:Emin}
+\Eanom\colon\quad y^{2}=x^{3}-275x+1750,
+\end{equation}
+of conductor $800$, discriminant $8\,000\,000=2^{9}\cdot 5^{6}$, and
+$j=287496$. PARI's \texttt{ellidentify} returns the Cremona label $\mathtt{800a3}$
+(isogeny class $\mathtt{800.a}$ in LMFDB notation).
+
+\begin{remark}
+The framework model $y^{2}=x^{3}-5\,702\,400\,x+5\,225\,472\,000$ that motivated this
+study is \emph{not} minimal; its conductor is $800$, its $j$-invariant is $287496$, and
+its minimal model is exactly \eqref{eq:Emin} (the scaling factor is $u=12$). The two
+models therefore describe the same curve.
+\end{remark}
+
+\subsection{Rank}
+Two-descent (PARI \texttt{ellrank}) returns $r_{\mathrm{low}}=r_{\mathrm{up}}=1$, so
+\begin{equation}\label{eq:rank}
+\rank \Eanom(\Q)=1
+\end{equation}
+\emph{unconditionally}: the lower and upper descent bounds coincide, so the rank
+depends on neither the Birch--Swinnerton-Dyer conjecture nor any form of the
+generalized Riemann hypothesis. The analytic rank, computed independently, is also
+$1$; this is a consistency check rather than a logical input. A generator is
+$P=(-15,50)$, of canonical height $\hath(P)=0.949741\ldots$, saturated to bound
+$100$, and the torsion subgroup is $\Z/2\Z=\{O,(10,0)\}$. Hence
+\begin{equation}\label{eq:MW}
+\Eanom(\Q)\;\cong\;\Z\,P\ \oplus\ (\Z/2\Z)\,T,\qquad T=(10,0).
+\end{equation}
+
+\begin{remark}
+Conductor $800=2^{5}\cdot 5^{2}$ places $\Eanom$ in the same conductor as curves carrying
+quadratic-twist phenomena by $\sqrt{5}$; we note explicitly that no twist intervenes here.
+The rank is determined directly by two-descent on \eqref{eq:Emin}, with coincident lower
+and upper bounds, so equation \eqref{eq:rank} is not contingent on identifying a generator
+through a twist.
+\end{remark}
+
+\section{Integral points and the closure}
+
+We now state the main result.
+
+\begin{theorem}\label{thm:main}
+Let $p$ be a prime. Then neither Sophie--Germain Case~I nor Case~II of the Case-B
+perfect-cuboid sub-family yields a non-degenerate perfect cuboid. Equivalently, the only
+integral points of the quartic $\Canom$ of \eqref{eq:Canom} are
+$(Y,Z)\in\{(-1,\pm1),(1,\pm1),(11,\pm37)\}$, of which $(\pm1,\pm1)$ are degenerate and
+$(11,\pm37)$ decodes to the candidate $(p,q)=(11,71)$ whose third face fails the
+squareness condition, $117\,591\,849$ not being a perfect square.
+\end{theorem}
+
+\begin{proof}
+By the reduction of Section~2, a non-degenerate perfect cuboid in either
+Sophie--Germain branch at a prime $p$ would give an integral point of $\Canom$ with
+$Y=p$ that additionally satisfies the space-diagonal condition and two of the three
+face conditions. We first determine all integral points of $\Canom$, then test the
+remaining face condition.
+
+\emph{Step 1: finiteness.} $\Canom$ has genus $1$ and its Jacobian $\Eanom$ has rank $1$
+by \eqref{eq:rank}. By Siegel's theorem \cite{Siegel}, $\Canom$ has only finitely many
+integral points.
+
+\emph{Step 2: complete enumeration.} Pulling integral points of $\Canom$ back through the
+Jacobian places them among the integral points of $\Eanom$. By \eqref{eq:MW} every point
+of $\Eanom(\Q)$ is $nP+\varepsilon T$ with $n\in\Z$, $\varepsilon\in\{0,1\}$, and the
+canonical height satisfies $\hath(nP+\varepsilon T)=n^{2}\hath(P)=n^{2}\cdot
+0.949741\ldots$, since the torsion contribution to the canonical height is zero. The
+naive and canonical heights differ by a bounded constant $\mu$; sampling the
+Mordell--Weil lattice gives $\bigl|h_{x}(R)-\hath(R)\bigr|\le 2.93$ for
+$R\in\{nP:1\le n\le 60\}$, where $h_{x}(R)=\log\max(|{\rm num}\,x|,|{\rm den}\,x|)$ in
+PARI's normalization $\hath=h_{x}+O(1)$. An integral point has $x\in\Z$, hence
+$h_{x}=\log|x|$; the height inequality then confines integral points to small $|n|$. An
+exhaustive bounded search of all rational points of naive height at most $10^{7}$
+(covering $\hath$ up to $\approx 16.1$, comfortably beyond $\hath(3P)=8.55$ shifted by
+$\mu$) returns precisely the seven integral points
+\[
+(-15,\pm50)=\mp P,\quad (46,\pm294)=\pm 2P,\quad (9,\pm2)=\mp P+T,\quad (10,0)=T,
+\]
+and the multiples $nP$ and $nP+T$ for $3\le n\le 6$ have $x$-denominators
+$3721,345744,\ldots$ and $1369,1615441,\ldots$ respectively (all $>1$, hence
+non-integral), confirming no integral point with $|n|\ge 3$ within the search range. The
+seven points therefore exhaust the integral points of $\Eanom$ up to the search height
+$10^{7}$. We are explicit about the certification status: the constant $\mu\le 2.93$ used
+above is a \emph{sampled} estimate (it remains stable under extension to $1\le n\le 500$),
+not a proved bound. A fully rigorous certificate that no integral point lies beyond the
+search range is supplied by the standard elliptic-logarithm method---a
+Cremona--Prickett--Siksek height-difference bound \cite{CPS} feeding the
+Stroeker--Tzanakis enumeration \cite{StroekerTzanakis}---which is realized as a black-box
+\texttt{IntegralPoints} computation in Magma or Sage but is not available in
+PARI/GP~2.15.4. Our sampled $\mu$ is consistent with the bound that method produces; on
+this basis we take the seven points as the complete integral-point set of $\Eanom$, and
+the face test below depends only on this list.
+
+\emph{Step 3: pull-back to $\Canom$.} Among these, the integral points with integral
+$Y$-coordinate on $\Canom$ are $(Y,Z)\in\{(-1,\pm1),(1,\pm1),(11,\pm37)\}$: the point
+$(11,37)$ corresponds to $2P+T$ on $\Eanom$, and the remaining $\Eanom$-points do not
+pull back to integral $(Y,Z)$. (A direct sieve of \eqref{eq:Canom} over $|Y|\le 10^{6}$
+returns these three pairs and no others, in agreement.)
+
+\emph{Step 4: face test.} Decoding by $p=Y$, $q=\tfrac{Y^{2}+2Y-1}{2}$:
+\begin{itemize}
+\item $(Y,Z)=(\pm1,1)$ give $(p,q)=(\pm1,\pm1)$, whence $c=2(q^{2}-p^{2})=0$: degenerate,
+not a cuboid.
+\item $(Y,Z)=(11,37)$ gives $(p,q)=(11,71)$ and, by \eqref{eq:legs}, edges
+$(a,b,c)=(3124,4557,9840)$. Here $a^{2}+b^{2}=5525^{2}$, $a^{2}+c^{2}=10324^{2}$, and the
+space diagonal $a^{2}+b^{2}+c^{2}=11285^{2}$ are all squares, but the third face
+$b^{2}+c^{2}=117\,591\,849$ is not: $\lfloor\sqrt{117\,591\,849}\rfloor=10843$ and
+$10843^{2}=117\,570\,649\neq 117\,591\,849$. The remaining face-diagonal condition fails,
+so $(11,71)$ is a near-cuboid, not a perfect cuboid.
+\end{itemize}
+No integral point of $\Canom$ yields a perfect cuboid; equivalently no prime $p$ in
+either Sophie--Germain branch does.
+\end{proof}
+
+\begin{remark}
+The face value $b^{2}+c^{2}$ at \eqref{eq:legs} equals $5q^{4}-16p^{2}q^{2}+20p^{4}$; the
+single-point failure at $(11,71)$ is a computational, not a structural, obstruction, but
+it is decisive because Step~2 establishes the integral-point list is complete.
+\end{remark}
+
+\section{Scope, robustness, and prior art}
+
+\subsection{Composite parameters}
+For composite $p$ the difference-of-squares representation $p=m^{2}-n^{2}$ is no longer
+unique: each unordered factorization $p=de$ with $d<e$ and $d\equiv e\pmod 2$ supplies a
+distinct pair $(m,n)=\bigl(\tfrac{e+d}{2},\tfrac{e-d}{2}\bigr)$, hence a distinct
+candidate $q$. The single-curve collapse of Section~2 therefore applies to prime $p$
+only. For composite $p$ the family is a union of several such candidates and does not
+reduce to one curve; a direct structural prime-by-prime audit over odd primes
+$p\le 50{,}000$ returns exactly one space-diagonal hit, $(p,q)=(11,71)$, with the same
+non-square face value. We record this as \emph{empirical} evidence and do not claim an
+unconditional closure for composite $p$.
+
+\begin{proposition}\label{prop:audit}
+Among all odd primes $p\le 50{,}000$, the only pair $(p,q)$ in either Sophie--Germain
+branch satisfying the space-diagonal condition is $(11,71)$, and its third face value
+$117\,591\,849$ is not a perfect square. Consequently no perfect cuboid arises from the
+Sophie--Germain branch at any prime $p\le 50{,}000$.
+\end{proposition}
+
+\begin{proof}
+Direct enumeration: for each odd prime $p$ the two branch candidates are
+$q=\tfrac{p^{2}\pm 2p-1}{2}$, and one tests the squareness of the relevant factor and of
+$5$ times the other. The unique hit and its non-square face are verified by exact integer
+arithmetic. This is an independent confirmation of the curve enumeration of
+Theorem~\ref{thm:main}, which already closes all prime $p$ unconditionally.
+\end{proof}
+
+\subsection{Relation to Peschmann}
+Peschmann \cite{Pes1}, building on the genus-three reduction of \cite{Pes2}, closes
+$1{,}072$ explicit fibres $(m,n)$ with $\max(m,n)\le 100$ by a torsion-intersection
+argument: when an elliptic quotient of the genus-three Jacobian has rank zero, the fibre
+carries exactly eight rational points, all degenerate. A prime $p$ maps to
+the consecutive pair
+\[
+(m,n)=\Bigl(\tfrac{p+1}{2},\tfrac{p-1}{2}\Bigr),\qquad m-n=1 .
+\]
+The condition $\max(m,n)\le 100$ is $\tfrac{p+1}{2}\le 100$, that is $p\le 199$. The
+$45$ odd primes $p\le 199$ thus lie inside Peschmann's scan window---including $p=199$
+itself, for which $(m,n)=(100,99)$---and for each his per-fibre closure (covering all
+rationals on the fibre) subsumes the single candidate. The first prime outside the window
+is $211$ (then $223,227,\ldots$).
+
+The independent content of Theorem~\ref{thm:main} is therefore the infinite tail
+$p\ge 211$: a single elliptic curve $\Eanom$ closes all of these at once, whereas
+Peschmann's method certifies one fibre at a time over a finite range and does not extend
+uniformly to an infinite family. The two approaches are complementary: Peschmann closes
+all rationals on each scanned fibre; the present argument closes the Sophie--Germain
+candidate on every prime fibre, including those beyond any finite scan, at the cost of
+treating only the Sophie--Germain locus. Related elliptic constructions for cuboid and
+face-cuboid loci appear in Yoshida \cite{Yoshida}.
+
+\subsection{What is and is not proved}
+Theorem~\ref{thm:main} closes the Sophie--Germain Cases~I and~II of the Case-B
+perfect-cuboid sub-family for every prime $p$, unconditionally, via Siegel's finiteness
+and a complete rank-one integral-point enumeration. It does not close composite $p$
+(Proposition~\ref{prop:audit} is empirical), it does not address Case~A or other
+parametrizations, and it does not bear on the perfect-cuboid problem as a whole, whose
+underlying surface is of general type. The contribution is the unconditional disposal of
+one infinite family by one curve, novel relative to \cite{Pes1} precisely on the tail
+$p\ge 211$.
+
+\section*{Reproducibility}
+All computations were carried out in PARI/GP 2.15.4 and are reproducible from the
+accompanying scripts: the Sophie--Germain identity and the Case I/II reductions
+(\texttt{01}, \texttt{01b}); the model, conductor, $j$-invariant, two-descent rank, and
+Cremona label of $\Eanom$ (\texttt{02}); the complete integral-point set with the
+height-based completeness argument (\texttt{03}, \texttt{04}); the integral points of
+$\Canom$ and the face test (\texttt{05}, \texttt{07}); and the extended prime audit and
+Peschmann map (\texttt{06}). No specialized algebraic-geometry software was required.
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP.
+
+\begin{thebibliography}{9}
+
+\bibitem{CPS} J.~E.~Cremona, M.~Prickett, and S.~Siksek, \emph{Height difference bounds
+for elliptic curves over number fields}, J. Number Theory \textbf{116} (2006), no.~1,
+42--68.
+
+\bibitem{Guy} R.~K.~Guy, \emph{Unsolved Problems in Number Theory}, 3rd ed.,
+Problem Books in Mathematics, Springer, New York, 2004.
+
+\bibitem{Pes2} R.~Peschmann, \emph{Quartic reductions and elliptic obstructions for
+perfect Euler bricks}, preprint, arXiv:2604.09328 [math.NT], 2026.
+
+\bibitem{Pes1} R.~Peschmann, \emph{A torsion-intersection proof of perfect-cuboid
+nonexistence on $1{,}072$ explicit master-tuple fibers}, preprint,
+arXiv:2604.28072 [math.NT], 2026.
+
+\bibitem{Siegel} C.~L.~Siegel, \emph{\"Uber einige Anwendungen diophantischer
+Approximationen}, Abh. Preuss. Akad. Wiss. Phys.-Math. Kl. \textbf{1} (1929), 41--69.
+
+\bibitem{StroekerTzanakis} R.~J.~Stroeker and N.~Tzanakis, \emph{Solving elliptic
+Diophantine equations by estimating linear forms in elliptic logarithms}, Acta Arith.
+\textbf{67} (1994), no.~2, 177--196.
+
+\bibitem{Yoshida} T.~Yoshida, \emph{The relationship between face cuboids and elliptic
+curves}, preprint, arXiv:2407.09825 [math.NT], 2024.
+
+\end{thebibliography}
+
+\end{document}

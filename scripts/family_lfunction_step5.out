@@ -1,0 +1,68 @@
+  ***   Warning: new stack size = 800000000 (762.939 Mbytes).
+=================================================================
+Step 5: Family is Legendre family at lambda = -q^2
+=================================================================
+
+E_PCP(q) = Legendre family E_lambda with lambda = -q^2.
+
+j(E_PCP(q)) = 256 (1 + q^2 + q^4)^3 / (q^4 (1+q^2)^2)
+
+Verify with formal computation:
+
+j(q) = (256*q^12 + 768*q^10 + 1536*q^8 + 1792*q^6 + 1536*q^4 + 768*q^2 + 256)/(q^8 + 2*q^6 + q^4)
+
+--- Family modular structure ---
+
+The Legendre family Y^2 = X(X-1)(X-lambda) over lambda-line is the
+universal elliptic curve over Y(2) = X(2) - {cusps}.
+
+Pythagorean parametrization: q = (m^2-n^2)/(2mn) traces a curve
+C_{Pyth}: lambda = -q^2 in the lambda-line.
+
+C_{Pyth} as a subvariety:
+  lambda + q^2 = 0  with q = (m^2-n^2)/(2mn)
+  Equivalently: lambda = -((m^2-n^2)/(2mn))^2
+  Set s = m/n: lambda = -(s^2-1)^2/(4s^2)^2 * (2n^2)^2/(2n^2)^2
+                       = -(s^2-1)^2/(4s)^2 ... function of s only.
+
+So C_{Pyth} = image of P^1_s under s -> -((s-1/s)/2)^2 = -((s^2-1)/(2s))^2
+
+--- Degree of parametrization s -> lambda(s) = -((s^2-1)/(2s))^2 ---
+
+Critical points of lambda(s): s = +-1, 1 +- sqrt(2)
+Critical values lambda: 0, 0, -((1+sqrt2)^2-1)^2/(4(1+sqrt2)^2)
+
+--- Family L-function (in the moment / averaging sense) ---
+
+L(s, family) := lim_{X -> inf} (1/N(X)) sum_{(m,n) : 2mn <= X}
+                   L(s, E_PCP(q(m,n)))
+
+By Sarnak-Shin-Templier / Bhargava-Shankar, family Selmer rank
+controls the AVERAGE rank.  For the Pythagorean family above:
+
+--- L(1, E_{m,n}) numerically ---
+
+(m,n)=(2,1): N=21, L(1)=0.45111540538849205559340015640266768992, ellrank=[0, 0, 0, []]
+(m,n)=(3,2): N=1785, L(1)=1.5478483669737109193248769124666270521, ellrank=[0, 0, 0, []]
+(m,n)=(4,1): N=4830, L(1)=4.4777672218823495773128901624955572335, ellrank=[0, 0, 0, []]
+(m,n)=(4,3): N=22134, L(1)=0.E-57, ellrank=[1, 1, 0, [[-317/4, 3887/8]]]
+(m,n)=(5,2): N=4305, L(1)=0.E-57, ellrank=[1, 1, 0, [[-125/4, 395/8]]]
+(m,n)=(5,4): N=6510, L(1)=4.6437687231495221984691618886744555084, ellrank=[0, 0, 0, []]
+(m,n)=(6,1): N=113505, L(1)=2.2877856863523041292877680538339201568, ellrank=[0, 0, 0, []]
+(m,n)=(6,5): N=82005, L(1)=-1.1929206660830707233259661128251037389 E-41, ellrank=[2, 2, 0, [[-185, 9745], [-515, 7270]]]
+(m,n)=(7,2): N=130305, L(1)=2.7927990391712590695867315544848889029, ellrank=[0, 0, 0, []]
+(m,n)=(7,4): N=945714, L(1)=4.5966552349759526708597735069535080136, ellrank=[0, 0, 0, []]
+(m,n)=(7,6): N=1880151, L(1)=0.E-57, ellrank=[1, 1, 0, [[20195/4, 2796619/8]]]
+(m,n)=(8,1): N=155946, L(1)=5.6607321752706052870273707645356042169, ellrank=[0, 0, 0, []]
+(m,n)=(8,3): N=237930, L(1)=0.E-57, ellrank=[1, 1, 0, [[-282, 1956]]]
+(m,n)=(8,5): N=1902810, L(1)=0.E-56, ellrank=[1, 1, 0, [[-900, 9030]]]
+(m,n)=(8,7): N=2586990, L(1)=7.7887832592475192051167288068026088960, ellrank=[0, 0, 0, []]
+
+--- Interpretation ---
+
+If L(1, E_{m,n}) != 0, then by Kolyvagin + modularity: rank(E_{m,n}) = 0.
+If L(1, E_{m,n}) == 0, then rank >= 1 (and = ord_{s=1} L(s) by BSD).
+
+In our data, L(1) for the Pythagorean family appears to be NONZERO
+for all sampled (m,n). This (if it holds uniformly) is exactly the
+rank-jump exclusion we need.

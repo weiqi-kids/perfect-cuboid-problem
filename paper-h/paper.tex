@@ -1,0 +1,445 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\PCP}{E_{\mathrm{PCP}}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\NS}{NS}
+
+\sloppy
+
+\begin{document}
+
+\title[Mordell--Weil ranks and a survey of the perfect-cuboid elliptic family]{Mordell--Weil ranks and an experimental survey of the
+perfect-cuboid elliptic family}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11G05; Secondary 11D09, 11G07, 11Y50, 14J27}
+\keywords{perfect cuboid, Euler brick, elliptic surface, Mordell--Weil rank,
+rank distribution, computational number theory}
+
+\date{\today}
+
+\begin{abstract}
+A perfect cuboid is a rectangular box whose three edges, three face diagonals,
+and space diagonal are all integers; whether one exists is a question of Euler
+(1769) that remains open. To each Pythagorean parameter pair $(m,n)$ one
+attaches the elliptic fiber $\PCP(q)\colon y^2=x(x+1)(x+q^2)$, where
+$q=(m^2-n^2)/(2mn)$, and the existence of a perfect cuboid forces a rational
+point on a finite list of such fibers. We present three computational
+contributions, all carried out in PARI/GP~2.15.4 with exact (square-test and
+$2$-descent) arithmetic. First, we record a multi-framework, machine-checked
+confirmation that no perfect cuboid arises among the $36$ primitive Euler
+bricks with all edges at most $30{,}000$. Second, we tabulate the certified
+Mordell--Weil rank distribution across $303$ primitive Pythagorean fibers
+($2\le m\le 38$): ranks $0,1,2,3$ occur with relative frequencies
+$38.9\%,45.2\%,14.9\%,1.0\%$, with maximum observed rank $3$ and no fiber left
+rank-ambiguous by $2$-descent. Third, and as the single proved theorem, we
+certify that the fiber attached to $(m,n)=(22,17)$, namely $q=195/748$, has
+Mordell--Weil rank exactly $3$ over $\Q$, by exhibiting three explicit rational
+points whose canonical-height regulator equals $18.8337\ldots\neq 0$ together
+with the matching upper bound from $2$-descent; this complements the generic
+(geometric) rank statements of Naskr\k{e}cki by an explicit high-rank
+$\Q$-fiber. We close with a short catalogue of the named curves arising in the
+problem's reformulations, distinguishing throughout between theorem,
+observation, and conjecture.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The \emph{Perfect Cuboid Problem} (PCP), raised by Euler in 1769, asks whether
+there exist positive integers $a,b,c$ such that the three face diagonals
+$\sqrt{a^2+b^2}$, $\sqrt{b^2+c^2}$, $\sqrt{a^2+c^2}$ and the space diagonal
+$\sqrt{a^2+b^2+c^2}$ are all integers. A triple $(a,b,c)$ satisfying only the
+three face conditions is an \emph{Euler brick}; these exist in abundance (the
+smallest is $(44,117,240)$). No perfect cuboid is known, and none is ruled out;
+the problem is recorded as Problem~D18 in Guy~\cite{Guy}. We refer to
+van~Luijk~\cite{vanLuijk}, Sharipov~\cite{Sharipov}, Naskr\k{e}cki~\cite{Nas},
+Yoshida~\cite{Yoshida}, and Peschmann~\cite{Pesch1,Pesch2} for the modern
+arithmetic-geometry viewpoint, which we adopt.
+
+\subsection*{The per-fiber elliptic family}
+A standard route attaches to the problem the elliptic surface
+\[
+  \PCP(q)\colon\qquad y^2 = x(x+1)(x+q^2),
+\]
+parametrized by a rational $q$ that runs over leg-ratios of Pythagorean
+triples. Concretely, for coprime opposite-parity $m>n\ge 1$ set
+\begin{equation}\label{eq:param}
+  a = m^2-n^2,\qquad b = 2mn,\qquad q = \frac{a}{b}.
+\end{equation}
+The substitution $x\mapsto x/b^2$, $y\mapsto y/b^3$ identifies $\PCP(q)$ with
+the integral model
+\begin{equation}\label{eq:Emn}
+  E(m,n)\colon\quad y^2 = x(x+b^2)(x+a^2) = x^3 + (a^2+b^2)\,x^2 + (ab)^2\,x,
+\end{equation}
+which has good arithmetic for computation. Over the function field $\Q(q)$ the
+generic curve has Mordell--Weil rank $1$ (and $2$ on an explicit subfamily), as
+proved by Naskr\k{e}cki~\cite{Nas} for the closely related family
+$y^2=x(x-a^2)(x-b^2)$; this is a statement about the \emph{geometric} or
+\emph{generic} rank. The present paper is concerned instead with the
+\emph{arithmetic} ranks of \emph{individual} $\Q$-fibers and with their
+empirical distribution.
+
+\subsection*{What this paper does}
+This is a paper of experimental mathematics. Its content is computational, and
+we are careful to label each statement by its logical status:
+\begin{itemize}
+  \item a \emph{Theorem} is a statement we prove (here, exactly one);
+  \item an \emph{Observation} is a verified numerical fact about a finite,
+        explicitly searched range;
+  \item a \emph{Conjecture} is an extrapolation beyond the searched range that
+        we do not prove.
+\end{itemize}
+The three components are: a machine-checked no-cuboid record up to edge
+$30{,}000$ (Section~\ref{sec:bricks}); the Mordell--Weil rank distribution over
+$303$ Pythagorean fibers (Section~\ref{sec:dist}); and an explicit
+$\Q$-rank-$3$ fiber, certified as Theorem~\ref{thm:main}
+(Section~\ref{sec:rank3}). A short catalogue of named curves
+(Section~\ref{sec:catalogue}) records the reformulations used. All scripts and
+their outputs are listed in Section~\ref{sec:repro}.
+
+\subsection*{Relation to prior work}
+None of the three components claims to make progress toward deciding PCP. The
+no-cuboid record extends the explicit verifications surveyed in
+\cite{vanLuijk,Sharipov} and is complementary to the conditional and per-fiber
+closures of Peschmann~\cite{Pesch1,Pesch2}, who treats $1{,}072$ fibers by a
+torsion-intersection method requiring a rank-zero elliptic quotient. The rank
+distribution is, to our knowledge, the first tabulation with every fiber
+\emph{certified} (no rank gaps) by $2$-descent over a stated range. The
+explicit $\Q$-rank-$3$ fiber is the one genuinely new theorem: Naskr\k{e}cki's
+optimal lower bounds are generic/geometric (rank $1$ generically, $2$ on a
+subfamily), and an individual $\Q$-fiber of rank as high as $3$ is exhibited
+here with full certification.
+
+\section{No perfect cuboid among small Euler bricks}\label{sec:bricks}
+
+\subsection*{Algorithm}
+We enumerate Euler bricks by a face sieve and test the space-diagonal condition
+on each. All tests use PARI's exact integer \texttt{issquare}; no floating-point
+comparison enters, so the search is rigorous on its range.
+
+\begin{verbatim}
+Input : EDGEMAX.
+Output: all primitive Euler bricks with edges <= EDGEMAX; any perfect cuboid.
+for a = 1 .. EDGEMAX:
+  for b = a .. EDGEMAX:
+    if issquare(a^2 + b^2):                     # (a,b) a Pythagorean leg-pair
+      for c = b .. EDGEMAX:
+        if issquare(b^2 + c^2) and issquare(a^2 + c^2):
+          if gcd(a, b, c) == 1:                 # primitive Euler brick
+            record (a, b, c)
+            if issquare(a^2 + b^2 + c^2):        # space diagonal integral
+              report PERFECT CUBOID (a, b, c)
+\end{verbatim}
+The loop ordering $a\le b\le c$ enumerates each unordered brick once.
+
+\subsection*{Search range and result}
+We ran the algorithm with $\mathrm{EDGEMAX}=30{,}000$ (PARI/GP~2.15.4, single
+core, $\approx 3$ minutes wall time). The smaller cutoffs $1000$ and $5000$
+were run as cross-checks and reproduce the brick counts $5$ and $11$ recorded
+in the literature.
+
+\begin{observation}\label{obs:bricks}
+There are exactly $36$ primitive Euler bricks with all edges at most $30{,}000$,
+and none of them is a perfect cuboid: for every one of the $36$ triples
+$(a,b,c)$, the integer $a^2+b^2+c^2$ is not a perfect square.
+\end{observation}
+
+The complete list of the $36$ bricks $(a\le b\le c)$ found is
+\[
+\begin{array}{llll}
+(44,117,240) & (85,132,720) & (140,480,693) & (160,231,792) \\
+(187,1020,1584) & (195,748,6336) & (240,252,275) & (429,880,2340) \\
+(495,4888,8160) & (528,5796,6325) & (780,2475,2992) & (828,2035,3120) \\
+(832,855,2640) & (935,17472,25704) & (1008,1100,1155) & (1008,1100,12075) \\
+(1080,1881,14560) & (1155,6300,6688) & (1560,2295,5984) & (1575,1672,9120) \\
+(1755,4576,6732) & (2925,3536,11220) & (2964,9152,9405) & (4368,4901,13860) \\
+(4599,18368,23760) & (4900,17157,23760) & (5643,14160,21476) & (6072,16929,18560) \\
+(6435,24080,24684) & (7579,8820,17472) & (7800,23751,29920) & (7840,9828,10725) \\
+(7920,15232,26649) & (8789,10560,17748) & (10296,11753,16800) & (14112,15400,19305).
+\end{array}
+\]
+
+\begin{remark}
+Observation~\ref{obs:bricks} is a finite statement about a bounded range, not a
+nonexistence theorem. We state it as an observation and not a theorem precisely
+to keep that distinction explicit.
+\end{remark}
+
+\section{Mordell--Weil rank distribution across Pythagorean fibers}\label{sec:dist}
+
+\subsection*{Sample and method}
+We take every primitive Pythagorean parameter pair $(m,n)$ with
+\[
+  2\le m\le 38,\qquad 1\le n<m,\qquad \gcd(m,n)=1,\qquad m\not\equiv n \pmod 2,
+\]
+forming the integral model $E(m,n)$ of \eqref{eq:Emn} and its minimal model via
+PARI's \texttt{ellminimalmodel}. For each fiber we call \texttt{ellrank} at
+effort level $1$, obtaining an interval $[\ell,h]$ where $\ell$ is a certified
+lower bound (witnessed by explicit independent points) and $h$ is the upper
+bound from $2$-descent. We record a \emph{certified} rank only when
+$\ell=h$, and tally an \emph{uncertified} bucket otherwise; we never guess a
+rank when $2$-descent leaves a gap.
+
+\begin{observation}\label{obs:dist}
+Among the $303$ primitive Pythagorean fibers in the range $2\le m\le 38$, every
+fiber has $\ell=h$ (no uncertified fibers), and the certified rank distribution
+is
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+rank & count & frequency \\
+\midrule
+$0$ & $118$ & $38.94\%$ \\
+$1$ & $137$ & $45.21\%$ \\
+$2$ & $45$ & $14.85\%$ \\
+$3$ & $3$ & $0.99\%$ \\
+\midrule
+total & $303$ & $100\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The maximum rank observed is $3$, attained by exactly three fibers, namely
+those with $(m,n)\in\{(22,17),(35,22),(37,26)\}$.
+\end{observation}
+
+The combined $\rank\ge 2$ frequency is $15.8\%$, which is larger than a naive
+$50/50$ parity heuristic would predict and which increases with $m$ over the
+range. This behaviour is consistent with the rank distribution expected for a
+family whose conductor grows with the parameters, but we make no quantitative
+claim and isolate the qualitative trend as a conjecture only.
+
+\begin{conjecture}\label{conj:rank}
+For the family $\PCP(q)$ with $q$ as in \eqref{eq:param}, rank $3$ fibers occur
+with positive frequency as $m\to\infty$, and the maximum rank over
+$2\le m\le M$ is unbounded in $M$.
+\end{conjecture}
+
+We do not have evidence beyond $m=38$ for the unboundedness assertion, and
+flag it as speculative; the project literature reports rank-$4$ fibers at larger
+$m$ obtained by a targeted (non-exhaustive) high-$\omega$ search, but those lie
+outside the exhaustive range surveyed here and we do not import them.
+
+\section{An explicit fiber of rank three over \texorpdfstring{$\Q$}{Q}}\label{sec:rank3}
+
+The three rank-$3$ fibers of Observation~\ref{obs:dist} are the smallest
+high-rank specializations in our range. We single out the first,
+$(m,n)=(22,17)$, and certify its rank rigorously. Here
+$a=195$, $b=748$, $q=195/748$, and the minimal model of $E(22,17)$ is
+\begin{equation}\label{eq:E2217}
+  y^2 + xy = x^3 - 6{,}108{,}655{,}980\,x + 180{,}712{,}439{,}349{,}327,
+\end{equation}
+with conductor $N = 19{,}015{,}731{,}735 = 3\cdot5\cdot7\cdot11\cdot13\cdot17\cdot23\cdot41\cdot79$ and torsion subgroup $\Z/4\times\Z/2$.
+
+\begin{theorem}\label{thm:main}
+The elliptic curve $\PCP(q)$ with $q=195/748$ has Mordell--Weil rank exactly
+$3$ over $\Q$. The three rational points
+\[
+  Q_1 = \Big(-\tfrac{15}{176},\ \tfrac{2415}{65824}\Big),\quad
+  Q_2 = \Big(\tfrac{117}{44},\ \tfrac{169533}{32912}\Big),\quad
+  Q_3 = \Big(\tfrac{12675}{44},\ \tfrac{161213325}{32912}\Big)
+\]
+on the curve
+\[
+  \PCP(195/748)\colon\quad y^2=x(x+1)\bigl(x+(195/748)^2\bigr)
+\]
+are independent in
+$\PCP(195/748)(\Q)/\PCP(195/748)(\Q)_{\mathrm{tors}}$, and they span a
+finite-index subgroup of the free part.
+\end{theorem}
+
+\begin{proof}
+We work on the integral model $E(22,17)$ of \eqref{eq:Emn}; the substitution
+$x\mapsto x/b^2$, $y\mapsto y/b^3$ with $b=748$ carries its points to those of
+$\PCP(q)$ and is a $\Q$-isomorphism, so it suffices to certify rank $3$ for
+$E(22,17)$ and to transport three generators.
+
+\emph{Upper bound.} PARI's \texttt{ellrank} performs a complete $2$-descent on
+the integral model $E(22,17)$ of \eqref{eq:Emn}, using the full rational
+$2$-torsion (the $2$-Selmer rank bound is isomorphism-invariant, so the choice
+between $E(22,17)$ and its reduced minimal model \eqref{eq:E2217} is immaterial).
+It returns the interval $[\ell,h]=[3,3]$; the value $h=3$ is an unconditional
+upper bound on the rank coming from the size of the $2$-Selmer group (no analytic
+or $\mathrm{Sha}$-finiteness hypothesis is used for the upper bound).
+
+\emph{Lower bound.} The same call returns three independent rational points on
+$E(22,17)$; transporting them by the $\Q$-isomorphism $x\mapsto x/b^2$,
+$y\mapsto y/b^3$ ($b=748$) gives $Q_1,Q_2,Q_3$ on $\PCP(q)$ as displayed, each
+verified to satisfy the curve equation by direct substitution. The
+canonical-height pairing matrix of $(Q_1,Q_2,Q_3)$, computed by
+\texttt{ellheightmatrix}, is
+\[
+H = \begin{pmatrix}
+2.73288 & -0.50982 & 0.75786 \\
+-0.50982 & 2.76342 & 0.84518 \\
+0.75786 & 0.84518 & 3.15765
+\end{pmatrix},
+\]
+with regulator $\Reg = \det H = 18.83372\ldots$. Since $\Reg\neq 0$, the three
+points are linearly independent in the Mordell--Weil group modulo torsion;
+hence the rank is at least $3$.
+
+Combining the two bounds gives rank exactly $3$, and the three independent
+points then span a finite-index subgroup of the free part (the index is the
+saturation, which we do not compute; it is irrelevant to the rank and to
+independence).
+\end{proof}
+
+\begin{remark}
+The proof is a genuine theorem and not merely an \texttt{ellrank} lower bound:
+the certification rests on (i) the unconditional $2$-Selmer upper bound $h=3$
+and (ii) the explicit nonzero regulator, both of which are exact-up-to-rounding
+PARI outputs that any reader can reproduce or recompute by hand. No conjecture
+(BSD, parity, ABC) enters. The displayed regulator is a real-analytic quantity
+computed to $30$ significant digits; only its non-vanishing, comfortably away
+from zero, is used.
+\end{remark}
+
+\begin{remark}[Relation to Naskr\k{e}cki~\cite{Nas}]
+Naskr\k{e}cki establishes that the \emph{generic} fiber of the Pythagorean
+family has Mordell--Weil rank $1$ over $\Q(q)$ ($2$ on an explicit subfamily),
+and that these geometric bounds are optimal. Theorem~\ref{thm:main} is a
+statement of a different kind: it pins down an \emph{individual} $\Q$-fiber
+whose arithmetic rank, $3$, exceeds the generic rank by the contribution of two
+extra non-generic sections. Such specializations are expected to be sparse, in
+keeping with Observation~\ref{obs:dist}.
+\end{remark}
+
+\section{Named curves in the PCP reformulations: a catalogue}\label{sec:catalogue}
+
+For the reader's convenience we record, with explicit identifications, the
+elliptic curves that recur in the problem's reformulations. The general shape of
+these reductions --- attaching elliptic quotients to the quartic conditions of
+the cuboid --- is folklore, going back through
+\cite{vanLuijk,Sharipov,Nas,Pesch1}; we claim originality only for the specific
+Cremona-label identifications, which we verified with PARI's
+\texttt{ellidentify} and \texttt{ellrank}.
+
+\begin{observation}\label{obs:catalogue}
+The following identifications hold.
+\begin{enumerate}
+  \item The universal fiber $\PCP(q)\colon y^2=x(x+1)(x+q^2)$ has, in the
+        variable $t=q^2$, discriminant $\Delta = 16\,t^2(t-1)^2 = 16\,q^4(q^2-1)^2$
+        and $c_4 = 16(t^2-t+1)=16(q^4-q^2+1)$, with rational $2$-torsion of
+        order $4$ refining to $\Z/4\times\Z/2$; the corresponding rational
+        elliptic surface has singular fibers of types
+        $I_4, I_2, I_2, I_4$ over $q^2\in\{0,1,\infty\}$ and one further place,
+        and Euler number $12$, so its generic Mordell--Weil rank is $0$ over
+        $\overline{\Q}(q^2)$.
+  \item The ``cleanest formulation'' curve $y^2=x^3+x^2-x+15$, which arises in
+        the Saunderson sub-family reduction, is Cremona \texttt{160a2} and has
+        rank $1$, with a generator $(-1,4)$.
+  \item The auxiliary cover $y^2=x^3-36x^2+320x$ is Cremona \texttt{80a1} and
+        has rank $0$.
+\end{enumerate}
+\end{observation}
+
+The juxtaposition of (ii) and (iii) records the structural feature exploited in
+the project's Saunderson-slice closure: a rank-$1$ curve governs the squareness
+condition while a rank-$0$ cover bounds the relevant rational points. We state
+these as identifications only and make no closure claim here.
+
+\section{Reproducibility}\label{sec:repro}
+
+All computations were performed in PARI/GP version 2.15.4 (GMP kernel) on a
+single x86-64 core, with \texttt{parisize} set between $2$ and $6$ GB. The
+scripts and their captured outputs are:
+\begin{itemize}
+  \item \texttt{01\_fiber\_22\_17\_rank.gp} / \texttt{.out} ---
+        Theorem~\ref{thm:main}: minimal model, conductor, torsion,
+        \texttt{ellrank} interval, height matrix, regulator.
+  \item \texttt{02\_rank\_distribution.gp} / \texttt{.out} ---
+        Observation~\ref{obs:dist}: the certified rank histogram over the
+        $303$ fibers and the list of rank-$3$ fibers.
+  \item \texttt{03\_euler\_brick\_search.gp} / \texttt{.out} ---
+        Observation~\ref{obs:bricks}: the face-sieve enumeration of the $36$
+        primitive Euler bricks with edges $\le 30{,}000$ and the zero
+        perfect-cuboid count.
+  \item \texttt{04\_named\_curves.gp} / \texttt{.out} ---
+        Observation~\ref{obs:catalogue}: the universal geometry and the
+        Cremona-label identifications, plus the $q$-fiber coordinates of the
+        three generators of Theorem~\ref{thm:main}.
+\end{itemize}
+The \texttt{ellrank} results are stable across effort levels $0$ and $1$; the
+regulator is reported to $30$ significant digits and its non-vanishing is
+robust. The brick search uses exact integer square tests throughout.
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP, the only software used in this
+work.
+
+\begin{thebibliography}{9}
+
+\bibitem{Guy}
+R.~K.~Guy,
+\emph{Unsolved Problems in Number Theory}, 3rd ed.,
+Problem Books in Mathematics, Springer, New York, 2004 (Problem~D18).
+
+\bibitem{Nas}
+B.~Naskr\k{e}cki,
+\emph{Mordell--Weil ranks of families of elliptic curves associated to
+Pythagorean triples},
+Acta Arith. \textbf{160} (2013), no.~2, 159--183;
+arXiv:\allowbreak 1210.6933.
+
+\bibitem{Pesch1}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, 2026; arXiv:\allowbreak 2604.09328.
+
+\bibitem{Pesch2}
+R.~Peschmann,
+\emph{A torsion-intersection proof of perfect-cuboid nonexistence on $1{,}072$
+explicit master-tuple fibers},
+preprint, 2026; arXiv:\allowbreak 2604.28072.
+
+\bibitem{Sharipov}
+R.~A.~Sharipov,
+\emph{On two elliptic curves associated with perfect cuboids},
+preprint, 2012; arXiv:\allowbreak 1208.1227.
+
+\bibitem{vanLuijk}
+R.~van~Luijk,
+\emph{On perfect cuboids},
+undergraduate thesis / preprint, Universiteit Utrecht and Universiteit Leiden,
+2000.
+
+\bibitem{Yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, 2024; arXiv:\allowbreak 2407.09825.
+
+\end{thebibliography}
+
+\end{document}

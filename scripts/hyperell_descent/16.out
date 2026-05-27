@@ -1,0 +1,9 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Rank-3 seed: q = 195/748 ===
+E_PCP rank 3 + E_twist rank 1 = rank-sum 4. Largest case.
+E_PCP(q): rank 3 gens [[-47685, 15354570], [14300, 20720700], [161175300, 2049988640700]]
+E_twist:  rank 1 gens [[14450, 13626350]]
+E*(q):    rank 0 gens []
+
+=== Now test: for each (x_P from E_PCP), is F(x_P, q) a Q-square? ===
+Total evals on rank-3 seed: 1330, PCP hits: 0

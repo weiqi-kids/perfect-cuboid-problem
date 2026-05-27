@@ -1,0 +1,14 @@
+=== Self-test: F_p counts ===
+p=3 F_p count: 25
+p=5 F_p count: 145
+p=7 F_p count: 553
+p=11 F_p count: 1081
+p=13 F_p count: 2353
+
+=== F_{p^2} counts (slow for large p) ===
+p=3 (q=9): aff=1121 proj_sing=140 V'_min=248 t_2=166
+  bound: |t_2| <= 22*p^2 = 198
+p=5 (q=25): aff=124705 proj_sing=5196 V'_min=5496 t_2=4870
+  bound: |t_2| <= 22*p^2 = 550
+p=7 (q=49): aff=173377 proj_sing=3612 V'_min=4200 t_2=1798
+  bound: |t_2| <= 22*p^2 = 1078

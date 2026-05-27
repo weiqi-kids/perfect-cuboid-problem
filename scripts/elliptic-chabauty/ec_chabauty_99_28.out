@@ -1,0 +1,99 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+==========================================================
+Elliptic Curve Chabauty (Bruin-Stoll variant) for (99,28)
+PARI/GP [2, 15, 4]
+==========================================================
+q = 5544/9017
+p = 2mn = 5544
+d = m^2-n^2 = 9017
+w = m^2+n^2 = 10585
+Degenerate Y(X=0) = d*p*w = 529146775080
+
+H_q integer model: Y^2 = X^6 + 224084450*X^4 + 15052485078052129*X^2 + 279996309577564109006400
+
+--- E_Hp: v^2 = (u+1)(u+q^2)(u+1+q^2) ---
+E_Hp orig coefs = [0, 224084450/81306289, 0, 15052485078052129/6610712630951521, 3443722656897600/6610712630951521]
+E_Hp minimal coefs = [0, -1, 0, -1685461832548704, -10854385900968766899456]
+Change of vars [u, r, s, t] = [1/9017, -74694817/81306289, 0, 0]
+Conductor N(E_Hp) = 1685349658611696
+
+--- ellrank(E_Hp, 5) ---
+ellrank result: [1, 1, 2, [[-29443120, 115094337568]]]
+time: 0.042000000000000000000000000000000000000s
+Generator G of E_Hp(Q) (on minimal model): [-29443120, 115094337568]
+ellisoncurve(E_Hp_min, G) = 1
+ellheight(G) = 4.5927443007957659786421897161544681939
+
+--- Torsion E_Hp[tors] ---
+|E_Hp(Q)_tors| = 4
+structure: [2, 2]
+generators: [[-37347408, 0], [-6611472, 0]]
+Enumerated torsion points: 4
+
+--- Searching nG + T for |n| <= 200 ---
+    n=-2 T_idx=1 -> (X,Y) = (0, 529146775080)
+    n=2 T_idx=1 -> (X,Y) = (0, -529146775080)
+
+--- Enumeration summary ---
+Total (n, T) pairs tested: 1604
+u < 0 (no real lift):       1109
+u >= 0 but not a square:    492
+u a non-negative square:    2
+
+--- Comparison with 4 known degenerate H_q(Q) points ---
+Known: (X,Y) = (0, +/-529146775080)  affine, and [1:+/-1:0] at infinity.
+Affine degenerate (X=0, Y=+/-d*p*w) found: 2
+Non-degenerate lifts found:                  0
+
+--- Sieve verification at good-reduction primes ---
+E_Hp bad primes:  [2, 3, 7, 11, 23, 71, 127, 151, 14561]
+H_q  bad primes: [2, 3, 5, 7, 11, 23, 29, 71, 73, 127, 151, 14561]
+Sieve primes (avoiding H_q and E_Hp bad reduction): [7, 11, 13, 17, 19, 31, 37, 41, 43]
+  p=7: SKIPPED (bad reduction)
+  p=11: SKIPPED (bad reduction)
+  p=13  #E_Hp(F_p)=16  ord(G)=8  MW-image=16  #H_q(F_p)=18  H_q lifts from MW image=18  [OK]
+  p=17  #E_Hp(F_p)=24  ord(G)=3  MW-image=12  #H_q(F_p)=22  H_q lifts from MW image=14  [OK]
+  p=19  #E_Hp(F_p)=16  ord(G)=8  MW-image=16  #H_q(F_p)=12  H_q lifts from MW image=12  [OK]
+  p=31  #E_Hp(F_p)=32  ord(G)=8  MW-image=16  #H_q(F_p)=32  H_q lifts from MW image=16  [OK]
+  p=37  #E_Hp(F_p)=48  ord(G)=12  MW-image=24  #H_q(F_p)=42  H_q lifts from MW image=18  [OK]
+  p=41  #E_Hp(F_p)=48  ord(G)=12  MW-image=24  #H_q(F_p)=38  H_q lifts from MW image=22  [OK]
+  p=43  #E_Hp(F_p)=40  ord(G)=20  MW-image=40  #H_q(F_p)=44  H_q lifts from MW image=44  [OK]
+
+--- E_Hm: v^2 = u(u+1)(u+q^2)(u+1+q^2) ---
+E_Hm orig coefs = [0, 15052485078052129/6610712630951521, 0, 771684697523437402320000/537492511668094711415569, 11859225737629865248856885760000/43701521489021980685725852213441]
+E_Hm minimal coefs = [1, 0, 0, -798934373413071894873901458180, 253431216364774468941612284489290788382516752]
+Conductor N(E_Hm) = 2229928267050600270
+|E_Hm(Q)_tors| = 16  struct [8, 2]
+
+--- ellrank(E_Hm, 5) ---
+ellrank result: [1, 1, 2, []]
+time: 1.6950000000000000000000000000000000000s
+NOTE: ellrank confirms rk(E_Hm) in [1,1] but no generator was located at effort 5.
+      The generator height is presumably too large for PARI's point search.
+      Primary search via E_Hp suffices for H_q(Q): every H_q(Q) point projects to E_Hp via (X,Y)->(X^2/d^2, Y/d^3).
+
+==========================================================
+FINAL RESULT
+==========================================================
+Fiber: (m,n) = (99, 28), q = 5544/9017
+E_Hp rank: 1 (sharp, generator G = [-29443120, 115094337568])
+E_Hm rank: 1..1
+
+Enumeration over E_Hp(Q): n in [-200, 200], all 4 torsion classes T.
+(n, T) pairs tested: 1604
+  u < 0:                  1109
+  u not rational square:  492
+  u a non-negative square (=> H_q lift): 2
+
+All non-trivial lifts: (X,Y) = (0, +/-529146775080).  Plus 2 points at infty from P=O.
+
+CONCLUSION (within search scope):
+  H_q(Q) intersect {n*G + T : |n| <= 200, T in E_Hp[tors]}
+  consists ONLY of the 4 known degenerate points.
+
+HONEST CAVEAT: This is not a full Bruin-Stoll certification.
+  Full certification additionally requires a p-adic / Coleman bound
+  on the integer n. The script verifies a finite-search closure only.
+
+Wall time: 85.604000000000000000000000000000000000s
+==========================================================

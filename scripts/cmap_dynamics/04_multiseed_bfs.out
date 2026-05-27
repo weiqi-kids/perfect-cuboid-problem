@@ -1,0 +1,41 @@
+=== Multi-seed BFS, depth 4, cap 2e13 ===
+
+--- Seed: 20/21 ---
+  visited_set now size: 2
+--- Seed: 7/24 ---
+  visited_set now size: 4
+--- Seed: 39/80 ---
+  visited_set now size: 8
+--- Seed: 48/55 ---
+  visited_set now size: 8
+--- Seed: 11/60 ---
+  visited_set now size: 8
+--- Seed: 17/144 ---
+  visited_set now size: 8
+--- Seed: 104/153 ---
+  visited_set now size: 17
+--- Seed: 27/364 ---
+  visited_set now size: 21
+--- Seed: 195/748 ---
+  visited_set now size: 21
+
+=== Overall ===
+Total unique nodes: 21
+Total edges traversed: 35
+PCP candidates: 0
+min sqrtF3: 1.002091
+max sqrtF3: 13.524693
+
+Closest sqrtF3 to a NEAREST integer:
+  edge index 21:
+    q=55/1512 -> c=935/17472
+    sqrtF3=1.002091292  nearest int=1  dist=0.002091292
+
+=== Histogram: sqrtF3 distribution ===
+  [1.00, 1.20): 22
+  [1.20, 1.40): 2
+  [1.40, 1.60): 2
+  [1.60, 1.80): 4
+  [1.80, 2.00): 1
+  [2.60, 2.80): 1
+  [3.40, 3.60): 1

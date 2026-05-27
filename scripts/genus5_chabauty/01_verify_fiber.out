@@ -1,0 +1,34 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+==================================================
+FIBER q = 4/3   1+q^2 = 25/9  (sqrt = 1.6666666666666666666666666666666666667)
+==================================================
+
+Factor  | conductor       | torsion        | rank [lo,up]
+--------|-----------------|----------------|-------------
+E_ef  | 21	| Z/4	| [0, 0]   gens found: 0
+E_eg  | 15	| Z/4	| [0, 0]   gens found: 0
+E_fg  | 240	| Z/4	| [0, 0]   gens found: 0
+E_H+  | 336	| Z/4	| [1, 1]   gens found: 0
+E_H-  | 210	| Z/16	| [0, 0]   gens found: 0
+
+>>> J(V_q) arithmetic rank: sum_lo = 1,  sum_up = 1
+>>> genus of V_q = 5 (fixed, by Riemann-Hurwitz; verified structurally).
+>>> RANK PROVEN = 1   (< 5 = genus: Chabauty applies)
+
+==================================================
+FIBER q = 12/5   1+q^2 = 169/25  (sqrt = 2.6000000000000000000000000000000000000)
+==================================================
+
+Factor  | conductor       | torsion        | rank [lo,up]
+--------|-----------------|----------------|-------------
+E_ef  | 1785	| Z/4	| [0, 0]   gens found: 0
+E_eg  | 195	| Z/4	| [0, 0]   gens found: 0
+E_fg  | 3120	| Z/4	| [0, 0]   gens found: 0
+E_H+  | 28560	| Z/4	| [1, 1]   gens found: 0
+E_H-  | 46410	| Z/16	| [0, 0]   gens found: 0
+
+>>> J(V_q) arithmetic rank: sum_lo = 1,  sum_up = 1
+>>> genus of V_q = 5 (fixed, by Riemann-Hurwitz; verified structurally).
+>>> RANK PROVEN = 1   (< 5 = genus: Chabauty applies)
+

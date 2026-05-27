@@ -1,0 +1,23 @@
+Nontrivial counts (all 7 coords nonzero), extended
+p=3  count=0
+p=5  count=0
+p=7  count=0
+p=11  count=0
+p=13  count=0
+p=17  count=0
+p=19  count=0
+p=23  count=5632
+p=29  count=0
+p=31  count=17280
+p=37  count=0
+p=41  count=30720
+p=43  count=48384
+p=47  count=73600
+
+Sample nontrivial points mod p=23:
+  (a,b,c)=(1,1,1) (d,e,f,g)=(5,5,5,7)
+  (a,b,c)=(1,1,5) (d,e,f,g)=(5,7,7,2)
+  (a,b,c)=(1,1,18) (d,e,f,g)=(5,7,7,2)
+  (a,b,c)=(1,1,22) (d,e,f,g)=(5,5,5,7)
+  (a,b,c)=(1,5,1) (d,e,f,g)=(7,7,5,2)
+  (a,b,c)=(1,5,22) (d,e,f,g)=(7,7,5,2)

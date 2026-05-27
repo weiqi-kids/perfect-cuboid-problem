@@ -1,0 +1,115 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+######################################################################
+# PHASE E: 4-descent on E_Hm for (61, 38)                            #
+######################################################################
+
+E_short [a..]: [0, 1, 0, -67227419070207276256338598560, 6628115691375808745402467380840123868670208]
+Torsion of E_short: [16, [8, 2], [[121378538430456, 506349123295506127560], [136054851567711, 0]]]
+
+ellrank(E_short, 4):
+  [0, 2, 0, []]  wall=1.4030000000000000000000000000000000000s
+
+ell2cover(E_short):
+  count = 4  wall=0.045000000000000000000000000000000000000s
+  dim_F2(S^2(E_short/Q) / E_short[2](Q)) = 4
+  => |S^2/E[2]| = 16
+
+Cover quartics:
+  Cover #1: q(x) = 1450899748089*x^4 - 29352626274510*x^3 + 426472207202413*x^2 + 210184828184660*x + 74395420577284
+  Cover #2: q(x) = 4*x^4 - 204082277351567*x^2 + 3334014193367081497693717504
+  Cover #3: q(x) = 57671190729*x^4 + 7637223231630*x^3 + 369980514571393*x^2 - 2622679029765680*x + 6801085520209984
+  Cover #4: q(x) = 233255117704*x^4 - 18448548462004*x^3 + 215570186881597*x^2 + 2581276743401202*x + 4411951949354301
+
+
+==================================================================
+Searching Cover #1 of 4
+==================================================================
+  q(x) = 1450899748089*x^4 - 29352626274510*x^3 + 426472207202413*x^2 + 210184828184660*x + 74395420577284
+    cleared-denom coeffs [c0..c4]: [74395420577284, 210184828184660, 426472207202413, -29352626274510, 1450899748089]
+    L (denom multiplier) = 1
+    Building sieve tables for primes [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    Phase 1: integer x in [-200000, 200000]
+      [tors ord=8] a=0/1
+    Phase 1: tested=400001 surv=4744 hits=1 wall=1.2460000000000000000000000000000000000s
+    Phase 2: rational a/b, b=2..200
+    Phase 2: total_tested=5292401 surv=77969 hits=2 wall=17.624000000000000000000000000000000000s
+  Cover #1: HITS=2  NONTORSION=0
+
+==================================================================
+Searching Cover #2 of 4
+==================================================================
+  q(x) = 4*x^4 - 204082277351567*x^2 + 3334014193367081497693717504
+    cleared-denom coeffs [c0..c4]: [3334014193367081497693717504, 0, -204082277351567, 0, 4]
+    L (denom multiplier) = 1
+    Building sieve tables for primes [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    Phase 1: integer x in [-200000, 200000]
+      [tors ord=2] a=0/1
+    Phase 1: tested=400001 surv=3661 hits=1 wall=1.2570000000000000000000000000000000000s
+    Phase 2: rational a/b, b=2..200
+    Phase 2: total_tested=5292401 surv=61107 hits=1 wall=17.300000000000000000000000000000000000s
+  Cover #2: HITS=1  NONTORSION=0
+
+==================================================================
+Searching Cover #3 of 4
+==================================================================
+  q(x) = 57671190729*x^4 + 7637223231630*x^3 + 369980514571393*x^2 - 2622679029765680*x + 6801085520209984
+    cleared-denom coeffs [c0..c4]: [6801085520209984, -2622679029765680, 369980514571393, 7637223231630, 57671190729]
+    L (denom multiplier) = 1
+    Building sieve tables for primes [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    Phase 1: integer x in [-200000, 200000]
+    Phase 1: tested=400001 surv=7080 hits=0 wall=1.1820000000000000000000000000000000000s
+    Phase 2: rational a/b, b=2..200
+    Phase 2: total_tested=5292401 surv=89402 hits=0 wall=15.295000000000000000000000000000000000s
+  Cover #3: HITS=0  NONTORSION=0
+
+==================================================================
+Searching Cover #4 of 4
+==================================================================
+  q(x) = 233255117704*x^4 - 18448548462004*x^3 + 215570186881597*x^2 + 2581276743401202*x + 4411951949354301
+    cleared-denom coeffs [c0..c4]: [4411951949354301, 2581276743401202, 215570186881597, -18448548462004, 233255117704]
+    L (denom multiplier) = 1
+    Building sieve tables for primes [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    Phase 1: integer x in [-200000, 200000]
+    Phase 1: tested=400001 surv=7273 hits=0 wall=1.1710000000000000000000000000000000000s
+    Phase 2: rational a/b, b=2..200
+    Phase 2: total_tested=5292401 surv=85931 hits=0 wall=15.534000000000000000000000000000000000s
+  Cover #4: HITS=0  NONTORSION=0
+
+######################################################################
+# PHASE E RESULT
+######################################################################
+Total non-torsion lifts across all 4 covers: 0
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(#total_nt==0[0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+
+VERDICT: NO GENERATOR FOUND in this search range.
+  Search bound: integer x up to 200000, rational a/b with |a|, b <= 200
+  This does NOT prove rk(E_Hm) = 0 — a generator may lie higher,
+  or the rank is genuinely 0 with all 4 covers in Sha[2].
+[0;31m[0;31m  ***   syntax error, unexpected ',', expecting end of file:[0;35m ,
+[0;31m[0;31m  ***                                                        ^-[0m
+
+VERDICT: GENERATOR(S) FOUND. rk(E_Hm) >= 1, forced to 2 by parity.
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(j=1,#total_nt[0;35m,
+[0;31m[0;31m  ***                    ^-[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35merator ",j,": ",total_nt[[0;35mj])
+[0;31m[0;31m  ***                                             ^---
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35murve(E_short,total_nt[j])[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mllorder(E_short,total_nt[[0;35mj]))
+[0;31m[0;31m  ***                                             ^----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35mlheight(E_short,total_nt[[0;35mj]))
+[0;31m[0;31m  ***                                             ^----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+

@@ -1,0 +1,95 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+================================================================
+Rigorous Ingram-Mahe bound per rank-jump fiber (rank-1 cases)
+================================================================
+
+--- q = 20/21 ---
+  conductor N(E) = 4305
+  discriminant Delta = 4303360000/37822859361
+  j-invariant = 5647454716105441/204326600625
+  hhat(P0) = 2.552972734218146075
+  Silverman c_S(E) (upper) = 5.087400220752289752
+  w2(E) (max v_p(Delta)) = 12
+  K = 8*(c_S + log(2 w2) + 1) = 74.12363240880188297
+  N_0_rigorous = ceil(sqrt(K/hhat)) = 6
+  N_0_heuristic (old proxy) = 13
+  closed by n<=20 direct check? YES
+
+--- q = 80/39 ---
+  conductor N(E) = 1902810
+  discriminant Delta = 15600609525760000/5352009260481
+  j-invariant = 37726969528324220245921/8811301196748960000
+  hhat(P0) = 1.9728436106756197985
+  Silverman c_S(E) (upper) = 7.500088375832147835
+  w2(E) (max v_p(Delta)) = 20
+  K = 8*(c_S + log(2 w2) + 1) = 97.51174263956867310
+  N_0_rigorous = ceil(sqrt(K/hhat)) = 8
+  N_0_heuristic (old proxy) = 19
+  closed by n<=20 direct check? YES
+
+--- q = 24/7 ---
+  conductor N(E) = 22134
+  discriminant Delta = 1474301067264/5764801
+  j-invariant = 28639415351758177/864208218384
+  hhat(P0) = 2.552498195645667976
+  Silverman c_S(E) (upper) = 7.024733004237266215
+  w2(E) (max v_p(Delta)) = 16
+  K = 8*(c_S + log(2 w2) + 1) = 91.92375125629594209
+  N_0_rigorous = ceil(sqrt(K/hhat)) = 7
+  N_0_heuristic (old proxy) = 15
+  closed by n<=20 direct check? YES
+
+--- q = 84/13 ---
+  conductor N(E) = 1880151
+  discriminant Delta = 37783074348601344/815730721
+  j-invariant = 114955960961380265790337/263457613884375729
+  hhat(P0) = 7.128252692244292061
+  Silverman c_S(E) (upper) = 9.258129154097107891
+  w2(E) (max v_p(Delta)) = 12
+  K = 8*(c_S + log(2 w2) + 1) = 107.48946387556042808
+  N_0_rigorous = ceil(sqrt(K/hhat)) = 4
+  N_0_heuristic (old proxy) = 11
+  closed by n<=20 direct check? YES
+
+--- q = 48/55 ---
+  conductor N(E) = 237930
+  discriminant Delta = 44152516509696/83733937890625
+  j-invariant = 420095676153573393121/98638457369760000
+  hhat(P0) = 2.061999138167725902
+  Silverman c_S(E) (upper) = 6.134909592665757117
+  w2(E) (max v_p(Delta)) = 20
+  K = 8*(c_S + log(2 w2) + 1) = 86.59031237423754736
+  N_0_rigorous = ceil(sqrt(K/hhat)) = 7
+  N_0_heuristic (old proxy) = 18
+  closed by n<=20 direct check? YES
+
+
+================================================================
+Rank-2 case: q = 60/11
+================================================================
+
+hhat(G1) = 2.289269032391549823
+hhat(G2) = 2.494137317889260487
+<G1,G2>  = -0.6329222730262924459
+regulator det = 5.309160720683233985
+lambda_1 (first successive min) = 2.289269032391549823
+Silverman c_S(E) (upper) = 8.652621171171667662
+w2(E) = 12
+K = 102.64540001215690625
+N_0_box (sup-norm |a|,|b|<=N_0_box) = 7
+closed by |a|,|b|<=4 direct check? NO -- EXTEND
+
+================================================================
+Summary table (rigorous Ingram-Mahe)
+================================================================
+
+Fiber q | hhat(P0) | c_S(E) | w2(E) | N_0_rig | N_0_heur | closed<=20?
+--------|----------|--------|-------|---------|----------|------------
+20/21 | 2.552972734218146075 | 5.087400220752289752 | 12 | 6 | 13 | YES
+80/39 | 1.9728436106756197985 | 7.500088375832147835 | 20 | 8 | 19 | YES
+24/7 | 2.552498195645667976 | 7.024733004237266215 | 16 | 7 | 15 | YES
+84/13 | 7.128252692244292061 | 9.258129154097107891 | 12 | 4 | 11 | YES
+48/55 | 2.061999138167725902 | 6.134909592665757117 | 20 | 7 | 18 | YES
+60/11 (rank2) | lambda1=2.289269032391549823 | c_S=8.652621171171667662 | w2=12 | N0_box=7 | closed |a|,|b|<=4? NO
+
+=== End rigorous Ingram-Mahe analysis ===

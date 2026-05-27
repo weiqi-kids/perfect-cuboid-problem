@@ -1,0 +1,186 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+
+##############################################
+# PHASE D: Test framework on small curves    #
+##############################################
+======================================================================
+4-descent on Test 1: y^2 = x(x-1)(x-2), expected rk=0
+======================================================================
+E [a1..a6] = [0, 0, 0, -1, 0]
+Torsion: order=4  struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Non-trivial 2-cover count (dim_F2 S^2/E[2]): 2
+
+--- Cover #1 of 2 ---
+    q(x) = x^4 + 6*x^2 + 1
+    cleared-denom coeffs [c0..c4]: [1, 0, 6, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=3 hits=1 wall=0.0010000000000000000000000000000000000000s
+    Phase 2: total_tested=5481 surv=91 hits=1 wall=0.011000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+--- Cover #2 of 2 ---
+    q(x) = x^4 + 4
+    cleared-denom coeffs [c0..c4]: [4, 0, 0, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=15 hits=1 wall=0s
+    Phase 2: total_tested=5481 surv=245 hits=1 wall=0.010000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+=====================================================================
+Summary for Test 1: y^2 = x(x-1)(x-2), expected rk=0
+=====================================================================
+Total non-torsion lifts: 0
+VERDICT (at this height): NO GENERATOR FOUND.
+rk may be 0 OR generator hides above search bound OR in Sha[2].
+======================================================================
+4-descent on Test 2: y^2 = x(x-1)(x+1), expected rk=0
+======================================================================
+E [a1..a6] = [0, 0, 0, -1, 0]
+Torsion: order=4  struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Non-trivial 2-cover count (dim_F2 S^2/E[2]): 2
+
+--- Cover #1 of 2 ---
+    q(x) = x^4 + 6*x^2 + 1
+    cleared-denom coeffs [c0..c4]: [1, 0, 6, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=3 hits=1 wall=0.0010000000000000000000000000000000000000s
+    Phase 2: total_tested=5481 surv=91 hits=1 wall=0.0090000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+--- Cover #2 of 2 ---
+    q(x) = x^4 + 4
+    cleared-denom coeffs [c0..c4]: [4, 0, 0, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=15 hits=1 wall=0s
+    Phase 2: total_tested=5481 surv=245 hits=1 wall=0.010000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+=====================================================================
+Summary for Test 2: y^2 = x(x-1)(x+1), expected rk=0
+=====================================================================
+Total non-torsion lifts: 0
+VERDICT (at this height): NO GENERATOR FOUND.
+rk may be 0 OR generator hides above search bound OR in Sha[2].
+======================================================================
+4-descent on Test 3: y^2 = x(x-4)(x+1)
+======================================================================
+E [a1..a6] = [0, 0, 0, -7, -6]
+Torsion: order=4  struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Non-trivial 2-cover count (dim_F2 S^2/E[2]): 2
+
+--- Cover #1 of 2 ---
+    q(x) = x^4 + 3*x^2 + 1
+    cleared-denom coeffs [c0..c4]: [1, 0, 3, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=11 hits=1 wall=0s
+    Phase 2: total_tested=5481 surv=321 hits=1 wall=0.011000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+--- Cover #2 of 2 ---
+    q(x) = x^4 + 2*x^3 + 3*x^2 + 2*x + 2
+    cleared-denom coeffs [c0..c4]: [2, 2, 3, 2, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=12 hits=0 wall=0s
+    Phase 2: total_tested=5481 surv=267 hits=1 wall=0.010000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+=====================================================================
+Summary for Test 3: y^2 = x(x-4)(x+1)
+=====================================================================
+Total non-torsion lifts: 0
+VERDICT (at this height): NO GENERATOR FOUND.
+rk may be 0 OR generator hides above search bound OR in Sha[2].
+======================================================================
+4-descent on Test 4: y^2 = x(x-7)(x+7), expected rk=1
+======================================================================
+E [a1..a6] = [0, 0, 0, -49, 0]
+Torsion: order=4  struct=[2, 2]
+ellrank(E, 4) = [1, 1, 0, [[25, 120]]]
+Non-trivial 2-cover count (dim_F2 S^2/E[2]): 3
+
+--- Cover #1 of 3 ---
+    q(x) = x^4 + 42*x^2 + 49
+    cleared-denom coeffs [c0..c4]: [49, 0, 42, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=11 hits=1 wall=0s
+      !!! NONTORSION at a=-15/4 -> [-89383/214369, 447832560/99252847]
+      !!! NONTORSION at a=15/4 -> [-89383/214369, -447832560/99252847]
+      !!! NONTORSION at a=-28/15 -> [-89383/214369, -447832560/99252847]
+      !!! NONTORSION at a=28/15 -> [-89383/214369, 447832560/99252847]
+    Phase 2: total_tested=5481 surv=303 hits=5 wall=0.010000000000000000000000000000000000000s
+    HITS: 5  NONTORSION lifts: 4
+
+--- Cover #2 of 3 ---
+    q(x) = 4*x^4 + 49
+    cleared-denom coeffs [c0..c4]: [49, 0, 0, 0, 4]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=7 hits=1 wall=0s
+      !!! NONTORSION at a=-12/5 -> [-705600/113569, 307635720/38272753]
+      !!! NONTORSION at a=12/5 -> [-705600/113569, -307635720/38272753]
+    Phase 2: total_tested=5481 surv=315 hits=3 wall=0.010000000000000000000000000000000000000s
+    HITS: 3  NONTORSION lifts: 2
+
+--- Cover #3 of 3 ---
+    q(x) = 2*x^4 - 5*x^3 + 6*x^2 + x + 4
+    cleared-denom coeffs [c0..c4]: [4, 1, 6, -5, 2]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+      !!! NONTORSION at a=-1/1 -> [-63/16, -735/64]
+      !!! NONTORSION at a=0/1 -> [-63/16, 735/64]
+      !!! NONTORSION at a=5/1 -> [-63/16, 735/64]
+    Phase 1: tested=401 surv=63 hits=3 wall=0.0010000000000000000000000000000000000000s
+      !!! NONTORSION at a=3/2 -> [-63/16, -735/64]
+    Phase 2: total_tested=5481 surv=435 hits=4 wall=0.010000000000000000000000000000000000000s
+    HITS: 4  NONTORSION lifts: 4
+
+=====================================================================
+Summary for Test 4: y^2 = x(x-7)(x+7), expected rk=1
+=====================================================================
+Total non-torsion lifts: 10
+VERDICT: GENERATOR(S) FOUND. rk >= 1.
+  Gen 1: [-89383/214369, 447832560/99252847]
+  Gen 2: [-89383/214369, -447832560/99252847]
+  Gen 3: [-89383/214369, -447832560/99252847]
+  Gen 4: [-89383/214369, 447832560/99252847]
+  Gen 5: [-705600/113569, 307635720/38272753]
+  Gen 6: [-705600/113569, -307635720/38272753]
+  Gen 7: [-63/16, -735/64]
+  Gen 8: [-63/16, 735/64]
+  Gen 9: [-63/16, 735/64]
+  Gen 10: [-63/16, -735/64]
+======================================================================
+4-descent on Test 5: y^2 = x(x-1)(x-25)
+======================================================================
+E [a1..a6] = [0, 1, 0, -200, -1152]
+Torsion: order=4  struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Non-trivial 2-cover count (dim_F2 S^2/E[2]): 2
+
+--- Cover #1 of 2 ---
+    q(x) = x^4 + 13*x^2 + 36
+    cleared-denom coeffs [c0..c4]: [36, 0, 13, 0, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=15 hits=1 wall=0.0010000000000000000000000000000000000000s
+    Phase 2: total_tested=5481 surv=317 hits=1 wall=0.010000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+--- Cover #2 of 2 ---
+    q(x) = x^4 + 2*x^3 + 13*x^2 + 12*x + 42
+    cleared-denom coeffs [c0..c4]: [42, 12, 13, 2, 1]  L=1
+    Building sieve tables for primes [3, 5, 7, 11, 13]
+    Phase 1: tested=401 surv=34 hits=0 wall=0.0010000000000000000000000000000000000000s
+    Phase 2: total_tested=5481 surv=647 hits=1 wall=0.015000000000000000000000000000000000000s
+    HITS: 1  NONTORSION lifts: 0
+
+=====================================================================
+Summary for Test 5: y^2 = x(x-1)(x-25)
+=====================================================================
+Total non-torsion lifts: 0
+VERDICT (at this height): NO GENERATOR FOUND.
+rk may be 0 OR generator hides above search bound OR in Sha[2].
+
+##############################################
+# Phase D done.                              #
+##############################################

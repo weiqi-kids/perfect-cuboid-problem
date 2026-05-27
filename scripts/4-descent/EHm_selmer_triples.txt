@@ -1,0 +1,1 @@
+Selmer triples (sqf q(e1), sqf q(e2), sqf q(e3)) per cover:

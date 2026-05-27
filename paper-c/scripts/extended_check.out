@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 6000000000 (5722.046 Mbytes).[0m
+=== Extended direct verification (Paper P3) ===
+
+Rank-1 fibers, nP + torsion, n = 1..200:
+  q=20/21  n=1..200  cosets=1600  squares=0
+  q=80/39  n=1..200  cosets=1600  squares=0
+  q=24/7  n=1..200  cosets=1600  squares=0
+  q=84/13  n=1..200  cosets=1600  squares=0
+  q=48/55  n=1..200  cosets=1600  squares=0
+  q=20/99  n=1..200  cosets=1600  squares=0
+
+Rank-2 fiber 60/11, aG1+bG2 + torsion, |a|,|b| <= 12:
+  q=60/11  |a|,|b|<=12  cosets=4992  squares=0
+
+=== End extended verification ===

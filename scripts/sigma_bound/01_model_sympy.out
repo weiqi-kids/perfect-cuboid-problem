@@ -1,0 +1,13 @@
+Delta(E_PCP(q)) [y^2=x(x+1)(x+q^2)] = 16*q**4*(q - 1)**2*(q + 1)**2
+Delta(integral E) [Y^2=X(X+b^2)(X+a^2)] = 16*a**4*b**4*(a - b)**2*(a + b)**2
+matches 16 a^4 b^4 (a^2-b^2)^2 ? True
+after x=X/b^2,y=Y/b^3, x b^6 form:
+  LHS*b^6 = Y**2
+  RHS*b^6 = X*(X + a**2)*(X + b**2)
+  RHS*b^6 == X(X+b^2)(X+a^2) ? True
+c4 = 16*(a**4 - a**2*b**2 + b**4)
+c6 = -32*(a**2 - 2*b**2)*(a**2 + b**2)*(2*a**2 - b**2)
+Delta(via c-invariants) = 16*a**4*b**4*(a - b)**2*(a + b)**2  matches? True
+j = 256*(a**4 - a**2*b**2 + b**4)**3/(a**4*b**4*(a - b)**2*(a + b)**2)
+a^2-b^2 with a=m^2-n^2,b=2mn : (m**2 - 2*m*n - n**2)*(m**2 + 2*m*n - n**2)  = m^4-6m^2n^2+n^4 ? True
+ABC identity b^2+(a^2-b^2)=a^2 ? True

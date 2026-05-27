@@ -1,0 +1,11 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== Exhaustive search for non-degenerate V_q(Q) at rank-3 fibers ===
+Search radius: |m|, n <= 300
+(22,17)  q = 195/748:  non-degen c (radius 300) = []
+(35,22)  q = 741/1540:  non-degen c (radius 300) = []
+(37,26)  q = 693/1924:  non-degen c (radius 300) = []
+(40,29)  q = 759/2320:  non-degen c (radius 300) = []
+(40,33)  q = 511/2640:  non-degen c (radius 300) = []
+
+Search radius: |m|, n <= 1000  (only run for (22,17), the smallest)
+(22,17)  q = 195/748:  non-degen c (radius 1000) = []

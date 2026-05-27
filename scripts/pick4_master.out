@@ -1,0 +1,224 @@
+=== PICK-4 master survey (correct model) ===
+# fields: m n a b s j_int cond tors_ord tors_struct isog_size CMflag
+2 1  a=3 b=4 s=5  N=21  tors=8 [4, 2]  isog=6  CM=0
+3 2  a=5 b=12 s=13  N=1785  tors=8 [4, 2]  isog=6  CM=0
+4 1  a=15 b=8 s=17  N=4830  tors=8 [4, 2]  isog=6  CM=0
+4 3  a=7 b=24 s=25  N=22134  tors=8 [4, 2]  isog=6  CM=0
+5 2  a=21 b=20 s=29  N=4305  tors=8 [4, 2]  isog=6  CM=0
+5 4  a=9 b=40 s=41  N=6510  tors=8 [4, 2]  isog=6  CM=0
+6 1  a=35 b=12 s=37  N=113505  tors=8 [4, 2]  isog=6  CM=0
+6 5  a=11 b=60 s=61  N=82005  tors=8 [4, 2]  isog=6  CM=0
+7 2  a=45 b=28 s=53  N=130305  tors=8 [4, 2]  isog=6  CM=0
+7 4  a=33 b=56 s=65  N=945714  tors=8 [4, 2]  isog=6  CM=0
+7 6  a=13 b=84 s=85  N=1880151  tors=8 [4, 2]  isog=6  CM=0
+8 1  a=63 b=16 s=65  N=155946  tors=8 [4, 2]  isog=6  CM=0
+8 3  a=55 b=48 s=73  N=237930  tors=8 [4, 2]  isog=6  CM=0
+8 5  a=39 b=80 s=89  N=1902810  tors=8 [4, 2]  isog=6  CM=0
+8 7  a=15 b=112 s=113  N=2586990  tors=8 [4, 2]  isog=6  CM=0
+9 2  a=77 b=36 s=85  N=1070223  tors=8 [4, 2]  isog=6  CM=0
+9 4  a=65 b=72 s=97  N=374010  tors=8 [4, 2]  isog=6  CM=0
+9 8  a=17 b=144 s=145  N=2085594  tors=8 [4, 2]  isog=6  CM=0
+10 1  a=99 b=20 s=101  N=1551165  tors=8 [4, 2]  isog=6  CM=0
+10 3  a=91 b=60 s=109  N=6389565  tors=8 [4, 2]  isog=6  CM=0
+10 7  a=51 b=140 s=149  N=30343215  tors=8 [4, 2]  isog=6  CM=0
+10 9  a=19 b=180 s=181  N=9131115  tors=8 [4, 2]  isog=6  CM=0
+11 2  a=117 b=44 s=125  N=5042037  tors=8 [4, 2]  isog=6  CM=0
+11 4  a=105 b=88 s=137  N=7579110  tors=8 [4, 2]  isog=6  CM=0
+11 6  a=85 b=132 s=157  N=28608195  tors=8 [4, 2]  isog=6  CM=0
+11 8  a=57 b=176 s=185  N=34769658  tors=8 [4, 2]  isog=6  CM=0
+11 10  a=21 b=220 s=221  N=55392645  tors=8 [4, 2]  isog=6  CM=0
+12 1  a=143 b=24 s=145  N=17051034  tors=8 [4, 2]  isog=6  CM=0
+12 5  a=119 b=120 s=169  N=853230  tors=8 [4, 2]  isog=6  CM=0
+12 7  a=95 b=168 s=193  N=76604010  tors=8 [4, 2]  isog=6  CM=0
+12 11  a=23 b=264 s=265  N=104995506  tors=8 [4, 2]  isog=6  CM=0
+13 2  a=165 b=52 s=173  N=52597545  tors=8 [4, 2]  isog=6  CM=0
+13 4  a=153 b=104 s=185  N=2385474  tors=8 [4, 2]  isog=6  CM=0
+13 6  a=133 b=156 s=205  N=2028117  tors=8 [4, 2]  isog=6  CM=0
+13 8  a=105 b=208 s=233  N=88012470  tors=8 [4, 2]  isog=6  CM=0
+13 10  a=69 b=260 s=269  N=281832915  tors=8 [4, 2]  isog=6  CM=0
+13 12  a=25 b=312 s=313  N=37720410  tors=8 [4, 2]  isog=6  CM=0
+14 1  a=195 b=28 s=197  N=50833965  tors=8 [4, 2]  isog=6  CM=0
+14 3  a=187 b=84 s=205  N=109614351  tors=8 [4, 2]  isog=6  CM=0
+14 5  a=171 b=140 s=221  N=19233795  tors=8 [4, 2]  isog=6  CM=0
+14 9  a=115 b=252 s=277  N=121423785  tors=8 [4, 2]  isog=6  CM=0
+14 11  a=75 b=308 s=317  N=103071045  tors=8 [4, 2]  isog=6  CM=0
+14 13  a=27 b=364 s=365  N=35972391  tors=8 [4, 2]  isog=6  CM=0
+15 2  a=221 b=60 s=229  N=149973915  tors=8 [4, 2]  isog=6  CM=0
+15 4  a=209 b=120 s=241  N=183591870  tors=8 [4, 2]  isog=6  CM=0
+15 8  a=161 b=240 s=289  N=153009570  tors=8 [4, 2]  isog=6  CM=0
+15 14  a=29 b=420 s=421  N=534577155  tors=8 [4, 2]  isog=6  CM=0
+16 1  a=255 b=32 s=257  N=32640510  tors=8 [4, 2]  isog=6  CM=0
+16 3  a=247 b=96 s=265  N=1566474  tors=8 [4, 2]  isog=6  CM=0
+16 5  a=231 b=160 s=281  N=64127910  tors=8 [4, 2]  isog=6  CM=0
+16 7  a=207 b=224 s=305  N=7077882  tors=8 [4, 2]  isog=6  CM=0
+16 9  a=175 b=288 s=337  N=10986990  tors=8 [4, 2]  isog=6  CM=0
+16 11  a=135 b=352 s=377  N=34874070  tors=8 [4, 2]  isog=6  CM=0
+16 13  a=87 b=416 s=425  N=374331594  tors=8 [4, 2]  isog=6  CM=0
+16 15  a=31 b=480 s=481  N=213378270  tors=8 [4, 2]  isog=6  CM=0
+
+=== Summary stats ===
+Total fibers: 55
+CM hits: cm_total
+integer j: int_j
+isogeny size 4: isog4  size 6: 55  size 8: isog8
+torsion Z/4 x Z/2 (order 8): 55
+torsion Z/8 (order 8): tors_z8
+torsion (Z/2)^2 (order 4): tors_z2sq
+torsion Z/4 (order 4): tors_z4
+
+=== Torsion / isogeny size correlation table ===
+(m,n)=(2,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(3,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(4,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(4,3)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(5,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(5,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(6,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(6,5)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(7,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(7,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(7,6)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(8,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(8,3)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(8,5)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(8,7)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(9,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(9,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(9,8)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(10,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(10,3)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(10,7)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(10,9)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(11,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(11,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(11,6)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(11,8)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(11,10)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(12,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(12,5)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(12,7)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(12,11)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,6)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,8)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,10)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(13,12)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,3)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,5)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,9)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,11)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(14,13)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(15,2)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(15,4)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(15,8)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(15,14)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,1)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,3)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,5)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,7)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,9)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,11)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,13)  tors_ord=8 [4, 2]  isog_size=6
+(m,n)=(16,15)  tors_ord=8 [4, 2]  isog_size=6
+
+=== Conductor factorisation analysis ===
+(2,1) N=21 bad_primes=[3, 7]  a*b*u*v=-84 factor=[2, 2; 3, 1; 7, 1]
+(3,2) N=1785 bad_primes=[3, 5, 7, 17]  a*b*u*v=-7140 factor=[2, 2; 3, 1; 5, 1; 7, 1; 17, 1]
+(4,1) N=4830 bad_primes=[2, 3, 5, 7, 23]  a*b*u*v=19320 factor=[2, 3; 3, 1; 5, 1; 7, 1; 23, 1]
+(4,3) N=22134 bad_primes=[2, 3, 7, 17, 31]  a*b*u*v=-88536 factor=[2, 3; 3, 1; 7, 1; 17, 1; 31, 1]
+(5,2) N=4305 bad_primes=[3, 5, 7, 41]  a*b*u*v=17220 factor=[2, 2; 3, 1; 5, 1; 7, 1; 41, 1]
+(5,4) N=6510 bad_primes=[2, 3, 5, 7, 31]  a*b*u*v=-546840 factor=[2, 3; 3, 2; 5, 1; 7, 2; 31, 1]
+(6,1) N=113505 bad_primes=[3, 5, 7, 23, 47]  a*b*u*v=454020 factor=[2, 2; 3, 1; 5, 1; 7, 1; 23, 1; 47, 1]
+(6,5) N=82005 bad_primes=[3, 5, 7, 11, 71]  a*b*u*v=-2296140 factor=[2, 2; 3, 1; 5, 1; 7, 2; 11, 1; 71, 1]
+(7,2) N=130305 bad_primes=[3, 5, 7, 17, 73]  a*b*u*v=1563660 factor=[2, 2; 3, 2; 5, 1; 7, 1; 17, 1; 73, 1]
+(7,4) N=945714 bad_primes=[2, 3, 7, 11, 23, 89]  a*b*u*v=-3782856 factor=[2, 3; 3, 1; 7, 1; 11, 1; 23, 1; 89, 1]
+(7,6) N=1880151 bad_primes=[3, 7, 13, 71, 97]  a*b*u*v=-7520604 factor=[2, 2; 3, 1; 7, 1; 13, 1; 71, 1; 97, 1]
+(8,1) N=155946 bad_primes=[2, 3, 7, 47, 79]  a*b*u*v=3742704 factor=[2, 4; 3, 2; 7, 1; 47, 1; 79, 1]
+(8,3) N=237930 bad_primes=[2, 3, 5, 7, 11, 103]  a*b*u*v=1903440 factor=[2, 4; 3, 1; 5, 1; 7, 1; 11, 1; 103, 1]
+(8,5) N=1902810 bad_primes=[2, 3, 5, 7, 13, 17, 41]  a*b*u*v=-15222480 factor=[2, 4; 3, 1; 5, 1; 7, 1; 13, 1; 17, 1; 41, 1]
+(8,7) N=2586990 bad_primes=[2, 3, 5, 7, 97, 127]  a*b*u*v=-20695920 factor=[2, 4; 3, 1; 5, 1; 7, 1; 97, 1; 127, 1]
+(9,2) N=1070223 bad_primes=[3, 7, 11, 41, 113]  a*b*u*v=12842676 factor=[2, 2; 3, 2; 7, 1; 11, 1; 41, 1; 113, 1]
+(9,4) N=374010 bad_primes=[2, 3, 5, 7, 13, 137]  a*b*u*v=-4488120 factor=[2, 3; 3, 2; 5, 1; 7, 1; 13, 1; 137, 1]
+(9,8) N=2085594 bad_primes=[2, 3, 7, 17, 23, 127]  a*b*u*v=-50054256 factor=[2, 4; 3, 2; 7, 1; 17, 1; 23, 1; 127, 1]
+(10,1) N=1551165 bad_primes=[3, 5, 7, 11, 17, 79]  a*b*u*v=18613980 factor=[2, 2; 3, 2; 5, 1; 7, 1; 11, 1; 17, 1; 79, 1]
+(10,3) N=6389565 bad_primes=[3, 5, 7, 13, 31, 151]  a*b*u*v=25558260 factor=[2, 2; 3, 1; 5, 1; 7, 1; 13, 1; 31, 1; 151, 1]
+(10,7) N=30343215 bad_primes=[3, 5, 7, 17, 89, 191]  a*b*u*v=-121372860 factor=[2, 2; 3, 1; 5, 1; 7, 1; 17, 1; 89, 1; 191, 1]
+(10,9) N=9131115 bad_primes=[3, 5, 7, 19, 23, 199]  a*b*u*v=-109573380 factor=[2, 2; 3, 2; 5, 1; 7, 1; 19, 1; 23, 1; 199, 1]
+(11,2) N=5042037 bad_primes=[3, 7, 11, 13, 23, 73]  a*b*u*v=60504444 factor=[2, 2; 3, 2; 7, 1; 11, 1; 13, 1; 23, 1; 73, 1]
+(11,4) N=7579110 bad_primes=[2, 3, 5, 7, 11, 17, 193]  a*b*u*v=30316440 factor=[2, 3; 3, 1; 5, 1; 7, 1; 11, 1; 17, 1; 193, 1]
+(11,6) N=28608195 bad_primes=[3, 5, 7, 11, 17, 31, 47]  a*b*u*v=-114432780 factor=[2, 2; 3, 1; 5, 1; 7, 1; 11, 1; 17, 1; 31, 1; 47, 1]
+(11,8) N=34769658 bad_primes=[2, 3, 7, 11, 17, 19, 233]  a*b*u*v=-278157264 factor=[2, 4; 3, 1; 7, 1; 11, 1; 17, 1; 19, 1; 233, 1]
+(11,10) N=55392645 bad_primes=[3, 5, 7, 11, 199, 241]  a*b*u*v=-221570580 factor=[2, 2; 3, 1; 5, 1; 7, 1; 11, 1; 199, 1; 241, 1]
+(12,1) N=17051034 bad_primes=[2, 3, 7, 11, 13, 17, 167]  a*b*u*v=68204136 factor=[2, 3; 3, 1; 7, 1; 11, 1; 13, 1; 17, 1; 167, 1]
+(12,5) N=853230 bad_primes=[2, 3, 5, 7, 17, 239]  a*b*u*v=-3412920 factor=[2, 3; 3, 1; 5, 1; 7, 1; 17, 1; 239, 1]
+(12,7) N=76604010 bad_primes=[2, 3, 5, 7, 19, 73, 263]  a*b*u*v=-306416040 factor=[2, 3; 3, 1; 5, 1; 7, 1; 19, 1; 73, 1; 263, 1]
+(12,11) N=104995506 bad_primes=[2, 3, 7, 11, 23, 41, 241]  a*b*u*v=-419982024 factor=[2, 3; 3, 1; 7, 1; 11, 1; 23, 1; 41, 1; 241, 1]
+(13,2) N=52597545 bad_primes=[3, 5, 7, 11, 13, 31, 113]  a*b*u*v=210390180 factor=[2, 2; 3, 1; 5, 1; 7, 1; 11, 1; 13, 1; 31, 1; 113, 1]
+(13,4) N=2385474 bad_primes=[2, 3, 7, 13, 17, 257]  a*b*u*v=200379816 factor=[2, 3; 3, 2; 7, 2; 13, 1; 17, 1; 257, 1]
+(13,6) N=2028117 bad_primes=[3, 7, 13, 17, 19, 23]  a*b*u*v=-137911956 factor=[2, 2; 3, 1; 7, 1; 13, 1; 17, 2; 19, 1; 23, 1]
+(13,8) N=88012470 bad_primes=[2, 3, 5, 7, 13, 103, 313]  a*b*u*v=-704099760 factor=[2, 4; 3, 1; 5, 1; 7, 1; 13, 1; 103, 1; 313, 1]
+(13,10) N=281832915 bad_primes=[3, 5, 7, 13, 23, 47, 191]  a*b*u*v=-1127331660 factor=[2, 2; 3, 1; 5, 1; 7, 1; 13, 1; 23, 1; 47, 1; 191, 1]
+(13,12) N=37720410 bad_primes=[2, 3, 5, 7, 13, 41, 337]  a*b*u*v=-754408200 factor=[2, 3; 3, 1; 5, 2; 7, 1; 13, 1; 41, 1; 337, 1]
+(14,1) N=50833965 bad_primes=[3, 5, 7, 13, 167, 223]  a*b*u*v=203335860 factor=[2, 2; 3, 1; 5, 1; 7, 1; 13, 1; 167, 1; 223, 1]
+(14,3) N=109614351 bad_primes=[3, 7, 11, 17, 103, 271]  a*b*u*v=438457404 factor=[2, 2; 3, 1; 7, 1; 11, 1; 17, 1; 103, 1; 271, 1]
+(14,5) N=19233795 bad_primes=[3, 5, 7, 19, 31, 311]  a*b*u*v=230805540 factor=[2, 2; 3, 2; 5, 1; 7, 1; 19, 1; 31, 1; 311, 1]
+(14,9) N=121423785 bad_primes=[3, 5, 7, 23, 137, 367]  a*b*u*v=-1457085420 factor=[2, 2; 3, 2; 5, 1; 7, 1; 23, 1; 137, 1; 367, 1]
+(14,11) N=103071045 bad_primes=[3, 5, 7, 11, 233, 383]  a*b*u*v=-2061420900 factor=[2, 2; 3, 1; 5, 2; 7, 1; 11, 1; 233, 1; 383, 1]
+(14,13) N=35972391 bad_primes=[3, 7, 13, 17, 23, 337]  a*b*u*v=-1295006076 factor=[2, 2; 3, 3; 7, 1; 13, 1; 17, 1; 23, 1; 337, 1]
+(15,2) N=149973915 bad_primes=[3, 5, 7, 13, 17, 23, 281]  a*b*u*v=599895660 factor=[2, 2; 3, 1; 5, 1; 7, 1; 13, 1; 17, 1; 23, 1; 281, 1]
+(15,4) N=183591870 bad_primes=[2, 3, 5, 7, 11, 19, 47, 89]  a*b*u*v=734367480 factor=[2, 3; 3, 1; 5, 1; 7, 1; 11, 1; 19, 1; 47, 1; 89, 1]
+(15,8) N=153009570 bad_primes=[2, 3, 5, 7, 23, 79, 401]  a*b*u*v=-1224076560 factor=[2, 4; 3, 1; 5, 1; 7, 1; 23, 1; 79, 1; 401, 1]
+(15,14) N=534577155 bad_primes=[3, 5, 7, 17, 23, 29, 449]  a*b*u*v=-2138308620 factor=[2, 2; 3, 1; 5, 1; 7, 1; 17, 1; 23, 1; 29, 1; 449, 1]
+(16,1) N=32640510 bad_primes=[2, 3, 5, 7, 17, 41, 223]  a*b*u*v=522248160 factor=[2, 5; 3, 1; 5, 1; 7, 1; 17, 1; 41, 1; 223, 1]
+(16,3) N=1566474 bad_primes=[2, 3, 7, 13, 19, 151]  a*b*u*v=1228115616 factor=[2, 5; 3, 1; 7, 3; 13, 1; 19, 1; 151, 1]
+(16,5) N=64127910 bad_primes=[2, 3, 5, 7, 11, 17, 23, 71]  a*b*u*v=1026046560 factor=[2, 5; 3, 1; 5, 1; 7, 1; 11, 1; 17, 1; 23, 1; 71, 1]
+(16,7) N=7077882 bad_primes=[2, 3, 7, 17, 23, 431]  a*b*u*v=-339738336 factor=[2, 5; 3, 2; 7, 1; 17, 1; 23, 1; 431, 1]
+(16,9) N=10986990 bad_primes=[2, 3, 5, 7, 113, 463]  a*b*u*v=-2636877600 factor=[2, 5; 3, 2; 5, 2; 7, 1; 113, 1; 463, 1]
+(16,11) N=34874070 bad_primes=[2, 3, 5, 7, 11, 31, 487]  a*b*u*v=-5021866080 factor=[2, 5; 3, 3; 5, 1; 7, 1; 11, 1; 31, 1; 487, 1]
+(16,13) N=374331594 bad_primes=[2, 3, 7, 13, 29, 47, 503]  a*b*u*v=-5989305504 factor=[2, 5; 3, 1; 7, 1; 13, 1; 29, 1; 47, 1; 503, 1]
+(16,15) N=213378270 bad_primes=[2, 3, 5, 7, 31, 73, 449]  a*b*u*v=-3414052320 factor=[2, 5; 3, 1; 5, 1; 7, 1; 31, 1; 73, 1; 449, 1]
+
+=== Hypothesis: bad primes of E = bad primes of a*b*u*v ===
+MISMATCH (m,n)=(2,1) N primes=[3, 7] a*b*u*v primes=[2, 3, 7]
+MISMATCH (m,n)=(3,2) N primes=[3, 5, 7, 17] a*b*u*v primes=[2, 3, 5, 7, 17]
+MISMATCH (m,n)=(5,2) N primes=[3, 5, 7, 41] a*b*u*v primes=[2, 3, 5, 7, 41]
+MISMATCH (m,n)=(6,1) N primes=[3, 5, 7, 23, 47] a*b*u*v primes=[2, 3, 5, 7, 23, 47]
+MISMATCH (m,n)=(6,5) N primes=[3, 5, 7, 11, 71] a*b*u*v primes=[2, 3, 5, 7, 11, 71]
+MISMATCH (m,n)=(7,2) N primes=[3, 5, 7, 17, 73] a*b*u*v primes=[2, 3, 5, 7, 17, 73]
+MISMATCH (m,n)=(7,6) N primes=[3, 7, 13, 71, 97] a*b*u*v primes=[2, 3, 7, 13, 71, 97]
+MISMATCH (m,n)=(9,2) N primes=[3, 7, 11, 41, 113] a*b*u*v primes=[2, 3, 7, 11, 41, 113]
+MISMATCH (m,n)=(10,1) N primes=[3, 5, 7, 11, 17, 79] a*b*u*v primes=[2, 3, 5, 7, 11, 17, 79]
+MISMATCH (m,n)=(10,3) N primes=[3, 5, 7, 13, 31, 151] a*b*u*v primes=[2, 3, 5, 7, 13, 31, 151]
+MISMATCH (m,n)=(10,7) N primes=[3, 5, 7, 17, 89, 191] a*b*u*v primes=[2, 3, 5, 7, 17, 89, 191]
+MISMATCH (m,n)=(10,9) N primes=[3, 5, 7, 19, 23, 199] a*b*u*v primes=[2, 3, 5, 7, 19, 23, 199]
+MISMATCH (m,n)=(11,2) N primes=[3, 7, 11, 13, 23, 73] a*b*u*v primes=[2, 3, 7, 11, 13, 23, 73]
+MISMATCH (m,n)=(11,6) N primes=[3, 5, 7, 11, 17, 31, 47] a*b*u*v primes=[2, 3, 5, 7, 11, 17, 31, 47]
+MISMATCH (m,n)=(11,10) N primes=[3, 5, 7, 11, 199, 241] a*b*u*v primes=[2, 3, 5, 7, 11, 199, 241]
+MISMATCH (m,n)=(13,2) N primes=[3, 5, 7, 11, 13, 31, 113] a*b*u*v primes=[2, 3, 5, 7, 11, 13, 31, 113]
+MISMATCH (m,n)=(13,6) N primes=[3, 7, 13, 17, 19, 23] a*b*u*v primes=[2, 3, 7, 13, 17, 19, 23]
+MISMATCH (m,n)=(13,10) N primes=[3, 5, 7, 13, 23, 47, 191] a*b*u*v primes=[2, 3, 5, 7, 13, 23, 47, 191]
+MISMATCH (m,n)=(14,1) N primes=[3, 5, 7, 13, 167, 223] a*b*u*v primes=[2, 3, 5, 7, 13, 167, 223]
+MISMATCH (m,n)=(14,3) N primes=[3, 7, 11, 17, 103, 271] a*b*u*v primes=[2, 3, 7, 11, 17, 103, 271]
+MISMATCH (m,n)=(14,5) N primes=[3, 5, 7, 19, 31, 311] a*b*u*v primes=[2, 3, 5, 7, 19, 31, 311]
+MISMATCH (m,n)=(14,9) N primes=[3, 5, 7, 23, 137, 367] a*b*u*v primes=[2, 3, 5, 7, 23, 137, 367]
+MISMATCH (m,n)=(14,11) N primes=[3, 5, 7, 11, 233, 383] a*b*u*v primes=[2, 3, 5, 7, 11, 233, 383]
+MISMATCH (m,n)=(14,13) N primes=[3, 7, 13, 17, 23, 337] a*b*u*v primes=[2, 3, 7, 13, 17, 23, 337]
+MISMATCH (m,n)=(15,2) N primes=[3, 5, 7, 13, 17, 23, 281] a*b*u*v primes=[2, 3, 5, 7, 13, 17, 23, 281]
+MISMATCH (m,n)=(15,14) N primes=[3, 5, 7, 17, 23, 29, 449] a*b*u*v primes=[2, 3, 5, 7, 17, 23, 29, 449]
+Bad-prime hypothesis matches: 29 / 55  fails: 26
+
+=== Analytic rank for first 12 fibers ===
+(2,1) analytic_rank=0 cond=21
+(3,2) analytic_rank=0 cond=1785
+(4,1) analytic_rank=0 cond=4830
+(4,3) analytic_rank=1 cond=22134
+(5,2) analytic_rank=1 cond=4305
+(5,4) analytic_rank=0 cond=6510
+(6,1) analytic_rank=0 cond=113505
+(6,5) analytic_rank=2 cond=82005
+(7,2) analytic_rank=0 cond=130305
+(7,4) analytic_rank=0 cond=945714
+(7,6) analytic_rank=1 cond=1880151
+(8,1) analytic_rank=0 cond=155946

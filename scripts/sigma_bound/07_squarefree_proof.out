@@ -1,0 +1,16 @@
+=== coprimality a,b,c (c=a^2-b^2) ===
+  gcd(a,b)=1 always? 1
+  gcd(a,c)=1 always? 1 (note c=a^2-b^2, a|? )
+  gcd(oddpart(b),c)=1 always? 1
+
+=== n_p structure: for odd p, n_p vs v_p(a),v_p(b),v_p(c) ===
+[0;31m[0;31m  ***   at top-level: ...[0;35my(e=L[i]);my(s=e[3]);if(s[0;35m[1]==Vecsmall("a")[1]
+[0;31m[0;31m  ***                                             ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_STR).[0m
+... skipping file '07_squarefree_proof.gp'
+
+=> CONCLUSION on odd n_p: n_p = 4 v_p(a) (p|a), 4 v_p(b) (p|b), 2 v_p(c) (p|c).
+   [from j-denominator a^4 b^4 (a^2-b^2)^2: pole orders 4,4,2.]
+
+=== Squarefree sub-family rigorous bound ===
+  Squarefree sub-family (m<=600): sup sigma=3.5581582141173596749470424597256232296 at [309, 128]  #(sigma>4)=0

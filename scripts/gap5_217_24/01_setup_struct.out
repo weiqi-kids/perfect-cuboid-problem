@@ -1,0 +1,65 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== (217, 24) STRUCTURAL ANALYSIS ===
+m = 217, n = 24, q = 46513/10416
+q numerator factor: [193, 1; 241, 1]
+q denominator factor: [2, 4; 3, 1; 7, 1; 31, 1]
+
+Minimal model coefficients: 1 0 0 -92866792132382484 10795784679636033628823184
+Change of variable [u, r, s, t] = [1/5208, -7888723/1130136, 1/10416, 0]
+
+Conductor N = 124448595735787638
+Conductor factorization: [2, 1; 3, 1; 7, 1; 31, 1; 193, 1; 241, 1; 36097, 1; 56929, 1]
+Discriminant Δ = 908804889978369918941719990444621685260617778639104
+Discriminant factorization: [2, 8; 3, 4; 7, 4; 31, 4; 193, 4; 241, 4; 36097, 2; 56929, 2]
+j-invariant = 88573752531577311258921379244242209548246977382218902337/908804889978369918941719990444621685260617778639104
+j numerator factor: [37, 3; 19417, 3; 6204657693877, 3]
+
+Torsion subgroup: order = 8 structure = [4, 2]
+  T[1] = [68209500, 2185997544072]
+  T[2] = [162206088, -81103044]
+
+Local data table:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35m[3][i][3],cp=gr[3][i][4])[0;35m;
+[0;31m[0;31m  ***                               ^-[0m
+... skipping file '01_setup_struct.gp'
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: ...[0;35mype = ",kt," 
+[0;31m  ***   c_p = ",cp)[0;35m);
+[0;31m[0;31m  ***              ^--[0m
+Tamagawa product: [2, 1; 3, 1; 7, 1; 31, 1; 193, 1; 241, 1; 36097, 1; 56929, 1]
+Global root number w(E) = -1
+Local root numbers at bad primes:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mi][1],wp=ellrootno(Em,p))[0;35m;
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: [0;35mprint(" w_",p," = 
+[0;31m  ***   ",wp)[0;35m);
+[0;31m[0;31m  ***        ^--[0m
+w_∞ = -1
+
+--- Isogeny analysis ---
+Number of curves in 2-isogeny class: 6
+Isogeny matrix:
+[1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mmy(Ei=ellinit(iso[1][i]))[0;35m;
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: ...[0;35m = 
+[0;31m  ***   ",ellglobalred(Ei)[1])[0;35m);
+[0;31m[0;31m  ***                         ^--[0m
+
+CM check: j = 88573752531577311258921379244242209548246977382218902337/908804889978369918941719990444621685260617778639104
+j in CM list? 0
+
+Heegner discriminant candidates:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(D=-3,-200,my(d=D)[0;35m;
+[0;31m[0;31m  ***                        ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(d%4==0||d%4==1[0;35m,
+[0;31m[0;31m  ***                    ^-[0m
+[0;31m[0;31m  ***   unexpected ';': [0;35mfwd(N,e,my(p=e[1])[0;35m;if(kronecker(d,p)==-1,ok=0;
+[0;31m[0;31m  ***                                     ^----------------------------[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: 
+[0;31m  ***   ...[0;35m,p),[2,3,7,31,193,241])))[0;35m));
+[0;31m[0;31m  ***                               ^---[0m

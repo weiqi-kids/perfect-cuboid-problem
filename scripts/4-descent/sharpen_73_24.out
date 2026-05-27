@@ -1,0 +1,25 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+E_Hm of (73,24):
+  minimal model = [1, 0, 0, -4296889542830417930548255320, 69513195990628448299367172717433334517312]
+  conductor N = 18111253514418330
+  disc factored = [2, 24; 3, 8; 5, 4; 7, 16; 23, 2; 73, 8; 97, 8; 359, 2; 1181, 4; 1249, 2]
+
+=== Step 1: 2-isogeny class ===
+Number of curves in 2-isogeny class: 8
+[0;31m[0;31m  ***   at top-level: [0;35mfor(k=1,NCURV,Ek=[0;35mellinit(ISO[1][k]);print();pr
+[0;31m[0;31m  ***                                  ^-----------------------------
+  *** ellinit: incorrect type in ellinit (t_VEC).[0m
+
+=== Step 2: ellrank effort 5 on each isogenous curve (15-min timeout each) ===
+
+  --- iso[1] ellrank effort 5 ---
+[0;31m[0;31m  ***   at top-level: ...[0;35mllrank effort 5 ---");Ek=[0;35mellinit(ISO[1][k]);re
+[0;31m[0;31m  ***                                             ^---------------------
+  *** ellinit: incorrect type in ellinit (t_VEC).[0m
+
+=== Step 3: ellanalyticrank attempt (N = 1.8·10^16) ===
+  Trying ellanalyticrank(E, 0.05) ...
+
+=== Summary ===
+  Best generator count across 2-isogeny class: 0
+  ==> rk(E_Hm) still in {1, 3}; need 4-descent or Magma

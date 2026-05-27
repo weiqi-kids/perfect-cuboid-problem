@@ -1,0 +1,13 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== N(H, 3.5) ladder + local log-log slope ===
+H       N(s>3.5)   slope[log N/log H, local]   N(s>4.0)   near-square-form frac (of s>3.5)
+100     100        0.0000                      3          0.5900
+200     270        1.4330                      8          0.5037
+400     799        1.5652                      21         0.4518
+800     2100       1.3941                      36         0.3910
+1500    5115       1.4162                      74         0.3744
+
+Local slope = exponent theta in N ~ H^theta over [H_{i-1}, H_i].
+near-square-form frac = fraction of sigma>3.5 fibers where F5 or F6 has
+  powerful part >= sqrt(|form|)  (i.e. on a high layer of the Pell conic X^2-2n^2=k).

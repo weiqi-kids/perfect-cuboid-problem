@@ -1,0 +1,27 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+Enum totals:
+  rank 0   = 698
+  rank 1   = 987
+  rank 2   = 300
+  rank >=3 = 38
+  rank ambig (lo<up): 17
+  errored  = 0
+  total    = 2040
+
+Attack tallies:
+  CLOSED_RANK0          : 698
+  CLOSED_RANK1 (pass 1) : 888
+  CLOSED_RANK1 (pass 2) : 33
+  CLOSED_RANK2          : 299
+  HIT_RANK0             : 0
+  HIT_RANK1             : 0
+  HIT_RANK2             : 0
+  HARD R1 (persist no gen): 66
+  HARD R2 (no gen)        : 1
+  HARD R>=3 (rank-3+)     : 38
+  HARD rank-ambiguous     : 17
+  Enum errors             : 0
+
+TOTAL CLOSED  : 1918 / 2040
+TOTAL HARD    : 122
+TOTAL HITS    : 0 (PCP candidates -- should be 0)

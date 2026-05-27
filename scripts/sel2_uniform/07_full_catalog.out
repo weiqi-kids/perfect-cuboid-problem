@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Sel_2 dimension survey: m in [2, 100], all primitive Pythagorean =====
+Total fibers tested: 2040
+
+dim Sel_2  count  fraction
+2       698    34.200000000000000000000000000000000000%
+3       987    48.400000000000000000000000000000000000%
+4       317    15.500000000000000000000000000000000000%
+5       37    1.8000000000000000000000000000000000000%
+6       1    0%
+
+Max dim Sel_2 observed: 6
+
+Fibers with dim Sel_2 >= 6:
+ [99, 28, 4, 4, 6]

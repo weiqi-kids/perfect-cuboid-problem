@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Coleman-Chabauty on genus-3 Saunderson C' (rank J = 2 < 3) ===
+Known rational points on C' (Saunderson doc): (t,T) in {(0,+-1),(+-1,+-4)} -> all degenerate.
+
+p (good, p>6) | #C'(F_p) | Coleman bound #C(F_p)+2g-2 = +4
+p=7 | #C'(F_p)=8 | Coleman bound <= 12
+p=11 | #C'(F_p)=24 | Coleman bound <= 28
+p=13 | #C'(F_p)=28 | Coleman bound <= 32
+p=17 | #C'(F_p)=12 | Coleman bound <= 16
+p=19 | #C'(F_p)=8 | Coleman bound <= 12
+p=23 | #C'(F_p)=40 | Coleman bound <= 44
+
+Min over p gives the sharpest finite Coleman bound on |C'(Q)|.
+This bound is SIGMA-FREE (depends only on rank J(C')=2<3, not on Szpiro).

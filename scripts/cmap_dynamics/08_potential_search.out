@@ -1,0 +1,107 @@
+=== Potential function search ===
+
+Total edges: 40
+
+Candidate potentials: 1=lN, 2=ldisc, 3=lh, 4=l(mn), 5=l(m+n), 6=l(N+|disc|/N)
+
+For each potential V, count: descent (V(c)<V(q)), ascent (V(c)>V(q)), level
+
+Potential lN:
+  descents: 12
+  ascents:  27
+  level:    1
+  mean dV:  7.3256
+
+Potential ldisc:
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  23.4830
+
+Potential lh:
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  1.9726
+
+Potential l(m*n):
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  2.1483
+
+Potential l(m+n):
+  descents: 12
+  ascents:  26
+  level:    2
+  mean dV:  1.0143
+
+Potential lN_p_ldisc:
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  30.8086
+
+Potential h_p_lN:
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  9.2982
+
+Potential delta_h:
+  descents: 12
+  ascents:  28
+  level:    0
+  mean dV:  1.9726
+
+=== (m,n) level of each fiber ===
+  q=20/21  (m,n)=(5,2)  m+n=7  m*n=10
+  q=48/55  (m,n)=(8,3)  m+n=11  m*n=24
+  q=7/24  (m,n)=(4,3)  m+n=7  m*n=12
+  q=20/99  (m,n)=(10,1)  m+n=11  m*n=10
+  q=11/60  (m,n)=(6,5)  m+n=11  m*n=30
+  q=39/80  (m,n)=(8,5)  m+n=13  m*n=40
+  q=17/144  (m,n)=(9,8)  m+n=17  m*n=72
+  q=96/247  (m,n)=(16,3)  m+n=19  m*n=48
+  q=315/572  (m,n)=(22,13)  m+n=35  m*n=286
+  q=13/84  (m,n)=(7,6)  m+n=13  m*n=42
+  q=498212/2144115  (m,n)=(1474,169)  m+n=1643  m*n=249106
+  q=65/2112  (m,n)=(33,32)  m+n=65  m*n=1056
+  q=104/153  (m,n)=(13,4)  m+n=17  m*n=52
+  q=195/748  (m,n)=(22,17)  m+n=39  m*n=374
+  q=55/1512  (m,n)=(28,27)  m+n=55  m*n=756
+  q=44/117  (m,n)=(11,2)  m+n=13  m*n=22
+  q=189/340  (m,n)=(17,10)  m+n=27  m*n=170
+  q=15725/89628  (m,n)=(231,194)  m+n=425  m*n=44814
+  q=60/91  (m,n)=(10,3)  m+n=13  m*n=30
+  q=1881/4720  (m,n)=(59,40)  m+n=99  m*n=2360
+  q=225/272  (m,n)=(17,8)  m+n=25  m*n=136
+  q=52/165  (m,n)=(13,2)  m+n=15  m*n=26
+  q=132/475  (m,n)=(22,3)  m+n=25  m*n=66
+  q=5425/14832  (m,n)=(103,72)  m+n=175  m*n=7416
+  q=252/275  (m,n)=(18,7)  m+n=25  m*n=126
+  q=48/575  (m,n)=(24,1)  m+n=25  m*n=24
+  q=140/171  (m,n)=(14,5)  m+n=19  m*n=70
+  q=1107743/1309176  (m,n)=(1188,551)  m+n=1739  m*n=654588
+  q=85/132  (m,n)=(11,6)  m+n=17  m*n=66
+  q=108/725  (m,n)=(27,2)  m+n=29  m*n=54
+  q=711/3080  (m,n)=(44,35)  m+n=79  m*n=1540
+  q=57/176  (m,n)=(11,8)  m+n=19  m*n=88
+  q=832/855  (m,n)=(32,13)  m+n=45  m*n=416
+  q=135/352  (m,n)=(16,11)  m+n=27  m*n=176
+  q=27/364  (m,n)=(14,13)  m+n=27  m*n=182
+  q=120/209  (m,n)=(15,4)  m+n=19  m*n=60
+  q=1232/3015  (m,n)=(56,11)  m+n=67  m*n=616
+  q=25/312  (m,n)=(13,12)  m+n=25  m*n=156
+  q=58425/300608  (m,n)=(427,352)  m+n=779  m*n=150304
+  q=28/195  (m,n)=(14,1)  m+n=15  m*n=14
+  q=214368/237575  (m,n)=(528,203)  m+n=731  m*n=107184
+  q=160/231  (m,n)=(16,5)  m+n=21  m*n=80
+  q=95/168  (m,n)=(12,7)  m+n=19  m*n=84
+  q=47975/107712  (m,n)=(288,187)  m+n=475  m*n=53856
+  q=105/208  (m,n)=(13,8)  m+n=21  m*n=104
+  q=7579/8820  (m,n)=(98,45)  m+n=143  m*n=4410
+  q=52/675  (m,n)=(26,1)  m+n=27  m*n=26
+  q=741/1540  (m,n)=(35,22)  m+n=57  m*n=770
+  q=36/323  (m,n)=(18,1)  m+n=19  m*n=18
+  q=5537740/14185941  (m,n)=(3835,722)  m+n=4557  m*n=2768870

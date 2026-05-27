@@ -1,0 +1,8 @@
+ODD-PRIME n_p FORMULA verification (m<=150):
+  p|a: n_p == 4 v_p(a) for ALL? YES  (max v_p(a) seen=5)
+  p|b: n_p == 4 v_p(b) for ALL? YES  (max v_p(b) seen=4)
+  p|c: n_p == 2 v_p(c) for ALL? YES  (max v_p(c) seen=5)
+
+EXACT integer identity Delta_min = 2^{n_2} a^4 (oddpart b)^4 c^2,  n_2=4v_2(b)-8 ?  YES
+=> log|Delta_min| = (4v_2(b)-8)log2 + 4 log a + 4 log(oddpart b) + 2 log c
+                  = 4 log a + 4 log b + 2 log c - 8 log 2   [since 4 log b=4log(oddb)+4v_2(b)log2]

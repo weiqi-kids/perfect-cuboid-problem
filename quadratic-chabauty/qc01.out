@@ -1,0 +1,25 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+=== q_0 = 20/21, (m,n) = (5,2) ===
+1 + q_0^2 = 841/441 = (29/21)^2 = 841/441
+
+=== Conductors and minimal models ===
+E_ef: [a1,a2,a3,a4,a6] = [1, 0, 0, -58835, -5497800]  N = 4305
+E_eg: [a1,a2,a3,a4,a6] = [1, 1, 1, -116185, -15231010]  N = 3045
+E_fg: [a1,a2,a3,a4,a6] = [0, 1, 0, -126960, -17414892]  N = 48720
+E_H+: [a1,a2,a3,a4,a6] = [0, -1, 0, -59360, 5409600]  N = 68880
+E_H-: [a1,a2,a3,a4,a6] = [1, 0, 0, -673039570, -5895575919100]  N = 249690
+
+=== ellrank (effort=1, unconditional) ===
+E_ef: rank in [1, 1]  #gens=1  gens=[[616, 13552]]
+E_eg: rank in [1, 1]  #gens=1  gens=[[-6977/36, 70873/216]]
+E_fg: rank in [0, 0]  #gens=0  gens=[]
+E_H+: rank in [2, 2]  #gens=2  gens=[[530, 11070], [-208, 2952]]
+E_H-: rank in [1, 1]  #gens=1  gens=[[-5550160/529, 1335948670/12167]]
+Total lower bound on rk J(V_q): 5
+
+=== Torsion subgroups ===
+E_ef: torsion order = 4  structure: [2, 2]
+E_eg: torsion order = 4  structure: [2, 2]
+E_fg: torsion order = 4  structure: [2, 2]
+E_H+: torsion order = 4  structure: [2, 2]
+E_H-: torsion order = 16  structure: [8, 2]

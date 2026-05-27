@@ -1,0 +1,102 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+Primitive Pythagorean triples with D ≤ 400: 63
+
+Total Euler bricks (a,b,c face-diagonals integer, a,b,c ≤ 10000) found via this enumeration: 427
+Total perfect cuboids: 0
+
+First Euler bricks (with ω1 parametrization):
+  (140, 480, 693) | ω1=4+3i | k=20 | g²=730249 | miss=933
+  (231, 792, 160) | ω1=4+3i | k=33 | g²=706225 | miss=625
+  (280, 960, 1386) | ω1=4+3i | k=40 | g²=2920996 | miss=315
+  (420, 1440, 2079) | ω1=4+3i | k=60 | g²=6572241 | miss=3272
+  (462, 1584, 320) | ω1=4+3i | k=66 | g²=2824900 | miss=2500
+  (560, 1920, 2772) | ω1=4+3i | k=80 | g²=11683984 | miss=1260
+  (693, 2376, 480) | ω1=4+3i | k=99 | g²=6356025 | miss=584
+  (700, 2400, 3465) | ω1=4+3i | k=100 | g²=18256225 | miss=6241
+  (840, 2880, 4158) | ω1=4+3i | k=120 | g²=26288964 | miss=2835
+  (924, 3168, 640) | ω1=4+3i | k=132 | g²=11299600 | miss=3279
+  (980, 3360, 4851) | ω1=4+3i | k=140 | g²=35782201 | miss=9840
+  (1120, 3840, 5544) | ω1=4+3i | k=160 | g²=46735936 | miss=5040
+  (1155, 3960, 800) | ω1=4+3i | k=165 | g²=17655625 | miss=7224
+  (1260, 4320, 6237) | ω1=4+3i | k=180 | g²=59150169 | miss=14069
+  (1386, 4752, 960) | ω1=4+3i | k=198 | g²=25424100 | miss=2336
+  (1400, 4800, 6930) | ω1=4+3i | k=200 | g²=73024900 | miss=7875
+  (1540, 5280, 7623) | ω1=4+3i | k=220 | g²=88360129 | miss=129
+  (1617, 5544, 1120) | ω1=4+3i | k=231 | g²=34605025 | miss=7101
+  (1680, 5760, 8316) | ω1=4+3i | k=240 | g²=105155856 | miss=11340
+  (1820, 6240, 9009) | ω1=4+3i | k=260 | g²=123412081 | miss=2200
+  (1848, 6336, 1280) | ω1=4+3i | k=264 | g²=45198400 | miss=13116
+  (1960, 6720, 9702) | ω1=4+3i | k=280 | g²=143128804 | miss=15435
+  (2079, 7128, 1440) | ω1=4+3i | k=297 | g²=57204225 | miss=5256
+  (2310, 7920, 1600) | ω1=4+3i | k=330 | g²=70622500 | miss=12091
+  (2541, 8712, 1760) | ω1=4+3i | k=363 | g²=85453225 | miss=1689
+  (2772, 9504, 1920) | ω1=4+3i | k=396 | g²=101696400 | miss=9344
+  (252, 240, 275) | ω1=5+2i | k=12 | g²=196729 | miss=480
+  (504, 480, 550) | ω1=5+2i | k=24 | g²=786916 | miss=147
+  (756, 720, 825) | ω1=5+2i | k=36 | g²=1770561 | miss=1661
+  (1008, 960, 1100) | ω1=5+2i | k=48 | g²=3147664 | miss=588
+
+=== Approach 2: Direct ℤ[i] coupling enumeration ===
+Number of distinct Pythagorean leg-pairs in map: 19900
+Number of distinct legs that appear in some Pythagorean pair: 17874
+
+Unique Euler bricks (face-diagonal-only, a,b,c representable as legs in pmap): 0
+Perfect cuboids: 0
+
+First 20 Euler bricks (sorted):
+
+=== Statistical analysis of body-diagonal deficiency ===
+  Perfect cuboids (miss = 0): 0
+  Total Euler bricks: 0
+  Fraction = 0
+
+=== Forced c when d is prime ≡ 1 mod 4 ===
+  D=5 (prime ≡ 1 mod 4): a=3 b=4 forced c=12  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=13 (prime ≡ 1 mod 4): a=5 b=12 forced c=84  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=17 (prime ≡ 1 mod 4): a=15 b=8 forced c=144  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=29 (prime ≡ 1 mod 4): a=21 b=20 forced c=420  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=41 (prime ≡ 1 mod 4): a=9 b=40 forced c=840  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=37 (prime ≡ 1 mod 4): a=35 b=12 forced c=684  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=61 (prime ≡ 1 mod 4): a=11 b=60 forced c=1860  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=53 (prime ≡ 1 mod 4): a=45 b=28 forced c=1404  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=73 (prime ≡ 1 mod 4): a=55 b=48 forced c=2664  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=89 (prime ≡ 1 mod 4): a=39 b=80 forced c=3960  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=113 (prime ≡ 1 mod 4): a=15 b=112 forced c=6384  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=97 (prime ≡ 1 mod 4): a=65 b=72 forced c=4704  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=101 (prime ≡ 1 mod 4): a=99 b=20 forced c=5100  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+  D=109 (prime ≡ 1 mod 4): a=91 b=60 forced c=5940  | a²+c² sq? 0  | b²+c² sq? 0  | g² sq? 1
+
+=== Multi-factor d analysis (composite d allows more ω₄ choices) ===
+Counting ω₄ choices for various d values:
+  d=5: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=8: #(ω₁ rep) = 1, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=9: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=13: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=16: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=17: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=20: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=25: #(ω₁ rep) = 4, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=29: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=32: #(ω₁ rep) = 1, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=36: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=37: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=40: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=41: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=45: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 3
+  d=49: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=52: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=53: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=61: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=64: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=65: #(ω₁ rep) = 4, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=68: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=72: #(ω₁ rep) = 1, #(ω₄ rep, i.e. d=u²-v²) = 3
+  d=73: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=80: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 3
+  d=81: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=85: #(ω₁ rep) = 4, #(ω₄ rep, i.e. d=u²-v²) = 2
+  d=89: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=97: #(ω₁ rep) = 2, #(ω₄ rep, i.e. d=u²-v²) = 1
+  d=100: #(ω₁ rep) = 4, #(ω₄ rep, i.e. d=u²-v²) = 1
+
+=== Done ===

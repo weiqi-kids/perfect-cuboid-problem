@@ -1,0 +1,29 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== GAP3-C task 3: Picard via Frobenius traces ===
+Counting #V'(F_p) for p in small primes...
+  p=3 #cone(F_p)=25 #V'(F_p)=12 trace=2
+  ratio trace/p = 0.66666666666666666666666666666666666667
+  p=5 #cone(F_p)=145 #V'(F_p)=36 trace=10
+  ratio trace/p = 2.0000000000000000000000000000000000000
+  p=7 #cone(F_p)=553 #V'(F_p)=92 trace=42
+  ratio trace/p = 6.0000000000000000000000000000000000000
+  p=11 #cone(F_p)=1081 #V'(F_p)=108 trace=-14
+  ratio trace/p = -1.2727272727272727272727272727272727273
+  p=13 #cone(F_p)=2353 #V'(F_p)=196 trace=26
+  ratio trace/p = 2.0000000000000000000000000000000000000
+  p=17 #cone(F_p)=6849 #V'(F_p)=428 trace=138
+  ratio trace/p = 8.1176470588235294117647058823529411765
+  p=19 #cone(F_p)=7129 #V'(F_p)=396 trace=34
+  ratio trace/p = 1.7894736842105263157894736842105263158
+  p=23 #cone(F_p)=14697 #V'(F_p)=668 trace=138
+  ratio trace/p = 6.0000000000000000000000000000000000000
+  p=29 #cone(F_p)=25201 #V'(F_p)=900 trace=58
+  ratio trace/p = 2.0000000000000000000000000000000000000
+  p=31 #cone(F_p)=34441 #V'(F_p)=1148 trace=186
+  ratio trace/p = 6.0000000000000000000000000000000000000
+  p=37 #cone(F_p)=51985 #V'(F_p)=1444 trace=74
+  ratio trace/p = 2.0000000000000000000000000000000000000
+  p=41 #cone(F_p)=78561 #V'(F_p)=1964 trace=282
+  ratio trace/p = 6.8780487804878048780487804878048780488
+  p=43 #cone(F_p)=77113 #V'(F_p)=1836 trace=-14
+  ratio trace/p = -0.32558139534883720930232558139534883721

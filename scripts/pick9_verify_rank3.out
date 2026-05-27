@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+=== Independent verification: (m,n) = (22,17) ===
+q = 195/748
+1 + q^2 = 597529/559504 = Mat([773, 2]) / [2, 4; 11, 2; 17, 2]
+Pythagorean check: sqrt(1+q^2) = 773/748 is rational? yes.
+
+E minimal a-invariants: [1, 0, 0, -6108655980, 180712439349327]
+Conductor: 19015731735
+Torsion: [4, 2]
+
+--- ellrank ---
+ellrank: [low, high, gens] = [3, 3, 0, [[151491/4, 15203079/8], [421737, 269261835], [10014, 10974273]]]
+
+--- ellanalyticrank ---
+Analytic rank: [3, 854.29605124665186298490536633308564585]
+
+--- 2-descent (manual) via elltors and ellrank with more effort ---
+ellrank with effort=2: [3, 3, 0, [[151491/4, 15203079/8], [53369, 2563403], [40343619, 256228408278]]]
+ellrank with effort=5: [3, 3, 0, [[187919, 75197978], [33474, 3689943], [10014, 10974273]]]

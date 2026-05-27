@@ -1,0 +1,96 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+=== Extended direct search B=500000 on three open fibers ===
+=== parisize = 500 MB ===
+=== started at wall-ms 1779111527009
+
+=========================================
+Extended direct search (m,n)=(73,24), q=4753/3504 B=500000
+u=3504 v=4753
+=========================================
+  b ranges 1..707  a ranges -500000..500000
+  progress: b=50/707  cand so far=30676800  squares so far=0  wall(s)=6437/250
+  progress: b=100/707  cand so far=60832742  squares so far=0  wall(s)=51153/1000
+  progress: b=150/707  cand so far=91312886  squares so far=0  wall(s)=19499/250
+  progress: b=200/707  cand so far=121952344  squares so far=0  wall(s)=26097/250
+  progress: b=250/707  cand so far=152086082  squares so far=0  wall(s)=3267/25
+  progress: b=300/707  cand so far=182517038  squares so far=0  wall(s)=157097/1000
+  progress: b=350/707  cand so far=213043410  squares so far=0  wall(s)=36967/200
+  progress: b=400/707  cand so far=243280182  squares so far=0  wall(s)=5283/25
+  progress: b=450/707  cand so far=273746988  squares so far=0  wall(s)=47823/200
+  progress: b=500/707  cand so far=304214084  squares so far=0  wall(s)=133047/500
+  progress: b=550/707  cand so far=334493460  squares so far=0  wall(s)=293261/1000
+  progress: b=600/707  cand so far=364876910  squares so far=0  wall(s)=64003/200
+  progress: b=650/707  cand so far=395425172  squares so far=0  wall(s)=347141/1000
+  progress: b=700/707  cand so far=425658062  squares so far=0  wall(s)=46883/125
+  progress: b=707/707  cand so far=430209868  squares so far=0  wall(s)=379213/1000
+  Total candidates scanned: 430209868
+  Total squares found: 0
+  Non-trivial squares (after excluding {0,-u^2,-v^2}): 0
+  Wall time (s): 379213/1000
+
+*** (73,24) summary: 0 non-trivial squares ***
+
+=========================================
+Extended direct search (m,n)=(88,35), q=6519/6160 B=500000
+u=6160 v=6519
+=========================================
+  b ranges 1..707  a ranges -500000..500000
+  *** SQUARE FOUND ***
+      a=392040  b=1
+      P_int = [392040,25389425160]
+      canonical height = 10.82164719187462459802418711469545576325
+      q-model: x_q=81/7840  y_q=5245749/48294400
+      c(P) = 3799670859/18508197500
+      F3 = c^2 + 1 + q^2 = 70259618274001481270948809/32495983337446528900000000
+      F3 is a square? 0
+  progress: b=50/707  cand so far=30676800  squares so far=1  wall(s)=27261/1000
+  progress: b=100/707  cand so far=60832742  squares so far=1  wall(s)=13907/250
+  progress: b=150/707  cand so far=91312886  squares so far=1  wall(s)=8493/100
+  progress: b=200/707  cand so far=121952344  squares so far=1  wall(s)=22791/200
+  progress: b=250/707  cand so far=152086082  squares so far=1  wall(s)=71553/500
+  progress: b=300/707  cand so far=182517038  squares so far=1  wall(s)=21409/125
+  progress: b=350/707  cand so far=213043410  squares so far=1  wall(s)=20047/100
+  progress: b=400/707  cand so far=243280182  squares so far=1  wall(s)=228957/1000
+  progress: b=450/707  cand so far=273746988  squares so far=1  wall(s)=257513/1000
+  progress: b=500/707  cand so far=304214084  squares so far=1  wall(s)=11457/40
+  progress: b=550/707  cand so far=334493460  squares so far=1  wall(s)=315967/1000
+  progress: b=600/707  cand so far=364876910  squares so far=1  wall(s)=86163/250
+  progress: b=650/707  cand so far=395425172  squares so far=1  wall(s)=46729/125
+  progress: b=700/707  cand so far=425658062  squares so far=1  wall(s)=80469/200
+  progress: b=707/707  cand so far=430209868  squares so far=1  wall(s)=406563/1000
+  Total candidates scanned: 430209868
+  Total squares found: 1
+  Non-trivial squares (after excluding {0,-u^2,-v^2}): 1
+  Wall time (s): 406563/1000
+
+*** (88,35) summary: 1 non-trivial squares ***
+
+=========================================
+Extended direct search (m,n)=(99,28), q=9017/5544 B=500000
+u=5544 v=9017
+=========================================
+  b ranges 1..707  a ranges -500000..500000
+  progress: b=50/707  cand so far=30676800  squares so far=0  wall(s)=13049/500
+  progress: b=100/707  cand so far=60832742  squares so far=0  wall(s)=6653/125
+  progress: b=150/707  cand so far=91312886  squares so far=0  wall(s)=79687/1000
+  progress: b=200/707  cand so far=121952344  squares so far=0  wall(s)=106989/1000
+  progress: b=250/707  cand so far=152086082  squares so far=0  wall(s)=66913/500
+  progress: b=300/707  cand so far=182517038  squares so far=0  wall(s)=160887/1000
+  progress: b=350/707  cand so far=213043410  squares so far=0  wall(s)=37673/200
+  progress: b=400/707  cand so far=243280182  squares so far=0  wall(s)=215523/1000
+  progress: b=450/707  cand so far=273746988  squares so far=0  wall(s)=60861/250
+  progress: b=500/707  cand so far=304214084  squares so far=0  wall(s)=270499/1000
+  progress: b=550/707  cand so far=334493460  squares so far=0  wall(s)=149211/500
+  progress: b=600/707  cand so far=364876910  squares so far=0  wall(s)=325679/1000
+  progress: b=650/707  cand so far=395425172  squares so far=0  wall(s)=176691/500
+  progress: b=700/707  cand so far=425658062  squares so far=0  wall(s)=381249/1000
+  progress: b=707/707  cand so far=430209868  squares so far=0  wall(s)=385197/1000
+  Total candidates scanned: 430209868
+  Total squares found: 0
+  Non-trivial squares (after excluding {0,-u^2,-v^2}): 0
+  Wall time (s): 385197/1000
+
+*** (99,28) summary: 0 non-trivial squares ***
+
+=== DONE ===
+=== finished at wall-ms 1779112697982  total seconds: 1170973/1000

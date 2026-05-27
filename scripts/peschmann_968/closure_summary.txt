@@ -1,0 +1,17 @@
+PCP -- per-fiber closure on 2,040 master tuples
+
+Total pairs : 2040
+Total CLOSED: 1918
+Total HARD  : 122
+Total HITS  : 0
+
+Breakdown:
+  rank 0 closed       : 698 / 698
+  rank 1 closed pass1 : 888 / 987
+  rank 1 closed pass2 : 33
+  rank 2 closed       : 299 / 300
+  rank >=3 (HARD)     : 38
+  rank ambig (HARD)   : 17
+  rank 1 HARD (persist): 66
+  rank 2 HARD          : 1
+  enum errored         : 0

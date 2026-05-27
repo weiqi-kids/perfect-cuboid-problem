@@ -1,0 +1,99 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+
+==================================================
+=== Test 1: y^2 = x(x-1)(x-2), rk=0
+==================================================
+Torsion: order=4 struct=[2, 2]
+ellrank = [0, 0, 0, []]
+Expected rank: 0
+Non-trivial cover count: 2
+  --- Cover #1 ---
+    q(x) = x^4 + 6*x^2 + 1
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  --- Cover #2 ---
+    q(x) = x^4 + 4
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  TOTAL non-torsion across covers: 0
+  Expected: at most 0 independent generators visible
+
+==================================================
+=== Test 2: y^2 = x(x-1)(x+1), rk=0
+==================================================
+Torsion: order=4 struct=[2, 2]
+ellrank = [0, 0, 0, []]
+Expected rank: 0
+Non-trivial cover count: 2
+  --- Cover #1 ---
+    q(x) = x^4 + 6*x^2 + 1
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  --- Cover #2 ---
+    q(x) = x^4 + 4
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  TOTAL non-torsion across covers: 0
+  Expected: at most 0 independent generators visible
+
+==================================================
+=== Test 3: y^2 = x(x-4)(x+1)
+==================================================
+Torsion: order=4 struct=[2, 2]
+ellrank = [0, 0, 0, []]
+Expected rank: ?
+Non-trivial cover count: 2
+  --- Cover #1 ---
+    q(x) = x^4 + 3*x^2 + 1
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  --- Cover #2 ---
+    q(x) = x^4 + 2*x^3 + 3*x^2 + 2*x + 2
+    searching |a|, b <= 30
+    rational pts on cover: 1
+    non-torsion lifts:     0
+  TOTAL non-torsion across covers: 0
+  Expected: at most ? independent generators visible
+
+==================================================
+=== Test 4: y^2 = x(x-7)(x+7), rk=1
+==================================================
+Torsion: order=4 struct=[2, 2]
+ellrank = [1, 1, 0, [[25, 120]]]
+Expected rank: 1
+Non-trivial cover count: 3
+  --- Cover #1 ---
+    q(x) = x^4 + 42*x^2 + 49
+    searching |a|, b <= 50
+    [NONTORSION] x=-15/4 lifts to [-89383/214369, 447832560/99252847]
+    [NONTORSION] x=15/4 lifts to [-89383/214369, -447832560/99252847]
+    [NONTORSION] x=-28/15 lifts to [-89383/214369, -447832560/99252847]
+    [NONTORSION] x=28/15 lifts to [-89383/214369, 447832560/99252847]
+    rational pts on cover: 5
+    non-torsion lifts:     4
+  --- Cover #2 ---
+    q(x) = 4*x^4 + 49
+    searching |a|, b <= 50
+    [NONTORSION] x=-12/5 lifts to [-705600/113569, 307635720/38272753]
+    [NONTORSION] x=12/5 lifts to [-705600/113569, -307635720/38272753]
+    [NONTORSION] x=-35/24 lifts to [-705600/113569, -307635720/38272753]
+    [NONTORSION] x=35/24 lifts to [-705600/113569, 307635720/38272753]
+    rational pts on cover: 5
+    non-torsion lifts:     4
+  --- Cover #3 ---
+    q(x) = 2*x^4 - 5*x^3 + 6*x^2 + x + 4
+    searching |a|, b <= 50
+    [NONTORSION] x=-1/1 lifts to [-63/16, -735/64]
+    [NONTORSION] x=0/1 lifts to [-63/16, 735/64]
+    [NONTORSION] x=5/1 lifts to [-63/16, 735/64]
+    [NONTORSION] x=3/2 lifts to [-63/16, -735/64]
+    [NONTORSION] x=-480/17 lifts to [-271367974143/463864517776, 1685568828610118655/315926990308806976]
+    rational pts on cover: 5
+    non-torsion lifts:     5
+  TOTAL non-torsion across covers: 13
+  Expected: at most 1 independent generators visible

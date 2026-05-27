@@ -1,0 +1,25 @@
+==== STEP 1: Saunderson body-diagonal identity ====
+  a^2+b^2+c^2 - w^2(w^4+16u^2v^2)  (in Q[p,q]) = 0
+  (expect 0)
+
+==== STEP 2: reduction to the genus-3 octic ====
+  (w^4+16u^2v^2)/q^8 |_{p=tq} - octic = 0
+  (expect 0)  ==>  T^2 = t^8+68t^6-122t^4+68t^2+1,  T = g/(w q^4)?? check scaling
+
+==== STEP 3: palindromic substitution W = t + 1/t ====
+  octic/t^4 - (W^4+64W^2-256) = 0
+  (expect 0)  ==>  S^2 = W^4+64W^2-256,  S = T/t^2
+
+==== STEP 3b: lifting identity  W^2 - 4 = (t - 1/t)^2 ====
+  (W^2 - 4) - (t - 1/t)^2 = 0
+  (expect 0)  ==>  W^2-4 is a rational square whenever t is rational
+
+==== STEP 4: substitution W^2 = T0^2 + 4 into S^2=W^4+64W^2-256 ====
+  (W^2)^2+64W^2-256 |_{W^2=T0^2+4} - (T0^4+72T0^2+16) = 0
+  (expect 0)  ==>  C0 : S^2 = T0^4 + 72 T0^2 + 16
+
+==== Discriminant cross-check (PICK-19 quadruple route) ====
+  D(r) - 4*octic(r) = 0
+  (expect 0)  -- confirms the two derivation routes meet at the same octic
+
+==== ALL ALGEBRAIC IDENTITIES VERIFIED (each diff above must be 0) ====

@@ -1,0 +1,350 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Epcp}{E_{\mathrm{PCP}}}
+
+\begin{document}
+
+\title[A named elliptic curve for the Saunderson cuboid sub-family]{The Saunderson sub-family of the perfect-cuboid
+problem reduces to the rank-one elliptic curve $160$a$2$: an expository note}
+
+\author{C$\Lambda$ / Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\date{\today}
+
+\subjclass[2020]{Primary 11G05; Secondary 11D09, 11D25, 11G07}
+
+\keywords{Perfect cuboid, Euler brick, Pythagorean triple, elliptic curve,
+Cremona label, rational point, reformulation}
+
+\begin{abstract}
+The perfect-cuboid problem asks whether a rectangular box can have all three
+edges, all three face diagonals, and the space diagonal of integer length;
+it has been open since Euler. Two reductions of the problem to arithmetic
+geometry are part of the folklore: an elementary recasting in terms of three
+Pythagorean triples, and reductions of one-parameter cuboid sub-loci to
+rational points on elliptic curves, as developed by van Luijk, Sharipov,
+Naskr\k{e}cki and most recently Peschmann. This note does not claim a new
+method; its purpose is to make one such reduction completely explicit on a
+specific sub-locus. We record the elementary equivalence between the existence
+of a perfect cuboid and a single quadratic relation among three Pythagorean
+leg-to-hypotenuse ratios, and we carry out, with full symbolic verification,
+the reduction of the Saunderson primitive sub-family to a square condition on
+the rational points of one named curve. Our only contribution is computational
+identification: the relevant Jacobian is Cremona curve $160$a$2$,
+$y^2=x^3+x^2-x+15$, of conductor $160$, rank $1$ and torsion $\Z/2\Z$, with
+Mordell--Weil generator $(-1,4)$; we exhibit the explicit palindromic identity
+realizing this and verify the absence of non-degenerate lifts in a finite
+range. The scope is deliberately narrow: the note settles no case left open
+by the cited works and is offered as a reference entry rather than a research
+advance.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A \emph{perfect cuboid} (or perfect Euler brick) is a rectangular box with
+edges $a,b,c$ such that the three face diagonals $\sqrt{a^2+b^2}$,
+$\sqrt{b^2+c^2}$, $\sqrt{a^2+c^2}$ and the space diagonal
+$\sqrt{a^2+b^2+c^2}$ are all rational. Whether one exists is a classical open
+problem, recorded as Problem~D18 in Guy~\cite{Guy}, and traced to Euler. No
+example is known and non-existence is unproven.
+
+Two reformulations of the problem are part of the working folklore of the
+subject. The first is purely elementary: a perfect cuboid is exactly a vertex
+at which three Pythagorean faces meet compatibly, so the problem can be phrased
+as a single quadratic relation among three Pythagorean triples. The second is
+geometric: van Luijk~\cite{vanLuijk} showed that the projective surface
+parametrizing perfect cuboids is of general type, and various authors have
+studied one-parameter cuboid sub-loci by reducing them to rational points on
+elliptic curves; see Sharipov~\cite{Sharipov2elliptic}, the
+Mordell--Weil-rank analysis of the associated families by
+Naskr\k{e}cki~\cite{Naskrecki}, and the recent quartic-reduction framework of
+Peschmann~\cite{Peschmann1,Peschmann2}. Yoshida~\cite{Yoshida} studies the
+companion family of \emph{face} cuboids in the opposite direction, constructing
+infinitely many of them from rational points on the same kind of curve.
+
+The present note makes no claim to a new method. Its aim is narrow and
+expository: to pin down, on one explicit cuboid sub-locus, exactly \emph{which}
+elliptic curve governs the reduction, in the precise sense of a Cremona label.
+We treat the \emph{Saunderson primitive sub-family}, the locus of cuboids whose
+edges arise from the classical Saunderson parametrization
+(Section~\ref{sec:saunderson}), and we show by an explicit palindromic identity
+that its squareness condition is a rational-point question on the single curve
+\begin{equation}\label{eq:Epcp}
+   \Epcp\colon\quad y^2=x^3+x^2-x+15,
+\end{equation}
+whose Cremona label is $160$a$2$. All algebraic identities are verified
+symbolically and all arithmetic invariants are computed in PARI/GP; the scripts
+and their output are included.
+
+\medskip
+\noindent\textbf{Contribution and scope.}
+The equivalence of Section~\ref{sec:reformulation} is folklore and is recalled,
+with attribution, for completeness; we claim no novelty for it. The reduction
+template of Section~\ref{sec:saunderson} is standard and is the same template
+used in the cited works; the curve there is a \emph{specialization} of the kind
+of family those authors treat. Our single new item is the explicit
+identification~\eqref{eq:Epcp} together with its invariants, stated as
+Theorem~\ref{thm:main}. The note settles no problem left open by
+\cite{vanLuijk,Sharipov2elliptic,Naskrecki,Peschmann1,Peschmann2,Yoshida}, and
+we recommend that the material be read as a reference entry; it is naturally a
+section of a larger experimental survey rather than a self-standing advance.
+
+\section{An elementary equivalence}\label{sec:reformulation}
+
+We first record the elementary reformulation. Throughout, a \emph{Pythagorean
+triple} is a triple of positive integers $(p,q,r)$ with $p^2+q^2=r^2$, and we
+call $(p/r)^2$ a \emph{Pythagorean square-ratio}.
+
+\begin{proposition}[Folklore; cf.\ \cite{Guy,Peschmann1}]\label{prop:reformulation}
+There is a perfect cuboid with positive integer edges if and only if there
+exist three Pythagorean square-ratios $P_4,P_5,P_6$ with
+\begin{equation}\label{eq:P446}
+   P_4+P_6=P_5 .
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Scale a putative cuboid so that the space diagonal is $1$, and write
+$x=a/g$, $y=b/g$, $z=c/g$ with $x^2+y^2+z^2=1$. The three face conditions are
+that $1-x^2$, $1-y^2$, $1-z^2$ be rational squares, equivalently that each of
+$x,y,z$ be a rational point of the unit circle of the form
+$(1-t^2)/(1+t^2)$, i.e.\ a Pythagorean leg-to-hypotenuse ratio. Writing
+$x=\cos\theta_5$, $z=\sin\theta_4$, $y=\sin\theta_6$ with each of
+$\theta_4,\theta_5,\theta_6$ a rational angle, the normalization
+$x^2+y^2+z^2=1$ reads
+\[
+   \cos^2\theta_5+\sin^2\theta_6+\sin^2\theta_4=1,
+   \qquad\text{i.e.}\qquad
+   \sin^2\theta_4+\sin^2\theta_6=\sin^2\theta_5,
+\]
+which is~\eqref{eq:P446} with $P_i=\sin^2\theta_i$ a Pythagorean square-ratio.
+Conversely, three Pythagorean square-ratios satisfying~\eqref{eq:P446} recover
+$(x,y,z)$ and hence, after clearing denominators, integer edges $(a,b,c)$ whose
+faces and space diagonal are all rational. Non-degeneracy ($abc\neq0$)
+corresponds to all three ratios lying strictly between $0$ and $1$.
+\end{proof}
+
+The reduction in Proposition~\ref{prop:reformulation} is a direct restatement
+of the four defining equations and is well known; the shared-leg form of the
+same statement appears, for instance, in the abstract and Remark~2.3 of
+Peschmann~\cite{Peschmann1}. We include it only to fix notation and because the
+Saunderson reduction below is most transparent in these coordinates.
+
+\section{The Saunderson sub-family and its governing curve}\label{sec:saunderson}
+
+We now restrict to a one-parameter sub-locus and identify its governing curve.
+
+\begin{definition}\label{def:saunderson}
+For a primitive Pythagorean triple $(p^2-q^2,\,2pq,\,p^2+q^2)$, the associated
+\emph{Saunderson configuration} is the cuboid sub-locus obtained by feeding this
+triple through the standard Saunderson primitive-quadruple parametrization
+\[
+   (p',q',n,m)=\bigl(2\lambda\mu,\,2\lambda\nu,\,
+   \lambda^2-\mu^2-\nu^2,\,\lambda^2+\mu^2+\nu^2\bigr),
+\]
+and imposing the space-diagonal condition $a^2+b^2+c^2=g^2$ on the resulting
+edges.
+\end{definition}
+
+Eliminating the auxiliary parameters reduces the space-diagonal condition to a
+single squareness condition in one variable. The following identities, all
+verified symbolically (script \texttt{theoremE\_identity.py}), make this
+explicit.
+
+\begin{lemma}\label{lem:palindrome}
+With $r=\mu/\nu$, the discriminant of the resulting quadratic in
+$s=\lambda^4/\nu^4$ is
+\begin{equation}\label{eq:disc}
+   D(r)=256\,r^2(r^2-1)^2+4(r^2+1)^4
+       =4\bigl(r^8+68r^6-122r^4+68r^2+1\bigr).
+\end{equation}
+The palindrome $r^8+68r^6-122r^4+68r^2+1$ divided by $r^4$ equals
+$W^4+64W^2-256$ under the substitution $W=r+1/r$. Consequently the
+Saunderson space-diagonal condition holds for a non-degenerate configuration if
+and only if there is a rational number $W$ such that
+\begin{equation}\label{eq:quartic}
+   S^2=W^4+64W^2-256
+\end{equation}
+for some rational $S$, with $W=r+1/r$ for some rational $r$; the latter
+constraint is equivalent to $W^2-4$ being a non-zero rational square.
+\end{lemma}
+
+\begin{proof}
+The identity~\eqref{eq:disc} is a polynomial identity in $\Z[r]$ and is checked
+by expansion. Writing $W=r+1/r$, one has
+$r^4+68r^2-122+68r^{-2}+r^{-4}=W^4+64W^2-256$, again an identity, so the
+condition that $D(r)$ be a perfect square is~\eqref{eq:quartic}. Finally $W=r+1/r$
+for rational $r$ means $r^2-Wr+1=0$ has a rational root, i.e.\ its discriminant
+$W^2-4$ is a (necessarily non-zero, for $r\neq\pm1$) rational square.
+\end{proof}
+
+The smooth projective model of~\eqref{eq:quartic} is a curve of genus one with
+the obvious rational point $(W,S)=(2,4)$, hence an elliptic curve. The
+following is the single new statement of this note.
+
+\begin{theorem}\label{thm:main}
+The Jacobian of the genus-one curve $S^2=W^4+64W^2-256$ in~\eqref{eq:quartic}
+is the elliptic curve $\Epcp\colon y^2=x^3+x^2-x+15$ of~\eqref{eq:Epcp}. Its
+Cremona label is $160$a$2$; it has conductor $160$, discriminant $-102400$,
+$j$-invariant $-64/25$, torsion subgroup $\Z/2\Z$ generated by $(-3,0)$, and
+Mordell--Weil rank $1$, with generator $(-1,4)$ of canonical height
+$0.17934\ldots$. The rank equals the analytic rank, which is $1$; in particular
+the rank is unconditional by the theorem of Gross--Zagier and
+Kolyvagin~\cite{Kolyvagin}.
+\end{theorem}
+
+\begin{proof}
+Reducing~\eqref{eq:quartic} to Weierstrass form via the standard transformation
+for a quartic with a rational point (PARI's \texttt{ellfromeqn}) yields the curve
+$y^2=x^3+64x^2+1024x+65536$, whose minimal model is $[0,1,0,-1,15]$, i.e.\
+\eqref{eq:Epcp}; both have $j$-invariant $-64/25$ (script
+\texttt{genus3\_to\_epcp.gp}). The remaining invariants are computed in PARI/GP
+(script \texttt{epcp\_curve.gp}): \texttt{ellglobalred} gives conductor $160$,
+\texttt{ellidentify} returns Cremona $160$a$2$, \texttt{elltors} returns
+$\Z/2\Z$ generated by $(-3,0)$, and \texttt{ellrank} returns the interval
+$[1,1]$, certifying rank exactly $1$ with generator $(-1,4)$; the discriminant
+is $-102400$. The analytic rank is $1$ with non-vanishing first derivative
+($\texttt{ellanalyticrank}$ returns $L'(\Epcp,1)=0.9777\ldots$), so the algebraic
+rank equals the analytic rank unconditionally by~\cite{Kolyvagin}.
+\end{proof}
+
+\begin{corollary}\label{cor:locus}
+A non-degenerate perfect cuboid in the Saunderson sub-family of
+Definition~\ref{def:saunderson} exists if and only if there is a point
+$P\in\Epcp(\Q)$ whose $x$-coordinate $W$ satisfies that $W^2-4$ is a non-zero
+rational square.
+\end{corollary}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:palindrome} and Theorem~\ref{thm:main}: the lift
+constraint $W=r+1/r$ is the square condition on $W^2-4$, and $W$ ranges over the
+$x$-coordinates of $\Epcp(\Q)$.
+\end{proof}
+
+\begin{remark}\label{rem:search}
+Corollary~\ref{cor:locus} is a clean target but does not by itself close the
+Saunderson sub-family: $\Epcp$ has positive rank, so $\Epcp(\Q)$ is infinite and
+the square condition must be tested along the Mordell--Weil group. Enumerating
+$nP_0+\varepsilon T_0$ for $|n|\le 300$ and $\varepsilon\in\{0,1\}$, where
+$P_0=(-1,4)$ and $T_0=(-3,0)$, we find no point with $W^2-4$ a non-zero rational
+square; the only points with $W^2-4=0$ are the two degenerate solutions
+(script \texttt{epcp\_lift.gp}). This is consistent with the expectation of
+non-existence but is not a proof; a complete treatment would require an
+effective height bound, for example via primitive-divisor methods of
+Silverman type, which we do not develop here.
+\end{remark}
+
+\section{Relation to prior work and limitations}\label{sec:relation}
+
+The reduction template of Section~\ref{sec:saunderson} --- from a one-parameter
+cuboid locus, through a genus-one quartic, to a square condition on the rational
+points of an elliptic curve --- is standard. It is the structure of
+Peschmann's reduction~\cite{Peschmann1}, whose Corollary~5.2 states the
+existence of a non-degenerate point on his genus-three curve $C_A$ in terms of a
+rational point $P$ on a distinguished elliptic quotient $E_A$ with $f(P)$ a
+non-trivial perfect square; the difference is only that Peschmann works with a
+\emph{family} $E_A$ parametrized by the input data, whereas our Saunderson
+restriction produces the single fixed curve~\eqref{eq:Epcp}. The same elliptic
+viewpoint underlies van Luijk~\cite{vanLuijk}, Sharipov~\cite{Sharipov2elliptic},
+and the rank analysis of Naskr\k{e}cki~\cite{Naskrecki}; Yoshida~\cite{Yoshida}
+uses an isomorphic family in the opposite direction to build face cuboids.
+
+Accordingly, the only item here that is not already implicit in those works is
+the explicit Cremona identification $160$a$2$ for the Saunderson fiber, together
+with the palindromic identity~\eqref{eq:disc} that realizes it. We make no
+stronger claim. In particular:
+\begin{itemize}
+\item Proposition~\ref{prop:reformulation} is folklore and is recalled only for
+self-containedness;
+\item Corollary~\ref{cor:locus} restricts to the Saunderson sub-locus and does
+not address general perfect cuboids;
+\item Remark~\ref{rem:search} is a finite check, not a closure of the
+sub-family.
+\end{itemize}
+The natural home for this material is a section of an experimental survey of the
+perfect-cuboid problem, alongside other named-curve reductions, rather than a
+free-standing note.
+
+\section*{Computations}
+All identities of Section~\ref{sec:saunderson} were verified symbolically in
+\texttt{sympy}; all arithmetic invariants in Theorem~\ref{thm:main} were computed
+in PARI/GP 2.15.4. The scripts \texttt{theoremE\_identity.py},
+\texttt{n4\_reconcile.py}, \texttt{epcp\_curve.gp}, \texttt{genus3\_to\_epcp.gp}
+and \texttt{epcp\_lift.gp}, together with their output files, accompany this
+note.
+
+\begin{thebibliography}{9}
+
+\bibitem{Guy}
+R.~K.~Guy,
+\emph{Unsolved Problems in Number Theory}, 3rd ed.,
+Problem Books in Mathematics, Springer, New York, 2004.
+
+\bibitem{Kolyvagin}
+V.~A.~Kolyvagin,
+\emph{Finiteness of $E(\Q)$ and the Tate--Shafarevich group for a subclass
+of Weil curves},
+Izv. Akad. Nauk SSSR Ser. Mat. \textbf{52} (1988), no.~3, 522--540;
+together with B.~Gross and D.~Zagier,
+\emph{Heegner points and derivatives of $L$-series},
+Invent. Math. \textbf{84} (1986), no.~2, 225--320.
+
+\bibitem{vanLuijk}
+R.~van Luijk,
+\emph{On perfect cuboids},
+Doctoraalscriptie (Master's thesis), Universiteit Utrecht, 2000.
+
+\bibitem{Naskrecki}
+B.~Naskr\k{e}cki,
+\emph{Mordell--Weil ranks of families of elliptic curves associated to
+Pythagorean triples},
+Acta Arith. \textbf{160} (2013), no.~2, 159--183;
+preprint arXiv:1210.6933 [math.NT].
+
+\bibitem{Sharipov2elliptic}
+R.~A.~Sharipov,
+\emph{On two elliptic curves associated with perfect cuboids},
+preprint arXiv:1208.1227 [math.NT], 2012.
+
+\bibitem{Peschmann1}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint arXiv:2604.09328 [math.NT], 2026.
+
+\bibitem{Peschmann2}
+R.~Peschmann,
+\emph{A torsion-intersection proof of perfect-cuboid nonexistence on
+$1{,}072$ explicit master-tuple fibers},
+preprint arXiv:2604.28072 [math.NT], 2026.
+
+\bibitem{Yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint arXiv:2407.09825 [math.NT], 2024.
+
+\end{thebibliography}
+
+\end{document}

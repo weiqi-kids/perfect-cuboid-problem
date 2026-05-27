@@ -1,0 +1,32 @@
+[0;31m  ***   Warning: new stack size = 1200000000 (1144.409 Mbytes).[0m
+
+=== (487,158) ===
+  effort 8: [2,4] gens=2 t=7.3880000000000000000000000000000000000s
+  Walking isogeny class...
+  # of isogenous curves: 6
+    iso[2]: [2,4]
+    iso[3]: [2,2]
+  RESOLVED via iso[3] at rank 2
+  effort 10: [2,4] gens=2 t=15.985000000000000000000000000000000000s
+
+=== (1021,540) ===
+  effort 8: [2,4] gens=2 t=9.4690000000000000000000000000000000000s
+  Walking isogeny class...
+  # of isogenous curves: 6
+    iso[2]: [2,4]
+    iso[3]: [2,4]
+    iso[4]: [2,4]
+    iso[5]: [0,6]
+    iso[6]: [0,6]
+  effort 10: [2,4] gens=2 t=21.282000000000000000000000000000000000s
+
+=== (1037,958) ===
+  effort 8: [2,4] gens=2 t=14.769000000000000000000000000000000000s
+  Walking isogeny class...
+  # of isogenous curves: 6
+    iso[2]: [2,4]
+    iso[3]: [0,4]
+    iso[4]: [2,4]
+    iso[5]: [0,6]
+    iso[6]: [0,6]
+  effort 10: [2,4] gens=2 t=29.041000000000000000000000000000000000s

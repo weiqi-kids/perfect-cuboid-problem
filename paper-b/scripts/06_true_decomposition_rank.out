@@ -1,0 +1,26 @@
+=== candidate true factors ===
+E1: N=480 label 480f1
+E2: N=800 label 800a1
+E3: N=1200 label 1200a2
+X+^(5): N=600 label 600a2
+X-^(5): N=400 label 400a2
+
+=== a_p(C) =?= a_p(E1)+a_p(E2)+a_p(E3)+a_p(X+^(5))+a_p(X-^(5)) ===
+(using smooth-model count: affine + (1+chi5)^2 at infinity)
+matched 32 / 32  mismatches: []
+
+=== TRUE total Mordell-Weil rank of J(C) ===
+rank E1 = [1, 1, 0, [[-48, 2160]]]
+rank E2 = [1, 1, 0, [[-144, 1296]]]
+rank E3 = [1, 1, 0, [[-4, 8]]]
+rank X+^(5) (600a2) = [1, 1, 0, [[-16, 72]]]
+rank X-^(5) (400a2) = [1, 1, 0, [[1, 24]]]
+analytic rank E1 = 1
+analytic rank E2 = 1
+analytic rank E3 = 1
+analytic rank X+^(5) = 1
+analytic rank X-^(5) = 1
+root numbers [E1,E2,E3,X+^(5),X-^(5)] = [-1, -1, -1, -1, -1]
+
+=== CONCLUSION: total rank J(C)(Q) = 1+1+1+1+1 = 5 = genus(C) ===
+Chabauty hypothesis rank < genus FAILS. Chabauty-Coleman does NOT apply to C.

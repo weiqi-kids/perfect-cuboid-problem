@@ -1,0 +1,29 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+E_H+ torsion order = 4
+torsion points over Q (incl O): 2
+
+Good primes for sieve: [11, 13, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73]
+
+pr | #S(reachable X) | 0 in S? | #(QR cap S) | #nonzero survivors
+---|-----------------|---------|-------------|-------------------
+11 | 5 | yes | 2 | 1
+13 | 2 | yes | 2 | 1
+19 | 7 | yes | 2 | 1
+23 | 3 | yes | 2 | 1
+29 | 5 | yes | 4 | 3
+31 | 5 | yes | 1 | 0
+37 | 2 | yes | 2 | 1
+41 | 5 | yes | 2 | 1
+43 | 11 | yes | 6 | 5
+47 | 3 | yes | 2 | 1
+53 | 7 | yes | 6 | 5
+59 | 7 | yes | 2 | 1
+61 | 8 | yes | 4 | 3
+67 | 19 | yes | 10 | 9
+71 | 9 | yes | 4 | 3
+73 | 5 | yes | 3 | 2
+
+Note: '#nonzero survivors' counts residues r != 0 that are (a) a square mod pr AND
+(b) reachable as X(mP+t) mod pr.  If this stays LARGE across primes, the per-prime
+E_H+ image does NOT pin c=0.  See 04_analysis for the CRT-style intersection.

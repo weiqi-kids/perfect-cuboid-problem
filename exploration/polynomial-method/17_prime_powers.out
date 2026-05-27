@@ -1,0 +1,17 @@
+Higher-order obstructions:
+  p=3 k=1: 0
+  p=3 k=2: 0
+  p=5 k=1: 0
+  p=5 k=2: 0
+  p=7 k=1: 0
+  p=7 k=2: 0
+  p=11 k=1: 0
+  p=11 k=2: 0
+  p=19 k=1: 0
+  p=19 k=2: 0
+
+Non-trivial primes at higher order:
+  p=13 k=1: 96
+  p=17 k=1: 384
+  p=23 k=1: 352
+  p=29 k=1: 2016

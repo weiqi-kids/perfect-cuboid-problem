@@ -1,0 +1,67 @@
+====================================================
+ Step 3: Birational type & fibrations of W
+====================================================
+
+=== Fibration pi_1: W -> A^2_{m,n} ===
+Generic fiber: E_PCP(q) elliptic curve.
+Map (X,Y,m,n) |-> (m,n).
+This is W as an elliptic fibration over A^2_{m,n}.
+
+Mordell-Weil over Q(m,n): generic fiber E_PCP(q) over function field Q(q).
+By V-FIBRATION-CHABAUTY analysis: generic rank over Q(q) is 0.
+(This was the 'corrected generic rank 0' result.)
+
+=== Fibration pi_2: W -> A^2_{X,Y} ===
+Fix (X_0, Y_0) in Q^2 with Y_0 != 0.
+The fiber in (m,n) is:
+  4 m^2 n^2 Y_0^2 = X_0(X_0+1) * (4 m^2 n^2 X_0 + (m^2-n^2)^2)
+
+Set t = m^2, s = n^2 (so m,n -> sqrt of t,s; symmetric).
+Then with u = t/s (or m^2/n^2), divide both sides by n^4:
+  4 u Y_0^2 = X_0(X_0+1) * (4 u X_0 + (u-1)^2)
+
+where u = m^2/n^2 = (1+q)/(1-q)... wait, let's recompute.
+q = (m^2 - n^2)/(2mn), so q^2 = (m^2-n^2)^2/(4 m^2 n^2).
+
+=== Genus of pi_2 fiber over generic (X_0, Y_0) ===
+
+In v = m/n: 4 v^2 Y_0^2 = X_0(X_0+1) (4 v^2 X_0 + (v^2-1)^2)
+Expanding (v^2-1)^2 = v^4 - 2v^2 + 1:
+  4 v^2 Y_0^2 = X_0(X_0+1) (v^4 + (4 X_0 - 2) v^2 + 1)
+
+  X_0(X_0+1) v^4 + [X_0(X_0+1)(4 X_0-2) - 4 Y_0^2] v^2 + X_0(X_0+1) = 0
+
+This is quadratic in w = v^2. So in fact the equation in v is reducible:
+v^2 satisfies quadratic in w.
+
+BUT: in terms of (m,n) (not (v=m/n,1)), the curve in A^2_{m,n} is degree 4.
+It's a plane quartic. Generic plane quartic has genus 3.
+HOWEVER our quartic has symmetries: m <-> n (q -> -q), m,n -> -m,-n etc.
+
+=== Numeric genus check for (X_0, Y_0) = (2, ??) ===
+
+Substituting m = u+w, n = u-w:
+  Equation becomes K u^4 + (16-2K) u^2 w^2 + K w^4 = 0
+  where K = 4 X_0 - 4 Y_0^2 / [X_0(X_0+1)].
+
+This biquadratic form factors as two conics over Q(sqrt(4-K)):
+  u^2 = t_± w^2  with  t_± = [(2K-16) ± 8 sqrt(4-K)] / (2K)
+
+Each component is a conic (genus 0).
+
+DISCRIMINANT: 4 - K = 4 - 4X_0 + 4 Y_0^2 / [X_0(X_0+1)]
+              = 4 [X_0(X_0+1)(1-X_0) + Y_0^2] / [X_0(X_0+1)]
+              = 4 [Y_0^2 - X_0(X_0+1)(X_0-1)] / A
+              = 4 [Y_0^2 - X_0(X_0^2 - 1)] / A
+              = 4 [Y_0^2 - X_0^3 + X_0] / A
+
+So the fiber is geometrically a union of two conics — i.e. RATIONAL.
+Pi_2 has rational fibers! This means W is UNIRULED.
+
+=== Conclusion: W is uniruled ===
+Over generic (X_0, Y_0) the fiber is two genus-0 curves.
+Through every point of W passes a rational curve (the fiber of pi_2).
+=> W is uniruled.
+=> W is NOT of general type (κ = -∞).
+=> Lang's conjecture for general type does NOT apply.
+=> Faltings 1991 (abelian variety subvarieties) needs Albanese > 0, which uniruled W has Alb=0.

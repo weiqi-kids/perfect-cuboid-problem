@@ -1,0 +1,74 @@
+[0;31m  ***   Warning: new stack size = 14000000000 (13351.440 Mbytes).[0m
+
+
+############################################################
+# STAGE A: Direct integer rational point search on E_PCP(q)
+############################################################
+
+========================================================
+Direct search on E_PCP(q) for (m,n)=(61,38), q=2277/4636
+  Integer model y^2 = x(x+u^2)(x+v^2), u=4636 v=2277
+  Height bound B=5000
+========================================================
+  Squares found: 0  Non-torsion candidates: 0
+
+========================================================
+Direct search on E_PCP(q) for (m,n)=(63,38), q=2525/4788
+  Integer model y^2 = x(x+u^2)(x+v^2), u=4788 v=2525
+  Height bound B=5000
+========================================================
+  Squares found: 0  Non-torsion candidates: 0
+
+========================================================
+Direct search on E_PCP(q) for (m,n)=(73,24), q=4753/3504
+  Integer model y^2 = x(x+u^2)(x+v^2), u=3504 v=4753
+  Height bound B=5000
+========================================================
+  Squares found: 0  Non-torsion candidates: 0
+
+========================================================
+Direct search on E_PCP(q) for (m,n)=(88,35), q=6519/6160
+  Integer model y^2 = x(x+u^2)(x+v^2), u=6160 v=6519
+  Height bound B=5000
+========================================================
+  Squares found: 0  Non-torsion candidates: 0
+
+========================================================
+Direct search on E_PCP(q) for (m,n)=(99,28), q=9017/5544
+  Integer model y^2 = x(x+u^2)(x+v^2), u=5544 v=9017
+  Height bound B=5000
+========================================================
+  Squares found: 0  Non-torsion candidates: 0
+
+
+############################################################
+# STAGE B: Box scan on E_Hp factor of J(V_q)
+# Enumerate a_1 G_1 + ... + a_r G_r, |a_i| <= B
+############################################################
+
+--- Box scan on (61,38) E_Hp, #gens=3, B=10 ---
+  Total combinations to scan: 9261
+  Total points formed: 9260
+  (61,38) E_Hp: 9260 points scanned
+
+--- Box scan on (63,38) E_Hp, #gens=4, B=5 ---
+  Total combinations to scan: 14641
+  Total points formed: 14640
+  (63,38) E_Hp: 14640 points scanned
+
+--- Box scan on (73,24) E_Hp, #gens=2, B=10 ---
+  Total combinations to scan: 441
+  Total points formed: 440
+  (73,24) E_Hp: 440 points scanned
+
+--- Box scan on (88,35) E_Hp, #gens=4, B=5 ---
+  Total combinations to scan: 14641
+  Total points formed: 14640
+  (88,35) E_Hp: 14640 points scanned
+
+--- Box scan on (99,28) E_ef, #gens=4, B=5 ---
+  Total combinations to scan: 14641
+  Total points formed: 14640
+  (99,28) E_ef: 14640 points scanned
+
+=== DONE STAGE A + B ===

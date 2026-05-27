@@ -1,0 +1,93 @@
+=== Always-bad primes test ===
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: 
+[0;31m  ***   ...[0;35mounts[i]=counts[i]+1)))))[0;35m);
+[0;31m[0;31m  ***                               ^--[0m
+... skipping file 'pick4_seven_pattern.gp'
+Prime 2 divides cond in 0/0 fibers
+Prime 3 divides cond in 0/0 fibers
+Prime 5 divides cond in 0/0 fibers
+Prime 7 divides cond in 0/0 fibers
+Prime 11 divides cond in 0/0 fibers
+Prime 13 divides cond in 0/0 fibers
+
+=== Quadratic-twist test: is E(m,n) a twist of E(2,1)? ===
+j of E(2,1) = 7189057/3969
+conductor of E(2,1) = 21
+(m,n)=(2,1) j=7189057/3969 same as 21a1? 1
+(m,n)=(3,2) j=5602762882081/716900625 same as 21a1? 0
+(m,n)=(4,1) j=65553197996161/20996010000 same as 21a1? 0
+(m,n)=(4,3) j=28639415351758177/864208218384 same as 21a1? 0
+(m,n)=(5,2) j=5647454716105441/204326600625 same as 21a1? 0
+(m,n)=(5,4) j=14472572604746971681/151385955210000 same as 21a1? 0
+(m,n)=(6,1) j=2432926975212175681/142039319900625 same as 21a1? 0
+(m,n)=(6,5) j=1971482685744317245921/8971078033850625 same as 21a1? 0
+(m,n)=(7,2) j=30596190451404762241/15163022456150625 same as 21a1? 0
+(m,n)=(7,4) j=439897280387668399297/190898971053137424 same as 21a1? 0
+(m,n)=(7,6) j=114955960961380265790337/263457613884375729 same as 21a1? 0
+(m,n)=(8,1) j=3243391035799713716737/55597090096283904 same as 21a1? 0
+(m,n)=(8,3) j=420095676153573393121/98638457369760000 same as 21a1? 0
+(m,n)=(8,5) j=37726969528324220245921/8811301196748960000 same as 21a1? 0
+(m,n)=(8,7) j=3693696993197621808713281/4722240178726560000 same as 21a1? 0
+(m,n)=(9,2) j=24766028283718404297217/4950596595690742689 same as 21a1? 0
+(m,n)=(9,4) j=11886821121712417957441/1723378463180010000 same as 21a1? 0
+(m,n)=(9,8) j=76264138979993218123509697/58649576779790164224 same as 21a1? 0
+(m,n)=(10,1) j=786310046438642726817601/5306020225574000625 same as 21a1? 0
+(m,n)=(10,3) j=138375821806322333294881/76069031648326250625 same as 21a1? 0
+(m,n)=(10,7) j=39285137445075244713916801/2933591439071133500625 same as 21a1? 0
+(m,n)=(10,9) j=1119013806164137574373768961/548557760945034500625 same as 21a1? 0
+(m,n)=(11,2) j=4462372448429291641286497/378975958395375790449 same as 21a1? 0
+(m,n)=(11,4) j=888683382633309907704481/306521103471084810000 same as 21a1? 0
+(m,n)=(11,6) j=12152405597954378081724001/6439418425591869650625 same as 21a1? 0
+(m,n)=(11,8) j=657203999694943636784441377/30416966080568078102784 same as 21a1? 0
+(m,n)=(11,10) j=12509950701492753000613561441/4093249098836099750625 same as 21a1? 0
+(m,n)=(12,1) j=67277489683585717086235777/214030672698015757584 same as 21a1? 0
+(m,n)=(12,5) j=8486608212516853550345761/9278305462167210000 same as 21a1? 0
+(m,n)=(12,7) j=242180893310206900012689601/93421922438870000010000 same as 21a1? 0
+(m,n)=(12,11) j=112045910408865797504947130017/25402997463806450459664 same as 21a1? 0
+
+=== j-invariant duplicates across fibers ===
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: 
+[0;31m  ***   ...[0;35mstput(J_seen,[j,m,n])))))[0;35m);
+[0;31m[0;31m  ***                               ^--[0m
+Distinct j-invariants: 0, duplicates: 0
+
+=== Isogeny degree matrix for (2,1) [Cremona class 21a] ===
+from curve 1 degrees: [1, 2, 2, 2, 4, 4]
+from curve 2 degrees: [2, 1, 4, 4, 8, 8]
+from curve 3 degrees: [2, 4, 1, 4, 8, 8]
+from curve 4 degrees: [2, 4, 4, 1, 2, 2]
+from curve 5 degrees: [4, 8, 8, 2, 1, 4]
+from curve 6 degrees: [4, 8, 8, 2, 4, 1]
+
+=== Rank vs (m,n) parameter pattern ===
+(2,1)  ar=0  rootno=1  a-b=-1  a+b=7
+(3,2)  ar=0  rootno=1  a-b=-7  a+b=17
+(4,1)  ar=0  rootno=1  a-b=7  a+b=23
+(4,3)  ar=1  rootno=-1  a-b=-17  a+b=31
+(5,2)  ar=1  rootno=-1  a-b=1  a+b=41
+(5,4)  ar=0  rootno=1  a-b=-31  a+b=49
+(6,1)  ar=0  rootno=1  a-b=23  a+b=47
+(6,5)  ar=2  rootno=1  a-b=-49  a+b=71
+(7,2)  ar=0  rootno=1  a-b=17  a+b=73
+(7,4)  ar=0  rootno=1  a-b=-23  a+b=89
+(7,6)  ar=1  rootno=-1  a-b=-71  a+b=97
+(8,1)  ar=0  rootno=1  a-b=47  a+b=79
+(8,3)  ar=1  rootno=-1  a-b=7  a+b=103
+(8,5)  ar=1  rootno=-1  a-b=-41  a+b=119
+(8,7)  ar=0  rootno=1  a-b=-97  a+b=127
+(9,2)  ar=0  rootno=1  a-b=41  a+b=113
+(9,4)  ar=0  rootno=1  a-b=-7  a+b=137
+(9,8)  ar=2  rootno=1  a-b=-127  a+b=161
+(10,1)  ar=1  rootno=-1  a-b=79  a+b=119
+(10,3)  ar=1  rootno=-1  a-b=31  a+b=151
+(10,7)  ar=0  rootno=1  a-b=-89  a+b=191
+(10,9)  ar=0  rootno=1  a-b=-161  a+b=199
+(11,2)  ar=1  rootno=-1  a-b=73  a+b=161
+(11,4)  ar=0  rootno=1  a-b=17  a+b=193
+(11,6)  ar=1  rootno=-1  a-b=-47  a+b=217
+(11,8)  ar=1  rootno=-1  a-b=-119  a+b=233
+(11,10)  ar=0  rootno=1  a-b=-199  a+b=241
+(12,1)  ar=0  rootno=1  a-b=119  a+b=167
+(12,5)  ar=0  rootno=1  a-b=-1  a+b=239
+(12,7)  ar=1  rootno=-1  a-b=-73  a+b=263
+(12,11)  ar=1  rootno=-1  a-b=-241  a+b=287

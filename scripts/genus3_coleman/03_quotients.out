@@ -1,0 +1,4 @@
+f coeffs (deg8..0): [1, 0, 68, 0, -122, 0, 68, 0, 1]
+X_sigma quartic g(x)= x**4 + 68*x**3 - 122*x**2 + 68*x + 1  (T^2=g(x), genus1)
+X_tau quartic in s=t+1/t:  W^2 = s**4 + 64*s**2 - 256  (genus1)
+X_sigtau quartic in r=t-1/t: W^2 = r**4 + 72*r**2 + 16  (genus1)

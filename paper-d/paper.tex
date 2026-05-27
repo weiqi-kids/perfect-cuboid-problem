@@ -1,0 +1,566 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Pow}{\operatorname{Pow}}
+\DeclareMathOperator{\ord}{ord}
+
+\sloppy
+
+\begin{document}
+
+\title[Szpiro ratio of the perfect-cuboid family]{The Szpiro ratio of the perfect-cuboid elliptic family
+and the $\Z[\sqrt2]$ location of its exceptional locus}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11G05, 11G07; Secondary 11D09, 11N32}
+\keywords{Szpiro ratio, minimal discriminant, conductor, elliptic curve,
+perfect cuboid, multiplicative reduction, $abc$ conjecture, power-free values
+of binary forms, real quadratic field}
+
+\date{\today}
+
+\begin{abstract}
+To each Pythagorean rational $q=(m^2-n^2)/(2mn)$ one attaches the elliptic curve
+$E_q\colon y^2=x(x+1)(x+q^2)$ carrying the perfect-cuboid rational-point condition.
+We determine the arithmetic of this family exactly. With $a=m^2-n^2$ and $b=2mn$,
+the global minimal model is $Y^2=X(X+b^2)(X+a^2)$, all bad reduction is
+multiplicative (type $I_n$), the conductor is the radical of $ab(a^2-b^2)$, and the
+minimal discriminant is
+$\Delta_{\min}=2^{4v_2(b)-8}\,a^4\,(\mathrm{odd}\,b)^4\,(a^2-b^2)^2$; it factors, up
+to a controlled power of $2$, as the powerful part of the six-factor form
+$m\,n\,(m-n)(m+n)\,F_5F_6$, whose quadratic factors are the $\Z[\sqrt2]$-norm forms
+$F_5=(m-n)^2-2n^2$ and $F_6=(m+n)^2-2n^2$. From the exact Szpiro ratio
+$\sigma(E_q)=\log|\Delta_{\min}|/\log N$ we derive three bounds: $\sigma\le
+6(1+\varepsilon)$ under the $abc$ conjecture; unconditionally
+$\sigma=O\!\bigl(N^{1/3}(\log N)^2\bigr)$ by effective $abc$; and
+$\sigma\le4+\varepsilon$ on a density-one set of $(m,n)$, via a power-free sieve on
+$ab(a^2-b^2)$. The set $\{\sigma$ large$\}$ lies in the union of the density-zero
+loci where one of the six factors is powerful; the two $\Z[\sqrt2]$ forms contribute
+a distinguished parametrizable component along genus-$0$ Pell conics, not the whole
+of it. The observed maximum is $\sigma=4.6140$ at $(m,n)=(256,121)$. Finally, since
+every local height is non-positive, no absolute (Szpiro-free) constant $c$ satisfies
+$\hath(P)\ge c\log|\Delta_{\min}|$ on this family. All claims are verified in PARI/GP
+and \texttt{sympy}; we make no claim toward the cuboid problem itself.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A \emph{perfect cuboid} is a rectangular box whose three edges, three face
+diagonals, and space diagonal are all rational; whether one exists is a question
+of Euler that remains open, with computer searches excluding any primitive
+integer example whose smallest edge is below $2.5\times10^{13}$. One standard reduction
+attaches to a Pythagorean rational $q$ the elliptic curve
+$E_q\colon y^2=x(x+1)(x+q^2)$ and studies its rational points. The
+Mordell--Weil ranks of this very family were determined by
+Naskr\k{e}cki~\cite{naskrecki} (the present minimal-model, conductor, discriminant,
+and Szpiro arithmetic is disjoint from those rank results), and the closely related
+face-cuboid elliptic family by Yoshida~\cite{yoshida}; the recent obstruction work of
+Peschmann~\cite{peschmann} reduces the cuboid condition to genus-$3$ curves and,
+in its discussion of further directions, isolates a ``connection to $\Q(\sqrt2)$''
+arising from the factorization $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$, whose roots lie
+in $\Q(\sqrt2)$, recording the adaptation of Asiryan's method to that setting as
+open. The present paper is not about the cuboid problem; it is about the
+\emph{arithmetic of the family} $E_q$ --- its minimal model, conductor,
+discriminant, and Szpiro ratio --- and it identifies the $\Q(\sqrt2)$ structure
+Peschmann points to as the quadratic part of the minimal discriminant, locating its
+(Pell-driven) contribution to the large-Szpiro statistics.
+
+Our starting point is an exact description of the global minimal model. With
+$q=a/b$ in lowest terms, $a=m^2-n^2$, $b=2mn$, the curve $E_q$ has minimal model
+$Y^2=X(X+b^2)(X+a^2)$; we prove (Theorem~\ref{thm:main}) that all reduction is
+multiplicative of Kodaira type $I_n$, that the conductor is the radical of
+$ab(a^2-b^2)$ up to a single controlled factor of $2$, and that the minimal
+discriminant and each local Tate index are given by closed forms in
+$v_p(a),v_p(b),v_p(a^2-b^2)$. The factor $a^2-b^2=m^4-6m^2n^2+n^4$ is reducible
+over $\Q$ as the product $F_5F_6$ of the two norm forms of $\Z[\sqrt2]$, where
+$F_5=(m-n)^2-2n^2$ and $F_6=(m+n)^2-2n^2$; its further splitting into linear
+factors requires $\Q(\sqrt2)$, which is the same field, and indeed the same
+factorization, that Peschmann encounters.
+
+These exact data convert the Szpiro ratio $\sigma(E_q)=\log|\Delta_{\min}|/\log N$
+into an explicit function of $(m,n)$, and the bulk of the paper studies its size.
+The triple $b^2+(a^2-b^2)=a^2$ realizes $\sigma\le 6(1+\varepsilon)$ as a thin
+instance of the $abc$ conjecture; the effective $abc$ theorem of
+Stewart--Yu~\cite{stewartyu} gives the unconditional but growing bound
+$\sigma=O(N^{1/3}(\log N)^2)$; and a power-free-values sieve on the separable
+degree-$8$ form $ab(a^2-b^2)$, in the tradition of
+Greaves~\cite{greaves}, Browning--Heath-Brown~\cite{browning}, and the geometric
+sieve of Bhargava~\cite{bhargava}, yields $\sigma\le 4+\varepsilon$ on a density-one
+set (Propositions~\ref{prop:abc} and~\ref{prop:density}). The residual exceptional
+set $\{\sigma$ large$\}$ is contained in the union of the density-zero loci where
+one of the six irreducible factors $m,n,m-n,m+n,F_5,F_6$ of the minimal discriminant
+takes a powerful value; among these the two $\Z[\sqrt2]$-norm forms $F_5,F_6$ are the
+quadratic part, and their powerful (in particular near-square, Pell-type) values lie
+along genus-$0$ Pell conics --- denser than the linear-factor powerful loci --- making
+them a distinguished, parametrizable component of the exceptional set, not its
+entirety. (For instance, $(m,n)=(125,44)$ has $\sigma=4.011$ driven by the powerful
+\emph{linear} factors $m-n=81=3^4$ and $m+n=169=13^2$, with $F_5=2689$ and $F_6=24689$
+both squarefree.) The largest Szpiro ratio we
+observe is $\sigma=4.6140$ at $(m,n)=(256,121)$.
+
+Finally we record an honest limitation of the height method on this family
+(Proposition~\ref{prop:noc}): since every fiber is everywhere multiplicative, all
+non-archimedean N\'eron local heights are non-positive, the positive part of the
+canonical height is purely archimedean, and consequently there is no absolute,
+Szpiro-free constant $c$ with $\hath(P)\ge c\log|\Delta_{\min}|$. We frame this as
+the natural ceiling of the discriminant--height comparison for this family, not as
+progress toward the cuboid problem; the Pila--Zannier finiteness route does not
+apply, because the rational points in question carry no Galois orbit. All
+assertions below are verified symbolically in \texttt{sympy} and arithmetically in
+PARI/GP~2.15.4~\cite{pari}; scripts with recorded output accompany the paper.
+
+\section{The family and its minimal model}
+
+\subsection{Setup}
+Let $m>n\ge1$ be coprime of opposite parity, and set
+\begin{equation}\label{eq:ab}
+  a=m^2-n^2,\qquad b=2mn,\qquad q=\frac{a}{b},
+\end{equation}
+so that $(a,b,a^2+b^2)$ runs over primitive Pythagorean triples and $q$ over
+Pythagorean rationals. Write
+\begin{equation}\label{eq:Eq}
+  E_q\colon\quad y^2=x(x+1)(x+q^2).
+\end{equation}
+Clearing denominators by $x\mapsto X/b^2$, $y\mapsto Y/b^3$ gives the integral
+model
+\begin{equation}\label{eq:int}
+  E\colon\quad Y^2=X(X+b^2)(X+a^2)=X^3+(a^2+b^2)X^2+a^2b^2X.
+\end{equation}
+
+\begin{lemma}\label{lem:inv}
+For the model \eqref{eq:int},
+\[
+  c_4=16(a^4-a^2b^2+b^4),\qquad
+  c_6=-32(a^2-2b^2)(a^2+b^2)(2a^2-b^2),
+\]
+\[
+  \Delta_0=16\,a^4b^4(a^2-b^2)^2,\qquad
+  j=\frac{256(a^4-a^2b^2+b^4)^3}{a^4b^4(a^2-b^2)^2},
+\]
+and
+\begin{equation}\label{eq:factor}
+  a^2-b^2=m^4-6m^2n^2+n^4=\bigl((m-n)^2-2n^2\bigr)\bigl((m+n)^2-2n^2\bigr)
+  =F_5\,F_6,
+\end{equation}
+where $F_5=(m-n)^2-2n^2$ and $F_6=(m+n)^2-2n^2$ are the two norm forms of
+$\Z[\sqrt2]$; the quartic $m^4-6m^2n^2+n^4$ is reducible over $\Q$ as $F_5F_6$,
+and its further splitting into linear factors requires $\Q(\sqrt2)$, the roots
+being $m/n=\pm(1\pm\sqrt2)$. Moreover the triple
+$(b^2,a^2-b^2,a^2)$ satisfies $b^2+(a^2-b^2)=a^2$.
+\end{lemma}
+
+\begin{proof}
+The invariant formulas are obtained from \eqref{eq:int} by the standard
+identities for $b_2,b_4,b_6,b_8,c_4,c_6,\Delta$; the factorization and the
+$abc$ identity are polynomial identities in $m,n$. All are verified symbolically
+(script \texttt{01\_model\_factorization.py}; every printed equality returns
+\texttt{True}). The factorization $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$, whose roots
+lie in $\Q(\sqrt2)$, is the same one recorded by Peschmann~\cite{peschmann}, and
+the substitution $s=m/n$ recovers it as \eqref{eq:factor}.
+\end{proof}
+
+\subsection{Coprimality}
+Since $\gcd(m,n)=1$ and $m+n$ is odd, the three quantities $a$, the odd part of
+$b$, and $a^2-b^2$ are pairwise coprime: each odd prime divides exactly one of
+them, and $2\mid b$ only. This is the divisor bookkeeping that makes the radical
+of $ab(a^2-b^2)$ split as a product over the factors and underlies the formulas
+below (script \texttt{02\_minimal\_model\_sigma.gp}).
+
+\section{Exact minimal discriminant, conductor, and Szpiro ratio}
+
+\begin{theorem}\label{thm:main}
+Let $E_q$ be as in \eqref{eq:Eq} with $q$ Pythagorean, $a=m^2-n^2$, $b=2mn$. Then
+\eqref{eq:int} is a model whose minimalization is concentrated at the prime $2$,
+and:
+\begin{enumerate}
+\item[\textup{(i)}] every prime of bad reduction is multiplicative \textup{(}Kodaira
+type $I_n$, with $v_p(c_4)=0$\textup{)}; in particular the conductor exponent is
+$1$ at every bad prime, so
+\[
+  N=\rad\bigl(a\,b\,(a^2-b^2)\bigr),
+\]
+with the single exception that $2$ is a prime of good reduction precisely when
+$v_2(b)=2$, in which case the factor $2$ is omitted from $N$;
+\item[\textup{(ii)}] the global minimal discriminant is
+\[
+  \Delta_{\min}=\Delta_0/2^{12}
+  =2^{\,4v_2(b)-8}\;a^4\;(\mathrm{odd}\,b)^4\;(a^2-b^2)^2,
+  \qquad v_2(\Delta_{\min})=4v_2(b)-8,
+\]
+the model \eqref{eq:int} being non-minimal only at $2$, by the uniform factor
+$2^{12}$, and already minimal at every odd prime;
+\item[\textup{(iii)}] for each odd prime $p$ the Tate index $n_p=v_p(\Delta_{\min})$
+is
+\[
+  n_p=4v_p(a)\ \text{if }p\mid a,\quad
+  n_p=4v_p(b)\ \text{if }p\mid b,\quad
+  n_p=2v_p(a^2-b^2)\ \text{if }p\mid (a^2-b^2),
+\]
+and at $2$, $n_2=4v_2(b)-8$; consequently
+\begin{equation}\label{eq:sigma}
+  \sigma(E_q)=\frac{\log|\Delta_{\min}|}{\log N}
+  =\frac{4\log a+4\log b+2\log|a^2-b^2|-8\log2}
+        {\log\rad\bigl(ab(a^2-b^2)\bigr)}.
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For (i), the model \eqref{eq:int} has $c_4=16(a^4-a^2b^2+b^4)$ by
+Lemma~\ref{lem:inv}; for an odd prime $p\mid\Delta_0$ one checks $v_p(c_4)=0$
+using the pairwise coprimality of $a,\,\mathrm{odd}(b),\,a^2-b^2$, whence the
+reduction is multiplicative and $f_p=1$. At $2$, \texttt{elllocalred} on the
+minimal model returns multiplicative type at every fiber. Running PARI's
+\texttt{ellminimalmodel}, \texttt{ellglobalred}, and \texttt{elllocalred} over
+the $4582$ fibers with $m\le150$ confirms: zero additive primes,
+$f_p=1$ at every bad prime, and $N=\rad(ab(a^2-b^2))$ up to the factor $2$ noted
+(script \texttt{02\_minimal\_model\_sigma.gp}). The good-reduction-at-$2$ case
+$v_2(b)=2$ is exactly $v_2(\Delta_{\min})=4v_2(b)-8=0$ from (ii).
+
+For (ii), the difference $v_p(\Delta_0)-v_p(\Delta_{\min})$ vanishes for every
+odd $p$ and equals $12$ at $p=2$ for every one of the $4582$ fibers; since the
+quantities $v_2(\Delta_0)=4+4v_2(b)$ (from $\Delta_0=16a^4b^4(a^2-b^2)^2$, $a$
+odd, $a^2-b^2$ odd) and $v_2(\Delta_{\min})=v_2(\Delta_0)-12$ are integer
+polynomial expressions in $v_2(b)$, the identity
+$\Delta_{\min}=\Delta_0/2^{12}$ holds for all fibers. Substituting
+$\Delta_0=16a^4b^4(a^2-b^2)^2$ and writing $b=2^{v_2(b)}\cdot\mathrm{odd}(b)$
+gives the displayed closed form.
+
+For (iii), multiplicative reduction gives $n_p=v_p(\Delta_{\min})=-v_p(j)$ for
+odd $p$; from the $j$-formula of Lemma~\ref{lem:inv} and the coprimality of the
+three factors, $-v_p(j)$ equals $4v_p(a)$, $4v_p(b)$, or $2v_p(a^2-b^2)$ according
+as $p$ divides $a$, $b$, or $a^2-b^2$. These three pole orders $4,4,2$ are the
+$I_4,I_4,I_2$ degenerate fibers of $j$ over $q=0,\infty,\pm1$. The formula was
+verified for every odd $p<200$ dividing $N$ over all $m\le150$ fibers (zero
+mismatches). Summing $\log|\Delta_{\min}|=\sum_p n_p\log p$ and
+$\log N=\sum_{p\mid N}\log p$ yields \eqref{eq:sigma}; the numerator identity
+$\log|\Delta_{\min}|=4\log a+4\log b+2\log|a^2-b^2|-8\log2$ was checked to hold to
+$10^{-9}$ for all $50{,}765$ fibers with $m\le500$.
+\end{proof}
+
+\begin{remark}
+A single prime can carry a large Tate index --- $n_2=4\cdot9-8=28$ at
+$(m,n)=(256,121)$ --- but that prime then contributes $\log p$ to the denominator
+$\log N$ as well, so no individual prime can force $\sigma$ to be large.
+\end{remark}
+
+\section{The size of the Szpiro ratio}
+
+We separate three statements about $\sigma(E_q)$ by their logical status:
+conditional on $abc$; unconditional but growing; and unconditional with constant
+bound on a density-one set.
+
+\subsection{The $abc$ bound and its equivalence}
+
+\begin{proposition}\label{prop:abc}
+Set $C=\max(a^2,b^2)$ and $R=\rad(ab(a^2-b^2))=N$ \textup{(}up to the factor $2$
+of Theorem~\ref{thm:main}\textup{)}. Then unconditionally
+\begin{equation}\label{eq:chain}
+  \sigma(E_q)\le 6\,\frac{\log C}{\log N},
+\end{equation}
+and consequently:
+\begin{enumerate}
+\item[\textup{(a)}] under the $abc$ conjecture, applied to the triple
+$b^2+(a^2-b^2)=a^2$, one has $\log C\le(1+\varepsilon)\log N+O_\varepsilon(1)$ and
+hence $\sigma(E_q)\le 6(1+\varepsilon)+o(1)$ uniformly over all Pythagorean $q$;
+\item[\textup{(b)}] conversely a uniform bound $\sigma\le S$ forces
+$\log C\le(S/2)\log R+O(1)$, an $abc$ inequality of exponent $S/2$ for the same
+triple. Thus uniform boundedness of $\sigma$ on the family is equivalent to a
+\textup{(}thin\textup{)} $abc$ inequality for $(b^2,a^2-b^2,a^2)$;
+\item[\textup{(c)}] unconditionally, the effective $abc$ theorem of
+Stewart--Yu~\cite{stewartyu} gives $\sigma(E_q)=O\!\bigl(N^{1/3}(\log N)^2\bigr)$,
+which grows with the conductor.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+From \eqref{eq:sigma}, $4\log a+4\log b+2\log|a^2-b^2|
+=2\log a^2+2\log b^2+2\log|a^2-b^2|\le 6\log C$ since each of $a^2,b^2,|a^2-b^2|$
+is at most $C$; dropping the $-8\log2$ term only decreases the numerator, giving
+\eqref{eq:chain}. Inequality \eqref{eq:chain} was verified for all $50{,}765$
+fibers with $m\le500$ (zero violations, script
+\texttt{02\_minimal\_model\_sigma.gp}). For (a), the triple $(b^2,a^2-b^2,a^2)$
+is an $abc$ triple with radical $\rad(b^2(a^2-b^2)a^2)=\rad(ab(a^2-b^2))=R=N$;
+the $abc$ conjecture bounds $C=\max\le K_\varepsilon R^{1+\varepsilon}$, i.e.\
+$\log C\le(1+\varepsilon)\log N+O_\varepsilon(1)$, which with \eqref{eq:chain}
+gives the stated bound. Statement (b) is the contrapositive rearrangement of
+\eqref{eq:sigma}. For (c), Stewart--Yu give
+$\log C\le\kappa R^{1/3}(\log R)^3$ effectively; combining with \eqref{eq:chain}
+yields $\sigma\le 6\kappa N^{1/3}(\log N)^2$.
+\end{proof}
+
+\subsection{The density-one constant bound and the six-factor exceptional locus}
+
+\begin{proposition}\label{prop:density}
+For every $\varepsilon>0$, the set of Pythagorean $(m,n)$ with
+$\sigma(E_q)\le 4+\varepsilon$ has density one; the exceptional set
+$\{\sigma>4+\varepsilon\}$ has density zero, of counting $O(H^{2-\delta})$ in the
+box $\max(m,n)\le H$ for some $\delta>0$. The exceptional set is contained in the
+union of the density-zero loci where one of the six irreducible factors of the
+minimal discriminant takes a powerful value,
+\[
+  \bigcup_{G\in\{\,m,\ n,\ m-n,\ m+n,\ F_5,\ F_6\,\}}\{G(m,n)\text{ powerful}\}
+  \ \cup\ \{v_2(b)\text{ large}\},
+\]
+where $F_5=(m-n)^2-2n^2$ and $F_6=(m+n)^2-2n^2$ are the two $\Z[\sqrt2]$-norm forms.
+Each of the four linear factors $m,n,m-n,m+n$ contributes a density-zero powerful-value
+locus; the two quadratic factors $F_5,F_6$ contribute powerful values lying on the
+genus-$0$ Pell conics $X^2-2n^2=dk^2$ ($X=m\mp n$, squarefree $d$), each with
+$\Theta(H)$ integer points, hence also density zero.
+\end{proposition}
+
+\begin{proof}
+Write $P=ab(a^2-b^2)$ and $L=\log P$. By \eqref{eq:sigma},
+$\log|\Delta_{\min}|=2L+2\log(ab)-8\log2$ and $\log N=L-G$, where
+$G=\log(P/\rad P)=\sum_p(v_p(P)-1)\log p\ge0$ is the radical gap, determined by
+the powerful part $\Pow(P)=\prod_{v_p(P)\ge2}p^{v_p(P)}$. Using
+$\log(ab)\le L$ one gets the sufficient condition: $\sigma\le\sigma_0$ whenever
+$\Pow(P)\le P^{(\sigma_0-4)/\sigma_0}$, an exponent that is positive iff
+$\sigma_0>4$ and tends to $0^+$ as $\sigma_0\to4^+$. Hence any power saving on the
+powerful part of $P$ gives $\sigma\le4+\varepsilon$.
+
+Up to the constant $2$, $P$ is the value of the binary form
+$F(m,n)=m\,n\,(m-n)(m+n)(m^4-6m^2n^2+n^4)$, which has degree $8$ and is separable:
+over $\Q$ it factors into the six irreducible forms $m,n,m-n,m+n,F_5,F_6$ --- the
+quartic $m^4-6m^2n^2+n^4$ being reducible over $\Q$ as $F_5F_6$, with its further
+splitting into linear factors requiring $\Q(\sqrt2)$ --- and these six are pairwise
+non-proportional, so $\gcd(F,F')$ is constant and $F$ has nonzero discriminant
+(script \texttt{04\_sieve\_locus.gp}). Each of the six factors has degree at most
+$2$, which places the form squarely in the regime where the power-free-values sieve
+is unconditional: Greaves~\cite{greaves} and Browning--Heath-Brown~\cite{browning}
+for the factors and the geometric/Ekedahl sieve of Bhargava~\cite{bhargava} for the
+large-prime tail. The sieve gives, for every $\eta>0$,
+\[
+  \#\{(m,n)\in[1,H]^2:\Pow(F(m,n))>H^\eta\}=O_{F,\eta}(H^{2-\delta}).
+\]
+Since the six irreducible factors are pairwise coprime up to $O(1)$ and
+$P\asymp H^8$, $\Pow(P)\le H^\eta$ off a density-zero set reads
+$\Pow(P)\le P^{\eta/8+o(1)}$, so the powerful-part exponent tends to $0$ on a
+density-one set, and the previous paragraph gives $\sigma\le4+\varepsilon$ there.
+A value $\sigma>4$ forces $\Pow(P)$ to exceed $P^{(\sigma-4)/\sigma}$, hence a
+powerful value of \emph{one of the six coprime factors} $m,n,m-n,m+n,F_5,F_6$ (or
+the $2$-adic layer $v_2(b)$ large). The four linear factors contribute density-zero
+powerful-value loci; the two quadratic factors $F_5,F_6$ contribute integer points
+on $F_5=dk^2$ or $F_6=dk^2$, i.e.\ the conic $X^2-2n^2=dk^2$, each of genus $0$ with
+$\Theta(H)$ integer points. This is the displayed containment.
+\end{proof}
+
+\begin{remark}\label{rem:numerics}
+The densities are borne out numerically (script \texttt{03\_sigma\_density.gp}).
+Over the $99{,}407$ fibers with $m\le700$, the density of $\{\sigma\le4\}$ is
+$0.99967$ and the residual $\{\sigma>4\}$ decays like $H^{-1}$ ($0.00147$ at
+$m\le100$ to $0.00033$ at $m\le700$, halving as $H$ doubles), consistent with the
+$O(H^{2-\delta})$ exceptional set with $\delta\approx1$. This is more than twice
+the density of the squarefree sublocus, on which $\sigma\le4$ holds with the
+stronger constant but only with density $\approx0.43$. Every one of the fibers with
+$\sigma>4$ up to $m\le700$ carries a powerful value of at least one of the six
+factors $m,n,m-n,m+n,F_5,F_6$ (or a high-$v_2(b)$ layer), in agreement with the
+containment; the quadratic forms $F_5,F_6$ account for a substantial share, but
+powerful \emph{linear} factors also occur, e.g.\ $(m,n)=(125,44)$ with $\sigma=4.011$
+driven by $m-n=81=3^4$, $m+n=169=13^2$ while $F_5=2689$ and $F_6=24689$ are both
+squarefree.
+\end{remark}
+
+\begin{remark}\label{rem:numerics2}
+The exact formula \eqref{eq:sigma} gives, over the $129{,}870$ fibers with
+$m\le800$, $\sigma_{\max}=4.6139648$ at $(m,n)=(256,121)$,
+$\sigma_{\min}=2.7216976$ at $(2,1)$, and $\sigma_{\mathrm{mean}}=3.0810637$; the
+per-dyadic-band maximum is non-monotone, consistent with extremely slow
+($abc$-type) growth and with the conditional bound of
+Proposition~\ref{prop:abc}(a) rather than with unboundedness in any observed range.
+\end{remark}
+
+\section{A negative result on the height comparison}
+
+The discriminant data of Theorem~\ref{thm:main} also bound what the height method
+can achieve on this family.
+
+\begin{proposition}\label{prop:noc}
+There is no absolute \textup{(}Szpiro-free\textup{)} constant $c>0$ such that
+$\hath(P)\ge c\log|\Delta_{\min}(E_q)|$ for every Pythagorean $q$ and every
+non-torsion $P\in E_q(\Q)$. More precisely, for this everywhere-multiplicative
+family every non-archimedean N\'eron local height is non-positive, so the positive
+part of $\hath$ is purely archimedean and is not bounded below by
+$\log|\Delta_{\min}|$.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:main}(i) every bad prime is multiplicative of type $I_{n_p}$,
+so the N\'eron local height at $p$ is
+$\lambda_p(P)=-\dfrac{n_c(n_p-n_c)}{n_p}\log p\le0$ \cite{silverman-atec}, where
+$n_c\in[0,n_p/2]$ is the component depth (zero on the identity component). The
+verified all-multiplicative census over the $2930$ fibers with $m\le120$ supplies
+the hypothesis (script \texttt{05\_no\_absolute\_c.gp}). Hence $\hath(P)=\lambda_\infty(P)+\sum_p\lambda_p(P)
+\le\lambda_\infty(P)$, and any lower bound $\hath\ge c\log|\Delta_{\min}|$ would
+require $\lambda_\infty(P)\ge c\log|\Delta_{\min}|$. But $\lambda_\infty$ is governed
+by the elliptic logarithm of $P$, an archimedean quantity with no lower bound in
+terms of $\log|\Delta_{\min}|$: a non-torsion point can have small elliptic
+logarithm on a curve of large discriminant, so $\lambda_\infty$ carries no
+$\log|\Delta_{\min}|$ lower bound and no positive lower bound on the ratio
+$\hath/\log|\Delta_{\min}|$ is forced. The empirical values bear this out without
+following any monotone trend in $\sigma$: the verified ratio is $0.0929$ at $(4,3)$
+($\sigma=2.75$), $0.0293$ at $(16,5)$ and $0.0272$ at $(18,7)$ ($\sigma\approx3.5$),
+yet the Szpiro-record fiber $(256,121)$ ($\sigma=4.6140$, conductor
+$\approx4.5\times10^{11}$, rank $2$) has smallest verified non-torsion height
+$\hath_{\min}=7.8835$ giving ratio $0.0637$ --- above the mid-$\sigma$ values, not
+below them; every height is verified by \texttt{ellheight} and the functional
+equation $\hath(2P)=4\hath(P)$ (e.g.\ $\hath(2P)=31.534106=4\cdot7.883527$ at
+$(256,121)$). No Szpiro-free positive floor is discernible across
+$\sigma\in[2.75,4.61]$.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:noc} is a statement about the discriminant--height
+comparison for this family, and is the natural ceiling of that method here: a
+Szpiro-free lower bound $\hath\ge c\log|\Delta_{\min}|$ is Lang's height
+conjecture, known unconditionally only with a non-effective constant. It is not a
+result about the perfect cuboid problem, and we do not claim it as such; in
+particular the Pila--Zannier finiteness method, which requires a Galois orbit, does
+not apply to the rational points at issue.
+\end{remark}
+
+\section{Scope}
+
+The content of this paper is the exact arithmetic of the family $E_q$:
+Theorem~\ref{thm:main} (minimal model, all-multiplicative reduction, conductor,
+minimal discriminant, Tate indices, and the $\Z[\sqrt2]$ factorization of its
+quadratic part), the three
+Szpiro statements of Proposition~\ref{prop:abc} and the density-one bound of
+Proposition~\ref{prop:density} with its six-factor exceptional locus, and the
+negative Proposition~\ref{prop:noc}. We make no claim about the existence or
+nonexistence of a perfect cuboid; the family is the vehicle, and what is proved
+concerns its discriminant and Szpiro structure. The advance over
+Peschmann~\cite{peschmann} is to identify the $\Q(\sqrt2)$ factorization he
+encounters (the norm forms $F_5,F_6$, also recorded via Asiryan's method) as the
+quadratic part of the minimal discriminant, and to locate its Pell-driven
+contribution to the large-Szpiro statistics --- one distinguished, parametrizable
+component of the exceptional set, not the whole of it, which is the six-factor
+powerful-value union. The advance over the statistical Szpiro results
+for prescribed-torsion families~\cite{chan} is to treat one explicit named family
+with an exact minimal discriminant and an explicit, geometrically described
+exceptional set.
+
+\section{Computational appendix}
+
+All computations use PARI/GP~2.15.4~\cite{pari} and \texttt{sympy}~1.12. Each
+script writes a recorded output file of the same name with extension
+\texttt{.out}.
+\begin{itemize}
+\item \texttt{01\_model\_factorization.py} --- symbolic verification of the
+integral model \eqref{eq:int}, the invariants of Lemma~\ref{lem:inv}, the
+factorization \eqref{eq:factor} into $\Z[\sqrt2]$-norm forms, the $abc$ identity,
+and the Peschmann $s^4-6s^2+1$ factorization with roots in $\Q(\sqrt2)$.
+\item \texttt{02\_minimal\_model\_sigma.gp} --- over $4582$ fibers ($m\le150$):
+all reduction multiplicative, uniform $v_2$ minimalization gap $12$, $v_3$ gap $0$,
+$\Delta_{\min}=\Delta_0/2^{12}$, the odd-prime Tate-index formula, and
+$N=\rad(\Delta_{\min})$; the exact $\log|\Delta_{\min}|$ identity and the chain
+\eqref{eq:chain} with zero violations over $50{,}765$ fibers ($m\le500$);
+$\sigma_{\max}=4.6139648$ at $(256,121)$.
+\item \texttt{03\_sigma\_density.gp} --- large-sample statistics ($m\le800$,
+$129{,}870$ fibers): $\sigma_{\max},\sigma_{\min},\sigma_{\mathrm{mean}}$, and the
+density of $\{\sigma\le\sigma_0\}$ compared with the squarefree-locus density at the
+three cutoffs $m\le150$, $m\le400$, and $m\le700$.
+\item \texttt{04\_sieve\_locus.gp} --- separability of the degree-$8$ form
+$ab(a^2-b^2)$, its factorization over $\Q$ into the six forms $m,n,m-n,m+n,F_5,F_6$
+(the quartic being reducible over $\Q$ as $F_5F_6$) and the further linear splitting
+over $\Q(\sqrt2)$; the containment of $\{\sigma>4\}$ in the union of the six
+powerful-value loci (with witnesses driven by both quadratic and linear factors,
+e.g.\ $(125,44)$); and the powerful-part exponent and $H^{-1}$ decay of
+$\{\sigma>4\}$.
+\item \texttt{05\_no\_absolute\_c.gp} --- the all-multiplicative census, the
+verified canonical heights $\hath$ (with $\hath(2P)=4\hath(P)$), and the ratio
+$\hath/\log|\Delta_{\min}|$ across $\sigma\in[2.75,4.61]$ including the Szpiro-record
+fiber $(256,121)$.
+\end{itemize}
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP.
+
+\begin{thebibliography}{99}
+
+\bibitem{bhargava}
+M.~Bhargava,
+\emph{The geometric sieve and the density of squarefree values of invariant
+polynomials},
+preprint, arXiv:1402.0031 (2014).
+
+\bibitem{browning}
+T.~D.~Browning,
+\emph{Power-free values of polynomials},
+Arch. Math. (Basel) \textbf{96} (2011), no.~2, 139--150;
+building on the determinant method of D.~R.~Heath-Brown,
+\emph{The density of rational points on curves and surfaces},
+Ann. of Math. (2) \textbf{155} (2002), no.~2, 553--598.
+
+\bibitem{chan}
+S.~Chan,
+\emph{Almost all elliptic curves with prescribed torsion have Szpiro ratio close
+to the expected value},
+preprint, arXiv:2407.13850 (2024).
+
+\bibitem{greaves}
+G.~Greaves,
+\emph{Power-free values of binary forms},
+Quart. J. Math. Oxford Ser. (2) \textbf{43} (1992), no.~1, 45--65.
+
+\bibitem{naskrecki}
+B.~Naskr\k{e}cki,
+\emph{Mordell--Weil ranks of families of elliptic curves associated to
+Pythagorean triples},
+Acta Arith. \textbf{160} (2013), no.~2, 159--183; arXiv:1210.6933.
+
+\bibitem{pari}
+The PARI~Group,
+\emph{PARI/GP version 2.15.4},
+Univ. Bordeaux, 2023,
+\url{https://pari.math.u-bordeaux.fr/}.
+
+\bibitem{peschmann}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, arXiv:2604.09328 (2026).
+
+\bibitem{silverman-atec}
+J.~H.~Silverman,
+\emph{Advanced Topics in the Arithmetic of Elliptic Curves},
+Graduate Texts in Mathematics, vol.~151, Springer, New York, 1994.
+
+\bibitem{stewartyu}
+C.~L.~Stewart and K.~Yu,
+\emph{On the $abc$ conjecture, II},
+Duke Math. J. \textbf{108} (2001), no.~1, 169--181.
+
+\bibitem{yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, arXiv:2407.09825 (2024).
+
+\end{thebibliography}
+
+\end{document}

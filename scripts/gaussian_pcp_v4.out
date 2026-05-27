@@ -1,0 +1,68 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+Verifying (44, 117, 240) is an Euler brick:
+  44² + 117² = 15625 = 125² ? 15625
+  44² + 240² = 59536 = 244² ? 59536
+  117² + 240² = 71289 = 267² ? 71289
+  44² + 117² + 240² = 73225 = ?  miss = 325
+
+=== Verifying ℤ[i] structure for (117, 240, 267) ===
+Gaussian factorization of 117 + 240i:
+[3, 1; 8 + 5*I, 2]
+Norm = 71289 = 267² = 71289
+3·(8+5i)² = 117 + 240*I
+
+=== Euler brick enumeration with ℤ[i] decomposition ===
+Number of Euler bricks (a < b < c ≤ 1000): 10
+
+Top 15 Euler bricks with ℤ[i] data:
+  (44,117,240) d=125 e=267 f=244 g²=73225 perfect? 0
+  (85,132,720) d=157 e=732 f=725 g²=543049 perfect? 0
+  (88,234,480) d=250 e=534 f=488 g²=292900 perfect? 0
+  (132,351,720) d=375 e=801 f=732 g²=659025 perfect? 0
+  (140,480,693) d=500 e=843 f=707 g²=730249 perfect? 0
+  (160,231,792) d=281 e=825 f=808 g²=706225 perfect? 0
+  (176,468,960) d=500 e=1068 f=976 g²=1171600 perfect? 0
+  (240,252,275) d=348 e=373 f=365 g²=196729 perfect? 0
+  (480,504,550) d=696 e=746 f=730 g²=786916 perfect? 0
+  (720,756,825) d=1044 e=1119 f=1095 g²=1770561 perfect? 0
+
+=== Local obstruction analysis ===
+Compute g² = a²+b²+c² mod small primes for each Euler brick.
+
+Square classes of g² mod p for first 50 Euler bricks:
+  Modulo 3:
+     (0:2,0) (1:8,QR)
+  Modulo 5:
+     (0:5,0) (1:2,QR) (4:3,QR)
+  Modulo 7:
+     (1:1,QR) (2:3,QR) (3:3,NR) (4:1,QR) (5:1,NR) (6:1,NR)
+  Modulo 11:
+     (1:3,QR) (3:3,QR) (4:1,QR) (5:1,QR) (9:2,QR)
+  Modulo 13:
+     (0:6,0) (1:1,QR) (3:1,QR) (9:1,QR) (10:1,QR)
+  Modulo 17:
+     (1:1,QR) (3:2,NR) (5:1,NR) (6:1,NR) (7:1,NR) (11:3,NR) (14:1,NR)
+  Modulo 19:
+     (3:3,NR) (8:1,NR) (10:2,NR) (12:1,NR) (14:1,NR) (15:1,NR) (18:1,NR)
+  Modulo 23:
+     (3:1,QR) (6:1,QR) (10:2,NR) (16:1,QR) (17:1,NR) (18:1,QR) (19:1,NR) (21:1,NR) (22:1,NR)
+  Modulo 29:
+     (0:5,0) (1:1,QR) (17:1,NR) (22:1,QR) (24:2,QR)
+
+=== Concluding analysis ===
+Total Euler bricks with a,b,c ≤ 1000: 10
+Total perfect cuboids: 0
+
+Inert-prime factor m for d, e, f in first 15 Euler bricks:
+  (44,117,240): a+bi inert-part=1  b+ci inert-part=3  a+ci inert-part=1
+  (85,132,720): a+bi inert-part=1  b+ci inert-part=3  a+ci inert-part=1
+  (88,234,480): a+bi inert-part=1  b+ci inert-part=3  a+ci inert-part=1
+  (132,351,720): a+bi inert-part=3  b+ci inert-part=9  a+ci inert-part=3
+  (140,480,693): a+bi inert-part=1  b+ci inert-part=3  a+ci inert-part=7
+  (160,231,792): a+bi inert-part=1  b+ci inert-part=33  a+ci inert-part=1
+  (176,468,960): a+bi inert-part=1  b+ci inert-part=3  a+ci inert-part=1
+  (240,252,275): a+bi inert-part=3  b+ci inert-part=1  a+ci inert-part=1
+  (480,504,550): a+bi inert-part=3  b+ci inert-part=1  a+ci inert-part=1
+  (720,756,825): a+bi inert-part=9  b+ci inert-part=3  a+ci inert-part=3
+
+=== Done ===

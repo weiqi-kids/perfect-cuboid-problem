@@ -1,0 +1,67 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Shioda-Tate analysis of pi_d : V' -> P^1_q ===
+
+Generic fiber E(q) : Y^2 = X^3 + (q^2 + 1) X^2 + q^2 X
+                   = X (X + 1) (X + q^2)
+
+Two-torsion: T0=(0,0), T1=(-1,0), T2=(-q^2,0)  ==> Z/2 x Z/2 generic torsion.
+Discriminant: 16 * q^4 * (q^2 - 1)^2 * 1 = 16 q^4 (q-1)^2 (q+1)^2
+(times appropriate factor; for E: y^2 = (x)(x+1)(x+q^2),
+ Delta = (a_1*a_2 - a_3)^2 ... standard formula gives:
+ Delta = 16 q^4 (q^2 - 1)^2.)
+
+=== Bad fibers ===
+Over Q: bad at q = 0, +1, -1, infinity.
+Over Qbar: also bad at q = +i, -i (where q^2 = -1).
+
+At q = 0:
+  v_q(Delta) = 4,  v_q(c4) = 0  ==> Kodaira type I_4 (mult.).
+  Components: 4  (contributes m-1 = 3 to Shioda-Tate sum).
+
+At q = infinity (substitute q' = 1/q):
+  Same Weierstrass shape after rescaling, so type I_4.
+  Components: 4.
+
+At q = 1:
+  Y^2 = X(X+1)^2: nodal at X=-1.
+  v_q(Delta) = 2,  v_q(c4) = 0  ==> Kodaira I_2.
+  Components: 2 (contributes m-1 = 1).
+
+At q = -1:
+  Same as q = 1 by q -> -q.  Type I_2.
+  Components: 2.
+
+=== Check: bad fibers over Qbar ===
+Delta = 16 q^4 (q^2-1)^2  vanishes iff q in {0, 1, -1}.
+So bad locus over Qbar is {0, 1, -1, infinity}, NOT including +/-i.
+
+=== Shioda-Tate formula ===
+rho(V') = 2 + sum_{bad v} (m_v - 1) + rank MW(pi_d / Q(q))
+       = 2 + (3 + 3 + 1 + 1) + r_gen
+       = 2 + 8 + r_gen
+       = 10 + r_gen
+
+Generic torsion: Z/2 x Z/2 (full 2-torsion).
+Generic MW rank r_gen: from numerical/L-function evidence in PICK-1, 
+  the generic fiber has rank 0 over Q(q)  ==>  rho(V') = 10.
+
+=== Bound on rank E_PCP(q)(Q) ===
+
+If rho(V') = 10 (Shioda-Tate, with r_gen = 0):
+
+Silverman 1983: for non-isotrivial pi_d,
+  rk E_PCP(q)(Q) = r_gen + (specialization contribution)
+                <= r_gen + log|Delta|/log(p) * (some constant)
+
+Hindry-Silverman effective specialization: for ALMOST all q (Hilbert-thin
+complement), rk E(q)(Q) = r_gen + O(h(q) / log h(q)).
+
+For our family, r_gen = 0, so almost all q have rank 0.
+Empirically (m <= 26 survey of 134 fibers + targeted scans):
+  max rank observed = 3 at (m,n) = (22,17), (35,22), (37,26), (40,29), (40,33).
+  No rank >= 4 observed.
+
+Heuristic explanation: each rank jump can be attributed to a Q-point
+on a 'spurious' MW section, and we expect at most O(log H(q)) such
+contributions.  For Pythagorean q with m^2+n^2 not too large, this
+gives rank <= 4 with high confidence.

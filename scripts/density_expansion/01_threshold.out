@@ -1,0 +1,10 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== Verify D = 2L + 2log(ab) - 8log2 and N=rad(P) (mod factor 2) ===
+  fibers checked = 1314
+  max |log Dmin - (2L+2log(ab)-8log2)| = 7.523163845262640051 E-37   (should be ~0; the -8log2 is exact 2-adic)
+  N differs from rad(P) by more than factor 2 anywhere? no (always 1 or 2)
+
+=== Verify EXACT D = 4 log a + 4 log b + 2 log c - 8 log2 ===
+  max |log Dmin - (4loga+4logb+2logc-8log2)| = 7.523163845262640051 E-37
+

@@ -1,0 +1,125 @@
+  ***   Warning: new stack size = 800000000 (762.939 Mbytes).
+=================================================================
+Step 3: Character / mod-p structure of a_p
+=================================================================
+
+Collected 43 curves (m,n) with m up to 14.
+
+--- Test 1: Is a_p a function of (m mod p, n mod p)? ---
+
+p = 2: 2 distinct (m mod p, n mod p) keys, 19 inconsistencies among 43 curves
+p = 3: 8 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 5: 23 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 7: 33 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 11: 41 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 13: 43 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 17: 43 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 19: 43 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 23: 43 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+p = 29: 43 distinct (m mod p, n mod p) keys, 0 inconsistencies among 43 curves
+
+--- Test 2: Is a_p a function of (u mod p, v mod p)? ---
+
+p = 2: 1 distinct keys, 19 inconsistencies
+p = 3: 4 distinct keys, 0 inconsistencies
+p = 5: 8 distinct keys, 0 inconsistencies
+p = 7: 24 distinct keys, 0 inconsistencies
+p = 11: 41 distinct keys, 0 inconsistencies
+p = 13: 38 distinct keys, 0 inconsistencies
+p = 17: 37 distinct keys, 0 inconsistencies
+p = 19: 43 distinct keys, 0 inconsistencies
+p = 23: 43 distinct keys, 0 inconsistencies
+p = 29: 40 distinct keys, 0 inconsistencies
+
+--- Test 3: Point counts on Y^2 = X(X+u^2)(X+v^2) mod p ---
+
+p = 2:
+  (m,n)=(2,1), direct a_p=0, table a_p=-1  MISMATCH
+  (m,n)=(3,2), direct a_p=0, table a_p=-1  MISMATCH
+  (m,n)=(5,2), direct a_p=0, table a_p=-1  MISMATCH
+  (m,n)=(6,1), direct a_p=0, table a_p=-1  MISMATCH
+  (m,n)=(6,5), direct a_p=0, table a_p=-1  MISMATCH
+p = 3:
+p = 5:
+  (m,n)=(2,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(4,3), direct a_p=-2, table a_p=-2  OK
+p = 7:
+p = 11:
+  (m,n)=(2,1), direct a_p=4, table a_p=4  OK
+  (m,n)=(3,2), direct a_p=4, table a_p=4  OK
+  (m,n)=(4,1), direct a_p=4, table a_p=4  OK
+  (m,n)=(4,3), direct a_p=4, table a_p=4  OK
+  (m,n)=(5,2), direct a_p=4, table a_p=4  OK
+  (m,n)=(5,4), direct a_p=4, table a_p=4  OK
+  (m,n)=(6,1), direct a_p=4, table a_p=4  OK
+p = 13:
+  (m,n)=(2,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(3,2), direct a_p=6, table a_p=6  OK
+  (m,n)=(4,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(4,3), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(5,2), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(5,4), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(6,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(6,5), direct a_p=-2, table a_p=-2  OK
+p = 17:
+  (m,n)=(2,1), direct a_p=-6, table a_p=-6  OK
+  (m,n)=(4,1), direct a_p=2, table a_p=2  OK
+  (m,n)=(5,2), direct a_p=-6, table a_p=-6  OK
+  (m,n)=(5,4), direct a_p=-6, table a_p=-6  OK
+  (m,n)=(6,1), direct a_p=-6, table a_p=-6  OK
+  (m,n)=(6,5), direct a_p=-6, table a_p=-6  OK
+p = 19:
+  (m,n)=(2,1), direct a_p=4, table a_p=4  OK
+  (m,n)=(3,2), direct a_p=-4, table a_p=-4  OK
+  (m,n)=(4,1), direct a_p=-4, table a_p=-4  OK
+  (m,n)=(4,3), direct a_p=-4, table a_p=-4  OK
+  (m,n)=(5,2), direct a_p=-4, table a_p=-4  OK
+  (m,n)=(5,4), direct a_p=4, table a_p=4  OK
+  (m,n)=(6,1), direct a_p=4, table a_p=4  OK
+  (m,n)=(6,5), direct a_p=-4, table a_p=-4  OK
+p = 23:
+  (m,n)=(2,1), direct a_p=0, table a_p=0  OK
+  (m,n)=(3,2), direct a_p=0, table a_p=0  OK
+  (m,n)=(4,3), direct a_p=0, table a_p=0  OK
+  (m,n)=(5,2), direct a_p=0, table a_p=0  OK
+  (m,n)=(5,4), direct a_p=0, table a_p=0  OK
+  (m,n)=(6,5), direct a_p=0, table a_p=0  OK
+p = 29:
+  (m,n)=(2,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(3,2), direct a_p=6, table a_p=6  OK
+  (m,n)=(4,1), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(4,3), direct a_p=-2, table a_p=-2  OK
+  (m,n)=(5,2), direct a_p=-10, table a_p=-10  OK
+  (m,n)=(5,4), direct a_p=6, table a_p=6  OK
+  (m,n)=(6,1), direct a_p=6, table a_p=6  OK
+  (m,n)=(6,5), direct a_p=-2, table a_p=-2  OK
+
+--- Test 5: j-invariant formula ---
+
+E_{m,n}: Y^2 = X^3 + (u^2+v^2) X^2 + (uv)^2 X
+c4 = 16 ((u^2+v^2)^2 - 3 (uv)^2) = 16 (u^4 - u^2 v^2 + v^4)
+c6 = -64 (u^2+v^2)((u^2+v^2)^2 - 9/2 (uv)^2) hmm
+
+  ***   at top-level: ...u^2+v^2,0,u^2*v^2,0]);jE=ellj(E);c4=E.c4;c6=E.
+  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).
+... skipping file 'family_lfunction_step3.gp'
+
+--- Test 6: Are E_{m,n} all 2-isogenous to a fixed curve? ---
+
+(m,n)=(2,1): isogeny matrix shape (size = 2):
+  matrix = [[[-193/48, -575/864], [-1873/48, 80569/864], [47/3, -142/27], [-2353/48, -113975/864], [-1633/48, -185039/864], [-37633/48, -7300511/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(3,2): isogeny matrix shape (size = 2):
+  matrix = [[[-17761/48, 2089009/864], [-274801/48, 144052201/864], [1679/3, 340562/27], [-71761/48, -17075591/864], [104639/48, -87829631/864], [-1112161/48, -1172855951/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(4,1): isogeny matrix shape (size = 2):
+  matrix = [[[-40321/48, 5410369/864], [-36481/3, 13933442/27], [114239/48, 36894241/864], [-256321/48, -125680031/864], [96479/48, -444999311/864], [-4065121/48, -8196146351/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(4,3): isogeny matrix shape (size = 2):
+  matrix = [[[-305953/48, 164760625/864], [-4859233/48, 10711523089/864], [5087/3, 17299298/27], [-729313/48, -390899375/864], [2183807/48, -2733921791/864], [-10416193/48, -33610116959/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(5,2): isogeny matrix shape (size = 2):
+  matrix = [[[-178081/48, -72762479/864], [-28081/3, 6305042/27], [67919/48, -258221879/864], [-2824081/48, -4745863079/864], [-2798881/48, -4834715759/864], [-45185281/48, -303735448799/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(5,4): isogeny matrix shape (size = 2):
+  matrix = [[[-2436961/48, 3769745041/864], [-38892961/48, 242552899441/864], [-36961/3, 291970082/27], [-4380961/48, -3092769359/864], [16376639/48, -23972839199/864], [-56242561/48, -421413621119/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(6,1): isogeny matrix shape (size = 2):
+  matrix = [[[-1344961/48, 1479014209/864], [-1325521/3, 3052168562/27], [989999/48, 6073515001/864], [-3990961/48, -6127971191/864], [9339839/48, -38349847871/864], [-59657761/48, -460753160111/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]
+(m,n)=(6,5): isogeny matrix shape (size = 2):
+  matrix = [[[-12539041/48, 44226470161/864], [-200405041/48, 2837023639561/864], [-389041/3, 2773570322/27], [-19073041/48, -6830859239/864], [76006559/48, -54551310479/864], [-218696641/48, -3226779489599/864]], [1, 2, 2, 2, 4, 4; 2, 1, 4, 4, 8, 8; 2, 4, 1, 4, 8, 8; 2, 4, 4, 1, 2, 2; 4, 8, 8, 2, 1, 4; 4, 8, 8, 2, 4, 1]]

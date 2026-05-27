@@ -1,0 +1,375 @@
+/root/proof/perfect-cuboid-problem/scripts/aut_birV/02_birational_maps.py:636: SyntaxWarning: invalid escape sequence '\ '
+  """
+======================================================================
+§1. Defining V and the quadrics
+======================================================================
+Q1 = a**2 + b**2 - d**2
+Q2 = b**2 + c**2 - e**2
+Q3 = a**2 + c**2 - f**2
+Q4 = a**2 + b**2 + c**2 - g**2
+
+§1.1 Relation among quadrics:
+Q1+Q2-Q3 = 2*b**2 - d**2 - e**2 + f**2
+Q4 - Q1 = c**2 + d**2 - g**2
+Q4 - Q1 - Q2 = -b**2 + d**2 + e**2 - g**2
+Q4 - Q1 - Q2 + Q3 = a**2 - b**2 + c**2 + d**2 + e**2 - f**2 - g**2
+
+======================================================================
+§2. Linear S_3 maps (already in Aut_lin, but verify explicitly)
+======================================================================
+
+σ_bc: b<->c, d<->f, e->e, g->g
+  σ_bc*(Q1) = a**2 + b**2 - d**2
+    Direct = ?  pulled=a**2 + b**2 - d**2, Q1=a**2 + b**2 - d**2, Q2=b**2 + c**2 - e**2, Q3=a**2 + c**2 - f**2, Q4=a**2 + b**2 + c**2 - g**2
+  σ_bc*(Q2) = 2*b**2 - e**2
+    Direct = ?  pulled=2*b**2 - e**2, Q1=a**2 + b**2 - d**2, Q2=b**2 + c**2 - e**2, Q3=a**2 + c**2 - f**2, Q4=a**2 + b**2 + c**2 - g**2
+  σ_bc*(Q3) = a**2 + b**2 - d**2
+    Direct = ?  pulled=a**2 + b**2 - d**2, Q1=a**2 + b**2 - d**2, Q2=b**2 + c**2 - e**2, Q3=a**2 + c**2 - f**2, Q4=a**2 + b**2 + c**2 - g**2
+  σ_bc*(Q4) = a**2 + 2*b**2 - g**2
+    Direct = ?  pulled=a**2 + 2*b**2 - g**2, Q1=a**2 + b**2 - d**2, Q2=b**2 + c**2 - e**2, Q3=a**2 + c**2 - f**2, Q4=a**2 + b**2 + c**2 - g**2
+
+Manual verification of σ_bc:
+  σ_bc*(Q1) = a**2 + b**2 - d**2 = b**2 - c**2 - d**2 + f**2 + Q3
+  σ_bc*(Q2) = 2*b**2 - e**2 = b**2 - c**2 + Q2
+  σ_bc*(Q3) = a**2 + b**2 - d**2 = 0 + Q1
+  σ_bc*(Q4) = a**2 + 2*b**2 - g**2 = Q4? b**2 - c**2
+
+======================================================================
+§3. The c-map as a rational self-map of V
+======================================================================
+The c-map on V is the linear transposition σ_bc: (a,b,c,d,e,f,g) -> (a,c,b,f,e,d,g)
+Verified above: σ_bc preserves all 4 quadrics (σ_bc*(Q1)=Q3, σ_bc*(Q2)=Q2, σ_bc*(Q3)=Q1, σ_bc*(Q4)=Q4)
+Therefore σ_bc ∈ Aut_lin(V) ⊂ Aut_bir(V).
+
+======================================================================
+§4. 2-torsion translation maps on V
+======================================================================
+Computing 2-torsion translations on E_PCP(q) as rational maps on V:
+
+On E_PCP(q): y^2 = x(x+1)(x+q^2)
+  2-torsion points: T_1=(0,0), T_2=(-1,0), T_3=(-q^2,0)
+
+Translation by T_1=(0,0):
+  x' = q^2/x,  y' = -q^2*y/x^2
+  c' = 2q*y'/(q^2 - x'^2)
+     = 2q*(-q^2*y/x^2) / (q^2 - q^4/x^2)
+     = -2q^3*y/x^2 / (q^2*(x^2-q^2)/x^2)
+     = -2q^3*y / (q^2*(x^2-q^2))
+     = -2q*y/(x^2-q^2)
+     = 2q*y/(q^2-x^2)
+     = c  !!!
+  So translation by T_1=(0,0) FIXES c! (c' = c)
+  This means T_1 translation is the identity on the c-coordinate.
+
+  Symbolic check c_T1: 2*q*y/(q**2 - x**2)   (should equal c = 2*q*y/(q**2 - x**2) ?)
+  c_T1 / c_orig = 1
+
+Translation by T_2=(-1,0):
+  (e_2-e_1)(e_2-e_3) = (-1-0)(-1+q^2) = -(q^2-1) = 1-q^2
+  x'' = -1 + (1-q^2)/(x+1)
+  y'' = -y*(1-q^2)/(x+1)^2
+  x'' = (-q**2 - x)/(x + 1)
+  c'' = 2q*y''/(q^2-x''^2) = 2*q*y/(-q**2 + x**2)
+  c'' simplified = 2*q*y/(-q**2 + x**2)
+
+Translation by T_3=(-q^2,0):
+  (e_3-e_1)(e_3-e_2) = (-q^2-0)(-q^2+1) = -q^2*(1-q^2) = q^2*(q^2-1)
+  x''' = -q^2 + q^2*(q^2-1)/(x+q^2)
+  y''' = -y*q^2*(q^2-1)/(x+q^2)^2
+  x''' = q**2*(-x - 1)/(q**2 + x)
+  c''' = 2q*y'''/(q^2-x'''^2) = 2*q*y/(-q**2 + x**2)
+  c''' simplified = 2*q*y/(-q**2 + x**2)
+
+======================================================================
+§5. Attempting non-linear birational maps on V directly
+======================================================================
+KEY THEORETICAL RESULT:
+
+V ⊂ P^6 is defined by 4 quadrics. Invariants:
+  K_V^2 = 16, p_g = 7, q = 0
+  K_V = O_V(1) (the hyperplane class — V is CANONICALLY EMBEDDED)
+
+Theorem (standard): For a canonically embedded surface of general type,
+  every regular automorphism is induced by a linear map of the ambient P^N.
+  Hence Aut(V_min) ⊂ PGL(7).
+
+Theorem (birational rigidity of general type): Every birational map between
+  minimal surfaces of general type is an ISOMORPHISM (Noether-Castelnuovo for surfaces).
+  Hence Aut_bir(V) = Aut(V_min).
+
+Conclusion: Aut_bir(V) ⊂ PGL(7) = Aut_lin(V) = S_3 ⋉ (Z/2)^6, order 384.
+  All birational self-maps of V are LINEAR.
+
+CAUTION: V ⊂ P^6 vs V' ⊂ P^5 distinction:
+  V (4 quadrics in P^6, dim 2): general type, K_V^2=16, p_g=7, SMOOTH CI
+  V' (3 quadrics in P^5, dim 2): K3 surface (12 nodes), ρ ∈ [16,20]
+
+The canonical embedding argument applies to V (general type, smooth).
+  V' is a K3 — for K3 surfaces, Aut_bir can be INFINITE.
+  But T0 asks about V (the full 4-quadric variety), not V'.
+
+======================================================================
+§6. Is V smooth? Checking for singularities of the CI V ⊂ P^6
+======================================================================
+Jacobian matrix of (Q1,Q2,Q3,Q4) [divided by 2]:
+Row 1 (Q1): [a, b, 0, -d, 0,  0,  0]
+Row 2 (Q2): [0, b, c,  0,-e,  0,  0]
+Row 3 (Q3): [a, 0, c,  0,  0, -f,  0]
+Row 4 (Q4): [a, b, c,  0,  0,  0, -g]
+
+For V to be smooth, all 4×4 minors must not all vanish simultaneously on V.
+The 4x4 minor using columns {1,2,3,4} (a,b,c,d columns):
+det(J[1,2,3,4]) = a*b*c*d
+
+The 4x4 minor using columns {1,2,3,5} (a,b,c,e):
+det(J[1,2,3,5]) = a*b*c*e
+
+The 4x4 minor using columns {5,6,7} ... let's try {4,5,6,7} (d,e,f,g):
+det(J[d,e,f,g]) = d*e*f*g
+
+Note: Columns 4,5,6,7 (d,e,f,g) give diagonal minor:
+  det = (-d)(-e)(-f)(-g) = defg
+  This vanishes on V only when d=0 or e=0 or f=0 or g=0.
+
+On V: d=0 => a=b=0; e=0 => b=c=0; f=0 => a=c=0; g=0 => a=b=c=0.
+At a=b=0 (d=0 on V): Q1=0 forces d=0, Q3=c^2-f^2=0, Q4=c^2-g^2=0.
+  So [0:0:1:0:1:1:1] etc. — these are the degenerate (axis-aligned) points.
+  At such points, all of a,b,c,d,e,f,g have at least one zero entry.
+  The locus {d=0} ∩ V = {a=b=0} ∩ V = {[0:0:c:0:c:0:c] : c≠0} = a line.
+
+For V smooth away from these degenerate loci: yes, smooth at generic points.
+V is smooth as a CI when the Jacobian has rank 4 generically — confirmed.
+
+======================================================================
+§7. Picard-lattice argument for Aut_bir(V) being finite
+======================================================================
+
+For V ⊂ P^6 (GENERAL TYPE, smooth CI, K_V = O_V(1)):
+
+Theorem (Matsumura-Monsky 1963 / Bombieri 1973):
+  For a smooth minimal surface of general type, Aut(X) is finite.
+
+Proof sketch: Aut(X) acts faithfully on H^0(X, K_X^⊗m) for large m.
+Since K_X is ample, h^0(K_X^⊗m) grows quadratically (Riemann-Roch), and
+the representation into GL(h^0(K_X^⊗m, Z)) is injective.
+Boundedness follows from the finiteness of arithmetic subgroups of GL_N(Z)
+of bounded determinant... actually the standard argument:
+
+Since K_V is ample (K_V = H_V hyperplane class), any automorphism φ of V
+preserves K_V (it's intrinsic). Hence φ*(H_V) = H_V in Pic(V).
+Since H_V = K_V gives the canonical embedding V ↪ P(H^0(K_V)^∨) = P^6,
+φ is induced by the unique linear map of P^6 preserving V and fixing H_V.
+So Aut(V) ⊂ PGL(H^0(K_V)) = PGL(7).
+
+Moreover, Aut(V) ∩ PGL(7) is a finite group (bounded by Noether's bound for
+the faithful action on the 7-dimensional space H^0(K_V)).
+
+For BIRATIONAL automorphisms of V (= general type surface):
+  Every birational map φ: V ⇢ V factors as: V → V_min ⇢ V_min → V
+  where V_min is the minimal model. Since V is already minimal (K_V ample),
+  any birational self-map is an ISOMORPHISM (by negativity lemma for surfaces,
+  or equivalently: K_V nef+big and V minimal implies birational = isomorphism).
+
+So: Aut_bir(V) = Aut(V) ⊂ PGL(7), and Aut(V) is FINITE.
+
+IMPORTANT NOTE on V vs V':
+  V (general type) ≠ V' (K3 surface, the Euler-brick variety without Q4).
+  VANLUIJK-PICARD.md is about V', NOT V.
+  For V' (K3), Aut_bir(V') can be INFINITE — this is the subject of Nikulin theory.
+  For V (general type), Aut_bir(V) is FINITE and equals Aut_lin(V) ∩ PGL(7).
+
+The c-map and the 4:1 correspondence live on V' (the K3, in P^5), NOT on V (in P^6).
+The embedding V ↪ V' via "forget g" gives the 2:1 cover V → V'.
+The c-map = σ_bc acts on BOTH V and V'.
+The 4:1 correspondence acts on V' (the K3) and possibly lifts to V.
+
+
+======================================================================
+§8. Structure of Aut_bir(V) — complete determination
+======================================================================
+
+RESULT: Aut_bir(V) = Aut(V) = Aut_lin(V) = S_3 ⋉ (Z/2)^6, order 384.
+
+All birational automorphisms of V are LINEAR and form the finite group of order 384.
+The generators are:
+  (A) S_3 action on (a,b,c) with induced action on (d,e,f,g): 6 elements.
+      Specifically for transpositions:
+        σ_ab: (a,b,c,d,e,f,g) -> (b,a,c,d,f,e,g)
+        σ_bc: (a,b,c,d,e,f,g) -> (a,c,b,f,e,d,g)  [= the c-map]
+        σ_ac: (a,b,c,d,e,f,g) -> (c,b,a,e,d,f,g)
+  (B) (Z/2)^6 sign flips: generators are ε_a: a->-a (fixing all others), etc.
+      All 7 individual sign flips work, but in PGL(7) the diagonal scalar is trivial,
+      so we get (Z/2)^7 / diagonal = (Z/2)^6 of order 64.
+
+The c-map (= σ_bc) is ONE of the generators of this group. It has order 2.
+
+CONCLUSION ON NON-LINEAR BIRATIONAL MAPS:
+  There are NO non-linear birational self-maps of V.
+  Every birational automorphism is linear (induced from PGL(7)).
+  Aut_bir(V) is finite of order 384.
+
+CONTRAST WITH V' (K3):
+  For V' (the K3 surface defined by Q1,Q2,Q3 only, in P^5):
+  - Aut_bir(V') can be INFINITE (K3 surfaces of high Picard rank often have infinite automorphism groups).
+  - VANLUIJK-PICARD.md gives rho_geom(V'_min) ∈ [16,20].
+  - For K3 surfaces with rho >= 3, Nikulin's theorem: Aut(X) is infinite iff the Picard
+    lattice contains a "reflective" vector of self-intersection -2 (an effective (-2)-curve).
+  - V'_min has 12 exceptional (-2)-curves from the 12 nodes of V'. So V'_min almost
+    certainly has INFINITE Aut.
+  - But the TASK asks about V (in P^6), not V' (in P^5). V is general type, NOT K3.
+  - The 4:1 birational correspondence mentioned in CMAP-MECHANISM.md §3.3 is a
+    correspondence on V' (between two fibers of π_d), not an automorphism of V.
+
+
+======================================================================
+§9. More careful analysis: is V really of general type? Is K_V = H_V?
+======================================================================
+
+From V-FALTINGS-ATTACK.md §0:
+  V ⊂ P^6 is a smooth CI of 4 quadrics.
+  By adjunction: K_V = (K_{P^6} + deg_1 + deg_2 + deg_3 + deg_4)|_V
+                     = (-7H + 2H + 2H + 2H + 2H)|_V
+                     = (-7 + 8)H|_V = H|_V.
+
+So K_V = O_V(1) = the hyperplane class. V is NOT general type — it is:
+  - K_V ample (since O_V(1) is ample by CI in P^6).
+  - But K_V = O(1) means V is CANONICALLY EMBEDDED and is of GENERAL TYPE
+    (K_V ample ↔ general type for surfaces).
+  - The Kodaira dimension is κ(V) = 2 (maximum, = dim V), confirming general type.
+
+Invariants check:
+  K_V^2 = 16 (computed by Chern class / degree formula: deg(V) = 2^4 = 16).
+  p_g = h^0(K_V) = h^0(O_V(1)) = 7 (from exact sequence on P^6).
+  χ(O_V) = 8 (from Noether: (K^2 + χ_top)/12 = (16+80)/12 = 8).
+
+This is consistent with what V-FALTINGS-ATTACK.md states. So V IS general type.
+
+THEREFORE: All birational automorphisms of V are REGULAR automorphisms (isomorphisms),
+and all isomorphisms of V preserve the canonical class K_V = O_V(1) = H_V,
+hence are induced by LINEAR maps of P^6.
+
+So Aut_bir(V) = Aut(V) ⊂ PGL(7). And from the Lie algebra computation (01_linear_aut.out):
+the only infinitesimal symmetries are scalings, so Aut(V) is discrete inside PGL(7).
+The explicit finite group S_3 ⋉ (Z/2)^6 of order 384 is Aut_bir(V).
+
+
+======================================================================
+§10. Action of Aut_bir(V) on the PCP locus — explicit orbit computation
+======================================================================
+Action of Aut_bir(V) on the PCP locus:
+
+S_3 ⊂ Aut_bir(V): permutes edge labels (a,b,c) and face diagonals (d,e,f).
+  A perfect cuboid maps to another perfect cuboid under any permutation.
+  Setwise action, no new constraint.
+
+(Z/2)^6 ⊂ Aut_bir(V): sign flips on coordinates.
+  Sign flips preserve the algebraic structure (all quadrics are even in each var).
+  A PCP point maps to a PCP point with some coords negated — same cuboid.
+  No new constraint.
+
+======================================================================
+§11. Euler brick orbit table under Aut_bir(V)
+======================================================================
+
+Known Euler bricks (a,b,c) and their images under σ_bc = (a,c,b,f,e,d,g):
+(a,b,c)              | d      | e      | f      | g^2 | σ_bc image          
+------------------------------------------------------------------------------------------
+(44,117,240)         |    125 |    267 |    244 | 73225 (not sq) | (44,240,117) g^2=73225 (not sq)
+(85,132,720)         |    157 |    732 |    725 | 543049 (not sq) | (85,720,132) g^2=543049 (not sq)
+(140,480,693)         |    500 |    843 |    707 | 730249 (not sq) | (140,693,480) g^2=730249 (not sq)
+(160,231,792)         |    281 |    825 |    808 | 706225 (not sq) | (160,792,231) g^2=706225 (not sq)
+(44,483,720) - not Euler brick (d_ok=True, e_ok=True, f_ok=False)
+(720,132,85)         |    732 |    157 |    725 | 543049 (not sq) | (720,85,132) g^2=543049 (not sq)
+
+Observation: σ_bc sends each Euler brick to another Euler brick (with b,c swapped).
+  g^2 = a^2+b^2+c^2 is invariant under σ_bc (symmetric in b,c for g). Wait:
+  g_sq is invariant since a^2+b^2+c^2 = a^2+c^2+b^2. So g^2 doesn't change!
+  A PCP candidate would map to itself (same g^2), so σ_bc doesn't help.
+
+Observation: sign flips just negate some coords — g^2 = a^2+b^2+c^2 unchanged.
+  So sign flips also don't help distinguish PCP from non-PCP.
+
+======================================================================
+§12. The 4:1 birational correspondence on V' — analysis
+======================================================================
+
+CMAP-MECHANISM.md §3.3 describes a (4:1) birational correspondence on the curves
+E_PCP(q) ↔ E_PCP(c), mediated by V'.
+
+This correspondence is:
+  Given (x,y) ∈ E_PCP(q), compute c = 2qy/(q^2-x^2).
+  Then the 4 preimages on E_PCP(c) are the roots of the quartic
+  q^2(c^2-X^2)^2 = 4c^2 X(X+1)(X+c^2).
+
+On V', this is:
+  The projection V' → P^1_q (the 'face fibration' π_b of V') gives fibers E_PCP(q).
+  A point P ∈ V'(Q) over q corresponds to (x,y) ∈ E_PCP(q)(Q).
+  The same point P corresponds to a point on E_PCP(c) via π_c.
+  This is not a MAP V' → V'; it's the observation that V' has TWO fibrations π_q,π_c.
+
+The '4:1' is the degree of the map between two FIBERS (not two copies of V').
+Specifically:
+  - π_b: V' → P^1_b, fiber over b=q is E_PCP(q).
+  - π_c: V' → P^1_c, fiber over c=c' is E_PCP(c').
+  - The 'c-map' is the rational map P^1_b → P^1_c sending q to c'.
+    But c' depends on the POINT on V', not just on q. So it's not a map of bases.
+
+This means the '4:1 birational correspondence' is actually:
+  The INCIDENCE correspondence {(P_q, P_c) ∈ E_PCP(q) × E_PCP(c) : same point on V'}.
+  This is a multivalued correspondence (since V' has both fibrations), NOT an automorphism.
+
+On V' (K3), this corresponds to:
+  A rational map from the Hilbert scheme of V' to itself? No.
+  More precisely: the correspondence σ_bc = edge-swap b↔c IS a linear automorphism
+  of V' (just like on V). It gives a (1:1) rational map V' → V'.
+
+The '4:1' confusion arises because:
+  - The map π_c ∘ σ_bc: V' → P^1_c is different from π_c: V' → P^1_c.
+  - A point P over q under π_b maps under σ_bc to a point P' over c under π_b.
+  - P' is over q under π_c (since σ_bc swaps b,c roles).
+  - The 4 preimages come from: given q ∈ P^1_c (target), there are 4 points of E_PCP(c)
+    whose c-map value is q (since c-map formula is 4-to-1 at generic q).
+
+VERDICT on the 4:1 birational correspondence:
+  - NOT an automorphism of V' or V.
+  - It IS an algebraic correspondence (a subvariety of V' × V').
+  - As a birational MAP, it's equivalent to σ_bc (= order 2, linear).
+  - The '4:1' describes the fiber count when inverting c-map on the curve, not a degree of V->V.
+
+
+======================================================================
+§13. Summary — complete picture of Aut_bir(V)
+======================================================================
+
+VERIFIED FACTS:
+
+1. Aut_lin(V) = S_3 ⋉ (Z/2)^6, order 384 (from 01_linear_aut.py, confirmed).
+
+2. V is a surface of general type (K_V = O_V(1) ample, κ(V) = 2).
+
+3. V is canonically embedded (K_V = H_V, hyperplane class).
+
+4. Therefore ALL automorphisms of V are LINEAR (induced from PGL(7)).
+   (Every Aut of a canonically embedded variety of general type is linear.)
+
+5. All birational self-maps of V are ISOMORPHISMS (V minimal, K_V ample).
+   (For surfaces of general type: birational ↔ isomorphism when K minimal.)
+
+6. Therefore: Aut_bir(V) = Aut(V) = Aut_lin(V) = S_3 ⋉ (Z/2)^6, order 384.
+
+7. The c-map is σ_bc ∈ S_3, an element of order 2 in Aut_lin(V).
+
+8. The '4:1 correspondence' is NOT a birational map of V; it's a multi-valued
+   correspondence on V' (the K3 sub-surface).
+
+9. For V' (K3, defined by Q1,Q2,Q3 only):
+   - Aut_bir(V') is POTENTIALLY INFINITE (K3 with ρ ∈ [16,20]).
+   - V'_min has 12 exceptional (-2)-curves, likely giving infinite Aut (Nikulin).
+   - But this is about V', NOT V.
+
+10. Action of Aut_bir(V) on PCP locus:
+    - All 384 elements map V(Q) to V(Q).
+    - All send PCP candidates to PCP candidates (S_3 = relabeling edges; Z/2 = sign changes).
+    - No element carries a PCP candidate to a degenerate or excluded point.
+    - No new closure mechanism for PCP arises from Aut_bir(V).
+

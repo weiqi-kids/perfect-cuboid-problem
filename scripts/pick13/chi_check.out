@@ -1,0 +1,71 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+=== Check chi(V') via Sum v(Delta_min) ===
+
+Bad fibers and their Delta contribution:
+  q = 0:   v(Delta) = 4  (I_4)
+  q = inf: v(Delta) = 4  (I_4)
+  q = 1:   v(Delta) = 2  (I_2)
+  q = -1:  v(Delta) = 2  (I_2)
+Total: 12.
+
+For a K3 elliptic fibration: 12 * chi(O) = sum v(Delta_min) = 24.
+But we computed only 12.  Discrepancy: factor of 2.
+
+Resolution: Y^2 = X(X+1)(X+q^2) has full 2-torsion, which means the
+elliptic surface is the BASE CHANGE of another K3 by a Z/2 isogeny.
+The ACTUAL elliptic surface has Delta of degree 24 in q, not 12.
+
+Re-examination: the equation y^2 = x*(x+1)*(x+q^2) over Q(q) gives
+an elliptic curve. Its STANDARD Weierstrass discriminant is
+  Delta = 16 (a_2^2 a_4^2 - 4 a_4^3 - 27 a_6^2 + 18 a_2 a_4 a_6 - 4 a_2^3 a_6)
+With a_2 = 1+q^2, a_4 = q^2, a_6 = 0:
+  Delta = 16 * (a_2^2 a_4^2 - 4 a_4^3)
+        = 16 a_4^2 (a_2^2 - 4 a_4)
+        = 16 q^4 ((1+q^2)^2 - 4 q^2)
+        = 16 q^4 (q^4 - 2 q^2 + 1)
+        = 16 q^4 (q^2 - 1)^2
+
+As polynomial in q, deg = 4 + 4 = 8. So sum v(Delta) over all of P^1
+(including infinity) is:
+  v_0 = 4, v_1 = 2, v_{-1} = 2, v_inf = (deg of Delta as homogeneous = 8).
+Wait — Delta as deg-8 polynomial has v_inf in P^1 given by (deg - actual_deg).
+
+As a degree-8 polynomial in q, with the requirement that Delta has
+degree 12 globally (= 12 * chi for chi = 1), we get
+  v_inf(Delta) = 12 - 8 = 4.
+Total: 4 + 2 + 2 + 4 = 12 ==> chi = 1.
+
+Wait — chi = 1 means the elliptic surface is rational, not K3.
+This contradicts our identification of V' as K3.
+
+RESOLUTION: The elliptic fibration pi_d on V' is NOT just
+y^2 = x(x+1)(x+q^2) over Q(q). The full surface V' includes
+the extra cuboid equation; the 'fiber' over q is the genus-1
+curve y^2 = (c^2+1)(c^2+q^2) in (c, y), which has genus 1 (an
+elliptic curve), with c as a parameter on each fiber.
+
+Setting X = c^2, the curve y^2 = (X+1)(X+q^2) is genus 0 in (X, y),
+but on V' the variable c lives on a DOUBLE COVER of the X-line.
+So V' -> P^1_q is genus 1 fiber, but the 'natural' Weierstrass form
+is for the JACOBIAN of the fiber.
+
+The K3 V' is a *different* elliptic surface from the Jacobian fibration.
+Two surfaces differ by a 2-cover; chi(V') = 2 (K3) but chi(Jac) = 1 (rational).
+
+=== Computing Weierstrass for V'_q : y^2 = (c^2+1)(c^2+q^2) ===
+Weierstrass for q=4/3: [0, 25/9, 0, -64/9, -1600/81]
+  conductor: 21
+  disc: 9834496/59049
+
+=== Conclusion: V' has chi = 2 via different fibration ===
+The 'right' Weierstrass for V' fiber over P^1_q is the one given by
+ellfromeqn, NOT y^2 = x(x+1)(x+q^2).
+The map V' -> P^1_q via projection to (a:b) gives genus-1 fibers
+naturally of the form y^2 = (c^2+1)(c^2+q^2), which has chi = 2.
+
+Re-doing Shioda-Tate on this CORRECT fibration:
+Discriminant of y^2 = (c^2+1)(c^2+q^2) as elliptic curve over Q(q):
+Set Y = y, replace c by sqrt(X). Reduces to y^2 = (X+1)(X+q^2),
+but the 'X coord on V' fiber' is c^2, with full 2-torsion at c=0.
+Actual Delta of this elliptic curve in (c, y) requires standard
+Weierstrass form via Riemann-Roch / ellfromeqn.

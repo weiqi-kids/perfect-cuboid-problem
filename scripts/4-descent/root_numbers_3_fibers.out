@@ -1,0 +1,26 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+==============================================
+Root number / parity sharpening for 3 fibers
+==============================================
+
+Fiber (63,38):
+  ellrank rk range: [1, 1]
+  root number w = -1  (analytic rank parity ODD)
+  PARITY-FILTERED possible ranks: [1]
+  ==> rk(E_Hm) = 1  RIGOROUSLY SHARPENED via parity
+
+Fiber (73,24):
+  ellrank rk range: [1, 3]
+  root number w = -1  (analytic rank parity ODD)
+  PARITY-FILTERED possible ranks: [1, 3]
+  ==> rk(E_Hm) still in [1, 3]; need more
+
+Fiber (88,35):
+  ellrank rk range: [0, 0]
+  root number w = 1  (analytic rank parity EVEN)
+  PARITY-FILTERED possible ranks: [0]
+  ==> rk(E_Hm) = 0  RIGOROUSLY SHARPENED via parity
+
+--- For reference: (61,38) E_Hm ---
+  w(E_Hm of (61,38)) = 1  (parity = EVEN)
+  rk range [0, 2] + EVEN parity ==> rk ∈ {0, 2} (already known)

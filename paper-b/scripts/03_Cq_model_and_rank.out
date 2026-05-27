@@ -1,0 +1,39 @@
+C_q : W^2 = H(u), H = 5*x^5 - 16*x^4 + 40*x^3 - 64*x^2 + 80*x
+deg H = 5   (deg 5 -> genus 2)
+squarefree? 1
+disc(H) = [2, 36; 3, 2; 5, 2]
+
+=== a_p(C_q) vs a_p(X+)+a_p(X-), good p <= 200 ===
+matched 43 / 43 good primes in [3,200]
+mismatches: []
+
+=== full Frobenius char-poly check via #C_q(F_p) and #C_q(F_{p^2}) ===
+p : a1(curve) a1(X+X-) | a2(curve) a2(X+X-) | match
+p=7 : 4 4 | 14 14 | 1
+p=11 : -8 -8 | 38 38 | 1
+p=13 : 4 4 | 14 14 | 1
+p=17 : -4 -4 | 22 22 | 1
+p=19 : -8 -8 | 54 54 | 1
+p=23 : -4 -4 | 46 46 | 1
+p=29 : -4 -4 | 62 62 | 1
+p=31 : 0 0 | -2 -2 | 1
+p=37 : 4 4 | 62 62 | 1
+p=41 : -12 -12 | 118 118 | 1
+p=43 : 20 20 | 182 182 | 1
+p=47 : 4 4 | 62 62 | 1
+FULL char-poly matched 12 / 12 good primes [7,47]
+
+=== ranks of X+ (120a2) and X- (80a1) ===
+ellrank(X+) = [0, 0, 0, []]   [lo,hi,...] -> rank 0 if [0,0,...]
+ellrank(X-) = [0, 0, 0, []]
+torsion(X+): order 8 structure [4, 2]
+torsion(X-): order 4 structure [2, 2]
+L(X+,1) = 1.2694942779633329898464064270624913544
+L(X-,1) = 1.0094529099892116077920072199994662325
+analytic rank X+ = 0
+analytic rank X- = 0
+
+=== |Jac(C_q)(Q)| = |X+(Q)| * |X-(Q)| (both finite, rank 0) ===
+|X+(Q)| = |torsion(X+)| = 8
+|X-(Q)| = |torsion(X-)| = 4
+=> |Jac(C_q)(Q)| = |X+(Q)|*|X-(Q)| = 32 (finite, rank 0)

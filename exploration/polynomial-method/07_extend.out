@@ -1,0 +1,45 @@
+p=3 NTbase=0 *** TRIVIAL ***
+p=5 NTbase=0 *** TRIVIAL ***
+p=7 NTbase=0 *** TRIVIAL ***
+p=11 NTbase=0 *** TRIVIAL ***
+p=13 NTbase=96
+p=17 NTbase=384
+p=19 NTbase=0 *** TRIVIAL ***
+p=23 NTbase=352
+p=29 NTbase=2016
+p=31 NTbase=1080
+p=37 NTbase=2880
+p=41 NTbase=4800
+p=43 NTbase=3024
+p=47 NTbase=4600
+p=53 NTbase=9984
+p=59 NTbase=8352
+p=61 NTbase=14880
+p=67 NTbase=14256
+p=71 NTbase=17920
+p=73 NTbase=24192
+p=79 NTbase=25272
+p=83 NTbase=29520
+p=89 NTbase=50688
+p=97 NTbase=62208
+p=101 NTbase=62400
+p=103 NTbase=58752
+p=107 NTbase=61056
+p=109 NTbase=78624
+p=113 NTbase=102144
+p=127 NTbase=113400
+p=131 NTbase=121680
+p=137 NTbase=172992
+p=139 NTbase=149040
+p=149 NTbase=206016
+p=151 NTbase=194400
+p=157 NTbase=248352
+p=163 NTbase=233280
+p=167 NTbase=265600
+p=173 NTbase=342624
+p=179 NTbase=320400
+p=181 NTbase=377280
+p=191 NTbase=402040
+p=193 NTbase=474624
+p=197 NTbase=470400
+p=199 NTbase=456192

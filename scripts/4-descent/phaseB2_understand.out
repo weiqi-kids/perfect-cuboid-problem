@@ -1,0 +1,36 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+=== Test 1: E: y^2 = x(x-1)(x-2), rank 0, torsion Z/2 x Z/2 ===
+E1 [a..]: [0, -3, 0, 2, 0]
+Torsion: [4, [2, 2], [[2, 0], [0, 0]]]
+ellrank(E1, 4) = [0, 0, 0, []]
+ell2cover(E1) count = 2
+  cover 1: x^4 + 6*x^2 + 1
+  cover 2: x^4 + 4
+
+=== Test 2: E: y^2 = x(x-1)(x+1), rank 0 ===
+E2 [a..]: [0, 0, 0, -1, 0]
+Torsion: [4, [2, 2], [[-1, 0], [0, 0]]]
+ellrank(E2, 4) = [0, 0, 0, []]
+ell2cover(E2) count = 2
+  cover 1: x^4 + 6*x^2 + 1
+  cover 2: x^4 + 4
+
+=== Test 3: E: y^2 = x(x-4)(x+1), check rank ===
+E3 [a..]: [0, -3, 0, -4, 0]
+Torsion: [4, [2, 2], [[-1, 0], [0, 0]]]
+ellrank(E3, 4) = [0, 0, 0, []]
+ell2cover(E3) count = 2
+  cover 1: x^4 + 3*x^2 + 1
+  cover 2: x^4 + 2*x^3 + 3*x^2 + 2*x + 2
+
+=== Test 4: E: y^2 = x(x-7)(x+7), rank 1, full 2-tors ===
+Torsion: [4, [2, 2], [[-7, 0], [0, 0]]]
+ellrank(E4, 4) = [1, 1, 0, [[25, 120]]]
+ell2cover(E4) count = 3
+  cover 1: x^4 + 42*x^2 + 49
+  cover 2: 4*x^4 + 49
+  cover 3: 2*x^4 - 5*x^3 + 6*x^2 + x + 4
+
+=== Interpretation guide ===
+ell2cover docs: returns 2-coverings up to equivalence
+For E_Hm: 4 covers means dim S^2(E/Q)/E[2](Q) = log2(?)

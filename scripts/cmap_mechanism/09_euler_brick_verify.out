@@ -1,0 +1,55 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== Three-face squareness check on all c-map edges from 30 seeds ===
+Columns: q | gen# | c (raw) | canon(c) | F1=1+q^2 | F2=q^2+c^2 | F3=1+c^2 | LD=1+q^2+c^2
+
+20/21 G1 c=48/55  F1=1 F2=1 F3=1 LD=0
+7/24 G1 c=-20/99  F1=1 F2=1 F3=1 LD=0
+11/60 G1 c=-39/80  F1=1 F2=1 F3=1 LD=0
+11/60 G2 c=-17/144  F1=1 F2=1 F3=1 LD=0
+48/55 G1 c=-20/21  F1=1 F2=1 F3=1 LD=0
+20/99 G1 c=-7/24  F1=1 F2=1 F3=1 LD=0
+96/247 G1 c=-572/315  F1=1 F2=1 F3=1 LD=0
+13/84 G1 c=-498212/2144115  F1=1 F2=1 F3=1 LD=0
+39/80 G1 c=-11/60  F1=1 F2=1 F3=1 LD=0
+17/144 G1 c=-11/60  F1=1 F2=1 F3=1 LD=0
+17/144 G2 c=-65/2112  F1=1 F2=1 F3=1 LD=0
+104/153 G1 c=-195/748  F1=1 F2=1 F3=1 LD=0
+104/153 G2 c=-55/1512  F1=1 F2=1 F3=1 LD=0
+44/117 G1 c=-11/60  F1=1 F2=1 F3=1 LD=0
+189/340 G1 c=89628/15725  F1=1 F2=1 F3=1 LD=0
+60/91 G1 c=4720/1881  F1=1 F2=1 F3=1 LD=0
+225/272 G1 c=165/52  F1=1 F2=1 F3=1 LD=0
+132/475 G1 c=-14832/5425  F1=1 F2=1 F3=1 LD=0
+252/275 G1 c=-48/55  F1=1 F2=1 F3=1 LD=0
+252/275 G2 c=-48/575  F1=1 F2=1 F3=1 LD=0
+140/171 G1 c=-1107743/1309176  F1=1 F2=1 F3=1 LD=0
+85/132 G1 c=-17/144  F1=1 F2=1 F3=1 LD=0
+108/725 G1 c=-711/3080  F1=1 F2=1 F3=1 LD=0
+108/725 G2 c=1881/4720  F1=1 F2=1 F3=1 LD=0
+57/176 G1 c=-855/832  F1=1 F2=1 F3=1 LD=0
+135/352 G1 c=-153/104  F1=1 F2=1 F3=1 LD=0
+27/364 G1 c=-120/209  F1=1 F2=1 F3=1 LD=0
+27/364 G2 c=-3015/1232  F1=1 F2=1 F3=1 LD=0
+25/312 G1 c=-58425/300608  F1=1 F2=1 F3=1 LD=0
+28/195 G1 c=-214368/237575  F1=1 F2=1 F3=1 LD=0
+52/165 G1 c=-832/855  F1=1 F2=1 F3=1 LD=0
+52/165 G2 c=272/225  F1=1 F2=1 F3=1 LD=0
+160/231 G1 c=-20/99  F1=1 F2=1 F3=1 LD=0
+95/168 G1 c=47975/107712  F1=1 F2=1 F3=1 LD=0
+105/208 G1 c=-8820/7579  F1=1 F2=1 F3=1 LD=0
+52/675 G1 c=-741/1540  F1=1 F2=1 F3=1 LD=0
+36/323 G1 c=-14185941/5537740  F1=1 F2=1 F3=1 LD=0
+195/748 G1 c=52/165  F1=1 F2=1 F3=1 LD=0
+195/748 G2 c=135/352  F1=1 F2=1 F3=1 LD=0
+195/748 G3 c=-65/2112  F1=1 F2=1 F3=1 LD=0
+
+=== Summary ===
+Total c-images: 40
+F1 always square (Pythag-q): automatic
+F3 always square (algebraic identity): automatic
+F2 square (third face): 40/40
+LD square (PCP candidate): all 0/40
+
+F2-square FAILURES (c-map output NOT Euler brick):
+
+=== Detailed check on the exceptions ===

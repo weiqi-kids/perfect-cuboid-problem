@@ -1,0 +1,62 @@
+[0;31m  ***   Warning: new stack size = 3500000000 (3337.860 Mbytes).[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting ',': 
+[0;31m  ***   ...[0;35m],[73,12],[78,25],[84,79][0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+... skipping file 'attack_ambig17.gp'
+[0;31m[0;31m  ***   syntax error, unexpected ',', expecting end of file: [0;35m[86,15]
+[0;31m  ***   [0;35m,[89,4],[92,13],[93,80],[94,89],[95,82]
+[0;31m[0;31m  ***   ^---------------------------------------[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,#AMBIG[0;35m,
+[0;31m[0;31m  ***                 ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mpair=AMBIG[[0;35mi]
+[0;31m[0;31m  ***                            ^--
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mmm=pair[0;35m[1];nn=pair[2]
+[0;31m[0;31m  ***                        ^--------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mEmin=[0;35mellminimalmodel(E,&v)
+[0;31m[0;31m  ***                      ^---------------------
+  *** ellminimalmodel: incorrect type in ellminimalmodel (E / number field) (t_VEC).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mcond=[0;35mellglobalred(Emin)[1]
+[0;31m[0;31m  ***                      ^---------------------
+  *** ellglobalred: incorrect type in checkell (t_POL).[0m
+===== ambig (mm,nn) cond=cond
+  ellanalyticrank -> rank=-1 L^(rank)=0.E-38 in 0 ms
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(arank==0[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(arank==2[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+  ellrank(_,5) -> -1..-1 ngens=0 in 0 ms
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(#rk[4]>=2[0;35m,
+[0;31m[0;31m  ***               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ',', expecting end of file:[0;35m ,
+[0;31m[0;31m  ***                                                        ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(arank==1[0;35m,
+[0;31m[0;31m  ***              ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(arank<0[0;35m,
+[0;31m[0;31m  ***             ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mrite("ambig17_attack.txt"[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ',', expecting end of file: [0;35mmm
+[0;31m  ***   [0;35m," ",nn," ",q," ",cond," ",arank," ",lval," 
+[0;31m[0;31m  ***   ^--------------------------------------------[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+Done.

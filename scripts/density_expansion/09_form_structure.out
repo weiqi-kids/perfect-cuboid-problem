@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== Dehomogenized F(t), n=1 ===
+  F(t) = 2*t^7 - 14*t^5 + 14*t^3 - 2*t
+  factorization over Q:
+[t - 1, 1; t, 1; t + 1, 1; t^2 - 2*t - 1, 1; t^2 + 2*t - 1, 1]
+
+  gcd(F,F') = 2   (constant => F squarefree => binary form has nonzero discriminant)
+  deg F = 7
+
+=== quartic m^4-6m^2n^2+n^4 irreducible over Q? splits over Q(sqrt2) ===
+  factor over Q: [t^2 - 2*t - 1, 1; t^2 + 2*t - 1, 1]
+  factor over Q(sqrt2): Mat([Mod(0, 1), 1])
+  roots: t = +-(1+-sqrt2)  => irreducible /Q, splits into 2 quadratics /Q(sqrt2)
+
+  CONCLUSION: F(m,n) is a separable (squarefree) binary form of degree 8,
+  product of distinct irreducible forms m, n, m-n, m+n, (m^4-6m^2n^2+n^4).
+  No repeated factor => nonzero discriminant => Greaves/Browning/Ekedahl sieve applies.
+EXIT=ok

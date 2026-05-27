@@ -1,0 +1,56 @@
+  ***   Warning: new stack size = 800000000 (762.939 Mbytes).
+=================================================================
+Step 4: Quadratic twist structure
+=================================================================
+
+Family: E_{m,n}: Y^2 = X^3 + (u^2+v^2) X^2 + (uv)^2 X
+  with u = 2mn, v = m^2 - n^2.
+  c4 = 16 (u^4 - u^2 v^2 + v^4)
+  c6 = -32 (u^2+v^2) (2(u^2+v^2)^2 - 9 (uv)^2)
+     = -32 (u^2+v^2) (2 u^4 - 5 u^2 v^2 + 2 v^4)
+     = -32 (u^2+v^2)(2 u^2 - v^2)(u^2 - 2 v^2)  ... let's check
+
+2(u^2+v^2)^2 - 9 (uv)^2 = 2*u^4 - 5*v^2*u^2 + 2*v^4
+(2u^2 - v^2)(u^2 - 2v^2) = 2*u^4 - 5*v^2*u^2 + 2*v^4
+
+--- j-invariant: j = c4^3 / disc = 256 (u^4-u^2v^2+v^4)^3 / ((uv)^2 (u^2-v^2)^2) ---
+
+  ***   at top-level: ...u^2+v^2,0,u^2*v^2,0]);jE=ellj(E);printf("(m,n)
+  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).
+... skipping file 'family_lfunction_step4.gp'
+
+--- All j-invariants are different. So no two E_{m,n} are isomorphic over Q.
+--- But they all share a common 'mod-p reduction pattern'. Why?
+
+--- Map (m,n) -> j(E_{m,n}) as function of t = v/u = (m^2-n^2)/(2mn) ---
+
+j(q) = 256 (1 - q^2 + q^4)^3 / (q^2 (1 - q^2)^2)
+
+  ***   at top-level: ...u^2+v^2,0,u^2*v^2,0]);jE=ellj(E);match=if(jq==
+  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).
+
+--- Conclusion: family is parameterized by q on j-line via
+    j(q) = 256 (1 - q^2 + q^4)^3 / (q^2 (1-q^2)^2)
+
+This is the MODULAR CURVE X_0(N)/something. Let's check which one.
+
+Recall the Legendre family E_lambda: y^2 = x(x-1)(x-lambda) has
+    j(lambda) = 256 (1 - lambda + lambda^2)^3 / (lambda^2 (1-lambda)^2)
+
+Substituting lambda = q^2:
+    j(q^2) = 256 (1 - q^2 + q^4)^3 / (q^4 (1 - q^2)^2)
+
+Compare: j(E_{m,n}) = 256 (1 - q^2 + q^4)^3 / (q^2 (1 - q^2)^2)
+
+Ratio: j(E_{m,n}) / j(Legendre(q^2)) = q^2.
+These are NOT equal. But our E_{m,n} is X(X+1)(X+q^2),
+which is the Legendre form with lambda = -q^2 (shifted).
+
+--- E_PCP(q): Y^2 = X(X+1)(X+q^2), j-invariant directly ---
+  ***   at top-level: ...([0,1+q^2,0,q^2,0]);jpcp=ellj(Epcp);u=2*m*n;v=
+  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).
+
+(j(E_PCP) and j(E_int) should be EQUAL since they differ by integer rescaling.)

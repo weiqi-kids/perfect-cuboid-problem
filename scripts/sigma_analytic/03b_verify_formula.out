@@ -1,0 +1,23 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== sigma_formula vs sigma_PARI ===
+(  4,  3): formula=2.7471700  PARI=2.7471700  |diff|=1.18 e-38
+( 11,  2): formula=3.0702404  PARI=3.0702404  |diff|=0.e-37
+( 16,  3): formula=3.9581080  PARI=3.9581080  |diff|=0.e-37
+( 18,  7): formula=3.5154417  PARI=3.5154417  |diff|=1.18 e-38
+(  2,  1): formula=2.7216976  PARI=2.7216976  |diff|=0.e-37
+( 64,  9): formula=3.3407875  PARI=3.3407875  |diff|=1.18 e-38
+( 32,  9): formula=3.7005692  PARI=3.7005692  |diff|=2.35 e-38
+(256,121): formula=4.6139648  PARI=4.6139648  |diff|=2.35 e-38
+(265,114): formula=3.9814035  PARI=3.9814035  |diff|=0.e-37
+(304,135): formula=4.5525742  PARI=4.5525742  |diff|=0.e-37
+(233, 80): formula=4.4537679  PARI=4.4537679  |diff|=0.e-37
+
+=== (256,121) anatomy ===
+a=m^2-n^2=50895 = [3, 3; 5, 1; 13, 1; 29, 1]
+b=2mn=61952 = [2, 9; 11, 2]
+c=a^2-b^2=-1247749279 = [-1, 1; 7, 4; 47, 1; 11057, 1]
+F5=m^2-2mn-n^2=-11057 = [-1, 1; 11057, 1]
+F6=m^2+2mn-n^2=112847 = [7, 4; 47, 1]
+c = F5*F6 ? 1
+powerful part of F6 = 2401

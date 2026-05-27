@@ -1,0 +1,37 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Tight bound test: dim Sel_2 vs various Heron-based predictors =====
+
+Define:
+  L1 = 2 + ω(sf(P*Q))
+  L2 = 2 + ω(2 * m * n * sf(P*Q))
+  L3 = 2 + ω(2 * (m^2-n^2) * sf(P*Q))
+
+(m,n)  dim_Sel2  L1  L2  L3
+
+Tested 737 fibers m <= 60
+Max dim Sel_2 = 5
+Max L1 (= 2 + ω(sf(PQ))) = 7
+Max L2 (= 2 + ω(2mn·sf(PQ))) = 11
+Max L3 (= 2 + ω(2(m²-n²)·sf(PQ))) = 11
+Violations: L1: 5/737  L2: 0/737  L3: 0/737
+
+===== Test on known rank-3 and rank-4 fibers =====
+(m,n)   dim_Sel2  L1  L2  L3  L3-dim_Sel2
+[22, 17]  5       6  9  10  5
+[35, 22]  5       5  9  9  4
+[37, 26]  5       4  7  8  3
+[40, 29]  5       5  8  9  4
+[40, 33]  5       5  9  8  3
+[99, 28]  6       5  9  8  2
+[118, 25]  6       5  8  10  4
+[174, 83]  6       6  10  10  4
+[176, 63]  6       5  9  8  2
+[181, 38]  6       7  10  12  6
+[205, 66]  6       3  8  6  0
+[209, 72]  6       7  11  10  4
+[216, 185]  6       6  10  9  3
+[221, 202]  6       6  10  10  4
+[261, 52]  6       4  8  8  2
+[273, 86]  6       4  9  8  2
+[578, 319]  6       6  10  12  6
+[217, 24]  7       4  8  7  0

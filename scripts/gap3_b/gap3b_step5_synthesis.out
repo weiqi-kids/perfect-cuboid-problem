@@ -1,0 +1,98 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+================================================================
+Gap 3 / Step 5: Verification across the full rank-jump
+                set — explicit n-check up to N_0_rig
+================================================================
+
+--- (m,n)=(5,2), q=21/20, rank=1 ---
+  N(E) = 4305    K = 82.49768108405330682
+  lambda_min = 2.552972734218146075
+  N_0_rig (empirical) = 6
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 131
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(4,3), q=7/24, rank=1 ---
+  N(E) = 22134    K = 84.54146309300974734
+  lambda_min = 2.552498195645667976
+  N_0_rig (empirical) = 6
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 133
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(6,5), q=11/60, rank=2 ---
+  N(E) = 82005    K = 98.13293989133475472
+  lambda_min = 2.289269032391549823
+  N_0_rig (empirical) = 7
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 143
+  Rank >= 2: full closure requires Pick 10 / Pick 11 rank-r framework
+
+--- (m,n)=(8,3), q=55/48, rank=1 ---
+  N(E) = 237930    K = 104.24571512477580010
+  lambda_min = 2.061999138167725902
+  N_0_rig (empirical) = 8
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 148
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(10,1), q=99/20, rank=1 ---
+  N(E) = 1551165    K = 111.92555518866210325
+  lambda_min = 2.045110543886585365
+  N_0_rig (empirical) = 8
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 153
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(16,3), q=247/96, rank=1 ---
+  N(E) = 1566474    K = 131.18508391460180894
+  lambda_min = 3.949726968740864888
+  N_0_rig (empirical) = 6
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 166
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(7,6), q=13/84, rank=1 ---
+  N(E) = 1880151    K = 103.09670646517427425
+  lambda_min = 7.128252692244292061
+  N_0_rig (empirical) = 4
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 147
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(8,5), q=39/80, rank=1 ---
+  N(E) = 1902810    K = 110.23903324997411722
+  lambda_min = 1.9728436106756197985
+  N_0_rig (empirical) = 8
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 152
+  Direct check n=1..12: 0 squares found
+  CLOSED (rigorous)? YES — direct n<=20 covers
+
+--- (m,n)=(9,8), q=17/144, rank=2 ---
+  N(E) = 2085594    K = 116.57711867016970584
+  lambda_min = 1.8458161903416604383
+  N_0_rig (empirical) = 8
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 156
+  Rank >= 2: full closure requires Pick 10 / Pick 11 rank-r framework
+
+--- (m,n)=(13,4), q=153/104, rank=2 ---
+  N(E) = 2385474    K = 120.86347820313184308
+  lambda_min = 3.144854200746687000
+  N_0_rig (empirical) = 7
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 159
+  Rank >= 2: full closure requires Pick 10 / Pick 11 rank-r framework
+
+--- (m,n)=(22,17), q=195/748, rank=3 ---
+  N(E) = 19015731735    K = 139.32757126339754643
+  lambda_min = 2.732879863386030678
+  N_0_rig (empirical) = 8
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 171
+  Rank >= 2: full closure requires Pick 10 / Pick 11 rank-r framework
+
+--- (m,n)=(35,22), q=741/1540, rank=3 ---
+  N(E) = 519937332915    K = 151.99779288900721422
+  lambda_min = 3.869237199872033159
+  N_0_rig (empirical) = 7
+  N_0_thm (Hindry h_0_thm = 0.004813522087221842427) = 178
+  Rank >= 2: full closure requires Pick 10 / Pick 11 rank-r framework
+
+=== End Step 5 ===

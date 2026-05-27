@@ -1,0 +1,18 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+
+========== (61,38)  E_Hm ==========
+E_Hm: a4=-4201713691887954766021162410 a6=103564307677747011646913552825626935447972
+Conductor: 148190386641437910
+
+ellrank effort=2:
+  result = [0, 2, 0, []]  (t=0.24900000000000000000000000000000000000s)
+
+ellrank effort=4:
+  result = [0, 2, 0, []]  (t=1.0360000000000000000000000000000000000s)
+
+ellanalyticrank (modular root-number / leading term check):
+  ellanalyticrank: ABORTED after 2+ min (conductor 1.48e17 too large for naive L-function evaluation)
+
+(73,24) E_Hm not attempted — same effort=4 result expected; see h_q_analysis.out
+
+=== DONE SHARPEN (partial: ellrank done, ellanalyticrank skipped) ===

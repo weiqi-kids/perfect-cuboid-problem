@@ -1,0 +1,32 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+fibers scanned (gcd(m,n)=1, m+n odd, m<=400): 32495
+
+=== MAX pairwise gcd over all fibers (the bounded common factor) ===
+m , n : max gcd = 1   at (m,n)=[2, 1]
+m , m-n : max gcd = 1   at (m,n)=[2, 1]
+m , m+n : max gcd = 1   at (m,n)=[2, 1]
+m , m^2-2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m , m^2+2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+n , m-n : max gcd = 1   at (m,n)=[2, 1]
+n , m+n : max gcd = 1   at (m,n)=[2, 1]
+n , m^2-2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+n , m^2+2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m-n , m+n : max gcd = 1   at (m,n)=[2, 1]
+m-n , m^2-2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m-n , m^2+2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m+n , m^2-2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m+n , m^2+2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+m^2-2mn-n^2 , m^2+2mn-n^2 : max gcd = 1   at (m,n)=[2, 1]
+
+=== 2-adic valuation distribution of each form (v2 = 0,1,...,7 ; col1=v2=0) ===
+m : [16182, 8151, 4014, 2044, 1096, 464, 224, 192]
+n : [16313, 8095, 4047, 2027, 1016, 515, 269, 141]
+m-n : [32495, 0, 0, 0, 0, 0, 0, 0]
+m+n : [32495, 0, 0, 0, 0, 0, 0, 0]
+m^2-2mn-n^2 : [32495, 0, 0, 0, 0, 0, 0, 0]
+m^2+2mn-n^2 : [32495, 0, 0, 0, 0, 0, 0, 0]
+
+NOTE: m+n odd => exactly one of m,n is even. So among {m,n,m-n,m+n}
+the even one is m or n (whichever), and m-n,m+n are BOTH odd.
+F5=m^2-2mn-n^2, F6=m^2+2mn-n^2 are BOTH odd (since one of m^2,n^2 odd, 2mn even).

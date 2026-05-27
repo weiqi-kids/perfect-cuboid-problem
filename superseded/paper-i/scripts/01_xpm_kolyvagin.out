@@ -1,0 +1,15 @@
+=== Model set A (COLEMAN-P1-RIGOROUS.md §2.2) ===
+X+  [0,1,0,-20,0]   cond=120  ar=0  tors=[4, 2]  ellrank=[0, 0, 0, []]  L(1)=1.269494
+X-  [0,0,0,-7,6]    cond=80  ar=0  tors=[2, 2]  ellrank=[0, 0, 0, []]  L(1)=1.009453
+ellidentify X+ : 120a2
+ellidentify X- : 80a1
+
+=== Model set B (PCP-COMPLETE-PROOF-v2.md §6.5) ===
+X+  x^3+4x^2-320x   cond=120  ar=0  tors=[4, 2]  ellrank=[0, 0, 0, []]  L(1)=1.269494
+X-  x^3-36x^2+320x  cond=80  ar=0  tors=[2, 2]  ellrank=[0, 0, 0, []]  L(1)=1.009453
+ellidentify X+ : 120a2
+ellidentify X- : 80a1
+
+=== Are A and B isomorphic over Q? (same curve, different model) ===
+X+: j(A)=3631696/2025  j(B)=3631696/2025  equal=1
+X-: j(A)=148176/25  j(B)=148176/25  equal=1

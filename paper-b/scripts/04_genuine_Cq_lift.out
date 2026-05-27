@@ -1,0 +1,18 @@
+genuine quotient C_q^gen : w^2 = 25*x^5 - 80*x^4 + 200*x^3 - 320*x^2 + 400*x
+
+=== images of the 16 known C-points under pi ===
+distinct images (u,w): [[1, -15], [1, 15], [4, -120], [4, 120]]
+count = 4  (16 C-points collapse to these under the 2:1 map)
+  (u,w)=[1, -15] on C_q^gen? 1
+  (u,w)=[1, 15] on C_q^gen? 1
+  (u,w)=[4, -120] on C_q^gen? 1
+  (u,w)=[4, 120] on C_q^gen? 1
+
+=== search C_q^gen(Q): u=n/d, |n|,d<=2000, H_gen(u) a square ===
+affine points with u not in {0,1,4} up to height 2000: [[0, 0]]
+(empty => only u in {0,1,4} up to this height)
+
+=== lift C_q^gen(Q)-points to C(Q) ===
+lifted C(Q) points: [[-2, -6, -10], [-2, -6, 10], [-2, 6, -10], [-2, 6, 10], [-1, -3, -5], [-1, -3, 5], [-1, 3, -5], [-1, 3, 5], [1, -3, -5], [1, -3, 5], [1, 3, -5], [1, 3, 5], [2, -6, -10], [2, -6, 10], [2, 6, -10], [2, 6, 10]]
+|C(Q)| (these 16) = 16
+all degenerate: b=q^2-4 in [-3, 0] (all <= 0)

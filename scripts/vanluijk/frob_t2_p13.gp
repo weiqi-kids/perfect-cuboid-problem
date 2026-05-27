@@ -1,0 +1,42 @@
+\\ Compute t_2 at p=13 (q=169, 13^6 ~ 4.8M tuples). May be slow but doable.
+
+countV_q(p, k) = {
+  my(q = p^k, N = 0);
+  my(T = ffinit(p, k), xx = ffgen(T, 'xx));
+  my(elems = vector(q));
+  for(i = 0, p-1,
+    for(j = 0, p-1,
+      elems[i*p + j + 1] = i + j * xx;
+    )
+  );
+  for(ia = 1, q,
+    my(A = elems[ia], A2 = A^2);
+    for(ib = 1, q,
+      my(B = elems[ib], B2 = B^2);
+      my(s1 = A2 + B2);
+      my(nd = if(s1 == 0, 1, if(s1^((q-1)/2) == 1, 2, 0)));
+      if(nd == 0, next);
+      for(ic = 1, q,
+        my(C = elems[ic], C2 = C^2);
+        my(s2 = B2 + C2);
+        my(s3 = A2 + C2);
+        my(ne = if(s2 == 0, 1, if(s2^((q-1)/2) == 1, 2, 0)));
+        my(nf = if(s3 == 0, 1, if(s3^((q-1)/2) == 1, 2, 0)));
+        N += nd * ne * nf;
+      )
+    )
+  );
+  N
+}
+
+{
+  print("=== t_2 for p=13 ===");
+  my(p = 13);
+  print1("p=", p, " computing... ");
+  my(N = countV_q(p, 2));
+  my(q = p^2);
+  my(Nproj = (N - 1)/(q - 1));
+  my(Nmin = Nproj + 12*q);
+  my(t2 = Nmin - 1 - p^4);
+  print(" aff=", N, " proj=", Nproj, " min=", Nmin, " t_2=", t2, " (bound ", 22*q, ")");
+}

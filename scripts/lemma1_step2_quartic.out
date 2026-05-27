@@ -1,0 +1,8 @@
+G1(X, q) = q^4 + (-4*X^2 - 4*X)*q^3 - 2*X^2*q^2 + (-4*X^3 - 4*X^2)*q + X^4
+G2(X, q) = q^4 + (4*X^2 + 4*X)*q^3 - 2*X^2*q^2 + (4*X^3 + 4*X^2)*q + X^4
+G2(X, q) - G1(X, -q) = 0 (should be 0)
+
+factor(G1) over Q[q, X]: Mat([q^4 + (-4*X^2 - 4*X)*q^3 - 2*X^2*q^2 + (-4*X^3 - 4*X^2)*q + X^4, 1])
+factor(G2) over Q[q, X]: Mat([q^4 + (4*X^2 + 4*X)*q^3 - 2*X^2*q^2 + (4*X^3 + 4*X^2)*q + X^4, 1])
+
+Both irreducible in Q[q, X] => irreducible in Q(q)[X] by Gauss.

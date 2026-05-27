@@ -1,0 +1,28 @@
+
+--- p = 3, (t_1, t_2) = (38, 166) ---
+    sup-singular bound: t_2 <= 22 p^2 = 198 (not attained)
+    t_1/p = 12.666666666666666666666666666666666667  (integer? 0)
+    Assuming algebraic eigenvalues are all in {+p, -p}:
+    (r_+, r_-) | r=r++r- | trans s=(22-r)/2 | trans_t1 (need) | trans_t2 (need) | feasible?
+    --> Maximum rho_{F_3} assuming alg = +-p only: 20
+    (Note: extra alg eigenvalues from p*zeta_n for n>2 could increase rho_{F_p}.)
+
+--- p = 5, (t_1, t_2) = (70, 550) ---
+    sup-singular bound: t_2 <= 22 p^2 = 550 (ATTAINED -> supersingular)
+    t_1/p = 14.000000000000000000000000000000000000  (integer? 1)
+    Supersingular: r_+ = 18, r_- = 4
+    rho_{F_p} = 22 (supersingular K3, Artin)
+
+--- p = 7, (t_1, t_2) = (126, 1078) ---
+    sup-singular bound: t_2 <= 22 p^2 = 1078 (ATTAINED -> supersingular)
+    t_1/p = 18.000000000000000000000000000000000000  (integer? 1)
+    Supersingular: r_+ = 20, r_- = 2
+    rho_{F_p} = 22 (supersingular K3, Artin)
+
+--- p = 11, (t_1, t_2) = (118, 2374) ---
+    sup-singular bound: t_2 <= 22 p^2 = 2662 (not attained)
+    t_1/p = 10.727272727272727272727272727272727273  (integer? 0)
+    Assuming algebraic eigenvalues are all in {+p, -p}:
+    (r_+, r_-) | r=r++r- | trans s=(22-r)/2 | trans_t1 (need) | trans_t2 (need) | feasible?
+    --> Maximum rho_{F_11} assuming alg = +-p only: 20
+    (Note: extra alg eigenvalues from p*zeta_n for n>2 could increase rho_{F_p}.)

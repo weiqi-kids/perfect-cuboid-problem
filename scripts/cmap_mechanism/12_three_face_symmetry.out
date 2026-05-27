@@ -1,0 +1,66 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== Cross-curve symmetry: c-map (q -> c) implies a point on E_PCP(c) with c-value q ===
+
+[0;31m[0;31m  ***   syntax error, unexpected invalid token, expecting ',': 
+[0;31m  ***   ...[0;35m,10/343],[11/60,39/80,?,?[0;35m],[7/24,20/99,?,?]];
+[0;31m[0;31m  ***                               ^--------------------[0m
+... skipping file '12_three_face_symmetry.gp'
+q=20/21 G on E_PCP(q): [-45/49, 10/343]
+c=48/55
+Polynomial in X: 400/441*X^4 - 9216/3025*X^3 - 3026011136/448380625*X^2 - 21233664/9150625*X + 9437184/17935225
+
+Rational roots:
+
+Factorization over Q:
+[25*X + 24, 1; 121*X - 600, 1; 121*X + 96, 1; 625*X - 96, 1]
+
+Testing candidate rational roots:
+  [25*X + 24, 1; 121*X - 600, 1; 121*X + 96, 1; 625*X - 96, 1]
+  root: X=-24/25
+    Y_pred=-24/275  Y^2_pred=576/75625  Y2=576/75625  match? 1
+    => (X, Y) = (-24/25, -24/275) is on E_PCP(48/55)
+       2cY/(c^2-X^2) = 20/21  (should be q=20/21)
+  root: X=600/121
+    Y_pred=-17304/1331  Y^2_pred=299428416/1771561  Y2=299428416/1771561  match? 1
+    => (X, Y) = (600/121, -17304/1331) is on E_PCP(48/55)
+       2cY/(c^2-X^2) = 20/21  (should be q=20/21)
+  root: X=-96/121
+    Y_pred=96/1331  Y^2_pred=9216/1771561  Y2=9216/1771561  match? 1
+    => (X, Y) = (-96/121, 96/1331) is on E_PCP(48/55)
+       2cY/(c^2-X^2) = 20/21  (should be q=20/21)
+  root: X=96/625
+    Y_pred=69216/171875  Y^2_pred=4790854656/29541015625  Y2=4790854656/29541015625  match? 1
+    => (X, Y) = (96/625, 69216/171875) is on E_PCP(48/55)
+       2cY/(c^2-X^2) = 20/21  (should be q=20/21)
+
+=== Compare with known generator of E_PCP(48/55) ===
+Known generator of E_PCP(48/55) on its minimal model: [-282, 1956]
+Pulled back to E_PCP(48/55): [-24/25, 24/275]
+c-value at this point: 2cY/(c^2-X^2) = -20/21
+
+=== Generic symbolic check: closure under (q, x) <-> (c, X) involution ===
+
+For a generic rational (x, y) on E_PCP(q) (with y^2 = x(x+1)(x+q^2)):
+  c = 2qy/(q^2-x^2)
+  sqrt(1+c^2) = (x^2+2q^2 x + q^2)/(q^2-x^2)        [identity 1]
+  sqrt(q^2+c^2) = q(x^2 + 2x + q^2)/(q^2-x^2)       [identity 2]
+
+The Euler brick (1, q, c) has 3 rational face diagonals:
+  d = sqrt(1+q^2)    (constant in x)
+  e = sqrt(q^2+c^2)  (formula above)
+  f = sqrt(1+c^2)    (formula above)
+
+=== Symbolic involution: birational map E_PCP(q) <-> E_PCP(c) ===
+
+Given (x, y) on E_PCP(q), compute c = 2qy/(q^2-x^2).
+Then on E_PCP(c) the corresponding X satisfies (canonically) one of 4 roots of the quartic above.
+
+Symbolic insight: the Euler brick (1, q, c) is encoded by
+  a = 1, b = q, c = c  (edges)
+with rational face diagonals d, e, f as above.
+
+By symmetry of the brick: swap b <-> c. Then we want (1, c, q) as a brick.
+  i.e., E_PCP(c) at a parameter X with 2cY/(c^2-X^2) = q.
+
+Symbolic: with c = 2qy/(q^2-x^2), back-substitute into the quartic and look
+for a polynomial identity.

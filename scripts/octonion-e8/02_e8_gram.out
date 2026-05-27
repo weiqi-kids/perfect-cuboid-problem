@@ -1,0 +1,25 @@
+Halcke brick: a=44, b=117, c=240, d=125, e=267, f=244, g^2=73225
+  sqrt(g^2) ~ 270.601183, integer? False
+
+Halcke (non-PCP): v1 = [  0  44 117 240 125 267 244   0]
+  N(v1) = 219675 = expected 219675
+
+--- Hypothetical PCP analysis ---
+Pretend (a,b,c,d,e,f,g) = (a,b,c,d,e,f,g) and compute Gram matrices symbolically.
+N(v0) = a^2+b^2+c^2+d^2+e^2+f^2+g^2
+     = 4*a**2 + 4*b**2 + 4*c**2 = 4 g^2 (under constraints)
+
+Gram matrix of (w1, w2, w3, w4) under PCP constraints:
+  [4*a**2 + 4*b**2 + 4*c**2, 2*a**2 + 2*b**2 + 2*c**2, 0, 2*a**2 + 2*b**2 + 2*c**2]
+  [2*a**2 + 2*b**2 + 2*c**2, 4*a**2 + 4*b**2 + 4*c**2, -2*a**2 - 2*b**2 - 2*c**2, 0]
+  [0, -2*a**2 - 2*b**2 - 2*c**2, 4*a**2 + 4*b**2 + 4*c**2, -2*a**2 - 2*b**2 - 2*c**2]
+  [2*a**2 + 2*b**2 + 2*c**2, 0, -2*a**2 - 2*b**2 - 2*c**2, 4*a**2 + 4*b**2 + 4*c**2]
+
+Diagonal entries (norms):
+  N(w_1) = 4*a**2 + 4*b**2 + 4*c**2
+  N(w_2) = 4*a**2 + 4*b**2 + 4*c**2
+  N(w_3) = 4*a**2 + 4*b**2 + 4*c**2
+  N(w_4) = 4*a**2 + 4*b**2 + 4*c**2
+
+Determinant of Gram:
+  det = 0

@@ -1,0 +1,89 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Task 1: Rank verification ===
+Curve: E_PCP(q): Y^2 = X^3 + (1+q^2)X^2 + q^2 X
+
+--- q = 20/21 ---
+  Emin a-invariants: [1,0,0,-3710,-84525]
+  conductor: 4305
+  analytic rank: 1
+  ellrank: low=1 up=1
+  generators (MW): 0
+
+--- q = 80/39 ---
+  Emin a-invariants: [1,0,0,-698730,173556900]
+  conductor: 1902810
+  analytic rank: 1
+  ellrank: low=1 up=1
+  generators (MW): 0
+
+--- q = 60/11 ---
+  Emin a-invariants: [1,0,0,-261230,51166275]
+  conductor: 82005
+  analytic rank: 2
+  ellrank: low=2 up=2
+  generators (MW): 0
+
+--- q = 24/7 ---
+  Emin a-invariants: [1,0,0,-6374,190164]
+  conductor: 22134
+  analytic rank: 1
+  ellrank: low=1 up=1
+  generators (MW): 0
+
+--- q = 8/15 ---
+  Emin a-invariants: [1,0,0,-840,6192]
+  conductor: 4830
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+--- q = 40/9 ---
+  Emin a-invariants: [1,0,0,-50770,4358900]
+  conductor: 6510
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+--- q = 16/63 ---
+  Emin a-invariants: [1,0,0,-308384,64905984]
+  conductor: 155946
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+--- q = 56/33 ---
+  Emin a-invariants: [1,0,0,-158444,12127104]
+  conductor: 945714
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+--- q = 84/13 ---
+  Emin a-invariants: [1,0,0,-1012984,391558559]
+  conductor: 1880151
+  analytic rank: 1
+  ellrank: low=1 up=1
+  generators (MW): 0
+
+--- q = 48/55 ---
+  Emin a-invariants: [1,0,0,-156030,-18300348]
+  conductor: 237930
+  analytic rank: 1
+  ellrank: low=1 up=1
+  generators (MW): 0
+
+--- q = 112/15 ---
+  Emin a-invariants: [1,0,0,-3220420,2221693712]
+  conductor: 2586990
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+--- q = 28/45 ---
+  Emin a-invariants: [1,0,0,-65160,2420847]
+  conductor: 130305
+  analytic rank: 0
+  ellrank: low=0 up=0
+  generators (MW): 0
+
+=== End Task 1 ===

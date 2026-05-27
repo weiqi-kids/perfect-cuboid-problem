@@ -1,0 +1,90 @@
+--- (m,n) = (2,1) ---
+E_min a-invariants: [1, 1, 0, 9, 0]
+conductor: 1653
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(2,1)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+... skipping file 'pick4_isogeny_detail.gp'
+--- (m,n) = (3,2) ---
+E_min a-invariants: [1, 0, 1, 221, -223]
+conductor: 213465
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(3,2)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+--- (m,n) = (4,1) ---
+E_min a-invariants: [1, 1, 1, 894, -897]
+conductor: 1719330
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(4,1)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+--- (m,n) = (4,3) ---
+E_min a-invariants: [1, 0, 0, 1751, -3511]
+conductor: 248178
+torsion: 4 [4]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(4,3)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+--- (m,n) = (5,2) ---
+E_min a-invariants: [1, 1, 0, 11008, -22029]
+conductor: 73999695
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(5,2)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+--- (m,n) = (6,5) ---
+E_min a-invariants: [1, 0, 1, 27147, -135869]
+conductor: 286882035
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(6,5)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+--- (m,n) = (8,1) ---
+E_min a-invariants: [1, 1, 1, 63416, -317239]
+conductor: 170521302
+torsion: 2 [2]
+isogeny class size: 4
+isogeny degree matrix (row 1):
+[0;31m[0;31m  ***   at top-level:[0;35m show_class(8,1)
+[0;31m[0;31m  ***                 ^---------------
+[0;31m  ***   in function show_class: ...[0;35mto curve ",i,": deg=",mat
+[0;31m  ***   [0;35m[1][i]," ; a-invs=",[
+[0;31m[0;31m  ***   ^---------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_MAT).[0m
+
+=== 2-torsion verification (sample) ===
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file: ...[0;35m," 
+[0;31m  ***   structure=",T[2]))););[0;35m);
+[0;31m[0;31m  ***                         ^--[0m

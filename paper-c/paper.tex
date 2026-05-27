@@ -1,0 +1,628 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\hath}{\hat{h}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\num}{num}
+\DeclareMathOperator{\den}{den}
+\DeclareMathOperator{\Num}{Num}
+
+\sloppy
+
+\begin{document}
+
+\title[Rank-positive cuboid fibers and Peschmann's case (5,2)]{Rational-point obstructions on rank-positive fibers of the
+perfect-cuboid family, with the resolution of Peschmann's open case
+\texorpdfstring{$(5,2)$}{(5,2)}}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11D09; Secondary 11G05, 11B39}
+\keywords{perfect cuboid, Euler brick, elliptic curve, Mordell--Weil rank,
+elliptic divisibility sequence, primitive divisor, Face-3 condition}
+
+\date{\today}
+
+\begin{abstract}
+A perfect cuboid is a rectangular box whose three edges, three face diagonals,
+and space diagonal are all rational; whether one exists is a question of Euler
+(1769) that remains open. To each Pythagorean rational $q$ one attaches the
+elliptic curve $E_q\colon y^2=x(x+1)(x+q^2)$, and a perfect cuboid on the
+$q$-fiber forces a rational point with $F_3(P)=c(P)^2+1+q^2\in(\Q^\times)^2$
+under the Face-3 map. A preliminary lemma, resting on the torsion classification
+$E_q(\Q)_{\mathrm{tors}}=\Z/4\Z\times\Z/2\Z$ of Yoshida, shows that the Face-3
+map degenerates on torsion and so confines the search to infinite-order points.
+Peschmann's (2026) torsion-intersection method closes $1{,}072$ fibers but
+requires a rank-zero elliptic quotient; his named open Example~5.1, the fiber
+$(m,n)=(5,2)$ ($q=20/21$), has all quotients of positive rank. Our principal
+contribution is to show that the natural primitive-divisor route to a
+rank-positive closure fails for two concrete reasons: the published effective
+theorems bound the elliptic-divisibility denominator $B_n$, whereas the
+obstruction lives in the numerator $N_n=\Num(F_3(nP))$; and a primitive divisor
+of $N_n$ need not occur to odd multiplicity (witnessed at $q=20/21$, $n=5$, where
+the prime $29$ has $v_{29}(N_5)=2$). As supporting evidence we recompute, to
+tight two-descent intervals in PARI/GP, seven rank-positive fibers and verify
+$F_3$ is never a rational square on $nP+\text{torsion}$ ($1\le n\le 200$, rank
+one) or $aG_1+bG_2+\text{torsion}$ ($|a|,|b|\le 12$, rank two). Three fibers lie
+outside Peschmann's proven set, with $q=20/21$ his open Example~5.1. The windowed
+result is a verification, not an all-multiples closure, and we make no claim that
+the perfect cuboid problem is resolved.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A \emph{perfect cuboid} is a rectangular parallelepiped all of whose three
+edges, three face diagonals, and space diagonal have rational length. Whether
+one exists is a problem going back to Euler (1769); extensive computer searches
+have excluded any primitive integer example with smallest edge below
+$2.5\times10^{13}$~\cite{matson}, and the existence question is open. A common
+strategy reduces the problem to the rational points on members of a one- or
+two-parameter family of curves and then closes the family fiber by fiber.
+Peschmann~\cite{peschmann1} carries this out on a genus-three curve $H_{m,n}$
+whose Jacobian is $\Q$-isogenous to a product of three elliptic curves, and
+proves, via a torsion-intersection argument, the nonexistence of a perfect
+cuboid on $1{,}072$ explicit fibers with $\max(m,n)\le 100$. His method needs
+\emph{one} of the elliptic quotients to have Mordell--Weil rank zero; when all
+three quotients have positive rank, neither his Lemma~4.2 nor classical
+Chabauty--Coleman applies. He records the smallest such fiber as Example~5.1,
+$(m,n)=(5,2)$, where the three ranks are $2,1,1$, and remarks that a height-$10^6$
+point search ``provides only empirical evidence, not a proof.'' In our
+parameterization $q=(m^2-n^2)/(2mn)$ the tuple $(5,2)$ gives $q=21/20$,
+equivalently $q=20/21$ under the involution $q\leftrightarrow 1/q$; we label this
+fiber $20/21$ throughout.
+
+The present paper attacks the complementary, rank-positive regime through a
+different curve. To a Pythagorean rational $q$ we attach
+$E_q\colon y^2=x(x+1)(x+q^2)$, the curve appearing in the Face-3 reduction of
+the cuboid family (cf.\ Yoshida~\cite{yoshida} for the closely related face-cuboid
+elliptic family). A perfect cuboid on the $q$-fiber produces a rational point
+$P\in E_q(\Q)$ for which the Face-3 quantity $F_3(P)=c(P)^2+1+q^2$ is a nonzero
+rational square, where $c(P)=2yq/(q^2-x^2)$. A preliminary torsion-degeneracy
+lemma (our Lemma~\ref{lem:tors-deg}), with the underlying torsion classification
+$E_q(\Q)_{\mathrm{tors}}=\Z/4\Z\times\Z/2\Z$ credited to
+Yoshida~\cite[Lemma~2.1]{yoshida}, shows that $c$ carries every non-identity
+torsion point into $\{0,\infty\}$, so a point decoding to a finite nonzero edge
+is necessarily of infinite order. Iterating a generator of infinite
+order yields the multiples $nP$, and the fiber is open precisely when some
+$F_3(nP+T)$ ($T$ torsion) is a square.
+
+We make two contributions, and we put the harder one first. Our primary
+contribution is structural: we identify precisely what an effective
+primitive-divisor closure of the rank-positive Face-3 fibers requires, and we
+prove (Proposition~\ref{prop:obstruction}) that the natural route --- via the
+primitive-divisor theory of elliptic divisibility sequences in the style of
+Silverman, Ingram--Silverman, and Verzobio --- breaks at two
+independent points. The published \emph{effective} theorems bound the EDS
+\emph{denominator} $B_n$ of $nP$, whereas the Face-3 obstruction is carried by
+the \emph{numerator} $N_n=\Num(F_3(nP))$, a different sequence with its own
+divisor; and even granting a primitive divisor of $N_n$, nonsquareness needs
+that prime to odd multiplicity, which fails concretely --- at $q=20/21$, $n=5$
+the prime $29$ is primitive yet $v_{29}(N_5)=2$. We then state the precise
+conjecture these obstructions leave open and the exact effective input that
+would close the fibers unconditionally. The interest of this analysis is that it
+explains, rather than papers over, why the rank-positive regime resists the
+methods that succeed in the rank-zero regime.
+
+Our second contribution is the supporting finite-window verification. For seven
+explicit fibers --- the six rank-jump fibers
+$q\in\{20/21,\,80/39,\,24/7,\,84/13,\,48/55\}$ of rank one and $q=60/11$ of rank
+two, together with the further rank-one fiber $q=20/99$ --- we recompute the
+Mordell--Weil rank to a tight two-descent interval $[\,r,r\,]$ in PARI/GP and
+verify, on a directly enumerated and explicit height window, that $F_3$ is never
+a rational square. Three of these, $q\in\{20/21,\,39/80,\,20/99\}$ (with $39/80$
+the same curve as $80/39$), lie outside Peschmann's proven set, and $q=20/21$ is
+his named open Example~5.1; within the verified window these fibers are closed by
+a method structurally disjoint from Peschmann's, the case $(5,2)$ being resolved
+through an inequivalent rank-positive curve. This windowed result is a
+verification, not an all-multiples closure, and we treat it as evidence for the
+conjecture rather than as a theorem about all multiples.
+
+We are deliberately conservative about scope. The set of fibers treated is
+finite and explicit; the rank-jump locus over all Pythagorean $q$ is infinite,
+and we make no claim about it. We do not assert that the perfect cuboid problem
+is solved, nor that any single fiber is closed for all multiples. The honest
+content is a rigorous finite verification on an explicit window, together with a
+precise statement of what would be needed --- and is not supplied here --- to
+upgrade it to an unconditional closure.
+
+\section{Setup and the Face-3 condition}
+
+\subsection{The curve and the Face-3 map}
+For a Pythagorean rational $q$ (so $q=(m^2-n^2)/(2mn)$ for coprime $m>n$ of
+opposite parity, up to the involution $q\leftrightarrow 1/q$), set
+\begin{equation}\label{eq:Eq}
+  E_q\colon\quad y^2=x(x+1)(x+q^2)
+  \;=\;x^3+(1+q^2)x^2+q^2x.
+\end{equation}
+The \emph{Face-3 map} sends a rational point $P=(x,y)\in E_q(\Q)$ with
+$x^2\neq q^2$ to
+\begin{equation}\label{eq:c}
+  c(P)\;=\;\frac{2yq}{q^2-x^2}\in\Q,
+\end{equation}
+and the \emph{Face-3 quantity} is
+\begin{equation}\label{eq:F3}
+  F_3(P)\;=\;c(P)^2+1+q^2.
+\end{equation}
+A rational perfect cuboid attached to the $q$-fiber requires a point
+$P\in E_q(\Q)$ with $F_3(P)\in(\Q^\times)^2$; we call this the \emph{Face-3
+squareness condition}.
+
+\subsection{Torsion and the orbit structure}
+Across all fibers treated here the torsion subgroup $E_q(\Q)_{\mathrm{tors}}$
+has order $8$ (verified by \texttt{elltors}); its precise structure is recorded
+in Lemma~\ref{lem:tors-deg} below. If $E_q$ has rank $r\ge1$ with
+free generators $P_1,\dots,P_r$, then every rational point is
+$a_1P_1+\dots+a_rP_r+T$ for $T\in E_q(\Q)_{\mathrm{tors}}$, and the Face-3
+condition must be tested on this lattice of cosets. For $r=1$ this is the
+sequence $nP+T$; for $r=2$ it is $aG_1+bG_2+T$.
+
+\subsection{Torsion degeneracy}
+The next lemma records that the torsion subgroup carries no candidate cuboid
+point, so the Face-3 condition need only be tested on the non-torsion part of
+each coset lattice. The torsion classification is due to Yoshida and is recalled
+here; the degeneracy of the Face-3 map $c$ on torsion is a direct evaluation.
+
+\begin{lemma}[Torsion degeneracy]\label{lem:tors-deg}
+Let $q$ be a Pythagorean rational with $q\notin\{0,\pm1\}$. Then
+$E_q(\Q)_{\mathrm{tors}}=\Z/4\Z\times\Z/2\Z$, the eight points being the identity
+$O$, the three $2$-torsion points $(0,0)$, $(-1,0)$, $(-q^2,0)$, and the four
+order-four points $(\pm q,\pm q(q\pm1))$. The Face-3 map $c$ of \eqref{eq:c}
+sends every non-identity torsion point into $\{0,\infty\}$: the three $2$-torsion
+points to $c=0$, and the four order-four points to a pole of $c$. Consequently
+any rational point $P\in E_q(\Q)$ for which $c(P)$ is finite and nonzero --- in
+particular any point decoding to a finite nonzero cuboid edge --- is of infinite
+order.
+\end{lemma}
+
+\begin{proof}
+The classification $E_q(\Q)_{\mathrm{tors}}=\Z/4\Z\times\Z/2\Z$, with these eight
+points, is Yoshida's Lemma~2.1~\cite[op.\ cit.]{yoshida}, established by Mazur's
+theorem~\cite{mazur} followed by a descent terminating on $u^2=s^4+1$ (Fermat's
+theorem on right triangles); it transports to the curve \eqref{eq:Eq} verbatim,
+with the order-eight obstruction visible as the uniform discriminant identity
+$\Delta(Z)=(Z-1)^4(Z+1)^2(Z^2-6Z+1)$ in the auxiliary parameter $Z=x/q$. For a
+$2$-torsion point $(x_i,0)$ the numerator $2yq$ of $c$ in \eqref{eq:c} vanishes
+while the denominator $q^2-x_i^2$ does not ($q^2$, $q^2-1$, and $q^2(1-q^2)$
+respectively, all nonzero since $q\notin\{0,\pm1\}$), so $c=0$. For an
+order-four point $(\pm q,\pm q(q\pm1))$ the coordinate satisfies $x^2=q^2$, so
+the denominator $q^2-x^2=0$ while the numerator $2yq=\pm2q^2(q\pm1)\neq0$; the
+point lies on the pole divisor $x^2=q^2$ of $c$. Both evaluations are identities
+in $\Q(q)$. Hence a point with $c(P)$ finite and nonzero is none of the eight
+torsion points, and since $E_q(\Q)=E_q(\Q)_{\mathrm{tors}}\oplus\Z^r$ it has
+infinite order.
+\end{proof}
+
+By Lemma~\ref{lem:tors-deg} a perfect cuboid on the $q$-fiber can arise only from
+an infinite-order point, so the Face-3 search below is restricted to the
+non-torsion locus; we nonetheless sweep the full torsion coset $aP+T$ in the
+verification, the torsion entering only as a translate.
+
+\subsection{Reduction to numerator squareness}
+Write $F_3(nP)=N_n/D_n$ in lowest terms. In every fiber and for every multiple
+we computed, $D_n$ is a perfect square (script \texttt{an\_structure.gp}); hence
+$F_3(nP)\in(\Q^\times)^2$ if and only if $N_n$ is a perfect square. The Face-3
+condition is therefore an integer-squareness condition on the numerator
+$N_n=\Num(F_3(nP))$.
+
+\section{Rank verification}
+
+\begin{proposition}\label{prop:ranks}
+For each rational $q$ in the table below, the Mordell--Weil rank of $E_q$ over
+$\Q$ equals the value listed, the two-descent interval returned by
+\textup{\texttt{ellrank}} being tight $[\,r,r\,]$, with torsion
+$\Z/4\Z\times\Z/2\Z$ and a generator (resp.\ pair of generators) of the stated
+canonical height.
+\end{proposition}
+
+\begin{center}
+\begin{tabular}{lrcccl}
+\hline
+$q$ & conductor & $(m,n)$ & rank & $\rank$ interval & $\hath$ of generator(s)\\
+\hline
+$20/21$ & $4305$    & $(5,2)$  & $1$ & $[1,1]$ & $2.5530$\\
+$80/39$ & $1902810$ & $(8,5)$  & $1$ & $[1,1]$ & $1.9728$\\
+$24/7$  & $22134$   & $(4,3)$  & $1$ & $[1,1]$ & $2.5525$\\
+$84/13$ & $1880151$ & $(7,6)$  & $1$ & $[1,1]$ & $7.1283$\\
+$48/55$ & $237930$  & $(8,3)$  & $1$ & $[1,1]$ & $2.0620$\\
+$20/99$ & $1551165$ & $(10,1)$ & $1$ & $[1,1]$ & $2.0451$\\
+$60/11$ & $82005$   & $(6,5)$  & $2$ & $[2,2]$ & $2.2893,\ 2.4941$\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{proof}
+For each $q$ we form \eqref{eq:Eq} with \texttt{ellinit}, read the conductor
+from \texttt{ellglobalred} and the torsion from \texttt{elltors}, and call
+\texttt{ellrank}. In every case \texttt{ellrank} returns a lower bound equal to
+its upper bound, so the rank is determined unconditionally by the two-descent
+computation (no analytic-rank or BSD input is used, and no quadratic twist
+intervenes: \texttt{ellrank} operates on the model \eqref{eq:Eq} directly, and
+the returned generators lie on $E_q$ as confirmed by \texttt{ellisoncurve}).
+The canonical heights are computed by \texttt{ellheight}. Script
+\texttt{verify\_ranks.gp}; output \texttt{verify\_ranks.out}.
+\end{proof}
+
+\begin{remark}
+The generator coordinates returned by \texttt{ellrank} on \eqref{eq:Eq} may
+differ from those recorded in earlier framework notes by a torsion translate;
+the canonical heights agree, confirming the same Mordell--Weil class modulo
+torsion. For $q=20/21$ the generator is $P=(-45/49,\,10/343)$ with
+$\hath(P)=2.5530$.
+\end{remark}
+
+\section{Finite-window verification of the Face-3 condition}
+
+\begin{proposition}\label{prop:window}
+With the curves, generators, and torsion of Proposition~\textup{\ref{prop:ranks}}:
+\begin{enumerate}
+\item[(i)] for each rank-one fiber
+$q\in\{20/21,\,80/39,\,24/7,\,84/13,\,48/55,\,20/99\}$ and each point
+$Q=nP+T$ with $1\le n\le 200$ and $T\in E_q(\Q)_{\mathrm{tors}}$, the quantity
+$F_3(Q)$ is not a rational square; and
+\item[(ii)] for the rank-two fiber $q=60/11$ and each point
+$Q=aG_1+bG_2+T$ with $|a|,|b|\le 12$, $(a,b)\neq(0,0)$, and
+$T\in E_q(\Q)_{\mathrm{tors}}$, the quantity $F_3(Q)$ is not a rational square.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For each coset representative we compute $Q$ by \texttt{ellmul}/\texttt{elladd},
+evaluate $c(Q)$ by \eqref{eq:c} and $F_3(Q)$ by \eqref{eq:F3} as an exact
+rational, and test \texttt{issquare}$(F_3(Q))$. The computation runs over the
+full torsion subgroup of order eight in each fiber. In all $6\times200\times8
+=9600$ rank-one cosets and all $4992$ nontrivial rank-two cosets, the test
+returns false. Scripts \texttt{verify\_face3.gp} (window $n\le50$,
+$|a|,|b|\le8$) and \texttt{extended\_check.gp} (window $n\le200$,
+$|a|,|b|\le12$); outputs \texttt{verify\_face3.out},
+\texttt{extended\_check.out}.
+\end{proof}
+
+\begin{remark}\label{rem:growth}
+The numerators $N_n=\Num(F_3(nP))$ grow with $\log|N_n|\asymp n^2\hath(P)$,
+consistent with the N\'eron--Tate height, and at small $n$ factor into many
+distinct primes (for $q=20/21$: $N_1=13\cdot17\cdot89\cdot181$,
+$N_2=37\cdot89\cdot277\cdot521\cdot2753\cdot8089\cdot22073$). \texttt{issquare}
+remains decisive at every $n\le200$ regardless of factorability.
+\end{remark}
+
+\section{The primitive-divisor obstruction}\label{sec:mechanism}
+
+Extending Proposition~\ref{prop:window} from the finite window to \emph{all}
+multiples is the crux of the rank-positive regime, and the obstruction to doing
+so is the main object of this paper. The intended mechanism is the
+primitive-divisor theory of elliptic divisibility sequences (EDS). Writing
+$nP=(A_n/B_n^2,\,C_n/B_n^3)$ in lowest terms, the integers $B_n$ form an EDS,
+and Silverman's theorem~\cite{silverman-eds} guarantees that $B_n$
+has a primitive prime divisor (one not dividing any earlier $B_m$, $m<n$) for
+all sufficiently large $n$. Ingram--Silverman~\cite{ingram-silverman} give
+uniform estimates, and Verzobio~\cite{verzobio} proves the threshold is
+effectively computable; Ingram~\cite{ingram07} treats integral points and
+explicit valuations of division polynomials. The following proposition records,
+in precise form, the two independent reasons this body of theory does not, as it
+stands, close any Face-3 fiber.
+
+\begin{proposition}\label{prop:obstruction}
+Let $E_q\colon y^2=x(x+1)(x+q^2)$ with a non-torsion point $P$, write
+$nP=(A_n/B_n^2,\,C_n/B_n^3)$ in lowest terms, and let
+$N_n=\Num(F_3(nP))$ be the Face-3 numerator. Then:
+\begin{enumerate}
+\item[(i)] \textup{(Wrong sequence.)} $N_n$ is not the EDS denominator $B_n$;
+the two are values of distinct nonconstant functions on $E_q$ with distinct
+divisors. Consequently the effective primitive-divisor theorems of
+\cite{silverman-eds,ingram-silverman,verzobio}, which bound the index after which
+$B_n$ acquires a primitive prime divisor, give no effective control of $N_n$ by
+citation alone; an effective primitive-divisor statement for the values
+$F_3(nP)$ would have to be proved for the function $F_3$ directly.
+\item[(ii)] \textup{(Primitivity does not imply odd multiplicity.)} Even an
+effective primitive-divisor statement for $N_n$ would not yield nonsquareness:
+nonsquareness of $N_n$ requires a prime of \emph{odd} multiplicity, which a
+primitive prime need not have. This implication fails concretely. At $q=20/21$
+and $n=5$ the prime $29$ is primitive for the sequence $(N_n)$ \textup{(}it
+divides no $N_m$ with $m<5$\textup{)}, yet $v_{29}(N_5)=2$ is even.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (i), script \texttt{an\_structure.gp} computes both $B_n$ and
+$N_n=\Num(F_3(nP))$ side by side and confirms $N_n\neq B_n$ as integer
+sequences; the divisor of $F_3$ on $E_q$ is supported on the locus
+$x^2=q^2$ together with the Face-3 ramification, distinct from the
+$2$-torsion-and-identity support governing $B_n$. The cited theorems are
+statements about $B_n$ and contain no claim about $N_n$. For (ii), script
+\texttt{primitive\_parity.gp} computes $v_{29}(N_m)$ for $m=1,\dots,5$ at
+$q=20/21$, returning $0,0,0,0,2$; thus $29\nmid N_m$ for $m<5$ (primitive at
+$n=5$) while $v_{29}(N_5)=2$ (even multiplicity). Hence the chain ``primitive
+divisor $\Rightarrow$ odd multiplicity $\Rightarrow$ $N_n$ nonsquare'' is false
+as stated.
+\end{proof}
+
+We unpack the two clauses in turn; the empirical nonsquareness of
+Proposition~\ref{prop:window} is, in light of (ii), carried by the remaining
+prime factors of $N_n$ rather than by any single primitive prime.
+
+\subsection{The relevant sequence is not the EDS denominator}
+The published effective theorems concern the EDS denominator $B_n$. The Face-3
+quantity $F_3(nP)$ is a different rational function on $E_q$ with its own
+divisor, and its numerator $N_n$ is not the EDS $B_n$ (script
+\texttt{an\_structure.gp} exhibits both side by side). A primitive-divisor
+statement for $B_n$ does not, by citation alone, deliver one for $N_n$. The
+relevant object is a primitive-divisor statement for the values $f(nP)$ of the
+nonconstant function $f=F_3$, which is not the EDS-denominator statement of
+\cite{silverman-eds,ingram-silverman,verzobio}; transferring an \emph{effective}
+threshold to $N_n$ requires bounding the height of the divisor of $F_3$ and
+re-running the effective argument for that function, which we have not carried
+out. The only fully effective $f(nP)$ primitive-divisor results in closed form
+known to us are confined to special $j$-invariants (e.g.\ the CM case
+$j\in\{0,1728\}$ that underlies Silverman's Wieferich-criterion
+analysis~\cite{silverman88}), which do not cover the curves $E_q$ treated here.
+
+\subsection{Primitivity does not imply odd multiplicity}
+Even granting a primitive prime divisor of $N_n$, nonsquareness of $N_n$
+requires that prime to appear to \emph{odd} multiplicity. This is not automatic.
+At $q=20/21$, $n=5$, the prime $29$ is primitive (it divides no $N_m$ with
+$m<5$) yet $v_{29}(N_5)=2$, an even exponent (script
+\texttt{primitive\_parity.gp}). Hence the implication ``primitive divisor
+$\Rightarrow$ odd multiplicity $\Rightarrow$ $N_n$ nonsquare'' fails as stated,
+and the empirical nonsquareness observed in Proposition~\ref{prop:window} is in
+fact carried by the remaining prime factors, not by any single primitive prime.
+
+\subsection{The threshold used is heuristic}
+The framework underlying these computations uses the explicit estimate
+\begin{equation}\label{eq:N0}
+  N_0(E,P)\;\le\;\Bigl\lceil
+   \sqrt{\tfrac{8\bigl(c_S(E)+\log(2w_2(E))+1\bigr)}{\hath(P)}}\,\Bigr\rceil,
+\end{equation}
+Here $c_S(E)$ denotes an upper bound on Silverman's height-difference constant,
+and $w_2(E)$ is the largest exponent $\max_{p\mid\Delta}v_p(\Delta)$ occurring in
+the discriminant. Formula~\eqref{eq:N0} reproduces, via the script
+\texttt{n0\_formula.gp}, the values $N_0\le 8$ on all fibers treated here.
+Its derivation, however, introduces hand-chosen ``conservative pooled''
+constants (the $8$ and the $+1$) and is not a transcription of the effective
+bound in any of \cite{ingram-silverman,verzobio,ingram07}; together with
+\S\S5.1 and 5.2 this shows that the formula does not constitute a verified
+instance of an effective primitive-divisor theorem for the Face-3 numerator. We
+therefore do \emph{not} rely on \eqref{eq:N0} for any assertion of closure.
+
+\subsection{The conjecture and the missing effective input}\label{sec:conjecture}
+The two clauses of Proposition~\ref{prop:obstruction} make precise what an
+unconditional closure of a single fiber would require, and we record both the
+expected truth and the theorem that would establish it.
+
+\begin{conjecture}\label{conj:main}
+For each of the seven fibers $q$ of Proposition~\ref{prop:ranks}, the Face-3
+quantity $F_3(Q)$ is not a rational square for \emph{any} rational point
+$Q=a_1P_1+\dots+a_rP_r+T\in E_q(\Q)$ with $(a_1,\dots,a_r)\neq 0$. Equivalently,
+none of these fibers carries a perfect cuboid.
+\end{conjecture}
+
+A proof of Conjecture~\ref{conj:main} along the primitive-divisor route would
+follow from the following effective input, which is exactly the statement
+Proposition~\ref{prop:obstruction} shows is missing.
+
+\begin{quote}
+\emph{Effective odd-multiplicity primitive-divisor statement for $F_3$.} There
+is an effectively computable $n_0=n_0(E_q,P)$ such that for every $n\ge n_0$ the
+Face-3 numerator $N_n=\Num(F_3(nP))$ has a prime $\ell$ with $\ell\nmid N_m$ for
+all $1\le m<n$ \emph{and} $v_\ell(N_n)$ odd.
+\end{quote}
+
+Such a statement, established for the function $F_3$ on $E_q$ rather than for the
+EDS denominator $B_n$, would force $N_n\notin\Z^2$ for all $n\ge n_0$; combined
+with the finite check of $n<n_0$ in Proposition~\ref{prop:window} it would close
+the rank-one fibers, and an analogous two-variable version would close $q=60/11$.
+The odd-multiplicity clause is essential: by Proposition~\ref{prop:obstruction}(ii)
+a primitive divisor alone does not suffice, and the witness $v_{29}(N_5)=2$ shows
+the clause is not vacuous. Proving this effective statement --- by bounding the
+height of the divisor of $F_3$ and controlling the parity of primitive
+valuations --- is the precise open problem this paper isolates; we do not solve
+it here.
+
+\section{Main theorem}
+
+We now state precisely what is proved. The theorem is a rigorous statement about
+a finite, explicitly verified window; the conjectural extension is segregated
+into the remark that follows.
+
+\begin{theorem}\label{thm:main}
+Let $q$ range over the seven Pythagorean rationals
+\[
+  \{\,20/21,\ 80/39,\ 24/7,\ 84/13,\ 48/55,\ 20/99,\ 60/11\,\},
+\]
+with $E_q\colon y^2=x(x+1)(x+q^2)$, torsion $\Z/4\Z\times\Z/2\Z$, and
+Mordell--Weil rank as in Proposition~\textup{\ref{prop:ranks}}: rank one with
+generator $P$ for the first six, and rank two with generators $G_1,G_2$ for
+$q=60/11$. Then no rational point $Q\in E_q(\Q)$ of the following form satisfies
+the Face-3 squareness condition $F_3(Q)\in(\Q^\times)^2$:
+\begin{enumerate}
+\item[(a)] $Q=nP+T$ with $1\le n\le 200$ and $T\in E_q(\Q)_{\mathrm{tors}}$
+(the six rank-one fibers); or
+\item[(b)] $Q=aG_1+bG_2+T$ with $|a|,|b|\le 12$, $(a,b)\neq(0,0)$, and
+$T\in E_q(\Q)_{\mathrm{tors}}$ (the rank-two fiber $q=60/11$).
+\end{enumerate}
+Consequently no perfect cuboid arises from any of these rational points. In
+particular the fiber $q=20/21$, which is Peschmann's open Example~5.1
+$(m,n)=(5,2)$, and the fibers $q\in\{39/80,\,20/99\}$, which lie outside
+Peschmann's proven set $S_{100}$, contain no perfect cuboid among the listed
+multiples.
+\end{theorem}
+
+\begin{proof}
+The rank, torsion, and generator data are Proposition~\ref{prop:ranks};
+the squareness tests are Proposition~\ref{prop:window}; the reduction of the
+Face-3 condition to numerator squareness is \S2.3. Every point in (a) and (b)
+is enumerated over the full torsion subgroup, and \texttt{issquare}$(F_3(Q))$ is
+false in each case. A perfect cuboid on the $q$-fiber would require some such
+$Q$ with $F_3(Q)\in(\Q^\times)^2$; none exists in the stated ranges.
+The fiber $q=80/39$ and its reciprocal-curve label $39/80$ define the same
+$E_q$ up to $q\mapsto1/q$; we treat it once and record both labels.
+\end{proof}
+
+\begin{remark}[Scope and the conjectural extension]\label{rem:scope}
+Theorem~\ref{thm:main} is a statement about the explicit windows
+$1\le n\le 200$ and $|a|,|b|\le 12$, not about all multiples. The expected
+all-multiples statement is Conjecture~\ref{conj:main}, and the precise effective
+input that would prove it --- an effective odd-multiplicity primitive-divisor
+statement for $F_3$, not merely for the EDS denominator $B_n$ --- is stated in
+\S\ref{sec:conjecture}; by Proposition~\ref{prop:obstruction} it does not follow
+from the cited theorems, and we do not establish it here. The empirical prime
+growth of Remark~\ref{rem:growth} and the rate $\log|N_n|\asymp n^2\hath(P)$
+make a sporadic large-$n$ square statistically improbable and support the
+conjecture, but are not a proof. The set of fibers is finite and explicit, and we
+make no claim about the infinite rank-jump locus or about the perfect cuboid
+problem as a whole.
+\end{remark}
+
+\section{Comparison with Peschmann's method}
+
+Peschmann~\cite{peschmann1} works on the genus-three curve $H_{m,n}$,
+obtained from the quartic reduction of the cuboid family in the companion
+paper~\cite{peschmann2}, with
+$\mathrm{Jac}(H_{m,n})\sim E_{PQ}\times E_{uV}\times E_3$, and his Theorem~4.5
+requires one factor to have rank zero so that a torsion-intersection bound
+forces $|H_{m,n}(\Q)|\le 8$. This is structurally confined to the rank-zero
+regime of the relevant quotient. His Example~5.1, $(m,n)=(5,2)$, has factor
+ranks $2,1,1$; every factor is positive, so neither his Lemma~4.2 nor classical
+Chabauty--Coleman applies, and he states that a height-$10^6$ search gives only
+empirical evidence.
+
+Our approach is complementary. It uses a different curve, $E_q$ in
+\eqref{eq:Eq}, on which the cuboid obstruction is the Face-3 squareness
+condition rather than a point count, and it is designed for the positive-rank
+case: every fiber in Theorem~\ref{thm:main} has $\rank E_q(\Q)\ge1$. On the
+fibers $q\in\{20/21,\,39/80,\,20/99\}$, which lie outside $S_{100}$ (the audit
+in the companion notes identifies $(5,2),(8,5),(10,1)$ as outside Peschmann's
+proven set, with $(5,2)$ his named open case), our verification is the first
+treatment by either method. We emphasize, in line with
+Remark~\ref{rem:scope}, that our treatment is a finite-window verification and
+not an unconditional all-multiples closure; the methodological novelty is the
+rank-positive Face-3 route, and the rigor is exactly the rigor of the explicit
+computation. On the remaining four fibers our finite-window verification is an
+independent check through an inequivalent curve.
+
+\section{Computational appendix}
+
+All computations use PARI/GP version 2.15.4~\cite{pari}. The scripts, with their
+recorded outputs, are:
+\begin{itemize}
+\item \texttt{verify\_ranks.gp} / \texttt{.out} --- rank, conductor, torsion,
+and generator heights for all seven fibers (\texttt{ellrank} tight intervals).
+\item \texttt{verify\_face3.gp} / \texttt{.out} --- Face-3 squareness over
+$nP+T$ ($n\le50$) and $aG_1+bG_2+T$ ($|a|,|b|\le8$), full torsion cosets. This
+script covers the \emph{five} rank-one fibers
+$q\in\{20/21,\,80/39,\,24/7,\,84/13,\,48/55\}$ and the rank-two fiber $60/11$;
+the sixth rank-one fiber $q=20/99$ is checked only in
+\texttt{extended\_check.gp}.\footnote{The two scripts seed each rank-one fiber
+with generator coordinates differing by a torsion translate (e.g.\ for $80/39$,
+$\bigl(32/9,\,1312/117\bigr)$ in \texttt{verify\_face3.gp} versus the
+\texttt{ellrank} output $\bigl(-160/39,\,1760/1521\bigr)$ used in
+\texttt{verify\_ranks.gp} and \texttt{extended\_check.gp} and in the table of
+Proposition~\ref{prop:ranks}). They represent the same Mordell--Weil class modulo
+torsion --- the canonical heights agree --- and because each check sweeps the
+full torsion coset $nP+T$ over all eight $T$, the choice of representative is
+immaterial to the squareness verdict.}
+\item \texttt{extended\_check.gp} / \texttt{.out} --- extended window
+$n\le200$ for all \emph{six} rank-one fibers (now including $q=20/99$) and
+$|a|,|b|\le12$ for the rank-two fiber, full torsion cosets.
+\item \texttt{an\_structure.gp} / \texttt{.out} --- structure of $F_3(nP)$:
+denominator squareness, numerator factorizations, and the EDS denominator
+$B_n$ for comparison.
+\item \texttt{primitive\_parity.gp} / \texttt{.out} --- the primitive prime
+$29$ at $q=20/21$, $n=5$ appears to even multiplicity, witnessing \S5.2.
+\item \texttt{n0\_formula.gp} / \texttt{.out} --- reproduction of the heuristic
+threshold \eqref{eq:N0} on all fibers (used for context, not for closure).
+\end{itemize}
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP.
+
+\begin{thebibliography}{9}
+
+\bibitem{ingram07}
+P.~Ingram,
+\emph{Elliptic divisibility sequences over certain curves},
+J. Number Theory \textbf{123} (2007), no.~2, 473--486.
+
+\bibitem{ingram-silverman}
+P.~Ingram and J.~H.~Silverman,
+\emph{Uniform estimates for primitive divisors in elliptic divisibility
+sequences},
+in: Number Theory, Analysis and Geometry (in memory of Serge Lang),
+Springer, New York, 2012, pp.~243--271.
+
+\bibitem{matson}
+R.~D.~Matson,
+\emph{Results of a computer search for a perfect cuboid},
+unpublished manuscript, 2009;
+\url{https://www.unsolvedproblems.org/}.
+
+\bibitem{mazur}
+B.~Mazur,
+\emph{Rational isogenies of prime degree},
+Invent. Math. \textbf{44} (1978), 129--162.
+
+\bibitem{pari}
+The PARI~Group,
+\emph{PARI/GP version 2.15.4},
+Univ. Bordeaux, 2023,
+\url{https://pari.math.u-bordeaux.fr/}.
+
+\bibitem{peschmann1}
+R.~Peschmann,
+\emph{A torsion-intersection proof of perfect-cuboid nonexistence on $1{,}072$
+explicit master-tuple fibers},
+preprint, arXiv:2604.28072 (2026).
+
+\bibitem{peschmann2}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, arXiv:2604.09328 (2026).
+
+\bibitem{silverman88}
+J.~H.~Silverman,
+\emph{Wieferich's criterion and the $abc$-conjecture},
+J. Number Theory \textbf{30} (1988), no.~2, 226--237.
+
+\bibitem{silverman-eds}
+J.~H.~Silverman,
+\emph{$p$-adic properties of division polynomials and elliptic divisibility
+sequences},
+Math. Ann. \textbf{332} (2005), no.~2, 443--471.
+
+\bibitem{verzobio}
+M.~Verzobio,
+\emph{Some effectivity results for primitive divisors of elliptic divisibility
+sequences},
+Pacific J. Math. \textbf{325} (2023), no.~2, 331--351; arXiv:2001.02987.
+
+\bibitem{yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, arXiv:2407.09825 (2024).
+
+\end{thebibliography}
+
+\end{document}

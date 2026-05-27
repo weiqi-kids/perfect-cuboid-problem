@@ -1,0 +1,26 @@
+=== Integral (Y,Z) on C_anom: 20 Z^2 = f(Y), |Y| <= 10^6 ===
+integral (Y,Z>=0) found = 3 : [[-1, 1], [1, 1], [11, 37]]
+(with +-Z, this matches the framework's count)
+
+=== Decode each to SG Case-II (p,q) and apply face/Pi test ===
+p = Y,  q = (Y^2 + 2Y - 1)/2;  Case-B legs:
+  a = 4 p q,   b = q^2 - 4 p^2,   c = 2(q^2 - p^2)
+Face/Pi value (third-face squareness) = 5 q^4 - 16 p^2 q^2 + 20 p^4
+
+  Y=-1 -> (p,q)=(-1,-1)  legs (a,b,c)=(4,-3,0)
+       Face/Pi = 9   square? 1   degenerate? 1
+  Y=1 -> (p,q)=(1,1)  legs (a,b,c)=(4,-3,0)
+       Face/Pi = 9   square? 1   degenerate? 1
+  Y=11 -> (p,q)=(11,71)  legs (a,b,c)=(3124,4557,9840)
+       Face/Pi = 117591849   square? 0   degenerate? 0
+
+=== The single non-degenerate candidate (p,q)=(11,71) ===
+Face/Pi = 117591849
+sqrtint(Face/Pi) = 10843,  sqrtint^2 = 117570649
+issquare? 0   (must be 0 = NOT a square)
+So no perfect cuboid arises from (11,71): the third face fails squareness.
+
+=== Independent prime-by-prime audit, p in [3, 5000] ===
+(direct SG structural test, NOT via C_anom)
+space-diagonal hits over primes p in [3,5000]: [[11, 71, 1]]
+(framework expects only (11,71))

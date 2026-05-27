@@ -1,0 +1,81 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Encoding S² as F_2 matrix...
+Rank of S² as F_2 matrix = 4
+delta(e1,0) = [16307767, -16307767, -1]
+delta(e2,0) = [16307767, -16307767, -1]
+delta(e3,0) = [1, 1, 1]
+S2[1] = delta(e3,0)
+S2[7] = delta(e1,0)
+S2[7] = delta(e2,0)
+
+Torsion image basis:
+  T1_image (from (e1,0)) = [16307767, -16307767, -1]
+  T2_image (from 8-torsion) = [28243056730, -3082611455, -586454]
+Verifying torsion images are in S²:
+  T1_image in S² at index 7
+  T2_image in S² at index 14
+
+=== Linear algebra ===
+Basis of S² as F_2: indices List([2, 3, 5, 9])
+Basis matrix dimensions: [4, 39]
+Basis triples:
+  beta_1 = [1, -759, -759]
+  beta_2 = [8012167, 6913, 1159]
+  beta_3 = [2734081, -2359, -1159]
+  beta_4 = [10330, -15495, -6]
+
+=== Constructing torsion-aware basis ===
+rank(B_tors mod 2) = 2
+Final basis (size 4):
+  beta_1 = [16307767, -16307767, -1]
+  beta_2 = [28243056730, -3082611455, -586454]
+  beta_3 = [1, -759, -759]
+  beta_4 = [8012167, 6913, 1159]
+
+=== Cassels-Tate matrix (Schaefer variant) ===
+M_CT (Schaefer) =
+[0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]
+rank(M_CT) over F_2 = 0
+
+Per-place CT contributions for beta_3, beta_4 pair (Schaefer):
+  v=-1 contrib=0
+  v=2 contrib=0
+  v=3 contrib=0
+  v=5 contrib=0
+  v=7 contrib=0
+  v=11 contrib=0
+  v=19 contrib=0
+  v=23 contrib=0
+  v=31 contrib=0
+  v=61 contrib=0
+  v=223 contrib=0
+  v=337 contrib=0
+  v=1033 contrib=0
+  Total: 0
+
+=== CT variant 2 (off-diag full) ===
+M_CT (off-diag full) =
+[0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]
+rank(M_CT2) over F_2 = 0
+
+=== CT variant 3 (Cassels-Schaefer alternative) ===
+M_CT (variant 3) =
+[0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]
+rank(M_CT3) over F_2 = 0
+
+Diagonal entries (must be 0 if alternating):
+  M[1,1] = 0
+  M[2,2] = 0
+  M[3,3] = 0
+  M[4,4] = 0
+
+Lower-right 2x2 block (CT on S²/E(Q)_tors_image):
+M[3..4, 3..4] = [0 0; 0 0]
+rank of lower-right 2x2 over F_2 = 0
+
+===========================================
+VERDICT
+===========================================
+rank(M_22) = 0
+→ Sha(E_Hm)[2] = 0, rk(E_Hm) = 2
+→ (61, 38) PERMANENTLY EXITS GENUS-2 TIER.

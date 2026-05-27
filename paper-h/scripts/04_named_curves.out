@@ -1,0 +1,25 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+=== (i) E_PCP(q) universal geometry ===
+E_PCP with t=q^2: a-invariants [0, 1+t, 0, t, 0]
+discriminant Delta(t) = 16*t^4 - 32*t^3 + 16*t^2   (= 16 q^4 (q^2-1)^2 with t=q^2)
+c4(t) = 16*t^2 - 16*t + 16   (= 16(q^4 - q^2 + 1) with t=q^2)
+
+=== (ii) Saunderson cleanest-formulation curve ===
+y^2 = x^3 + x^2 - x + 15
+conductor: 160
+ellidentify (Cremona label): 160a2
+ellrank: lo=1 hi=1  generators=[[-1, 4]]
+
+=== (iii) auxiliary rank-0 cover 80a1 (X_-) ===
+y^2 = x^3 - 36 x^2 + 320 x
+conductor: 80
+ellidentify (Cremona label): 80a1
+ellrank: lo=0 hi=0
+
+=== (iv) (22,17) generators in q-fiber coordinates ===
+q = 195/748  (q^2 = 38025/559504)
+ellrank on raw model: lo=3 hi=3
+   Q1 = (-15/176, 2415/65824)   on E_PCP(q): 1
+   Q2 = (117/44, 169533/32912)   on E_PCP(q): 1
+   Q3 = (12675/44, 161213325/32912)   on E_PCP(q): 1
+regulator on E_PCP(q): 18.8337174893351877483584174668

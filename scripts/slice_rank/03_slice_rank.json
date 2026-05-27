@@ -1,0 +1,408 @@
+[
+  {
+    "p": 3,
+    "indicator_nnz": 49,
+    "p7": 2187,
+    "partitions": [
+      {
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          3,
+          3,
+          243
+        ],
+        "flatten_ranks": [
+          2,
+          2,
+          3
+        ],
+        "slice_rank_upper_bound": 2
+      },
+      {
+        "groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          9,
+          9,
+          27
+        ],
+        "flatten_ranks": [
+          3,
+          3,
+          4
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          9,
+          27,
+          9
+        ],
+        "flatten_ranks": [
+          3,
+          3,
+          3
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          9,
+          27,
+          9
+        ],
+        "flatten_ranks": [
+          3,
+          4,
+          3
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "shape": [
+          27,
+          27,
+          3
+        ],
+        "flatten_ranks": [
+          4,
+          4,
+          2
+        ],
+        "slice_rank_upper_bound": 2
+      },
+      {
+        "groups": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          27,
+          3,
+          27
+        ],
+        "flatten_ranks": [
+          4,
+          2,
+          4
+        ],
+        "slice_rank_upper_bound": 2
+      },
+      {
+        "groups": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ]
+        ],
+        "shape": [
+          9,
+          9,
+          27
+        ],
+        "flatten_ranks": [
+          3,
+          3,
+          4
+        ],
+        "slice_rank_upper_bound": 3
+      }
+    ]
+  },
+  {
+    "p": 5,
+    "indicator_nnz": 193,
+    "p7": 78125,
+    "partitions": [
+      {
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          5,
+          5,
+          3125
+        ],
+        "flatten_ranks": [
+          3,
+          3,
+          7
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          25,
+          25,
+          125
+        ],
+        "flatten_ranks": [
+          7,
+          7,
+          13
+        ],
+        "slice_rank_upper_bound": 7
+      },
+      {
+        "groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          25,
+          125,
+          25
+        ],
+        "flatten_ranks": [
+          7,
+          7,
+          7
+        ],
+        "slice_rank_upper_bound": 7
+      },
+      {
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          25,
+          125,
+          25
+        ],
+        "flatten_ranks": [
+          7,
+          13,
+          7
+        ],
+        "slice_rank_upper_bound": 7
+      },
+      {
+        "groups": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "shape": [
+          125,
+          125,
+          5
+        ],
+        "flatten_ranks": [
+          13,
+          13,
+          3
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          125,
+          5,
+          125
+        ],
+        "flatten_ranks": [
+          13,
+          3,
+          13
+        ],
+        "slice_rank_upper_bound": 3
+      },
+      {
+        "groups": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ]
+        ],
+        "shape": [
+          25,
+          25,
+          125
+        ],
+        "flatten_ranks": [
+          7,
+          7,
+          13
+        ],
+        "slice_rank_upper_bound": 7
+      }
+    ]
+  }
+]

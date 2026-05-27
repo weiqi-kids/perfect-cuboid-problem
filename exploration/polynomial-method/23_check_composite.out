@@ -1,0 +1,4 @@
+m=9 factor=Mat([3, 2]) nontrivial count = 0
+m=25 factor=Mat([5, 2]) nontrivial count = 0
+m=49 factor=Mat([7, 2]) nontrivial count = 0
+m=121 factor=Mat([11, 2]) nontrivial count = 0

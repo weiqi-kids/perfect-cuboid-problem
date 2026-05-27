@@ -1,0 +1,3 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Master tuples (m,n), 1<=n<m<=100, gcd=1, m-n odd: 2040
+  processed 50/2040; cand_open=5, peschmann_closed=39, zerorank=6, errored=0

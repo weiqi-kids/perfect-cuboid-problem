@@ -1,0 +1,8 @@
+Step4 D(r) expand: 4*r**8 + 272*r**6 - 488*r**4 + 272*r**2 + 4
+Step4 claim     : 4*r**8 + 272*r**6 - 488*r**4 + 272*r**2 + 4
+Step4 identity holds: True
+Step5 lhs - rhs simplify: 0
+Step6: r rational solving r^2-W r+1=0 needs disc W^2-4 square. disc = W**2 - 4
+
+PAPER-DRAFT bracket numerator /q^8 with p=t q: t**8 + 68*t**6 - 122*t**4 + 68*t**2 + 1
+equals t^8+68t^6-122t^4+68t^2+1 ? True

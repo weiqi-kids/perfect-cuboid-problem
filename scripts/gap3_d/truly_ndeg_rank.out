@@ -1,0 +1,21 @@
+# truly non-degenerate passer ranks
+m=433 n=118 rootno=1 ellrank=[2,2] gens=2 hits=0
+m=497 n=80 rootno=1 ellrank=[0,2] gens=0 hits=0
+m=509 n=26 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=509 n=138 rootno=-1 ellrank=[1,1] gens=0 hits=0
+m=553 n=8 rootno=-1 ellrank=[1,1] gens=1 hits=0
+m=581 n=34 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=621 n=26 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=641 n=252 rootno=1 ellrank=[2,2] gens=2 hits=0
+m=693 n=236 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=721 n=22 rootno=-1 ellrank=[1,1] gens=0 hits=0
+m=757 n=118 rootno=-1 ellrank=[1,1] gens=0 hits=0
+m=797 n=288 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=829 n=168 rootno=-1 ellrank=[1,1] gens=1 hits=0
+m=845 n=236 rootno=1 ellrank=[2,2] gens=2 hits=0
+m=849 n=68 rootno=-1 ellrank=[1,1] gens=1 hits=0
+m=881 n=322 rootno=1 ellrank=[0,0] gens=0 hits=0
+m=929 n=170 rootno=-1 ellrank=[1,1] gens=0 hits=0
+m=929 n=306 rootno=-1 ellrank=[1,1] gens=1 hits=0
+m=937 n=232 rootno=-1 ellrank=[1,1] gens=1 hits=0
+m=989 n=326 rootno=-1 ellrank=[1,1] gens=0 hits=0

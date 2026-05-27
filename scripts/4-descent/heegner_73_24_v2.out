@@ -1,0 +1,8 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+E_Hm of (73,24):
+  conductor = 18111253514418330
+  root number = -1
+
+=== ellheegner attempt (25-min timeout) ===
+  ellheegner(E):
+  ERROR / TIMEOUT: error("the PARI stack overflows !\n  current stack size: 2000000000 (1907.349 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n")

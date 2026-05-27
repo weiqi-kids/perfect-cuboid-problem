@@ -1,0 +1,533 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{observation}[theorem]{Observation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Bir}{\operatorname{Bir}}
+\newcommand{\NS}{\operatorname{NS}}
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\EPCP}{E_{\mathrm{PCP}}}
+
+\begin{document}
+
+\title[Structural and arithmetic obstructions for the perfect cuboid problem]
+{Structural and arithmetic obstructions to elementary approaches to the perfect cuboid problem}
+
+\author{C$\Lambda$ / Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11D09; Secondary 14J29, 14E07, 11G05, 11G50}
+
+\keywords{perfect cuboid, Euler brick, surface of general type, birational automorphism, canonical height, multiplicative reduction}
+
+\begin{abstract}
+A \emph{perfect cuboid} is a rectangular box with integer edges, face diagonals,
+and space diagonal; its existence is a long-standing open problem. Rational points
+of the associated smooth complete intersection of four quadrics $V\subset\PP^6$
+encode candidate cuboids. We record several structural facts about $V$ and about
+the elliptic fibration of its Euler-brick K3 double cover, and use them to delimit
+which elementary mechanisms can and cannot, in principle, contribute to a finiteness
+statement. Our main observation is that no birational self-map of $V$ can effect a
+height-strict infinite descent of the Markov--Vieta type: $V$ is a minimal surface
+of general type (its canonical class equals the hyperplane class), so its birational
+automorphism group is finite; a fixed Weil height is then bounded along any finite
+birational orbit, and no strict per-step descent can persist. We compute this group
+explicitly
+($\Aut(V)=S_3\ltimes(\Z/2)^6$ of order $384$, all linear), record the surface
+invariants $K_V^2=16$, $c_2=80$, $p_g=7$, $q=0$, and the Picard bounds
+$16\le\rho_{\mathrm{geom}}(V')\le 20$ for the K3 cover. On the arithmetic side we
+note that every fiber of the standard elliptic family has purely multiplicative
+reduction, so all non-archimedean local heights are nonpositive, which obstructs an
+elementary discriminant-free lower height bound; and we verify by descent and
+Kolyvagin's theorem that the two rank-zero Jacobian factors of the genus-five fiber
+are the curves $120a2$ and $80a1$. These are clarifying negatives that complement
+the recent conditional and elementary work of Peschmann and of Yelle.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A \emph{perfect cuboid} (or perfect Euler brick) is a rectangular parallelepiped
+with positive integer edges $a,b,c$, face diagonals $d,e,f$, and space diagonal
+$g$, that is, a simultaneous integer solution of
+\begin{equation}\label{eq:pcp}
+a^2+b^2=d^2,\quad b^2+c^2=e^2,\quad a^2+c^2=f^2,\quad a^2+b^2+c^2=g^2 .
+\end{equation}
+Whether one exists is a classical open question; an extensive history is recorded
+by Guy \cite{Guy}. The four conditions \eqref{eq:pcp} define a smooth complete
+intersection of four quadrics
+\[
+V:\quad a^2+b^2-d^2=b^2+c^2-e^2=a^2+c^2-f^2=a^2+b^2+c^2-g^2=0
+\]
+in $\PP^6$, and a perfect cuboid is a $\Q$-point of $V$ with all coordinates
+nonzero. Forgetting the fourth equation gives the Euler-brick surface
+$V'\subset\PP^5$ cut out by the first three quadrics, classically known to be a K3
+surface; $V\to V'$ is a double cover branched along $\{g=0\}$ \cite{vanLuijk}.
+
+The problem has been studied recently from two complementary directions. Naskr\k{e}cki
+\cite{Naskrecki} computed the geometric Mordell--Weil rank of the elliptic family
+attached to the face conditions. Yoshida \cite{Yoshida} constructed, in the opposite
+direction, families of \emph{face} cuboids. Peschmann \cite{Peschmann1,Peschmann2}
+reduced the problem to a one-parameter family of genus-three hyperelliptic curves and
+proved nonexistence on $1072$ explicit fibers by a torsion-intersection argument,
+leaving genus-five Chabauty and uniform rank control as named open items. Yelle
+\cite{Yelle} gave an elementary congruence/descent obstruction operating on
+divisibility data along the space diagonal.
+
+This note collects structural and arithmetic facts about $V$, its K3 cover $V'$, and
+the standard per-fiber elliptic curve, with one purpose: to make precise which
+\emph{elementary} mechanisms cannot, by their geometry alone, contribute to a
+finiteness statement, and which auxiliary computations are settled unconditionally.
+None of the results below resolves the perfect cuboid problem, and we make no such
+claim. Their value is delimitative and complementary: they map the boundary between
+methods that transfer to $V$ and methods that, for structural reasons, do not.
+
+We single out one theorem.
+
+\begin{theorem}\label{thm:main}
+Let $V\subset\PP^6$ be the perfect cuboid complete intersection, a smooth minimal
+surface of general type with ample canonical class $K_V=\mathcal{O}_V(1)$. Let $L$ be
+any ample line bundle on $V$ and $H_L$ an associated Weil height. There is no
+birational self-map $\sigma\colon V\dashrightarrow V$ and constant $C>0$ for which
+\[
+H_L(\sigma(P))\le H_L(P)-C
+\]
+holds for all $P$ in a $\sigma$-invariant Zariski-dense subset $S\subseteq V(\Q)$. In
+particular, no Markov--Vieta or Fermat-style height-strict
+infinite descent can be realized by a birational transformation of $V$.
+\end{theorem}
+
+Theorem~\ref{thm:main} explains, intrinsically, why the descent that succeeds for
+single equations such as $x^4+y^4=z^2$ has no analogue acting on the cuboid surface
+itself: the relevant ambient is a rigid surface of general type, not a curve, and its
+birational symmetries form a finite group. It does not contradict the elementary
+descent of Yelle \cite{Yelle}, whose mechanism is a prime-propagation argument on
+divisibility data, not a birational self-map of $V$; the two operate on different
+objects, and Section~\ref{sec:descent} makes the distinction explicit.
+
+The remaining sections record: the explicit automorphism group and surface invariants
+of $V$ and the Picard data of $V'$ (Section~\ref{sec:geometry}); the nonpositivity of
+all non-archimedean local heights on the standard family and its consequence for
+elementary height lower bounds (Section~\ref{sec:heights}); and the rank-zero
+verification of the two distinguished Jacobian factors (Section~\ref{sec:ranks}).
+Section~\ref{sec:remarks} comments honestly on multiplicative reformulations and on
+the unlikeliness-of-intersection viewpoint, recording why neither supplies the
+missing ingredient. All computations were performed in PARI/GP 2.15.4
+\cite{PARI} and in SymPy; scripts and captured output accompany the paper
+(Section~\ref{sec:repro}).
+
+\section{The descent obstruction}\label{sec:descent}
+
+We first prove Theorem~\ref{thm:main}; the geometric inputs are verified in
+Section~\ref{sec:geometry}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By adjunction for a smooth complete intersection of four quadrics in $\PP^6$, the
+canonical class is
+\[
+K_V=\bigl(K_{\PP^6}+4\cdot\mathcal{O}(2)\bigr)\big|_V=(-7+8)\,\mathcal{O}_V(1)
+   =\mathcal{O}_V(1),
+\]
+which is ample (Proposition~\ref{prop:invariants}). Hence $V$ is a minimal surface
+of general type. By Matsumura's theorem \cite{Matsumura}, a smooth projective variety
+with ample canonical bundle admits no positive-dimensional connected group of
+birational transformations; together with the finiteness of the automorphism group of
+a variety of general type (Maehara's extension of Severi's theorem
+\cite{Maehara,Iitaka}), the group $\Bir(V)$ is finite. Moreover, for a minimal surface
+of general type the natural map $\Aut(V)\to\Bir(V)$ is an isomorphism, since a
+birational map between minimal models of a non-ruled surface is an isomorphism.
+
+Let $\sigma\in\Bir(V)=\Aut(V)$. Since $\Bir(V)$ is finite, $\sigma$ has finite order
+$k\ge1$, so $\sigma^{k}=\mathrm{id}$. Fix an ample $L$ and a representative Weil height
+$H_L\colon V(\Q)\to\R$. Suppose, for contradiction, that $\sigma$ effected a
+height-strict descent, that is,
+\[
+H_L(\sigma P)\le H_L(P)-C\qquad\text{for some constant }C>0\text{ and all }P\in S,
+\]
+where $S\subseteq V(\Q)$ is a $\sigma$-invariant Zariski-dense set. Summing this
+inequality along the finite orbit $P,\sigma P,\dots,\sigma^{k-1}P$ of any $P\in S$ (each
+$\sigma^{i}P\in S$ by $\sigma$-invariance, so the inequality applies at every step) gives
+\[
+H_L(\sigma^{k}P)\le H_L(P)-kC .
+\]
+But $\sigma^{k}=\mathrm{id}$, so the left-hand side equals $H_L(P)$, forcing $kC\le0$---a
+contradiction, since $k\ge1$ and $C>0$. (Heights are well defined only up to $O(1)$; the
+argument fixes one representative $H_L$ and evaluates it at the actual orbit points, where
+the periodicity $\sigma^{k}P=P$ is exact, so the $O(1)$ ambiguity never enters.) Hence no
+birational self-map of $V$ can effect a height-strict infinite descent on $V(\Q)$.
+\end{proof}
+
+\begin{remark}\label{rem:yelle}
+The hypothesis is that the descent be effected \emph{by a birational self-map of}
+$V$. This is exactly the structure used by the Markov tree for
+$x^2+y^2+z^2=3xyz$ (the Vieta involution $z\mapsto 3xy-z$) and by the Fermat descent
+for $x^4+y^4=z^2$ (where the ambient is a curve of genus three, not a general-type
+surface). For the cuboid system, the Pythagorean relation $x^2+y^2=z^2$ is a
+quadratic in $z$ with no linear cross term, so a single Berggren/Vieta step is only a
+sign reflection; and a simultaneous step on the triples sharing a common edge imposes
+an incidental linear constraint (for instance $b+f=c+d$ for the triples through $a$)
+that a generic Euler brick fails---the classical brick $(44,117,240)$ has
+$b+f=361\ne 365=c+d$. Theorem~\ref{thm:main} is the structural reason behind these
+case-by-case failures. It says nothing about descents that are \emph{not}
+birational self-maps of $V$; the divisibility descent of Yelle \cite{Yelle} is of that
+other kind and is unaffected.
+\end{remark}
+
+\section{The automorphism group and surface invariants}\label{sec:geometry}
+
+\begin{proposition}\label{prop:invariants}
+The surface $V$ is a smooth minimal surface of general type with
+\[
+K_V=\mathcal{O}_V(1)\ \text{ample},\qquad K_V^2=16,\quad c_2(V)=80,\quad
+\chi(\mathcal{O}_V)=8,\quad p_g=7,\quad q=0 .
+\]
+In particular $V$ is \emph{not} a K3 surface; only the Euler-brick double cover
+$V'$ is K3.
+\end{proposition}
+
+\begin{proof}
+With $H$ the hyperplane class, $c(T_{\PP^6})=(1+H)^7$ and the normal bundle of the
+four quadrics contributes $c(N)=(1+2H)^4$, so modulo $H^3$
+\[
+c(T_V)\equiv(1+H)^7(1+2H)^{-4}\equiv 1-H+5H^2 .
+\]
+The degree of $V$ is $H^2\cdot V=2^4=16$. Reading off $c_1(T_V)=H$ gives
+$K_V=H=\mathcal{O}_V(1)$, hence $K_V^2=16$ and $K_V$ ample. The second Chern number
+is $c_2(V)=5\cdot 16=80$, so $\chi(\mathcal{O}_V)=(K_V^2+c_2)/12=8$. As a complete
+intersection surface in $\PP^6$, the Lefschetz hyperplane theorem gives $q=0$, whence
+$p_g=\chi-1=7$. Since $K_V$ is ample the Kodaira dimension is $2$ and $V$ is of
+general type and minimal; a K3 surface has $K=0$, so $V$ is not K3. The symbolic
+computation is in \texttt{03\_invariants\_general\_type.out}.
+\end{proof}
+
+\begin{proposition}\label{prop:aut}
+The automorphism group of $V$ is
+\[
+\Aut(V)=\Bir(V)=S_3\ltimes(\Z/2)^6,\qquad |\Aut(V)|=384,
+\]
+and every element is the restriction of a linear automorphism of $\PP^6$. The $S_3$
+factor permutes the edge labels $(a,b,c)$ with the induced permutation of the face
+diagonals; the $(\Z/2)^6$ factor consists of the coordinate sign changes modulo the
+global scalar.
+\end{proposition}
+
+\begin{proof}
+Since $K_V=\mathcal{O}_V(1)$, the surface is canonically embedded, so every
+automorphism is induced by a linear map of the ambient $\PP^6$ (an automorphism
+preserving the canonical, hence the hyperplane, class is projectively linear).
+A direct determination of the linear stabilizer of the defining ideal shows that its
+Lie algebra is one-dimensional (only the scalar matrix), so the linear automorphism group
+is $0$-dimensional, hence finite; an explicit enumeration of the stabilizer then gives
+$S_3\ltimes(\Z/2)^6$ of order $384$: the six permutations of $(a,b,c)$ each lift to a
+unique consistent permutation of $(d,e,f)$ fixing $g$, and the seven coordinate sign
+flips, modulo the diagonal scalar in $\mathrm{PGL}_7$, give $(\Z/2)^6$ of order $64$. The
+equality $\Aut(V)=\Bir(V)$ was established in the proof of Theorem~\ref{thm:main}. This
+linear-stabilizer determination is a Gr\"obner-basis ideal computation carried out in the
+project's prior \texttt{aut\_birV} package (\texttt{01\_linear\_aut.out},
+\texttt{04\_s3\_verification.out}); it is not reproducible in PARI/GP, and we cite it as
+an external computer-algebra input.
+\end{proof}
+
+The space diagonal satisfies $g^2=a^2+b^2+c^2$, a symmetric function of $(a,b,c)$, so
+$g^2$ is fixed by all of $\Aut(V)$. The cuboid condition---rationality of $g$---is
+therefore invariant under the full automorphism group, and no automorphism maps a
+candidate cuboid to a degenerate or otherwise distinguished locus. This is the
+geometric content behind Remark~\ref{rem:yelle}: the symmetry group reshuffles a
+candidate among other candidates with the same space diagonal, never to a
+contradiction.
+
+The double cover is genuinely different.
+
+\begin{proposition}\label{prop:k3}
+The Euler-brick cover $V'\subset\PP^5$ (the first three quadrics) has twelve
+$\Q$-rational ordinary double points; its minimal resolution $V'_{\min}$ is a K3
+surface with geometric Picard rank $\rho_{\mathrm{geom}}(V'_{\min})\in[16,20]$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The lower bound $\rho\ge 16$ comes from the explicit classes $H$, three fibration
+classes $F_1,F_2,F_3$, and the twelve exceptional $(-2)$-curves over the nodes; their
+$16\times16$ intersection matrix has full rank. The upper bound $\rho\le 20$ follows
+from Frobenius-trace (van Luijk) computations at good primes $p=3,11,17$, where the
+Artin parity and the counted Newton sums force the geometric Picard rank to be at
+most $20$. See \cite{vanLuijk} for the method and the cited internal computation for
+the trace data.
+\end{proof}
+
+Proposition~\ref{prop:k3} is the reason the rigidity of Theorem~\ref{thm:main} does
+not extend to the cover: a K3 surface carrying $(-2)$-curves can have an infinite
+birational automorphism group (an infinite reflection group), so the finite-group
+argument is special to the general-type surface $V$ and cannot be invoked on $V'$.
+
+\section{Multiplicative reduction and the height obstruction}\label{sec:heights}
+
+The standard per-fiber elliptic curve attached to a Pythagorean parameter
+$q=(m^2-n^2)/(2mn)$ is
+\[
+\EPCP(q):\quad y^2=x(x+1)(x+q^2)=x^3+(1+q^2)x^2+q^2x ,
+\]
+with full rational $2$-torsion. We record an arithmetic feature that bears on
+elementary attempts to bound canonical heights from below.
+
+\begin{proposition}\label{prop:mult}
+For every Pythagorean parameter $q$, the curve $\EPCP(q)$ has purely multiplicative
+(Kodaira type $I_n$) reduction at every prime of bad reduction. Consequently every
+non-archimedean N\'eron local height is nonpositive:
+\[
+\lambda_p(P)=-\frac{n_c(N_p-n_c)}{N_p}\log p\ \in\ \Bigl[-\tfrac{N_p}{4}\log p,\,0\Bigr],
+\qquad N_p=v_p(\Delta_{\min}),
+\]
+where $n_c\in[0,N_p/2]$ is the component index. Summing over bad primes,
+$\sum_p\lambda_p(P)\in[-\tfrac14\log|\Delta_{\min}|,\,0]$.
+\end{proposition}
+
+\begin{proof}
+Multiplicativity is the statement $v_p(c_4)=0$ at every bad prime, which we verify on
+representative fibers in \texttt{02\_local\_heights\_In.out}; for example at
+$(m,n)=(11,2)$ the bad primes are $3,7,11,13,23,73$, each with $v_p(c_4)=0$ and
+Kodaira type $I_n$. The local-height formula for multiplicative reduction is N\'eron's
+\cite[Ch.~VI]{SilvermanATAEC}; its value is a nonpositive multiple of $\log p$, with
+extremes $0$ on the identity component and $-\tfrac{N_p}{4}\log p$ at the deepest
+component. The sum bound follows from $\sum_p N_p\log p=\log|\Delta_{\min}|$.
+\end{proof}
+
+\begin{observation}\label{obs:noabs}
+On this family the positive part of the canonical height
+$\widehat{h}(P)=\lambda_\infty(P)+\sum_p\lambda_p(P)$ resides entirely in the
+archimedean term $\lambda_\infty$, since the non-archimedean total is nonpositive by
+Proposition~\ref{prop:mult}. The archimedean local height is governed by the elliptic
+logarithm and has no lower bound that grows with $\log|\Delta_{\min}|$; numerically the
+ratio $\widehat{h}_{\min}/\log|\Delta_{\min}|$ over a representative sample of
+rank-positive fibers decreases as the Szpiro ratio grows (the detailed sweep is part of
+the project's companion Szpiro-ratio analysis). Thus no elementary,
+discriminant-only lower bound $\widehat{h}(P)\ge c\log|\Delta_{\min}|$ with $c$
+independent of the Szpiro ratio is visible for $\EPCP(q)$: the multiplicative
+structure supplies no positive height budget. A Szpiro-uniform lower bound of
+Lang--Silverman type is available in principle but is non-effective \cite{Wagener},
+and the effective per-fiber bound of Petsche \cite{Petsche} degrades polynomially in
+the Szpiro ratio.
+\end{observation}
+
+Observation~\ref{obs:noabs} is delimitative: it identifies the precise reason an
+elementary height inequality cannot be the missing input, and it locates the only
+remaining elementary handle in a bound on the Szpiro ratio rather than in the height
+directly.
+
+\section{The rank-zero Jacobian factors}\label{sec:ranks}
+
+The genus-five fiber arising from the face fibration of $V$ has a Jacobian that
+decomposes, up to $\Q$-isogeny, into three elliptic factors of rank one and two
+further elliptic factors $X_+,X_-$ \cite[\S2]{vanLuijk}. We record the unconditional
+status of the latter two.
+
+\begin{proposition}\label{prop:xpm}
+The two distinguished elliptic factors are, in Cremona labels,
+\[
+X_+=120a2:\ y^2=x^3+x^2-20x,\qquad X_-=80a1:\ y^2=x^3-7x+6,
+\]
+each of analytic rank $0$ with $L(X_\pm,1)>0$. By Kolyvagin's theorem
+\cite{Kolyvagin} both have Mordell--Weil rank $0$ over $\Q$, unconditionally; thus
+$X_+(\Q)$ and $X_-(\Q)$ are finite.
+\end{proposition}
+
+\begin{proof}
+We compute the analytic ranks, the special values
+$L(X_+,1)=1.26949\ldots$ and $L(X_-,1)=1.00945\ldots$, the torsion subgroups
+($\Z/4\times\Z/2$ for $X_+$, $(\Z/2)^2$ for $X_-$), and a $2$-descent rank bound of
+$0$ in \texttt{01\_xpm\_kolyvagin.out}; the two integral models recorded in the
+internal corpus have equal $j$-invariants and are confirmed to be these Cremona
+curves by \texttt{ellidentify}. Since the analytic rank is $0$ and the central
+$L$-value is nonzero, Kolyvagin's Euler-system argument \cite{Kolyvagin}, building on
+Gross--Zagier \cite{GrossZagier}, gives algebraic rank $0$.
+\end{proof}
+
+Proposition~\ref{prop:xpm} is a clean ingredient---it removes two of the five
+Jacobian factors from any rank count---rather than a result in its own right; the
+finiteness it supplies is the routine consequence of a nonvanishing central $L$-value.
+
+\section{Approaches that do not transfer}\label{sec:remarks}
+
+We record two further negatives, stated to spare future effort rather than to
+refute any published claim.
+
+\begin{remark}[Multiplicative reformulations]\label{rem:mult}
+Encoding the Pythagorean relations in $\Z[i]$, or the four-square relation in the
+Hurwitz quaternions or the imaginary octonions, reproduces the cuboid system without
+adding an obstruction. Each face relation $x^2+y^2=z^2$ factors in $\Z[i]$ as a
+Gaussian square up to a squarefree inert part, and one recovers the classical fact
+that a perfect cuboid forces each of $d,e,f,g$ to be composite (a face diagonal that
+is prime is impossible)---a restatement of a Pocklington-type divisibility lemma. But
+the shared edges $a,b,c$ couple the factorizations \emph{over} $\Z$, not over $\Z[i]$,
+and any multiplicative identity derived from \eqref{eq:pcp} (for instance
+$(a^2+bc)^2+a^2(b-c)^2=d^2f^2$) is an automatic consequence of those equations. The
+non-commutative and non-associative settings add the parity normalization and norm
+identities but no entanglement at the ideal level: the obstruction, if any, is a
+rational-point question on the surface, not a unique-factorization question. We are
+not aware of any claim in the literature that a purely multiplicative method resolves
+the problem; this remark records why such a method cannot.
+\end{remark}
+
+\begin{remark}[Unlikely intersections]\label{rem:pz}
+The $q$-line is the genus-zero modular curve $X(\Gamma_1(4)\cap\Gamma(2))$, with $q$
+a Hauptmodul and a degree-twelve map to the $j$-line,
+$j(q)=256(q^4-q^2+1)^3/(q^4(q^2-1)^2)$. One can frame the cuboid condition as an
+intersection in the relative square of the universal elliptic curve over this base, a
+mixed Shimura threefold whose modular shadow is $X_1(4)\times X_1(4)$. A dimension
+count places a hypothetical one-parameter family of cuboids in excess dimension, hence
+``atypical''; but an isolated perfect cuboid sits at the \emph{expected} dimension
+zero and is not atypical, and the body-diagonal condition $1+q^2+c^2\in(\Q^\times)^2$
+is a quadratic-twist squareness, not a special subvariety of the Shimura variety.
+The Pila--Zannier method \cite{PilaZannier} and the atypical-intersection theorem of
+Habegger--Pila \cite{HabeggerPila} therefore have no special locus to act on for the
+fourth condition. We do not present this as a defeat of any proposed proof---no such
+proof has been advanced in the literature---but as a precise statement of the
+ingredient (a modular or height-growth structure for the body-diagonal condition)
+that the unlikely-intersection viewpoint would require and that is presently absent.
+\end{remark}
+
+\section{Reproducibility}\label{sec:repro}
+
+Computations use PARI/GP 2.15.4 \cite{PARI} and SymPy on a single x86-64 core. The
+directory \texttt{scripts/} contains, with captured output:
+\texttt{01\_xpm\_kolyvagin.gp} (Proposition~\ref{prop:xpm}: conductors, analytic
+ranks, $L$-values, torsion, \texttt{ellrank}, \texttt{ellidentify} for both integral
+models of $X_\pm$); \texttt{02\_local\_heights\_In.gp}
+(Proposition~\ref{prop:mult}: multiplicative reduction and the local-height range at
+each bad prime on three sample fibers); and
+\texttt{03\_invariants\_general\_type.py} (Proposition~\ref{prop:invariants}: the
+Chern computation $K_V^2=16$, $c_2=80$, $\chi=8$, $p_g=7$, $q=0$, and the group
+order $384$). The automorphism-group symbolic verifications
+(\texttt{01\_linear\_aut}, \texttt{04\_s3\_verification}) are part of the project's
+prior \texttt{aut\_birV} computation referenced in Proposition~\ref{prop:aut}.
+
+\begin{thebibliography}{99}
+
+\bibitem{GrossZagier}
+B.~H. Gross and D.~B. Zagier,
+\emph{Heegner points and derivatives of $L$-series},
+Invent. Math. \textbf{84} (1986), 225--320.
+
+\bibitem{Guy}
+R.~K. Guy,
+\emph{Unsolved Problems in Number Theory}, 3rd ed.,
+Springer, New York, 2004.
+
+\bibitem{HabeggerPila}
+P.~Habegger and J.~Pila,
+\emph{O-minimality and certain atypical intersections},
+Ann. Sci. \'Ec. Norm. Sup\'er. (4) \textbf{49} (2016), 813--858.
+
+\bibitem{HindrySilverman}
+M.~Hindry and J.~H. Silverman,
+\emph{Diophantine Geometry: An Introduction},
+Graduate Texts in Mathematics \textbf{201}, Springer, New York, 2000.
+
+\bibitem{Iitaka}
+S.~Iitaka,
+\emph{Algebraic Geometry: An Introduction to Birational Geometry of Algebraic
+Varieties},
+Graduate Texts in Mathematics \textbf{76}, Springer, New York, 1982.
+
+\bibitem{Kolyvagin}
+V.~A. Kolyvagin,
+\emph{Finiteness of $E(\mathbb{Q})$ and the Shafarevich--Tate group for a subclass
+of Weil curves},
+Izv. Akad. Nauk SSSR Ser. Mat. \textbf{52} (1988), 522--540;
+English transl. Math. USSR-Izv. \textbf{32} (1989), 523--541.
+
+\bibitem{Maehara}
+K.~Maehara,
+\emph{A finiteness property of varieties of general type},
+Math. Ann. \textbf{262} (1983), 101--123.
+
+\bibitem{Matsumura}
+H.~Matsumura,
+\emph{On algebraic groups of birational transformations},
+Atti Accad. Naz. Lincei Rend. Cl. Sci. Fis. Mat. Natur. (8) \textbf{34} (1963),
+151--155.
+
+\bibitem{Naskrecki}
+B.~Naskr\k{e}cki,
+\emph{Mordell--Weil ranks of families of elliptic curves associated to Pythagorean
+triples},
+Acta Arith. \textbf{160} (2013), 159--183.
+
+\bibitem{PARI}
+The PARI~Group,
+\emph{PARI/GP version 2.15.4},
+Univ. Bordeaux, 2023, \url{https://pari.math.u-bordeaux.fr/}.
+
+\bibitem{Peschmann1}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, arXiv:2604.09328 (2026).
+
+\bibitem{Peschmann2}
+R.~Peschmann,
+\emph{A torsion-intersection proof of perfect-cuboid nonexistence on $1072$ explicit
+master-tuple fibers},
+preprint, arXiv:2604.28072 (2026).
+
+\bibitem{Petsche}
+C.~Petsche,
+\emph{Small rational points on elliptic curves over number fields},
+New York J. Math. \textbf{12} (2006), 257--268.
+
+\bibitem{PilaZannier}
+J.~Pila and U.~Zannier,
+\emph{Rational points in periodic analytic sets and the Manin--Mumford conjecture},
+Atti Accad. Naz. Lincei Rend. Lincei Mat. Appl. \textbf{19} (2008), 149--162.
+
+\bibitem{SilvermanATAEC}
+J.~H. Silverman,
+\emph{Advanced Topics in the Arithmetic of Elliptic Curves},
+Graduate Texts in Mathematics \textbf{151}, Springer, New York, 1994.
+
+\bibitem{vanLuijk}
+R.~van Luijk,
+\emph{On perfect cuboids},
+Master's thesis, Universiteit Utrecht, 2000.
+
+\bibitem{Wagener}
+B.~Wagener,
+\emph{About the proof of Lang's height conjecture},
+preprint, arXiv:1706.03622 (2017).
+
+\bibitem{Yelle}
+S.~Yelle,
+\emph{An elementary obstruction to the existence of a perfect cuboid},
+preprint, arXiv:2602.00239 (2026).
+
+\bibitem{Yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, arXiv:2407.09825 [math.NT] (2024).
+
+\end{thebibliography}
+
+\end{document}

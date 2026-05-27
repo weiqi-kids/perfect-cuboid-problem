@@ -1,0 +1,18 @@
+[0;31m  ***   Warning: new stack size = 12000000000 (11444.092 Mbytes).[0m
+=== Effort 5 search ===
+--- (m,n) = (61,38) effort=5 ---
+  rank in [3, 3], #gens=0
+
+--- (m,n) = (63,38) effort=5 ---
+  rank in [3, 3], #gens=0
+
+--- (m,n) = (73,24) effort=5 ---
+  rank in [3, 3], #gens=0
+
+--- (m,n) = (88,35) effort=5 ---
+  rank in [3, 3], #gens=0
+
+--- (m,n) = (99,28) effort=5 ---
+  rank in [4, 4], #gens=0
+
+=== DONE ===

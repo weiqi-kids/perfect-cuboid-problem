@@ -1,0 +1,323 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Pone}{\mathbb{P}^{1}}
+\newcommand{\Epcp}{E_{\mathrm{PCP}}}
+
+\begin{document}
+
+\title[Degeneracy of torsion under the cuboid recovery map]{Torsion of the perfect-cuboid elliptic family is degenerate
+for the cuboid recovery map}
+
+\author{C$\Lambda$ / Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\date{\today}
+
+\subjclass[2020]{Primary 11G05; Secondary 11D09, 11G07}
+
+\keywords{Perfect cuboid, Euler brick, elliptic curve, rational torsion,
+Mazur's theorem, recovery map, degeneracy}
+
+\begin{abstract}
+For a Pythagorean rational $q$ (one with $1+q^{2}$ a rational square) the
+perfect-cuboid attack attaches to the corresponding fibre the elliptic curve
+$\Epcp(q)\colon Y^{2}=X(X+1)(X+q^{2})$ together with a rational recovery map
+$\varphi(X,Y)=2Yq/(q^{2}-X^{2})$ that returns the candidate cuboid edge of a rational
+point. The rational torsion of this family is $\Z/4\Z\times\Z/2\Z$. This
+classification is not new: in substance and method (Mazur's theorem followed by a Fermat
+descent on $u^{2}=s^{4}+1$) it is that of Yoshida's Lemma~2.1 for his face-cuboid family
+$E_{1,s}$, which we credit accordingly and re-derive through an explicit uniform
+discriminant identity $\Delta(Z)=(Z-1)^{4}(Z+1)^{2}(Z^{2}-6Z+1)$; we also record that
+$\Epcp(q)$ and $E_{1,s}$ are not $\Q$-isomorphic on the Pythagorean locus, only
+twist-related. The contribution of this note is one statement, with no analogue in
+Yoshida's work, on the interaction of the torsion with the recovery map: every
+non-identity rational torsion point of $\Epcp(q)$ is sent by $\varphi$ into
+$\{0,\infty\}$, the three two-torsion points to $0$ and the four order-four points to a
+pole (the identity being the point at infinity). Hence a torsion
+point never decodes to a finite nonzero edge, and any perfect-cuboid point on the fibre
+is of infinite order. The degeneracy is proved as an identity in $\Q(q)$ and confirmed
+numerically across $62$ Pythagorean values. We offer it as a companion structural remark
+to Yoshida and as the lemma on which a Chabauty- or descent-type search of the
+non-torsion locus would rest. No claim is made about the existence of perfect cuboids.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A \emph{perfect cuboid} is a rectangular box whose three edges, three face diagonals,
+and space diagonal are all rational; whether one exists is a long-standing open
+question \cite{Guy}. A productive way to organise the search is to slice the
+perfect-cuboid locus into one-parameter fibres indexed by a Pythagorean rational $q$
+(a rational with $1+q^{2}$ a rational square) and to attach to each fibre an elliptic
+curve whose rational points carry the arithmetic of that fibre. In the parametrisation
+used here the relevant curve is
+\begin{equation}\label{eq:Epcp}
+\Epcp(q)\colon\quad Y^{2}=X(X+1)(X+q^{2}),\qquad q\in\Q^{\ast}\setminus\{0,\pm1\},
+\end{equation}
+and a rational point $(X,Y)$ is decoded back to a candidate cuboid edge by the
+\emph{recovery map}
+\begin{equation}\label{eq:phi}
+\varphi\colon \Epcp(q)\dashrightarrow\Pone,\qquad
+\varphi(X,Y)=\frac{2Yq}{q^{2}-X^{2}}.
+\end{equation}
+A non-degenerate cuboid requires this value to be finite and nonzero.
+
+The torsion of the family \eqref{eq:Epcp} is $\Z/4\Z\times\Z/2\Z$, uniformly in $q$.
+This classification is not new. Yoshida \cite{Yoshida}, studying \emph{face} cuboids,
+introduces a family $E_{1,s}\colon y^{2}=x\bigl(x-(2s)^{2}\bigr)\bigl(x+(s^{2}-1)^{2}\bigr)$
+(a sub-family of Yagi's curves $y^{2}=x(x-a^{2})(x+b^{2})$ with $a^{2}+b^{2}$ a square)
+and proves in his Lemma~2.1 that $E_{1,s}(\Q)_{\mathrm{tor}}\cong\Z/2\Z\times\Z/4\Z$ for
+all $s\in\Q\setminus\{0,\pm1\}$, by Mazur's theorem followed by a descent that lands on
+$y^{2}=x^{3}-x$. Our family $\Epcp(q)$ obeys the same conclusion by the same route;
+the path differs only in bookkeeping, the descent here terminating on the
+rank-zero curve $y^{2}=x^{3}+4x$ (Cremona $\mathtt{32a1}$) via the equation
+$u^{2}=s^{4}+1$, that is, Fermat's theorem on right triangles. We therefore state the
+torsion classification as a recalled proposition and attribute it to Yoshida; the only
+presentational addition is an explicit uniform discriminant identity that isolates the
+order-eight obstruction directly in the parameter $q$.
+
+It is worth recording, since an earlier draft of the present framework asserted
+otherwise, that $\Epcp(q)$ and $E_{1,s}$ are \emph{not} $\Q$-isomorphic on the
+Pythagorean locus. Their $j$-invariants coincide only at the non-Pythagorean value
+$q=(s^{2}+1)/(2s)$; for genuinely Pythagorean $q=(t^{2}-1)/(2t)$ no rational $s$ matches
+the $j$-invariant of $\Epcp(q)$, as a search over $s$ of bounded height confirms. The
+two families are related by a $-1$ quadratic twist rather than by isomorphism. The
+torsion conclusion survives this distinction because it rests on the rational
+two-torsion (three rational roots) and a rational point of order four, features the
+twist shares; thus Yoshida's Lemma~2.1 is the correct prior art for the
+\emph{classification and its method}, applied here to a twist-inequivalent curve.
+
+The genuinely new content of this note is one statement about the interaction of the
+torsion with the recovery map \eqref{eq:phi}, a direction absent from Yoshida's paper,
+whose theorems run the opposite way (he uses non-torsion points to \emph{construct}
+infinitely many face cuboids). We show that the recovery map is blind to torsion: every
+torsion point is degenerate. The three two-torsion points map to the edge value $0$, and
+the four order-four points, sitting exactly on the pole divisor $X=\pm q$ of $\varphi$,
+map to a pole. Hence no torsion point yields a finite nonzero edge, and any
+perfect-cuboid point on the fibre must be of infinite order. The result is elementary
+once the torsion structure is in hand, and we make no claim beyond it: it does not
+resolve the perfect-cuboid problem, and it is offered as a structural companion to
+\cite{Yoshida} and as the foundational lemma for a subsequent rank- or Chabauty-type
+analysis of the non-torsion locus.
+
+\section{The curve and its torsion}
+
+We collect the standard facts, all uniform in $q$.
+
+\subsection{Rational two-torsion}
+Expanding \eqref{eq:Epcp} gives $Y^{2}=X^{3}+(1+q^{2})X^{2}+q^{2}X$. The right side
+factors over $\Q$ as $X(X+1)(X+q^{2})$, so the three nontrivial $2$-torsion points are
+\begin{equation}\label{eq:2tors}
+T_{1}=(0,0),\qquad T_{2}=(-1,0),\qquad T_{3}=(-q^{2},0),
+\end{equation}
+giving $(\Z/2\Z)^{2}\subseteq\Epcp(q)(\Q)_{\mathrm{tor}}$ for every
+$q\in\Q^{\ast}\setminus\{0,\pm1\}$.
+
+\subsection{Rational four-torsion}
+Substituting $X=q$ into \eqref{eq:Epcp} yields $Y^{2}=q(q+1)(q+q^{2})=q^{2}(q+1)^{2}$, so
+$Y=\pm q(q+1)$; substituting $X=-q$ yields $Y^{2}=q^{2}(q-1)^{2}$, so $Y=\pm q(q-1)$. The
+duplication formula on \eqref{eq:Epcp} gives, with $a_{2}=1+q^{2}$, $a_{4}=q^{2}$ and
+$P=(q,q(q+1))$, the slope $\lambda=q+1$ and
+\begin{equation}\label{eq:double}
+X(2P)=\lambda^{2}-a_{2}-2q=0,\qquad Y(2P)=\lambda\bigl(q-X(2P)\bigr)-q(q+1)=0,
+\end{equation}
+an identity in $\Q(q)$, so $2P=(0,0)$. The same computation with the sign variants gives
+$2\cdot(\pm q,\pm q(q\pm1))=(0,0)$. Hence the four points $(\pm q,\pm q(q\pm1))$ have
+order $4$ and
+\begin{equation}\label{eq:contain}
+\Z/4\Z\times\Z/2\Z\subseteq\Epcp(q)(\Q)_{\mathrm{tor}}
+\quad\text{for all }q\in\Q^{\ast}\setminus\{0,\pm1\}.
+\end{equation}
+
+\subsection{The classification (after Yoshida)}
+The torsion is exactly $\Z/4\Z\times\Z/2\Z$, and this is Yoshida's result transported
+to the present curve.
+
+\begin{proposition}[Torsion classification; cf.\ Yoshida {\cite[Lemma 2.1]{Yoshida}}]
+\label{prop:tors}
+For every Pythagorean $q\in\Q^{\ast}\setminus\{0,\pm1\}$,
+\[
+\Epcp(q)(\Q)_{\mathrm{tor}}\;=\;\Z/4\Z\times\Z/2\Z,
+\]
+the eight points being the identity, the three of \eqref{eq:2tors}, and the four
+$(\pm q,\pm q(q\pm1))$.
+\end{proposition}
+
+\begin{proof}[Proof (recalled)]
+Containment is \eqref{eq:contain}. For maximality, Mazur's theorem \cite{Mazur} leaves
+only $\Z/2\Z\times\Z/4\Z$, $\Z/2\Z\times\Z/6\Z$, $\Z/2\Z\times\Z/8\Z$ as supergroups of
+$\Z/2\Z\times\Z/4\Z$; the middle option fails Lagrange ($8\nmid12$), so it suffices to
+exclude a rational point of order $8$. Such a point $P$ has $2P$ of order $4$, hence
+$X(2P)\in\{q,-q\}$. Writing $X(2P)=q$ via the duplication formula and clearing
+denominators gives the quartic
+\[
+G_{1}(X,q)=X^{4}-4qX^{3}-(4q^{3}+2q^{2}+4q)X^{2}-4q^{3}X+q^{4},
+\]
+irreducible over $\Q[X,q]$. Since $G_{1}(0,q)=q^{4}\neq0$, any rational root is
+nonzero; setting $X=qZ$ and dividing by $q^{3}$ reduces $G_{1}=0$ to the quadratic in $q$
+\[
+4Z^{2}q^{2}-\bigl(Z^{4}-4Z^{3}-2Z^{2}-4Z+1\bigr)q+4Z^{2}=0,
+\]
+whose discriminant is
+\begin{equation}\label{eq:disc}
+\Delta(Z)=\bigl(Z^{4}-4Z^{3}-2Z^{2}-4Z+1\bigr)^{2}-64Z^{4}
+=(Z-1)^{4}(Z+1)^{2}(Z^{2}-6Z+1).
+\end{equation}
+The prefactor $(Z-1)^{4}(Z+1)^{2}=\bigl((Z-1)^{2}(Z+1)\bigr)^{2}$ is a square, so
+$\Delta(Z)$ is a square exactly when $Z^{2}-6Z+1=w^{2}$. This conic has the rational
+point $(0,1)$; parametrising by $w=tZ+1$ gives $Z=Z(t)=-2(t+3)/\bigl((t-1)(t+1)\bigr)$,
+and back-substitution simplifies the recovered $q$ to
+\[
+q=q_{+}(t)=\Bigl(\tfrac{4(t+1)}{(t-1)(t+3)}\Bigr)^{2}=s^{2},
+\qquad q_{-}(t)=1/s^{2}.
+\]
+Thus any order-eight parameter forces $q=s^{2}$ or $1/s^{2}$. The Pythagorean hypothesis
+$1+q^{2}\in\Q^{2}$ then demands $s^{4}+1\in\Q^{2}$, i.e.\ a rational point on
+$u^{2}=s^{4}+1$. This curve is birational to $y^{2}=x^{3}+4x$ (conductor $32$, Cremona
+$\mathtt{32a1}$), of analytic rank $0$ and torsion $\Z/4\Z$; by Kolyvagin its
+Mordell--Weil rank is $0$, so the only rational solution is $s=0$, giving
+$q\in\{0,\infty\}$, both excluded. The case $X(2P)=-q$ is identical with $q\mapsto-q$.
+The reduction to $s^{4}+1=u^{2}$ and its resolution by Fermat's theorem on right
+triangles is exactly the descent of Yoshida \cite[Lemma 2.1]{Yoshida}, there phrased on
+$y^{2}=x^{3}-x$; the discriminant identity \eqref{eq:disc} is the only presentational
+change.
+\end{proof}
+
+\begin{remark}
+Equation \eqref{eq:disc} is the single point at which the present write-up departs from
+\cite{Yoshida} at the level of formulae: it exhibits the order-eight obstruction as a
+uniform discriminant in the parameter $q$, with the square prefactor stripped off,
+rather than passing through an auxiliary curve. It is a convenience, not a new theorem.
+\end{remark}
+
+\section{Degeneracy of torsion under the recovery map}
+
+The recovery map \eqref{eq:phi} is regular on the affine locus $X\neq\pm q$ and has pole
+divisor $\{X=q\}\cup\{X=-q\}$. We record its action on torsion. This is the new content
+of the note.
+
+\begin{theorem}[Torsion degeneracy]\label{thm:main}
+Let $q\in\Q^{\ast}\setminus\{0,\pm1\}$ be Pythagorean. Then every one of the seven
+non-identity rational torsion points of $\Epcp(q)$ is sent by $\varphi$ into
+$\{0,\infty\}$: the three $2$-torsion points $\eqref{eq:2tors}$ map to $\varphi=0$, and
+the four order-four points $(\pm q,\pm q(q\pm1))$ lie on the pole divisor of $\varphi$,
+hence map to $\infty$. (The identity $O$ is the point at infinity of $\Epcp(q)$, outside
+the affine domain of $\varphi$.) Consequently no rational torsion point of $\Epcp(q)$ has
+finite nonzero image under $\varphi$.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:tors} the torsion consists of the identity, the three points of
+\eqref{eq:2tors}, and the four order-four points.
+
+For a $2$-torsion point $T_{i}=(X_{i},0)$ the numerator $2Yq$ of \eqref{eq:phi} vanishes,
+while the denominator $q^{2}-X_{i}^{2}$ does not: for $T_{1}$ it is $q^{2}\neq0$, for
+$T_{2}$ it is $q^{2}-1\neq0$ (as $q\neq\pm1$), and for $T_{3}$ it is
+$q^{2}-q^{4}=q^{2}(1-q^{2})\neq0$. Hence $\varphi(T_{i})=0$ for $i=1,2,3$.
+
+For an order-four point $(\pm q,\pm q(q\pm1))$ the $X$-coordinate satisfies $X^{2}=q^{2}$,
+so the denominator $q^{2}-X^{2}$ is $0$, while the numerator $2Yq=\pm2q^{2}(q\pm1)$ is
+nonzero because $q\notin\{0,\pm1\}$. Each of the four points therefore lies on the pole
+divisor, and $\varphi$ takes the value $\infty$ there.
+
+The identity $O$ is the point at infinity of $\Epcp(q)$, outside the affine domain of
+$\varphi$, and so is not assigned a finite nonzero edge; it is excluded from the seven
+counted above. The two displayed evaluations are identities in $\Q(q)$, independent of
+the particular Pythagorean value of $q$.
+\end{proof}
+
+\begin{corollary}\label{cor:nontorsion}
+On any Pythagorean fibre, a rational point of $\Epcp(q)$ decoding to a finite nonzero
+cuboid edge is necessarily of infinite order. In particular the torsion subgroup may be
+discarded at the outset of any search for perfect-cuboid solutions on the fibre.
+\end{corollary}
+
+\begin{proof}
+A finite nonzero value of $\varphi$ excludes, by Theorem~\ref{thm:main}, every torsion
+point. Since $\Epcp(q)(\Q)=\Epcp(q)(\Q)_{\mathrm{tor}}\oplus\Z^{r}$ with the torsion
+exhausted by Proposition~\ref{prop:tors}, such a point has infinite order.
+\end{proof}
+
+\begin{remark}
+Yoshida \cite{Yoshida} has no analogue of Theorem~\ref{thm:main}: his map runs from
+non-torsion points to face cuboids, producing solutions, whereas $\varphi$ here detects
+the \emph{absence} of solutions among torsion. The two viewpoints are compatible -- a
+perfect cuboid is a face cuboid with one further squareness condition -- and the present
+statement is the structural reason the torsion of \eqref{eq:Epcp} contributes nothing to
+the perfect-cuboid count.
+\end{remark}
+
+\section{Computational verification}
+
+All claims were checked symbolically in \texttt{sympy} and numerically in PARI/GP; the
+scripts and their output accompany this note.
+
+\begin{enumerate}
+\item \emph{Discriminant identity \eqref{eq:disc}.} The reduction $X(2P)=q\Rightarrow
+G_{1}=0$, the substitution $X=qZ$, and the factorisation
+$\Delta(Z)=(Z-1)^{4}(Z+1)^{2}(Z^{2}-6Z+1)$ were verified as exact identities, together
+with the conic parametrisation giving $q=s^{2}$
+(\texttt{03\_discriminant\_identity.py}).
+\item \emph{Degeneracy (Theorem~\ref{thm:main}).} The action of $\varphi$ on the eight
+torsion points was confirmed as an identity in $\Q(q)$
+(\texttt{05\_recovery\_degeneracy.py}) and numerically over $62$ Pythagorean values of
+$q$, all $62\times8=496$ evaluations landing in $\{0,\infty\}$ with torsion $[4,2]$ in
+every case (\texttt{02\_torsion\_sweep.gp}).
+\item \emph{Fermat obstruction.} The curve $y^{2}=x^{3}+4x$ has analytic rank $0$ and
+torsion $\Z/4\Z$, so $u^{2}=s^{4}+1$ has only $s=0$ (\texttt{04\_fermat\_curve.gp}).
+\item \emph{Twist, not isomorphism.} For Pythagorean $q\in\{4/3,3/4,5/12,12/5,15/8,8/15\}$
+no rational $s$ of height $\le80$ has $j(E_{1,s})=j(\Epcp(q))$, whereas the
+$j$-invariants agree along the non-Pythagorean locus $q=(s^{2}+1)/(2s)$; the curves are
+$-1$-twist-related (\texttt{01\_isomorphism.gp}).
+\end{enumerate}
+
+\section{Scope}
+
+This is a short structural note. Its single new theorem, the torsion degeneracy
+\ref{thm:main}, is a companion observation to Yoshida \cite{Yoshida}: it identifies the
+recovery map under which the entire torsion subgroup of the perfect-cuboid family is
+degenerate, and thereby justifies restricting any subsequent rank-, descent-, or
+Chabauty-type search to the non-torsion locus (Corollary~\ref{cor:nontorsion}). The
+torsion classification itself is Yoshida's and is presented as such. We make no claim
+about the existence or non-existence of perfect cuboids; the content here is the
+elementary but, to our knowledge, previously unrecorded fact that torsion alone never
+produces a finite nonzero edge.
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP and SymPy.
+
+\begin{thebibliography}{9}
+
+\bibitem{Guy} R.~K.~Guy, \emph{Unsolved Problems in Number Theory}, 3rd ed.,
+Problem Books in Mathematics, Springer, New York, 2004.
+
+\bibitem{Mazur} B.~Mazur, \emph{Rational isogenies of prime degree}, Invent. Math.
+\textbf{44} (1978), 129--162.
+
+\bibitem{Yoshida} T.~Yoshida, \emph{The relationship between face cuboids and elliptic
+curves}, preprint, arXiv:2407.09825 [math.NT], 2024.
+
+\end{thebibliography}
+
+\end{document}

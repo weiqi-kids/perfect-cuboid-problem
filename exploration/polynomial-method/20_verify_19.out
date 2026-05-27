@@ -1,0 +1,19 @@
+Squares in F_19* = [1, 4, 5, 6, 7, 9, 11, 16, 17]
+Edges in pair-graph: [[1, 4], [1, 5], [1, 6], [1, 16], [4, 5], [4, 7], [4, 16], [5, 6], [5, 11], [6, 11], [6, 17], [7, 9], [7, 16], [7, 17], [9, 11], [9, 16], [9, 17], [11, 17]]
+Number of edges: 18
+
+Triangles (x, y, z) with all pair sums squares (or 0):
+  Triangle (1,4,5) face_sums=(5,9,6) space_sum=10 is_pcp=0
+  Triangle (1,4,16) face_sums=(5,1,17) space_sum=2 is_pcp=0
+  Triangle (1,5,6) face_sums=(6,11,7) space_sum=12 is_pcp=0
+  Triangle (4,7,16) face_sums=(11,4,1) space_sum=8 is_pcp=0
+  Triangle (5,6,11) face_sums=(11,17,16) space_sum=3 is_pcp=0
+  Triangle (6,11,17) face_sums=(17,9,4) space_sum=15 is_pcp=0
+  Triangle (7,9,16) face_sums=(16,6,4) space_sum=13 is_pcp=0
+  Triangle (7,9,17) face_sums=(16,7,5) space_sum=14 is_pcp=0
+  Triangle (9,11,17) face_sums=(1,9,7) space_sum=18 is_pcp=0
+Total triangles with distinct x<y<z: 9
+
+Diagonal cases (a^2 = b^2 = c^2): need 2x and 3x squares.
+
+Double cases (x, x, z), x != z, x in S, z in S:

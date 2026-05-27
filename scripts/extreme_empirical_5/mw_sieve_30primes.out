@@ -1,0 +1,561 @@
+[0;31m  ***   Warning: new stack size = 8000000000 (7629.395 Mbytes).[0m
+=== 30-prime MW sieve on all 5 BEYOND-QC fibers ===
+Sieve primes: [13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149]
+
+========== MW sieve (30 primes) on (61,38) ==========
+
+  --- E_ef (rank 3) ---
+    p=13 #E=16 lcm=4 r=3 density=1/64
+    p=17 #E=24 lcm=6 r=3 density=1/64
+    p=19 BAD reduction, skip
+    p=23 BAD reduction, skip
+    p=29 #E=32 lcm=8 r=3 density=1/64
+    p=31 BAD reduction, skip
+    p=37 #E=40 lcm=10 r=3 density=1/64
+    p=41 #E=48 lcm=12 r=3 density=1/64
+    p=43 #E=40 lcm=10 r=3 density=1/64
+    p=47 #E=40 lcm=10 r=3 density=1/64
+    p=53 #E=48 lcm=12 r=3 density=1/64
+    p=59 #E=48 lcm=12 r=3 density=1/64
+    p=61 BAD reduction, skip
+    p=67 #E=64 lcm=16 r=3 density=1/64
+    p=71 #E=72 lcm=18 r=3 density=1/64
+    p=73 #E=72 lcm=18 r=3 density=1/64
+    p=79 #E=96 lcm=24 r=3 density=1/64
+    p=83 #E=80 lcm=10 r=3 density=1/512
+    p=89 #E=104 lcm=26 r=3 density=1/64
+    p=97 #E=112 lcm=28 r=3 density=1/64
+    p=101 #E=96 lcm=24 r=3 density=1/64
+    p=103 #E=112 lcm=28 r=3 density=1/64
+    p=107 #E=120 lcm=15 r=3 density=1/512
+    p=109 #E=104 lcm=26 r=3 density=1/64
+    p=113 #E=128 lcm=32 r=3 density=1/64
+    p=127 #E=128 lcm=32 r=3 density=1/64
+    p=131 #E=120 lcm=30 r=3 density=1/64
+    p=137 #E=144 lcm=18 r=3 density=1/512
+    p=139 #E=136 lcm=34 r=3 density=1/64
+    p=149 #E=144 lcm=36 r=3 density=1/64
+  log(prod density) over all primes = -114.3692847923909760538433000405991337325  prod density = 2.138211768073756516912429173721185503052 E-50
+
+  --- E_fg (rank 2) ---
+    p=13 #E=16 lcm=4 r=2 density=1/16
+    p=17 #E=16 lcm=4 r=2 density=1/16 [has bad gens]
+    p=19 BAD reduction, skip
+    p=23 BAD reduction, skip
+    p=29 #E=32 lcm=4 r=2 density=1/64
+    p=31 #E=32 lcm=8 r=2 density=1/16
+    p=37 #E=32 lcm=4 r=2 density=1/64
+    p=41 #E=48 lcm=6 r=2 density=1/64
+    p=43 #E=48 lcm=12 r=2 density=1/16
+    p=47 #E=48 lcm=12 r=2 density=1/16
+    p=53 #E=64 lcm=16 r=2 density=1/16
+    p=59 #E=48 lcm=3 r=2 density=1/256
+    p=61 BAD reduction, skip
+    p=67 #E=56 lcm=14 r=2 density=1/16
+    p=71 #E=72 lcm=18 r=2 density=1/16
+    p=73 #E=64 lcm=16 r=2 density=1/16
+    p=79 #E=88 lcm=22 r=2 density=1/16
+    p=83 #E=96 lcm=12 r=2 density=1/64
+    p=89 #E=80 lcm=20 r=2 density=1/16
+    p=97 #E=112 lcm=28 r=2 density=1/16
+    p=101 #E=112 lcm=28 r=2 density=1/16
+    p=103 #E=96 lcm=8 r=2 density=1/144
+    p=107 #E=120 lcm=30 r=2 density=1/16
+    p=109 #E=96 lcm=8 r=2 density=1/144
+    p=113 #E=112 lcm=14 r=2 density=1/64
+    p=127 #E=120 lcm=10 r=2 density=1/144
+    p=131 #E=128 lcm=32 r=2 density=1/16
+    p=137 #E=144 lcm=18 r=2 density=1/64
+    p=139 #E=128 lcm=16 r=2 density=1/64
+    p=149 #E=144 lcm=36 r=2 density=1/16
+  log(prod density) over all primes = -93.92821848256176713494271872526540180540  prod density = 1.612475104008624839463287431031887075197 E-41
+
+  --- E_Hp (rank 3) ---
+    p=13 #E=16 lcm=8 r=3 density=1/8
+    p=17 #E=24 lcm=6 r=3 density=1/64
+    p=19 BAD reduction, skip
+    p=23 BAD reduction, skip
+    p=29 #E=32 lcm=8 r=3 density=1/64
+    p=31 BAD reduction, skip
+    p=37 #E=40 lcm=20 r=3 density=1/8
+    p=41 #E=48 lcm=12 r=3 density=1/64
+    p=43 #E=48 lcm=24 r=3 density=1/8
+    p=47 #E=56 lcm=14 r=3 density=1/64
+    p=53 #E=48 lcm=12 r=3 density=1/64
+    p=59 #E=72 lcm=36 r=3 density=1/8
+    p=61 BAD reduction, skip
+    p=67 #E=72 lcm=12 r=3 density=1/216
+    p=71 #E=72 lcm=18 r=3 density=1/64
+    p=73 #E=72 lcm=9 r=3 density=1/512 [has bad gens]
+    p=79 #E=64 lcm=16 r=3 density=1/64
+    p=83 #E=88 lcm=44 r=3 density=1/8
+    p=89 #E=104 lcm=26 r=3 density=1/64
+    p=97 #E=112 lcm=28 r=3 density=1/64
+    p=101 #E=96 lcm=24 r=3 density=1/64
+    p=103 #E=96 lcm=24 r=3 density=1/64
+    p=107 #E=96 lcm=48 r=3 density=1/8
+    p=109 #E=104 lcm=52 r=3 density=1/8 [has bad gens]
+    p=113 #E=128 lcm=32 r=3 density=1/64
+    p=127 #E=128 lcm=16 r=3 density=1/512
+    p=131 #E=144 lcm=72 r=3 density=1/8
+    p=137 #E=144 lcm=36 r=3 density=1/64
+    p=139 #E=144 lcm=24 r=3 density=1/216
+    p=149 #E=144 lcm=72 r=3 density=1/8
+  log(prod density) over all primes = -96.00766002424160306319441508963993150962  prod density = 2.015593880010781049329109288789858843996 E-42
+
+  TOTAL log10(density) for (61,38) = -132.1580532355080512373106706233484549530    total density = 6.949391272247143732424807843201283632876 E-133
+
+========== MW sieve (30 primes) on (63,38) ==========
+
+  --- E_ef (rank 3) ---
+    p=13 #E=16 lcm=4 r=3 density=1/64 [has bad gens]
+    p=17 #E=24 lcm=6 r=3 density=1/64
+    p=19 BAD reduction, skip
+    p=23 #E=24 lcm=6 r=3 density=1/64
+    p=29 #E=32 lcm=8 r=3 density=1/64
+    p=31 BAD reduction, skip
+    p=37 #E=48 lcm=12 r=3 density=1/64
+    p=41 #E=40 lcm=10 r=3 density=1/64
+    p=43 #E=40 lcm=10 r=3 density=1/64
+    p=47 #E=56 lcm=14 r=3 density=1/64
+    p=53 #E=64 lcm=16 r=3 density=1/64
+    p=59 #E=48 lcm=12 r=3 density=1/64
+    p=61 #E=64 lcm=8 r=3 density=1/512
+    p=67 #E=72 lcm=18 r=3 density=1/64
+    p=71 BAD reduction, skip
+    p=73 BAD reduction, skip
+    p=79 #E=72 lcm=18 r=3 density=1/64
+    p=83 #E=72 lcm=18 r=3 density=1/64
+    p=89 #E=96 lcm=24 r=3 density=1/64
+    p=97 #E=112 lcm=28 r=3 density=1/64
+    p=101 BAD reduction, skip
+    p=103 BAD reduction, skip
+    p=107 #E=120 lcm=30 r=3 density=1/64
+    p=109 #E=112 lcm=28 r=3 density=1/64
+    p=113 #E=112 lcm=28 r=3 density=1/64
+    p=127 #E=120 lcm=30 r=3 density=1/64
+    p=131 #E=136 lcm=34 r=3 density=1/64
+    p=137 #E=144 lcm=36 r=3 density=1/64
+    p=139 #E=128 lcm=32 r=3 density=1/64
+    p=149 #E=152 lcm=38 r=3 density=1/64
+  log(prod density) over all primes = -101.8926355423119604843331218543519555071  prod density = 5.605193857299268283694918333159664525121 E-45
+
+  --- E_eg (rank 1) ---
+    p=13 #E=16 lcm=4 r=1 density=1/4
+    p=17 #E=16 lcm=2 r=1 density=1/8
+    p=19 BAD reduction, skip
+    p=23 #E=32 lcm=8 r=1 density=1/4
+    p=29 #E=32 lcm=1 r=1 density=1/32 [has bad gens]
+    p=31 #E=32 lcm=4 r=1 density=1/8
+    p=37 #E=32 lcm=8 r=1 density=1/4
+    p=41 #E=32 lcm=4 r=1 density=1/8
+    p=43 #E=48 lcm=12 r=1 density=1/4
+    p=47 #E=48 lcm=4 r=1 density=1/12
+    p=53 #E=48 lcm=6 r=1 density=1/8
+    p=59 #E=56 lcm=14 r=1 density=1/4
+    p=61 #E=48 lcm=4 r=1 density=1/12
+    p=67 #E=72 lcm=18 r=1 density=1/4
+    p=71 #E=72 lcm=18 r=1 density=1/4
+    p=73 #E=80 lcm=20 r=1 density=1/4
+    p=79 #E=72 lcm=2 r=1 density=1/36
+    p=83 #E=88 lcm=22 r=1 density=1/4
+    p=89 #E=96 lcm=4 r=1 density=1/24
+    p=97 #E=96 lcm=24 r=1 density=1/4
+    p=101 BAD reduction, skip
+    p=103 #E=104 lcm=26 r=1 density=1/4
+    p=107 #E=104 lcm=26 r=1 density=1/4
+    p=109 #E=96 lcm=8 r=1 density=1/12
+    p=113 #E=112 lcm=14 r=1 density=1/8
+    p=127 #E=112 lcm=14 r=1 density=1/8
+    p=131 #E=120 lcm=10 r=1 density=1/12
+    p=137 #E=128 lcm=4 r=1 density=1/32
+    p=139 #E=144 lcm=36 r=1 density=1/4
+    p=149 #E=160 lcm=20 r=1 density=1/8
+  log(prod density) over all primes = -56.21058865987293949897296516053003969782  prod density = 3.873035881363970457559773665659085331739 E-25
+
+  --- E_Hp (rank 4) ---
+    p=13 #E=16 lcm=8 r=4 density=1/16
+    p=17 #E=24 lcm=12 r=4 density=1/16
+    p=19 BAD reduction, skip
+    p=23 #E=24 lcm=12 r=4 density=1/16 [has bad gens]
+    p=29 #E=32 lcm=8 r=4 density=1/256
+    p=31 BAD reduction, skip
+    p=37 #E=48 lcm=12 r=4 density=1/256
+    p=41 #E=40 lcm=20 r=4 density=1/16
+    p=43 #E=48 lcm=24 r=4 density=1/16
+    p=47 #E=40 lcm=20 r=4 density=1/16
+    p=53 #E=64 lcm=16 r=4 density=1/256
+    p=59 #E=72 lcm=36 r=4 density=1/16
+    p=61 #E=64 lcm=16 r=4 density=1/256
+    p=67 #E=64 lcm=32 r=4 density=1/16
+    p=71 BAD reduction, skip
+    p=73 BAD reduction, skip
+    p=79 #E=88 lcm=22 r=4 density=1/256
+    p=83 #E=96 lcm=48 r=4 density=1/16
+    p=89 #E=96 lcm=24 r=4 density=1/256
+    p=97 #E=112 lcm=56 r=4 density=1/16
+    p=101 BAD reduction, skip
+    p=103 BAD reduction, skip
+    p=107 #E=96 lcm=48 r=4 density=1/16
+    p=109 #E=112 lcm=56 r=4 density=1/16
+    p=113 #E=112 lcm=28 r=4 density=1/256
+    p=127 #E=136 lcm=34 r=4 density=1/256
+    p=131 #E=128 lcm=64 r=4 density=1/16
+    p=137 #E=144 lcm=36 r=4 density=1/256
+    p=139 #E=152 lcm=76 r=4 density=1/16
+    p=149 #E=152 lcm=76 r=4 density=1/16
+  log(prod density) over all primes = -91.49542783391278084307464003247930698597  prod density = 1.836709923159824231201150839409758871592 E-40
+
+  TOTAL log10(density) for (63,38) = -108.3993172697670741906600695816338735065    total density = 3.987335049079420518690347512974160274901 E-109
+
+========== MW sieve (30 primes) on (73,24) ==========
+
+  --- E_ef (rank 3) ---
+    p=13 #E=16 lcm=4 r=3 density=1/64
+    p=17 #E=24 lcm=6 r=3 density=1/64 [has bad gens]
+    p=19 #E=24 lcm=6 r=3 density=1/64 [has bad gens]
+    p=23 BAD reduction, skip
+    p=29 #E=32 lcm=8 r=3 density=1/64
+    p=31 #E=40 lcm=10 r=3 density=1/64
+    p=37 #E=40 lcm=5 r=3 density=1/512
+    p=41 #E=48 lcm=12 r=3 density=1/64
+    p=43 #E=48 lcm=12 r=3 density=1/64
+    p=47 #E=48 lcm=6 r=3 density=1/512
+    p=53 #E=64 lcm=16 r=3 density=1/64
+    p=59 #E=64 lcm=16 r=3 density=1/64
+    p=61 #E=64 lcm=16 r=3 density=1/64
+    p=67 #E=72 lcm=18 r=3 density=1/64
+    p=71 #E=80 lcm=20 r=3 density=1/64
+    p=73 BAD reduction, skip
+    p=79 #E=80 lcm=20 r=3 density=1/64
+    p=83 #E=88 lcm=22 r=3 density=1/64
+    p=89 #E=104 lcm=26 r=3 density=1/64
+    p=97 BAD reduction, skip
+    p=101 #E=96 lcm=12 r=3 density=1/512
+    p=103 #E=112 lcm=14 r=3 density=1/512
+    p=107 #E=96 lcm=24 r=3 density=1/64
+    p=109 #E=112 lcm=28 r=3 density=1/64
+    p=113 #E=128 lcm=32 r=3 density=1/64
+    p=127 #E=120 lcm=30 r=3 density=1/64
+    p=131 #E=120 lcm=30 r=3 density=1/64
+    p=137 #E=144 lcm=36 r=3 density=1/64
+    p=139 #E=136 lcm=34 r=3 density=1/64
+    p=149 #E=160 lcm=20 r=3 density=1/512
+  log(prod density) over all primes = -122.6870509591103197668500854980972525494  prod density = 5.220243574398819621368235287405238044561 E-54
+
+  --- E_eg (rank 1) ---
+    p=13 #E=16 lcm=2 r=1 density=1/8
+    p=17 #E=16 lcm=4 r=1 density=1/4
+    p=19 #E=24 lcm=2 r=1 density=1/12
+    p=23 #E=24 lcm=6 r=1 density=1/4
+    p=29 #E=32 lcm=4 r=1 density=1/8
+    p=31 #E=24 lcm=6 r=1 density=1/4
+    p=37 #E=32 lcm=8 r=1 density=1/4
+    p=41 #E=48 lcm=2 r=1 density=1/24
+    p=43 #E=32 lcm=2 r=1 density=1/16
+    p=47 #E=40 lcm=10 r=1 density=1/4
+    p=53 #E=48 lcm=6 r=1 density=1/8
+    p=59 #E=48 lcm=6 r=1 density=1/8
+    p=61 #E=64 lcm=4 r=1 density=1/16
+    p=67 #E=64 lcm=8 r=1 density=1/8
+    p=71 #E=64 lcm=8 r=1 density=1/8
+    p=73 BAD reduction, skip
+    p=79 #E=72 lcm=18 r=1 density=1/4
+    p=83 #E=96 lcm=6 r=1 density=1/16
+    p=89 #E=80 lcm=20 r=1 density=1/4
+    p=97 BAD reduction, skip
+    p=101 #E=96 lcm=6 r=1 density=1/16
+    p=103 #E=96 lcm=2 r=1 density=1/48
+    p=107 #E=120 lcm=6 r=1 density=1/20
+    p=109 #E=112 lcm=28 r=1 density=1/4
+    p=113 #E=128 lcm=32 r=1 density=1/4
+    p=127 #E=120 lcm=6 r=1 density=1/20
+    p=131 #E=136 lcm=34 r=1 density=1/4
+    p=137 #E=144 lcm=18 r=1 density=1/8
+    p=139 #E=144 lcm=6 r=1 density=1/24
+    p=149 #E=160 lcm=4 r=1 density=1/40
+  log(prod density) over all primes = -61.90194861453058340509290017819008491090  prod density = 1.307149609960340029426423612159941299462 E-27
+
+  --- E_Hp (rank 2) ---
+    p=13 #E=16 lcm=8 r=2 density=1/4
+    p=17 #E=24 lcm=12 r=2 density=1/4
+    p=19 #E=16 lcm=8 r=2 density=1/4
+    p=23 BAD reduction, skip
+    p=29 #E=32 lcm=8 r=2 density=1/16
+    p=31 #E=24 lcm=12 r=2 density=1/4
+    p=37 #E=40 lcm=20 r=2 density=1/4
+    p=41 #E=48 lcm=12 r=2 density=1/16
+    p=43 #E=40 lcm=20 r=2 density=1/4
+    p=47 #E=48 lcm=24 r=2 density=1/4
+    p=53 #E=64 lcm=32 r=2 density=1/4
+    p=59 #E=56 lcm=28 r=2 density=1/4
+    p=61 #E=64 lcm=32 r=2 density=1/4
+    p=67 #E=64 lcm=32 r=2 density=1/4
+    p=71 #E=64 lcm=16 r=2 density=1/16
+    p=73 BAD reduction, skip
+    p=79 #E=80 lcm=20 r=2 density=1/16
+    p=83 #E=80 lcm=40 r=2 density=1/4
+    p=89 #E=104 lcm=26 r=2 density=1/16
+    p=97 BAD reduction, skip
+    p=101 #E=96 lcm=24 r=2 density=1/16
+    p=103 #E=96 lcm=48 r=2 density=1/4
+    p=107 #E=120 lcm=60 r=2 density=1/4
+    p=109 #E=112 lcm=56 r=2 density=1/4
+    p=113 #E=128 lcm=64 r=2 density=1/4
+    p=127 #E=136 lcm=34 r=2 density=1/16
+    p=131 #E=144 lcm=72 r=2 density=1/4
+    p=137 #E=144 lcm=18 r=2 density=1/64
+    p=139 #E=144 lcm=24 r=2 density=1/36
+    p=149 #E=160 lcm=20 r=2 density=1/64
+  log(prod density) over all primes = -54.87641029989206289850013170466647058303  prod density = 1.470543311205382533104726563679933961895 E-24
+
+  TOTAL log10(density) for (73,24) = -103.9985061147758442634490470997154185816    total density = 1.003445720741640587953499960103454340260 E-104
+
+========== MW sieve (30 primes) on (88,35) ==========
+
+  --- E_ef (rank 3) ---
+    p=13 #E=16 lcm=4 r=3 density=1/64
+    p=17 #E=24 lcm=6 r=3 density=1/64 [has bad gens]
+    p=19 #E=24 lcm=6 r=3 density=1/64
+    p=23 #E=24 lcm=6 r=3 density=1/64
+    p=29 #E=24 lcm=6 r=3 density=1/64
+    p=31 BAD reduction, skip
+    p=37 #E=48 lcm=12 r=3 density=1/64
+    p=41 BAD reduction, skip
+    p=43 #E=40 lcm=10 r=3 density=1/64
+    p=47 #E=48 lcm=12 r=3 density=1/64
+    p=53 BAD reduction, skip
+    p=59 #E=64 lcm=16 r=3 density=1/64
+    p=61 #E=56 lcm=14 r=3 density=1/64
+    p=67 #E=72 lcm=18 r=3 density=1/64
+    p=71 #E=56 lcm=14 r=3 density=1/64
+    p=73 #E=80 lcm=20 r=3 density=1/64
+    p=79 #E=96 lcm=12 r=3 density=1/512
+    p=83 #E=88 lcm=22 r=3 density=1/64
+    p=89 #E=96 lcm=24 r=3 density=1/64
+    p=97 #E=112 lcm=14 r=3 density=1/512
+    p=101 #E=112 lcm=28 r=3 density=1/64
+    p=103 #E=104 lcm=26 r=3 density=1/64
+    p=107 #E=112 lcm=28 r=3 density=1/64
+    p=109 #E=120 lcm=30 r=3 density=1/64
+    p=113 #E=96 lcm=12 r=3 density=1/512
+    p=127 #E=136 lcm=34 r=3 density=1/64
+    p=131 #E=120 lcm=15 r=3 density=1/512
+    p=137 #E=128 lcm=16 r=3 density=1/512
+    p=139 #E=128 lcm=16 r=3 density=1/512
+    p=149 #E=168 lcm=42 r=3 density=1/64
+  log(prod density) over all primes = -124.7664925007901556951017818624717822536  prod density = 6.525304467998524526710294109256547555701 E-55
+
+  --- E_eg (rank 2) ---
+    p=13 #E=16 lcm=2 r=2 density=1/64 [has bad gens]
+    p=17 #E=16 lcm=4 r=2 density=1/16 [has bad gens]
+    p=19 #E=16 lcm=2 r=2 density=1/64
+    p=23 #E=24 lcm=6 r=2 density=1/16
+    p=29 #E=32 lcm=8 r=2 density=1/16
+    p=31 #E=32 lcm=4 r=2 density=1/64
+    p=37 #E=32 lcm=4 r=2 density=1/64 [has bad gens]
+    p=41 BAD reduction, skip
+    p=43 #E=48 lcm=6 r=2 density=1/64
+    p=47 #E=40 lcm=2 r=2 density=1/400
+    p=53 BAD reduction, skip
+    p=59 #E=64 lcm=8 r=2 density=1/64
+    p=61 #E=64 lcm=16 r=2 density=1/16
+    p=67 #E=72 lcm=9 r=2 density=1/64
+    p=71 #E=72 lcm=9 r=2 density=1/64
+    p=73 #E=80 lcm=20 r=2 density=1/16
+    p=79 #E=80 lcm=10 r=2 density=1/64
+    p=83 #E=72 lcm=3 r=2 density=1/576
+    p=89 #E=96 lcm=12 r=2 density=1/64
+    p=97 #E=80 lcm=20 r=2 density=1/16
+    p=101 #E=96 lcm=12 r=2 density=1/64
+    p=103 #E=96 lcm=12 r=2 density=1/64
+    p=107 #E=104 lcm=26 r=2 density=1/16
+    p=109 #E=96 lcm=12 r=2 density=1/64
+    p=113 #E=112 lcm=28 r=2 density=1/16
+    p=127 #E=128 lcm=16 r=2 density=1/64
+    p=131 #E=128 lcm=16 r=2 density=1/64
+    p=137 #E=144 lcm=18 r=2 density=1/64
+    p=139 #E=136 lcm=34 r=2 density=1/16
+    p=149 #E=128 lcm=8 r=2 density=1/256
+  log(prod density) over all primes = -109.3881774861962165445768273590239118997  prod density = 3.113996587388482379830510185088702513956 E-48
+
+  --- E_Hp (rank 4) ---
+    p=13 #E=16 lcm=8 r=4 density=1/16 [has bad gens]
+    p=17 #E=24 lcm=12 r=4 density=1/16
+    p=19 #E=16 lcm=8 r=4 density=1/16
+    p=23 #E=24 lcm=12 r=4 density=1/16
+    p=29 #E=24 lcm=12 r=4 density=1/16
+    p=31 BAD reduction, skip
+    p=37 #E=48 lcm=12 r=4 density=1/256
+    p=41 BAD reduction, skip
+    p=43 #E=48 lcm=24 r=4 density=1/16
+    p=47 #E=48 lcm=24 r=4 density=1/16
+    p=53 BAD reduction, skip
+    p=59 #E=56 lcm=28 r=4 density=1/16
+    p=61 #E=56 lcm=28 r=4 density=1/16
+    p=67 #E=64 lcm=32 r=4 density=1/16
+    p=71 #E=88 lcm=44 r=4 density=1/16
+    p=73 #E=80 lcm=20 r=4 density=1/256
+    p=79 #E=64 lcm=32 r=4 density=1/16
+    p=83 #E=80 lcm=40 r=4 density=1/16
+    p=89 #E=96 lcm=24 r=4 density=1/256
+    p=97 #E=112 lcm=28 r=4 density=1/256
+    p=101 #E=112 lcm=28 r=4 density=1/256
+    p=103 #E=104 lcm=52 r=4 density=1/16
+    p=107 #E=104 lcm=52 r=4 density=1/16
+    p=109 #E=120 lcm=60 r=4 density=1/16
+    p=113 #E=96 lcm=24 r=4 density=1/256
+    p=127 #E=120 lcm=60 r=4 density=1/16
+    p=131 #E=144 lcm=72 r=4 density=1/16
+    p=137 #E=128 lcm=32 r=4 density=1/256
+    p=139 #E=152 lcm=76 r=4 density=1/16
+    p=149 #E=168 lcm=84 r=4 density=1/16
+  log(prod density) over all primes = -94.26801655615256208074356851831201325827  prod density = 1.147943701974890144500719274631099294745 E-41
+
+  TOTAL log10(density) for (88,35) = -142.6321604975265994537649029586749950388    total density = 2.332595870683016927705196385052162197768 E-143
+
+========== MW sieve (30 primes) on (99,28) ==========
+
+  --- E_ef (rank 4) ---
+    p=13 #E=16 lcm=4 r=4 density=1/256
+    p=17 #E=24 lcm=6 r=4 density=1/256
+    p=19 #E=24 lcm=6 r=4 density=1/256
+    p=23 BAD reduction, skip
+    p=29 #E=40 lcm=10 r=4 density=1/256 [has bad gens]
+    p=31 #E=32 lcm=8 r=4 density=1/256
+    p=37 #E=48 lcm=12 r=4 density=1/256
+    p=41 #E=48 lcm=12 r=4 density=1/256
+    p=43 #E=48 lcm=12 r=4 density=1/256
+    p=47 #E=48 lcm=12 r=4 density=1/256
+    p=53 #E=56 lcm=14 r=4 density=1/256
+    p=59 #E=72 lcm=18 r=4 density=1/256
+    p=61 #E=64 lcm=16 r=4 density=1/256
+    p=67 #E=64 lcm=8 r=4 density=1/4096
+    p=71 BAD reduction, skip
+    p=73 #E=80 lcm=20 r=4 density=1/256
+    p=79 #E=96 lcm=24 r=4 density=1/256
+    p=83 #E=88 lcm=22 r=4 density=1/256
+    p=89 #E=80 lcm=20 r=4 density=1/256
+    p=97 #E=104 lcm=26 r=4 density=1/256
+    p=101 #E=96 lcm=24 r=4 density=1/256
+    p=103 #E=120 lcm=30 r=4 density=1/256
+    p=107 #E=96 lcm=24 r=4 density=1/256
+    p=109 #E=112 lcm=28 r=4 density=1/256
+    p=113 #E=128 lcm=32 r=4 density=1/256
+    p=127 BAD reduction, skip
+    p=131 #E=120 lcm=30 r=4 density=1/256
+    p=137 #E=144 lcm=36 r=4 density=1/256
+    p=139 #E=144 lcm=12 r=4 density=1/20736
+    p=149 #E=152 lcm=38 r=4 density=1/256
+  log(prod density) over all primes = -156.8868288778604068373720476684889477952  prod density = 7.326826964320832366877501751205213853566 E-69
+
+  --- E_eg (rank 2) ---
+    p=13 #E=16 lcm=2 r=2 density=1/64
+    p=17 #E=16 lcm=4 r=2 density=1/16
+    p=19 #E=24 lcm=6 r=2 density=1/16 [has bad gens]
+    p=23 #E=24 lcm=6 r=2 density=1/16
+    p=29 BAD reduction, skip
+    p=31 #E=32 lcm=4 r=2 density=1/64
+    p=37 #E=32 lcm=4 r=2 density=1/64
+    p=41 #E=48 lcm=12 r=2 density=1/16
+    p=43 #E=40 lcm=10 r=2 density=1/16
+    p=47 #E=56 lcm=14 r=2 density=1/16
+    p=53 #E=64 lcm=8 r=2 density=1/64
+    p=59 #E=72 lcm=18 r=2 density=1/16
+    p=61 #E=64 lcm=16 r=2 density=1/16
+    p=67 #E=56 lcm=14 r=2 density=1/16
+    p=71 BAD reduction, skip
+    p=73 BAD reduction, skip
+    p=79 #E=72 lcm=6 r=2 density=1/144
+    p=83 #E=96 lcm=12 r=2 density=1/64
+    p=89 #E=80 lcm=20 r=2 density=1/16
+    p=97 #E=96 lcm=6 r=2 density=1/256
+    p=101 #E=112 lcm=14 r=2 density=1/64
+    p=103 #E=96 lcm=12 r=2 density=1/64
+    p=107 #E=112 lcm=14 r=2 density=1/64
+    p=109 #E=96 lcm=12 r=2 density=1/64
+    p=113 #E=112 lcm=28 r=2 density=1/16
+    p=127 BAD reduction, skip
+    p=131 #E=144 lcm=9 r=2 density=1/256
+    p=137 #E=128 lcm=4 r=2 density=1/1024
+    p=139 #E=136 lcm=34 r=2 density=1/16
+    p=149 #E=160 lcm=10 r=2 density=1/256 [has bad gens]
+  log(prod density) over all primes = -99.23782985572856270120298747798977093986  prod density = 7.971831263714514892366106073827078435728 E-44
+
+  --- E_fg (rank 1) ---
+    p=13 #E=16 lcm=4 r=1 density=1/4
+    p=17 #E=16 lcm=2 r=1 density=1/8
+    p=19 #E=16 lcm=2 r=1 density=1/8
+    p=23 #E=24 lcm=6 r=1 density=1/4
+    p=29 BAD reduction, skip
+    p=31 #E=32 lcm=8 r=1 density=1/4
+    p=37 #E=32 lcm=2 r=1 density=1/16
+    p=41 #E=48 lcm=4 r=1 density=1/12
+    p=43 #E=48 lcm=12 r=1 density=1/4
+    p=47 #E=40 lcm=10 r=1 density=1/4
+    p=53 #E=64 lcm=2 r=1 density=1/32
+    p=59 #E=48 lcm=4 r=1 density=1/12
+    p=61 #E=64 lcm=4 r=1 density=1/16
+    p=67 #E=80 lcm=10 r=1 density=1/8
+    p=71 BAD reduction, skip
+    p=73 BAD reduction, skip
+    p=79 #E=88 lcm=11 r=1 density=1/8
+    p=83 #E=72 lcm=6 r=1 density=1/12
+    p=89 #E=80 lcm=5 r=1 density=1/16
+    p=97 #E=96 lcm=4 r=1 density=1/24
+    p=101 #E=112 lcm=14 r=1 density=1/8
+    p=103 #E=112 lcm=28 r=1 density=1/4
+    p=107 #E=104 lcm=26 r=1 density=1/4
+    p=109 #E=96 lcm=4 r=1 density=1/24
+    p=113 #E=112 lcm=14 r=1 density=1/8
+    p=127 BAD reduction, skip
+    p=131 #E=120 lcm=30 r=1 density=1/4
+    p=137 #E=128 lcm=16 r=1 density=1/8
+    p=139 #E=144 lcm=36 r=1 density=1/4
+    p=149 #E=160 lcm=40 r=1 density=1/4
+  log(prod density) over all primes = -54.01336408253672011618247468668498828852  prod density = 3.485732293227573411803796299093176798565 E-24
+
+  --- E_Hp (rank 1) ---
+    p=13 #E=16 lcm=8 r=1 density=1/2
+    p=17 #E=24 lcm=3 r=1 density=1/8
+    p=19 #E=16 lcm=8 r=1 density=1/2
+    p=23 BAD reduction, skip
+    p=29 #E=40 lcm=4 r=1 density=1/10
+    p=31 #E=32 lcm=8 r=1 density=1/4
+    p=37 #E=48 lcm=12 r=1 density=1/4
+    p=41 #E=48 lcm=12 r=1 density=1/4
+    p=43 #E=40 lcm=20 r=1 density=1/2
+    p=47 #E=48 lcm=12 r=1 density=1/4
+    p=53 #E=56 lcm=28 r=1 density=1/2
+    p=59 #E=48 lcm=8 r=1 density=1/6
+    p=61 #E=64 lcm=32 r=1 density=1/2
+    p=67 #E=72 lcm=12 r=1 density=1/6
+    p=71 BAD reduction, skip
+    p=73 #E=80 lcm=4 r=1 density=1/20
+    p=79 #E=64 lcm=16 r=1 density=1/4
+    p=83 #E=80 lcm=40 r=1 density=1/2
+    p=89 #E=80 lcm=20 r=1 density=1/4
+    p=97 #E=104 lcm=13 r=1 density=1/8
+    p=101 #E=96 lcm=16 r=1 density=1/6
+    p=103 #E=88 lcm=22 r=1 density=1/4
+    p=107 #E=120 lcm=60 r=1 density=1/2
+    p=109 #E=112 lcm=28 r=1 density=1/4
+    p=113 #E=128 lcm=16 r=1 density=1/8
+    p=127 BAD reduction, skip
+    p=131 #E=144 lcm=24 r=1 density=1/6
+    p=137 #E=144 lcm=9 r=1 density=1/16
+    p=139 #E=136 lcm=68 r=1 density=1/2
+    p=149 #E=152 lcm=76 r=1 density=1/2
+  log(prod density) over all primes = -38.80494810473817843855794507976042366104  prod density = 1.403541206439704070856541763117283950617 E-17
+
+  TOTAL log10(density) for (99,28) = -151.5440067698580418955239157535119312994    total density = 2.857545999102921702142045049563359678381 E-152
+
+========== Aggregate MW-sieve density across 5 fibers ==========
+  log10 density (61,38) = -132.1580532355080512373106706233484549530
+  log10 density (63,38) = -108.3993172697670741906600695816338735065
+  log10 density (73,24) = -103.9985061147758442634490470997154185816
+  log10 density (88,35) = -142.6321604975265994537649029586749950388
+  log10 density (99,28) = -151.5440067698580418955239157535119312994
+  Sum log10 density     = -638.7320438874356110407086060168846733794
+
+=== DONE 30-prime MW SIEVE ===

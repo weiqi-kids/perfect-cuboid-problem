@@ -1,0 +1,29 @@
+=== (a) Extended prime audit: space-diagonal SG hits, p<=50000 ===
+space-diagonal hits, p prime in [3,50000] = 1 : [[11, 71]]
+Face/Pi square at any of these?
+   (p,q)=(11,71): Face/Pi square? 0
+=> 0 perfect cuboids from SG-prime route, p<=50000.
+
+=== (b) Composite-p: number of (m,n) candidate curves ===
+For composite p, p = m^2 - n^2 has one (m,n) per divisor pair p=d*e
+with d<e, d=e mod 2: (m,n)=((e+d)/2,(e-d)/2). Count of candidates:
+   p=9 (composite): 1 (m,n) candidate pair(s)
+   p=15 (composite): 2 (m,n) candidate pair(s)
+   p=21 (composite): 2 (m,n) candidate pair(s)
+   p=25 (composite): 1 (m,n) candidate pair(s)
+   p=27 (composite): 2 (m,n) candidate pair(s)
+   p=33 (composite): 2 (m,n) candidate pair(s)
+   p=35 (composite): 2 (m,n) candidate pair(s)
+   p=39 (composite): 2 (m,n) candidate pair(s)
+   p=45 (composite): 3 (m,n) candidate pair(s)
+So composite p does NOT reduce to a single curve C_anom;
+each divisor pair gives a distinct candidate. The single-curve
+Siegel argument covers PRIME p only. Composite p: empirical here.
+
+=== (c) SG prime -> Peschmann (m,n) and the infinite tail ===
+(m,n) = ((p+1)/2, (p-1)/2), consecutive integers, m-n=1.
+Peschmann S_100 scans max(m,n) <= 100, i.e. (p+1)/2 <= 100, p <= 199.
+SG primes p with (m,n) in Peschmann window (max<=100): 45 primes (p<=197)
+First SG primes OUTSIDE the window (p>=199): [211, 223, 227, 229, 233, 239, 241]
+=> infinitely many SG primes p>=199 lie OUTSIDE Peschmann's scan;
+   these are closed here by the single curve E_anom (the novel tail).

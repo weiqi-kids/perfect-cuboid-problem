@@ -1,0 +1,65 @@
+=== Deep BFS from rank-3 seed 195/748 ===
+
+--- Depth 0: frontier size = 1 ---
+  q=195/748  h=6.617  lN=23.669  #gens=3
+    gen 1 -> c=52/165  h(c)=5.106  lN(c)~17.778  sqF3=1.080408  PCP=0
+    gen 2 -> c=135/352  h(c)=5.864  lN(c)~17.367  sqF3=1.102294  PCP=0
+    gen 3 -> c=65/2112  h(c)=7.655  lN(c)~23.674  sqF3=1.033881  PCP=0
+
+--- Depth 1: frontier size = 3 ---
+  q=52/165  h=5.106  lN=17.778  #gens=2
+    gen 1 -> c=832/855  h(c)=6.751  lN(c)~19.477  sqF3=1.430469  PCP=0
+    gen 2 -> c=225/272  h(c)=5.606  lN(c)~16.293  sqF3=1.600229  PCP=0
+  q=135/352  h=5.864  lN=17.367  #gens=1
+    gen 1 -> c=104/153  h(c)=5.030  lN(c)~14.685  sqF3=1.819721  PCP=0
+  q=65/2112  h=7.655  lN=23.674  #gens=1
+    gen 1 -> c=17/144  h(c)=4.970  lN(c)~14.551  sqF3=1.007415  PCP=0
+
+--- Depth 2: frontier size = 4 ---
+  q=832/855  h=6.751  lN=19.477  #gens=1
+    gen 1 -> c=52/165  h(c)=5.106  lN(c)~17.778  sqF3=1.430469  PCP=0
+  q=225/272  h=5.606  lN=16.293  #gens=1
+    gen 1 -> c=52/165  h(c)=5.106  lN(c)~17.778  sqF3=3.428219  PCP=0
+  q=104/153  h=5.030  lN=14.685  #gens=2
+    gen 1 -> c=195/748  h(c)=6.617  lN(c)~23.669  sqF3=1.236934  PCP=0
+    gen 2 -> c=55/1512  h(c)=7.321  lN(c)~22.386  sqF3=1.209697  PCP=0
+  q=17/144  h=4.970  lN=14.551  #gens=2
+    gen 1 -> c=11/60  h(c)=4.094  lN(c)~11.315  sqF3=1.023498  PCP=0
+    gen 2 -> c=65/2112  h(c)=7.655  lN(c)~23.674  sqF3=1.007415  PCP=0
+
+--- Depth 3: frontier size = 2 ---
+  q=55/1512  h=7.321  lN=22.386  #gens=2
+    gen 1 -> c=935/17472  h(c)=9.768  lN(c)~32.677  sqF3=1.002091  PCP=0
+    [cap: lN=32.677 > 31.543, no further expansion]
+    gen 2 -> c=626780/1618461  h(c)=14.297  lN(c)~43.330  sqF3=1.072987  PCP=0
+    [cap: lN=43.330 > 31.543, no further expansion]
+  q=11/60  h=4.094  lN=11.315  #gens=2
+    gen 1 -> c=39/80  h(c)=4.382  lN(c)~14.459  sqF3=1.127505  PCP=0
+    gen 2 -> c=17/144  h(c)=4.970  lN(c)~14.551  sqF3=1.023498  PCP=0
+
+--- Depth 4: frontier size = 1 ---
+  q=39/80  h=4.382  lN=14.459  #gens=1
+    gen 1 -> c=11/60  h(c)=4.094  lN(c)~11.315  sqF3=1.127505  PCP=0
+
+--- Depth 5: frontier size = 0 ---
+
+=== BFS Summary ===
+Total unique visited: 13
+Total edges traversed: 18
+Verification failures (ellisoncurve / I1): 0
+PCP candidates found: 0
+
+=== Full trajectory (depth, q, h, lN, sqF3, pcp) ===
+d=0  q=195/748  h=6.617  lN=23.669  sqF3=0.000000  PCP=-1
+d=1  q=52/165  h=5.106  lN=17.778  sqF3=1.080408  PCP=0
+d=1  q=135/352  h=5.864  lN=17.367  sqF3=1.102294  PCP=0
+d=1  q=65/2112  h=7.655  lN=23.674  sqF3=1.033881  PCP=0
+d=2  q=832/855  h=6.751  lN=19.477  sqF3=1.430469  PCP=0
+d=2  q=225/272  h=5.606  lN=16.293  sqF3=1.600229  PCP=0
+d=2  q=104/153  h=5.030  lN=14.685  sqF3=1.819721  PCP=0
+d=2  q=17/144  h=4.970  lN=14.551  sqF3=1.007415  PCP=0
+d=3  q=55/1512  h=7.321  lN=22.386  sqF3=1.209697  PCP=0
+d=3  q=11/60  h=4.094  lN=11.315  sqF3=1.023498  PCP=0
+d=4  q=935/17472  h=9.768  lN=32.677  sqF3=1.002091  PCP=0
+d=4  q=626780/1618461  h=14.297  lN=43.330  sqF3=1.072987  PCP=0
+d=4  q=39/80  h=4.382  lN=14.459  sqF3=1.127505  PCP=0

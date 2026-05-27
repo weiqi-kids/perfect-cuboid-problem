@@ -1,0 +1,43 @@
+E_anom = y^2 = x^3 - 275 x + 1750, conductor 800
+MW: rank 1, generator P = [-15, 50], torsion T = [10, 0] (Z/2)
+
+=== Integral points among nP + eps*T, |n| up to 8 ===
+  -2*P      = [46, 294]   [INTEGRAL]
+  -1*P      = [-15, -50]   [INTEGRAL]
+  -1*P + T  = [9, 2]   [INTEGRAL]
+  0*P + T  = [10, 0]   [INTEGRAL]
+  1*P      = [-15, 50]   [INTEGRAL]
+  1*P + T  = [9, -2]   [INTEGRAL]
+  2*P      = [46, -294]   [INTEGRAL]
+
+=== Completeness via canonical heights ===
+hat-h(P) = 0.94974108626589779505360275479729895984
+   hat-h(1P) = n^2*hat-h(P) = 0.94974108626589779505360275479729895984
+   hat-h(2P) = n^2*hat-h(P) = 3.7989643450635911802144110191891958394
+   hat-h(3P) = n^2*hat-h(P) = 8.5476697763930801554824247931756906386
+   hat-h(4P) = n^2*hat-h(P) = 15.195857380254364720857644076756783358
+   hat-h(5P) = n^2*hat-h(P) = 23.743527156647444876340068869932473996
+   hat-h(6P) = n^2*hat-h(P) = 34.190679105572320621929699172702762554
+Torsion T adds 0 to canonical height; hat-h(nP + eps T) = n^2 hat-h(P).
+
+x-denominators of nP and nP+T for n=3..6 (non-integral => not int. pts):
+   n=3:  denom(x(nP))=3721   denom(x(nP+T))=1369
+   n=4:  denom(x(nP))=345744   denom(x(nP+T))=1615441
+   n=5:  denom(x(nP))=28284848761   denom(x(nP+T))=2809530025
+   n=6:  denom(x(nP))=117317991183649   denom(x(nP+T))=68096263186116
+
+=== Exhaustive bounded ellratpoints (naive height <= 10^7) ===
+integral points by brute force (height<=10^7) = 7
+   [-15, -50]
+   [-15, 50]
+   [9, -2]
+   [9, 2]
+   [10, 0]
+   [46, -294]
+   [46, 294]
+
+=== Manual on-curve checks (framework's listed integral points) ===
+   x=-15: x^3-275x+1750 = 2500 = 50^2 ? 1
+   x=46: x^3-275x+1750 = 86436 = 294^2 ? 1
+   x=9: x^3-275x+1750 = 4 = 2^2 ? 1
+   x=10: x^3-275x+1750 = 0 = 0^2 ? 1

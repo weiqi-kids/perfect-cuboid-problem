@@ -1,0 +1,18 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+[0;31m  ***   sorry, embedded braces (in parser) is not yet implemented.[0m
+... skipping file '11_orbit_with_compute.gp'
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(j=1,#keys_r[0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mned(ranks_seen,keys_r[j])[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mprint(" q=",keys_r[[0;35mj],"  rank=",mapget(ranks_
+[0;31m[0;31m  ***                                    ^--------------------------
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m  ***   unexpected closing brace.[0m
+[0;31m  ***   unexpected closing brace.[0m

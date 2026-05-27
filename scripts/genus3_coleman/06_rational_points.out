@@ -1,0 +1,21 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== Rational points on C': T^2 = t^8+68t^6-122t^4+68t^2+1 ===
+f = t^8 + 68*t^6 - 122*t^4 + 68*t^2 + 1
+disc factor: bad primes {2,5}
+
+hyperellratpoints(f, height bound 1000):
+  number of affine points found = 6
+   [-1, 4]
+   [-1, -4]
+   [0, 1]
+   [0, -1]
+   [1, 4]
+   [1, -4]
+
+=== Brute force t=n/d, |n|<=60, 1<=d<=60, gcd=1: f(t) a square? ===
+affine rational points (t=n/d, T=+-Tnum/d^4):
+   t=-1/1  T=+-4/1^4
+   t=0/1  T=+-1/1^4
+   t=1/1  T=+-4/1^4
+plus 2 points at infinity (leading coeff 1 = square).

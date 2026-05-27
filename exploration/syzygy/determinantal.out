@@ -1,0 +1,14 @@
+Hilbert polynomial P(n) = 8 n^2 - 8 n + 8 = 8(n^2 - n + 1)
+HF = HP for n >= 2
+chi(O_V) = P(0) = 8
+p_g + q + 1 = chi = 8 (for surface)
+If V smooth: p_g = h^2(O_V) = h^0(K_V) = h^0(O_V(1)) = 7
+(since K_V = O_V(1) and 7 = dim H^0(P^6, O(1)) restricted)
+Irregularity q = 0 (Lefschetz for CI in P^n, n>=3)
+Geometric genus p_g = 7
+
+Degenerate curves on V:
+V ∩ {a=0}: Pythagorean conic (b^2+c^2=e^2) × sign choices
+V ∩ {b=0}, {c=0}: similar
+V ∩ {d=0}: a^2+b^2=0 (only over C, no real points except origin)
+These give effective divisor classes, suggesting rho(V) > 1

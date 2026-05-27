@@ -1,0 +1,15 @@
+Degree   dim(R_d)   dim(I_d as image)   rank(matrix)   HF(R/I)(d)
+d=2  R_d=28  image_cols=4  rank=4  HF=24
+d=3  R_d=84  image_cols=28  rank=28  HF=56
+d=4  R_d=210  image_cols=112  rank=106  HF=104
+[0;31m[0;31m  ***   at top-level: [0;35mfor(d=2,6,my(res=[0;35mcompute_HF(d));print("d=",d,"
+[0;31m[0;31m  ***                                  ^-----------------------------
+[0;31m  ***   in function compute_HF: ...[0;35ml]+prod[t][2];);););my(r=
+[0;31m  ***   [0;35mmatrank(M));return([N
+[0;31m[0;31m  ***   ^---------------------
+  *** matrank: the PARI stack overflows !
+  current stack size: 8000000 (7.629 Mbytes)
+  [hint] set 'parisizemax' to a nonzero value in your GPRC
+[0m
+
+Expected (CI Hilbert series): 1, 7, 24, 56, 104, 168, 248, ...

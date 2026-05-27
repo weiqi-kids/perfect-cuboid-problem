@@ -1,0 +1,16 @@
+[0;31m  ***   Warning: new stack size = 3000000000 (2861.023 Mbytes).[0m
+================================================================
+Face-3 non-squareness verification (Paper P3)
+================================================================
+
+--- Rank-1 fibers, nP + full torsion, n = 1..50 ---
+  q=20/21  rank 1  N=50  #torsion=8  cosets checked=400  squares=0
+  q=80/39  rank 1  N=50  #torsion=8  cosets checked=400  squares=0
+  q=24/7  rank 1  N=50  #torsion=8  cosets checked=400  squares=0
+  q=84/13  rank 1  N=50  #torsion=8  cosets checked=400  squares=0
+  q=48/55  rank 1  N=50  #torsion=8  cosets checked=400  squares=0
+
+--- Rank-2 fiber q = 60/11, aG1+bG2 + torsion, |a|,|b| <= 8 ---
+  q=60/11  rank 2  B=8  #torsion=8  cosets checked=2304  squares=0
+
+=== End Face-3 verification ===

@@ -1,0 +1,15 @@
+p=13 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 96] | none_zero = 0
+p=17 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [128, 128, 128, 192] | none_zero = 0
+p=23 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 352
+p=29 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [448, 448, 448, 672] | none_zero = 0
+p=31 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 1080
+p=37 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [576, 576, 576, 1152] | none_zero = 0
+p=41 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [640, 640, 640, 1440] | none_zero = 1920
+p=43 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 3024
+p=47 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 4600
+p=53 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [832, 832, 832, 2496] | none_zero = 4992
+p=59 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 8352
+p=61 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [1920, 1920, 1920, 3360] | none_zero = 5760
+p=67 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 14256
+p=71 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [0, 0, 0, 0] | none_zero = 17920
+p=73 sum0 count [a^2+b^2, b^2+c^2, a^2+c^2, a^2+b^2+c^2] = [2880, 2880, 2880, 4896] | none_zero = 11520

@@ -1,0 +1,828 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Bir}{\operatorname{Bir}}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\rank}{rank}
+
+\sloppy
+
+\begin{document}
+
+\title[No perfect cuboid in Case~B at \texorpdfstring{$p=1$}{p=1}]{No perfect cuboid in Case~B at \texorpdfstring{$p=1$}{p=1}, and the rank obstruction on the associated genus-five curve}
+
+\author{Lightman Chang}
+\address{Independent Researcher}
+\email{lightman.chang@gmail.com}
+
+\subjclass[2020]{Primary 11D09; Secondary 11G05, 11G30, 14H45}
+\keywords{perfect cuboid, Euler brick, Pell equation, Lucas sequence, genus-five curve, Mordell--Weil rank, Chabauty--Coleman}
+
+\date{\today}
+
+\begin{abstract}
+A perfect cuboid is a rectangular box whose three edges, three face diagonals,
+and space diagonal are all integers; whether one exists is a question of Euler
+(1769) that remains open. Inside the standard two-adic case analysis of
+primitive perfect cuboids, the stratum ``Case~B at $p=1$'' is the
+one-parameter family with edges $(4q,\,q^2-4,\,2(q^2-1))$, $q$ a positive
+integer; the space diagonal is integral exactly when $g^2=5q^4+20$. We prove
+that this stratum contains no perfect cuboid: setting $Y=q^2$ turns the space
+condition into the Pell equation $g^2-5Y^2=20$, whose nonnegative solutions
+$Y_n$ are the odd-indexed Lucas numbers $L_{2n-1}$, and a theorem of Cohn
+(1964) on squares in the Lucas sequence forces $Y\in\{1,4\}$, i.e.\ $q\in\{1,2\}$,
+both degenerate. The argument is unconditional and entirely verified in
+PARI/GP. We then analyse the associated genus-five curve
+$C:\{e^2=5q^4-16q^2+20,\ g^2=5q^4+20\}$, whose finitely many rational points
+encode all \emph{rational} parameters and which Peschmann (2026) singled out as
+the target of a prospective genus-five Chabauty--Coleman obstruction. We
+determine the $\Q$-isogeny decomposition of $\Jac(C)$ explicitly and show that
+all five elliptic factors have Mordell--Weil rank one, so
+$\rank\Jac(C)(\Q)=5=\operatorname{genus}(C)$. Chabauty--Coleman therefore does
+\emph{not} apply to $C$; the factors carrying the relevant differentials are the
+quadratic twists by $\Q(\sqrt5)$ of two rank-zero curves, not those curves
+themselves. This isolates the elementary Pell--Lucas argument as the one that
+closes the stratum. A closing section records why elementary descent also stalls:
+the perfect-cuboid complete intersection $V\subset\PP^6$ is a surface of general
+type with finite $\Bir(V)$, an obstruction to any birational height-strict descent.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A \emph{perfect cuboid} is a rectangular parallelepiped with positive integer
+edges $a,b,c$ whose three face diagonals $\sqrt{a^2+b^2}$, $\sqrt{b^2+c^2}$,
+$\sqrt{a^2+c^2}$ and whose space diagonal $\sqrt{a^2+b^2+c^2}$ are all integers.
+The Perfect Cuboid Problem (PCP), which asks whether a perfect cuboid exists,
+was raised by Euler in 1769 and remains open after more than two and a half
+centuries; no perfect cuboid is known, and exhaustive searches have excluded
+any perfect cuboid with smallest edge below $5\times10^{11}$ or odd edge below
+$2.5\times10^{13}$~\cite{matson}. Since no
+parametrization of all Euler bricks is available, a standard strategy is to
+stratify the primitive solutions by their two-adic structure and to dispatch
+explicitly parametrized strata one at a time.
+
+Two recent preprints frame the elliptic-curve geometry that surrounds these
+strata. Yoshida~\cite{yoshida} studies \emph{face cuboids} through the family
+$E_{1,s}:y^2=x(x-(2s)^2)(x+(s^2-1)^2)$ and uses non-torsion points to
+\emph{produce} infinitely many of them. Peschmann~\cite{peschmann} reduces the
+full perfect-cuboid problem to a one-parameter family of genus-three curves
+$C_A:w^2=\lambda^8+A\lambda^4+1$ and develops $2$-descent and Kummer-character
+obstructions. In his closing discussion, Peschmann introduces a genus-five
+double cover $C_{T_4}:z^2=f(\,\cdot+T_4)/f(\,\cdot)$ of an elliptic quotient
+and observes that \emph{if} $\rank\Jac(C_{T_4})(\Q)<5$ then Chabauty--Coleman
+would render the relevant finiteness effective, while cautioning that ``for
+larger parameters, rank sums exceeding $5$ cannot be excluded''
+(\cite[\S8]{peschmann}). The present paper concerns a concrete genus-five curve
+of exactly this shape and shows that, for it, the rank does reach the genus, so
+the prospective obstruction is unavailable; the stratum is instead closed by an
+elementary argument.
+
+We work in the stratum we call \emph{Case~B at $p=1$}. To fix conventions: in
+the standard $2$-adic case analysis of primitive perfect cuboids one stratifies
+candidates by the $2$-adic valuations of the edges and of the relevant
+face-diagonal data; the present stratum is the one obtained by taking the
+distinguished even edge $a$ with $v_2(a)=2$ (i.e.\ $a=4q$ with $q$ odd in the
+fully primitive normalization) and specializing the residual integer parameter,
+here written $p$, to its base value $p=1$. With these choices the candidate is
+the one-parameter family
+\begin{equation}\label{eq:caseB}
+(a,b,c)=\bigl(4q,\;q^2-4,\;2(q^2-1)\bigr),\qquad q\in\Z_{>0},
+\end{equation}
+for which the three face conditions hold identically and the space-diagonal
+condition is $g^2=a^2+b^2+c^2=5q^4+20$. We adopt this parametrization as arising
+from the standard $2$-adic case analysis. The full taxonomy of the remaining
+strata is treated in the companion analysis; it is not standard in the
+published literature, and we make no claim that it is. Our main result is that
+this stratum contains no perfect cuboid (Theorem~\ref{thm:main}); the proof
+reduces the space condition to a Pell equation whose square values are governed
+by Cohn's theorem~\cite{cohn,cohnlucas} on squares in the Lucas sequence, and it
+is unconditional. We then turn to the genus-five curve
+$C:\{e^2=5q^4-16q^2+20,\ g^2=5q^4+20\}$ that
+records \emph{all rational} parameters, give the explicit $\Q$-isogeny
+decomposition of its Jacobian, and prove that every elliptic factor has rank
+one, so $\rank\Jac(C)(\Q)=5=\operatorname{genus}(C)$
+(Proposition~\ref{prop:rank}). This identifies the precise obstruction to the
+curve-theoretic route on $C$ and corrects a natural but mistaken expectation:
+the two factors carrying the candidate Chabauty differentials are the
+$\Q(\sqrt5)$-quadratic twists of the rank-zero curves \texttt{120a2} and
+\texttt{80a1}, and the twists have rank one.
+
+The paper is organized as follows. Section~\ref{sec:closure} sets up Case~B at
+$p=1$, derives the Pell equation, identifies its orbit with the odd-indexed
+Lucas numbers, and applies Cohn's theorem to prove the main theorem.
+Section~\ref{sec:curve} introduces the genus-five curve, computes the
+$\Q$-isogeny decomposition of its Jacobian and the rank of each factor, and
+records the resulting rank obstruction together with the unique genus-two
+quotient. Section~\ref{sec:scope} delimits the scope of the result---a single
+stratum, not the full problem---and positions it relative to Peschmann and
+Yoshida. Section~\ref{sec:obstructions} then records structural obstructions
+that situate the elementary route within the wider geometry: the perfect-cuboid
+complete intersection $V\subset\PP^6$ is a minimal surface of general type, so
+its birational automorphism group is finite and no birational self-map of $V$
+can effect a height-strict Markov--Vieta or Fermat descent
+(Proposition~\ref{prop:descent}); and the standard per-fiber elliptic curve has
+purely multiplicative reduction, which obstructs an elementary discriminant-free
+height lower bound (Observation~\ref{obs:noabs}). These are honest negatives,
+delimiting why elementary descent stalls without bearing on whether a perfect
+cuboid exists. All arithmetic claims are verified in PARI/GP, with scripts and
+captured output accompanying the paper.
+
+\section{Case~B at \texorpdfstring{$p=1$}{p=1} and its closure}\label{sec:closure}
+
+\subsection{The stratum and its reduction to a Pell equation}
+
+\begin{definition}\label{def:caseB}
+For a positive integer $q$, the \emph{Case~B at $p=1$ candidate} is the triple
+\[
+\mathrm{B}(q):=\bigl(a,b,c\bigr)=\bigl(4q,\;q^2-4,\;2(q^2-1)\bigr).
+\]
+It is a \emph{perfect cuboid} if all three edges are positive and
+$a^2+b^2$, $b^2+c^2$, $a^2+c^2$, $a^2+b^2+c^2$ are all perfect squares.
+\end{definition}
+
+\begin{lemma}\label{lem:faces}
+For every $q$ the candidate $\mathrm{B}(q)$ satisfies the polynomial identities
+\[
+a^2+b^2=(q^2+4)^2,\qquad a^2+c^2=\bigl(2(q^2+1)\bigr)^2,
+\]
+\[
+b^2+c^2=5q^4-16q^2+20,\qquad a^2+b^2+c^2=5q^4+20 .
+\]
+Consequently the two face diagonals $\sqrt{a^2+b^2}=q^2+4$ and
+$\sqrt{a^2+c^2}=2(q^2+1)$ are automatically integral, and $\mathrm{B}(q)$ is a
+perfect cuboid if and only if $b^2+c^2$ and $a^2+b^2+c^2$ are simultaneously
+perfect squares and $b=q^2-4>0$.
+\end{lemma}
+
+\begin{proof}
+The four displayed equalities are identities in $\Z[q]$, verified by direct
+expansion in script~\texttt{08\_caseB\_parametrization.gp}: with $a=4q$,
+$b=q^2-4$ and $c=2(q^2-1)$, one has $a^2+b^2-(q^2+4)^2=0$ and
+$a^2+c^2-4(q^2+1)^2=0$ identically, while $b^2+c^2=5q^4-16q^2+20$ and
+$a^2+b^2+c^2=5q^4+20$. The first two identities make the corresponding face
+diagonals integral for all integers $q$; the remaining two conditions, together
+with positivity of the edges, are then exactly what is needed for a perfect
+cuboid. Positivity of $a=4q$ and $c=2(q^2-1)$ holds for every $q\ge2$, so the
+binding positivity constraint is the requirement $b=q^2-4>0$, that is, $q\ge3$.
+\end{proof}
+
+\begin{lemma}\label{lem:pell}
+Write $g^2=a^2+b^2+c^2$ and set $Y=q^2$. Then the space-diagonal condition
+$g^2=5q^4+20$ is equivalent to the Pell-type equation
+\[
+g^2-5\,Y^2=20,\qquad Y=q^2 .
+\]
+Its nonnegative integer solutions $(g,Y)$ form a single orbit under the totally
+positive unit $\tfrac{3+\sqrt5}{2}$ of $\Z\!\left[\tfrac{1+\sqrt5}{2}\right]$,
+with $Y$-coordinates $Y_1,Y_2,\dots$ generated by
+\[
+Y_1=1,\quad Y_2=4,\quad Y_{n+1}=3Y_n-Y_{n-1}.
+\]
+\end{lemma}
+
+\begin{proof}
+Substituting $Y=q^2$ into $g^2=5q^4+20$ gives $g^2-5Y^2=20$ directly. The
+fundamental solution is $(g,Y)=(5,1)$, since $25-5=20$. Multiplication of
+$g+Y\sqrt5$ by the totally positive unit $\tfrac{3+\sqrt5}{2}$ of norm $1$ sends
+solutions to solutions and produces the recurrence $g_{n+1}=3g_n-g_{n-1}$,
+$Y_{n+1}=3Y_n-Y_{n-1}$ with $(g_1,Y_1)=(5,1)$ and $(g_2,Y_2)=(10,4)$; the first
+ten terms of $Y_n$ are
+$1,4,11,29,76,199,521,1364,3571,9349$
+(script~\texttt{07\_known\_points\_and\_cohn.gp}).
+
+We now show that every nonnegative solution lies in this single orbit, by
+reducing $g^2-5Y^2=20$ to a classical negative-Pell equation. Since $5\mid 20$
+and $5\mid 5Y^2$, the relation $g^2=5Y^2+20$ forces $5\mid g^2$, hence $5\mid g$.
+(Note $5\nmid Y$: if $5\mid Y$ then $25\mid 5Y^2$ and $g^2\equiv 20\pmod{25}$,
+impossible since $20$ is not a square modulo $25$.) Writing $g=5h$ gives
+$25h^2-5Y^2=20$, i.e.
+\[
+Y^2-5h^2=-4 .
+\]
+The positive solutions of $X^2-5Z^2=-4$ are classically known to be exactly
+$(X,Z)=(L_{2n-1},F_{2n-1})$, $n\ge1$, where $L_k$ and $F_k$ are the Lucas and
+Fibonacci numbers; these form a single solution class, the negative-Pell
+equation associated with the Lucas/Fibonacci identity $L_m^2-5F_m^2=4(-1)^m$
+\cite[Ch.~7]{niven}. Hence $Y\in\{L_{2n-1}:n\ge1\}$, and correspondingly
+$h=F_{2n-1}$, $g=5h=5F_{2n-1}$, recovering precisely the single orbit above.
+(For the first few terms, $(Y,h)=(1,1),(4,2),(11,5)$ satisfy
+$1-5=-4$, $16-20=-4$, $121-125=-4$.) Thus every nonnegative solution of
+$g^2-5Y^2=20$ has $Y=L_{2n-1}$ for some $n\ge1$.
+\end{proof}
+
+\begin{lemma}\label{lem:lucas}
+The sequence $Y_n$ of Lemma~\ref{lem:pell} satisfies $Y_n=L_{2n-1}$, where
+$L_k$ is the Lucas sequence $L_1=1$, $L_2=3$, $L_{k+1}=L_k+L_{k-1}$.
+\end{lemma}
+
+\begin{proof}
+The Lucas sequence satisfies $L_{2n+1}=3L_{2n-1}-L_{2n-3}$ (a consequence of
+$L_{k+2}=L_{k+1}+L_k$ applied twice), with $L_1=1$ and $L_3=4$. Thus
+$L_{2n-1}$ obeys the same second-order recurrence and the same two initial
+values as $Y_n$, so the two sequences coincide. The equality $Y_n=L_{2n-1}$ is
+confirmed for $1\le n\le 12$ in script~\texttt{07}.
+\end{proof}
+
+\subsection{The main theorem}
+
+\begin{theorem}\label{thm:main}
+No Case~B at $p=1$ candidate is a perfect cuboid. That is, for every positive
+integer $q$ the triple $\mathrm{B}(q)=\bigl(4q,\,q^2-4,\,2(q^2-1)\bigr)$ fails
+to be a perfect cuboid: either some edge is nonpositive, or $a^2+b^2+c^2$ is not
+a perfect square.
+\end{theorem}
+
+\begin{proof}
+Suppose $\mathrm{B}(q)$ is a perfect cuboid. By Lemma~\ref{lem:faces} this
+requires $a^2+b^2+c^2=5q^4+20$ to be a perfect square, say $g^2$, and the edge
+$b=q^2-4$ to be positive, i.e.\ $q\ge3$. By Lemma~\ref{lem:pell}, writing
+$Y=q^2$, the value $Y$ must be a member $Y_n$ of the Pell orbit; in particular
+$q^2=Y_n$ is a perfect square. By Lemma~\ref{lem:lucas}, $Y_n=L_{2n-1}$, so a
+solution requires the Lucas number $L_{2n-1}$ to be a perfect square.
+
+By Cohn's theorem on squares in the Lucas sequence~\cite{cohn,cohnlucas} (the
+Lucas-square statement is the one established in
+\cite{cohnlucas}), the only perfect
+squares among the Lucas numbers $L_k$ ($k\ge1$) are $L_1=1$ and $L_3=4$. Hence
+$Y_n=L_{2n-1}\in\{1,4\}$, giving $q^2\in\{1,4\}$, i.e.\ $q\in\{1,2\}$. For $q=1$
+the edge $b=q^2-4=-3$ is negative (and $c=2(q^2-1)=0$ vanishes); for $q=2$ the
+edge $b=q^2-4=0$ vanishes. In both cases the candidate is degenerate, so no
+$q\ge3$ yields a perfect cuboid. This contradiction proves the theorem; the
+arithmetic is verified in script~\texttt{08} (face and space identities) and
+script~\texttt{07} (Pell orbit, Lucas identification, and the square test
+returning $\{1,4\}$).
+\end{proof}
+
+\begin{remark}
+The closure is unconditional and elementary: it rests only on the explicit
+parametrization~\eqref{eq:caseB}, the structure of solutions to a Pell equation,
+and Cohn's theorem~\cite{cohn,cohnlucas}, all of which are unconditional. It does
+\emph{not} invoke the Mordell conjecture, the method of Chabauty, or any
+hypothesis on $L$-functions. The integrality of the parameter $q$---which is
+what makes the Pell--Lucas argument available---is built into the
+Pythagorean-style parametrization~\eqref{eq:caseB}: a Case~B at $p=1$ cuboid has
+integer edges $a=4q$, so $q$ is an integer.
+\end{remark}
+
+\section{The genus-five curve and the rank obstruction}\label{sec:curve}
+
+The stratum of Section~\ref{sec:closure} is parametrized by integers $q$. It is
+natural to ask the stronger question of which \emph{rational} $q$ make both
+$5q^4-16q^2+20$ and $5q^4+20$ squares; these are the rational points of the
+joint curve
+\begin{equation}\label{eq:C}
+C:\qquad e^2=5q^4-16q^2+20,\qquad g^2=5q^4+20 ,
+\end{equation}
+the fibre product over $\mathbb{P}^1_q$ of the two genus-one double covers
+$e^2=f_1(q)$ and $g^2=f_2(q)$, with $f_1=5q^4-16q^2+20$ and $f_2=5q^4+20$. This
+is the curve singled out, in abstract form, by Peschmann~\cite[\S8]{peschmann}
+as the locus on which an effective genus-five Chabauty--Coleman argument might
+operate. We show in this section that the rank obstruction he flagged is
+present for $C$.
+
+\begin{proposition}\label{prop:genus}
+The polynomials $f_1,f_2$ are coprime and separable, neither has a rational
+root, and the smooth projective model of $C$ has genus $5$. Its rational points
+are affine: the four geometric points at infinity are defined over
+$\Q(\sqrt5)$, hence none is rational.
+\end{proposition}
+
+\begin{proof}
+One computes $\operatorname{res}(f_1,f_2)=2^{20}5^4\neq0$, so $f_1,f_2$ are
+coprime, and $\operatorname{disc}(f_1)=33177600$,
+$\operatorname{disc}(f_2)=256000000$ are nonzero, so both are separable; neither
+has a rational root (their roots are not real, and a rational root would divide
+$20$ but none does). The covering $C\to\mathbb{P}^1_q$ has degree $4$. Over each
+of the four roots of $f_1$ the $e$-cover ramifies and the $g$-cover does not,
+contributing $2$ to the ramification divisor; symmetrically for the four roots
+of $f_2$; over $q=\infty$ the cover is unramified. Riemann--Hurwitz gives
+$2g(C)-2=4(2\cdot0-2)+16=8$, so $g(C)=5$. At infinity, in the chart
+$q=1/s$, $E=es^2$, $G=gs^2$, the equations become $E^2=5-16s^2+20s^4$,
+$G^2=5+20s^4$, with $E^2=G^2=5$ at $s=0$; since $5$ is not a rational square the
+four points at infinity are defined over $\Q(\sqrt5)$. These computations are in
+script~\texttt{01\_genus\_and\_decomposition.gp}.
+\end{proof}
+
+\begin{proposition}[$\Q$-isogeny decomposition of $\Jac(C)$]\label{prop:decomp}
+The curve $C$ carries the group $(\Z/2\Z)^3$ of involutions generated by
+$\sigma_e:e\mapsto-e$, $\sigma_g:g\mapsto-g$, $\sigma_q:q\mapsto-q$, and there
+is a $\Q$-isogeny
+\[
+\Jac(C)\;\sim_{\Q}\;E_1\times E_2\times E_3\times X_+^{(5)}\times X_-^{(5)},
+\]
+where $E_1,E_2,E_3$ are the elliptic curves of Cremona labels \texttt{480f1},
+\texttt{800a1}, \texttt{1200a2} (the quotients by $\sigma_g$, $\sigma_e$ and a
+factor of the quotient by $\sigma_q$), and $X_+^{(5)},X_-^{(5)}$ are the
+quadratic twists by $\Q(\sqrt5)$ of $X_+=\texttt{120a2}$ and $X_-=\texttt{80a1}$,
+with Cremona labels \texttt{600a2} and \texttt{400a2}.
+\end{proposition}
+
+\begin{proof}
+The two ``axis'' quotients $C/\langle\sigma_g\rangle:e^2=f_1$ and
+$C/\langle\sigma_e\rangle:g^2=f_2$ have, after minimalization, the models
+$y^2=x^3-39312x+2889216$ ($j=48228544/2025$, conductor $480$) and
+$y^2=x^3-32400x$ ($j=1728$, CM by $\Z[i]$, conductor $800$); PARI's
+\texttt{ellfromeqn} applied to $e^2-f_1$ and $g^2-f_2$ reproduces these
+$j$-invariants and conductors, identifying them as \texttt{480f1} and
+\texttt{800a1} (script~\texttt{01}). The third factor $E_3=\texttt{1200a2}$,
+model $y^2=x^3-x^2-108x-288$, arises from the genus-two quotient by $\sigma_q$.
+
+The remaining two factors carry the $(-1,-1,-1)$-eigenspace of the holomorphic
+differentials, spanned by $\omega_1=dq/(eg)$ and $\omega_3=q^2\,dq/(eg)$. We
+identify them by comparing the Frobenius data of $C$ with the candidate
+factors. Counting points of the smooth model of $C$ over $\F_p$ and forming
+$a_p(C)=p+1-\#C(\F_p)$, one finds
+\[
+a_p(C)=a_p(E_1)+a_p(E_2)+a_p(E_3)+a_p\!\bigl(X_+^{(5)}\bigr)+a_p\!\bigl(X_-^{(5)}\bigr)
+\]
+for every good prime $p$ in $[7,150]$ ($32$ primes, no exceptions), where
+$X_+^{(5)},X_-^{(5)}$ are the twists by $5$ of \texttt{120a2}, \texttt{80a1};
+PARI's \texttt{ellidentify} returns the labels \texttt{600a2}, \texttt{400a2}
+for these twists (script~\texttt{06\_true\_decomposition\_rank.gp}). Matching
+the untwisted curves \texttt{120a2}, \texttt{80a1} instead fails at every prime
+with $\bigl(\tfrac5p\bigr)=-1$; the discrepancy is exactly the sign of
+$\bigl(\tfrac5p\bigr)$, the signature of a $\Q(\sqrt5)$-twist (scripts
+\texttt{01}, \texttt{02\_genus2\_quotient.gp}). The agreement of all five linear
+Frobenius coefficients over this range of $32$ primes, taken together with the
+explicit quotient constructions of scripts~\texttt{04} and~\texttt{05} and the
+differential-character decomposition recorded in
+Proposition~\ref{prop:g2quot}, identifies the isogeny-class decomposition of
+$\Jac(C)$ displayed above; the $a_p$ agreement furnishes strong corroborating
+evidence, and it is the explicit constructions that pin down the factors. (We
+do not invoke a Faltings--Serre argument here, as that would require a specific
+computable bound on the primes to be checked.)
+\end{proof}
+
+\begin{proposition}[The rank obstruction]\label{prop:rank}
+Each of the five factors $E_1=\texttt{480f1}$, $E_2=\texttt{800a1}$,
+$E_3=\texttt{1200a2}$, $X_+^{(5)}=\texttt{600a2}$, $X_-^{(5)}=\texttt{400a2}$
+has Mordell--Weil rank one over $\Q$. Consequently
+\[
+\rank\Jac(C)(\Q)=1+1+1+1+1=5=\operatorname{genus}(C),
+\]
+so the Chabauty hypothesis $\rank<\operatorname{genus}$ fails and the method of
+Chabauty--Coleman does not apply to $C$.
+\end{proposition}
+
+\begin{proof}
+For each of the five curves PARI's \texttt{ellrank}---an unconditional
+$2$-descent computation---returns the tight interval $[1,1]$ together with an
+explicit point of infinite order, namely $(-48,2160)$ on $E_1$, $(-144,1296)$
+on $E_2$, $(-4,8)$ on $E_3$, $(-16,72)$ on $X_+^{(5)}$, and $(1,24)$ on
+$X_-^{(5)}$; each listed point has nonzero canonical height and infinite order
+(scripts \texttt{05\_genuine\_quotient\_rank.gp}, \texttt{06}). Independently,
+each curve has analytic rank one with root number $-1$, so Kolyvagin's
+theorem~\cite{kolyvagin} also forces algebraic rank one. The five ranks sum to
+$5$, equal to the genus by Proposition~\ref{prop:genus}, and Chabauty's
+inequality requires the strict inequality $\rank\Jac(C)(\Q)<\operatorname{genus}(C)$.
+\end{proof}
+
+\begin{remark}\label{rem:wrongfactors}
+Proposition~\ref{prop:rank} corrects a natural misidentification. The two
+differentials $\omega_1,\omega_3$ are pulled back from the
+$(-1,-1,-1)$-eigenspace, and one might expect this eigenspace to be governed by
+the rank-zero curves $X_+=\texttt{120a2}$ and $X_-=\texttt{80a1}$ (both
+unconditionally of rank $0$: PARI's \texttt{ellrank} gives $[0,0]$, and
+$L(X_+,1)\approx1.2695$, $L(X_-,1)\approx1.0095$ are nonzero, so Kolyvagin
+applies). If those were the actual factors, $\rank\Jac(C)(\Q)$ would be $3$ and
+Chabauty would apply. But the factors are their $\Q(\sqrt5)$-twists
+$\texttt{600a2}$ and $\texttt{400a2}$---a twist forced by the appearance of
+$\sqrt5$ at the points at infinity (Proposition~\ref{prop:genus})---and the
+twists each have rank one. Rank is not a quasi-isogeny invariant under
+quadratic twist, and here the twist raises the rank from $0$ to $1$ in each
+factor.
+\end{remark}
+
+\begin{proposition}[The unique genus-two quotient]\label{prop:g2quot}
+Among the quotients of $C$ by index-two subgroups of $(\Z/2\Z)^3$, exactly one
+has genus two, namely $C_q:=C/H$ with $H=\langle\sigma_e\sigma_g,\,
+\sigma_e\sigma_q\rangle$, whose invariant differentials are $\omega_1,\omega_3$.
+A plane model is
+\[
+C_q:\qquad w^2=u\,(5u^2-16u+20)(5u^2+20),\qquad u=q^2,\ w=egq,
+\]
+and $\Jac(C_q)\sim_{\Q}X_+^{(5)}\times X_-^{(5)}=\texttt{600a2}\times\texttt{400a2}$.
+In particular $\rank\Jac(C_q)(\Q)=2=\operatorname{genus}(C_q)$, so Chabauty does
+not apply to $C_q$ either.
+\end{proposition}
+
+\begin{proof}
+A holomorphic differential of $C$ with $(\Z/2\Z)^3$-character
+$(\chi_e,\chi_g,\chi_q)$ is invariant under an index-two subgroup
+$H=\ker\psi$ if and only if its character lies in $\{1,\psi\}$. The five
+characters occurring are $(-,+,-),(+,-,-),(-,-,+)$ and the repeated
+$(-,-,-)$. Running over the seven nontrivial $\psi$, the only choice giving a
+two-dimensional invariant space is $\psi=(-,-,-)$, whose invariant forms are
+$\omega_1,\omega_3$; all others give dimension $\le1$. Thus the genus-two
+quotient is unique. The functions $u=q^2$ and $w=egq$ are exactly the
+$H$-invariants, and $w^2=e^2g^2q^2=f_1(q)f_2(q)\,q^2=u(5u^2-16u+20)(5u^2+20)$,
+verified as an identity in script~\texttt{04\_genuine\_Cq\_lift.gp}. Counting
+$\F_p$-points of this quintic model gives $a_p(C_q)=a_p(X_+^{(5)})+a_p(X_-^{(5)})$
+for all $43$ good primes $p\le200$, and the full Frobenius characteristic
+polynomial (both coefficients, via $\#C_q(\F_p)$ and $\#C_q(\F_{p^2})$) factors
+as $L_p(X_+^{(5)})L_p(X_-^{(5)})$ for all $12$ good primes in $[7,47]$ (scripts
+\texttt{02}, \texttt{03\_Cq\_model\_and\_rank.gp}). By
+Proposition~\ref{prop:rank} both factors have rank one, so
+$\rank\Jac(C_q)(\Q)=2$.
+\end{proof}
+
+\begin{remark}\label{rem:knownpts}
+The curve $C$ has $16$ visible rational points
+$\{(\pm1,\pm3,\pm5),(\pm2,\pm6,\pm10)\}$ (independent signs), all with
+$q\in\{\pm1,\pm2\}$ and hence $b=q^2-4\in\{-3,0\}\le0$, i.e.\ all degenerate; a
+height search over $q=n/d$ with $|n|,d\le2000$ finds no others
+(script~\texttt{07}). Under the quotient map of
+Proposition~\ref{prop:g2quot} these $16$ points collapse to the four points
+$(u,w)\in\{(1,\pm15),(4,\pm120)\}$ of $C_q$, which lift back to exactly the $16$
+(script~\texttt{04}). By the Mordell conjecture (Faltings) $C(\Q)$ is finite,
+but the present rank computation shows this finiteness is not made effective by
+Chabauty--Coleman on $C$ or on $C_q$; an effective determination of $C(\Q)$
+would require a higher method (for instance quadratic Chabauty, or a Mordell--Weil
+sieve combined with covering collections), which we do not carry out here. The
+closure of the stratum in Theorem~\ref{thm:main} does not depend on knowing
+$C(\Q)$: it uses only the integer points, which the Pell--Lucas argument settles
+unconditionally.
+\end{remark}
+
+\section{Scope and related work}\label{sec:scope}
+
+\subsection{Scope: a single stratum}\label{sec:scopelimit}
+
+Theorem~\ref{thm:main} closes the stratum ``Case~B at $p=1$,'' a single
+one-parameter family inside the two-adic case analysis of primitive perfect
+cuboids; it does not resolve the Perfect Cuboid Problem, and must not be read as
+doing so. Even within Case~B, the present argument covers only $p=1$: for higher
+$p$ the analogous space-diagonal equation $g^2=5q^4-\cdots$ depends on $p$ and
+the Pell--Lucas reduction changes, so those sub-cases are not covered here.
+Case~A and the other face-III parametrizations, the higher two-adic strata, and
+non-primitive sub-cases are likewise outside the scope of this paper. Indeed the
+companion question of which \emph{rational} parameters $q$ are admissible---the
+rational points of the genus-five curve $C$---is shown in
+Section~\ref{sec:curve} to be inaccessible to Chabauty--Coleman, precisely
+because $\rank\Jac(C)(\Q)=\operatorname{genus}(C)$. We make no claim about the
+full problem, and in particular do not claim that PCP is solved.
+
+\subsection{Relation to Peschmann and Yoshida}\label{sec:related}
+
+Peschmann~\cite{peschmann} reduces the full perfect-cuboid problem to a
+genus-three family $C_A:w^2=\lambda^8+A\lambda^4+1$ and, in his closing
+discussion, introduces a genus-five double cover $C_{T_4}$ of an elliptic
+quotient as a possible site for an effective Chabauty--Coleman obstruction,
+explicitly noting that he does not decompose the relevant abelian fourfold and
+that ``rank sums exceeding $5$ cannot be excluded'' (\cite[\S8]{peschmann}). Our
+curve $C$ of~\eqref{eq:C} is a concrete genus-five curve of this type attached to
+Case~B at $p=1$. For it we carry out the decomposition Peschmann left abstract
+(Proposition~\ref{prop:decomp}) and find that the rank does reach the genus
+(Proposition~\ref{prop:rank}); thus, for this instance, the prospective
+Chabauty--Coleman obstruction is unavailable, confirming his stated concern
+rather than realizing his hoped-for effectivity. The stratum is nonetheless
+closed, by the elementary Pell--Lucas argument of Section~\ref{sec:closure},
+which is independent of the curve's rational-point count. We regard this as a
+precise, honest answer to the concrete instance underlying his \S8 discussion:
+the curve-theoretic route is obstructed here, and finiteness for the cuboid
+question comes from elsewhere.
+
+Yoshida~\cite{yoshida} studies face cuboids via the elliptic family $E_{1,s}$
+and uses non-torsion points to produce infinitely many of them, an existence
+direction opposite to ours; the curves $X_+,X_-$ and their twists that arise
+here do not appear in his work. The factorization $5q^4+20=5(q^4+4)$ and the
+attendant Gaussian/$\Q(\sqrt5)$ structure are elementary, and the rank-zero
+curves \texttt{120a2}, \texttt{80a1} are routine entries in Cremona's
+tables~\cite{cremona}; the curve \texttt{80a1} also appears in the Saunderson
+reduction of a separate parametric family. To the best of our knowledge, the
+explicit closure of Case~B at $p=1$ by the Pell--Lucas route, and the
+determination that the associated genus-five Jacobian has rank equal to its
+genus---with the $(-1,-1,-1)$-eigenspace governed by the rank-one twists
+\texttt{600a2}, \texttt{400a2} rather than the rank-zero curves
+\texttt{120a2}, \texttt{80a1}---do not appear in the cited literature. We do
+not claim that the underlying rank facts are unknown to specialists; we claim
+only that this precise statement and proof do not appear there.
+
+\section{Structural obstructions to elementary descent}\label{sec:obstructions}
+
+The closure of Section~\ref{sec:closure} is elementary, and
+Section~\ref{sec:curve} shows that the curve-theoretic route on $C$ is obstructed
+by rank. It is natural to ask whether some \emph{other} elementary mechanism---a
+Markov--Vieta or Fermat-style infinite descent acting directly on the cuboid
+locus---could close more of the problem. This section records two structural
+reasons such descents stall. The results are delimitative: they explain why
+elementary descent on the ambient does not gain traction, and they make no claim
+about deciding whether a perfect cuboid exists.
+
+The natural ambient is the smooth complete intersection of four quadrics
+\[
+V:\quad a^2+b^2-d^2=b^2+c^2-e^2=a^2+c^2-f^2=a^2+b^2+c^2-g^2=0
+\]
+in $\PP^6$, whose $\Q$-points with all coordinates nonzero are exactly the perfect
+cuboids; forgetting the fourth quadric gives the Euler-brick surface
+$V'\subset\PP^5$, a (singular) K3 \cite{vanLuijk}.
+
+\begin{proposition}\label{prop:geomV}
+The surface $V$ is a smooth minimal surface of general type with ample canonical
+class
+\[
+K_V=\mathcal{O}_V(1),\qquad K_V^2=16,\quad c_2(V)=80,\quad
+\chi(\mathcal{O}_V)=8,\quad p_g=7,\quad q=0 .
+\]
+In particular $V$ is \emph{not} a K3 surface; only the Euler-brick double cover
+$V'$ is K3. Its automorphism group is finite, equal to its birational
+automorphism group, and is linear:
+\[
+\Aut(V)=\Bir(V)=S_3\ltimes(\Z/2)^6,\qquad|\Aut(V)|=384 .
+\]
+\end{proposition}
+
+\begin{proof}
+By adjunction for a smooth complete intersection of four quadrics in $\PP^6$,
+$K_V=(K_{\PP^6}+4\cdot\mathcal{O}(2))|_V=(-7+8)\mathcal{O}_V(1)=\mathcal{O}_V(1)$,
+which is ample. The Chern computation $c(T_V)\equiv(1+H)^7(1+2H)^{-4}\equiv
+1-H+5H^2 \pmod{H^3}$ with $\deg V=H^2\cdot V=2^4=16$ gives $K_V^2=16$,
+$c_2(V)=5\cdot16=80$, hence $\chi(\mathcal{O}_V)=(K_V^2+c_2)/12=8$; the Lefschetz
+hyperplane theorem gives $q=0$ and so $p_g=\chi-1=7$. Since $K_V$ is ample the
+Kodaira dimension is $2$, so $V$ is of general type and minimal, and is not K3
+(a K3 surface has $K=0$). The Chern bookkeeping is recorded symbolically in the
+project's \texttt{aut\_birV} package.
+
+For the automorphism group: since $K_V=\mathcal{O}_V(1)$ the surface is
+canonically embedded, so every automorphism is the restriction of a linear map of
+$\PP^6$. A determination of the linear stabilizer of the defining ideal shows its
+Lie algebra is one-dimensional (the scalar matrix only), so the linear
+automorphism group is $0$-dimensional, hence finite; an explicit enumeration of
+the stabilizer gives $S_3\ltimes(\Z/2)^6$ of order $384$ (the six permutations of
+$(a,b,c)$, each lifting to a unique permutation of $(d,e,f)$ fixing $g$, and the
+seven coordinate sign flips modulo the diagonal scalar, giving $(\Z/2)^6$ of order
+$64$). The equality $\Aut(V)=\Bir(V)$ is the statement that for a minimal surface
+of general type the natural map $\Aut(V)\to\Bir(V)$ is an isomorphism, a
+birational map between minimal models of a non-ruled surface being an
+isomorphism. This linear-stabilizer determination is a Gr\"obner-basis ideal
+computation carried out in the \texttt{aut\_birV} package; it is symbolic
+computer algebra and is \emph{not} reproducible in PARI/GP, so we cite it as an
+external computer-algebra input rather than as part of the accompanying PARI
+scripts.
+\end{proof}
+
+\begin{proposition}\label{prop:descent}
+Let $L$ be any ample line bundle on $V$ and $H_L$ an associated Weil height. There
+is no birational self-map $\sigma\colon V\dashrightarrow V$ and constant $C>0$ for
+which
+\[
+H_L(\sigma(P))\le H_L(P)-C
+\]
+holds for all $P$ in a $\sigma$-invariant Zariski-dense subset $S\subseteq V(\Q)$.
+In particular, no Markov--Vieta or Fermat-style height-strict infinite descent can
+be realized by a birational transformation of $V$.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:geomV}, $V$ is a smooth projective variety with ample
+canonical bundle. By Matsumura's theorem \cite{Matsumura}, such a variety admits
+no positive-dimensional connected group of birational transformations; together
+with the finiteness of the automorphism group of a variety of general type
+(Maehara's extension of Severi's theorem \cite{Maehara,Iitaka}), the group
+$\Bir(V)$ is finite, and for a minimal surface of general type it equals
+$\Aut(V)$.
+
+Let $\sigma\in\Bir(V)=\Aut(V)$. Since $\Bir(V)$ is finite, $\sigma$ has finite
+order $k\ge1$, so $\sigma^{k}=\mathrm{id}$. Fix an ample $L$ and a representative
+Weil height $H_L\colon V(\Q)\to\R$. Suppose, for contradiction, that
+$H_L(\sigma P)\le H_L(P)-C$ for some $C>0$ and all $P$ in a $\sigma$-invariant
+Zariski-dense set $S\subseteq V(\Q)$. Summing this inequality along the finite
+orbit $P,\sigma P,\dots,\sigma^{k-1}P$ of any $P\in S$ (each $\sigma^{i}P\in S$ by
+$\sigma$-invariance, so the inequality applies at every step) gives
+\[
+H_L(\sigma^{k}P)\le H_L(P)-kC .
+\]
+But $\sigma^{k}=\mathrm{id}$, so the left-hand side equals $H_L(P)$, forcing
+$kC\le0$---a contradiction, since $k\ge1$ and $C>0$. (A Weil height is well
+defined only up to $O(1)$; the argument fixes one representative $H_L$ and
+evaluates it at the actual orbit points, where the periodicity $\sigma^{k}P=P$ is
+exact, so the $O(1)$ ambiguity never enters.) Hence no birational self-map of $V$
+can effect a height-strict infinite descent on $V(\Q)$.
+\end{proof}
+
+Proposition~\ref{prop:descent} rests on the folklore engine
+``ample $K$ $\Rightarrow$ $\Bir$ finite'' of Matsumura and Maehara
+\cite{Matsumura,Maehara,Iitaka}; its content here is the explicit application to
+the concrete general-type surface $V$. It explains, intrinsically, why the descent
+that succeeds for single equations such as $x^4+y^4=z^2$ (where the ambient is a
+curve) or the Markov tree for $x^2+y^2+z^2=3xyz$ (the Vieta involution
+$z\mapsto3xy-z$) has no analogue acting on the cuboid surface: the relevant ambient
+is a rigid surface of general type with a finite group of birational symmetries.
+The $S_3\ltimes(\Z/2)^6$ symmetry merely permutes edge labels and flips signs, so
+it reshuffles a candidate cuboid among others with the same space diagonal $g^2$,
+never toward a contradiction.
+
+\begin{remark}\label{rem:yelle}
+The hypothesis is that the descent be effected \emph{by a birational self-map of}
+$V$. This is distinct from the elementary descent of
+Yelle~\cite{Yelle}, whose mechanism is a prime-propagation argument on
+divisibility data along the space diagonal, not a self-map of $V$;
+Proposition~\ref{prop:descent} says nothing about descents of that other kind and
+does not bear on Yelle's argument. (Two further internal observations---that a
+purely multiplicative reformulation in $\Z[i]$ adds no obstruction beyond the
+classical fact that each face diagonal must be composite, and that the
+Pila--Zannier unlikely-intersection viewpoint has no special locus to act on for
+the fourth, body-diagonal condition---are recorded only to spare future effort and
+refute no published claim.)
+\end{remark}
+
+The arithmetic side furnishes a second, independent obstruction, this time to an
+elementary height inequality. The standard per-fiber elliptic curve attached to a
+Pythagorean parameter $q$ is
+\[
+E_{\mathrm{PCP}}(q):\quad y^2=x(x+1)(x+q^2)=x^3+(1+q^2)x^2+q^2x ,
+\]
+with full rational $2$-torsion.
+
+\begin{observation}\label{obs:noabs}
+For every Pythagorean parameter $q$, the curve $E_{\mathrm{PCP}}(q)$ has purely
+multiplicative (Kodaira type $I_n$) reduction at every bad prime, so every
+non-archimedean N\'eron local height is nonpositive,
+$\lambda_p(P)\in[-\tfrac{N_p}{4}\log p,\,0]$ with $N_p=v_p(\Delta_{\min})$, and
+$\sum_p\lambda_p(P)\in[-\tfrac14\log|\Delta_{\min}|,\,0]$. Consequently the
+positive part of the canonical height
+$\widehat h(P)=\lambda_\infty(P)+\sum_p\lambda_p(P)$ resides entirely in the
+archimedean term, and no elementary discriminant-only lower bound
+$\widehat h(P)\ge c\log|\Delta_{\min}|$ with $c$ independent of the Szpiro ratio
+is available: the multiplicative structure supplies no positive height budget.
+\end{observation}
+
+Multiplicativity is the vanishing $v_p(c_4)=0$ at each bad prime, verified on
+representative fibers in script~\texttt{09\_local\_heights\_In.gp} (for instance at
+$(m,n)=(11,2)$ the bad primes $3,7,11,13,23,73$ each have $v_p(c_4)=0$ and Kodaira
+type $I_n$); the local-height range is N\'eron's formula for multiplicative
+reduction \cite{SilvermanATAEC}, and the sum bound follows from
+$\sum_p N_p\log p=\log|\Delta_{\min}|$. The headline ``no absolute constant'' is, at
+bottom, the non-effectivity of Lang's height conjecture
+\cite{HindrySilverman,Wagener}, recorded here only to locate the one remaining
+elementary handle---a bound on the Szpiro ratio---rather than the height itself.
+Observation~\ref{obs:noabs} is consistent with, and complementary to, the rank
+data of Section~\ref{sec:curve}: the two rank-zero curves there,
+$X_+=\texttt{120a2}$ and $X_-=\texttt{80a1}$, are finite over $\Q$ by Kolyvagin's
+theorem \cite{kolyvagin} (analytic rank $0$ with $L(X_+,1)=1.26949\ldots$,
+$L(X_-,1)=1.00945\ldots$ nonzero), and it is their $\Q(\sqrt5)$-twists
+\texttt{600a2}, \texttt{400a2}, not these curves, that raise the genus-five rank to
+its genus (Proposition~\ref{prop:rank}, Remark~\ref{rem:wrongfactors}).
+
+These obstructions complement the recent conditional and elementary work of
+Peschmann~\cite{peschmann,peschmann2} and Yelle~\cite{Yelle}: they map a boundary
+between methods that transfer to the cuboid locus and methods that, for structural
+reasons, do not. None of them resolves the perfect cuboid problem, and we make no
+such claim.
+
+\section*{Computational verification}
+
+All identities and curve computations were carried out in PARI/GP
+version~2.15.4~\cite{pari}. The accompanying scripts are:
+\texttt{01\_genus\_and\_decomposition.gp} (genus of $C$; conductors and
+$j$-invariants of the axis quotients; \texttt{ellidentify});
+\texttt{02\_genus2\_quotient.gp} and \texttt{03\_Cq\_model\_and\_rank.gp}
+(the genus-two quotient, its $a_p$ and full Frobenius characteristic polynomial,
+and rank data);
+\texttt{04\_genuine\_Cq\_lift.gp} (the rational quotient model and the lift of
+its points to the $16$ points of $C$);
+\texttt{05\_genuine\_quotient\_rank.gp} and
+\texttt{06\_true\_decomposition\_rank.gp} (identification of the twisted factors
+\texttt{600a2}, \texttt{400a2}, the five-factor $a_p$ match over $32$ good
+primes, and the rank-one computations with explicit generators);
+\texttt{07\_known\_points\_and\_cohn.gp} (the $16$ points, the height search,
+the Pell orbit $Y_n=L_{2n-1}$, and the square test returning $\{1,4\}$); and
+\texttt{08\_caseB\_parametrization.gp} (the face and space-diagonal identities
+and the degeneracy bookkeeping); and
+\texttt{09\_local\_heights\_In.gp} (Observation~\ref{obs:noabs}: purely
+multiplicative reduction and the nonpositive local-height range at each bad prime
+on three sample fibers). The Chern-number and automorphism-group inputs of
+Proposition~\ref{prop:geomV} are symbolic computer-algebra computations from the
+project's \texttt{aut\_birV} package, not reproducible in PARI/GP, and are cited
+as external inputs. Each PARI script has a captured \texttt{.out} file.
+
+\section*{Acknowledgements}
+The author thanks the maintainers of PARI/GP.
+
+\begin{thebibliography}{99}
+
+\bibitem{cohn}
+J.~H.~E. Cohn,
+\emph{On square Fibonacci numbers},
+J. London Math. Soc. \textbf{39} (1964), 537--540.
+
+\bibitem{cohnlucas}
+J.~H.~E. Cohn,
+\emph{Square Fibonacci numbers, etc.},
+Fibonacci Quart. \textbf{2} (1964), 109--113.
+
+\bibitem{niven}
+I.~Niven, H.~S. Zuckerman, and H.~L. Montgomery,
+\emph{An Introduction to the Theory of Numbers},
+5th ed., John Wiley \& Sons, New York, 1991.
+
+\bibitem{cremona}
+J.~E. Cremona,
+\emph{Algorithms for modular elliptic curves},
+2nd ed., Cambridge University Press, Cambridge, 1997.
+Online tables: \url{https://www.lmfdb.org/EllipticCurve/Q/}.
+
+\bibitem{kolyvagin}
+V.~A. Kolyvagin,
+\emph{Euler systems},
+in: The Grothendieck Festschrift, Vol.~II,
+Progr. Math. \textbf{87}, Birkh\"auser, Boston, 1990, pp.~435--483.
+
+\bibitem{matson}
+R.~D. Matson,
+\emph{Results of a computer search for a perfect cuboid},
+unpublished manuscript, 2009;
+\url{https://www.unsolvedproblems.org/}.
+
+\bibitem{pari}
+The PARI~Group,
+\emph{PARI/GP version 2.15.4},
+Univ. Bordeaux, 2023,
+\url{https://pari.math.u-bordeaux.fr/}.
+
+\bibitem{peschmann}
+R.~Peschmann,
+\emph{Quartic reductions and elliptic obstructions for perfect Euler bricks},
+preprint, arXiv:2604.09328 (2026).
+
+\bibitem{peschmann2}
+R.~Peschmann,
+\emph{A torsion-intersection proof of perfect-cuboid nonexistence on $1072$
+explicit master-tuple fibers},
+preprint, arXiv:2604.28072 (2026).
+
+\bibitem{yoshida}
+T.~Yoshida,
+\emph{The relationship between face cuboids and elliptic curves},
+preprint, arXiv:2407.09825 (2024).
+
+\bibitem{vanLuijk}
+R.~van Luijk,
+\emph{On perfect cuboids},
+Master's thesis, Universiteit Utrecht, 2000.
+
+\bibitem{Matsumura}
+H.~Matsumura,
+\emph{On algebraic groups of birational transformations},
+Atti Accad. Naz. Lincei Rend. Cl. Sci. Fis. Mat. Natur. (8) \textbf{34} (1963),
+151--155.
+
+\bibitem{Maehara}
+K.~Maehara,
+\emph{A finiteness property of varieties of general type},
+Math. Ann. \textbf{262} (1983), 101--123.
+
+\bibitem{Iitaka}
+S.~Iitaka,
+\emph{Algebraic Geometry: An Introduction to Birational Geometry of Algebraic
+Varieties},
+Graduate Texts in Mathematics \textbf{76}, Springer, New York, 1982.
+
+\bibitem{SilvermanATAEC}
+J.~H. Silverman,
+\emph{Advanced Topics in the Arithmetic of Elliptic Curves},
+Graduate Texts in Mathematics \textbf{151}, Springer, New York, 1994.
+
+\bibitem{HindrySilverman}
+M.~Hindry and J.~H. Silverman,
+\emph{Diophantine Geometry: An Introduction},
+Graduate Texts in Mathematics \textbf{201}, Springer, New York, 2000.
+
+\bibitem{Wagener}
+B.~Wagener,
+\emph{About the proof of Lang's height conjecture},
+preprint, arXiv:1706.03622 (2017).
+
+\bibitem{Yelle}
+S.~Yelle,
+\emph{An elementary obstruction to the existence of a perfect cuboid},
+preprint, arXiv:2602.00239 (2026).
+
+\end{thebibliography}
+
+\end{document}

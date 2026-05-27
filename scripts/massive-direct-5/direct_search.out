@@ -1,0 +1,16 @@
+[0;31m  ***   Warning: new stack size = 12000000000 (11444.092 Mbytes).[0m
+--- (m,n) = (61,38) ---
+  Searching x = a/b^2, |a| <= 200, b <= sqrt(Bx)
+  Total non-torsion points found: 0
+--- (m,n) = (63,38) ---
+  Searching x = a/b^2, |a| <= 200, b <= sqrt(Bx)
+  Total non-torsion points found: 0
+--- (m,n) = (73,24) ---
+  Searching x = a/b^2, |a| <= 200, b <= sqrt(Bx)
+  Total non-torsion points found: 0
+--- (m,n) = (88,35) ---
+  Searching x = a/b^2, |a| <= 200, b <= sqrt(Bx)
+  Total non-torsion points found: 0
+--- (m,n) = (99,28) ---
+  Searching x = a/b^2, |a| <= 200, b <= sqrt(Bx)
+  Total non-torsion points found: 0

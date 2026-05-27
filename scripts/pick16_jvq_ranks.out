@@ -1,0 +1,44 @@
+[0;31m  ***   Warning: new stack size = 8000000000 (7629.395 Mbytes).[0m
+=== PICK-16: J(V_q) rank decomposition at rank-3 fibers ===
+Factors order: E_ef, E_eg, E_fg, E_H+, E_H-
+
+--- (m,n) = (22,17)  q = 195/748 ---
+  factor 1:  N=19015731735  rank ∈ [3, 3]
+  factor 2:  N=450999120  rank ∈ [1, 1]
+  factor 3:  N=28187445  rank ∈ [0, 0]
+  factor 4:  N=304251707760  rank ∈ [1, 1]
+  factor 5:  N=29398321262310  rank ∈ [1, 1]
+  TOTAL rank(J(V_q)) ∈ [6, 6]
+
+--- (m,n) = (35,22)  q = 741/1540 ---
+  factor 1:  N=519937332915  rank ∈ [3, 3]
+  factor 2:  N=7800833040  rank ∈ [1, 1]
+  factor 3:  N=487552065  rank ∈ [2, 2]
+  factor 4:  N=8318997326640  rank ∈ [1, 1]
+  factor 5:  N=1777145803903470  rank ∈ [1, 1]
+  TOTAL rank(J(V_q)) ∈ [8, 8]
+
+--- (m,n) = (37,26)  q = 693/1924 ---
+  factor 1:  N=357947086497  rank ∈ [3, 3]
+  factor 2:  N=3635551920  rank ∈ [1, 1]
+  factor 3:  N=227221995  rank ∈ [1, 1]
+  factor 4:  N=5727153383952  rank ∈ [0, 2]
+  factor 5:  N=1464003583772730  rank ∈ [0, 0]
+  TOTAL rank(J(V_q)) ∈ [5, 7]
+
+--- (m,n) = (40,29)  q = 759/2320 ---
+  factor 1:  N=1057918875090  rank ∈ [1, 3]
+  factor 2:  N=4298308080  rank ∈ [0, 0]
+  factor 3:  N=537288510  rank ∈ [1, 3]
+  factor 4:  N=8463351000720  rank ∈ [1, 1]
+  factor 5:  N=2582379974094690  rank ∈ [0, 2]
+  TOTAL rank(J(V_q)) ∈ [3, 9]
+
+--- (m,n) = (40,33)  q = 511/2640 ---
+  factor 1:  N=1131250813770  rank ∈ [3, 3]
+  factor 2:  N=3627568560  rank ∈ [0, 2]
+  factor 3:  N=453446070  rank ∈ [1, 3]
+  factor 4:  N=9050006510160  rank ∈ [1, 1]
+  factor 5:  N=3041933438227530  rank ∈ [0, 2]
+  TOTAL rank(J(V_q)) ∈ [5, 11]
+

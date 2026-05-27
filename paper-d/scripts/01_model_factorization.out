@@ -1,0 +1,22 @@
+=== (1) integral model ===
+  Y^2 = X(X+b^2)(X+a^2) ?  True
+=== (2) invariants of integral model ===
+  c4 = 16*(a**4 - a**2*b**2 + b**4)
+  c6 = -32*(a**2 - 2*b**2)*(a**2 + b**2)*(2*a**2 - b**2)
+  Delta = 16*a**4*b**4*(a - b)**2*(a + b)**2
+  Delta = 16 a^4 b^4 (a^2-b^2)^2 ?  True
+  c4 = 16(a^4-a^2 b^2+b^4) ?  True
+  j = 256(a^4-a^2 b^2+b^4)^3/(a^4 b^4 (a^2-b^2)^2) ?  True
+=== (3)/(4) Z[sqrt2]-norm factorization and ABC identity ===
+  a^2-b^2 = (m**2 - 2*m*n - n**2)*(m**2 + 2*m*n - n**2)
+  a^2-b^2 = F5*F6 ?  True
+  F5 = (m-n)^2 - 2n^2 ?  True
+  F6 = (m+n)^2 - 2n^2 ?  True
+  ABC identity  b^2 + (a^2-b^2) = a^2 ?  True
+=== (5) Peschmann/Asiryan cuboid s-form (sec.8) ===
+  s^4-6s^2+1 = (s**2 - 2*s - 1)*(s**2 + 2*s - 1)
+  = (s^2+2s-1)(s^2-2s-1) ?  True
+  roots of s^2-2s-1 : [1 - sqrt(2), 1 + sqrt(2)]  (in Q(sqrt2)?  True )
+  numeric roots: [1 - sqrt(2), 1 + sqrt(2)]
+  F6(m,1)=0 roots: [-1 + sqrt(2), -sqrt(2) - 1]  -> m = -1 +- sqrt2 in Q(sqrt2)
+DONE

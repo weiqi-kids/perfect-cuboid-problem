@@ -1,0 +1,12 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+E_Hm of (73,24):
+  conductor = 18111253514418330
+  root number = -1  (parity ODD)
+
+=== ellheegner attempt ===
+[0;31m[0;31m  ***   too many arguments: ...[0;35m hint:");r2=ellrank(E,6,,[0;35m[H]);print("      ell
+[0;31m[0;31m  ***                                                   ^---------------------[0m
+
+=== L-function approach using lfun ===
+  Building lfun(E) ...
+  lfun ERROR / TIMEOUT: error("the PARI stack overflows !\n  current stack size: 1500000000 (1430.511 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n")

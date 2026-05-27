@@ -1,0 +1,55 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+
+=== Orbit of seed q=20/21
+  closed at depth 2
+  size=2 PCP_candidates=0
+
+=== Orbit of seed q=7/24
+  closed at depth 2
+  size=2 PCP_candidates=0
+
+=== Orbit of seed q=11/60
+  closed at depth 3
+  size=4 PCP_candidates=0
+
+=== Orbit of seed q=96/247
+  closed at depth 2
+  size=2 PCP_candidates=0
+
+=== Orbit of seed q=13/84
+  closed at depth 1
+  size=1 PCP_candidates=0
+
+=== Orbit of seed q=27/364
+  closed at depth 2
+  size=2 PCP_candidates=0
+
+=== Orbit of seed q=104/153
+  size=11 PCP_candidates=0
+
+=== Orbit of seed q=195/748
+  size=11 PCP_candidates=0
+
+=== Orbit of seed q=17/144
+  closed at depth 3
+  size=4 PCP_candidates=0
+
+=== Orbit of seed q=25/312
+  closed at depth 1
+  size=1 PCP_candidates=0
+
+=== Orbit of seed q=132/475
+  closed at depth 1
+  size=1 PCP_candidates=0
+
+=== Orbit of seed q=108/725
+  closed at depth 1
+  size=1 PCP_candidates=0
+
+=== Multi-seed summary ===
+Total UNIQUE q across all orbits: 23
+Max orbit size: 11
+Total PCP candidates (LD=square): 0
+
+All q's in union of orbits:
+[7/24, 11/60, 13/84, 17/144, 20/21, 20/99, 25/312, 27/364, 39/80, 48/55, 52/165, 55/1512, 65/2112, 96/247, 104/153, 108/725, 120/209, 132/475, 135/352, 195/748, 225/272, 315/572, 832/855]

@@ -1,0 +1,16 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+FIBERS (m<=150) = 4582
+ALL MULTIPLICATIVE (0 additive primes) = 1
+v2 minimalization gap: max=12  (#nonzero=4582)  [expect 12, all fibers]
+v3 minimalization gap: max=0  (#nonzero=0)  [expect 0]
+Delta_min = Delta_0/2^12 for all fibers ? 1
+odd-prime Tate-index formula n_p in {4v(a),4v(b),2v(c)} holds ? 1
+N = rad(Delta_min) (odd part) ? 1
+
+=== exact Szpiro formula and rigorous chain  sigma <= 6 logC/logN ===
+fibers checked (m<=500) = 50765
+exact D=4loga+4logb+2log|c|-8log2 = log|Delta_min| for all ? 1
+sigma <= 6 logC/logN failures = 0  [expect 0]
+sigma_max (m<=500) = 4.6139648036050048712184775864456188394 at (m,n)=[256, 121]
+EXIT=ok

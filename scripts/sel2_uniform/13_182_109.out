@@ -1,0 +1,21 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Checking (182, 109):
+  m+n = 291 = [3, 1; 97, 1]
+  m-n = 73 = Mat([73, 1])
+  m*n = 19838 = [2, 1; 7, 1; 13, 1; 109, 1]
+  m^2+n^2 = 45005 = [5, 1; 9001, 1]
+  m^2-n^2 = 21243 = [3, 1; 73, 1; 97, 1]
+  P = (m+n)^2 - 2n^2 = 60919 = Mat([60919, 1])
+  Q = (m-n)^2 - 2n^2 = -18433 = [-1, 1; 18433, 1]
+
+Trying ellrank at effort 10...
+ellrank(Em, 10) = [2, 4, 0, [[11837910331/36, 1061992888810477/216], [-1449353412054418/11404129, 88580285984867917741033/38511743633]]]
+
+Trying isogeny class approach...
+Number of isogenous curves: 6
+  E_1 ellrank=2..4
+  E_2 ellrank=2..2
+  E_3 ellrank=2..4
+  E_4 ellrank=2..4
+  E_5 ellrank=2..6
+  E_6 ellrank=0..4

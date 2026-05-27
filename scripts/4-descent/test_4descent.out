@@ -1,0 +1,106 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+
+=== Test 1: y^2 = x(x-1)(x-2), rk=0 ===
+E [a1..a6] = [0, -3, 0, 2, 0]
+Torsion: order=4 struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Expected rank: 0
+Number of non-trivial 2-Selmer classes (mod E[2]): 2
+  --- Cover #1 ---
+    q(x) = x^4 + 6*x^2 + 1
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-1, q(x) = 1
+    hits found: 1
+  --- Cover #2 ---
+    q(x) = x^4 + 4
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-2, q(x) = 4
+    hits found: 1
+
+=== Test 2: y^2 = x(x-1)(x+1), rk=0 ===
+E [a1..a6] = [0, 0, 0, -1, 0]
+Torsion: order=4 struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Expected rank: 0
+Number of non-trivial 2-Selmer classes (mod E[2]): 2
+  --- Cover #1 ---
+    q(x) = x^4 + 6*x^2 + 1
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-1, q(x) = 1
+    hits found: 1
+  --- Cover #2 ---
+    q(x) = x^4 + 4
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-2, q(x) = 4
+    hits found: 1
+
+=== Test 3: y^2 = x(x-4)(x+1) ===
+E [a1..a6] = [0, -3, 0, -4, 0]
+Torsion: order=4 struct=[2, 2]
+ellrank(E, 4) = [0, 0, 0, []]
+Expected rank: ?
+Number of non-trivial 2-Selmer classes (mod E[2]): 2
+  --- Cover #1 ---
+    q(x) = x^4 + 3*x^2 + 1
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-1, q(x) = 1
+    hits found: 1
+  --- Cover #2 ---
+    q(x) = x^4 + 2*x^3 + 3*x^2 + 2*x + 2
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = -1/2, y = +-5, b^4*q(a/b) = 25
+    hits found: 1
+
+=== Test 4: y^2 = x(x-7)(x+7), rk=1 ===
+E [a1..a6] = [0, 0, 0, -49, 0]
+Torsion: order=4 struct=[2, 2]
+ellrank(E, 4) = [1, 1, 0, [[25, 120]]]
+Expected rank: 1
+Number of non-trivial 2-Selmer classes (mod E[2]): 3
+  --- Cover #1 ---
+    q(x) = x^4 + 42*x^2 + 49
+    deg = 4, lead coeff = 1
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-7, q(x) = 49
+    [search_quartic HIT] x = -15/4, y = +-463, b^4*q(a/b) = 214369
+    [search_quartic HIT] x = 15/4, y = +-463, b^4*q(a/b) = 214369
+    [search_quartic HIT] x = -28/15, y = +-3241, b^4*q(a/b) = 10504081
+    [search_quartic HIT] x = 28/15, y = +-3241, b^4*q(a/b) = 10504081
+    hits found: 5
+  --- Cover #2 ---
+    q(x) = 4*x^4 + 49
+    deg = 4, lead coeff = 4
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = 0/1, y = +-7, q(x) = 49
+    [search_quartic HIT] x = -12/5, y = +-337, b^4*q(a/b) = 113569
+    [search_quartic HIT] x = 12/5, y = +-337, b^4*q(a/b) = 113569
+    [search_quartic HIT] x = -35/24, y = +-4718, b^4*q(a/b) = 22259524
+    [search_quartic HIT] x = 35/24, y = +-4718, b^4*q(a/b) = 22259524
+    hits found: 5
+  --- Cover #3 ---
+    q(x) = 2*x^4 - 5*x^3 + 6*x^2 + x + 4
+    deg = 4, lead coeff = 2
+    searching x = a/b with |a|, b <= 50 ...
+    [search_quartic HIT] x = -1/1, y = +-4, q(x) = 16
+    [search_quartic HIT] x = 0/1, y = +-2, q(x) = 4
+    [search_quartic HIT] x = 5/1, y = +-28, q(x) = 784
+    [search_quartic HIT] x = 3/2, y = +-14, b^4*q(a/b) = 196
+    [search_quartic HIT] x = -480/17, y = +-340538, b^4*q(a/b) = 115966129444
+    hits found: 5
+
+=== Test 5: y^2 = x^3 - x - 1, rk=1 ===
+E [a1..a6] = [0, 0, 0, -1, -1]
+Torsion: order=1 struct=[]
+ellrank(E, 4) = [0, 0, 0, []]
+Expected rank: 1
+Number of non-trivial 2-Selmer classes (mod E[2]): 0
+
+=== Summary ===
+If ellrank reports rk = k and we find k generators via cover point-search,
+then framework matches PARI.

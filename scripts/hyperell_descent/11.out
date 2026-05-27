@@ -1,0 +1,83 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+
+=== (n,m) = (3,4) tag=generic ===
+  ellrank = [0,0]
+
+=== (n,m) = (5,12) tag=generic ===
+  ellrank = [0,0]
+
+=== (n,m) = (7,24) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-525, 3570]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (20,21) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-405, 270]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (48,55) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-2904, 14520]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (39,80) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-6240, 68640]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (225,272) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-73440, 954720]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (13,84) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[17787, 2816814]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (44,117) tag=r1 ===
+  ellrank = [1,1]
+  generators: [[-13068, 300564]]
+  tested 24 orbit combinations within bound ±12
+
+=== (n,m) = (11,60) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-1980, 77220], [-3300, 56100]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (17,144) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-14688, 1130976], [-20400, 371280]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (104,153) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-22984, 344760], [-23400, 51480]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (52,165) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-15360, 1518720], [3120, 742560]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (55,1512) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-1646568, 1315607832], [-836352/49, 7999288704/343]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (27,364) tag=r2 ===
+  ellrank = [2,2]
+  generators: [[-32400, 10134720], [-14196, 4755660]]
+  tested 168 orbit combinations within bound ±6
+
+=== (n,m) = (195,748) tag=r3 ===
+  ellrank = [3,3]
+  generators: [[-47685, 15354570], [14300, 20720700], [161175300, 2049988640700]]
+  tested 728 orbit combinations within bound ±4
+
+=== TOTALS ===
+Total F evaluations: 1904
+Total issquare(F) hits: 0
+
+UNIFORM RESULT: 0 PCP candidates across all tested orbit points.

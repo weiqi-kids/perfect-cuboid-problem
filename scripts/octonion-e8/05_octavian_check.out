@@ -1,0 +1,29 @@
+Octonion multiplication table (e_i e_j for i,j in 1..7):
+     | e_1  e_2  e_3  e_4  e_5  e_6  e_7
+------------------------------------------------------------
+e_1  | -e_0 +e_3 -e_2 +e_5 -e_4 -e_7 +e_6
+e_2  | -e_3 -e_0 +e_1 +e_6 +e_7 -e_4 -e_5
+e_3  | +e_2 -e_1 -e_0 +e_7 -e_6 +e_5 -e_4
+e_4  | -e_5 -e_6 -e_7 -e_0 +e_1 +e_2 +e_3
+e_5  | +e_4 -e_7 +e_6 -e_1 -e_0 -e_3 +e_2
+e_6  | +e_7 +e_4 -e_5 -e_2 +e_3 -e_0 -e_1
+e_7  | -e_6 +e_5 +e_4 -e_3 -e_2 +e_1 -e_0
+
+--- Norm computation for PCP-style octonion ---
+  N(x) for Halcke = 292900.0000
+  Expected 4*g^2 = 292900
+  Match: True
+
+  x * x = ['-292900.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00']
+  Expected: (-N(x), 0, ..., 0) = (-292900.00, 0, ..., 0)
+  Imag parts of x*x: ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000']
+  Max abs imag: 0.000000
+
+
+--- Octavian halving condition ---
+PCP primitive vector parity (typical case): (0, 0, 0, 1, 0, 1, 1, 1)
+Sum of parities = 4 (even, so in D_8 ⊂ E_8).
+All components NOT even (since c, e, f, g are odd), so NOT in 2*E_8.
+Hence (1/2) * x_PCP is NOT octavian — no halving.
+This means x_PCP is 'primitive' as an octavian, but this is
+the same statement as gcd(a,b,c,d,e,f,g) being odd. No new structure.

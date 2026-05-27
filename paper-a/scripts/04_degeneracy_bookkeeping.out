@@ -1,0 +1,23 @@
+==== Degeneracy of the C0 rational points ====
+
+C0(Q) = { (T0,S) = (0,+4), (0,-4), inf_+, inf_- }.
+
+Case T0 = 0:
+  T0 = t - 1/t = 0  ==>  t^2 = 1  ==>  t = +-1  ==>  p = +-q.
+  Then u = p^2 - q^2 = 0, so a = u(4v^2 - w^2) = 0.  (edge a vanishes)
+  numeric p=q=1: (u,v,w)=(0,2,2), brick (a,b,c)=(0,-8,0) -> a=0, degenerate
+
+Case T0 = infinity:
+  T0 = t - 1/t = infinity  ==>  t in {0, infinity}  ==>  p = 0 or q = 0.
+  If q = 0: v = 2pq = 0, so c = 4uvw = 0 and b = v(...) = 0. (edges vanish)
+  If p = 0: u = -q^2, v = 0 again c = 0, b = 0. (edges vanish)
+  numeric p=1,q=0: (u,v,w)=(1,0,1), brick (a,b,c)=(-1,0,0) -> b=c=0, degenerate
+
+Conversely a NON-degenerate Saunderson cuboid needs a,b,c all nonzero,
+hence u,v,w all nonzero and u != +-v, i.e. t != 0, +-1, infinity,
+equivalently T0 = t - 1/t notin {0, infinity}.  No such point lies on C0(Q).
+
+==== Sanity: the lifting recovers t from a non-degenerate (W,T0) ====
+  (W + T0)/2 - t = 0   (expect 0: t is recovered rationally)
+
+==== DONE ====

@@ -1,0 +1,14 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+F6=square fibers (m<=800): direct count = 128 ; param-A reachable distinct = 128
+(param reachable <= direct; gap = fibers from n-odd branch / other factorization)
+
+Quadratic form g(s,t)=s^2-2st+2t^2 : disc = (-2)^2-4*1*2 = -4 (neg def disc -4, pos def form)
+  #{(s,t): g(s,t)<=H} ~ (pi/sqrt(4)) H = (pi/2) H = 1.5707963267948966192313216916397514421 * H  => locus is Theta(H). SPARSE.
+
+=== PCP rank-jump record fibers: form anatomy ===
+(18,7): F5=Mat([23, 1]) (pw=1), F6=[17, 1; 31, 1] (pw=1)
+(256,121): F5=[-1, 1; 11057, 1] (pw=1), F6=[7, 4; 47, 1] (pw=2401)
+(11,2): F5=Mat([73, 1]) (pw=1), F6=[7, 1; 23, 1] (pw=1)
+(16,3): F5=Mat([151, 1]) (pw=1), F6=Mat([7, 3]) (pw=343)
+(8,3): F5=Mat([7, 1]) (pw=1), F6=Mat([103, 1]) (pw=1)

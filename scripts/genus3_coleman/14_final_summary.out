@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== FINAL CONSOLIDATED VERIFICATION (genus-3 Coleman cover) ===
+
+X_sigma = C'/(t->-t):    ainvs=[0, 1, 0, -1, 15] cond=160
+   rank=[1,1]  analytic=1  rootno=-1  tors=2
+X_tau   = C'/(t->1/t):   ainvs=[0, 1, 0, -1, 15] cond=160
+   rank=[1,1]  analytic=1  rootno=-1  tors=2
+X_sigtau= C'/(t->-1/t):  ainvs=[0, 0, 0, -7, 6] cond=80
+   rank=[0,0]  analytic=0  rootno=1  tors=4
+
+X_sigma == X_tau (so J ~ E_PCP^2 x X_st): 1
+rank J(C') = 1 + 1 + 0 = 2  vs genus 3
+rank < genus (Chabauty applies): 1
+
+Unconditionality of ranks:
+  X_sigma=X_tau: analytic rank 1, root no -1 => Gross-Zagier-Kolyvagin => rank EXACTLY 1 (uncond).
+  X_sigtau (80a): analytic rank 0, root no +1 => Kolyvagin => rank EXACTLY 0 (uncond).
+  ellrank also returns tight [lo,hi] with lo=hi for all three (uncond 2-descent).

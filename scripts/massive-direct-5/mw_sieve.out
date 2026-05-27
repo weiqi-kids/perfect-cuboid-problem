@@ -1,0 +1,274 @@
+[0;31m  ***   Warning: new stack size = 8000000000 (7629.395 Mbytes).[0m
+
+=== MW sieve for fiber (61,38) ===
+Sieve primes: [13, 17, 29, 37, 41, 43, 47, 53, 59, 67, 79, 83, 89, 97]
+
+  --- E_ef (3 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[2, 4, 2]  lcm=4
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 6, 6]  lcm=6
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 2, 4]  lcm=8
+    p=37 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 10, 10]  lcm=10
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4, 6, 2]  lcm=12
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[2, 10, 10]  lcm=10
+    p=47 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 10, 10]  lcm=10
+    p=53 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 12, 4]  lcm=12
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4, 12, 12]  lcm=12
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 8, 16]  lcm=16
+    p=79 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[24, 24, 24]  lcm=24
+    p=83 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[10, 10, 10]  lcm=10
+    p=89 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[13, 26, 26]  lcm=26
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 7, 28]  lcm=28
+
+  --- E_fg (2 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 2]  lcm=4
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[-1, 4]  lcm=4 [some gens reduce to infty]
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[4, 4]  lcm=4
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[4, 4]  lcm=4
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[2, 6]  lcm=6
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 12]  lcm=12
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4, 12]  lcm=12
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 16]  lcm=16
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[3, 3]  lcm=3
+    p=67 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14, 14]  lcm=14
+    p=79 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[22, 22]  lcm=22
+    p=83 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[12, 12]  lcm=12
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20, 20]  lcm=20
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 28]  lcm=28
+
+  --- E_Hp (3 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[8, 8, 2]  lcm=8
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 6, 6]  lcm=6
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 8, 8]  lcm=8
+    p=37 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[20, 20, 2]  lcm=20
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 4, 12]  lcm=12
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[24, 8, 2]  lcm=24
+    p=47 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[7, 14, 14]  lcm=14
+    p=53 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 4, 12]  lcm=12
+    p=59 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[36, 36, 18]  lcm=36
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[12, 12, 6]  lcm=12
+    p=79 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 4, 16]  lcm=16
+    p=83 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[44, 44, 11]  lcm=44
+    p=89 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[13, 26, 26]  lcm=26
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 2, 14]  lcm=28
+
+=== MW sieve for fiber (63,38) ===
+Sieve primes: [13, 17, 29, 37, 41, 43, 47, 53, 59, 67, 79, 83, 89, 97]
+
+  --- E_ef (3 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 4, -1]  lcm=4 [some gens reduce to infty]
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 3, 6]  lcm=6
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[4, 2, 8]  lcm=8
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[2, 12, 3]  lcm=12
+    p=41 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[5, 10, 10]  lcm=10
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 10, 10]  lcm=10
+    p=47 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14, 14, 14]  lcm=14
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 4, 16]  lcm=16
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 6, 2]  lcm=12
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[18, 18, 6]  lcm=18
+    p=79 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[9, 6, 9]  lcm=18
+    p=83 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[18, 18, 18]  lcm=18
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[8, 12, 4]  lcm=24
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 4, 14]  lcm=28
+
+  --- E_eg (1 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4]  lcm=4
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[2]  lcm=2
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[-1]  lcm=1 [some gens reduce to infty]
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[8]  lcm=8
+    p=41 #E(F_p)=32 factored=Mat([2, 5])  orders=[4]  lcm=4
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12]  lcm=12
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4]  lcm=4
+    p=53 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6]  lcm=6
+    p=59 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14]  lcm=14
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[18]  lcm=18
+    p=79 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[2]  lcm=2
+    p=83 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[22]  lcm=22
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[4]  lcm=4
+    p=97 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[24]  lcm=24
+
+  --- E_Hp (4 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[8, 8, 8, 8]  lcm=8
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[3, 12, 2, 6]  lcm=12
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 8, 8, 8]  lcm=8
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 12, 12, 12]  lcm=12
+    p=41 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 4, 5, 10]  lcm=20
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[24, 24, 8, 24]  lcm=24
+    p=47 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 20, 5, 2]  lcm=20
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 4, 16, 16]  lcm=16
+    p=59 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[12, 36, 4, 12]  lcm=36
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[32, 4, 32, 32]  lcm=32
+    p=79 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[11, 22, 22, 22]  lcm=22
+    p=83 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[16, 8, 48, 48]  lcm=48
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[8, 4, 12, 3]  lcm=24
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 56, 14, 28]  lcm=56
+
+=== MW sieve for fiber (73,24) ===
+Sieve primes: [13, 17, 29, 37, 41, 43, 47, 53, 59, 67, 79, 83, 89, 97]
+
+  --- E_ef (3 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 4, 4]  lcm=4
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[-1, 6, -1]  lcm=6 [some gens reduce to infty]
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 8, 2]  lcm=8
+    p=37 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[5, 5, 5]  lcm=5
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 2, 12]  lcm=12
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 6, 6]  lcm=12
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 6, 6]  lcm=6
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[4, 16, 8]  lcm=16
+    p=59 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 16, 2]  lcm=16
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[9, 6, 18]  lcm=18
+    p=79 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20, 5, 20]  lcm=20
+    p=83 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[22, 22, 22]  lcm=22
+    p=89 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[26, 26, 2]  lcm=26
+    p=97 bad reduction
+
+  --- E_eg (1 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[2]  lcm=2
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[4]  lcm=4
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[4]  lcm=4
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[8]  lcm=8
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[2]  lcm=2
+    p=43 #E(F_p)=32 factored=Mat([2, 5])  orders=[2]  lcm=2
+    p=47 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10]  lcm=10
+    p=53 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6]  lcm=6
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6]  lcm=6
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[8]  lcm=8
+    p=79 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[18]  lcm=18
+    p=83 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[6]  lcm=6
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20]  lcm=20
+    p=97 bad reduction
+
+  --- E_Hp (2 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[8, 4]  lcm=8
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 12]  lcm=12
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 8]  lcm=8
+    p=37 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[20, 20]  lcm=20
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[3, 12]  lcm=12
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[20, 5]  lcm=20
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 24]  lcm=24
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[32, 16]  lcm=32
+    p=59 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[28, 14]  lcm=28
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[32, 32]  lcm=32
+    p=79 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[10, 4]  lcm=20
+    p=83 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[40, 10]  lcm=40
+    p=89 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[26, 26]  lcm=26
+    p=97 bad reduction
+
+=== MW sieve for fiber (88,35) ===
+Sieve primes: [13, 17, 29, 37, 41, 43, 47, 53, 59, 67, 79, 83, 89, 97]
+
+  --- E_ef (3 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 4, 4]  lcm=4
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[-1, 6, 2]  lcm=6 [some gens reduce to infty]
+    p=29 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 2, 6]  lcm=6
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 12, 12]  lcm=12
+    p=41 bad reduction
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 10, 10]  lcm=10
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 12, 4]  lcm=12
+    p=53 bad reduction
+    p=59 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 16, 16]  lcm=16
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[3, 18, 18]  lcm=18
+    p=79 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[6, 12, 4]  lcm=12
+    p=83 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[22, 11, 11]  lcm=22
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[6, 24, 6]  lcm=24
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[14, 7, 14]  lcm=14
+
+  --- E_eg (2 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[2, -1]  lcm=2 [some gens reduce to infty]
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, -1]  lcm=4 [some gens reduce to infty]
+    p=29 #E(F_p)=32 factored=Mat([2, 5])  orders=[8, 8]  lcm=8
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[-1, 4]  lcm=4 [some gens reduce to infty]
+    p=41 bad reduction
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[2, 6]  lcm=6
+    p=47 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[2, 2]  lcm=2
+    p=53 bad reduction
+    p=59 #E(F_p)=64 factored=Mat([2, 6])  orders=[8, 8]  lcm=8
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[9, 9]  lcm=9
+    p=79 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[10, 10]  lcm=10
+    p=83 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[3, 3]  lcm=3
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[6, 12]  lcm=12
+    p=97 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20, 20]  lcm=20
+
+  --- E_Hp (4 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[8, 8, -1, 8]  lcm=8 [some gens reduce to infty]
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 4, 6, 6]  lcm=12
+    p=29 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[12, 6, 4, 3]  lcm=12
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 12, 12, 12]  lcm=12
+    p=41 bad reduction
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[24, 24, 8, 2]  lcm=24
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 24, 12, 6]  lcm=24
+    p=53 bad reduction
+    p=59 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[28, 7, 14, 28]  lcm=28
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[32, 32, 8, 32]  lcm=32
+    p=79 #E(F_p)=64 factored=Mat([2, 6])  orders=[16, 16, 32, 32]  lcm=32
+    p=83 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[40, 8, 40, 20]  lcm=40
+    p=89 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[8, 24, 24, 12]  lcm=24
+    p=97 #E(F_p)=112 factored=[2, 4; 7, 1]  orders=[28, 4, 14, 14]  lcm=28
+
+=== MW sieve for fiber (99,28) ===
+Sieve primes: [13, 17, 29, 37, 41, 43, 47, 53, 59, 67, 79, 83, 89, 97]
+
+  --- E_ef (4 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 2, 2, 2]  lcm=4
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[6, 6, 2, 3]  lcm=6
+    p=29 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[-1, 5, 10, 5]  lcm=10 [some gens reduce to infty]
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[6, 12, 6, 12]  lcm=12
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 12, 4, 4]  lcm=12
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4, 4, 12, 12]  lcm=12
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 6, 4, 12]  lcm=12
+    p=53 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14, 7, 7, 14]  lcm=14
+    p=59 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[6, 18, 6, 2]  lcm=18
+    p=67 #E(F_p)=64 factored=Mat([2, 6])  orders=[8, 8, 2, 8]  lcm=8
+    p=79 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[24, 8, 8, 24]  lcm=24
+    p=83 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[11, 22, 11, 2]  lcm=22
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[4, 20, 5, 20]  lcm=20
+    p=97 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[26, 26, 26, 13]  lcm=26
+
+  --- E_eg (2 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[2, 2]  lcm=2
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[4, 2]  lcm=4
+    p=29 bad reduction
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[4, 4]  lcm=4
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12, 6]  lcm=12
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10, 10]  lcm=10
+    p=47 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14, 7]  lcm=14
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[8, 8]  lcm=8
+    p=59 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[18, 18]  lcm=18
+    p=67 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[14, 7]  lcm=14
+    p=79 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[6, 3]  lcm=6
+    p=83 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[3, 12]  lcm=12
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20, 20]  lcm=20
+    p=97 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[6, 6]  lcm=6
+
+  --- E_fg (1 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[4]  lcm=4
+    p=17 #E(F_p)=16 factored=Mat([2, 4])  orders=[2]  lcm=2
+    p=29 bad reduction
+    p=37 #E(F_p)=32 factored=Mat([2, 5])  orders=[2]  lcm=2
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4]  lcm=4
+    p=43 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12]  lcm=12
+    p=47 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[10]  lcm=10
+    p=53 #E(F_p)=64 factored=Mat([2, 6])  orders=[2]  lcm=2
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[4]  lcm=4
+    p=67 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[10]  lcm=10
+    p=79 #E(F_p)=88 factored=[2, 3; 11, 1]  orders=[11]  lcm=11
+    p=83 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[6]  lcm=6
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[5]  lcm=5
+    p=97 #E(F_p)=96 factored=[2, 5; 3, 1]  orders=[4]  lcm=4
+
+  --- E_Hp (1 generators) ---
+    p=13 #E(F_p)=16 factored=Mat([2, 4])  orders=[8]  lcm=8
+    p=17 #E(F_p)=24 factored=[2, 3; 3, 1]  orders=[3]  lcm=3
+    p=29 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[4]  lcm=4
+    p=37 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12]  lcm=12
+    p=41 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12]  lcm=12
+    p=43 #E(F_p)=40 factored=[2, 3; 5, 1]  orders=[20]  lcm=20
+    p=47 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[12]  lcm=12
+    p=53 #E(F_p)=56 factored=[2, 3; 7, 1]  orders=[28]  lcm=28
+    p=59 #E(F_p)=48 factored=[2, 4; 3, 1]  orders=[8]  lcm=8
+    p=67 #E(F_p)=72 factored=[2, 3; 3, 2]  orders=[12]  lcm=12
+    p=79 #E(F_p)=64 factored=Mat([2, 6])  orders=[16]  lcm=16
+    p=83 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[40]  lcm=40
+    p=89 #E(F_p)=80 factored=[2, 4; 5, 1]  orders=[20]  lcm=20
+    p=97 #E(F_p)=104 factored=[2, 3; 13, 1]  orders=[13]  lcm=13
+
+=== DONE MW SIEVE ===

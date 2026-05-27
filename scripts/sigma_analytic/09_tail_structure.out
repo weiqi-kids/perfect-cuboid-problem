@@ -1,0 +1,15 @@
+[0;31m  ***   Warning: new stack size = 700000000 (667.572 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1000001536 (953.676 Mbytes).[0m
+=== Extreme tail structure (m<=1200) ===
+threshold   #fibers   near-square-form%   exact-square-form%
+sigma>4.00    61        78.7%               21.3%
+sigma>4.25    8         100.0%               25.0%
+sigma>4.50    2         100.0%               0.0%
+
+=== All fibers sigma>4.3 (m<=1200) with form anatomy ===
+sigma=4.6140 (256,121) v2b=9  F5=[-1, 1; 11057, 1]  F6=[7, 4; 47, 1]  maxformpw=2401
+sigma=4.5526 (304,135) v2b=5  F5=[-1, 1; 7, 3; 23, 1]  F6=[31, 1; 71, 2]  maxformpw=5041
+sigma=4.4538 (233,80) v2b=5  F5=Mat([103, 2])  F6=[7, 1; 23, 3]  maxformpw=12167
+sigma=4.3899 (1002,707) v2b=2  F5=[-1, 1; 97, 3]  F6=[17, 4; 23, 1]  maxformpw=912673
+sigma=4.3714 (875,34) v2b=2  F5=Mat([89, 3])  F6=Mat([823969, 1])  maxformpw=704969
+sigma=4.3602 (1024,549) v2b=11  F5=[-1, 1; 23, 3; 31, 1]  F6=[7, 1; 41, 1; 6521, 1]  maxformpw=12167

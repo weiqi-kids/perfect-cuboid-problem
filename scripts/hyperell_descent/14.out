@@ -1,0 +1,82 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Test: does E_PCP(q) and E_PCP(q)^(-1) ever share a non-trivial x? ===
+
+If P ∈ E_PCP(q)(Q) with x_P = a, and there exists Q ∈ E_twist(Q) with x_Q = a, then:
+  y_P^2 = a(a+1)(a+q^2)  and  y_Q^2 = a(a-1)(a-q^2)
+  Product: y_P^2 y_Q^2 = a^2 (a^2-1)(a^2-q^4)
+  So a^2(a^2-1)(a^2-q^4) is a square. Setting u = a^2:
+  u (u-1)(u - q^4) is a square -- this is the GROSS / curve E*: v^2 = u(u-1)(u-q^4).
+
+So PCP exists at fiber q ⟺ E*(q): v^2 = u(u-1)(u-q^4) has a rational point with u > 0, u ≠ 0, 1, q^4.
+
+E*(q): y^2 = x(x-1)(x-q^4) — another elliptic curve in the family!
+This is the 'product' / 'gluing' Kummer-like curve.
+
+=== Ranks of E*(q): y^2 = x(x-1)(x-q^4) at various Pythagorean fibers ===
+| n | m | q^4 | rank E*(q) |
+| 3 | 4 | 81/256 | [0,0] | gens=[]
+| 5 | 12 | 625/20736 | [0,0] | gens=[]
+| 8 | 15 | 4096/50625 | [2,2] | gens=[[50, 101150], [8294400/121, 11844403200/1331]]
+| 7 | 24 | 2401/331776 | [1,1] | gens=[[1326125056/1431941281, 1471470751027200000/54186090014321]]
+| 20 | 21 | 160000/194481 | [1,1] | gens=[[24310125/121, 9675429750/1331]]
+| 11 | 60 | 14641/12960000 | [0,0] | gens=[]
+| 9 | 40 | 6561/2560000 | [0,0] | gens=[]
+| 12 | 35 | 20736/1500625 | [0,0] | gens=[]
+| 195 | 748 | 1445900625/313044726016 | [0,0] | gens=[]
+
+=== This new curve E*(q): y^2 = x(x-1)(x-q^4) is the 'fusion curve'. ===
+It captures EXACTLY the PCP intersection.
+
+=== Geometric interpretation ===
+E_PCP(q):    y_1^2 = x(x+1)(x+q^2)
+E_twist(q):  y_2^2 = x(x-1)(x-q^2)  -- via twist by -1, X -> -X, Y -> i Y
+
+Actually let me re-derive E_twist x-coords. Twist by d=-1 of [0,a2,0,a4,0]:
+  E^(d): X^3 + a2 d X^2 + a4 d^2 X
+  For E_PCP: [0, 1+q^2, 0, q^2, 0] in the (x, y) world.
+  Twist by -1: [0, -(1+q^2), 0, q^2, 0] => y^2 = X^3 - (1+q^2)X^2 + q^2 X = X(X-1)(X-q^2).
+  Yes, 2-torsion at X = 0, 1, q^2.
+
+So if P_1 = (a, y_1) ∈ E_PCP(Q) and P_2 = (a, y_2) ∈ E_twist(Q) with SAME x = a:
+  y_1^2 y_2^2 = a^2 (a^2 - 1)(a^2 - q^2)^2  ... wait no.
+  Let me recompute. y_1^2 = a(a+1)(a+q^2),  y_2^2 = a(a-1)(a-q^2)
+  Product = a^2 (a+1)(a-1)(a+q^2)(a-q^2) = a^2(a^2-1)(a^2-q^4) ✓
+
+So: (y_1 y_2 / a)^2 = (a^2-1)(a^2-q^4). Set u = a^2:
+  E_fusion: v^2 = (u-1)(u-q^4) -- this is a CONIC! Not elliptic.
+
+Hmm so my derivation gave u(u-1)(u-q^4) but that's because we kept the a^2 factor.
+Actually (y_1 y_2)^2 = a^2 (a^2-1)(a^2-q^4), so (y_1 y_2 / a)^2 = (a^2-1)(a^2-q^4)
+which is a conic in (u, v) where u = a^2 and v = y_1 y_2 / a.
+
+=== Conic v^2 = (u-1)(u-q^4) ===
+Genus 0! Just need to test solvability.
+Rational points iff ?
+(u-1)(u-q^4) ≥ 0 in R: u ≥ q^4 or u ≤ 1 (for q^4 ≤ 1 if q < 1, but q is rational != bound).
+
+Locally:
+At u = 0: -q^4 should be a square — only if q = 0. No.
+At u = ∞: -1 -- needs to be a square locally. Always works over R if we go to large u.
+
+Universal rational points: (u, v) = (1, 0) and (u, v) = (q^4, 0).
+Standard parametrization: line v = t(u-1) gives t^2(u-1)^2 = (u-1)(u-q^4)
+  => t^2 (u-1) = u - q^4 (assuming u != 1)
+  => u(t^2 - 1) = t^2 - q^4
+  => u = (t^2 - q^4)/(t^2 - 1)
+And v = t(u-1) = t * ((t^2-q^4)/(t^2-1) - 1) = t * (1 - q^4)/(t^2 - 1) = t(1-q^4)/(t^2-1)
+
+=== So u = a^2 is parametrized by t. For PCP, a must be rational ===
+u = a^2 = (t^2-q^4)/(t^2-1).  For u to be a perfect square in Q, we need
+(t^2-q^4)(t^2-1) to be a square (multiplying numerator and denominator by (t^2-1)).
+
+(t^2-1)(t^2-q^4) = t^4 - (1+q^4)t^2 + q^4
+Setting w = t and looking for s = sqrt((w^2-1)(w^2-q^4)):
+  s^2 = (w^2-1)(w^2-q^4) — another genus-1 curve!
+
+=== New curve: s^2 = (t^2-1)(t^2-q^4) ===
+
+In (t, s)-plane: this is genus 1 since RHS is degree 4 squarefree.
+Jacobian = ?
+q = 3/4: Jacobian = [0, -1, 0, -120800, 15840000] cond=1680
+  ellrank: [0, 0, 0, []]
+q = 5/12: Jacobian = [0, -1, 0, -203937440, 16314489600] cond=371280

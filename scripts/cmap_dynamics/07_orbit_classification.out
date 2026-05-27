@@ -1,0 +1,199 @@
+=== First-generator deterministic c-iteration ===
+
+--- Seed: 20/21 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=20/21  h=3.045  lN=8.368
+    iter 1: q=48/55  h=4.007  lN=12.380
+
+--- Seed: 7/24 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=7/24  h=3.178  lN=10.005
+    iter 1: q=20/99  h=4.595  lN=14.255
+
+--- Seed: 39/80 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=39/80  h=4.382  lN=14.459
+    iter 1: q=11/60  h=4.094  lN=11.315
+
+--- Seed: 48/55 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=48/55  h=4.007  lN=12.380
+    iter 1: q=20/21  h=3.045  lN=8.368
+
+--- Seed: 11/60 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=11/60  h=4.094  lN=11.315
+    iter 1: q=39/80  h=4.382  lN=14.459
+
+--- Seed: 17/144 (first-gen strategy) ---
+  result: cycle_at_3
+  trajectory:
+    iter 0: q=17/144  h=4.970  lN=14.551
+    iter 1: q=11/60  h=4.094  lN=11.315
+    iter 2: q=39/80  h=4.382  lN=14.459
+
+--- Seed: 104/153 (first-gen strategy) ---
+  result: cycle_at_4
+  trajectory:
+    iter 0: q=104/153  h=5.030  lN=14.685
+    iter 1: q=195/748  h=6.617  lN=23.669
+    iter 2: q=52/165  h=5.106  lN=17.778
+    iter 3: q=832/855  h=6.751  lN=19.477
+
+--- Seed: 27/364 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=27/364  h=5.897  lN=17.398
+    iter 1: q=120/209  h=5.342  lN=19.028
+
+--- Seed: 195/748 (first-gen strategy) ---
+  result: cycle_at_3
+  trajectory:
+    iter 0: q=195/748  h=6.617  lN=23.669
+    iter 1: q=52/165  h=5.106  lN=17.778
+    iter 2: q=832/855  h=6.751  lN=19.477
+
+--- Seed: 60/91 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=60/91  h=4.511  lN=15.670
+    iter 1: q=1881/4720  h=8.460  lN=29.567
+
+--- Seed: 132/475 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=132/475  h=6.163  lN=16.405
+    iter 1: q=5425/14832  h=9.605  lN=32.481
+
+--- Seed: 96/247 (first-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=96/247  h=5.509  lN=14.264
+    iter 1: q=315/572  h=6.349  lN=21.954
+
+--- Seed: 13/84 (first-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=13/84  h=4.431  lN=14.447
+    iter 1: q=498212/2144115  h=14.578  lN=48.915
+
+--- Seed: 25/312 (first-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=25/312  h=5.743  lN=17.446
+    iter 1: q=58425/300608  h=12.614  lN=43.703
+
+--- Seed: 28/195 (first-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=28/195  h=5.273  lN=17.744
+    iter 1: q=214368/237575  h=12.378  lN=43.345
+
+
+=== Last-generator strategy (escapes faster) ===
+
+--- Seed: 20/21 (last-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=20/21  h=3.045  lN=8.368
+    iter 1: q=48/55  h=4.007  lN=12.380
+
+--- Seed: 7/24 (last-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=7/24  h=3.178  lN=10.005
+    iter 1: q=20/99  h=4.595  lN=14.255
+
+--- Seed: 39/80 (last-gen strategy) ---
+  result: cycle_at_5
+  trajectory:
+    iter 0: q=39/80  h=4.382  lN=14.459
+    iter 1: q=11/60  h=4.094  lN=11.315
+    iter 2: q=17/144  h=4.970  lN=14.551
+    iter 3: q=65/2112  h=7.655  lN=23.674
+    iter 4: q=195/748  h=6.617  lN=23.669
+
+--- Seed: 48/55 (last-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=48/55  h=4.007  lN=12.380
+    iter 1: q=20/21  h=3.045  lN=8.368
+
+--- Seed: 11/60 (last-gen strategy) ---
+  result: cycle_at_4
+  trajectory:
+    iter 0: q=11/60  h=4.094  lN=11.315
+    iter 1: q=17/144  h=4.970  lN=14.551
+    iter 2: q=65/2112  h=7.655  lN=23.674
+    iter 3: q=195/748  h=6.617  lN=23.669
+
+--- Seed: 17/144 (last-gen strategy) ---
+  result: cycle_at_3
+  trajectory:
+    iter 0: q=17/144  h=4.970  lN=14.551
+    iter 1: q=65/2112  h=7.655  lN=23.674
+    iter 2: q=195/748  h=6.617  lN=23.669
+
+--- Seed: 104/153 (last-gen strategy) ---
+  result: escaped_at_2
+  trajectory:
+    iter 0: q=104/153  h=5.030  lN=14.685
+    iter 1: q=55/1512  h=7.321  lN=22.386
+    iter 2: q=626780/1618461  h=14.297  lN=43.330
+
+--- Seed: 27/364 (last-gen strategy) ---
+  result: escaped_at_2
+  trajectory:
+    iter 0: q=27/364  h=5.897  lN=17.398
+    iter 1: q=1232/3015  h=8.011  lN=27.790
+    iter 2: q=537763/2780316  h=14.838  lN=55.186
+
+--- Seed: 195/748 (last-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=195/748  h=6.617  lN=23.669
+    iter 1: q=65/2112  h=7.655  lN=23.674
+
+--- Seed: 60/91 (last-gen strategy) ---
+  result: cycle_at_3
+  trajectory:
+    iter 0: q=60/91  h=4.511  lN=15.670
+    iter 1: q=1881/4720  h=8.460  lN=29.567
+    iter 2: q=108/725  h=6.586  lN=17.279
+
+--- Seed: 132/475 (last-gen strategy) ---
+  result: escaped_at_2
+  trajectory:
+    iter 0: q=132/475  h=6.163  lN=16.405
+    iter 1: q=5425/14832  h=9.605  lN=32.481
+    iter 2: q=131623868622039125/144366834218308548  h=39.511  lN=151.568
+
+--- Seed: 96/247 (last-gen strategy) ---
+  result: cycle_at_2
+  trajectory:
+    iter 0: q=96/247  h=5.509  lN=14.264
+    iter 1: q=315/572  h=6.349  lN=21.954
+
+--- Seed: 13/84 (last-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=13/84  h=4.431  lN=14.447
+    iter 1: q=498212/2144115  h=14.578  lN=48.915
+
+--- Seed: 25/312 (last-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=25/312  h=5.743  lN=17.446
+    iter 1: q=58425/300608  h=12.614  lN=43.703
+
+--- Seed: 28/195 (last-gen strategy) ---
+  result: escaped_at_1
+  trajectory:
+    iter 0: q=28/195  h=5.273  lN=17.744
+    iter 1: q=214368/237575  h=12.378  lN=43.345
+

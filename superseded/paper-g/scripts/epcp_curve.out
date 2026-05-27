@@ -1,0 +1,15 @@
+=== E_PCP: y^2 = x^3 + x^2 - x + 15 ===
+a-invariants: 0 1 0 -1 15
+discriminant: -102400
+conductor:    160
+j-invariant:  -64/25
+torsion:      [2]
+torsion gens: [[-3, 0]]
+ellidentify:  ["160a2", [0, 1, 0, -1, 15], [[-1, 4]]]
+ellrank [low,high,...]: [1, 1, 0, [[-1, 4]]]
+ellanalyticrank: [1, 0.97774408104580346778932665062881763083]
+Is P0=(-1,4) on E? 1
+height of P0: 0.17934645197763986296537469118205937398
+order of P0: 0
+Is T0=(-3,0) on E? 1
+order of T0: 2

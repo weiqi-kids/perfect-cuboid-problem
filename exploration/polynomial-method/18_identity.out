@@ -1,0 +1,19 @@
+Orbit counts (d^2+e^2+f^2 = 2g^2):
+  g=3 count=1
+  g=5 count=1
+  g=6 count=1
+  g=7 count=2
+  g=9 count=3
+  g=10 count=1
+  g=11 count=3
+  g=12 count=1
+  g=13 count=3
+  g=14 count=2
+  g=15 count=5
+  g=17 count=4
+  g=18 count=3
+  g=19 count=5
+  g=20 count=1
+
+Full PCP search:
+Total nontrivial PCP, d<=50: 0

@@ -1,0 +1,40 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+=== Pair-wise j-invariants and conductor data ===
+[0;31m[0;31m  ***   at top-level: ...[0;35m([0,1+q2^2,0,q2^2,0]);j1=[0;35mellj(E1);j2=ellj(E2);
+[0;31m[0;31m  ***                                             ^---------------------
+  *** ellj: incorrect type in ellj (t_VEC).[0m
+... skipping file '01_isogeny_field.gp'
+
+=== Test: are j-invariants in same Hilbert class field? ===
+
+=== ap comparison (looking for quadratic twist relation) ===
+Pair 1: 20/21 vs 48/55
+  primes p<=100 (good): a1==a2: 7   a1==-a2 (nz): 4
+  first 5 (p,a1,a2,ratio): [[13, -2, -2, 1], [17, -6, -6, 1], [19, -4, 4, -1], [29, -10, -2, 5], [31, 8, 8, 1]]
+Pair 2: 7/24 vs 20/99
+  primes p<=100 (good): a1==a2: 8   a1==-a2 (nz): 2
+  first 5 (p,a1,a2,ratio): [[13, -2, -2, 1], [19, -4, 4, -1], [29, -2, -2, 1], [37, -10, -10, 1], [41, -6, 2, -3]]
+Pair 3: 11/60 vs 39/80
+  primes p<=100 (good): a1==a2: 9   a1==-a2 (nz): 1
+  first 5 (p,a1,a2,ratio): [[19, -4, 4, -1], [29, -2, -2, 1], [31, -8, -8, 1], [37, -10, 6, -5/3], [43, 4, 12, 1/3]]
+Pair 4: 11/60 vs 17/144
+  primes p<=100 (good): a1==a2: 8   a1==-a2 (nz): 2
+  first 5 (p,a1,a2,ratio): [[13, -2, -2, 1], [19, -4, 4, -1], [29, -2, -10, 1/5], [31, -8, -8, 1], [37, -10, -2, 5]]
+Pair 5: 104/153 vs 195/748
+  primes p<=100 (good): a1==a2: 8   a1==-a2 (nz): 0
+  first 5 (p,a1,a2,ratio): [[19, -4, -4, 1], [29, -2, -2, 1], [31, -8, -8, 1], [37, -2, -10, 1/5], [43, -4, -4, 1]]
+Pair 6: 17/144 vs 65/2112
+  primes p<=100 (good): a1==a2: 3   a1==-a2 (nz): 3
+  first 5 (p,a1,a2,ratio): [[19, 4, -4, -1], [29, -10, -2, 5], [37, -2, 6, -1/3], [41, 2, 2, 1], [43, 4, -4, -1]]
+Pair 7: 195/748 vs 225/272
+  primes p<=100 (good): a1==a2: 6   a1==-a2 (nz): 0
+  first 5 (p,a1,a2,ratio): [[19, -4, -4, 1], [29, -2, 6, -1/3], [31, -8, -8, 1], [37, -10, -10, 1], [43, -4, -4, 1]]
+Pair 8: 96/247 vs 315/572
+  primes p<=100 (good): a1==a2: 6   a1==-a2 (nz): 3
+  first 5 (p,a1,a2,ratio): [[17, -6, -6, 1], [29, -2, 6, -1/3], [37, -10, 6, -5/3], [41, -6, -6, 1], [43, -4, 4, -1]]
+Pair 9: 44/117 vs 11/60
+  primes p<=100 (good): a1==a2: 7   a1==-a2 (nz): 1
+  first 5 (p,a1,a2,ratio): [[17, -6, -6, 1], [19, -4, -4, 1], [29, 6, -2, -3], [37, -2, -10, 1/5], [41, -6, -6, 1]]
+Pair 10: 27/364 vs 120/209
+  primes p<=100 (good): a1==a2: 8   a1==-a2 (nz): 1
+  first 5 (p,a1,a2,ratio): [[29, -2, -2, 1], [31, 8, 8, 1], [37, -10, -2, 5], [41, 2, 2, 1], [43, 4, 12, 1/3]]

@@ -1,0 +1,35 @@
+# Track T5 p-adic L — capped run (parisize=500MB parisizemax=1.5GB)
+# Cols: (m,n) q N exp_rank p reduction a_p method result val status
+#
+# Track T5 - p-adic L capped (parisize=500MB parisizemax=1.5GB)
+# Fibers with N>30000: SKIPPED_BUDGET
+# Methods: ellpadicL (rank=0), ellpadicbsd (rank>=1)
+#
+OK  m=2 n=1 q=3/4 N=21 rk=0 p=5 red=good a_p=-2 METHOD=ellpadicL val_p=0 t=0.012000000000000000000000000000000000000
+SKIP_NONORD  m=2 n=1 q=3/4 N=21 rk=0 p=7 red=nonsplit_mult a_p=-1
+OK  m=2 n=1 q=3/4 N=21 rk=0 p=11 red=good a_p=4 METHOD=ellpadicL val_p=0 t=0.041000000000000000000000000000000000000
+OK  m=2 n=1 q=3/4 N=21 rk=0 p=13 red=good a_p=-2 METHOD=ellpadicL val_p=0 t=0.033000000000000000000000000000000000000
+OK  m=3 n=2 q=5/12 N=1785 rk=0 p=5 red=split_mult a_p=1 METHOD=ellpadicL val_p=3 t=0.56500000000000000000000000000000000000
+SKIP_NONORD  m=3 n=2 q=5/12 N=1785 rk=0 p=7 red=nonsplit_mult a_p=-1
+EXCEEDED_BUDGET  m=3 n=2 q=5/12 N=1785 rk=0 p=11 red=good a_p=4 METHOD=ellpadicL t=5.1850000000000000000000000000000000000
+EXCEEDED_BUDGET  m=3 n=2 q=5/12 N=1785 rk=0 p=13 red=good a_p=6 METHOD=ellpadicL t=3.5380000000000000000000000000000000000
+OK  m=5 n=2 q=21/20 N=4305 rk=1 p=5 red=split_mult a_p=1 METHOD=ellpadicbsd bsd_ord=2 t=2.3180000000000000000000000000000000000
+OK  m=5 n=2 q=21/20 N=4305 rk=1 p=7 red=split_mult a_p=1 METHOD=ellpadicbsd bsd_ord=2 t=2.8120000000000000000000000000000000000
+EXCEEDED_BUDGET  m=5 n=2 q=21/20 N=4305 rk=1 p=11 red=good a_p=4 METHOD=ellpadicbsd t=12.110000000000000000000000000000000000
+EXCEEDED_BUDGET  m=5 n=2 q=21/20 N=4305 rk=1 p=13 red=good a_p=-2 METHOD=ellpadicbsd t=16.679000000000000000000000000000000000
+OK  m=5 n=4 q=9/40 N=6510 rk=0 p=5 red=split_mult a_p=1 METHOD=ellpadicL val_p=3 t=30.965000000000000000000000000000000000
+SKIP_NONORD  m=5 n=4 q=9/40 N=6510 rk=0 p=7 red=nonsplit_mult a_p=-1
+EXCEEDED_BUDGET  m=5 n=4 q=9/40 N=6510 rk=0 p=11 red=good a_p=4 METHOD=ellpadicL t=84.511000000000000000000000000000000000
+EXCEEDED_BUDGET  m=5 n=4 q=9/40 N=6510 rk=0 p=13 red=good a_p=-2 METHOD=ellpadicL t=103.24600000000000000000000000000000000
+EXCEEDED_BUDGET  m=4 n=3 q=7/24 N=22134 rk=1 p=5 red=good a_p=-2 METHOD=ellpadicbsd t=3.7950000000000000000000000000000000000
+EXCEEDED_BUDGET  m=4 n=3 q=7/24 N=22134 rk=1 p=7 red=split_mult a_p=1 METHOD=ellpadicbsd t=3.6450000000000000000000000000000000000
+EXCEEDED_BUDGET  m=4 n=3 q=7/24 N=22134 rk=1 p=11 red=good a_p=4 METHOD=ellpadicbsd t=4.1300000000000000000000000000000000000
+EXCEEDED_BUDGET  m=4 n=3 q=7/24 N=22134 rk=1 p=13 red=good a_p=-2 METHOD=ellpadicbsd t=3.6810000000000000000000000000000000000
+SKIPPED_BUDGET  m=6 n=1 q=35/12 N=113505 rk=0
+SKIPPED_BUDGET  m=7 n=2 q=45/28 N=130305 rk=0
+SKIPPED_BUDGET  m=8 n=1 q=63/16 N=155946 rk=0
+SKIPPED_BUDGET  m=8 n=3 q=55/48 N=237930 rk=1
+OK  m=5 n=1 q=12/5 N=1785 rk=0 p=5 red=split_mult a_p=1 METHOD=ellpadicL val_p=3 t=0.35800000000000000000000000000000000000
+SKIP_NONORD  m=5 n=1 q=12/5 N=1785 rk=0 p=7 red=nonsplit_mult a_p=-1
+EXCEEDED_BUDGET  m=5 n=1 q=12/5 N=1785 rk=0 p=11 red=good a_p=4 METHOD=ellpadicL t=3.3860000000000000000000000000000000000
+EXCEEDED_BUDGET  m=5 n=1 q=12/5 N=1785 rk=0 p=13 red=good a_p=6 METHOD=ellpadicL t=3.5130000000000000000000000000000000000

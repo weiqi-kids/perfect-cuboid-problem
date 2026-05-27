@@ -1,0 +1,6 @@
+E_PCP = 160a2, rank 1, torsion [2]
+generator P0 = [-1, 4], canonical height = 0.17934645197763986296537469118205937398
+|n| <= 300 (with eps in {0,1}):
+  nondegenerate points with W^2-4 a nonzero rational square: 0
+  degenerate points (W^2-4 = 0): 2
+  sample nondeg records [n,eps,W]: List([])

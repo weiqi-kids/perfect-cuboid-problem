@@ -1,0 +1,9 @@
+=== Torsion sweep + recovery-map degeneracy for E_PCP(q) ===
+
+Number of Pythagorean q tested: 62
+
+Total torsion points enumerated: 496  (expected 496)
+Curves with torsion != [4,2]:    0
+Non-degenerate finite c (c!=0):  0
+
+RESULT: every curve has torsion Z/4 x Z/2; every torsion point -> {0, infinity}.  PASS

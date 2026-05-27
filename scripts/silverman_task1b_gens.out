@@ -1,0 +1,54 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== Task 1b: Generator search ===
+--- q = 20/21 (rank 1) ---
+  v (iso to original): [2/21, -40/63, 1/21, 0]
+  attempting ellheegner...
+  Heegner point on Emin: [91, 532]
+  height on Emin: 2.5529727342181460743367754032165473242
+  Point on original E (Y^2 = X^3+(1+q^2)X^2+q^2 X): [4/21, 220/441]
+  CHECK PASS: on E
+  Height on E: 2.5529727342181460743367754032165473242
+
+--- q = 80/39 (rank 1) ---
+  v (iso to original): [2/39, -880/507, 1/39, 0]
+  attempting ellheegner...
+  Heegner point on Emin: [2012, 82142]
+  height on Emin: 1.9728436106756197984921624404414752252
+  Point on original E (Y^2 = X^3+(1+q^2)X^2+q^2 X): [32/9, 1312/117]
+  CHECK PASS: on E
+  Height on E: 1.9728436106756197984921624404414752252
+
+--- q = 24/7 (rank 1) ---
+  v (iso to original): [2/7, -208/49, 1/7, 0]
+  attempting ellheegner...
+  Heegner point on Emin: [853/16, 1549/64]
+  height on Emin: 2.5524981956456679759950229432062799730
+  Point on original E (Y^2 = X^3+(1+q^2)X^2+q^2 X): [3/28, 465/392]
+  CHECK PASS: on E
+  Height on E: 2.5524981956456679759950229432062799730
+
+--- q = 84/13 (rank 1) ---
+  v (iso to original): [2/13, -2408/169, 1/13, 0]
+  attempting ellheegner...
+  Heegner point on Emin: [1875293/2809, 485949163/148877]
+  height on Emin: 7.1282526922442920604733719002925742795
+  Point on original E (Y^2 = X^3+(1+q^2)X^2+q^2 X): [56700/36517, 329627340/25160213]
+  CHECK PASS: on E
+  Height on E: 7.1282526922442920604733719002925742795
+
+--- q = 48/55 (rank 1) ---
+  v (iso to original): [2/55, -1776/3025, 1/55, 0]
+  attempting ellheegner...
+  Heegner point on Emin: [4404, 288858]
+  height on Emin: 2.0619991381677259023206343953941110991
+  Point on original E (Y^2 = X^3+(1+q^2)X^2+q^2 X): [288/55, 42336/3025]
+  CHECK PASS: on E
+  Height on E: 2.0619991381677259023206343953941110991
+
+--- q = 60/11 (rank 2) ---
+  v = [2/11, -1240/121, 1/11, 0]
+  attempting ellrank(E, 4)...
+  rank result: low=2 up=2
+  gens (raw): 0
+
+=== End Task 1b ===

@@ -1,0 +1,23 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+Total distinct Pythagorean canonical q (|q|<=1) from m <= 60: 737
+
+==== Extended survey summary ====
+Canonical Pythagorean q tried:    737
+Skipped (N > 5000000):         714
+Analyzed (N <= NMAX):             23
+  rank 0:                         13
+  rank >= 1:                      10
+
+==== All rank >= 1 canonical q (sorted by N) ====
+1.  q=20/21  N=4305  ar=1
+2.  q=7/24  N=22134  ar=1
+3.  q=11/60  N=82005  ar=2
+4.  q=48/55  N=237930  ar=1
+5.  q=20/99  N=1551165  ar=1
+6.  q=96/247  N=1566474  ar=1
+7.  q=13/84  N=1880151  ar=1
+8.  q=39/80  N=1902810  ar=1
+9.  q=17/144  N=2085594  ar=2
+10.  q=104/153  N=2385474  ar=2
+
+===== End Task B extended =====

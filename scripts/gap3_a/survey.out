@@ -1,0 +1,240 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+============================================================
+Gap 3 extended survey: MMAX = 200, NMAX = 1000000000
+============================================================
+Total distinct canonical Pythagorean q from m <= 200: 8156
+
+Pass 1: conductor screening
+
+Fibers with N(E) <= 1000000000: 103
+
+Pass 2: rank analysis (ellrank effort=2)
+
+1/103  q=3/4  N=21  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+2/103  q=5/12  N=1785  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+3/103  q=20/21  N=4305  ellrank=[1,1]  ar=1  ngens=1  t=0s
+4/103  q=8/15  N=4830  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+5/103  q=9/40  N=6510  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+6/103  q=7/24  N=22134  ellrank=[1,1]  ar=1  ngens=1  t=0s
+7/103  q=11/60  N=82005  ellrank=[2,2]  ar=2  ngens=2  t=0s
+8/103  q=12/35  N=113505  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+9/103  q=28/45  N=130305  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+10/103  q=16/63  N=155946  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+11/103  q=48/55  N=237930  ellrank=[1,1]  ar=1  ngens=1  t=0s
+12/103  q=65/72  N=374010  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+13/103  q=119/120  N=853230  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+14/103  q=33/56  N=945714  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+15/103  q=36/77  N=1070223  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+16/103  q=20/99  N=1551165  ellrank=[1,1]  ar=1  ngens=1  t=0s
+17/103  q=96/247  N=1566474  ellrank=[1,1]  ar=1  ngens=1  t=0s
+18/103  q=13/84  N=1880151  ellrank=[1,1]  ar=1  ngens=1  t=0s
+19/103  q=39/80  N=1902810  ellrank=[1,1]  ar=1  ngens=1  t=0s
+20/103  q=133/156  N=2028117  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+21/103  q=17/144  N=2085594  ellrank=[2,2]  ar=2  ngens=2  t=0s
+22/103  q=104/153  N=2385474  ellrank=[2,2]  ar=2  ngens=2  t=0s
+23/103  q=15/112  N=2586990  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+24/103  q=44/117  N=5042037  ellrank=[1,1]  ar=1  ngens=1  t=0s
+25/103  q=297/304  N=5275578  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+26/103  q=189/340  N=6199305  ellrank=[1,1]  ar=1  ngens=1  t=0s
+27/103  q=60/91  N=6389565  ellrank=[1,1]  ar=1  ngens=1  t=0s
+28/103  q=207/224  N=7077882  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+29/103  q=88/105  N=7579110  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+30/103  q=19/180  N=9131115  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+31/103  q=175/288  N=10986990  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+32/103  q=225/272  N=11913090  ellrank=[1,1]  ar=1  ngens=1  t=0s
+33/103  q=132/475  N=13320615  ellrank=[1,1]  ar=1  ngens=1  t=0s
+34/103  q=252/275  N=13999755  ellrank=[2,2]  ar=2  ngens=2  t=0s
+35/103  q=24/143  N=17051034  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+36/103  q=140/171  N=19233795  ellrank=[1,1]  ar=1  ngens=1  t=0s
+37/103  q=400/561  N=27999510  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+38/103  q=85/132  N=28608195  ellrank=[1,1]  ar=1  ngens=1  t=0s
+39/103  q=51/140  N=30343215  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+40/103  q=108/725  N=31939005  ellrank=[2,2]  ar=2  ngens=2  t=0s
+41/103  q=32/255  N=32640510  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+42/103  q=57/176  N=34769658  ellrank=[1,1]  ar=1  ngens=1  t=0s
+43/103  q=135/352  N=34874070  ellrank=[1,1]  ar=1  ngens=1  t=0s
+44/103  q=27/364  N=35972391  ellrank=[2,2]  ar=2  ngens=2  t=0s
+45/103  q=25/312  N=37720410  ellrank=[1,1]  ar=1  ngens=1  t=0s
+46/103  q=204/253  N=41276697  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+47/103  q=28/195  N=50833965  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+48/103  q=52/165  N=52597545  ellrank=[2,2]  ar=-1  ngens=2  t=0s
+49/103  q=21/220  N=55392645  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+50/103  q=160/231  N=64127910  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+51/103  q=396/403  N=74381307  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+52/103  q=95/168  N=76604010  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+53/103  q=105/208  N=88012470  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+54/103  q=52/675  N=88319595  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+55/103  q=36/323  N=99838977  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+56/103  q=75/308  N=103071045  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+57/103  q=23/264  N=104995506  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+58/103  q=84/187  N=109614351  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+59/103  q=585/928  N=119784210  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+60/103  q=115/252  N=121423785  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+61/103  q=280/351  N=122306730  ellrank=[2,2]  ar=-1  ngens=2  t=0s
+62/103  q=100/621  N=129596145  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+63/103  q=300/589  N=133523355  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+64/103  q=60/221  N=149973915  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+65/103  q=161/240  N=153009570  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+66/103  q=696/697  N=168940254  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+67/103  q=740/1269  N=172187085  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+68/103  q=120/209  N=183591870  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+69/103  q=228/325  N=198739905  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+70/103  q=31/480  N=213378270  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+71/103  q=555/572  N=217222005  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+72/103  q=48/575  N=226541490  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+73/103  q=368/465  N=246904770  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+74/103  q=180/299  N=255649485  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+75/103  q=319/360  N=266419230  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+76/103  q=69/260  N=281832915  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+77/103  q=832/855  N=287515410  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+78/103  q=295/1728  N=301832790  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+79/103  q=49/1200  N=301895790  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+80/103  q=33/544  N=330818334  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+81/103  q=68/285  N=371131845  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+82/103  q=87/416  N=374331594  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+83/103  q=231/520  N=383393010  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+84/103  q=576/943  N=450597462  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+85/103  q=220/459  N=455198205  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+86/103  q=336/377  N=462875322  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+87/103  q=136/273  N=520098306  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+88/103  q=29/420  N=534577155  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+89/103  q=168/425  N=544071570  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+90/103  q=2511/2800  N=587768370  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+91/103  q=184/513  N=601258686  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+92/103  q=369/800  N=619721970  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+93/103  q=40/399  N=628827990  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+94/103  q=261/380  N=630445935  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+95/103  q=92/525  N=645193815  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+96/103  q=35/612  N=666374415  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+97/103  q=287/816  N=742652106  ellrank=[2,2]  ar=-1  ngens=2  t=0s
+98/103  q=56/783  N=742922754  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+99/103  q=203/396  N=774451293  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+100/103  q=76/357  N=825307959  ellrank=[1,1]  ar=-1  ngens=1  t=0s
+101/103  q=540/629  N=981626835  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+102/103  q=37/684  N=983821083  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+103/103  q=320/999  N=994117110  ellrank=[0,0]  ar=-1  ngens=0  t=0s
+
+============================================================
+CENSUS SUMMARY  (MMAX=200, NMAX=1000000000)
+============================================================
+Canonical Pythagorean q tried:   8156
+Surviving conductor cutoff:      103
+  rank = 0:                      49
+  rank = 1:                      45
+  rank = 2:                      9
+  rank >= 3:                     0
+  undetermined (low<high):       0
+
+============================================================
+RANK-JUMP FIBERS (rank >= 1, sorted by N)
+============================================================
+1.  q=20/21  N=4305  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-125/4, 395/8]]
+2.  q=7/24  N=22134  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-317/4, 3887/8]]
+3.  q=11/60  N=82005  ellrank=[2,2]  ar=2
+    gens (on min model) = [[-185, 9745], [-515, 7270]]
+4.  q=48/55  N=237930  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-282, 1956]]
+5.  q=20/99  N=1551165  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-965, 44950]]
+6.  q=96/247  N=1566474  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-2260, 581138]]
+7.  q=13/84  N=1880151  ellrank=[1,1]  ar=1
+    gens (on min model) = [[20195/4, 2796619/8]]
+8.  q=39/80  N=1902810  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-900, 9030]]
+9.  q=17/144  N=2085594  ellrank=[2,2]  ar=2
+    gens (on min model) = [[-1920, 142332], [-3348, 48084]]
+10.  q=104/153  N=2385474  ellrank=[2,2]  ar=2
+    gens (on min model) = [[-2894, 44542], [-2998, 7934]]
+11.  q=44/117  N=5042037  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-1965, 38553]]
+12.  q=189/340  N=6199305  ellrank=[1,1]  ar=1
+    gens (on min model) = [[24850, 3252595]]
+13.  q=60/91  N=6389565  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-210, 17805]]
+14.  q=225/272  N=11913090  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-4136, 330088]]
+15.  q=132/475  N=13320615  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-899/144, 5897298719/1728]]
+16.  q=252/275  N=13999755  ellrank=[2,2]  ar=2
+    gens (on min model) = [[-6886, 146663], [-7306, 22553]]
+17.  q=140/171  N=19233795  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-482665/169, 164460005/2197]]
+18.  q=85/132  N=28608195  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-2281, 16313]]
+19.  q=108/725  N=31939005  ellrank=[2,2]  ar=2
+    gens (on min model) = [[360149, 211594238], [39359, 1286048]]
+20.  q=57/176  N=34769658  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-1504, 229442]]
+21.  q=135/352  N=34874070  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-5496, 1741338]]
+22.  q=27/364  N=35972391  ellrank=[2,2]  ar=2
+    gens (on min model) = [[3002, 1265339], [7553, 590681]]
+23.  q=25/312  N=37720410  ellrank=[1,1]  ar=1
+    gens (on min model) = [[-48542/9, 37856650/27]]
+24.  q=28/195  N=50833965  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[7394, 493943]]
+25.  q=52/165  N=52597545  ellrank=[2,2]  ar=-1
+    gens (on min model) = [[-1346, 190513], [3274, 91183]]
+26.  q=160/231  N=64127910  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-6620, 115510]]
+27.  q=95/168  N=76604010  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[3398, 72536]]
+28.  q=105/208  N=88012470  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-13117/4, 2768779/8]]
+29.  q=52/675  N=88319595  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[5389, 9242848]]
+30.  q=36/323  N=99838977  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[572049/121, 768697884/1331]]
+31.  q=23/264  N=104995506  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[13230668/2209, 2337928582/103823]]
+32.  q=84/187  N=109614351  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[1402, 67759]]
+33.  q=280/351  N=122306730  ellrank=[2,2]  ar=-1
+    gens (on min model) = [[-4494, 587832], [-11697/4, 1329741/8]]
+34.  q=100/621  N=129596145  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[5866995/196, 1028965785/2744]]
+35.  q=161/240  N=153009570  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[179832, 76109592]]
+36.  q=120/209  N=183591870  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-6050, 52030]]
+37.  q=31/480  N=213378270  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[35873780/1849, 3238229240/79507]]
+38.  q=555/572  N=217222005  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-129442399/4489, 34912678679/300763]]
+39.  q=48/575  N=226541490  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[27882, 76380]]
+40.  q=69/260  N=281832915  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[4410, 100935]]
+41.  q=832/855  N=287515410  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-63916, 670778]]
+42.  q=295/1728  N=301832790  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[82624, 122755978]]
+43.  q=33/544  N=330818334  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[42704, 5462984]]
+44.  q=87/416  N=374331594  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[1586044/121, 77259902/1331]]
+45.  q=576/943  N=450597462  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[5138200/49, 2645814844/343]]
+46.  q=336/377  N=462875322  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-7140, 188118]]
+47.  q=29/420  N=534577155  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[170260195/11881, 76625225110/1295029]]
+48.  q=184/513  N=601258686  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[807584/25, 370263088/125]]
+49.  q=369/800  N=619721970  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[228680, 102467660]]
+50.  q=261/380  N=630445935  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[353503/4, 205425161/8]]
+51.  q=92/525  N=645193815  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[17441355169/732736, 81242017618363/627222016]]
+52.  q=287/816  N=742652106  ellrank=[2,2]  ar=-1
+    gens (on min model) = [[-103534, 3784202], [62930, 1398218]]
+53.  q=56/783  N=742922754  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[131533570714/2608225, 479520484853158/4212283375]]
+54.  q=76/357  N=825307959  ellrank=[1,1]  ar=-1
+    gens (on min model) = [[-12548809/625, 12583177061/15625]]
+
+===== End Gap 3 extended survey =====

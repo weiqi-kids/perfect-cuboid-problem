@@ -1,0 +1,18 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===========================================
+High-effort ellrank attempts:
+===========================================
+ellrank(E_short, 8) ...
+  result = [0, 2, 0, []]  wall = 8.6790000000000000000000000000000000000s
+ellrank(E_short, 9) ...
+  result = [0, 2, 0, []]  wall = 13.635000000000000000000000000000000000s
+ellrank(E_short, 10) ...
+  result = [0, 2, 0, []]  wall = 18.945000000000000000000000000000000000s
+
+ellrankinit-based search:
+  ellrankinit returned, type = t_VEC
+Searching points with ellrank(ri, 10) ...
+  result = [0, 2, 0, []]  wall = 17.654000000000000000000000000000000000s
+
+Try ellheegner / Heegner approach:
+  ellheegner: not implemented

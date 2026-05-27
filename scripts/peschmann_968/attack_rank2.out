@@ -1,0 +1,39 @@
+[0;31m  ***   Warning: new stack size = 3500000000 (3337.860 Mbytes).[0m
+Loaded 300 rank-2 candidate pairs.
+  rank2 attacked 10/300 closed=10 hits=0 hard=0 err=0
+  rank2 attacked 20/300 closed=20 hits=0 hard=0 err=0
+  rank2 attacked 30/300 closed=30 hits=0 hard=0 err=0
+  rank2 attacked 40/300 closed=40 hits=0 hard=0 err=0
+  rank2 attacked 50/300 closed=50 hits=0 hard=0 err=0
+  rank2 attacked 60/300 closed=60 hits=0 hard=0 err=0
+  rank2 attacked 70/300 closed=70 hits=0 hard=0 err=0
+  rank2 attacked 80/300 closed=80 hits=0 hard=0 err=0
+  rank2 attacked 90/300 closed=90 hits=0 hard=0 err=0
+  rank2 attacked 100/300 closed=100 hits=0 hard=0 err=0
+  rank2 attacked 110/300 closed=110 hits=0 hard=0 err=0
+  rank2 attacked 120/300 closed=120 hits=0 hard=0 err=0
+  rank2 attacked 130/300 closed=130 hits=0 hard=0 err=0
+  rank2 attacked 140/300 closed=140 hits=0 hard=0 err=0
+  rank2 attacked 150/300 closed=150 hits=0 hard=0 err=0
+  rank2 attacked 160/300 closed=160 hits=0 hard=0 err=0
+  rank2 attacked 170/300 closed=170 hits=0 hard=0 err=0
+  rank2 attacked 180/300 closed=180 hits=0 hard=0 err=0
+  rank2 attacked 190/300 closed=190 hits=0 hard=0 err=0
+  rank2 attacked 200/300 closed=200 hits=0 hard=0 err=0
+  rank2 attacked 210/300 closed=210 hits=0 hard=0 err=0
+  rank2 attacked 220/300 closed=220 hits=0 hard=0 err=0
+  rank2 attacked 230/300 closed=229 hits=0 hard=1 err=0
+  rank2 attacked 240/300 closed=239 hits=0 hard=1 err=0
+  rank2 attacked 250/300 closed=249 hits=0 hard=1 err=0
+  rank2 attacked 260/300 closed=259 hits=0 hard=1 err=0
+  rank2 attacked 270/300 closed=269 hits=0 hard=1 err=0
+  rank2 attacked 280/300 closed=279 hits=0 hard=1 err=0
+  rank2 attacked 290/300 closed=289 hits=0 hard=1 err=0
+  rank2 attacked 300/300 closed=299 hits=0 hard=1 err=0
+
+=== Rank-2 attack summary ===
+Total rank-2 pairs    : 300
+CLOSED_RANK2          : 299
+HIT_RANK2             : 0
+HARD                  : 1
+ERROR                 : 0

@@ -1,0 +1,205 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+==========================================================
+BRAUER-MANIN LOCAL INVARIANTS -- candidate alpha=(q^2+1, c^2+1)
+==========================================================
+
+==================================================
+Fiber (m,n) = (61,38),  q = 4636/2277
+  q^2 + 1 numerator   = 26677225
+  q^2 + 1 denominator = 5184729
+  m^2+n^2 = hyp = 5165,   hyp^2 = 26677225
+  is_square(qn^2+qd^2)? 1,  sqrt = 5165
+  ==> q^2+1 = (5165/2277)^2,  RATIONAL SQUARE.
+
+  a_class = (q^2+1 num)*(q^2+1 den) = 138314182097025 ; is_square? 1
+
+  Per-c, per-prime Brauer invariants (0 or 1, meaning 0 or 1/2 mod Z):
+  c-value          c^2+1         inv_2  inv_3  inv_5   sum mod 1
+  -------------------------------------------------------------------
+  c=0   c^2+1=1   0      0      0      0
+  c=1   c^2+1=2   0      0      0      0
+  c=2   c^2+1=5   0      0      0      0
+  c=3   c^2+1=10   0      0      0      0
+  c=1/2   c^2+1=5/4   0      0      0      0
+  c=5   c^2+1=26   0      0      0      0
+  c=-1   c^2+1=2   0      0      0      0
+  c=4636/2277   c^2+1=26677225/5184729   0      0      0      0
+
+  (Order-4 torsion points lie at c=infty pole of phi; the candidate
+   class alpha = (q^2+1, c^2+1) does not directly extend there.
+   But since alpha is GLOBALLY trivial (q^2+1 is a square), this
+   does not change the verdict.)
+
+  Hilbert symbol verification (raw):
+    hilbert(qsq_plus_1_num, 5, 2)  = 1
+    hilbert(qsq_plus_1_num, 5, 3)  = 1
+    hilbert(qsq_plus_1_num, 5, 5)  = 1
+    hilbert(hyp^2, 5, 2)           = 1
+    hilbert(hyp^2, 5, 3)           = 1
+    hilbert(hyp^2, 5, 5)           = 1
+
+==================================================
+Fiber (m,n) = (63,38),  q = 4788/2525
+  q^2 + 1 numerator   = 29300569
+  q^2 + 1 denominator = 6375625
+  m^2+n^2 = hyp = 5413,   hyp^2 = 29300569
+  is_square(qn^2+qd^2)? 1,  sqrt = 5413
+  ==> q^2+1 = (5413/2525)^2,  RATIONAL SQUARE.
+
+  a_class = (q^2+1 num)*(q^2+1 den) = 186809440230625 ; is_square? 1
+
+  Per-c, per-prime Brauer invariants (0 or 1, meaning 0 or 1/2 mod Z):
+  c-value          c^2+1         inv_2  inv_3  inv_5   sum mod 1
+  -------------------------------------------------------------------
+  c=0   c^2+1=1   0      0      0      0
+  c=1   c^2+1=2   0      0      0      0
+  c=2   c^2+1=5   0      0      0      0
+  c=3   c^2+1=10   0      0      0      0
+  c=1/2   c^2+1=5/4   0      0      0      0
+  c=5   c^2+1=26   0      0      0      0
+  c=-1   c^2+1=2   0      0      0      0
+  c=4788/2525   c^2+1=29300569/6375625   0      0      0      0
+
+  (Order-4 torsion points lie at c=infty pole of phi; the candidate
+   class alpha = (q^2+1, c^2+1) does not directly extend there.
+   But since alpha is GLOBALLY trivial (q^2+1 is a square), this
+   does not change the verdict.)
+
+  Hilbert symbol verification (raw):
+    hilbert(qsq_plus_1_num, 5, 2)  = 1
+    hilbert(qsq_plus_1_num, 5, 3)  = 1
+    hilbert(qsq_plus_1_num, 5, 5)  = 1
+    hilbert(hyp^2, 5, 2)           = 1
+    hilbert(hyp^2, 5, 3)           = 1
+    hilbert(hyp^2, 5, 5)           = 1
+
+==================================================
+Fiber (m,n) = (73,24),  q = 3504/4753
+  q^2 + 1 numerator   = 34869025
+  q^2 + 1 denominator = 22591009
+  m^2+n^2 = hyp = 5905,   hyp^2 = 34869025
+  is_square(qn^2+qd^2)? 1,  sqrt = 5905
+  ==> q^2+1 = (5905/4753)^2,  RATIONAL SQUARE.
+
+  a_class = (q^2+1 num)*(q^2+1 den) = 787726457596225 ; is_square? 1
+
+  Per-c, per-prime Brauer invariants (0 or 1, meaning 0 or 1/2 mod Z):
+  c-value          c^2+1         inv_2  inv_3  inv_5   sum mod 1
+  -------------------------------------------------------------------
+  c=0   c^2+1=1   0      0      0      0
+  c=1   c^2+1=2   0      0      0      0
+  c=2   c^2+1=5   0      0      0      0
+  c=3   c^2+1=10   0      0      0      0
+  c=1/2   c^2+1=5/4   0      0      0      0
+  c=5   c^2+1=26   0      0      0      0
+  c=-1   c^2+1=2   0      0      0      0
+  c=3504/4753   c^2+1=34869025/22591009   0      0      0      0
+
+  (Order-4 torsion points lie at c=infty pole of phi; the candidate
+   class alpha = (q^2+1, c^2+1) does not directly extend there.
+   But since alpha is GLOBALLY trivial (q^2+1 is a square), this
+   does not change the verdict.)
+
+  Hilbert symbol verification (raw):
+    hilbert(qsq_plus_1_num, 5, 2)  = 1
+    hilbert(qsq_plus_1_num, 5, 3)  = 1
+    hilbert(qsq_plus_1_num, 5, 5)  = 1
+    hilbert(hyp^2, 5, 2)           = 1
+    hilbert(hyp^2, 5, 3)           = 1
+    hilbert(hyp^2, 5, 5)           = 1
+
+==================================================
+Fiber (m,n) = (88,35),  q = 6160/6519
+  q^2 + 1 numerator   = 80442961
+  q^2 + 1 denominator = 42497361
+  m^2+n^2 = hyp = 8969,   hyp^2 = 80442961
+  is_square(qn^2+qd^2)? 1,  sqrt = 8969
+  ==> q^2+1 = (8969/6519)^2,  RATIONAL SQUARE.
+
+  a_class = (q^2+1 num)*(q^2+1 den) = 3418613553525921 ; is_square? 1
+
+  Per-c, per-prime Brauer invariants (0 or 1, meaning 0 or 1/2 mod Z):
+  c-value          c^2+1         inv_2  inv_3  inv_5   sum mod 1
+  -------------------------------------------------------------------
+  c=0   c^2+1=1   0      0      0      0
+  c=1   c^2+1=2   0      0      0      0
+  c=2   c^2+1=5   0      0      0      0
+  c=3   c^2+1=10   0      0      0      0
+  c=1/2   c^2+1=5/4   0      0      0      0
+  c=5   c^2+1=26   0      0      0      0
+  c=-1   c^2+1=2   0      0      0      0
+  c=6160/6519   c^2+1=80442961/42497361   0      0      0      0
+
+  (Order-4 torsion points lie at c=infty pole of phi; the candidate
+   class alpha = (q^2+1, c^2+1) does not directly extend there.
+   But since alpha is GLOBALLY trivial (q^2+1 is a square), this
+   does not change the verdict.)
+
+  Hilbert symbol verification (raw):
+    hilbert(qsq_plus_1_num, 5, 2)  = 1
+    hilbert(qsq_plus_1_num, 5, 3)  = 1
+    hilbert(qsq_plus_1_num, 5, 5)  = 1
+    hilbert(hyp^2, 5, 2)           = 1
+    hilbert(hyp^2, 5, 3)           = 1
+    hilbert(hyp^2, 5, 5)           = 1
+
+==========================================================
+AGGREGATE TABLE: per-(fiber, c-value) sum of inv_p across p={2,3,5}
+==========================================================
+
+Since q^2+1 = (m^2+n^2)^2/(m^2-n^2)^2 is a rational square at every
+fiber, hilbert(q^2+1, *, p) = +1 identically, so inv_p(alpha) = 0
+for every fiber, every prime, every c in V_q(Q_p).
+
+Reciprocity sum   sum_p inv_p(alpha) = 0   identically.
+
+VERDICT: No Brauer-Manin obstruction from the candidate Hilbert-
+symbol class alpha = (q^2+1, c^2+1) at any of the 4 BEYOND-QC fibers.
+
+HONEST CAVEAT: This is a single explicit candidate. Br(V)_tr^{G_Q}
+has dimension 0-3 over F_2 (per PICK-15). The 'right' generator
+(if any) is NOT this Hilbert symbol -- it must avoid the trivializing
+Pythagorean square structure.
+
+STRUCTURAL OBSTRUCTION TO HILBERT-SYMBOL CANDIDATES:
+On V_q the three quadratic forms c^2+1, c^2+q^2, c^2+1+q^2 are all
+SQUARES (= f^2, e^2, g^2). Hence ANY Hilbert symbol (*, c^2+1) or
+(*, c^2+q^2) or (*, c^2+1+q^2) restricted to V_q is trivial at every
+prime and every local point in V_q(Q_p). All naive 'face-based'
+Hilbert classes are killed by the defining equations of V_q.
+
+This is a strong structural reason why the transcendental Brauer
+class (if any non-trivial one exists in Br(V)_tr^{G_Q}) must use
+MORE EXOTIC entries -- e.g. linear combinations of (e+f),(e-f),
+(g+f),(g-f),(g+e),(g-e), or 2-descent classes from one of the five
+elliptic factors E_ef, E_eg, E_fg, E_H+, E_H- of J(V_q).
+
+Sanity-verification of two alternative candidates at fiber (61,38):
+  At c=2: e^2 = c^2+q^2 = 42231412/5184729
+  is_square(numerator)? 0
+  is_square(c^2+1=5)? 0
+  --> c=2 is NOT generally on V_q over Q (would need rational e).
+  This confirms: V_q(Q) is constrained; alpha at a putative Q-point
+  evaluates with c^2+q^2 = (rational e)^2 making it a square.
+
+  In summary: ANY Hilbert symbol class on V_q whose second argument
+  is a defining quadratic form of V_q is automatically trivial at all
+  rational points -- so cannot give a Brauer-Manin obstruction.
+==========================================================
+FINAL VERDICT (across all 4 fibers, all 3 primes, candidate alpha):
+==========================================================
+
+  fiber       p=2     p=3     p=5    sum mod 1   obstruction?
+  (61,38)     0       0       0      0           NO
+  (63,38)     0       0       0      0           NO
+  (73,24)     0       0       0      0           NO
+  (88,35)     0       0       0      0           NO
+
+Conclusion: This specific candidate Hilbert-symbol class gives NO
+Brauer-Manin obstruction at any of the 4 BEYOND-QC fibers. The class
+is identically trivial because q^2+1 is a square for Pythagorean q.
+
+This does NOT rule out Brauer obstruction at these fibers with a
+different generator of Br(V_q)_tr. Such a generator must avoid the
+structural squares (q^2+1, c^2+1, c^2+q^2, c^2+1+q^2) which all
+automatically trivialize Hilbert symbols on V_q.

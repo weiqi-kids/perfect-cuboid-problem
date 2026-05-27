@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 6000000000 (5722.046 Mbytes).[0m
+=== Pick 9 extended R2: 2-Selmer for m in [31,40] ===
+
+*** rk>=3 *** (m,n) = (35,22) q = 741/1540 rk = [3, 3]
+*** rk>=3 *** (m,n) = (37,26) q = 693/1924 rk = [3, 3]
+*** rk>=3 *** (m,n) = (40,29) q = 759/2320 rk = [3, 3]
+*** rk>=3 *** (m,n) = (40,33) q = 511/2640 rk = [3, 3]
+
+=== Summary (m in [31,40]) ===
+Total fibers tested:   145
+Max rk_hi observed:    3
+Max Sel_2 bound:       5
+Violations:           4
+  [35, 22, 741/1540, 3, 3]
+  [37, 26, 693/1924, 3, 3]
+  [40, 29, 759/2320, 3, 3]
+  [40, 33, 511/2640, 3, 3]
+rk_lo distribution: [54, 65, 22, 4, 0, 0, 0, 0, 0, 0]
+Sel_2 distribution: [0, 0, 54, 65, 22, 4, 0, 0, 0, 0]

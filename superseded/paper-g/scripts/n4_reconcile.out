@@ -1,0 +1,4 @@
+g-condition - (P4+P6-P5) simplifies to: 0
+=> they are IDENTICAL: True
+
+VERIFIED: N4 reformulation is a faithful equivalence.

@@ -1,0 +1,44 @@
+[0;31m  ***   Warning: new stack size = 14000000000 (13351.440 Mbytes).[0m
+
+
+##############################################################
+# Processing fiber (m,n)=(61,38)
+##############################################################
+
+=========================================
+STAGE A: Direct search (m,n)=(61,38), B=50000
+  q=2277/4636
+=========================================
+  Squares total: 1  Non-torsion candidates: 1
+    P = [47196, 2306232540]
+
+--- STAGE B: box scan on J(V_q) factors ---
+  E_ef: rank=3 B=10 #pts=9260
+  E_eg: no gens, skipped
+  E_fg: rank=2 B=30 #pts=3720
+  E_Hp: rank=3 B=10 #pts=9260
+  E_Hm: no gens, skipped
+  Total box-scan points: 22240
+
+--- STAGE C: MW sieve on E_Hp factor ---
+[0;31m[0;31m  ***   at top-level: ...[0;35m552825626935447972],[]]];[0;35mprocess_one(61,38,500
+[0;31m[0;31m  ***                                             ^---------------------
+[0;31m  ***   in function process_one: ...[0;35msieve_primes[idx];if(Mod(
+[0;31m  ***   [0;35melldisc(ellinit(E_Hp_
+[0;31m[0;31m  ***   ^---------------------
+  ***   not a function in function call[0m
+... skipping file 'full_massive_certification.gp'
+
+
+##############################################################
+# Processing fiber (m,n)=(63,38)
+##############################################################
+
+=========================================
+STAGE A: Direct search (m,n)=(63,38), B=50000
+  q=2525/4788
+=========================================
+  Squares total: 0  Non-torsion candidates: 0
+
+--- STAGE B: box scan on J(V_q) factors ---
+  E_ef: rank=3 B=10 #pts=9260

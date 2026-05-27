@@ -1,0 +1,31 @@
+[0;31m  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).[0m
+=== Conductors and j-invariants ===
+E_ef: N = 4305  j = 22523270198753323441/31154015025
+E_eg: N = 3045  j = 173449931524273005841/795225618065025
+E_fg: N = 48720  j = 55254534707337841/144875390625
+E_H+: N = 68880  j = 5647454716105441/204326600625
+E_H-: N = 249690  j = 33716734605576776462761920782881/4496908623986020832100000000
+
+=== Pairwise isogeny test (a_p match for many p) ===
+E_ef <-> E_eg isogenous? NO
+E_ef <-> E_fg isogenous? NO
+E_ef <-> E_H+ isogenous? NO
+E_ef <-> E_H- isogenous? NO
+E_eg <-> E_fg isogenous? NO
+E_eg <-> E_H+ isogenous? NO
+E_eg <-> E_H- isogenous? NO
+E_fg <-> E_H+ isogenous? NO
+E_fg <-> E_H- isogenous? NO
+E_H+ <-> E_H- isogenous? NO
+
+=== Looking for CM signatures (a_p = 0 frequency) ===
+E_ef: a_p = 0 for 7/88 primes (7%)
+E_eg: a_p = 0 for 2/88 primes (2%)
+E_fg: a_p = 0 for 2/88 primes (2%)
+E_H+: a_p = 0 for 7/88 primes (7%)
+E_H-: a_p = 0 for 6/88 primes (6%)
+
+=== Conclusion on NS rank ===
+If all 5 factors pairwise non-Q-isogenous and CM=no: rho_NS(J) >= 5
+(each diagonal class End(E_i) = Z gives one NS class)
+Therefore QC bound r < g + rho_NS - 1 = 5 + 5 - 1 = 9 is satisfied (r = 5 < 9). QC APPLIES.

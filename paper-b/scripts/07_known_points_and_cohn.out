@@ -1,0 +1,35 @@
+=== the 16 known rational points (q,e,g) and degeneracy b=q^2-4 ===
+count = 16
+  [-2, -6, -10]  on C? 1  b=q^2-4=0
+  [-2, -6, 10]  on C? 1  b=q^2-4=0
+  [-2, 6, -10]  on C? 1  b=q^2-4=0
+  [-2, 6, 10]  on C? 1  b=q^2-4=0
+  [-1, -3, -5]  on C? 1  b=q^2-4=-3
+  [-1, -3, 5]  on C? 1  b=q^2-4=-3
+  [-1, 3, -5]  on C? 1  b=q^2-4=-3
+  [-1, 3, 5]  on C? 1  b=q^2-4=-3
+  [1, -3, -5]  on C? 1  b=q^2-4=-3
+  [1, -3, 5]  on C? 1  b=q^2-4=-3
+  [1, 3, -5]  on C? 1  b=q^2-4=-3
+  [1, 3, 5]  on C? 1  b=q^2-4=-3
+  [2, -6, -10]  on C? 1  b=q^2-4=0
+  [2, -6, 10]  on C? 1  b=q^2-4=0
+  [2, 6, -10]  on C? 1  b=q^2-4=0
+  [2, 6, 10]  on C? 1  b=q^2-4=0
+all have q in {+-1,+-2} => b=q^2-4 in {-3,0} <= 0 => DEGENERATE.
+a non-degenerate Case-B cuboid needs b=q^2-4>0, i.e. |q|>=3.
+
+=== search C(Q) by q=n/d, |n|,d <= 2000 ===
+rational points with |q| not in {1,2} found up to height 2000: []
+(empty => only the 16 known points up to this height)
+
+=== integer-q route: Pell g^2 - 5 Y^2 = 20, Y=q^2 ===
+Fundamental solution (g,Y)=(5,1): 20
+orbit Y_n (recurrence Y_{n+1}=3Y_n - Y_{n-1}, Y_1=1,Y_2=4):
+  Y = [1, 4, 11, 29, 76, 199, 521, 1364, 3571, 9349, 24476, 64079]
+  L_{2n-1} = [1, 4, 11, 29, 76, 199, 521, 1364, 3571, 9349, 24476, 64079]
+  match Y_n = L_{2n-1}? [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+squares among Y_n (=q^2 must be a square): [1, 4]
+=> only Y in {1,4}, i.e. q in {1,2} (integer q). By Cohn 1964, the only
+   squares in the Lucas sequence are L_1=1 and L_3=4, so this is the
+   COMPLETE integer list, unconditionally. Both give degenerate cuboids.

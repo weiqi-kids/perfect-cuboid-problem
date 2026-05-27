@@ -1,0 +1,11 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Verifying (m,n)=(99,28) RANK-4 fiber ===
+gcd(m,n) = 1
+(m+n) odd? 1
+q = 9017/5544
+a=9017 b=5544
+a^2+b^2 = (m^2+n^2)^2? 1
+Conductor = 210668707326462
+Change = [1/2772, -5293/4356, 1/5544, 0]
+
+ellanalyticrank...

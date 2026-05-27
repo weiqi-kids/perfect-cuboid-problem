@@ -1,0 +1,34 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== 2-adic high-v2(b) layer: even coordinate = 2^k * odd ===
+v2layer k=4 (17,16) v2(b)=5 | tor=8 w=-1  rk=[1,1]
+v2layer k=4 (19,16) v2(b)=5 | tor=8 w=1  (even)
+v2layer k=4 (49,16) v2(b)=5 | tor=8 w=1  (even)
+v2layer k=4 (81,16) v2(b)=5 | tor=8 w=-1  rk=[1,1]
+v2layer k=5 (33,32) v2(b)=6 | tor=8 w=-1  rk=[1,1]
+v2layer k=5 (35,32) v2(b)=6 | tor=8 w=-1  rk=[1,1]
+v2layer k=5 (97,32) v2(b)=6 | tor=8 w=1  (even)
+v2layer k=5 (161,32) v2(b)=6 | tor=8 w=-1  rk=[1,1]
+v2layer k=6 (65,64) v2(b)=7 | tor=8 w=-1  rk=[1,1]
+v2layer k=6 (67,64) v2(b)=7 | tor=8 w=1  (even)
+v2layer k=6 (193,64) v2(b)=7 | tor=8 w=-1  rk=[1,1]
+v2layer k=6 (321,64) v2(b)=7 | tor=8 w=1  (even)
+v2layer k=7 (129,128) v2(b)=8 | tor=8 w=-1  rk=[1,1]
+v2layer k=7 (131,128) v2(b)=8 | tor=8 w=-1  rk=[1,1]
+v2layer k=7 (385,128) v2(b)=8 | tor=8 w=1  (even)
+v2layer k=7 (641,128) v2(b)=8 | tor=8 w=-1  rk=[1,1]
+v2layer k=8 (257,256) v2(b)=9 | tor=8 w=1  (even)
+v2layer k=8 (259,256) v2(b)=9 | tor=8 w=1  (even)
+v2layer k=8 (769,256) v2(b)=9 | tor=8 w=1  (even)
+v2layer k=8 (1281,256) v2(b)=9 | tor=8 w=1  (even)
+v2layer k=9 (513,512) v2(b)=10 | tor=8 w=-1  rk=[1,1]
+v2layer k=9 (515,512) v2(b)=10 | tor=8 w=-1  rk=[1,1]
+v2layer k=9 (1537,512) v2(b)=10 | tor=8 w=-1  rk=[1,1]
+v2layer k=9 (2561,512) v2(b)=10 | tor=8 w=-1  rk=[1,1]
+
+=== Face-3 on a 2-adic-record fiber (1024,549): v2(b)=11 ===
+v2(b)=11 q=747175/1124352
+root number w=1 torsion=8
+rank low/high=[2,2] gens found=2
+gen onE=1
+  Face-3 n=1..12: squares found = 0 (0 = PCP-free)

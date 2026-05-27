@@ -1,0 +1,17 @@
+=== Count of quadratic-form-SQUARE and NEAR-SQUARE fibers vs H ===
+H      #F6=square  #F5=square  #(F5 or F6 sq)  #(near-square pw>=|F|^{2/3})
+200    32          68          100             204
+400    63          135         198             517
+800    128         270         398             1263
+1600   254         540         794             3207
+3000   477         1015        1492            7420
+
+=== Local log-log slope (exponent theta) ===
+between H_i:   theta(F6=sq)   theta(F5orF6 sq)   theta(near-sq)
+[200,400]:   0.9773          0.9855            1.3416
+[400,800]:   1.0227          1.0073            1.2886
+[800,1600]:   0.9887          0.9964            1.3444
+[1600,3000]:   1.0025          1.0035            1.3344
+
+Prediction: theta -> 1 for the exact-square Pell locus (genus-0 conic, O(H) points).
+Total primitive fibers ~ (3/pi^2) H^2; so square-locus density ~ c/H -> 0 (sparse, exponent 1).

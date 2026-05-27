@@ -1,0 +1,17 @@
+=== Sophie-Germain identity (*) ===
+Identity (*) residual (must be 0): 0
+
+=== Case II polynomial: 4B = poly_II(p) ===
+4*B in Case II = p^4 + 8*p^3 + 18*p^2 - 8*p + 1
+poly_II(p)     = p^4 + 8*p^3 + 18*p^2 - 8*p + 1
+difference (must be 0): 0
+
+=== Case I polynomial: poly_I(p) = poly_II(-p) ===
+4*B in Case I  = p^4 + 2*p^2 + 1
+poly_I(p)      = p^4 - 8*p^3 + 18*p^2 + 8*p + 1
+difference (must be 0): 8*p^3 - 16*p^2 - 8*p
+poly_I(p) - poly_II(-p) (must be 0, symmetry Y -> -Y): 0
+
+=== C_anom : 20 Z^2 = Y^4 + 8 Y^3 + 18 Y^2 - 8 Y + 1 ===
+(Y=p, Z=2*beta; the SG Case-II reduction quartic)
+f(1) = 20  (so (Y,Z)=(1,1) is a rational point: 20*1 = 20)

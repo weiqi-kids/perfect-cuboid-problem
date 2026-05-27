@@ -1,0 +1,19 @@
+[0;31m  ***   Warning: new stack size = 500000000 (476.837 Mbytes).[0m
+======================================================================
+MASSIVE H_q DIRECT POINT SEARCH
+Bound B = 1000000
+Sieve primes: [5, 7, 11, 13, 17, 19, 23, 29, 31]
+Fibers: 4
+======================================================================
+
+----------------------------------------------------------------------
+FIBER (61,38)  m=61  n=38
+  (d, p, w) = (2277, 4636, 5165)
+  d^2 = 5184729   p^2 = 21492496   w^2 = 26677225
+----------------------------------------------------------------------
+    [baseline] X=0 -> Y = +-54522628380  (verified)
+    Pass A: scanned 1000000 positive X values
+    Pass A: 87910 survived 9-prime QR sieve
+    Pass A: 87910 full issquare tests
+    Pass A: 0 non-degenerate integer X found
+    Pass A wall: 658 ms

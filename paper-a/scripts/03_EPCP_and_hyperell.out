@@ -1,0 +1,24 @@
+==== E_PCP : Jacobian of S^2 = W^4 + 64 W^2 - 256 ====
+  minimal model = [0, 1, 0, -1, 15]
+  conductor = 160
+  j-invariant = -64/25   equals -64/25 :  1
+  torsion structure = [2]
+  analytic rank = 1,  L'(E,1) ~ 0.97774408104580346778932665062881763083
+  ellrank = [1, 1, 0, [[-32, 256]]]   (rank_low=1, rank_high=1)
+  (analytic rank 1 ==> Kolyvagin gives algebraic rank exactly 1)
+
+==== Independent confirmation of C0(Q) via hyperellratpoints ====
+  hyperellratpoints(T^4+72T^2+16, 10^4) = [[0, 4], [0, -4]]
+  (affine rational points; [0,4] and [0,-4] are the only finite ones)
+
+==== Saunderson-membership test for small primitive Euler bricks ====
+  (44,117,240)          : Saunderson(u,v,w)=[3, 4, 5]
+  (85,132,720)          : NOT Saunderson form (search u,v up to 60)
+  (140,480,693)         : NOT Saunderson form (search u,v up to 60)
+  (160,231,792)         : NOT Saunderson form (search u,v up to 60)
+  (240,252,275) Halcke  : NOT Saunderson form (search u,v up to 60)
+
+  ==> only (44,117,240)=Saunderson(3,4,5); the rest (incl. Halcke) are non-Saunderson
+  ==> Saunderson family is a strict, small subfamily of all Euler bricks
+
+==== DONE ====

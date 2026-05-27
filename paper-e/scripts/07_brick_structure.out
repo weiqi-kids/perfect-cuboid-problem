@@ -1,0 +1,14 @@
+SG Case-II candidate (p,q) = (11,71)
+Euler-brick legs (a,b,c) = (3124,4557,9840)
+
+Face diagonal a^2+b^2 = 30525625  perfect square? 1
+Face diagonal a^2+c^2 = 106584976  perfect square? 1
+Face diagonal b^2+c^2 = 117591849  perfect square? 0  <== FAILS
+Space diagonal a^2+b^2+c^2 = 127351225  perfect square? 1
+
+Face/Pi value 5q^4 - 16p^2q^2 + 20p^4 = 117591849
+  equals b^2+c^2 ? 1
+
+Conclusion: (11,71) satisfies the space diagonal and TWO face
+diagonals (a^2+b^2, a^2+c^2) but NOT the third (b^2+c^2). It is a
+near-cuboid, not a perfect cuboid. Hence no SG perfect cuboid arises.

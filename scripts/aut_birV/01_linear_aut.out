@@ -1,0 +1,53 @@
+=== §1. Quadrics defining V ⊂ P^6 ===
+  Q1 = -a**2 - b**2 + d**2
+  Q2 = -b**2 - c**2 + e**2
+  Q3 = -a**2 - c**2 + f**2
+  Q4 = -a**2 - b**2 - c**2 + g**2
+
+=== §2. S_3 action on (a,b,c) + induced on (d,e,f) ===
+  perm (a,b,c) -> (abc): OK
+  perm (a,b,c) -> (acb): OK
+  perm (a,b,c) -> (bac): OK
+  perm (a,b,c) -> (bca): OK
+  perm (a,b,c) -> (cab): OK
+  perm (a,b,c) -> (cba): OK
+  S_3 preservation: 6/6
+
+=== §3. Sign-flip (Z/2)^7 action ===
+  a -> -a preserves all 4 quadrics: OK
+  By symmetry (each Q is sum of squares of subset of vars),
+  full (Z/2)^7 sign-flip group preserves I_V.
+  |sign-flip subgroup| = 2^7 = 128
+  In PGL(7): quotient by diagonal => effective sign group is (Z/2)^6 of order 64
+
+=== §4. Total obvious Aut_lin(V) ⊂ PGL(7) ===
+  G_obvious = S_3 ⋉ (Z/2)^6 of order 6 * 64 = 384
+  (semidirect: S_3 permutes the 7 sign-flip generators consistently)
+
+=== §5. Infinitesimal stabilizer (Lie algebra) ===
+  Computing the linear stabilizer of I in gl(7) ...
+  # quadratic monomial constraints: 73 (deduplicated)
+  Total free parameters before constraints: 65
+  Dimension of linear stabilizer (Lie alg): 1
+  Free symbols in M: ['m_1_1']
+
+  Substituted M:
+⎡m₁ ₁   0     0     0     0     0     0  ⎤
+⎢                                        ⎥
+⎢ 0    m₁ ₁   0     0     0     0     0  ⎥
+⎢                                        ⎥
+⎢ 0     0    m₁ ₁   0     0     0     0  ⎥
+⎢                                        ⎥
+⎢ 0     0     0    m₁ ₁   0     0     0  ⎥
+⎢                                        ⎥
+⎢ 0     0     0     0    m₁ ₁   0     0  ⎥
+⎢                                        ⎥
+⎢ 0     0     0     0     0    m₁ ₁   0  ⎥
+⎢                                        ⎥
+⎣ 0     0     0     0     0     0    m₁ ₁⎦
+
+=== §6. Conclusion ===
+  Aut_lin(V) ⊂ PGL(7) is at LEAST the order-384 group S_3 ⋉ (Z/2)^6.
+  The Lie algebra computation above shows whether additional continuous symmetries exist.
+  Expectation: the only continuous symmetries are the diagonal scalings (which are absorbed in PGL),
+  so Aut_lin(V) is the discrete group of order 384.

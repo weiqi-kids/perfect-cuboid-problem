@@ -1,0 +1,34 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+
+Cover #1: x=0, y=8625278
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   ...[0;35mncurve(E_short,[X_E,Y_E])[0;35m,
+[0;31m[0;31m  ***                               ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected ',', expecting end of file: [0;35m" order="
+[0;31m  ***   [0;35m,ellorder(E_short,[X_E,Y_E]));
+[0;31m[0;31m  ***   ^------------------------------[0m
+  X - e1 = 163131895672480  sqf = [0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0]
+  X - e2 = -271914073834095  sqf = [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0]
+  X - e3 = -298795488637536  sqf = [1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+
+Discriminants and their factorizations:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(k=1,#covers[0;35m,
+[0;31m[0;31m  ***                  ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mq=covers[[0;35mk][1]
+[0;31m[0;31m  ***                          ^-----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+Cover k disc factored = matrix(0,2)
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+
+Cover #1 length: 2
+Cover #1 components types:
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(j=1,#covers[1][0;35m,
+[0;31m[0;31m  ***                     ^-[0m
+[0;31m[0;31m  ***   at top-level: ...[0;35m",j,"]: ",type(covers[1][[0;35mj]))
+[0;31m[0;31m  ***                                             ^----
+  ***   incorrect type in gtos [integer expected] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m

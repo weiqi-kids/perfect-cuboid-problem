@@ -1,0 +1,4 @@
+N == rad(|a b (a^2-b^2)|) for ALL fibers (m<=150)? NO  (4582 fibers)
+  first discrepancies [m,n,N,rad,N/rad]: [[2, 1, 21, 42, 1/2], [3, 2, 1785, 3570, 1/2], [5, 2, 4305, 8610, 1/2], [6, 1, 113505, 227010, 1/2], [6, 5, 82005, 164010, 1/2], [7, 2, 130305, 260610, 1/2]]
+
+N == rad(Delta_min) for ALL fibers (m<=80)? YES

@@ -1,0 +1,27 @@
+Primes where NO fully-nontrivial F_p point exists (=> p | abcdefg for ALL PCP):
+  p=3
+  p=5
+  p=7
+  p=11
+  p=13
+  p=17
+  p=19
+  p=29
+  p=37
+
+Primes where the obstruction fails (fully-nontrivial point exists):
+  p=23
+  p=31
+  p=41
+  p=43
+  p=47
+  p=53
+  p=59
+  p=61
+  p=67
+  p=71
+  p=73
+  p=79
+  p=83
+  p=89
+  p=97

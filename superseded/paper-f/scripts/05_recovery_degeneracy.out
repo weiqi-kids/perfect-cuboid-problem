@@ -1,0 +1,24 @@
+=== Symbolic degeneracy of phi on the 8 torsion points (over Q(q)) ===
+
+Point-on-curve checks (residual should be 0):
+  (0,0)          on curve residual = 0
+  (-1,0)         on curve residual = 0
+  (-q^2,0)       on curve residual = 0
+  (q,q(q+1))     on curve residual = 0
+  (q,-q(q+1))    on curve residual = 0
+  (-q,q(q-1))    on curve residual = 0
+  (-q,-q(q-1))   on curve residual = 0
+
+phi values:
+  O (identity)   -> c = 0  (degenerate identity / c=0 branch)
+  (0,0)          -> c = 0   (=0, degenerate)
+  (-1,0)         -> c = 0   (=0, degenerate)
+  (-q^2,0)       -> c = 0   (=0, degenerate)
+  (q,q(q+1))     -> POLE (num 2Yq = 2*q**2*(q + 1), nonzero for q!=0,+-1: True)
+  (q,-q(q+1))    -> POLE (num 2Yq = 2*q**2*(-q - 1), nonzero for q!=0,+-1: True)
+  (-q,q(q-1))    -> POLE (num 2Yq = 2*q**2*(q - 1), nonzero for q!=0,+-1: True)
+  (-q,-q(q-1))   -> POLE (num 2Yq = 2*q**2*(1 - q), nonzero for q!=0,+-1: True)
+
+All 8 torsion points map to {0, infinity}: True
+
+RESULT: PASS

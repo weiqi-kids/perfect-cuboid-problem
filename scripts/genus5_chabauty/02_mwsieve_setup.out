@@ -1,0 +1,24 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+Generic fiber q = 4/3
+Pythagorean: 1+q^2 = 25/9 = (5/3)^2
+
+E_H+ = 200704/6561 (disc)
+Pythagorean section P = (0, 20/9) on E_H+
+Is P on E_H+? 1
+Order of P (0 = infinite): 0
+
+Canonical height of P: 2.9851968347780548356377504145262127076
+
+=== Degenerate points -> E_H+ ===
+c=0 gives X=c^2=0, Y=+-q*w -> the point P=(0,q*w) and -P. P is the rank-1 GENERATOR.
+So the 8 degenerate points sit over {+-P} subset E_H+(Q) = <P> + tors.
+
+=== What the MW-sieve needs, and whether PARI can do it ===
+(1) J(V_q)(Q) generators: HAVE them (P on E_H+ rank1 + torsion on 5 factors). OK in PARI.
+(2) Abel-Jacobi map V_q(Q) -> J(V_q)(Q): need a working model of the genus-5 curve.
+    V_q is NON-HYPERELLIPTIC genus 5. PARI has hyperell* only (genus-2/hyperell).
+    -> NO native Jacobian / Abel-Jacobi for non-hyperelliptic curves in PARI.
+(3) Factored route: use the 5 elliptic quotient maps phi_i : V_q -> E_i.
+    Each phi_i IS explicit. We CAN reduce mod p and push V_q(F_p) into prod E_i(F_p).
+    This is the ONLY PARI-feasible sieve. Tested in 03_*.gp.

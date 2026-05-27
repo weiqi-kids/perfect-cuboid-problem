@@ -1,0 +1,13 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+Loaded 698 rank-0 candidate pairs.
+  rank0 attacked 100/698 closed=100 hits=0
+  rank0 attacked 200/698 closed=200 hits=0
+  rank0 attacked 300/698 closed=300 hits=0
+  rank0 attacked 400/698 closed=400 hits=0
+  rank0 attacked 500/698 closed=500 hits=0
+  rank0 attacked 600/698 closed=600 hits=0
+
+=== Rank-0 attack summary ===
+Total rank-0 pairs       : 698
+CLOSED_RANK0 (no Face-3): 698
+HIT_RANK0 (Face-3 hit)   : 0

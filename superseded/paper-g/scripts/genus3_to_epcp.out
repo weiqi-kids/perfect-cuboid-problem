@@ -1,0 +1,9 @@
+=== Quartic C0: S^2 = W^4 + 64 W^2 - 256 ===
+W=2: f = 16 (should be 16=4^2)
+ellfromeqn -> [0, 64, 0, 1024, 65536]
+minimal model: [0, 1, 0, -1, 15]
+conductor of quartic Jacobian: 160
+ellidentify quartic Jacobian: 160a2
+E_PCP ellidentify: 160a2
+isomorphic over Q? 1
+ellisisom-style via j: jE0=-64/25 jEpcp=-64/25

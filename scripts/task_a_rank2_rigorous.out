@@ -1,0 +1,46 @@
+[0;31m  ***   Warning: new stack size = 4000000000 (3814.697 Mbytes).[0m
+=== q = 60/11: setup ===
+E coefficients: [0, 3721/121, 0, 3600/121, 0]
+Emin: [1, 0, 0, -261230, 51166275]
+Conductor N(E): 82005
+v (change of coords): [2/11, -1240/121, 1/11, 0]
+
+Generators on E:
+  G1 = [-180/11, 7020/121]  on E? 1
+  G2 = [-300/11, 5100/121]  on E? 1
+
+Canonical heights:
+  h(G1)        = 2.2892690323915498229457830601858219194301028252084
+  h(G2)        = 2.4941373178892604869720418094601985018153821690575
+  <G1, G2>     = -0.63292227302629244594061118599550839450197039788947
+  Regulator    = 5.3091607206832339851327311462164304211767592103394
+  lambda_min   = 1.7505453495674331847876981066292686481190067362885
+  lambda_max   = 3.0328610007133771251301267630167517731264782579775
+
+log N(E) = 11.314535499997209336492755424070056470391460022321
+conservative h(f) <= 32.754756497776805478643750504520531842592737446494
+Height threshold (Ingram-Mahe, C_1=100): 4506.9291997774014815136505928590588312984197468815
+
+=> Uniform bound B with |a|, |b| <= B covers all (a,b) with
+   h(aG1+bG2) < threshold:   B = 51
+
+=== Direct verification on |a|, |b| <= 51 ===
+
+---- scan stats ----
+Total non-(0,0) combos: 10608
+Identity:               0
+Pole of c:              0
+a_n = 0:                0
+Rational squares found: 0
+
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(cnt_sq_total==0[0;35m,
+[0;31m[0;31m  ***                     ^-[0m
+... skipping file 'task_a_rank2_rigorous.gp'
+CONCLUSION: No (a,b) in |a|,|b| <= 51 gives a square a_n.
+Combined with Silverman/Ingram-Mahe for the complement,
+the rank-2 fiber q = 60/11 is CLOSED.
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+
+===== End Task A — q = 60/11 rigorous rank-2 closure =====

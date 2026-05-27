@@ -1,0 +1,36 @@
+[0;31m  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).[0m
+=== Verify Tate types of pi_d at bad fibers ===
+
+--- Near q = 0 (specialize q = p) ---
+  q = 2:  N = 24,  f_2 = 3,  Kodaira = -5
+  q = 3:  N = 48,  f_3 = 1,  Kodaira = 8
+  q = 5:  N = 240,  f_5 = 1,  Kodaira = 8
+  q = 7:  N = 336,  f_7 = 1,  Kodaira = 8
+  q = 11:  N = 2640,  f_11 = 1,  Kodaira = 8
+
+--- Near q = 1 (specialize q = 1 + p) ---
+  q = 1 + 2 = 3:  Kodaira at p = -6
+  q = 1 + 3 = 4:  Kodaira at p = 6
+  q = 1 + 5 = 6:  Kodaira at p = 6
+  q = 1 + 7 = 8:  Kodaira at p = 6
+  q = 1 + 11 = 12:  Kodaira at p = 6
+
+--- At Pythagorean q (sanity check) ---
+  q = 4/3:  N = 21
+  Emin = [1, 0, 0, -4, -1]
+
+=== Conclusions on Tate types ===
+Direct symbolic Delta = 16 q^4 (q-1)^2 (q+1)^2 tells us:
+  v_q(Delta) at q=0: 4. v_q(c4): 0. ==> I_4 (mult).
+  v_q(Delta) at q=1: 2. v_q(c4): 0. ==> I_2 (mult).
+  Similarly at q=-1, infty.
+
+Shioda-Tate:
+  rho(V') = 2 + r_gen + (4-1) + (4-1) + (2-1) + (2-1)
+         = 10 + r_gen.
+
+Frobenius traces (from picard_frobenius.gp):
+  trace_p/p at p=7 is 6 ==> rho_geom >= 6.
+  Lower bound 10 from Shioda-Tate dominates.
+
+Conclusion: rho(V') >= 10. With r_gen = 0, rho = 10.

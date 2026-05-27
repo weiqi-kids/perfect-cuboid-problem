@@ -1,0 +1,32 @@
+t = 0
+Z = 6
+w = 1
+w^2 - (Z^2 - 6Z + 1) = 0
+q_plus = 16/9
+s = -4/3
+s^2 = 16/9
+X = q*Z = 32/3
+G1(X, q) = 0
+1 + q^2 = 337/81
+1 + s^4 = 337/81
+Is 1 + q^2 a square? issquare(...) 0
+
+t = 2
+Z = -10/3, w = -17/3
+w^2 - (Z^2-6Z+1) = 0
+q_plus = 144/25
+1 + q^2 = 21361/625
+Is 1 + q^2 a square? 0
+21361 = [41, 1; 521, 1]
+
+t = 3, q_plus = 16/9
+1 + q^2 = 337/81
+issquare? 0
+
+Verifying u^2 = s^4 + 1 has no small rational solution:
+(no output above = no solutions found)
+
+E: y^2 = x^3 + 4x
+Conductor: 32
+Analytic rank: 0
+Torsion: [4, [4], [[2, 4]]]

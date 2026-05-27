@@ -1,0 +1,9 @@
+[0;31m  ***   Warning: new stack size = 1500000000 (1430.511 Mbytes).[0m
+===== Validate L2, L3 on m <= 100 =====
+
+Tested 2040 primitive Pythagorean fibers m <= 100
+Max dim Sel_2 = 6
+Max L2 = 12
+Max L3 = 12
+L2 violations: 0
+L3 violations: 0

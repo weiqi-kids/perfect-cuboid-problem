@@ -1,0 +1,29 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 1200001024 (1144.410 Mbytes).[0m
+=== PARI capability probe (non-hyperelliptic genus-5 tools) ===
+  hyperellratpoints: EXISTS (closure)
+  hyperellcharpoly: EXISTS (closure)
+  jacobianinit: ABSENT
+  abeljacobi: ABSENT
+  colemanintegral: ABSENT
+  picardgroup: ABSENT
+
+CONCLUSION: PARI's Jacobian/divisor arithmetic is restricted to genus<=2 (hyperell*).
+A genus-5 NON-hyperelliptic curve has no Mumford representation and no Abel-Jacobi in PARI.
+
+=== V_q non-hyperelliptic ===
+V_q = 3 quadrics in P^4: a smooth complete intersection curve of genus 5.
+Its Jacobian splits as a product of FIVE elliptic curves (J ~ E^5), so dim J = 5 = g.
+A hyperelliptic genus-5 curve has a 2:1 map to P^1 and its Jacobian does NOT split into
+5 elliptic factors over Q with this (Z/2)^3 character structure. The (Z/2)^3 quotient
+structure (3 conic quotients of genus 0, 3 genus-1, 1 genus-2->2xE) is the signature of
+a bielliptic/multi-elliptic NON-hyperelliptic curve. (Same conclusion stated in
+QUADRATIC-CHABAUTY-RANK3.md: 'V_q is not hyperelliptic'.)
+
+=== Sieve non-closure re-confirmation (independent CRT product) ===
+Each prime leaves the c=0 class PLUS extra ghost classes. Product over primes:
+primes used: 37 (up to 173)
+product of #surviving_c over all primes = 11660978437273222260328125
+=> the factored sieve survivor set mod M has 11660978437273222260328125 classes, NOT 1.
+=> SIEVE DOES NOT CLOSE. The nonzero ghost classes cannot be eliminated without
+   tracking the global index m, i.e. the Abel-Jacobi map on genus-5 V_q (Magma).
