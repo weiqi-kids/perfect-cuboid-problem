@@ -522,16 +522,26 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="what-is" class="theorem-section" data-nav="what-is">
     <h2>什麼是完美長方體</h2>
     <div class="layer-intuition">
-      想像一個長方形的盒子。它有三個邊（長、寬、高）、三個面各有一條對角線，還有一條從一角穿到對角的最長對角線（體對角線）。如果只要求三個面的對角線都是整數，這種盒子叫 Euler brick，多到數不完。但「完美長方體」要求連那條最長的體對角線也剛好是整數——這個額外條件，從來沒有人找得到一個例子，也從來沒有人證明它不可能。電腦窮舉到最小邊大約 3 兆都還沒找到。
+      想像一個長方形的盒子。它有三個邊（長、寬、高）、三個面各有一條對角線，還有一條從一角穿到對角的最長對角線（體對角線）。如果只要求三個面的對角線都是整數，這種盒子叫 Euler brick，多到數不完——最小的是 $(44,117,240)$，Halcke 在 1719 年就找到了。但「完美長方體」要求連那條最長的體對角線也剛好是整數——這個額外條件，從來沒有人找得到一個例子，也從來沒有人證明它不可能。電腦窮舉到最小邊大約 $5\times10^{11}$、奇數邊大約 $2.5\times10^{13}$ 都還沒找到。
     </div>
 
     <details class="layer">
-      <summary>形式化定義</summary>
+      <summary>形式化定義：四個對角線條件</summary>
       <div class="layer-content">
-        <p>完美長方體是一個邊為 $a,b,c$ 的長方體，滿足三個面對角線與體對角線同時為整數：</p>
-        <p>$$\sqrt{a^2+b^2},\ \sqrt{b^2+c^2},\ \sqrt{a^2+c^2},\ \sqrt{a^2+b^2+c^2}\ \in\ \mathbb{Z}.$$</p>
-        <p>只滿足前三個條件的稱為 <strong>Euler brick</strong>。再加上體對角線為整數，就是尚未有人滿足、也尚未有人證否的條件。Euler 於 1769 年提出此問題。</p>
-        <span class="verified">已驗證：窮舉搜尋顯示最小邊 $\lesssim 3\times10^{12}$ 內無完美長方體</span>
+        <p>完美長方體是一個邊為正整數 $a,b,c$ 的長方體，要求三個面對角線與一個體對角線同時為整數（等價地，全部為有理數）：</p>
+        <p>$$\sqrt{a^2+b^2},\ \sqrt{a^2+c^2},\ \sqrt{b^2+c^2}\ \in\ \mathbb{Z}\quad(\text{三個面}),$$</p>
+        <p>$$\sqrt{a^2+b^2+c^2}\ \in\ \mathbb{Z}\quad(\text{體對角線}).$$</p>
+        <p>只滿足前三個面條件的稱為 <strong>Euler brick</strong>；它要求三個式子 $a^2+b^2$、$a^2+c^2$、$b^2+c^2$ 同時是完全平方。完美長方體再多要求第四式 $a^2+b^2+c^2$ 也是完全平方——這就是尚未有人滿足、也尚未有人證否的那個條件。Euler 於 1769 年提出此問題。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>幾何全貌：射影曲面是 general type</summary>
+      <div class="layer-content">
+        <p>把這四個條件寫成方程，完美長方體的軌跡就是 $\mathbb{P}^6$ 裡四個二次式的光滑完全交</p>
+        <p>$$V:\quad a^2+b^2-d^2=b^2+c^2-e^2=a^2+c^2-f^2=a^2+b^2+c^2-g^2=0,$$</p>
+        <p>它座標全非零的有理點恰好就是完美長方體。$V$ 是一個極小的 <strong>general type</strong>（一般型）曲面：典範類 $K_V=\mathcal{O}_V(1)$ 為 ample，$K_V^2=16$、$c_2=80$、$\chi(\mathcal{O}_V)=8$、$p_g=7$、$q=0$（Paper B）。它<strong>不是</strong> K3 曲面；只有忘掉體對角線那一式的 Euler brick 雙重覆蓋 $V'\subset\mathbb{P}^5$ 才是（奇異的）K3。general type 正是為什麼整體問題如此困難——其有理點有限性受 Bombieri–Lang 與 Vojta 猜想支配。</p>
+        <span class="verified">已驗證：窮舉搜尋顯示最小邊 $\lesssim 5\times10^{11}$（奇邊 $\lesssim 2.5\times10^{13}$）內無完美長方體</span>
       </div>
     </details>
 
@@ -548,16 +558,27 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="common-thread" class="theorem-section" data-nav="common-thread">
     <h2>共同主線：每個 fiber 一條橢圓曲線</h2>
     <div class="layer-intuition">
-      六篇論文研究的是同一個東西。對每個合用的「斜率」參數 $q$，都對應到一條特定的曲線；曲線上「座標全是分數」的點（有理點）若存在，就有機會給出一個完美長方體。反過來說，要證明某一族盒子裡沒有完美長方體，只要證明對應曲線上找不到合用的分數點就好。把幾何問題翻譯成「曲線上有沒有好點」，是整套工作的共同起手式。
+      六篇論文研究的是同一個東西。對每個合用的「斜率」參數 $q$，都對應到一條特定的曲線；曲線上「座標全是分數」的點（有理點）若存在，就有機會給出一個完美長方體。反過來說，要證明某一族盒子裡沒有完美長方體，只要證明對應曲線上找不到合用的分數點就好。把幾何問題翻譯成「曲線上有沒有好點」，是整套工作的共同起手式。重點是：每條曲線上都有八個「現成的退化點」（壓扁的盒子），它們不算數，所以真正要找的是那八個之外、能還原成真盒子的點。
     </div>
 
     <details class="layer">
-      <summary>形式化：per-fiber 橢圓曲線與 recovery map</summary>
+      <summary>形式化：per-fiber 橢圓曲線 $E_q$ 與 recovery map $\varphi$</summary>
       <div class="layer-content">
-        <p>對每個 Pythagorean 有理數 $q$，配一條橢圓曲線</p>
-        <p>$$E_q:\quad y^2 = x(x+1)(x+q^2).$$</p>
-        <p>$q$-fiber 上的一個完美長方體會逼出 $E_q$ 上一個有理點，其 recovery-map 值是一個真正的、<strong>非退化</strong>的邊。封閉一個子家族，就是證明在那裡沒有這種非退化的有理點。退化點（對應邊長為 0 或重合）不算數。</p>
-        <span class="verified">已驗證：每篇論文附 PARI/GP 腳本檢查曲線方程與點的退化性</span>
+        <p>對每個 Pythagorean 有理數 $q$（即 $q=(m^2-n^2)/(2mn)$，$m>n$ 互質、奇偶相異，在對合 $q\leftrightarrow 1/q$ 下取一個代表），配一條橢圓曲線</p>
+        <p>$$E_q:\quad y^2 = x(x+1)(x+q^2)\;=\;x^3+(1+q^2)x^2+q^2x.$$</p>
+        <p>它有完整的有理 $2$-torsion，三個二torsion點是 $(0,0),(-1,0),(-q^2,0)$。$q$-fiber 上的一個完美長方體會逼出 $E_q$ 上一個有理點 $P=(X,Y)$，透過 <strong>recovery map</strong></p>
+        <p>$$\varphi(X,Y)\;=\;\frac{2Yq}{q^2-X^2}$$</p>
+        <p>還原出一個真正的、<strong>非退化</strong>的邊。封閉一個子家族，就是證明在那裡沒有這種非退化的有理點。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>torsion 退化引理：搜尋限縮到無限階點</summary>
+      <div class="layer-content">
+        <p>$E_q$ 的有理 torsion 子群恆為 $\mathbb{Z}/4\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$（八個點，分類歸功於 Yoshida）：恆等元 $O$、三個 $2$-torsion 點 $(0,0),(-1,0),(-q^2,0)$，以及四個四階點 $(\pm q,\,\pm q(q\pm1))$。</p>
+        <p>關鍵在於 recovery map $\varphi$ 把每個非恆等的 torsion 點都送進 $\{0,\infty\}$：三個 $2$-torsion 點分子 $2Yq=0$，故 $\varphi=0$（盒子邊為 $0$）；四個四階點滿足 $X^2=q^2$，使分母 $q^2-X^2=0$，落在 $\varphi$ 的極點。因此凡 $\varphi(P)$ 有限且非零的點——也就是能還原成真盒子邊的點——必為<strong>無限階</strong>。</p>
+        <p>結論：搜尋只需在無限階部分進行。當 $E_q$ rank $\ge1$ 時，每個有理點是 $a_1P_1+\cdots+a_rP_r+T$（$T$ 為 torsion），於是條件落到一個格點上逐一檢驗。</p>
+        <span class="verified">已驗證（PARI/GP）：<code>elltors</code> 給出階 $8$ 的 $\mathbb{Z}/4\times\mathbb{Z}/2$；$\varphi$ 在八個 torsion 點上恆送進 $\{0,\infty\}$</span>
       </div>
     </details>
   </section>
@@ -566,15 +587,44 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="saunderson" class="theorem-section" data-nav="saunderson">
     <h2>Saunderson 家族（Paper A）</h2>
     <div class="layer-intuition">
-      十八世紀有一個叫 Saunderson 的經典公式，可以批量產生 Euler brick。一個自然的問題是：這個公式產出的盒子裡，會不會剛好有一個是完美長方體？答案是不會。把「體對角線也要是整數」的要求代進去之後，問題塌縮成一條很簡單的曲線，這條曲線上能用的好點只有四個，而且每一個都對應到退化的盒子（壓扁了、不是真的盒子）。所以 Saunderson 公式整族出局。
+      十八世紀有一個叫 Saunderson 的經典公式，可以批量產生 Euler brick。一個自然的問題是：這個公式產出的盒子裡，會不會剛好有一個是完美長方體？答案是不會。把「體對角線也要是整數」的要求代進去之後，經過一連串代數化簡，問題塌縮成一條很簡單的曲線，這條曲線上能用的好點只有四個，而且每一個都對應到退化的盒子（壓扁了、不是真的盒子）。所以 Saunderson 公式整族出局。妙處在於：化簡的最後一步把曲線從「好點無窮多」變成「好點有限」，因此不需要任何高深工具或猜想。
     </div>
 
     <details class="layer">
-      <summary>形式化定義與結論</summary>
+      <summary>設定：Saunderson 家族與體對角線恆等式</summary>
       <div class="layer-content">
-        <p>由經典 Saunderson 參數化產生的 Euler brick 中，沒有任何一個是完美長方體。體對角線條件塌縮成一條 genus-1 曲線，其 Jacobian 是 rank-0 的橢圓曲線 Cremona <span class="curve-label">80a1</span>。</p>
-        <p>$E_{\text{80a1}}$ 只有 4 個有理點，逐一檢查皆退化。此為<strong>無條件</strong>結果。</p>
-        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank = 0，4 個有理點全部退化</span>
+        <p>對每個 Pythagorean 三元組 $(u,v,w)$（$u^2+v^2=w^2$），Saunderson 配一個 Euler brick</p>
+        <p>$$\mathrm{Sa}(u,v,w)=\bigl(u(4v^2-w^2),\ v(4u^2-w^2),\ 4uvw\bigr).$$</p>
+        <p>關鍵的體對角線恆等式（Paper A, Lemma）為</p>
+        <p>$$a^2+b^2+c^2 \;=\; w^2\bigl(w^4+16\,u^2v^2\bigr).$$</p>
+        <p>因此體對角線 $g$ 為整數 $\iff (g/w)^2=w^4+16u^2v^2$。代入通用參數化 $(u,v,w)=(p^2-q^2,\,2pq,\,p^2+q^2)$ 並設 $t=p/q$，得</p>
+        <p>$$w^4+16u^2v^2 \;=\; q^8\bigl(t^8+68t^6-122t^4+68t^2+1\bigr).$$</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>化約鏈：genus-3 octic → palindrome → genus-1 $C_0$</summary>
+      <div class="layer-content">
+        <p>體對角線條件等價於 <strong>genus-3</strong> 八次曲線上的有理點</p>
+        <p>$$C':\quad T^2=t^8+68t^6-122t^4+68t^2+1.$$</p>
+        <p>此八次式是回文（palindromic）的，故以 $W=t+1/t$ 代換、除以 $t^4$ 得</p>
+        <p>$$\frac{t^8+68t^6-122t^4+68t^2+1}{t^4}=W^4+64W^2-256,\qquad C'_{\mathrm{pal}}:\ S^2=W^4+64W^2-256.$$</p>
+        <p>（$C'_{\mathrm{pal}}$ 的 Jacobian 是 $E_{\mathrm{PCP}}:y^2=x^3+x^2-x+15$，conductor $160$、$j=-64/25$、rank $1$、生成元 $(-1,4)$——尚不足以強制有限。）真正降階的是<strong>提升條件</strong>：對 $t\in\mathbb{Q}^\times$、$W=t+1/t$ 恆有 $W^2-4=(t-1/t)^2$。設 $T_0=t-1/t$，代 $W^2=T_0^2+4$ 進 $S^2=(W^2)^2+64W^2-256$，得落到單一 <strong>genus-1</strong> 曲線</p>
+        <p>$$C_0:\quad S^2=T_0^4+72T_0^2+16.$$</p>
+        <p>這一步把 rank-$1$ 的 $C'_{\mathrm{pal}}$ 壓到 rank-$0$ 的 $C_0$，繞過了 Chabauty。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>Jacobian 是 rank-0 的 <span class="curve-label">80a1</span>，僅四個退化點</summary>
+      <div class="layer-content">
+        <p>$C_0$ 的 Jacobian 是橢圓曲線</p>
+        <p>$$E_0:\quad y^2=x^3-7x+6\;=\;(x-1)(x-2)(x+3),$$</p>
+        <p>conductor $80$（Cremona <span class="curve-label">80a1</span>）、$j=148176/25$、torsion $(\mathbb{Z}/2\mathbb{Z})^2$、Mordell–Weil <strong>rank $0$</strong>。rank 由 $2$-descent 給出緊區間 $[0,0]$（無條件），並由 analytic rank $0$（$L(E_0,1)\approx1.0095\neq0$）配 Kolyvagin 獨立確認。故 $E_0(\mathbb{Q})$ 恰四點，$C_0(\mathbb{Q})$ 亦恰四點：</p>
+        <p>$$C_0(\mathbb{Q})=\{(0,4),\,(0,-4),\,\infty_+,\,\infty_-\},$$</p>
+        <p>每點皆 $T_0\in\{0,\infty\}$。但 $T_0=0\Rightarrow t=\pm1\Rightarrow u=p^2-q^2=0$，邊 $a=0$；$T_0=\infty\Rightarrow p$ 或 $q=0\Rightarrow v=2pq=0$，邊 $b,c=0$。全部退化。非退化的 Saunderson 給出非零有限 $T_0$，永遠不落在這四點集。此為<strong>無條件</strong>結果。</p>
+        <p>對照 worked example：最小的 Saunderson brick $\mathrm{Sa}(3,4,5)=(44,117,240)$（$p=2,q=1,t=2$）給 $T_0=3/2\neq0$，而 $T_0^4+72T_0^2+16=2929/16$ 非平方，對應 $a^2+b^2+c^2=73225$ 非完全平方。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">80a1</span> 之 rank $=0$（$2$-descent $[0,0]$ + Kolyvagin），$C_0(\mathbb{Q})$ 四點全退化</span>
       </div>
     </details>
   </section>
@@ -583,25 +633,44 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="caseB" class="theorem-section" data-nav="caseB">
     <h2>Case B at p=1，與 genus-5 曲線上的 rank 障礙（Paper B）</h2>
     <div class="layer-intuition">
-      這裡看一條單參數的盒子帶（邊長隨一個參數變動）。把完美長方體的條件翻譯出來，會得到一個經典的整數方程（Pell 方程），它的解剛好是 Lucas 數列中「位置為奇數」的那些項。而 1964 年 Cohn 的一個定理告訴我們：這串數裡能當完全平方的，只有最前面兩個。把這兩個代回去，盒子都是退化的。所以這條帶裡也沒有完美長方體。值得一提的是：有一個常用的「夾擠」工具（Chabauty）在這裡剛好用不上，因為它需要某個數比另一個小，但這裡兩者相等——這恰好印證了 Peschmann 提過的疑慮。
+      這裡看一條單參數的盒子帶（邊長隨一個參數變動）。三個面的對角線會自動是整數，所以唯一的關卡是體對角線。把它翻譯出來，會得到一個經典的整數方程（Pell 方程），它的解剛好是 Lucas 數列中「位置為奇數」的那些項。而 1964 年 Cohn 的一個定理告訴我們：這串數裡能當完全平方的，只有最前面兩個。把這兩個代回去，盒子都是退化的。所以這條帶裡也沒有完美長方體。值得一提的是：有一個常用的「夾擠」工具（Chabauty）在這裡剛好用不上，因為它需要某個數嚴格小於另一個，但這裡兩者相等——這恰好印證了 Peschmann 提過的疑慮。
     </div>
 
     <details class="layer">
-      <summary>形式化：Pell → Lucas → Cohn</summary>
+      <summary>設定：三個面自動成立，剩下體對角線</summary>
       <div class="layer-content">
-        <p>邊為 $(4q,\ q^2-4,\ 2(q^2-1))$ 的單參數 stratum 中無完美長方體。體對角線條件化為 Pell 方程</p>
-        <p>$$g^2 - 5q^4 = 20,$$</p>
-        <p>其解為 odd-indexed Lucas numbers；Cohn (1964) 的定理迫使 $q\in\{1,2\}$（皆退化）。此為<strong>無條件</strong>結果。</p>
-        <span class="verified">已驗證（PARI/GP）：Pell 解對應 $L_1=1,\ L_3=4$，唯二平方項</span>
+        <p>Case B at $p=1$ 是邊為</p>
+        <p>$$(a,b,c)=\bigl(4q,\ q^2-4,\ 2(q^2-1)\bigr),\qquad q\in\mathbb{Z}_{>0}$$</p>
+        <p>的單參數 stratum。三個面條件恆等成立（皆為完全平方）：</p>
+        <p>$$a^2+b^2=(q^2+4)^2,\quad a^2+c^2=\bigl(2(q^2+1)\bigr)^2,\quad b^2+c^2=5q^4-16q^2+20.$$</p>
+        <p>其中前兩式對所有 $q$ 自動為平方；故唯一未決的是體對角線</p>
+        <p>$$g^2=a^2+b^2+c^2=5q^4+20.$$</p>
+        <p>（正性要求 $b=q^2-4>0$，即 $q\ge3$。）</p>
       </div>
     </details>
 
     <details class="layer">
-      <summary>為什麼 Chabauty–Coleman 用不上</summary>
+      <summary>關鍵方程：Pell → odd-indexed Lucas → Cohn 1964</summary>
       <div class="layer-content">
-        <p>相應的 genus-5 曲線其 Mordell–Weil rank 等於它的 genus（皆為 5）。Chabauty–Coleman 方法需要 $\text{rank} < \text{genus}$，因此<strong>無法</strong>封閉這條曲線——確認 Peschmann 所提的疑慮。本文改以 Pell/Lucas/Cohn 的初等路線達成封閉。</p>
-        <p>其 Jacobian 的 ℚ-isogeny 分解中，genus-2 商的 $\text{Jac}(C_q)$ 同 isogeny 於 <span class="curve-label">600a2</span> × <span class="curve-label">400a2</span>——這兩條是 rank-0 曲線 120a2、<span class="curve-label">80a1</span> 的 $\mathbb{Q}(\sqrt5)$-rank-1 quadratic twist。正是這個「twist 把 rank 從 0 抬到 1」使五個 elliptic factor 全為 rank 1，導致 rank $\text{Jac}(C)(\mathbb{Q})=5=\text{genus}$。</p>
-        <span class="verified">已驗證（PARI/GP）：genus-5 曲線 Jacobian rank = 5 = genus；<span class="curve-label">600a2</span>/<span class="curve-label">400a2</span> 為 rank-1 twist</span>
+        <p>令 $Y=q^2$，體對角線條件化為 Pell 型方程</p>
+        <p>$$g^2-5Y^2=20.$$</p>
+        <p>基本解 $(g,Y)=(5,1)$，乘以 $\mathbb{Z}[\tfrac{1+\sqrt5}{2}]$ 的全正單位 $\tfrac{3+\sqrt5}{2}$ 生成全部非負解，遞迴 $Y_{n+1}=3Y_n-Y_{n-1}$，$Y_1=1,Y_2=4$，即 $1,4,11,29,76,199,\dots$。寫 $g=5h$ 把它化為負 Pell $Y^2-5h^2=-4$，其正解恰為 $(Y,h)=(L_{2n-1},F_{2n-1})$，故 $Y_n=L_{2n-1}$（odd-indexed Lucas 數）。</p>
+        <p>解存在 $\iff q^2=L_{2n-1}$ 為完全平方，即某個 Lucas 數為平方。由 <strong>Cohn (1964)</strong> 關於 Lucas 數列中平方項的定理，唯二的平方 Lucas 數是 $L_1=1$ 與 $L_3=4$，故 $q^2\in\{1,4\}$，$q\in\{1,2\}$。但 $q=1$ 時 $b=-3<0$、$c=0$；$q=2$ 時 $b=0$。皆退化。此為<strong>無條件</strong>結果（僅用 Pell 解結構與 Cohn 定理，不涉 Mordell、Chabauty 或 $L$-函數假設）。</p>
+        <span class="verified">已驗證（PARI/GP）：Pell 軌道 $Y_n=L_{2n-1}$；平方測試恰回 $\{1,4\}$，對應 $L_1,L_3$</span>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>為什麼 Chabauty–Coleman 用不上：genus-5 而 rank $=5$</summary>
+      <div class="layer-content">
+        <p>進一步問哪些<strong>有理</strong> $q$ 同時使 $5q^4-16q^2+20$ 與 $5q^4+20$ 為平方，即下列 fibre product 的有理點：</p>
+        <p>$$C:\quad \{e^2=5q^4-16q^2+20,\ \ g^2=5q^4+20\}.$$</p>
+        <p>由 Riemann–Hurwitz，$C$ 的 genus 為 $5$（四個無窮遠點定義在 $\mathbb{Q}(\sqrt5)$ 上，故非有理）。其 Jacobian 的 $\mathbb{Q}$-isogeny 分解為五個橢圓因子</p>
+        <p>$$\mathrm{Jac}(C)\sim_{\mathbb{Q}}\ \texttt{480f1}\times\texttt{800a1}\times\texttt{1200a2}\times X_+^{(5)}\times X_-^{(5)},$$</p>
+        <p>其中 $X_+^{(5)}=$ <span class="curve-label">600a2</span>、$X_-^{(5)}=$ <span class="curve-label">400a2</span> 是 rank-$0$ 曲線 <span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> 的 $\mathbb{Q}(\sqrt5)$-quadratic twist。五個因子<strong>全為 rank $1$</strong>（$2$-descent 各回緊區間 $[1,1]$，並附無限階生成元，如 $X_-^{(5)}$ 上的 $(1,24)$），故</p>
+        <p>$$\mathrm{rank}\,\mathrm{Jac}(C)(\mathbb{Q})=1+1+1+1+1=5=\operatorname{genus}(C).$$</p>
+        <p>Chabauty–Coleman 需 $\mathrm{rank}<\operatorname{genus}$，因此<strong>無法</strong>封閉 $C$——確認 Peschmann §8 所提疑慮。決定性的誤判在於：承載 Chabauty 微分的 $(-1,-1,-1)$-特徵空間，本以為由 rank-$0$ 的 <span class="curve-label">120a2</span>、<span class="curve-label">80a1</span> 支配（那會給 rank $3$、Chabauty 可用），實際卻是它們的 $\mathbb{Q}(\sqrt5)$-twist <span class="curve-label">600a2</span>、<span class="curve-label">400a2</span>，而 twist 把 rank 從 $0$ 抬到 $1$。stratum 仍由上面的初等 Pell–Lucas 路線封閉，與曲線的有理點計數無關。</p>
+        <span class="verified">已驗證（PARI/GP）：五因子 $a_p$ 在 $32$ 個好質數上吻合；各因子 rank $=1$；genus-2 商 $\mathrm{Jac}(C_q)\sim$ <span class="curve-label">600a2</span>×<span class="curve-label">400a2</span> 亦 rank $2=$ genus</span>
       </div>
     </details>
 
@@ -618,15 +687,38 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="rank-positive" class="theorem-section" data-nav="rank-positive">
     <h2>rank-positive fibers 與 Peschmann (5,2) 的解決（Paper C）</h2>
     <div class="layer-intuition">
-      前面的曲線「好點很少」所以容易窮盡。但有些 fiber 的曲線「好點有無窮多個」（rank 為正），這種就難搞。Peschmann 留下最小的一個未解 fiber，記作 (5,2)。本文在一個明確的搜尋範圍內解決了它，外加另外六個正 rank 的 fiber，並且精確指出：為什麼那種想靠「新質因數一定會出現」的封閉手法在一般情況會卡住——關鍵在於它要追蹤的數列，跟有效定理能控制的數列其實不是同一個。
+      前面的曲線「好點很少」所以容易窮盡。但有些 fiber 的曲線「好點有無窮多個」（rank 為正），這種就難搞。Peschmann 留下最小的一個未解 fiber，記作 (5,2)。本文在一個明確的搜尋範圍內解決了它，外加另外六個正 rank 的 fiber，並且精確指出：為什麼那種想靠「新質因數一定會出現」的封閉手法在一般情況會卡住——卡在兩個獨立的點上，關鍵在於它要追蹤的那串數，跟有效定理能控制的那串數其實不是同一個；就算是同一個，新出現的質因數也不保證以「奇數次方」出現（要奇數次方才能讓那個數不是平方）。
     </div>
 
     <details class="layer">
-      <summary>形式化定義與結論</summary>
+      <summary>設定：Face-3 條件與 Peschmann 的 (5,2)</summary>
       <div class="layer-content">
-        <p>在明確的搜尋窗格上，解決 Peschmann 最小的開放 fiber $(5,2)$，連同另外六個 rank-positive fiber。</p>
-        <p>並指出 natural「primitive-divisor」封閉在一般情形失效的確切原因：障礙住在與有效定理所界定者<strong>不同</strong>的數列中，且 primitive divisor 未必以奇 multiplicity 出現。</p>
-        <span class="verified">已驗證（PARI/GP）：fiber $(5,2)$ 及六個 rank-positive fiber 於搜尋窗格內無非退化有理點</span>
+        <p>$q$-fiber 上的完美長方體要求 $E_q:y^2=x(x+1)(x+q^2)$ 上一點 $P=(x,y)$ 使 <strong>Face-3 量</strong>為平方：</p>
+        <p>$$c(P)=\frac{2yq}{q^2-x^2},\qquad F_3(P)=c(P)^2+1+q^2\in(\mathbb{Q}^\times)^2.$$</p>
+        <p>由 torsion 退化引理，候選點必為無限階。Peschmann 的 torsion-intersection 法封閉了 $1{,}072$ 個 fiber，但需要某個橢圓商為 rank $0$；他具名的開放 Example 5.1 是 fiber $(m,n)=(5,2)$，三個商的 rank 為 $2,1,1$ 全正，方法失效。在本文參數化下 $(5,2)$ 對應 $q=20/21$，是一個 rank-$1$ 的 $E_q$，conductor $4305$，生成元</p>
+        <p>$$P=\Bigl(-\tfrac{45}{49},\ \tfrac{10}{343}\Bigr),\qquad \widehat h(P)=2.5530.$$</p>
+        <p>共處理七個 fiber：六個 rank-$1$（$q\in\{20/21,80/39,24/7,84/13,48/55,20/99\}$）與一個 rank-$2$（$q=60/11$），rank 皆由 $2$-descent 緊區間 $[r,r]$ 無條件確定。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>障礙：對的數列是 $N_n$ 不是 $B_n$，且 primitive 不蘊含奇次方</summary>
+      <div class="layer-content">
+        <p>把 $F_3(nP)=N_n/D_n$ 寫成最簡分數；各 fiber 中 $D_n$ 皆為平方，故 $F_3(nP)$ 是平方 $\iff$ 分子 $N_n=\mathrm{Num}(F_3(nP))$ 是平方。想用 elliptic divisibility sequence（EDS）的 primitive-divisor 理論封閉，會卡在兩處：</p>
+        <ul>
+          <li><strong>數列不對。</strong>寫 $nP=(A_n/B_n^2,\,C_n/B_n^3)$，已發表的<em>有效</em>定理（Silverman、Ingram–Silverman、Verzobio）界定的是 EDS 分母 $B_n$ 何時出現 primitive 質因數，但 Face-3 障礙住在<strong>分子 $N_n$</strong>——它是 $E_q$ 上另一個函數 $F_3$ 的值，divisor 支撐在 $x^2=q^2$，與 $B_n$ 的支撐不同。$N_n\neq B_n$，引用對 $B_n$ 的定理對 $N_n$ 無有效控制。</li>
+          <li><strong>primitive 未必奇次方。</strong>就算有 $N_n$ 的 primitive 質因數，要 $N_n$ 非平方還需該質數以<em>奇</em>次方出現——而 primitive 不保證奇次方。具體反例：$q=20/21$、$n=5$，質數 $29$ 是 primitive（不整除任何 $N_m$，$m<5$），卻 $v_{29}(N_5)=2$（偶次方）。故「primitive $\Rightarrow$ 奇次方 $\Rightarrow$ $N_n$ 非平方」的鏈條斷裂。</li>
+        </ul>
+        <p>所觀察到的非平方，實際由 $N_n$ 其餘質因數承載（如 $q=20/21$：$N_1=13\cdot17\cdot89\cdot181$，$N_2=37\cdot89\cdot277\cdot521\cdot2753\cdot8089\cdot22073$），而非任一個 primitive 質數。這精確說明 rank-positive 為何抵抗 rank-zero 區所用的方法。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>窗格驗證與誠實範圍</summary>
+      <div class="layer-content">
+        <p>對六個 rank-$1$ fiber 與所有 $Q=nP+T$（$1\le n\le200$，$T$ 走完八個 torsion）、對 rank-$2$ 的 $q=60/11$ 與所有 $Q=aG_1+bG_2+T$（$|a|,|b|\le12$），驗證 $F_3(Q)$ <strong>從不是</strong>有理平方（共 $9600$ 個 rank-$1$ coset 與 $4992$ 個 rank-$2$ coset，<code>issquare</code> 全回 false）。其中 $q\in\{20/21,39/80,20/99\}$ 落在 Peschmann 已證集 $S_{100}$ 之外，$20/21$ 即其開放 Example 5.1。</p>
+        <p>這是<strong>有限窗格的驗證，不是 all-multiples 封閉</strong>。要升級為無條件需要一個對函數 $F_3$（而非 EDS 分母 $B_n$）的「有效奇次方 primitive-divisor 定理」——本文精確點出此缺口，但不在此證明它。$\log|N_n|\asymp n^2\widehat h(P)$ 的增速使大 $n$ 偶發平方在統計上極不可能，支持但不證明該猜想。</p>
+        <span class="verified">已驗證（PARI/GP）：七個 fiber 之 rank（$2$-descent 緊區間）；窗格內 $F_3$ 全非平方；$q=20/21,n=5$ 的 $v_{29}(N_5)=2$</span>
       </div>
     </details>
   </section>
@@ -635,15 +727,39 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="szpiro" class="theorem-section" data-nav="szpiro">
     <h2>Szpiro ratio 與例外軌跡的 ℤ[√2] 位置（Paper D）</h2>
     <div class="layer-intuition">
-      每條橢圓曲線都有兩個數值指標，它們的比值（Szpiro ratio）大致反映曲線「有多病態」。本文把整個 $E_q$ 家族的這些量算得乾乾淨淨，並證明：對幾乎所有參數，這個比值不超過 4 多一點點；少數比值很大的例外，全都落在一條特定的 Pell 圓錐曲線上（座標在 ℤ[√2] 裡）。換句話說，這個家族整體是「乖」的，壞點稀少且位置可被精確描述。
+      每條橢圓曲線都有兩個數值指標——判別式與導子，它們的比值（Szpiro ratio）大致反映曲線「有多病態」。本文把整個 $E_q$ 家族的這些量算得乾乾淨淨：給出最小模型、導子、判別式的封閉公式，並證明對幾乎所有參數這個比值不超過 4 多一點點；少數比值很大的例外，全都落在六個因式之一取「powerful 值」的稀疏軌跡上，其中兩個是 $\mathbb{Z}[\sqrt2]$ 的範數形式、值落在 Pell 圓錐上。換句話說，這個家族整體是「乖」的，壞點稀少且位置可被精確描述。
     </div>
 
     <details class="layer">
-      <summary>形式化定義與結論</summary>
+      <summary>最小模型、全乘法 reduction、導子與判別式</summary>
       <div class="layer-content">
-        <p>精確計算 $E_q$ 家族的算術：minimal model、conductor、discriminant，並界定其 Szpiro ratio：對幾乎所有參數至多 $4+\varepsilon$，large-ratio 例外落在 $\mathbb{Z}[\sqrt2]$ 的 Pell 圓錐上。density-one 上界為<strong>無條件</strong>。</p>
-        <p>實測最大比值 $\sigma_{\max}=4.6140$，出現於 $(256,121)$。</p>
-        <span class="verified">已驗證（PARI/GP）：$\sigma_{\max}=4.6140$ at $(256,121)$；density-one $\sigma\le 4+\varepsilon$</span>
+        <p>以 $q=a/b$、$a=m^2-n^2$、$b=2mn$，清分母 $x\mapsto X/b^2,\,y\mapsto Y/b^3$ 得全域最小模型</p>
+        <p>$$E:\quad Y^2=X(X+b^2)(X+a^2)=X^3+(a^2+b^2)X^2+a^2b^2X,$$</p>
+        <p>其不變量 $c_4=16(a^4-a^2b^2+b^4)$、$\Delta_0=16\,a^4b^4(a^2-b^2)^2$。每個壞質數皆為<strong>乘法 reduction</strong>（Kodaira 型 $I_n$，$v_p(c_4)=0$），故導子指數恆為 $1$：</p>
+        <p>$$N=\operatorname{rad}\bigl(a\,b\,(a^2-b^2)\bigr),$$</p>
+        <p>（唯 $v_2(b)=2$ 時 $2$ 為好 reduction，從 $N$ 去掉）。最小判別式</p>
+        <p>$$\Delta_{\min}=\Delta_0/2^{12}=2^{\,4v_2(b)-8}\,a^4\,(\mathrm{odd}\,b)^4\,(a^2-b^2)^2,$$</p>
+        <p>奇質數的 Tate index 為 $4v_p(a)$、$4v_p(b)$、或 $2v_p(a^2-b^2)$。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>$\mathbb{Z}[\sqrt2]$ 因式分解與三個 Szpiro 上界</summary>
+      <div class="layer-content">
+        <p>判別式由六因式形式的 powerful part 控制：</p>
+        <p>$$a^2-b^2=m^4-6m^2n^2+n^4=F_5\,F_6,\quad F_5=(m-n)^2-2n^2,\ F_6=(m+n)^2-2n^2,$$</p>
+        <p>$F_5,F_6$ 是 $\mathbb{Z}[\sqrt2]$ 的兩個範數形式（線性分裂需 $\mathbb{Q}(\sqrt2)$，根 $m/n=\pm(1\pm\sqrt2)$）——正是 Peschmann 遇到的 $s^4-6s^2+1=(s^2+2s-1)(s^2-2s-1)$。整個 powerful part 來自度 $8$ 分離形式 $F=m\,n\,(m-n)(m+n)F_5F_6$ 的六個不可約因式。由</p>
+        <p>$$\sigma(E_q)=\frac{\log|\Delta_{\min}|}{\log N}=\frac{4\log a+4\log b+2\log|a^2-b^2|-8\log2}{\log\operatorname{rad}(ab(a^2-b^2))},$$</p>
+        <p>得三個上界：(a) 用三元組 $b^2+(a^2-b^2)=a^2$ 套 abc 猜想 $\Rightarrow\ \sigma\le6(1+\varepsilon)$；(b) 無條件用 Stewart–Yu 有效 abc $\Rightarrow\ \sigma=O(N^{1/3}(\log N)^2)$；(c) 對 power-free 篩（Greaves、Browning–Heath-Brown、Bhargava 幾何篩）$\Rightarrow\ \sigma\le4+\varepsilon$ 在 density-one 集上（<strong>無條件</strong>）。例外集 $\{\sigma>4\}$ density 零，含於六因式之一取 powerful 值的聯集；$F_5,F_6$ 的 powerful 值落在 genus-$0$ Pell 圓錐 $X^2-2n^2=dk^2$ 上，是一個特出、可參數化的分量，但非全部（例 $(125,44)$ 之 $\sigma=4.011$ 由<em>線性</em>因式 $m-n=81=3^4$、$m+n=169=13^2$ 驅動）。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>實測極值與無 Szpiro-free height 常數</summary>
+      <div class="layer-content">
+        <p>由精確公式，在 $m\le800$ 的 $129{,}870$ 個 fiber 上 $\sigma_{\max}=4.6140$ 於 $(m,n)=(256,121)$（該 fiber $n_2=4\cdot9-8=28$），$\sigma_{\min}=2.7217$ 於 $(2,1)$，平均 $3.0811$；$m\le700$ 時 $\{\sigma\le4\}$ density $0.99967$，例外以 $H^{-1}$ 衰減。</p>
+        <p>誠實的負面結論：因全 fiber 處處乘法 reduction，所有非阿基米德 Néron 局部高度 $\le0$，正的高度只能來自阿基米德項，故<strong>不存在</strong>與 Szpiro 無關的絕對常數 $c$ 使 $\widehat h(P)\ge c\log|\Delta_{\min}|$（那即 Lang 高度猜想，僅知非有效常數）。本文不對完美長方體問題本身作任何主張，研究對象是家族 $E_q$ 的判別式與 Szpiro 結構。與 Naskręcki 的 rank 結果互補（後者算的是 rank，本文算的是 minimal model / 導子 / 判別式 / Szpiro）。</p>
+        <span class="verified">已驗證（PARI/GP + sympy）：$\sigma_{\max}=4.6139648$ at $(256,121)$；density-one $\sigma\le4+\varepsilon$；全乘法 census；$\widehat h(2P)=4\widehat h(P)$</span>
       </div>
     </details>
 
@@ -664,11 +780,38 @@ footer a { color: var(--color-link); text-decoration: none; }
     </div>
 
     <details class="layer">
-      <summary>形式化定義與結論</summary>
+      <summary>設定：Sophie–Germain 恆等式與兩個分支</summary>
       <div class="layer-content">
-        <p>對每個質數 $p$，Sophie–Germain 兩個分支皆不產生完美長方體。單一一條橢圓曲線 Cremona <span class="curve-label">800a3</span> 處理掉整條無限的質數尾巴，超出任何有限掃描。對質數 $p$ 為<strong>無條件</strong>結果。</p>
-        <p>唯一的 near-miss $(11,71)$ 滿足體對角線與兩個面，但第三個面不成立。</p>
-        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> 之有理點有限且可窮盡；near-miss $(11,71)$ 第三面失敗</span>
+        <p>Case-B 參數化下邊為 $a=4pq,\ b=q^2-4p^2,\ c=2(q^2-p^2)$，體對角線條件化簡為 $q^4+4p^4=5\,\square$。代入 Sophie–Germain 恆等式</p>
+        <p>$$q^4+4p^4=\underbrace{\bigl((q-p)^2+p^2\bigr)}_{A}\,\underbrace{\bigl((q+p)^2+p^2\bigr)}_{B}.$$</p>
+        <p>$p,q$ 奇且互質時 $\gcd(A,B)=1$，故質因數 $5$ 只能落入其一，分兩個分支：</p>
+        <ul>
+          <li>Case I：$A=5\alpha^2,\ B=\beta^2$；</li>
+          <li>Case II：$A=\alpha^2,\ B=5\beta^2$。</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>單曲線封閉：化約到 $C_{\mathrm{anom}}$，Jacobian <span class="curve-label">800a3</span></summary>
+      <div class="layer-content">
+        <p>當 $p$ 為<strong>質數</strong>，差平方表示 $p=m^2-n^2$ 唯一（$m=\tfrac{p+1}{2},n=\tfrac{p-1}{2}$），把每個分支壓成單參數 $q=\tfrac{p^2\pm2p-1}{2}$。代入受約束的那一側並清分母（$Y=p,\ Z=2\beta$）得異常四次曲線</p>
+        <p>$$C_{\mathrm{anom}}:\quad 20Z^2=Y^4+8Y^3+18Y^2-8Y+1,$$</p>
+        <p>兩個分支經 $Y\mapsto-Y$ 共用此單一曲線。其 Jacobian 為</p>
+        <p>$$E_{\mathrm{anom}}:\quad y^2=x^3-275x+1750,$$</p>
+        <p>conductor $800$、$\Delta=2^9\cdot5^6$、$j=287496$（Cremona <span class="curve-label">800a3</span>），Mordell–Weil <strong>rank $1$</strong>（$2$-descent 上下界吻合，無條件），生成元 $P=(-15,50)$、$\widehat h(P)=0.9497$，torsion $\mathbb{Z}/2=\{O,(10,0)\}$。由 Siegel 定理整數點有限，沿 rank-$1$ 格點以 canonical height 列舉得<strong>全部七個</strong>整數點 $\{(-15,\pm50),(46,\pm294),(9,\pm2),(10,0)\}$。</p>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>解碼 near-miss $(11,71)$ 與無限質數尾巴</summary>
+      <div class="layer-content">
+        <p>$C_{\mathrm{anom}}$ 的整數點 $(Y,Z)\in\{(-1,\pm1),(1,\pm1),(11,\pm37)\}$。$(\pm1,\pm1)$ 退化（$c=0$）。$(11,37)$ 解碼成 $(p,q)=(11,71)$，邊 $(a,b,c)=(3124,4557,9840)$：</p>
+        <p>$$a^2+b^2=5525^2,\quad a^2+c^2=10324^2,\quad a^2+b^2+c^2=11285^2,$$</p>
+        <p>體對角線與兩個面皆為平方，但第三個面</p>
+        <p>$$b^2+c^2=117\,591\,849\ \text{非平方}\quad(10843^2=117\,570\,649\neq117\,591\,849).$$</p>
+        <p>故 $(11,71)$ 只是 near-cuboid。對質數 $p$ 為<strong>無條件</strong>結果。與 Peschmann 互補之處在<strong>無限尾巴 $p\ge211$</strong>：質數 $p$ 映到相鄰對 $(m,n)=(\tfrac{p+1}{2},\tfrac{p-1}{2})$，$\max(m,n)\le100$ 即 $p\le199$ 落在他的掃描窗內；第一個窗外質數是 $211$，單一曲線 $E_{\mathrm{anom}}$ 一次處理整條尾巴。合數 $p$ 因 $p=m^2-n^2$ 不唯一，僅以 $p\le50{,}000$ 的窮舉佐證（唯一 hit 仍是 $(11,71)$），明示為 empirical。</p>
+        <span class="verified">已驗證（PARI/GP）：<span class="curve-label">800a3</span> rank $1$（$2$-descent）；七個整數點；$(11,71)$ 第三面 $117591849$ 非平方</span>
       </div>
     </details>
   </section>
@@ -677,15 +820,26 @@ footer a { color: var(--color-link); text-decoration: none; }
   <section id="ranks" class="theorem-section" data-nav="ranks">
     <h2>Mordell–Weil rank 與實驗調查（Paper H）</h2>
     <div class="layer-intuition">
-      最後一篇是實驗性的普查。它對 303 個 fiber 的曲線量了「好點有幾個獨立方向」（rank），畫成直方圖：大多數是 0 或 1，少數到 2，只有三個到 3。其中一個被嚴格認證為 rank 3 的，是 pair (22,17)。它還留下一筆可重複驗證的紀錄：所有邊長 ≤ 30000 的 36 個 primitive Euler brick 裡，沒有任何一個是完美長方體。這些數字本身不解決問題，但替後續研究畫出了地形圖。
+      最後一篇是實驗性的普查。它對 303 個 fiber 的曲線量了「好點有幾個獨立方向」（rank），畫成直方圖：大多數是 0 或 1，少數到 2，只有三個到 3。其中一個被嚴格認證為 rank 3 的，是 pair (22,17)。「認證」的意思是：上界靠一個無條件的工具（2-Selmer）卡住，下界靠三個真實有理點算出來的非零行列式撐住，兩邊夾出剛好等於 3，不靠任何猜想。它還留下一筆可重複驗證的紀錄：所有邊長 ≤ 30000 的 36 個 primitive Euler brick 裡，沒有任何一個是完美長方體。這些數字本身不解決問題，但替後續研究畫出了地形圖。
     </div>
 
     <details class="layer">
-      <summary>形式化定義與結論</summary>
+      <summary>經認證的 rank-3 fiber $(22,17)$：三個生成元</summary>
       <div class="layer-content">
-        <p>給出一個經認證的 fiber，pair $(22,17)$，其 $E_q$ 在 $\mathbb{Q}$ 上 Mordell–Weil rank = 3；303 個 fiber 的 rank 直方圖為 rank 0：118、rank 1：137、rank 2：45、rank 3：3。</p>
-        <p>並驗證紀錄：所有邊 $\le 30000$ 的 36 個 primitive Euler brick 中，零個完美長方體。</p>
-        <span class="verified">已驗證（PARI/GP）：$(22,17)$ 之 $\mathbb{Q}$-rank = 3；303 fiber 分布 118/137/45/3</span>
+        <p>$(m,n)=(22,17)$ 給 $a=195,b=748$，$q=195/748$，最小模型 $y^2+xy=x^3-6{,}108{,}655{,}980\,x+180{,}712{,}439{,}349{,}327$，conductor $N=19{,}015{,}731{,}735=3\cdot5\cdot7\cdot11\cdot13\cdot17\cdot23\cdot41\cdot79$，torsion $\mathbb{Z}/4\times\mathbb{Z}/2$。在 $E_q:y^2=x(x+1)(x+(195/748)^2)$ 上三個獨立有理點為</p>
+        <p>$$Q_1=\Bigl(-\tfrac{15}{176},\ \tfrac{2415}{65824}\Bigr),\quad Q_2=\Bigl(\tfrac{117}{44},\ \tfrac{169533}{32912}\Bigr),\quad Q_3=\Bigl(\tfrac{12675}{44},\ \tfrac{161213325}{32912}\Bigr).$$</p>
+        <p>其 canonical-height 配對矩陣的 regulator $\operatorname{Reg}=\det H=18.8337\ldots\neq0$，故三點在模 torsion 下線性獨立，rank $\ge3$。再由 $2$-descent 的 <code>ellrank</code> 回 $[3,3]$，上界 $3$ 來自 $2$-Selmer 群大小（無條件，不用 analytic rank 或 Sha 有限性），夾出 $\mathrm{rank}=3$。這是<strong>無條件</strong>的（無 BSD、parity、abc）。它與 Naskręcki 的 generic（幾何）rank $1$（子家族 $2$）互補——這裡給的是一個具體 $\mathbb{Q}$-fiber 的<strong>算術</strong> rank。</p>
+        <span class="verified">已驗證（PARI/GP）：$(22,17)$ 之 $\mathbb{Q}$-rank $=3$（$2$-Selmer 上界 + regulator $18.8337$ 下界）</span>
+      </div>
+    </details>
+
+    <details class="layer">
+      <summary>rank 直方圖（303 fiber）與 Euler brick 普查</summary>
+      <div class="layer-content">
+        <p>對 $2\le m\le38$ 的全部 $303$ 個 primitive Pythagorean fiber，以 <code>ellrank</code>（effort 1）量 rank，每個 fiber 的下界（明確獨立點）與 $2$-descent 上界皆相等（無 rank 模糊）。分布為</p>
+        <p>$$\text{rank }0:118\ (38.94\%),\quad 1:137\ (45.21\%),\quad 2:45\ (14.85\%),\quad 3:3\ (0.99\%).$$</p>
+        <p>最大 rank $=3$，恰由三個 fiber 達成：$(m,n)\in\{(22,17),(35,22),(37,26)\}$。另以 exact <code>issquare</code> 面篩窮舉所有邊 $\le30{,}000$ 的 Euler brick，得恰 $36$ 個 primitive Euler brick（最小 $(44,117,240)$），其中<strong>零個</strong>是完美長方體（$a^2+b^2+c^2$ 皆非平方）。這是有限範圍的 Observation，非 nonexistence 定理。</p>
+        <span class="verified">已驗證（PARI/GP）：$303$ fiber 分布 $118/137/45/3$，全部 certified；$36$ 個 Euler brick 內零完美長方體</span>
       </div>
     </details>
 
@@ -708,8 +862,8 @@ footer a { color: var(--color-link); text-decoration: none; }
     <details class="layer">
       <summary>形式化：為何整體問題仍開放</summary>
       <div class="layer-content">
-        <p>完整的完美長方體軌跡是一個 general type 曲面，其有理點有限性受 Bombieri–Lang 與 Vojta 猜想（皆開放）支配，目前遠超出可及範圍。</p>
-        <p>本站的貢獻定位為：無條件封閉具名子家族、解決特定開放 fiber、並精確標出初等與曲線理論方法停滯之處。與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
+        <p>完整的完美長方體軌跡是 $\mathbb{P}^6$ 中四個二次式的完全交 $V$，是一個極小的 general type 曲面（$K_V=\mathcal{O}_V(1)$ ample，見「什麼是完美長方體」）。其有理點有限性受 Bombieri–Lang 與 Vojta 猜想（皆開放）支配，目前遠超出可及範圍。$V$ 的 birational 自同構群有限（$\operatorname{Aut}(V)=\operatorname{Bir}(V)=S_3\ltimes(\mathbb{Z}/2)^6$，階 $384$），所以也沒有任何「height-strict 的 birational 無窮遞降」（Markov–Vieta / Fermat 式）能作用在這個曲面上——這解釋了初等遞降為何在此停滯。</p>
+        <p>本站的貢獻定位為：無條件封閉具名子家族（Saunderson、Case B at $p=1$、Sophie–Germain 質數尾巴）、在明確窗格解決特定開放 fiber（Peschmann 的 $(5,2)$）、精確算出家族 $E_q$ 的 Szpiro 與判別式結構，並標出初等與曲線理論方法停滯之處（Chabauty 在 genus-5 因 rank $=$ genus 失效；primitive-divisor 因「錯數列 + 偶次方」失效；無 Szpiro-free height 常數）。沒有任何一篇宣稱解決 PCP。所有結論與 Peschmann (2026)、Yoshida (2024)、Naskręcki (2013) 互補，並非取代。完整 LaTeX 原始碼、submission index 與 PARI/GP 驗證腳本皆隨各論文附於 repository。</p>
       </div>
     </details>
   </section>
