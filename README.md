@@ -101,3 +101,7 @@ the rank-$\geq 2$ multivariate generalization, and the global density-to-finite 
 ---
 
 *CΛ / Lightman Chang · Independent Researcher · lightman.chang@gmail.com · 2026-05-16*
+
+---
+
+Maintained by Light. I build and maintain websites with AI as a service: [arthurs.tw](https://arthurs.tw/?utm_source=github&utm_medium=readme&utm_campaign=oss)
